@@ -62,11 +62,19 @@
 	species_exclusively = list(/datum/species/supermutant)
 
 
-/obj/item/clothing/head/helmet/hulk_lily
+/obj/item/clothing/head/helmet/hulk_lili
 	name = "Lily hat"
 	desc = "Vintage farmer hat, made of straw"
 	icon_state = "lili_hat"
 	item_state = "lili_hat"
 	armor = list("melee" = 10, "bullet" = 15, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
 	species_exception = list(/datum/species/supermutant)
+	species_exclusively = list(/datum/species/supermutant)
+
+
+/obj/item/clothing/glasses/sunglasses/hulk_lili
+	name = "Hulk sunglasses"
+	desc = "Old and large. Goes with tinted red glass"
+	icon_state = "lili_glasses"
+	item_state = "lili_glasses"
 	species_exclusively = list(/datum/species/supermutant)
