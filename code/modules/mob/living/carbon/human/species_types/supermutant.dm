@@ -4,7 +4,7 @@
 	say_mod = "yells"
 	limbs_id = "hulky"
 	damage_overlay_type = ""
-	no_equip = list(SLOT_WEAR_MASK, SLOT_WEAR_SUIT, SLOT_GLOVES, SLOT_SHOES, SLOT_W_UNIFORM, SLOT_S_STORE)
+	no_equip = list(SLOT_WEAR_MASK, SLOT_WEAR_SUIT, SLOT_GLOVES, SLOT_SHOES, SLOT_W_UNIFORM, SLOT_S_STORE, SLOT_EARS)
 	inherent_traits = list(TRAIT_RADIMMUNE)
 	species_traits = list(NO_UNDERWEAR)
 	inherent_biotypes = list(MOB_INORGANIC, MOB_HUMANOID)
