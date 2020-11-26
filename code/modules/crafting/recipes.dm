@@ -1562,6 +1562,16 @@
 	category = CAT_MISC
 	subcategory = CAT_MISC
 
+/datum/crafting_recipe/headset
+	name = "large radio headset"
+	result = /obj/item/radio/headset/hulk
+	reqs = list(/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/crafting/electronicparts = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_MISC
+	subcategory = CAT_MISC
+
 /datum/crafting_recipe/throwingknife
 	name = "Throwing Knife"
 	result = /obj/item/throwing_star/throwingknife
