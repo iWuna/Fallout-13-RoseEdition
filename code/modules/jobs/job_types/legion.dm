@@ -47,7 +47,7 @@ Needs whitelist
 */
 /datum/job/CaesarsLegion/Legionnaire/f13legate
 	title = "Legate"
-//	faction = "Legion"
+	faction = "Legion"
 	flag = F13LEGATE
 	head_announce = list("Security")
 	supervisors = "Caesar"
