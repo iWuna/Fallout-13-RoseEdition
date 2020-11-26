@@ -1211,3 +1211,9 @@
 
 /mob/living/carbon/human/species/ghoul
 	race = /datum/species/ghoul
+
+mob/living/carbon/human/species/supermutant
+	race = /datum/species/supermutant
+
+mob/living/carbon/human/species/supermutant/nightkin
+	race = /datum/species/supermutant/nightkin
