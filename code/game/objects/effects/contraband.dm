@@ -12,6 +12,16 @@
 	var/poster_type
 	var/obj/structure/sign/poster/poster_structure
 
+/obj/item/poster/New(loc, obj/structure/sign/poster/structure)
+	. = ..()
+	if(structure)
+		poster_structure 	= structure
+		name 				= structure.poster_item_name
+		desc 				= structure.poster_item_desc
+		icon_state 			= structure.poster_item_icon_state
+
+		name = "[poster_structure.original_name]"
+
 /obj/item/poster/Initialize(mapload, obj/structure/sign/poster/new_poster_structure)
 	. = ..()
 	poster_structure = new_poster_structure
