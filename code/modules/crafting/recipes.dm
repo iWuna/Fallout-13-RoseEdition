@@ -4144,4 +4144,4 @@
 	tools = list(TOOL_WORKBENCH)
 	time = 25
 	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO_ONE
+	subcategory = CAT_WEAPON
