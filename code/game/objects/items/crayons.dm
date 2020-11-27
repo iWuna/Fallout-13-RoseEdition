@@ -623,6 +623,17 @@
 			playsound(user.loc, 'sound/effects/spray.ogg', 5, 1, 5)
 		return
 
+	if(istype(target, /obj/machinery/light))
+		var/obj/machinery/light/L = target
+		target.add_atom_colour(paint_color, WASHABLE_COLOUR_PRIORITY)
+		L.bulb_colour = paint_color
+		L.light_color = paint_color
+		L.update(TRUE, TRUE)
+		. = use_charges(user, 2)
+		if(pre_noise || post_noise)
+			playsound(user.loc, 'sound/effects/spray.ogg', 5, 1, 5)
+		return
+		
 	. = ..()
 
 /obj/item/toy/crayon/spraycan/update_icon()
