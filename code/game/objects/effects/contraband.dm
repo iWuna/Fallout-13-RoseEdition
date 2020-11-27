@@ -170,6 +170,14 @@
 	name = "ripped poster"
 	desc = "You can't make out anything from the poster's original print. It's ruined."
 
+/obj/structure/sign/poster/ripped/attack_hand(mob/user)
+	. = ..()
+	if(.)
+		return
+	visible_message("[user] cleans what is left from [src]" )
+	playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, 1)
+	qdel(src)
+
 /obj/structure/sign/poster/random
 	name = "random poster" // could even be ripped
 	icon_state = "random_anything"
