@@ -1552,6 +1552,16 @@
 	category = CAT_MISC
 	subcategory = CAT_MISC
 
+/datum/crafting_recipe/trashbag
+	name = "trash bag"
+	result = /obj/item/storage/bag/trash
+	reqs = list(/obj/item/stack/sheet/plastic = 2,
+				/obj/item/stack/sheet/cloth = 2
+				)
+	time = 10
+	category = CAT_MISC
+	subcategory = CAT_MISC
+
 /datum/crafting_recipe/headset
 	name = "radio headset"
 	result = /obj/item/radio/headset
