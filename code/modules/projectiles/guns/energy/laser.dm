@@ -460,7 +460,7 @@
 	desc = "The Laser Assister Energy Rifle is a powerful pre-war weapon developed just before the turn of the Great War. Due to its incredible rarity and unprecedented firepower, the weapon is coveted and nearly solely possesed by the Brotherhood of Steel; typically held by an Elder as a status symbol."
 	icon_state = "laer"
 	item_state = "laer"
-	fire_delay = 3
+	fire_delay = 1.5
 	burst_size = 1
 	equipsound = 'sound/f13weapons/equipsounds/laerequip.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/laer)
@@ -477,7 +477,7 @@
 	scopestate = "AEP7_scope"
 	scope_x_offset = 12
 	scope_y_offset = 20
-	fire_delay = 3.5
+	fire_delay = 2
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer14)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
