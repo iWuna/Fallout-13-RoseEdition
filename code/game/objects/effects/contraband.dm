@@ -12,6 +12,16 @@
 	var/poster_type
 	var/obj/structure/sign/poster/poster_structure
 
+/obj/item/poster/New(loc, obj/structure/sign/poster/structure)
+	. = ..()
+	if(structure)
+		poster_structure 	= structure
+		name 				= structure.poster_item_name
+		desc 				= structure.poster_item_desc
+		icon_state 			= structure.poster_item_icon_state
+
+		name = "[poster_structure.original_name]"
+
 /obj/item/poster/Initialize(mapload, obj/structure/sign/poster/new_poster_structure)
 	. = ..()
 	poster_structure = new_poster_structure
@@ -169,6 +179,14 @@
 	icon_state = "poster_ripped"
 	name = "ripped poster"
 	desc = "You can't make out anything from the poster's original print. It's ruined."
+
+/obj/structure/sign/poster/ripped/attack_hand(mob/user)
+	. = ..()
+	if(.)
+		return
+	visible_message("[user] cleans what is left from [src]" )
+	playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, 1)
+	qdel(src)
 
 /obj/structure/sign/poster/random
 	name = "random poster" // could even be ripped

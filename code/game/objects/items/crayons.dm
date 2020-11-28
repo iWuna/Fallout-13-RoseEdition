@@ -527,6 +527,55 @@
 	pre_noise = TRUE
 	post_noise = FALSE
 
+	var/static/list/poster_prewar_menu = list()
+	var/static/list/poster_contraband_menu = list()
+	var/static/list/poster_fiction_menu = list()
+	var/static/list/poster_ncr_menu = list()
+	var/static/list/poster_menu
+
+
+/obj/item/toy/crayon/spraycan/proc/getPosterImage(var/P)
+	var/obj/structure/sign/poster/poster = new P
+	return image(icon=poster.icon, icon_state=poster.icon_state)
+
+
+/obj/item/toy/crayon/spraycan/proc/InitPosters()
+	var/i = 2
+	var/list/blacklist = list(/obj/structure/sign/poster/prewar, /obj/structure/sign/poster/prewar/poster63)
+	for(var/I in typesof(/obj/structure/sign/poster/prewar)-blacklist)
+		var/obj/structure/sign/poster/poster = new I
+		if (poster_prewar_menu[poster.name])
+			poster_prewar_menu["pre-war poster [i]"] = I
+			i++
+		else
+			poster_prewar_menu[poster.name] = I
+
+	blacklist = list(/obj/structure/sign/poster/contraband)
+	for(var/I in typesof(/obj/structure/sign/poster/contraband)-blacklist)
+		var/obj/structure/sign/poster/poster = new I
+		poster_contraband_menu[poster.name] = I
+
+	blacklist = list(/obj/structure/sign/poster/official)
+	for(var/I in typesof(/obj/structure/sign/poster/official)-blacklist)
+		var/obj/structure/sign/poster/poster = new I
+		poster_fiction_menu[poster.name] = I
+
+	blacklist = list(/obj/structure/sign/poster/ncr)
+	for(var/I in typesof(/obj/structure/sign/poster/ncr)-blacklist)
+		var/obj/structure/sign/poster/poster = new I
+		if (poster_ncr_menu[poster.name])
+			poster_ncr_menu["NCR poster [i]"] = I
+			i++
+		else
+			poster_ncr_menu[poster.name] = I
+
+	poster_menu = list(
+		"Contraband" 	= getPosterImage(/obj/structure/sign/poster/contraband/revolver),
+		"Fiction" 		= getPosterImage(/obj/structure/sign/poster/official/anniversary_vintage_reprint),
+		"Pre-war" 		= getPosterImage(/obj/structure/sign/poster/prewar/vault_tec),
+		"NCR" 			= getPosterImage(/obj/structure/sign/poster/ncr/keep_to_myself)
+	)
+
 /obj/item/toy/crayon/spraycan/suicide_act(mob/user)
 	var/mob/living/carbon/human/H = user
 	if(is_capped || !actually_paints)
@@ -580,6 +629,42 @@
 	if(check_empty(user))
 		return
 
+	if(istype(target, /obj/item/stack/sheet/plastic))
+		var/obj/item/stack/sheet/plastic/resources = target
+		if (!poster_menu)
+			InitPosters()
+		var/category = show_radial_menu(user, src, poster_menu, require_near=TRUE)
+		var/obj/structure/sign/poster/selected
+		var/menu = list()
+		var/newtype = ""
+		var/poster = ""
+		switch(category)
+			if("Pre-war")
+				poster = show_radial_menu(user, src, poster_prewar_menu, require_near=TRUE)
+				menu = poster_prewar_menu
+			if("Fiction")
+				poster = show_radial_menu(user, src, poster_fiction_menu, require_near=TRUE)
+				menu = 	poster_fiction_menu
+			if("Contraband")
+				poster = show_radial_menu(user, src, poster_contraband_menu, require_near=TRUE)
+				menu = poster_contraband_menu
+			if("NCR")
+				poster = show_radial_menu(user, src, poster_ncr_menu, require_near=TRUE)
+				menu = poster_ncr_menu
+			else
+				return
+		if(poster)
+			if(resources)
+				if(resources.Adjacent(user) && resources.use(1))
+					if(pre_noise || post_noise)
+						playsound(user.loc, 'sound/effects/spray.ogg', 25, 1, 5)
+					
+					use_charges(user, 1)
+					newtype = menu[poster]
+					selected = new newtype
+					new/obj/item/poster(usr.loc, selected)
+		return
+
 	if(iscarbon(target))
 		if(pre_noise || post_noise)
 			playsound(user.loc, 'sound/effects/spray.ogg', 25, 1, 5)
@@ -619,6 +704,17 @@
 		reagents.reaction(target, TOUCH, fraction * volume_multiplier)
 		reagents.trans_to(target, ., volume_multiplier)
 
+		if(pre_noise || post_noise)
+			playsound(user.loc, 'sound/effects/spray.ogg', 5, 1, 5)
+		return
+
+	if(istype(target, /obj/machinery/light))
+		var/obj/machinery/light/L = target
+		target.add_atom_colour(paint_color, WASHABLE_COLOUR_PRIORITY)
+		L.bulb_colour = paint_color
+		L.light_color = paint_color
+		L.update(TRUE, TRUE)
+		. = use_charges(user, 2)
 		if(pre_noise || post_noise)
 			playsound(user.loc, 'sound/effects/spray.ogg', 5, 1, 5)
 		return
