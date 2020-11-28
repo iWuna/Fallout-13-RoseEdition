@@ -1279,7 +1279,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if((target.stat != DEAD) && damage >= user.dna.species.punchstunthreshold)
 			target.visible_message("<span class='danger'>[user] has knocked  [target] down!</span>", \
 							"<span class='userdanger'>[user] has knocked [target] down!</span>", null, COMBAT_MESSAGE_RANGE)
-			target.apply_effect(80, EFFECT_KNOCKDOWN, armor_block)
+			target.apply_effect(25, EFFECT_KNOCKDOWN, armor_block)
 			target.forcesay(GLOB.hit_appends)
 		else if(target.lying)
 			target.forcesay(GLOB.hit_appends)
