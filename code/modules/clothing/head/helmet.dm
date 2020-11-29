@@ -913,7 +913,7 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 	speechspan = SPAN_ROBOT //makes you sound like a robot
-	darkness_view = 128
+	darkness_view = 128 //Literally NV
 	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
 	var/emped = 0
 	var/requires_training = TRUE
@@ -979,7 +979,8 @@
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
 	armor = list("melee" = 75, "bullet" = 60, "laser" = 30, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
-	darkness_view = 0
+	darkness_view = 0 //No NV
+	slowdown = 0.2 //No servo
 	lighting_alpha = null
 	requires_training = FALSE
 
@@ -989,6 +990,8 @@
 	icon_state = "raiderpa_helm"
 	item_state = "raiderpa_helm"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 30, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 50, "fire" = 0, "acid" = 0)
+	darkness_view = 0 //No NV
+	slowdown = 0.2 //No servo
 	lighting_alpha = null
 	requires_training = FALSE
 
@@ -1001,6 +1004,7 @@
 	icon_state = "t45hotrod_helm"
 	item_state = "t45hotrod_helm"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 30, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 50, "fire" = 0, "acid" = 0)
+	darkness_view = 110 //Some worse NV
 	lighting_alpha = null
 	requires_training = FALSE
 
@@ -1009,6 +1013,7 @@
 	desc = "It's an advanced power armor Mk I helmet, typically used by the Enclave. It looks somewhat threatening."
 	icon_state = "advhelmet1"
 	item_state = "advhelmet1"
+	darkness_view = 150 // Advanced NV
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 75, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/power_armor/advanced/mk2
@@ -1016,11 +1021,13 @@
 	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
 	icon_state = "advhelmet2"
 	item_state = "advhelmet2"
+	darkness_view = 170 // Advanced NV II
 	armor = list("melee" = 90, "bullet" = 90, "laser" = 60, "energy" = 90, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/power_armor/tesla
 	name = "tesla power helmet"
 	desc = "A helmet typically used by Enclave special forces.<br>There are three orange energy capacitors on the side."
+	darkness_view = 160 // Advanced NV
 	icon_state = "tesla"
 	item_state = "tesla"
 	armor = list("melee" = 90, "bullet" = 50, "laser" = 95, "energy" = 95, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
@@ -1030,6 +1037,7 @@
 	desc = "It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
 	icon_state = "t51bhelmet"
 	item_state = "t51bhelmet"
+	darkness_view = 135 // Advanced NV
 	armor = list("melee" = 70, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/ultra
@@ -1044,6 +1052,7 @@
 	desc = "The T-60 powered helmet, equipped with targetting software suite, Friend-or-Foe identifiers, dynamic HuD, and an internal music player."
 	icon_state = "t60helmet"
 	item_state = "t60helmet"
+	darkness_view = 145 // Advanced NV
 	armor = list("melee" = 75, "bullet" = 70, "laser" = 60, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d
