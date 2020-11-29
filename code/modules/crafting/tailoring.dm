@@ -2,7 +2,7 @@
 	name = "metal armor"
 	result = /obj/item/clothing/suit/armor/f13/metalarmor
 	reqs = list(/obj/item/stack/sheet/leather = 1,
-				/obj/item/stack/sheet/durathread = 5,
+				/obj/item/stack/sheet/cloth = 5,
 				/obj/item/stack/crafting/metalparts = 5)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
@@ -24,7 +24,7 @@
 	name = "metal mask"
 	result = /obj/item/clothing/head/helmet/f13/metalmask
 	reqs = list(/obj/item/stack/sheet/leather = 1,
-				/obj/item/stack/sheet/durathread = 1,
+				/obj/item/stack/sheet/cloth = 1,
 				/obj/item/stack/crafting/metalparts = 2)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
@@ -235,7 +235,7 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_HULKY
 
-/datum/crafting_recipe/cowboyboots
+/datum/crafting_recipe/bootsboots
 	name = "hulky boots"
 	result = /obj/item/clothing/shoes/hulk_boots
 	reqs = list(/obj/item/stack/sheet/leather = 2,
@@ -245,7 +245,7 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_HULKY
 
-/datum/crafting_recipe/cowboyboots
+/datum/crafting_recipe/hulkgloves
 	name = "large botanic gloves"
 	result = /obj/item/clothing/shoes/hulk_boots
 	reqs = list(/obj/item/stack/sheet/leather = 2,
@@ -265,7 +265,7 @@
 	subcategory = CAT_HULKY
 
 
-/datum/crafting_recipe/headsethulk
+/datum/crafting_recipe/hulkheadset
 	name = "large radio headset"
 	result = /obj/item/radio/headset/hulk
 	reqs = list(/obj/item/stack/sheet/metal = 3,
