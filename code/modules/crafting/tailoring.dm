@@ -95,6 +95,9 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
+
+/* Supermutant specific clothes */
+
 /datum/crafting_recipe/hulkcrude
 	name = "hulky armor"
 	result = /obj/item/clothing/suit/armor/hulk/hulk_armor
@@ -105,9 +108,7 @@
 				)
 	time = 60
 	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-
-
+	subcategory = CAT_HULKY
 
 
 /datum/crafting_recipe/nightarmor
@@ -121,12 +122,12 @@
 	time = 60
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
+	subcategory = CAT_HULKY
 
 
 /datum/crafting_recipe/horriganarmor
 	name = "reinforced hulky armor"
-	result = /obj/item/clothing/suit/armor/hulk/night_armor
+	result = /obj/item/clothing/suit/armor/hulk/horrigan_armor
 	reqs = list(/obj/item/clothing/suit/armor/f13/metalarmor = 1,
 				/obj/item/stack/sheet/leather = 6,
 				/obj/item/stack/sheet/hay = 2,
@@ -136,7 +137,143 @@
 	time = 60
 	tools = list(TOOL_AWORKBENCH)
 	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
+	subcategory = CAT_HULKY
+
+	/datum/crafting_recipe/hulchelmetcrude
+	name = "rusted hulky helmet"
+	result = /obj/item/clothing/head/helmet/hulk/crude
+	reqs = list(/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+/datum/crafting_recipe/hulkhelmetmetal
+	name = "metal hulky helmet"
+	result = /obj/item/clothing/head/helmet/hulk/metal
+	reqs = list(/obj/item/stack/sheet/leather = 4,
+				/obj/item/stack/sheet/metal = 15,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/crafting/goodparts = 4)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+/datum/crafting_recipe/hulkhelmetmetal
+	name = "reinforced hulky helmet"
+	result = /obj/item/clothing/head/helmet/hulk/advanced
+	reqs = list(/obj/item/clothing/head/helmet/f13/metalmask= 1,
+				/obj/item/stack/sheet/leather = 4,
+				/obj/item/stack/sheet/metal = 15,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/crafting/goodparts = 4)
+	tools = list(TOOL_AWORKBENCH)
+	time = 60
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+/datum/crafting_recipe/hulkfarmer
+	name = "hulky farmer suit"
+	result = /obj/item/clothing/under/lili_clothes
+	reqs = list(/obj/item/stack/sheet/hay = 2,
+				/obj/item/stack/sheet/cloth = 3)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+/datum/crafting_recipe/hulkpants
+	name = "hulky pants"
+	result = /obj/item/clothing/under/hulk
+	reqs = list(/obj/item/stack/sheet/hay = 2,
+				/obj/item/stack/sheet/cloth = 3)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+/datum/crafting_recipe/hulkvault
+	name = "hulky vault suit"
+	result = /obj/item/clothing/under/hulk_vault
+	reqs = list(/obj/item/stack/sheet/cloth = 2,
+				/obj/item/clothing/under/f13/vault)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+/datum/crafting_recipe/hulkwelding
+	name = "large welding helmet"
+	result = /obj/item/clothing/head/welding/hulk
+	reqs = list(/obj/item/clothing/head/welding,
+				/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+/datum/crafting_recipe/hulkfarmerhat
+	name = "farmer hat"
+	result = /obj/item/clothing/head/helmet/hulk_lili
+	reqs = list(/obj/item/stack/sheet/cloth = 2,
+				/obj/item/stack/sheet/hay = 3)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+/datum/crafting_recipe/hulkglass
+	name = "large glasses"
+	result = /obj/item/clothing/glasses/sunglasses/hulk_lili
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/sheet/glass = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+/datum/crafting_recipe/cowboyboots
+	name = "hulky boots"
+	result = /obj/item/clothing/shoes/hulk_boots
+	reqs = list(/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/cloth = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+/datum/crafting_recipe/cowboyboots
+	name = "large botanic gloves"
+	result = /obj/item/clothing/shoes/hulk_boots
+	reqs = list(/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/cloth = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+/datum/crafting_recipe/hulkbackpack
+	name = "hulky backpack"
+	result = /obj/item/clothing/head/fluff/pot
+	reqs = list(/obj/item/stack/sheet/cloth = 4)
+	tools = list(TOOL_WORKBENCH)
+	time = 20
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+
+/datum/crafting_recipe/headsethulk
+	name = "large radio headset"
+	result = /obj/item/radio/headset/hulk
+	reqs = list(/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/crafting/electronicparts = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
 
 /*
 /datum/crafting_recipe/supaflyhelm_reinforced
@@ -371,43 +508,6 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
-
-/datum/crafting_recipe/hulchelmetcrude
-	name = "rusted hulky helmet"
-	result = /obj/item/clothing/head/helmet/hulk/crude
-	reqs = list(/obj/item/stack/sheet/leather = 3,
-				/obj/item/stack/sheet/metal = 5,
-				/obj/item/stack/crafting/metalparts = 2)
-	tools = list(TOOL_WORKBENCH)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-
-/datum/crafting_recipe/hulkhelmetmetal
-	name = "metal hulky helmet"
-	result = /obj/item/clothing/head/helmet/hulk/metal
-	reqs = list(/obj/item/stack/sheet/leather = 4,
-				/obj/item/stack/sheet/metal = 15,
-				/obj/item/stack/crafting/metalparts = 2,
-				/obj/item/stack/crafting/goodparts = 4)
-	tools = list(TOOL_WORKBENCH)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-
-/datum/crafting_recipe/hulkhelmetmetal
-	name = "reinforced hulky helmet"
-	result = /obj/item/clothing/head/helmet/hulk/advanced
-	reqs = list(/obj/item/clothing/head/helmet/f13/metalmask= 1,
-				/obj/item/stack/sheet/leather = 4,
-				/obj/item/stack/sheet/metal = 15,
-				/obj/item/stack/crafting/metalparts = 2,
-				/obj/item/stack/crafting/goodparts = 4)
-	tools = list(TOOL_AWORKBENCH)
-	time = 60
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-
 /*CRAFT rework: removed for balance
 /datum/crafting_recipe/tesla_armor
 	name = "tesla armor"
@@ -546,66 +646,6 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
 
-/datum/crafting_recipe/hulkfarmer
-	name = "hulky farmer suit"
-	result = /obj/item/clothing/under/lili_clothes
-	reqs = list(/obj/item/stack/sheet/hay = 2,
-				/obj/item/stack/sheet/cloth = 5)
-	tools = list(TOOL_WORKBENCH)
-	time = 15
-	category = CAT_CLOTHING
-	subcategory = CAT_WASTELAND
-
-/datum/crafting_recipe/hulkpants
-	name = "hulky pants"
-	result = /obj/item/clothing/under/hulk
-	reqs = list(/obj/item/stack/sheet/hay = 2,
-				/obj/item/stack/sheet/cloth = 3)
-	tools = list(TOOL_WORKBENCH)
-	time = 15
-	category = CAT_CLOTHING
-	subcategory = CAT_WASTELAND
-
-/datum/crafting_recipe/hulkvault
-	name = "hulky vault suit"
-	result = /obj/item/clothing/under/hulk_vault
-	reqs = list(/obj/item/stack/sheet/cloth = 2,
-				/obj/item/clothing/under/f13/vault)
-	tools = list(TOOL_WORKBENCH)
-	time = 15
-	category = CAT_CLOTHING
-	subcategory = CAT_WASTELAND
-
-/datum/crafting_recipe/hulkwelding
-	name = "hulky welding helmet"
-	result = /obj/item/clothing/head/welding/hulk
-	reqs = list(/obj/item/clothing/head/welding,
-				/obj/item/stack/sheet/metal = 5)
-	tools = list(TOOL_WORKBENCH)
-	time = 15
-	category = CAT_CLOTHING
-	subcategory = CAT_WASTELAND
-
-/datum/crafting_recipe/hulkfarmerhat
-	name = "hulky farmer hat"
-	result = /obj/item/clothing/head/helmet/hulk_lili
-	reqs = list(/obj/item/stack/sheet/cloth = 2,
-				/obj/item/stack/sheet/hay = 5)
-	tools = list(TOOL_WORKBENCH)
-	time = 15
-	category = CAT_CLOTHING
-	subcategory = CAT_WASTELAND
-
-/datum/crafting_recipe/hulkglass
-	name = "large glasses"
-	result = /obj/item/clothing/glasses/sunglasses/hulk_lili
-	reqs = list(/obj/item/stack/sheet/metal = 5,
-				/obj/item/stack/sheet/glass = 2)
-	tools = list(TOOL_WORKBENCH)
-	time = 15
-	category = CAT_CLOTHING
-	subcategory = CAT_WASTELAND
-
 /datum/crafting_recipe/cowboyhat
 	name = "light leather cowboy hat"
 	result = /obj/item/clothing/head/f13/cowboy
@@ -635,28 +675,6 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
-
-
-/datum/crafting_recipe/cowboyboots
-	name = "hulky boots"
-	result = /obj/item/clothing/shoes/hulk_boots
-	reqs = list(/obj/item/stack/sheet/leather = 4,
-				/obj/item/stack/sheet/cloth = 2)
-	tools = list(TOOL_WORKBENCH)
-	time = 15
-	category = CAT_CLOTHING
-	subcategory = CAT_WASTELAND
-
-/datum/crafting_recipe/cowboyboots
-	name = "large botanic gloves"
-	result = /obj/item/clothing/shoes/hulk_boots
-	reqs = list(/obj/item/stack/sheet/leather = 2,
-				/obj/item/stack/sheet/cloth = 2)
-	tools = list(TOOL_WORKBENCH)
-	time = 15
-	category = CAT_CLOTHING
-	subcategory = CAT_WASTELAND
-
 
 /datum/crafting_recipe/mantle
 	name = "hide mantle"
@@ -1130,15 +1148,6 @@
 	name = "cooking pot"
 	result = /obj/item/clothing/head/fluff/pot
 	reqs = list(/obj/item/stack/sheet/metal = 5)
-	tools = list(TOOL_WORKBENCH)
-	time = 20
-	category = CAT_CLOTHING
-	subcategory = CAT_MISCCLOTHING
-
-/datum/crafting_recipe/hulkbackpack
-	name = "hulky backpack"
-	result = /obj/item/clothing/head/fluff/pot
-	reqs = list(/obj/item/stack/sheet/cloth = 6)
 	tools = list(TOOL_WORKBENCH)
 	time = 20
 	category = CAT_CLOTHING

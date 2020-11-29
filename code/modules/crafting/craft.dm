@@ -60,6 +60,7 @@
 							CAT_SHOES,
 							CAT_MISCCLOTHING,
 							CAT_ARMOR,
+							CAT_HULKY,
 							CAT_WASTELAND,
 							CAT_BELTS),
 						list( //bp
