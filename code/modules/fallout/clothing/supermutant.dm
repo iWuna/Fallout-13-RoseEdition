@@ -1,37 +1,54 @@
-/obj/item/clothing/under/lili_clothes
+/obj/item/clothing/under/hulk
+	species_exception = list(/datum/species/supermutant)
+	species_exclusively = list(/datum/species/supermutant)
+
+/obj/item/clothing/under/hulk/lili_clothes
 	name = "hulky farmer suit"
 	icon_state = "lili_clothes"
-	species_exception = list(/datum/species/supermutant)
-	species_exclusively = list(/datum/species/supermutant)
 
 
-/obj/item/clothing/under/hulk
+/obj/item/clothing/under/hulk/pants
 	name = "hulky pants"
 	icon_state = "hulk_clothes"
-	species_exception = list(/datum/species/supermutant)
-	species_exclusively = list(/datum/species/supermutant)
 
 
-/obj/item/clothing/under/hulk_vault
+/obj/item/clothing/under/hulk/hulk_vault
 	name = "hulky vault suit"
 	icon_state = "hulk_vault"
-	species_exception = list(/datum/species/supermutant)
-	species_exclusively = list(/datum/species/supermutant)
 
 
-/obj/item/clothing/under/hulk_vault13
+/obj/item/clothing/under/hulk/hulk_vault13
 	name = "hulky vault 13 suit"
 	icon_state = "hulk_vault13"
-	species_exception = list(/datum/species/supermutant)
-	species_exclusively = list(/datum/species/supermutant)
 
 
-/obj/item/clothing/under/hulk_vault113
+/obj/item/clothing/under/hulk/hulk_vault113
 	name = "hulky vault 113 suit"
 	icon_state = "hulk_vault113"
-	species_exception = list(/datum/species/supermutant)
-	species_exclusively = list(/datum/species/supermutant)
 
+/obj/item/clothing/under/hulk/suit
+	name = "black suit"
+	icon_state = "hulk_suit"
+
+/obj/item/clothing/under/hulk/suit/pink
+	name = "pink suit"
+	icon_state = "hulk_suit_pink"
+
+/obj/item/clothing/under/hulk/leather
+	name = "leather suit"
+	icon_state = "hulk_leather"
+
+/obj/item/clothing/under/hulk/stripped
+	name = "stripped suit"
+	icon_state = "hulk_stripped"
+
+/obj/item/clothing/under/hulk/robe
+	name = "robe"
+	icon_state = "hulk_robe"
+
+/obj/item/clothing/under/hulk/robe/hood
+	name = "hooded robe"
+	icon_state = "hulk_robe_hood"
 
 /obj/item/clothing/suit/armor/hulk
 	species_exception = list(/datum/species/supermutant)
@@ -41,12 +58,18 @@
 /obj/item/clothing/suit/armor/hulk/hulk_armor	
 	name = "hulky armor"
 	icon_state = "hulk_armor"
-	armor = list("melee" = 40, "bullet" = 43, "laser" = 40, "energy" = 35, "bomb" = 45, "bio" = 30, "rad" = 5, "fire" = 50, "acid" = 35)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 25, "energy" = 15, "bomb" = 15, "bio" = 10, "rad" = 5, "fire" = 20, "acid" = 15)
 
 
 /obj/item/clothing/suit/armor/hulk/night_armor
 	name = "nightkin armor"
 	icon_state = "night_armor"
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 45, "acid" = 35)
+
+
+/obj/item/clothing/suit/armor/hulk/metal_armor
+	name = "metal armor"
+	icon_state = "metal_armor"
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 40, "energy" = 25, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 45, "acid" = 35)
 
 
@@ -54,6 +77,51 @@
 	name = "reinforced hulky armor"
 	icon_state = "horrigan_armor"
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 55, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 40)
+
+
+/obj/item/clothing/suit/armor/f13/power_armor/hulk
+	species_exception = list(/datum/species/supermutant)
+	species_exclusively = list(/datum/species/supermutant)
+
+
+/obj/item/clothing/suit/armor/f13/power_armor/hulk/t45salvage
+	name = "salvaged T-45b power armor"
+	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and stripped out servomotors. Bulky and slow, but almost as good as the real thing. This one is extra big."
+	icon_state = "hulk_salvage"
+	item_state = "hulk_salvage"
+	armor = list("melee" = 75, "bullet" = 60, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
+	requires_training = FALSE
+	slowdown = 1.40
+	cold_protection = 2547
+
+/obj/item/clothing/suit/armor/f13/power_armor/hulk/t45salvage_ncr
+	name = "salvaged NCR power armor"
+	desc = "It's a set of T-45b power armor with a air conditioning module installed, it however lacks servomotors to enhance the users strength. This one has brown paint trimmed along the edge and a two headed bear painted onto the chestplate."
+	icon_state = "hulk_salvage_ncr"
+	item_state = "hulk_salvage_ncr"
+	armor = list("melee" = 75, "bullet" = 60, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
+	requires_training = FALSE
+	cold_protection = 1046
+	slowdown = 1.40
+
+/obj/item/clothing/suit/armor/f13/power_armor/hulk/t45raider
+	name = "raider T-45b power armor"
+	desc = "It's a set of T-45b power armor with some of its plating heavily reconditioned. This set has seen better days, metal scrap has been spot welded to the chassis "
+	icon_state = "hulk_pa_raider"
+	item_state = "hulk_pa_raider"
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
+	slowdown = 0.4
+	cold_protection = 1046
+	heat_protection = 1046
+	requires_training = FALSE
+
+/obj/item/clothing/suit/armor/f13/power_armor/hulk/t45d
+	name = "T-45d power armor"
+	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle."
+	icon_state = "hulk_pa"
+	item_state = "hulk_pa"
+	cold_protection = 2546
+	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
 
 
 /obj/item/clothing/head/welding/hulk
