@@ -49,8 +49,20 @@
 				to_chat(user, "<span class='notice'>You swallow a gulp of [src].</span>")
 			var/fraction = min(5/reagents.total_volume, 1)
 			reagents.reaction(M, INGEST, fraction)
+			SEND_SIGNAL(src, COMSIG_GLASS_DRANK, M, user)
 			addtimer(CALLBACK(reagents, /datum/reagents.proc/trans_to, M, 5), 5)
 			playsound(M.loc,'sound/items/drink.ogg', rand(10,50), 1)
+			if(iscarbon(M))
+				var/mob/living/carbon/carbon_drinker = M
+				var/list/diseases = carbon_drinker.get_static_viruses()
+				if(LAZYLEN(diseases))
+					var/list/datum/disease/diseases_to_add = list()
+					for(var/d in diseases)
+						var/datum/disease/malady = d
+						if(malady.spread_flags & DISEASE_SPREAD_CONTACT_FLUIDS)
+							diseases_to_add += malady
+					if(LAZYLEN(diseases_to_add))
+						AddComponent(/datum/component/infective, diseases_to_add)
 
 /obj/item/reagent_containers/glass/afterattack(obj/target, mob/user, proximity)
 	. = ..()

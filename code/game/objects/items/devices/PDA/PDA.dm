@@ -16,9 +16,11 @@ GLOBAL_LIST_EMPTY(PDAs)
 	desc = "The RobCo Pip-Boy (Personal Information Processor) is an electronic device. Functionality is determined by a preprogrammed ROM cartridge."
 	icon = 'icons/obj/pda.dmi'
 	icon_state = "pda"
-	item_state = "Pip-boy"
+	item_state = "pip-boy"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
+	actions_types = list(/datum/action/item_action/toggle_light/pda)
+	alternate_worn_layer = BELT_LAYER
 	item_flags = NOBLUDGEON
 	w_class = WEIGHT_CLASS_TINY
 	slot_flags = ITEM_SLOT_GLOVES | ITEM_SLOT_ID
@@ -148,6 +150,30 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 /obj/item/pda/GetID()
 	return id
+
+
+/obj/item/pda/proc/toggle_light()
+	if(issilicon(usr) || !usr.canUseTopic(src, BE_CLOSE))
+		return
+	if(fon)
+		fon = FALSE
+		set_light(0)
+	else if(f_lum)
+		fon = TRUE
+		set_light(f_lum)
+	update_icon()
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.UpdateButtonIcon()
+
+
+/obj/item/pda/verb/verb_toggle_light()
+	set name = "Toggle Light"
+	set category = "Object"
+	set src in usr
+
+	toggle_light()
+
 
 /obj/item/pda/update_icon()
 	cut_overlays()
@@ -452,15 +478,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 //MAIN FUNCTIONS===================================
 
 			if("Light")
-				if(issilicon(usr) || !usr.canUseTopic(src, BE_CLOSE))
-					return
-				if(fon)
-					fon = FALSE
-					set_light(0)
-				else if(f_lum)
-					fon = TRUE
-					set_light(f_lum)
-				update_icon()
+				toggle_light()
 			if("Medical Scan")
 				if(scanmode == PDA_SCANNER_MEDICAL)
 					scanmode = PDA_SCANNER_NONE

@@ -180,3 +180,41 @@ datum/atom_hud/alternate_appearance/basic/onePerson
 	..(key, I, FALSE)
 	seer = M
 	add_hud_to(seer)
+
+
+/datum/atom_hud/alternate_appearance/basic/landmines/ordinary/mobShouldSee(mob/M)
+	if (M.special_p > 3 && M.special_p < 7)
+		return TRUE
+	return FALSE
+
+
+/datum/atom_hud/alternate_appearance/basic/landmines/ordinary/New()
+	..()
+	for(var/mob in GLOB.player_list)
+		if(mobShouldSee(mob))
+			add_hud_to(mob)
+
+
+/datum/atom_hud/alternate_appearance/basic/landmines/large/mobShouldSee(mob/M)
+	if (M.special_p >= 7)
+		return TRUE
+	return FALSE
+
+
+/datum/atom_hud/alternate_appearance/basic/landmines/large/New()
+	..()
+	for(var/mob in GLOB.player_list)
+		if(mobShouldSee(mob))
+			add_hud_to(mob)
+
+/datum/atom_hud/alternate_appearance/basic/landmines/small/mobShouldSee(mob/M)
+	if (M.special_p <= 3)
+		return TRUE
+	return FALSE
+
+
+/datum/atom_hud/alternate_appearance/basic/landmines/small/New()
+	..()
+	for(var/mob in GLOB.player_list)
+		if(mobShouldSee(mob))
+			add_hud_to(mob)

@@ -8,7 +8,7 @@
 
 /obj/item/clothing/glasses/changeling
 	name = "flesh"
-	item_flags = NODROP
+	item_flags = DROPDEL
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/glasses/changeling/attack_hand(mob/user)
@@ -20,7 +20,7 @@
 
 /obj/item/clothing/under/changeling
 	name = "flesh"
-	item_flags = NODROP
+	item_flags = DROPDEL
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/under/changeling/attack_hand(mob/user)
@@ -32,7 +32,7 @@
 
 /obj/item/clothing/suit/changeling
 	name = "flesh"
-	item_flags = NODROP
+	item_flags = DROPDEL
 	allowed = list(/obj/item/changeling)
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
@@ -45,7 +45,7 @@
 
 /obj/item/clothing/head/changeling
 	name = "flesh"
-	item_flags = NODROP
+	item_flags = DROPDEL
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/head/changeling/attack_hand(mob/user)
@@ -57,7 +57,7 @@
 
 /obj/item/clothing/shoes/changeling
 	name = "flesh"
-	item_flags = NODROP
+	item_flags = DROPDEL
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/shoes/changeling/attack_hand(mob/user)
@@ -69,7 +69,7 @@
 
 /obj/item/clothing/gloves/changeling
 	name = "flesh"
-	item_flags = NODROP
+	item_flags = DROPDEL
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/gloves/changeling/attack_hand(mob/user)
@@ -81,7 +81,7 @@
 
 /obj/item/clothing/mask/changeling
 	name = "flesh"
-	item_flags = NODROP
+	item_flags = DROPDEL
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/mask/changeling/attack_hand(mob/user)

@@ -2,7 +2,7 @@
 	name = "metal armor"
 	result = /obj/item/clothing/suit/armor/f13/metalarmor
 	reqs = list(/obj/item/stack/sheet/leather = 1,
-				/obj/item/stack/sheet/durathread = 5,
+				/obj/item/stack/sheet/cloth = 5,
 				/obj/item/stack/crafting/metalparts = 5)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
@@ -24,7 +24,7 @@
 	name = "metal mask"
 	result = /obj/item/clothing/head/helmet/f13/metalmask
 	reqs = list(/obj/item/stack/sheet/leather = 1,
-				/obj/item/stack/sheet/durathread = 1,
+				/obj/item/stack/sheet/cloth = 1,
 				/obj/item/stack/crafting/metalparts = 2)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
@@ -94,6 +94,7 @@
 	time = 60
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
+
 
 /*
 /datum/crafting_recipe/supaflyhelm_reinforced
@@ -420,6 +421,17 @@
 	result = /obj/item/storage/belt/holster
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/sheet/hay = 3)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+
+/datum/crafting_recipe/shotgunbandolier
+	name = "shotgun bandolier"
+	result = /obj/item/storage/belt/bandolier/shotgun
+	reqs = list(/obj/item/stack/sheet/hay = 2,
+				/obj/item/stack/sheet/cloth = 2,
+				/obj/item/storage/belt = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 15
 	category = CAT_CLOTHING

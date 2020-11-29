@@ -315,6 +315,7 @@ Raider
 	suit = /obj/item/clothing/suit/armor/f13/exile/bosexile
 	uniform = /obj/item/clothing/under/syndicate
 	id = /obj/item/card/id/rusted/brokenholodog
+	belt = /obj/item/stealthboy/makeshift
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2)
@@ -369,6 +370,8 @@ Raider
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/ammo_box/magazine/m10mm_adv=3)
+
+/obj/item/stealthboy/makeshift
 
 /datum/job/wasteland/f13wastelander
 	title = "Wastelander"

@@ -6,7 +6,7 @@
 	pressure_resistance = 10
 
 	typing_indicator_enabled = TRUE
-	
+
 	var/resize = 1 //Badminnery resize
 	var/lastattacker = null
 	var/lastattackerckey = null
@@ -117,3 +117,7 @@
 	var/list/disease_resistances = list()
 
 	var/is_busy = FALSE //Used for random actions that take time. ex: curbstomping. We need to make sure we can only do one of these at a time.
+
+	var/murder = null // Дворецкий
+
+	var/datum/experience/experience

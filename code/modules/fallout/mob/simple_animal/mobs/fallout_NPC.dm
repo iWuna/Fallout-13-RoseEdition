@@ -25,7 +25,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/vault)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
-	faction = list("vault", "city")
+	faction = list("vault", "city", "Vault")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
 	del_on_death = 1
@@ -264,7 +264,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/bs)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
-	faction = list("bs", "city", "vault")
+	faction = list("BOS", "city", "vault", "Town", "Vault")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
 	del_on_death = 1
@@ -352,7 +352,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/ncr)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
-	faction = list("NCR", "Town", "Followers", "Vault", "Wastelander")
+	faction = list("NCR", "Town", "Followers", "vault", "Wastelander", "city", "Vault")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
 	del_on_death = 1
@@ -442,7 +442,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/legion)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
-	faction = list("hostile")
+	faction = list("hostile", "Legion")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
 	del_on_death = 1
@@ -563,7 +563,7 @@
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	loot = list(/obj/effect/mob_spawn/human/corpse/raidermelee, /obj/effect/spawner/lootdrop/f13/cash_random_low)
 	unsuitable_atmos_damage = 15
-	faction = list("raiders")
+	faction = list("raiders", "Raiders", "Raider")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
 	del_on_death = 1

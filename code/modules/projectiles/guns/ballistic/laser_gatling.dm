@@ -14,7 +14,7 @@
 	var/obj/item/gun/ballistic/minigun/gun
 	var/armed = 0 //whether the gun is attached, 0 is attached, 1 is the gun is wielded.
 	var/overheat = 0
-	var/overheat_max = 35
+	var/overheat_max = 50
 	var/heat_diffusion = 1.5
 
 /obj/item/minigunpack/Initialize()
@@ -105,7 +105,7 @@
 	materials = list()
 	burst_size = 1
 	automatic = 0
-	fire_delay = 1.5
+	fire_delay = 0.7
 	spread = 40
 	weapon_weight = WEAPON_HEAVY
 	fire_sound = 'sound/weapons/laser.ogg'

@@ -1,3 +1,11 @@
+/obj/wreckage/vertibird
+	name = "VB-02"
+	icon = 'icons/fallout/vehicles/vertibird.dmi'
+	icon_state = "vb-crashed"
+	pixel_x = -128
+	pixel_y = -64
+	layer = 4
+
 /obj/vertibird
 	name = "VB-02"
 	icon = 'icons/fallout/vehicles/vertibird.dmi'

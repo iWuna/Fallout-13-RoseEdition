@@ -897,16 +897,19 @@
 		var/string
 		if(logout && CONFIG_GET(flag/announce_admin_logout))
 			string = pick(
-				"Admin logout: [key_name(src)]")
+				"Педаль съебалась: [key_name(src)]")
 		else if(!logout && CONFIG_GET(flag/announce_admin_login) && (prefs.toggles & ANNOUNCE_LOGIN))
-			if(ckey == "iwuna")
+			if(ckey == "iWuna")
 				string = pick(
 					"ГЭНГ БЭНГ БЭНГ, ВУНА В ЗДАНИИ")
-			if(ckey == "vanotyan")
+			if(ckey == "VanoTyan")
 				string = pick(
 					"Ванотян хуй жрал")
+			if(ckey == "Kerststf")
+				string = pick(
+					"Вечер в хату, Чифир в здании")
 			else
 				string = pick(
-					"Admin login: [key_name(src)]")
+					"Педаль зашла: [key_name(src)]")
 		if(string)
 			message_admins("[string]")

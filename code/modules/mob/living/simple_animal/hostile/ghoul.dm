@@ -38,6 +38,8 @@
 	idlesound = list('sound/f13npc/ghoul/idle.ogg')
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
 
+	XP = 15
+
 /mob/living/simple_animal/hostile/ghoul/Initialize()
 	. = ..()
 	icon_state = "retro_ghoul-[rand(1,10)]"

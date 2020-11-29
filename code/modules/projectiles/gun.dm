@@ -16,7 +16,7 @@
 	item_flags = NEEDS_PERMIT
 	attack_verb = list("struck", "hit", "bashed")
 	item_flags = SLOWS_WHILE_IN_HAND
-	
+
 	var/gunslinger = FALSE
 	var/fire_sound = "gunshot"
 	var/suppressed = null					//whether or not a message is displayed when fired
@@ -39,7 +39,7 @@
 	var/distro = 0						//Affects distance between shotgun pellets, ignore unless you're altering shotguns
 	var/extra_damage = 0				//Number to add to individual bullets.
 	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
-	var/projectile_speed = 0.8			//Speed of the projectiles shot from gun in deciseconds per 1 tile
+	var/projectile_speed = 0.4			//Speed of the projectiles shot from gun in deciseconds per 1 tile (Нормальное значение 0.8)
 
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
@@ -95,7 +95,7 @@
 	build_zooming()
 
 /obj/item/gun/New()
-	. = ..()	
+	. = ..()
 	src.slowdown = (w_class / 5)
 	if(gunslinger)
 		src.slowdown = 0.05
@@ -206,6 +206,10 @@
 		to_chat(user, "<span class='userdanger'>You need both hands free to fire [src]!</span>")
 		return
 
+	if(user.special_s<2)
+		to_chat(user, "<span class='userdanger'>You can't pull the trigger, you too weak!</span>")
+		return
+
 	//DUAL (or more!) WIELDING
 	var/bonus_spread = 0
 	var/loop_counter = 0
@@ -307,6 +311,8 @@
 		randomized_gun_spread =	rand(0,spread)
 	if(user.has_trait(TRAIT_POOR_AIM)) //nice shootin' tex
 		bonus_spread += 60
+	if(user.special_s<3)
+		bonus_spread += 20
 	var/randomized_bonus_spread = rand(0, bonus_spread)
 
 	if(burst_size > 1)
@@ -537,6 +543,13 @@
 	var/mob/living/carbon/human/user = usr
 	gun_light.on = !gun_light.on
 	to_chat(user, "<span class='notice'>You toggle the gunlight [gun_light.on ? "on":"off"].</span>")
+
+	if(user.special_l < 3)
+		switch(rand(1,5))
+			if(3)
+				to_chat(user,"When you tried turn on flashlight, you hear only click. Nothing happen. Try again.")
+				playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+				return
 
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_gunlight(user)

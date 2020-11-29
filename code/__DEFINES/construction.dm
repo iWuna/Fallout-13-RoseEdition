@@ -109,6 +109,7 @@
 #define CAT_SHOES "Shoes"
 #define CAT_MISCCLOTHING "Misc Clothing"
 #define CAT_ARMOR "Armor"
+#define CAT_HULKY "Hulky"
 #define CAT_WASTELAND	"Wasteland Clothing"
 #define CAT_FOOD	"Foods"
 #define CAT_BREAD	"Breads"

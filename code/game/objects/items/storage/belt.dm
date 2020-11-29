@@ -531,6 +531,52 @@
 		/obj/item/ammo_casing
 		))
 
+/obj/item/storage/belt/bandolier/shotgun
+	name = "shotgun bandolier"
+	desc = "A bandolier for holding shotgun ammunition."
+	icon_state = "bandolier"
+	item_state = "bandolier"
+
+
+/obj/item/storage/belt/bandolier/shotgun/ComponentInitialize()
+	. = ..()
+	GET_COMPONENT(STR, /datum/component/storage)
+	STR.max_items = 14
+	STR.display_numerical_stacking = FALSE
+	STR.can_hold = typecacheof(list(
+		/obj/item/ammo_casing/shotgun
+		))
+
+
+/obj/item/storage/belt/bandolier/shotgun/attackby(obj/item/A, mob/user, params, silent = FALSE, replace_spent = 0)
+	var/num_loaded = 0
+	if (is_type_in_list(A, list(/obj/item/storage/box/rubbershot/beanbag,
+	 							 /obj/item/storage/box/lethalshot,
+								 /obj/item/storage/box/magnumshot,
+								 /obj/item/storage/box/slugshot,
+								 /obj/item/storage/box/beanbag)))
+		GET_COMPONENT(STR, /datum/component/storage)
+		var/obj/item/storage/box/AM = A
+		for(var/obj/item/ammo_casing/shotgun/AC in AM.contents)
+			if (!STR.can_be_inserted(AC, TRUE, user))
+				break
+			user.transferItemToLoc(AC, src, TRUE)
+			num_loaded++
+	if(istype(A, /obj/item/ammo_casing/shotgun))
+		GET_COMPONENT(STR, /datum/component/storage)
+		var/obj/item/ammo_casing/shotgun/AC = A
+		if (STR.can_be_inserted(AC, TRUE, user))
+			user.transferItemToLoc(AC, src, TRUE)
+			num_loaded++
+	if(num_loaded)
+		if(!silent)
+			to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
+			playsound(src, 'sound/weapons/shotguninsert.ogg', 60, 1)
+		A.update_icon()
+		update_icon()
+	. = ..()
+
+
 /obj/item/storage/belt/holster
 	name = "shoulder holster"
 	desc = "A holster to carry a handgun and ammo. WARNING: Badasses only."

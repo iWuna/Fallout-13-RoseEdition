@@ -48,11 +48,23 @@
 		M.visible_message("<span class='danger'>[user] feeds the contents of [src] to [M].</span>", "<span class='userdanger'>[user] feeds the contents of [src] to [M].</span>")
 		add_logs(user, M, "fed", reagents.log_list())
 
+	SEND_SIGNAL(src, COMSIG_DRINK_DRANK, M, user)
 	var/fraction = min(gulp_size/reagents.total_volume, 1)
 	checkLiked(fraction, M)
 	reagents.reaction(M, INGEST, fraction)
 	reagents.trans_to(M, gulp_size)
 	playsound(M.loc,'sound/items/drink.ogg', rand(10,50), 1)
+	if(iscarbon(M))
+		var/mob/living/carbon/carbon_drinker = M
+		var/list/diseases = carbon_drinker.get_static_viruses()
+		if(LAZYLEN(diseases))
+			var/list/datum/disease/diseases_to_add = list()
+			for(var/d in diseases)
+				var/datum/disease/malady = d
+				if(malady.spread_flags & DISEASE_SPREAD_CONTACT_FLUIDS)
+					diseases_to_add += malady
+			if(LAZYLEN(diseases_to_add))
+				AddComponent(/datum/component/infective, diseases_to_add)
 	return 1
 
 /obj/item/reagent_containers/food/drinks/afterattack(obj/target, mob/user , proximity)

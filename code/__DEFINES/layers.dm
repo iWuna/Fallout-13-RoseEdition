@@ -6,13 +6,12 @@
 #define PLANE_SPACE -95
 #define PLANE_SPACE_PARALLAX -90
 
+#define FLOOR_PLANE -2
 #define GAME_PLANE -1
 #define BLACKNESS_PLANE 0 //To keep from conflicts with SEE_BLACKNESS internals
 #define SPACE_LAYER 1.8
 //#define TURF_LAYER 2 //For easy recordkeeping; this is a byond define
 #define MID_TURF_LAYER 2.02
-#define ABOVE_MID_TURF_LAYER 2.025
-#define ABOVE_ABOVE_MID_TURF_LAYER 2.0275
 #define HIGH_TURF_LAYER 2.03
 #define TURF_PLATING_DECAL_LAYER 2.031
 #define TURF_DECAL_LAYER 2.039 //Makes turf decals appear in DM how they will look inworld.
@@ -77,11 +76,8 @@
 #define MASSIVE_OBJ_LAYER 11
 #define POINT_LAYER 12
 
-#define LIGHTING_PLANE -3
-#define FLOOR_PLANE -1
+#define LIGHTING_PLANE 15
 #define LIGHTING_LAYER 15
-
-#define SUNLIGHTING_PLANE -2
 
 #define ABOVE_LIGHTING_PLANE 16
 #define ABOVE_LIGHTING_LAYER 16

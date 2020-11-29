@@ -169,6 +169,20 @@
 	mob_tar.health += -15
 */
 
+/datum/quirk/wild_wasteland
+	name = "Wild Wasteland"
+	desc = "Shit happens around you. (admin license to make your life spicy)."
+	value = 0
+	mob_trait = TRAIT_WILDWASTELAND
+	gain_text = "<span class='danger'>You feel yourself more intresting for gods.</span>"
+	lose_text = "<span class='danger'>You feel less intresting for gods.</span>"
+
+/datum/quirk/wild_wasteland/on_spawn()
+	var/mob/living/carbon/human/mob_tar = quirk_holder
+	mob_tar.maxHealth += 5
+	mob_tar.health += 5
+	message_admins("Расчехляем щитспавнилки, [key_name(usr)] берет перк ДИКАЯ ПУСТОШЬ, НУ-КА ПАМАЦАЕМ!")
+
 /datum/quirk/mute
 	name = "Mute"
 	desc = "You have entirely lost the ability to speak. How unfortunate!"

@@ -78,6 +78,8 @@
 #define	TRAIT_LIFEGIVER			"lifegiver"
 #define TRAIT_UNDERPREPARED		"underprepared"
 
+#define TRAIT_WILDWASTELAND		"wild_wasteland"
+
 #define	TRAIT_CHEMWHIZ			"chemwhiz"
 #define TRAIT_TECHNOPHOBE		"luddite" //Cannot use autolathes/biogens
 #define TRAIT_TECHNOPHREAK		"technophreak"	//needed to use the autolathe, renamed and sprited 30/06/2020

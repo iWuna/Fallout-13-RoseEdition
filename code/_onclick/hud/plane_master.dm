@@ -26,7 +26,7 @@
 	name = "game world plane master"
 	plane = GAME_PLANE
 	appearance_flags = PLANE_MASTER //should use client color
-	blend_mode = BLEND_MULTIPLY//BLEND_OVERLAY
+	blend_mode = BLEND_OVERLAY
 
 /obj/screen/plane_master/game_world/backdrop(mob/mymob)
 	filters = list()
@@ -36,30 +36,8 @@
 /obj/screen/plane_master/lighting
 	name = "lighting plane master"
 	plane = LIGHTING_PLANE
-	blend_mode = BLEND_OVERLAY//BLEND_MULTIPLY
+	blend_mode = BLEND_MULTIPLY
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-
-/obj/screen/plane_master/sunlighting
-	name = "sunlighting plane master"
-	plane = SUNLIGHTING_PLANE
-	blend_mode = BLEND_ADD
-	//invisibility     = INVISIBILITY_LIGHTING
-	//appearance_flags = NO_CLIENT_COLOR | RESET_TRANSFORM | RESET_ALPHA | PLANE_MASTER
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-
-/obj/screen/plane_master/sunlighting/New()
-	. = ..()
-	color = SSsunlight.current_color
-	SSsunlight.sunlighting_planes |= src
-
-/obj/screen/plane_master/sunlighting/Destroy()
-	SSsunlight.sunlighting_planes -= src
-	. = ..()
-/*
-/obj/screen/plane_master/sunlighting/backdrop(mob/mymob)
-	mymob.overlay_fullscreen("lighting_backdrop_lit", /obj/screen/fullscreen/lighting_backdrop/lit)
-	mymob.overlay_fullscreen("lighting_backdrop_unlit", /obj/screen/fullscreen/lighting_backdrop/unlit)
-*/
 
 /obj/screen/plane_master/parallax
 	name = "parallax plane master"

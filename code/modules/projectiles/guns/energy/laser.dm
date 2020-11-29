@@ -213,7 +213,7 @@
 	scopestate = "AEP7_scope"
 	scope_x_offset = 12
 	scope_y_offset = 20
-	fire_delay = 3
+	fire_delay = 1.5 //Default 3
 	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
@@ -228,7 +228,7 @@
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
-	fire_delay = 3
+	fire_delay = 1.5 //Default 3
 	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun)
 	cell_type = /obj/item/stock_parts/cell/ammo/ultracite
@@ -242,7 +242,7 @@
 	item_state = "laser-pistol"
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
-	fire_delay = 2
+	fire_delay = 1
 	can_scope = TRUE
 	scopestate = "AEP7_scope"
 	scope_x_offset = 7
@@ -258,7 +258,7 @@
 	item_state = "laser-pistol"
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
-	fire_delay = 2
+	fire_delay = 1
 	scope_x_offset = 7
 	scope_y_offset = 22
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/ultra_pistol)
@@ -283,7 +283,7 @@
 	desc = "A modified AER9 equipped with a refraction kit that spreads its bolts. It is usually only given to high-ranking soldiers within the Brotherhood, due to it's level of technology, as well as its reputation of friendly fire."
 	icon_state = "tribeam"
 	item_state = "laser-rifle9"
-	fire_delay = 3
+	fire_delay = 1.5
 	equipsound = 'sound/f13weapons/equipsounds/tribeamequip.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
@@ -294,7 +294,7 @@
 	name ="plasma rifle"
 	item_state = "plasma"
 	icon_state = "plasma"
-	fire_delay = 3.5
+	fire_delay = 2.5
 	desc = "A top of line miniaturized plasma caster built by REPCONN in the wake of the Z43-521P failure. It is supperior to all previous rifles to enter service in the USCC."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
@@ -315,7 +315,7 @@
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	projectile_speed = 1.6
+	projectile_speed = 1.5
 	can_scope = TRUE
 	scopestate = "plasma_scope"
 	scope_x_offset = 13
@@ -460,7 +460,7 @@
 	desc = "The Laser Assister Energy Rifle is a powerful pre-war weapon developed just before the turn of the Great War. Due to its incredible rarity and unprecedented firepower, the weapon is coveted and nearly solely possesed by the Brotherhood of Steel; typically held by an Elder as a status symbol."
 	icon_state = "laer"
 	item_state = "laer"
-	fire_delay = 3
+	fire_delay = 1.5
 	burst_size = 1
 	equipsound = 'sound/f13weapons/equipsounds/laerequip.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/laer)
@@ -477,7 +477,7 @@
 	scopestate = "AEP7_scope"
 	scope_x_offset = 12
 	scope_y_offset = 20
-	fire_delay = 3.5
+	fire_delay = 2
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer14)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc

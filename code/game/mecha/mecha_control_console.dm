@@ -29,7 +29,7 @@
 		dat += "<a href='?src=[REF(src)];return=1'>Return</a><hr>"
 		dat += "[stored_data]"
 
-	dat += "<A href='?src=[REF(src)];refresh=1'>(Refresh)</A><BR>"
+	dat += "<A href='?src=[REF(src)];refresh=1'>Refresh</A><BR>"
 	dat += "</body></html>"
 
 	user << browse(dat, "window=computer;size=400x500")

@@ -319,9 +319,12 @@
 				/obj/item/clothing/suit/armor/f13/sulphitearmor,
 				/obj/item/clothing/head/helmet/f13/sulphitehelm
 				)
+	var/loot10= list(
+				/obj/item/stealthboy/makeshift
+				)
 
 /obj/effect/spawner/lootdrop/f13/armor/tier3/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9)
+	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10)
 	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/armor/tier4 //TIER 4 ARMOR
@@ -347,9 +350,13 @@
 				/obj/item/clothing/suit/armor/f13/power_armor/hotrod,
 				/obj/item/clothing/head/helmet/f13/power_armor/hotrod
 				)
+	var/loot6 = list(
+				/obj/item/stealthboy,
+				/obj/item/storage/pill_bottle/chem_tin/mentats
+				)
 
 /obj/effect/spawner/lootdrop/f13/armor/tier4/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5)
+	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6)
 	. = ..()
 
 
@@ -364,9 +371,14 @@
 				/obj/item/clothing/suit/armor/f13/power_armor/t51b,
 				/obj/item/clothing/head/helmet/f13/power_armor/t51b
 				)
+	var/loot3 = list(
+				/obj/item/stealthboy/mk2,
+				/obj/item/storage/pill_bottle/chem_tin/mentats,
+				/obj/item/storage/pill_bottle/chem_tin/mentats
+				)
 
 /obj/effect/spawner/lootdrop/f13/armor/tier5/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2)
+	loot = pick(loot1, loot2, loot3)
 	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/armor/random

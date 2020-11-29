@@ -184,8 +184,18 @@
 		I.plane = old_plane
 		current_button.appearance_cache = I.appearance
 
+
+/datum/action/item_action/toggle_stealthboy
+	name = "Toggle Stealth Boy"
+
+
 /datum/action/item_action/toggle_light
 	name = "Toggle Light"
+
+/datum/action/item_action/toggle_light/pda/Trigger()
+	if (target)
+		var/obj/item/pda/p = target
+		p.toggle_light()
 
 /datum/action/item_action/toggle_hood
 	name = "Toggle Hood"

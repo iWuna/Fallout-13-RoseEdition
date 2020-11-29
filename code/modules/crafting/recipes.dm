@@ -390,6 +390,17 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO_ONE
 
+/datum/crafting_recipe/tommymag
+	name = "empty drum magazine (.45)"
+	result = /obj/item/ammo_box/magazine/tommygunm45/empty
+	reqs = list(/obj/item/stack/sheet/metal = 5)
+	traits = list(TRAIT_GUNSMITH_TWO)
+	tools = list(TOOL_WORKBENCH, TOOL_GUNTIER4)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO_ONE
+
+
 /datum/crafting_recipe/greasegunmag
 	name = "empty grease submachine gun magazine (.45)"
 	result = /obj/item/ammo_box/magazine/greasegun/empty
@@ -1548,6 +1559,16 @@
 				/obj/item/crafting/abraxo = 1,
 				/datum/reagent/water = 50)
 	tools = list(TOOL_WELDER)
+	time = 10
+	category = CAT_MISC
+	subcategory = CAT_MISC
+
+/datum/crafting_recipe/trashbag
+	name = "trash bag"
+	result = /obj/item/storage/bag/trash
+	reqs = list(/obj/item/stack/sheet/plastic = 2,
+				/obj/item/stack/sheet/cloth = 2
+				)
 	time = 10
 	category = CAT_MISC
 	subcategory = CAT_MISC
@@ -4124,4 +4145,4 @@
 	tools = list(TOOL_WORKBENCH)
 	time = 25
 	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO_ONE
+	subcategory = CAT_WEAPON

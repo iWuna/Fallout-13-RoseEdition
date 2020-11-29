@@ -673,6 +673,9 @@
 	scan_range = 8
 	req_access = list(ACCESS_ENCLAVE)
 
+/obj/machinery/porta_turret/enclave/setup()
+	return
+
 /obj/machinery/porta_turret/syndicate/energy
 	icon_state = "standard_stun"
 	base_icon_state = "standard"

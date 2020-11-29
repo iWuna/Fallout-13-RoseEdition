@@ -131,14 +131,14 @@
 					msg = blind_message
 				else
 					continue
-
+/*
 			else if(T.lighting_object)
 				if(T.lighting_object.invisibility <= M.see_invisible && T.is_softly_lit()) //the light object is dark and not invisible to us
 					if(blind_message)
 						msg = blind_message
 					else
 						continue
-
+*/
 		M.show_message(msg,1,blind_message,2)
 
 // Show a message to all mobs in earshot of this one
@@ -539,8 +539,6 @@
 			var/ETA = SSshuttle.emergency.getModeStr()
 			if(ETA)
 				stat(null, "[ETA] [SSshuttle.emergency.getTimerStr()]")
-		if(SSsunlight && SSsunlight.current_step_datum)
-			stat(null, "Time of Day: [SSsunlight.current_step_datum.name]")
 
 	if(client && client.holder)
 		if(statpanel("MC"))

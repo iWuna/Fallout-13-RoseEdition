@@ -9,7 +9,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	//doohickeys for savefiles
 	var/path
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
-	var/max_save_slots = 4 // lucky number
+	var/max_save_slots = 8 // lucky number
 
 	//non-preference stuff
 	var/muted = 0
@@ -2287,6 +2287,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.has_dick = has_dick
 	character.has_vulva = has_vulva
 	character.has_breast = has_breast
+
+
+	character.maxHealth = initial(character.maxHealth) * (1 + special_e * 0.05)
+	character.health = initial(character.health) * (1 + special_e * 0.05)
 
 	character.eye_color = eye_color
 	var/obj/item/organ/eyes/organ_eyes = character.getorgan(/obj/item/organ/eyes)

@@ -101,6 +101,7 @@ Tribal Shaman
 	r_pocket = /obj/item/kitchen/knife/ritualdagger
 	r_hand = /obj/item/twohanded/sledgehammer/shamanstaff
 	id = 		/obj/item/card/id/tribetattoo
+	belt = /obj/item/stealthboy
 	backpack_contents = list(
 		/obj/item/book/granter/trait/spirit_teachings=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,

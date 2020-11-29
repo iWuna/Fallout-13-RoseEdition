@@ -16,9 +16,6 @@
 		to_chat(user, "<span class='warning'>You planted [name]!</span>")
 		visible_message("<span class='danger'>[user] planted [src]!</span>")
 		playsound(user.loc, 'sound/weapons/armbomb.ogg', 60, 1)
-		active = 1
-		icon_state = initial(icon_state) + "_active"
-		add_fingerprint(user)
 
 		var/turf/bombturf = get_turf(src)
 		var/area/A = get_area(bombturf)
@@ -28,8 +25,9 @@
 		log_game("[key_name(usr)] has primed a [name] for detonation at [A.name] [COORD(bombturf)].")
 
 		if(user)
-			user.dropItemToGround(src)
-			anchored = 1
+			user.deleteWornItem(src)
+			var/obj/item/grenade/bettermine/explosive/planted/p = new(user.loc)
+			p.add_fingerprint(user)
 
 /obj/item/grenade/bettermine/proc/triggermine(mob/victim)
 	if(triggered)
@@ -52,6 +50,8 @@
 				var/mob/MM = AM
 				if(!(MM.movement_type & FLYING))
 					triggermine(AM)
+				if(!MM.special_a > 8)
+					triggermine(AM)
 			else
 				triggermine(AM)
 
@@ -67,6 +67,34 @@
 	anchored = 1
 	icon_state = "landmine_active"
 
+
+/obj/item/grenade/bettermine/explosive/planted/proc/add_appearance()
+	var/image/I = image(icon = 'icons/obj/betaadvanced.dmi', icon_state = "landmine_active", loc = src)
+	I.override = TRUE
+	add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/landmines/ordinary, "landmine_ordinary", I)
+
+	var/image/I2 = image(icon = 'icons/obj/betaadvanced.dmi', icon_state = "landmine_active", loc = src)
+	I2.override = TRUE
+	I2.add_overlay(mutable_appearance('icons/mob/talk.dmi', "combat"))
+	add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/landmines/large, "landmine_large", I2)
+
+	var/image/I3 = image(icon = 'icons/obj/betaadvanced.dmi', icon_state = "landmine_active", loc = src)
+	I3.override = TRUE
+	I3.alpha = 80
+	add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/landmines/small, "landmine_small", I3)
+
+
+/obj/item/grenade/bettermine/explosive/planted/proc/remove_appearance()
+	remove_alt_appearance("landmine_small")
+	remove_alt_appearance("landmine_ordinary")
+	remove_alt_appearance("landmine_large")
+
+
+/obj/item/grenade/bettermine/explosive/planted/New()
+	. = ..()
+	add_appearance()
+
+
 /obj/item/grenade/bettermine/explosive/planted/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/shovel))
 		if(hidden == 0)
@@ -74,11 +102,14 @@
 				to_chat(user, "You covered landmine with some sand.")
 				icon_state = "landmine_hidden"
 				hidden = 1
+				remove_appearance()
 				return
 		else
 			if(do_after(user, 20, target = loc))
 				to_chat(user, "You uncovered landmine.")
 				icon_state = "landmine_active"
+				hidden = 0
+				add_appearance()
 				return
 	if(istype(I, /obj/item/screwdriver) && active)
 		to_chat(user, "You started carefully removing bolts from detonating plate.")
@@ -110,4 +141,23 @@
 					qdel(src)
 
 /obj/item/grenade/bettermine/explosive/mineEffect(mob/victim)
-	explosion(loc, range_devastation, range_heavy, range_light, range_flash)
+	// explosion(loc, range_devastation, range_heavy, range_light, range_flash)
+	var/mob/living/target = victim
+
+	explosion(target.loc, 0, 0, 0, 0, 3)
+	var/turf/open/floor/T = get_turf(target)
+	if(istype(T))
+		if(prob(80))
+			T.break_tile_to_plating()
+		else
+			T.break_tile()
+
+	if(!isliving(victim))
+		return
+
+	if(target.health <= 1)
+		target.gib(1, 1)
+	else
+		target.adjustBruteLoss(min(99,(target.health - 1)))
+		target.Knockdown(400)
+		target.stuttering = 20

@@ -89,6 +89,7 @@
 
 	var/shouldwakeup = FALSE //convenience var for forcibly waking up an idling AI on next check.
 
+	var/XP = 0
 
 	//domestication
 	var/tame = 0
@@ -309,6 +310,12 @@
 		return 1
 
 /mob/living/simple_animal/death(gibbed)
+	spawn(5)
+		if(murder)
+			if(istype(murder, /mob/living/carbon))
+				var/mob/living/carbon/carbonMurder = murder
+				if(carbonMurder.experience)
+					carbonMurder.experience.add(XP)
 	movement_type &= ~FLYING
 	if(nest)
 		nest.spawned_mobs -= src

@@ -1,31 +1,53 @@
 /datum/component/infective
-	dupe_mode = COMPONENT_DUPE_ALLOWED
+//	dupe_mode = COMPONENT_DUPE_ALLOWED
 	var/list/datum/disease/diseases //make sure these are the static, non-processing versions!
 	var/expire_time
 	var/min_clean_strength = CLEAN_WEAK
 
 /datum/component/infective/Initialize(list/datum/disease/_diseases, expire_in)
 	if(islist(_diseases))
-		diseases = diseases
+		diseases = _diseases
 	else
 		diseases = list(_diseases)
 	if(expire_in)
 		expire_time = world.time + expire_in
 		QDEL_IN(src, expire_in)
-	RegisterSignal(parent, COMSIG_MOVABLE_BUCKLE, .proc/try_infect_buckle)
-	RegisterSignal(parent, COMSIG_MOVABLE_BUMP, .proc/try_infect_Bump)
-	RegisterSignal(parent, COMSIG_MOVABLE_CROSSED, .proc/try_infect_crossed)
-	RegisterSignal(parent, COMSIG_ITEM_ATTACK_ZONE, .proc/try_infect_attack_zone)
-	RegisterSignal(parent, COMSIG_ITEM_ATTACK, .proc/try_infect_attack)
-	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, .proc/try_infect_equipped)
-	RegisterSignal(parent, COMSIG_MOVABLE_IMPACT_ZONE, .proc/try_infect_impact_zone)
-	RegisterSignal(parent, COMSIG_FOOD_EATEN, .proc/try_infect_eat)
+
+	if(!ismovable(parent))
+		return COMPONENT_INCOMPATIBLE
 	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, .proc/clean)
+	RegisterSignal(parent, COMSIG_MOVABLE_BUCKLE, .proc/try_infect_buckle)
+	RegisterSignal(parent, COMSIG_MOVABLE_BUMP, .proc/try_infect_collide)
+	RegisterSignal(parent, COMSIG_MOVABLE_CROSSED, .proc/try_infect_crossed)
+	RegisterSignal(parent, COMSIG_MOVABLE_IMPACT_ZONE, .proc/try_infect_impact_zone)
+	if(isitem(parent))
+		RegisterSignal(parent, COMSIG_ITEM_ATTACK_ZONE, .proc/try_infect_attack_zone)
+		RegisterSignal(parent, COMSIG_ITEM_ATTACK, .proc/try_infect_attack)
+		RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, .proc/try_infect_equipped)
+		if(istype(parent, /obj/item/reagent_containers/food/snacks))
+			RegisterSignal(parent, COMSIG_FOOD_EATEN, .proc/try_infect_eat)
+		else if(istype(parent, /obj/item/reagent_containers/food/drinks))
+			RegisterSignal(parent, COMSIG_DRINK_DRANK, .proc/try_infect_drink)
+		else if(istype(parent, /obj/item/reagent_containers/glass))
+			RegisterSignal(parent, COMSIG_GLASS_DRANK, .proc/try_infect_drink)
+	else if(istype(parent, /obj/effect/decal/cleanable/blood/gibs))
+		RegisterSignal(parent, COMSIG_GIBS_STREAK, .proc/try_infect_streak)
 
 /datum/component/infective/proc/try_infect_eat(mob/living/eater, mob/living/feeder)
 	for(var/V in diseases)
 		eater.ForceContractDisease(V)
 	try_infect(feeder, BODY_ZONE_L_ARM)
+
+/datum/component/infective/proc/try_infect_collide(datum/source, atom/A)
+	var/atom/movable/P = parent
+	if(P.throwing)
+		//this will be handled by try_infect_impact_zone()
+		return
+	if(isliving(A))
+		try_infect(A)
+
+/datum/component/infective/proc/try_infect_streak(datum/source, list/directions, list/output_diseases)
+	output_diseases |= diseases
 
 /datum/component/infective/proc/clean(clean_strength)
 	if(clean_strength >= min_clean_strength)
@@ -34,6 +56,13 @@
 /datum/component/infective/proc/try_infect_buckle(mob/M, force)
 	if(isliving(M))
 		try_infect(M)
+
+/datum/component/infective/proc/try_infect_drink(datum/source, mob/living/drinker, mob/living/feeder)
+	for(var/disease in diseases)
+		drinker.ForceContractDisease(disease)
+	var/appendage_zone = feeder.held_items.Find(source)
+	appendage_zone = appendage_zone == 0 ? BODY_ZONE_CHEST : appendage_zone % 2 ? BODY_ZONE_R_ARM : BODY_ZONE_L_ARM
+	try_infect(feeder, appendage_zone)
 
 /datum/component/infective/proc/try_infect_Bump(atom/A)
 	var/atom/movable/P = parent

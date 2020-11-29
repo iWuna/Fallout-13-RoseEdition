@@ -9,13 +9,13 @@ GLOBAL_VAR_INIT(total_runtimes_skipped, 0)
 	GLOB.total_runtimes++
 	
 	if(!istype(E)) //Something threw an unusual exception
-		log_world("uncaught runtime error: [E]")
+		log_world("uncaught runtime error: [E]\n[E.file] [E.line]")
 		return ..()
 	
 	//this is snowflake because of a byond bug (ID:2306577), do not attempt to call non-builtin procs in this if
 	if(copytext(E.name,1,32) == "Maximum recursion level reached")
 		//log to world while intentionally triggering the byond bug.
-		log_world("runtime error: [E.name]\n[E.desc]")
+		log_world("runtime error: [E.name]\n[E.desc]\n[E.file] [E.line]")
 		//if we got to here without silently ending, the byond bug has been fixed.
 		log_world("The bug with recursion runtimes has been fixed. Please remove the snowflake check from world/Error in [__FILE__]:[__LINE__]")
 		return //this will never happen.
@@ -127,6 +127,6 @@ GLOBAL_VAR_INIT(total_runtimes_skipped, 0)
 
 
 	// This writes the regular format (unwrapping newlines and inserting timestamps as needed).
-	log_runtime("runtime error: [E.name]\n[E.desc]")
+	log_runtime("runtime error: [E.name]\n[E.desc]\n[E.file] [E.line]")
 
 #endif
