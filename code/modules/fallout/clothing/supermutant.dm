@@ -69,7 +69,7 @@
 
 /obj/item/clothing/suit/armor/hulk/metal_armor
 	name = "metal armor"
-	icon_state = "metal_armor"
+	icon_state = "marcus_armor"
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 40, "energy" = 25, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 45, "acid" = 35)
 
 
@@ -139,6 +139,23 @@
 	icon_state = "lili_hat"
 	item_state = "lili_hat"
 	armor = list("melee" = 5, "bullet" = 10, "laser" = 5, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 20, "acid" = 10)
+	species_exception = list(/datum/species/supermutant)
+	species_exclusively = list(/datum/species/supermutant)
+
+/obj/item/clothing/head/helmet/hulk_pig
+	name = "pig mask"
+	desc = "Oink!"
+	icon_state = "hulk_pig"
+	item_state = "hulk_pig"
+	species_exception = list(/datum/species/supermutant)
+	species_exclusively = list(/datum/species/supermutant)
+
+
+/obj/item/clothing/head/helmet/hulk_ushanka
+	name = "ushanka"
+	desc = "Perfect for winter in Siberia, da?"
+	icon_state = "hulk_ushanka"
+	item_state = "hulk_ushanka"
 	species_exception = list(/datum/species/supermutant)
 	species_exclusively = list(/datum/species/supermutant)
 
@@ -215,3 +232,48 @@
 	icon_state = "marcus"
 	species_exception = list(/datum/species/supermutant)
 	species_exclusively = list(/datum/species/supermutant)
+
+
+/obj/item/clothing/head/helmet/f13/power_armor/hulk
+	species_exception = list(/datum/species/supermutant)
+	species_exclusively = list(/datum/species/supermutant)
+
+/obj/item/clothing/head/helmet/f13/power_armor/hulk/t45b
+	name = "salvaged T-45b helmet"
+	desc = "It's a salvaged T-45b power armor helmet."
+	icon_state = "hulk_salvage"
+	item_state = "hulk_salvage"
+	armor = list("melee" = 75, "bullet" = 60, "laser" = 30, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
+	darkness_view = 0
+	lighting_alpha = null
+	requires_training = FALSE
+
+
+/obj/item/clothing/head/helmet/f13/power_armor/hulk/t45braider
+	name = "raider T-45b power helmet"
+	desc = "This power armor helmet is so decrepit and battle-worn that it have lost most of its capability to protect the wearer from harm. This helmet seems to be heavily modified, heavy metal banding fused to the helmet"
+	icon_state = "hulk_pa_raider"
+	item_state = "hulk_pa_raider"
+	armor = list("melee" = 50, "bullet" = 45, "laser" = 30, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 50, "fire" = 0, "acid" = 0)
+	lighting_alpha = null
+	requires_training = FALSE
+
+
+/obj/item/clothing/head/helmet/f13/power_armor/hulk/t45bncr
+	name = "salvaged T-45b ncr helmet"
+	desc = "It's a salvaged T-45b power armor helmet."
+	icon_state = "hulk_salvage_ncr"
+	item_state = "hulk_salvage_ncr"
+	armor = list("melee" = 75, "bullet" = 60, "laser" = 30, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
+	darkness_view = 0
+	lighting_alpha = null
+	requires_training = FALSE
+
+
+/obj/item/clothing/head/helmet/f13/power_armor/t45d
+	name = "T-45d power helmet"
+	desc = "It's an old pre-War power armor helmet. It's pretty hot inside of it."
+	icon_state = "hulk_pa"
+	item_state = "hulk_pa"
+	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
+	

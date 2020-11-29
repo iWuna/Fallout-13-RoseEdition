@@ -11,7 +11,6 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_HULKY
 
-
 /datum/crafting_recipe/nightarmor
 	name = "nightkin armor"
 	result = /obj/item/clothing/suit/armor/hulk/night_armor
@@ -24,9 +23,6 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CLOTHING
 	subcategory = CAT_HULKY
-
-
-
 
 /datum/crafting_recipe/hulkmetalarmor
 	name = "hulky metal armor"
@@ -41,8 +37,6 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CLOTHING
 	subcategory = CAT_HULKY
-
-
 
 /datum/crafting_recipe/horriganarmor
 	name = "reinforced hulky armor"
@@ -95,7 +89,6 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_HULKY
 
-
 /datum/crafting_recipe/hulkt45raider
 	name = "raider T-45b power armor"
 	result = /obj/item/clothing/suit/armor/f13/power_armor/hulk/t45raider
@@ -107,9 +100,7 @@
 	time = 60
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CLOTHING
-	subcategory = CAT_HULKY
-
-	
+	subcategory = CAT_HULKY	
 
 /datum/crafting_recipe/hulchelmetcrude
 	name = "rusted hulky helmet"
@@ -147,6 +138,56 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_HULKY
 
+/datum/crafting_recipe/hulkt45d_helm
+	name = "T-45d power helmet"
+	result = /obj/item/clothing/head/helmet/f13/power_armor/t45d
+	reqs = list(/obj/item/clothing/head/helmet/f13/power_armor/t45d = 1,
+				/obj/item/stack/crafting/metalparts = 1,
+				/obj/item/stack/crafting/goodparts = 2
+				)
+	time = 60
+	tools = list(TOOL_AWORKBENCH)
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+/datum/crafting_recipe/hulkt45b_helm
+	name = "salvaged T-45b power helmet"
+	result = /obj/item/clothing/head/helmet/f13/power_armor/hulk/t45d
+	reqs = list(/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
+				/obj/item/stack/crafting/metalparts = 1,
+				/obj/item/stack/crafting/goodparts = 2
+				)
+	time = 60
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+/datum/crafting_recipe/hulkt45bncr_helm
+	name = "salvaged NCR power helmet"
+	result = /obj/item/clothing/head/helmet/f13/power_armor/hulk/t45bncr
+	reqs = list(/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
+				/obj/item/stack/crafting/metalparts = 1,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/sheet/cloth = 2
+				)
+	time = 60
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+/datum/crafting_recipe/hulkt45braider_helm
+	name = "raider T-45b power helmet"
+	result = /obj/item/clothing/head/helmet/f13/power_armor/hulk/t45braider
+	reqs = list(/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
+				/obj/item/stack/crafting/metalparts = 1,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/sheet/cloth = 1
+				)
+	time = 60
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
 /datum/crafting_recipe/hulkfarmer
 	name = "hulky farmer suit"
 	result = /obj/item/clothing/under/hulk/lili_clothes
@@ -167,7 +208,6 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_HULKY
 
-
 /datum/crafting_recipe/hulkblack
 	name = "black suit"
 	result = /obj/item/clothing/under/hulk/suit
@@ -185,7 +225,6 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_HULKY
 
-
 /datum/crafting_recipe/hulkleather
 	name = "leather suit"
 	result = /obj/item/clothing/under/hulk/leather
@@ -194,7 +233,6 @@
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_HULKY
-
 
 /datum/crafting_recipe/hulkstripped
 	name = "stripped suit"
@@ -213,7 +251,6 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_HULKY
 
-
 /datum/crafting_recipe/hulkrobe1
 	name = "hooded robe"
 	result = /obj/item/clothing/under/hulk/robe/hood
@@ -221,7 +258,6 @@
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_HULKY
-
 
 /datum/crafting_recipe/hulkvault
 	name = "hulky vault suit"
@@ -250,6 +286,24 @@
 				/obj/item/stack/sheet/hay = 3)
 	tools = list(TOOL_WORKBENCH)
 	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY	
+
+/datum/crafting_recipe/hulkushanka
+	name = "uskanka"
+	result = /obj/item/clothing/head/helmet/hulk_ushanka
+	reqs = list(/obj/item/stack/sheet/cloth = 2,
+				)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_HULKY
+
+/datum/crafting_recipe/hulkupig
+	name = "pig mask"
+	result = /obj/item/clothing/head/helmet/hulk_pig
+	reqs = list(/obj/item/stack/sheet/cloth = 3,
+				)
+	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_HULKY
 
@@ -291,7 +345,6 @@
 	time = 20
 	category = CAT_CLOTHING
 	subcategory = CAT_HULKY
-
 
 /datum/crafting_recipe/hulkheadset
 	name = "large radio headset"
