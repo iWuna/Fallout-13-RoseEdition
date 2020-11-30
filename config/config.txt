@@ -14,7 +14,7 @@ $include antag_rep.txt
 # There are various options which are hard-locked for security reasons.
 
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'tgstation' with the name of your choice.
-@SERVERNAME [RU/ENG] Fallout 13 - CBET ATOMA [REDUX]
+@SERVERNAME [RU] Fallout 13 - CBET ATOMA [REDUX]
 ## Napist Note: honestly all the display garbage should be setup to be handled via config, not in their own separate files. cross-ref code/game/world.dm #L245
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
@@ -230,7 +230,7 @@ ALLOW_WEBCLIENT
 DISCORDURL https://discord.gg/GEMmJYV
 
 ## Wiki address
-WIKIURL https://desert-rose-fallout-13.fandom.com/wiki/Desert_Rose_-_Fallout_13_Wiki
+WIKIURL http://fallout-13-official.wikidot.com/
 
 ## Rules address
 RULESURL https://discord.gg/GEMmJYV
@@ -392,10 +392,10 @@ AUTOADMIN_RANK Knight
 ## These trigger for any version below (non-inclusive) the given version, so 510 triggers on 509 or lower.
 ## These messages will be followed by one stating the clients current version and the required version for clarity.
 ## If CLIENT_WARN_POPUP is uncommented a popup window with the message will be displayed instead
-#CLIENT_WARN_VERSION 511
+#CLIENT_WARN_VERSION 513
 #CLIENT_WARN_POPUP
 #CLIENT_WARN_MESSAGE Byond released 511 as the stable release. You can set the framerate your client runs at, which makes the game feel very different and cool. Shortly after its release we will end up using 511 client features and you will be forced to update.
-CLIENT_ERROR_VERSION 512
+CLIENT_ERROR_VERSION 514
 CLIENT_ERROR_MESSAGE Your version of byond is not supported. Please upgrade.
 ## The minimum build needed for joining the server, if using 512, a good minimum build would be 1421 as that disables the Middle Mouse Button exploit.
 CLIENT_ERROR_BUILD 1421
