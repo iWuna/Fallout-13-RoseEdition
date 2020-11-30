@@ -39,7 +39,7 @@
 	var/distro = 0						//Affects distance between shotgun pellets, ignore unless you're altering shotguns
 	var/extra_damage = 0				//Number to add to individual bullets.
 	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
-	var/projectile_speed = 0.8			//Speed of the projectiles shot from gun in deciseconds per 1 tile
+	var/projectile_speed = 0.4			//Speed of the projectiles shot from gun in deciseconds per 1 tile (Нормальное значение 0.8)
 
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'

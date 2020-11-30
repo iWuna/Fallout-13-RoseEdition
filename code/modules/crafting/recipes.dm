@@ -390,6 +390,17 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO_ONE
 
+/datum/crafting_recipe/tommymag
+	name = "empty drum magazine (.45)"
+	result = /obj/item/ammo_box/magazine/tommygunm45/empty
+	reqs = list(/obj/item/stack/sheet/metal = 5)
+	traits = list(TRAIT_GUNSMITH_TWO)
+	tools = list(TOOL_WORKBENCH, TOOL_GUNTIER4)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO_ONE
+
+
 /datum/crafting_recipe/greasegunmag
 	name = "empty grease submachine gun magazine (.45)"
 	result = /obj/item/ammo_box/magazine/greasegun/empty
@@ -1569,16 +1580,6 @@
 				/obj/item/stack/crafting/electronicparts = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
-	category = CAT_MISC
-	subcategory = CAT_MISC
-
-/datum/crafting_recipe/headset
-	name = "large radio headset"
-	result = /obj/item/radio/headset/hulk
-	reqs = list(/obj/item/stack/sheet/metal = 3,
-				/obj/item/stack/crafting/electronicparts = 1)
-	tools = list(TOOL_WORKBENCH)
-	time = 15
 	category = CAT_MISC
 	subcategory = CAT_MISC
 

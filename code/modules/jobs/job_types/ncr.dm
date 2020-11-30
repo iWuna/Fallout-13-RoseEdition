@@ -4,9 +4,9 @@
 
 	access = list(ACCESS_NCR)
 	minimal_access = list(ACCESS_NCR)
-	forbids = "The NCR forbids: Chem and drug use such as jet or alcohol while on duty. Execution of unarmed or otherwise subdued targets without authorisation."
-	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republic's laws. Wearing the uniform."
-	objectivesList = list("Leadership recommends the following goal for this week: Establish an outpost at the radio tower","Leadership recommends the following goal for this week: Neutralize and capture dangerous criminals", "Leadership recommends the following goal for this week: Free slaves and establish good relations with unaligned individuals.")
+	forbids = "В НКР запрещено: Наркотики, препараты и алкоголь запрещены на службе. Расстрел безоружных, или сдавшихся элементов без разрешения. Нарушение дисциплины и уход в самоволку без официально увольнения или отпускного.."
+	enforces = "В НКР ожидается: Подчинение приказам начальства. Соблюдение законов Республики. Добросовестное обращение с военнопленными, запрет на их уничтожение без согласия руководства. Нахождение в униформе на службе. ."
+	objectivesList = list("Руководство поставило нам следующие цели: установить форпост на радиовышке, очистить её от рейдеров","Руководство поставило нам следующие цели: нейтрализуйте и поймайте опасные криминальные элементы", "Руководство поставило нам следующие цели: выследите работорговцев, спасите рабов и установите доверительные отношения с местными в регионе.","Руководство поставило нам следующие цели: укрепите силы НКР в регионе: укрепите базу, проведите разведку за Легионом, наладьте отношения с местными.")
 
 /datum/outfit/job/ncr/
 	name = "NCRdatums"
@@ -25,7 +25,7 @@ Colonel
 	flag = F13COLONEL
 	faction = "NCR"
 	head_announce = list("Security")
-	supervisors = "the general"
+	supervisors = "Генерал"
 	req_admin_notify = 1
 
 	total_positions = 0
@@ -72,7 +72,7 @@ Captain
 	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the commanding officer of your company and direct superior to the Veteran Ranger and Lieutenant. Coordinating with your staff, you must ensure that the objectives of High Command are completed to the letter. Working closely with your subordinates on logistics, mission planning and special operations with the Rangers, you are here to establish a strong foothold for the NCR within the region."
+	description = "Вы – командующий офицер местных сил в Пахрумпе. Вы попали в данное место за проступки, и как оказалось, в управление вам был дан штрафбат. В вашем распоряжении находится база и прилегающие территории в виде городка, жителей которого вы должны защищать. Лейтенанты, как и Рейнджеры – ваши прямые подчиненные (В случае с Рейнджерами, лучше поставить им определенные цели, ведь их основная цель в регионе немного отличнее от вашей, нежели кидать их в бой вместе с основными силами) Разрабатывая логистику, укрепляя базу и работая совместно с рейнджерами, вы проводите дисциплинарное воспитание штрафбата. Ваша главная цель – установить влияние НКР в регионе, что станет плацдармом для его контроля в будущем. Хоть вы и попали сюда за провинности, она была незначительна, вы должны соблюдать дисциплину в лагере, и следить за её порядком. В данном случае вам может помочь военная полиция НКР."
 	supervisors = "Colonel"
 	req_admin_notify = 1
 
@@ -145,8 +145,8 @@ Ambassador
 	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the political and diplomatic attaché to the NCR forces in the area. Though you are not part of the military, and should avoid conflict, you wield great bureaucratic power."
-	supervisors = "Colonel"
+	description = "Вы – дипломатическое лицо, и политический атташе для сил НКР в регионе. Вы не участвуете в конфликтах, и предпочитаете наоборот – их избегать. Ваша цель – наладить контакты с местными, и совместно с военными укрепить силы НКР в регионе. Вам известны проблемы с местным штрафбатом, так что вы будете гарантом законности. В случае, если капитан является абсолютно некомпетентным – военная полиция переходит под ваше управление. При её отсутствии, вам достаточно отправить рапорт в штаб. Помните, что у вас большое бюрократическое влияние. ."
+	supervisors = "Полковник и высшее руководство"
 	req_admin_notify = 1
 
 	exp_requirements = 100
@@ -178,11 +178,11 @@ Lieutenant
 /datum/job/ncr/f13lieutenant
 	title = "NCR Lieutenant"
 	flag = F13LIEUTENANT
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	faction = "NCR"
-	description = "You are the direct superior to the Sergeant and Enlisted, working with the Captain and under special circumstances, Rangers. You plan patrols, training and missions, working in some cases with Rangers in accomplishing objectives otherwise beyond the capabilities of ordinary enlisted personnel."
-	supervisors = "Captain and above"
+	description = "Вы напрямую руководите сержантским и рядовым составом. Вы подчиняетесь Капитану. В отсутствие капитана, вы тесно сотрудничаете с Рейнджерами. Вы поддерживаете дисциплину, разрабатываете патрули, планы, тренировки и миссии. Если есть задание, которое не могут выполнить командный состав, вы можете привлечь к участию рейнджеров.."
+	supervisors = "Капитан и выше"
 	selection_color = "#fff5cc"
 
 	exp_requirements = 500
@@ -285,8 +285,8 @@ Sergeant
 	total_positions = 2
 	spawn_positions = 2
 	faction = "NCR"
-	description = "You are the direct superior to the enlisted troops, working with the chain of command you echo the orders of your superiors and ensure that the enlisted follow them to the letter. Additionally, you are responsible for the wellbeing of the troops and their ongoing training with the NCR."
-	supervisors = "Lieutenants and above"
+	description = "Вы напрямую руководите рядовым составом, подчиняясь приказам Лейтенанта. Руководите рядовым составом, и следите за их исполнением рядовым составом, чтобы они исполняли их в точности. Так же в обязанности входит установка дисциплины в этом штрафбате. Вы несете ответственность за обучение, и благосостояние рядового состава войск НКР.."
+	supervisors = "Лейтенант и выше"
 	selection_color = "#fff5cc"
 
 	exp_requirements = 250
@@ -376,8 +376,8 @@ Corporal
 	faction = "NCR"
 	total_positions = 4
 	spawn_positions = 4
-	description = "You are an experienced junior NCO with a specialized skill set. You work closely with your squad, taking orders from your Sergeant to achieve the NCR's goals."
-	supervisors = "Sergeants and above"
+	description = "Вы – младший сержант, со специальным набором навыков (При выборе военной полиции вы остаетесь в приделах базы и подчиняетесь напрямую Капитану или же Администратору), в иных случаях вы подчиняетесь своему Сержанту, выполняя его приказы для достижения хороших результатов и успеха НКР.."
+	supervisors = "Сержант и выше"
 	selection_color = "#fff5cc"
 
 	exp_requirements = 230
@@ -594,8 +594,8 @@ Trooper
 	faction = "NCR"
 	total_positions = 5
 	spawn_positions = 5
-	description = "You are considered the backbone and workforce strength of the NCR Army. You answer to everyone above you in the chain of command, taking orders from your Sergeant directly and obeying all commands given by officers such as the Lieutenant and Captain."
-	supervisors = "Corporals and above"
+	description = "Вы – основной хребет армии, и основная движущая военная сила НКР. Вы отвечаете перед всеми вышестоящими в цепи командования, принимая приказы от своего Сержанта, а так же приказы от других офицеров: Капитана или Лейтенанта. Вы попали в штрафбат за некоторые проступки, но вам дали шанс их исправить. Особо отличившиеся получают звание рядового первого класса, за верную и совестную службу НКР.."
+	supervisors = "Капрал и выше"
 	selection_color = "#fff5cc"
 	exp_requirements = 100
 	exp_type = EXP_TYPE_NCR
@@ -651,12 +651,12 @@ Recruit
 	title = "NCR Recruit"
 	flag = F13RECRUIT
 	faction = "NCR"
-	total_positions = 3
-	spawn_positions = 3
-	description = "You are the lowest-ranked combatant in the military, having just completed Basic Combat Training. Utilize the skills and knowledge you acquired during basic training and follow orders that are given by higher ranking supervisors."
-	supervisors = "everyone in the NCR"
+	total_positions = 10
+	spawn_positions = 10
+	description = "Вы - боец с самым низким рангом в армии, только что завершив базовую боевую подготовку. Используйте навыки и знания, которые вы приобрели во время базового обучения, и выполняйте приказы, данные руководителями более высокого ранга. ."
+	supervisors = "Капрал и выше, при отсутствии офицеров - сами рядовые первого класса"
 	selection_color = "#fff5cc"
-	exp_requirements = 80
+	exp_requirements = 50
 	exp_type = EXP_TYPE_WASTELAND
 
 	outfit = /datum/outfit/job/ncr/f13recruit
@@ -684,8 +684,8 @@ Recruit
 	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
-	description = "As an Administrator, you perform managerial duties for the facilities of the city as well as the people who occupy it, ensure that people are listened to and their needs are met, and assist the military in a civilian capacity by corresponding and delegating others to complete tasks. "
-	supervisors = "Ambassador or Captain"
+	description = "Будучи Администратором, вы осуществляете руководство над городком. Армия НКР – ваши верные защитники и помощники в становлении порядка. Вы должны следить за потребностями поселенцев, и являться связующим звеном между гражданскими и военными.  . "
+	supervisors = "Амбассадор или Капитан"
 	selection_color = "#fff5cc"
 
 	exp_requirements = 110
@@ -716,8 +716,8 @@ Recruit
 	total_positions = 8
 	spawn_positions = 8
 	access = list()
-	description = "As an NCR Citizen, you may believe that the potential for fortune out west has dried up and that the frontier holds abundant opportunities for you to encroach and take advantage of. Surrounded by the relative safety of the Republic, you are responsible for being a part of the cities community and maintaining the facilities within it in any capacity which will aid the greater good. You may correspond with the Administrator or other NCR leadership to help them achieve goals, or pursue your own individual goals as an independent agent of the NCR.."
-	supervisors = "NCR Administrator"
+	description = "Как гражданин НКР, вы верите, что потенциал на западе иссяк и что граница имеет множество возможностей для вторжения и использования. Находясь в относительной безопасностью благодаря Республике, вы несете ответственность за то, чтобы быть частью городского сообщества и поддерживать порядок в поселении. Вы можете вести переговоры с администратором или другим руководством НКР, чтобы помочь им в достижении целей или преследовать свои собственные цели в качестве независимой единицы НКР..."
+	supervisors = "Администратор НКР"
 	selection_color = "#fff5cc"
 	exp_requirements = 40
 	exp_type = EXP_TYPE_WASTELAND
@@ -798,8 +798,8 @@ Veteran Ranger
 	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
-	description = "You answer directly to the Captain, working either independently or in a team to complete your mission objectives however required, operating either alone, in a squad or with the NCR Army. Your primary mission is to improve general opinion of the Republic and to neutralize slavers and raiders operating in the area."
-	supervisors = "Captain and above"
+	description = "Вы напрямую подчиняетесь напрямую Капитану. Вы можете работать самостоятельно, или же в команде, для выполнения поставленных задач. Вы можете примкнуть к операциям солдат НКР, и принять на себя роль офицера, если остальные погибли, или не прибыли в регион вообще. Ваша основная цель – улучшить мнение о себе и Республике в регионе, выследить рейдеров и работорговцев, и совершить над ними правосудие в случае нарушения ими закона.."
+	supervisors = "Капитан и выше"
 	selection_color = "#ffeeaa"
 
 	exp_requirements = 670
@@ -945,8 +945,8 @@ Ranger -- Split into Patrol and Scout
 	faction = "NCR"
 	total_positions = 2
 	spawn_positions = 2
-	description = "As a Patrol Ranger, you patrol the wasteland, aid those in need, and capture, recover, or neutralize designated targets in service to the Republic. Your reason for being sent here is to improve public opinion of the Republic through acts of service to the community, and by putting down slavers and raiders in the region."
-	supervisors = "Veteran Ranger"
+	description = "Как Патрульный Рейнджер, вы патрулируете пустошь, помогаете нуждающимся или находящимся в беде, а также захватываете, восстанавливаете или нейтрализуете цели во службу Республики. Вы были отправлены сюда для улучшения общественного мнения о Республике, служа обществу, неся правосудие и подавляя работорговцев с рейдерами в регионе. Так как в рядах рейнджерах  нет определенных званий, что подразумевает под собой взаимоуважение в ваших рядах. Но обычно, командующим в среде Рейнджеров являются Ветераны Рейнджеры – в силу своего опыта и знаний, что могут дать преимущество вашим силам.."
+	supervisors = "Ветеран Рейнджер"
 	selection_color = "#fff5cc"
 
 	exp_requirements = 560
@@ -993,8 +993,8 @@ Ranger -- Split into Patrol and Scout
 	faction = "NCR"
 	total_positions = 2
 	spawn_positions = 2
-	description = "As a Scout Ranger, you perform reconnaissance and assist in special operations for the Republic. Your reason for being sent here is to identify and neutralize threats to the Republic and to assist Patrol Rangers in identifying slavers and raiders so that they can be brought to justice."
-	supervisors = "Veteran Ranger"
+	description = "Как Скаут Рейнджер, вы выполняете разведку, а также участвуете в специальных операция Республики. Вы были отправлены сюда для  нейтрализации угроз для Республики, а так же помощи Патрульным Рейнджерам в поиске Работорговцев и Рейдеров, для осуществления над ними правосудия. Так как в рядах рейнджерах  нет определенных званий, что подразумевает под собой взаимоуважение в ваших рядах. Но обычно, командующим в среде Рейнджеров являются Ветераны Рейнджеры – в силу своего опыта и знаний, что могут дать преимущество вашим силам.    ."
+	supervisors = "Ветеран Рейнджер"
 	selection_color = "#fff5cc"
 
 	exp_requirements = 450
