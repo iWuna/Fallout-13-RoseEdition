@@ -543,6 +543,12 @@
 	item_state = "rusted_combat_armor"
 	armor = list("melee" = 38, "bullet" = 43, "laser" = 38, "energy" = 38, "bomb" = 48, "bio" = 58, "rad" = 10, "fire" = 58, "acid" = 18)
 
+/obj/item/clothing/suit/armor/f13/combatrusted/boneyard
+	name = "Boneyard Carapace"
+	desc = "Old, all covered in dust set of body armor, military grade. There is a big label on the right shoulder, reading \"L.A\" and a big, white typed number \"17\""
+	icon_state = "rusted_combat_armor"
+	item_state = "rusted_combat_armor"
+	armor = list("melee" = 40, "bullet" = 45, "laser" = 34, "energy" = 35, "bomb" = 45, "bio" = 58, "rad" = 12, "fire" = 58, "acid" = 18)
 
 /obj/item/clothing/suit/armor/f13/reconarmor
 	name = "recon armor"
