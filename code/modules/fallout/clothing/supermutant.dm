@@ -55,7 +55,7 @@
 	species_exclusively = list(/datum/species/supermutant)
 
 
-/obj/item/clothing/suit/armor/hulk/hulk_armor	
+/obj/item/clothing/suit/armor/hulk/hulk_armor
 	name = "hulky armor"
 	icon_state = "hulk_armor"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 25, "energy" = 15, "bomb" = 15, "bio" = 10, "rad" = 5, "fire" = 20, "acid" = 15)
@@ -268,12 +268,3 @@
 	darkness_view = 0
 	lighting_alpha = null
 	requires_training = FALSE
-
-
-/obj/item/clothing/head/helmet/f13/power_armor/t45d
-	name = "T-45d power helmet"
-	desc = "It's an old pre-War power armor helmet. It's pretty hot inside of it."
-	icon_state = "hulk_pa"
-	item_state = "hulk_pa"
-	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
-	
