@@ -15,6 +15,7 @@
 #define TOOL_MSRELOADER     "makeshift reloading tool"
 #define TOOL_LUNCHBOX       "lunchbox"
 //benches
+#define TOOL_CAMPFIRE		"campfire"
 #define TOOL_WORKBENCH      "workbench"
 #define TOOL_MWORKBENCH		"machine bench"
 #define TOOL_ASSWORKBENCH   "assembly bench"
