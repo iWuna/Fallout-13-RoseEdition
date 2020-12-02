@@ -1526,6 +1526,7 @@
 #include "code\modules\crafting\guncrafting.dm"
 #include "code\modules\crafting\items.dm"
 #include "code\modules\crafting\recipes.dm"
+#include "code\modules\crafting\supermutant.dm"
 #include "code\modules\crafting\tailoring.dm"
 #include "code\modules\custom_loadout\load_to_mob.dm"
 #include "code\modules\custom_loadout\read_from_db.dm"

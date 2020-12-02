@@ -250,8 +250,8 @@ Scientist
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/headset_enclave
-	head = /obj/item/clothing/head/bio_hood/f13/hazmat
-	suit = /obj/item/clothing/suit/bio_suit/f13/hazmat
+	head = /obj/item/clothing/head/bio_hood/f13/hazmat_enclave
+	suit = /obj/item/clothing/suit/bio_suit/f13/hazmat_enclave
 	belt = /obj/item/storage/belt/utility/full/engi
 
 /*
