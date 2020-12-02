@@ -26,6 +26,8 @@
 	*/
 	var/zone_selected = BODY_ZONE_CHEST
 
+	var/emote_cd = 0
+
 	var/computer_id = null
 	var/list/logging = list(INDIVIDUAL_ATTACK_LOG, INDIVIDUAL_SAY_LOG, INDIVIDUAL_EMOTE_LOG, INDIVIDUAL_OOC_LOG, INDIVIDUAL_LOOC_LOG)
 	var/obj/machinery/machine = null
