@@ -1338,8 +1338,8 @@
 /datum/crafting_recipe/healpowder
 	name = "Healing powder"
 	result = /obj/item/reagent_containers/pill/patch/healingpowder
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 2,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 2)
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 1)
 	time = 50
 	category = CAT_MEDICAL
 	subcategory = CAT_MEDS
