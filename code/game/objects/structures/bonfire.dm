@@ -9,6 +9,7 @@
 	density = FALSE
 	anchored = TRUE
 	buckle_lying = 0
+	machine_tool_behaviour = TOOL_CAMPFIRE
 	var/burning = 0
 	var/grill = FALSE
 	var/fire_stack_strength = 5
