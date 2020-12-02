@@ -1347,10 +1347,11 @@
 /datum/crafting_recipe/healpoultice
 	name = "Healing poultice"
 	result = /obj/item/reagent_containers/pill/patch/healpoultice
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 2,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 2,
-				/obj/item/reagent_containers/food/snacks/grown/feracactus = 2,
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 1,
+				/obj/item/reagent_containers/food/snacks/grown/feracactus = 1,
 				/obj/item/reagent_containers/food/snacks/grown/fungus = 1)
+	tools = list(TOOL_CAMPFIRE)
 	time = 80
 	category = CAT_MEDICAL
 	subcategory = CAT_MEDS

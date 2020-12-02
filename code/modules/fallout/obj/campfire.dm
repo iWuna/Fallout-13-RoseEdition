@@ -11,6 +11,7 @@
 	var/fuel = 300
 	light_color = LIGHT_COLOR_FIRE
 	var/burned = 0
+	machine_tool_behaviour = TOOL_CAMPFIRE
 	desc = "A warm, bright, and hopeful fire source - when it's burning, of course."
 
 	icon = 'icons/obj/hydroponics/equipment.dmi'
