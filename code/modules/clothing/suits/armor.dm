@@ -543,6 +543,12 @@
 	item_state = "rusted_combat_armor"
 	armor = list("melee" = 38, "bullet" = 43, "laser" = 38, "energy" = 38, "bomb" = 48, "bio" = 58, "rad" = 10, "fire" = 58, "acid" = 18)
 
+/obj/item/clothing/suit/armor/f13/combatrusted/boneyard
+	name = "Boneyard Carapace"
+	desc = "Old, all covered in dust set of body armor, military grade. There is a big label on the right shoulder, reading \"L.A\" and a big, white typed number \"17\""
+	icon_state = "rusted_combat_armor"
+	item_state = "rusted_combat_armor"
+	armor = list("melee" = 40, "bullet" = 45, "laser" = 34, "energy" = 35, "bomb" = 45, "bio" = 58, "rad" = 12, "fire" = 58, "acid" = 18)
 
 /obj/item/clothing/suit/armor/f13/reconarmor
 	name = "recon armor"
@@ -884,28 +890,28 @@
 	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and stripped out servomotors. Bulky and slow, but almost as good as the real thing."
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
-	armor = list("melee" = 75, "bullet" = 60, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
+	armor = list("melee" = 75, "bullet" = 60, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 30, "fire" = 80, "acid" = 0)
 	requires_training = FALSE
-	slowdown = 1.40
-	cold_protection = 2547
+	slowdown = 1.45
+	cold_protection = 2547 //Why it here?
 
 /obj/item/clothing/suit/armor/f13/power_armor/ncr
 	name = "salvaged NCR power armor"
 	desc = "It's a set of T-45b power armor with a air conditioning module installed, it however lacks servomotors to enhance the users strength. This one has brown paint trimmed along the edge and a two headed bear painted onto the chestplate."
 	icon_state = "ncrpowerarmor"
 	item_state = "ncrpowerarmor"
-	armor = list("melee" = 75, "bullet" = 60, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
+	armor = list("melee" = 75, "bullet" = 60, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 30, "fire" = 80, "acid" = 0)
 	requires_training = FALSE
-	cold_protection = 1046
-	slowdown = 1.40
+	cold_protection = 1046 //Why it here?
+	slowdown = 1.45
 
 /obj/item/clothing/suit/armor/f13/power_armor/raiderpa
 	name = "raider T-45b power armor"
 	desc = "It's a set of T-45b power armor with some of its plating heavily reconditioned. This set has seen better days, metal scrap has been spot welded to the chassis "
 	icon_state = "raiderpa"
 	item_state = "raiderpa"
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
-	slowdown = 0.4
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 40, "fire" = 80, "acid" = 0)
+	slowdown = 1.45
 	cold_protection = 1046
 	heat_protection = 1046
 	requires_training = FALSE
@@ -916,7 +922,7 @@
 	icon_state = "t45hotrod"
 	item_state = "t45hotrod"
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
-	slowdown = 0.4
+	slowdown = 0.7 // No servo, but faster.
 	cold_protection = 2246
 	heat_protection = 5046
 	requires_training = FALSE
@@ -944,7 +950,7 @@
 	desc = "What was once a suit of T-51 Power Armor is now an almost unrecognizable piece of art or garbage, depending on who you ask. Almost all of the external plating has either been removed or stripped to allow for maximum mobility, and overlapping underplates protect the user from small arms fire. Whoever designed this had a very specific purpose in mind: mobility and aesthetics over defense."
 	icon_state = "t51bgs"
 	item_state = "t51bgs"
-	slowdown = 0
+	slowdown = 0 //Okay??
 	flags_inv = HIDEJUMPSUIT|HIDENECK
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra

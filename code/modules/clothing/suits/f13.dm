@@ -182,6 +182,21 @@
 	item_state = "hazmat_helmet"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
+/obj/item/clothing/suit/bio_suit/f13/hazmat_enclave
+	name = "hazmat suit"
+	desc = "Yellow Level A , hazmat protective suit.<br>You can see some numbers on the tag: 35 56."
+	icon = 'icons/fallout/clothing/suits.dmi'
+	icon_state = "hazmat_enclave"
+	item_state = "hazmat_suit"
+
+/obj/item/clothing/head/bio_hood/f13/hazmat_enclave
+	name = "hazmat hood"
+	desc = "My star, my perfect silence."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	icon_state = "enclave_hazmat"
+	item_state = "hazmat_helmet"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
 //Fallout 13 toggle apparel directory
 
 /obj/item/clothing/suit/toggle/labcoat/f13

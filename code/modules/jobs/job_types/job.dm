@@ -68,6 +68,8 @@
 	var/exp_type = ""
 	var/exp_type_department = ""
 
+	var/list/verbs = list()
+
 	//The amount of good boy points playing this role will earn you towards a higher chance to roll antagonist next round
 	//can be overriden by antag_rep.txt config
 	var/antag_rep = 10
@@ -261,12 +263,15 @@
 		H.add_trait(TRAIT_GUNSMITH_FOUR)
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+
 	if(visualsOnly)
 		return
 
 	var/datum/job/J = SSjob.GetJobType(jobtype)
 	if(!J)
 		J = SSjob.GetJob(H.job)
+	if(J.verbs)
+		H.verbs |= J.verbs
 
 	var/obj/item/card/id/C = H.wear_id
 	if(istype(C))

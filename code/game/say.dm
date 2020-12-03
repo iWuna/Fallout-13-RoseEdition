@@ -83,8 +83,8 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	return ""
 
 /atom/movable/proc/say_mod(input, message_mode)
-	var/ending = copytext_char(input, length(input))
-	if(copytext_char(input, length(input) - 1) == "!!")
+	var/ending = copytext(input, length(input))
+	if(copytext(input, length(input) - 1) == "!!")
 		return verb_yell
 	else if(ending == "?")
 		return verb_ask
@@ -97,7 +97,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	if(!input)
 		input = "..."
 
-	if(copytext_char(input, length(input) - 1) == "!!")
+	if(copytext(input, length(input) - 1) == "!!")
 		spans |= SPAN_YELL
 
 	var/spanned = attach_spans(input, spans)
@@ -131,7 +131,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	var/returntext = GLOB.reverseradiochannels["[freq]"]
 	if(returntext)
 		return returntext
-	return "[copytext_char("[freq]", 1, 4)].[copytext_char("[freq]", 4, 5)]"
+	return "[copytext("[freq]", 1, 4)].[copytext("[freq]", 4, 5)]"
 
 /proc/attach_spans(input, list/spans)
 	return "[message_spans_start(spans)][input]</span>"
@@ -144,7 +144,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	return output
 
 /proc/say_test(text)
-	var/ending = copytext_char(text, length(text))
+	var/ending = copytext(text, length(text))
 	if (ending == "?")
 		return "1"
 	else if (ending == "!")

@@ -14,7 +14,7 @@ $include antag_rep.txt
 # There are various options which are hard-locked for security reasons.
 
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'tgstation' with the name of your choice.
-@SERVERNAME [RU/ENG] Fallout 13 - CBET ATOMA [REDUX]
+@SERVERNAME [RU] Fallout 13 - CBET ATOMA [REDUX]
 ## Napist Note: honestly all the display garbage should be setup to be handled via config, not in their own separate files. cross-ref code/game/world.dm #L245
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
@@ -230,7 +230,7 @@ ALLOW_WEBCLIENT
 DISCORDURL https://discord.gg/GEMmJYV
 
 ## Wiki address
-WIKIURL https://desert-rose-fallout-13.fandom.com/wiki/Desert_Rose_-_Fallout_13_Wiki
+WIKIURL http://fallout-13-official.wikidot.com/
 
 ## Rules address
 RULESURL https://discord.gg/GEMmJYV
