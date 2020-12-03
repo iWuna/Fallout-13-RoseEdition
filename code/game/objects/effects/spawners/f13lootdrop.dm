@@ -362,6 +362,7 @@
 
 /obj/effect/spawner/lootdrop/f13/armor/tier5 //TIER 5 ARMOR
 	name = "tier 5 armor"
+	icon_state = "special"
 	lootcount = 2
 	var/loot1 = list(
 				/obj/item/clothing/suit/armor/f13/power_armor/t45d,
@@ -582,8 +583,8 @@
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier5 //TIER 5 MELEE WEAPON
 	name = "tier 5 melee"
+	icon_state = "icon_state = "special""
 	lootcount = 1
-
 	loot = list(
 				/obj/item/twohanded/required/thermic_lance,
 				/obj/item/twohanded/required/chainsaw,
@@ -694,7 +695,7 @@
 				/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint,
 				//obj/item/ammo_box/magazine/m556/rifle/small,
 				/obj/item/ammo_box/magazine/m556/rifle/small)
-	
+
 	var/loot12 = list(
 				/obj/item/gun/ballistic/revolver/m29/snub,
 				/obj/item/ammo_box/m44
@@ -1198,6 +1199,7 @@
 
 /obj/effect/spawner/lootdrop/f13/foodspawner
 	name = "food spawner"
+	icon_state = "food"
 	lootdoubles = TRUE
 	fan_out_items = TRUE
 

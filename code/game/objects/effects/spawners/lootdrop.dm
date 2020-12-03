@@ -66,6 +66,7 @@
 
 /obj/effect/spawner/lootdrop/three_course_meal
 	name = "three course meal spawner"
+	icon_state = "food"
 	lootcount = 3
 	lootdoubles = FALSE
 	var/soups = list(
