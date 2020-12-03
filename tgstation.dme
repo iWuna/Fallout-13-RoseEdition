@@ -13,7 +13,7 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
-#include "_maps\_oregon.dm"
+#include "_maps\runtimestation.dm"
 #include "_maps\templates\fallout_templates.dm"
 #include "_maps\templates\oasisbunker\east_minibunker.dm"
 #include "_maps\templates\ranch\ranch.dm"
