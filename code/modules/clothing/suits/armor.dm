@@ -844,6 +844,7 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	var/emped = 0
 	var/requires_training = TRUE
+	flags_inv = HIDEJUMPSUIT|HIDENECK|HIDEEYES|HIDEEARS|HIDEFACE|HIDEMASK
 
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
     var/mob/living/carbon/human/H = user
@@ -855,12 +856,15 @@
     if(slot == SLOT_WEAR_SUIT)
         H.add_trait(TRAIT_STUNIMMUNE)
         H.add_trait(TRAIT_PUSHIMMUNE)
+        H.add_trait(TRAIT_IRONFIST)
         return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
 	var/mob/living/carbon/human/H = user
 	H.remove_trait(TRAIT_STUNIMMUNE)
 	H.remove_trait(TRAIT_PUSHIMMUNE)
+	H.remove_trait(TRAIT_IRONFIST)
+
 	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/emp_act(mob/living/carbon/human/owner, severity)
