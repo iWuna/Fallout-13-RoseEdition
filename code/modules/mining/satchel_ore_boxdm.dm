@@ -5,7 +5,7 @@
 	name = "ore box"
 	desc = "heavy box for ore..."
 	icon = 'icons/obj/mining.dmi'
-	icon_state = "orebox"
+	icon_state = "orebox1"
 	density = TRUE
 	pressure_resistance = 5*ONE_ATMOSPHERE
 
