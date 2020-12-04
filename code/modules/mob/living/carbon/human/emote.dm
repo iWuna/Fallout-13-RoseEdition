@@ -1,12 +1,6 @@
 /datum/emote/living/carbon/human
 	mob_type_allowed_typecache = list(/mob/living/carbon/human)
 
-/datum/emote/living/carbon/human/cry
-	key = "cry"
-	key_third_person = "cries"
-	message = "cries."
-	emote_type = EMOTE_AUDIBLE
-
 /datum/emote/living/carbon/human/dap
 	key = "dap"
 	key_third_person = "daps"

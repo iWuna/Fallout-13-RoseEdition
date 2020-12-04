@@ -13,11 +13,6 @@
 	set category = "Emote"
 	usr.emote("scream")
 
-/mob/living/carbon/human/verb/emote_scratch()
-	set name = "~ Scratch "
-	set category = "Emote"
-	usr.emote("scratch")
-
 /mob/living/carbon/human/verb/emote_blush()
 	set name = "~ Blush "
 	set category = "Emote"
@@ -72,11 +67,6 @@
 	set name = "~ Drool "
 	set category = "Emote"
 	usr.emote("drool")
-
-/mob/living/carbon/human/verb/emote_faint()
-	set name = "> Faint "
-	set category = "Emote"
-	usr.emote("faint")
 
 /mob/living/carbon/human/verb/emote_frown()
 	set name = "~ Frown "
@@ -147,6 +137,11 @@
 	set name = "~ Sniff "
 	set category = "Emote"
 	usr.emote("sniff")
+
+/mob/living/carbon/human/verb/emote_spin()
+	set name = "> Spin "
+	set category = "Emote"
+	usr.emote("spin")
 
 /mob/living/carbon/human/verb/emote_snore()
 	set name = "> Snore "
@@ -278,11 +273,6 @@
 	set category = "Emote"
 	usr.emote("shudder")
 
-/mob/living/carbon/human/verb/emote_bshake()
-	set name = "~ Shake "
-	set category = "Emote"
-	usr.emote("bshake")
-
 /mob/living/carbon/human/verb/emote_hug()
 	set name = "~ Hug "
 	set category = "Emote"
@@ -298,34 +288,52 @@
 	set category = "Emote"
 	usr.emote("slap")
 
-/*
-/mob/living/carbon/human/proc/emote_ping()
-	set name = "< Ping >"
+
+
+// Borg
+/mob/living/silicon/verb/emote_ping()
+	set name = "< Ping > "
 	set category = "Emote"
 	usr.emote("ping")
 
-/mob/living/carbon/human/proc/emote_beep()
-	set name = "< Beep >"
+/mob/living/silicon/verb/emote_beep()
+	set name = "< Beep > "
 	set category = "Emote"
 	usr.emote("beep")
 
-/mob/living/carbon/human/proc/emote_buzz()
-	set name = "< Buzz >"
+/mob/living/silicon/verb/emote_buzz()
+	set name = "< Buzz > "
 	set category = "Emote"
 	usr.emote("buzz")
 
-/mob/living/carbon/human/proc/emote_buzz2()
-	set name = "< Buzz angrily >"
+/mob/living/silicon/verb/emote_buzz2()
+	set name = "< Buzz angrily > "
 	set category = "Emote"
 	usr.emote("buzz2")
 
-/mob/living/carbon/human/proc/emote_yes()
-	set name = "< Positive >"
+/mob/living/silicon/verb/emote_p_yes()
+	set name = "< Positive > "
 	set category = "Emote"
-	usr.emote("yes")
+	usr.emote("ping_yes")
 
-/mob/living/carbon/human/proc/emote_no()
-	set name = "< Negative >"
+/mob/living/silicon/verb/emote_p_no()
+	set name = "< Negative > "
 	set category = "Emote"
-	usr.emote("no")
-*/
+	usr.emote("ping_no")
+
+// Mutant
+
+/mob/living/carbon/human/species/supermutant/verb/emote_h_attack()
+	set name = "< ATTACK > "
+	set category = "Emote"
+	usr.emote("h_attack")
+
+/mob/living/carbon/human/species/supermutant/verb/emote_h_alert()
+	set name = "< I SEE YOU > "
+	set category = "Emote"
+	usr.emote("h_seeyou")
+
+/mob/living/carbon/human/species/supermutant/verb/emote_h_idle()
+	set name = "< CHAT > "
+	set category = "Emote"
+	usr.emote("h_chat")

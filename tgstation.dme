@@ -2001,6 +2001,7 @@
 #include "code\modules\mob\dead\observer\logout.dm"
 #include "code\modules\mob\dead\observer\observer.dm"
 #include "code\modules\mob\dead\observer\say.dm"
+#include "code\modules\mob\emote\verbs.dm"
 #include "code\modules\mob\living\blood.dm"
 #include "code\modules\mob\living\bloodcrawl.dm"
 #include "code\modules\mob\living\combat_indicator.dm"
