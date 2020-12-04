@@ -28,7 +28,7 @@
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/brain/whistle
-	key = "whistle"
+	key = "whistle_s"
 	key_third_person = "whistles"
 	message = "whistles."
 	emote_type = EMOTE_AUDIBLE
