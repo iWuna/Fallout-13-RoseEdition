@@ -62,6 +62,18 @@
 	message_param = "salutes to %t."
 	restraint_check = TRUE
 
+/datum/emote/living/carbon/human/salute/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
+			playsound(H, 'sound/voice/human/salute.ogg', 50, 1)
+
+/datum/emote/living/carbon/human/shudder
+	key = "shudder"
+	key_third_person = "shudders"
+	message = "shudders."
+
 /datum/emote/living/carbon/human/shrug
 	key = "shrug"
 	key_third_person = "shrugs"

@@ -28,6 +28,16 @@
 	message = "chokes!"
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/living/choke/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
+			if(user.gender == FEMALE)
+				playsound(H, pick('sound/voice/human/gasp_f_1.ogg', 'sound/voice/human/gasp_f_2.ogg', 'sound/voice/human/gasp_f_3.ogg', 'sound/voice/human/gasp_f_4.ogg', 'sound/voice/human/gasp_f_5.ogg', 'sound/voice/human/gasp_f_6.ogg'), 50, 1)
+			else
+				playsound(H, pick('sound/voice/human/gasp_m_1.ogg', 'sound/voice/human/gasp_m_2.ogg', 'sound/voice/human/gasp_m_3.ogg', 'sound/voice/human/gasp_m_4.ogg', 'sound/voice/human/gasp_m_5.ogg', 'sound/voice/human/gasp_m_6.ogg', 'sound/voice/human/gasp_m_7.ogg'), 50, 1)
+
 /datum/emote/living/cross
 	key = "cross"
 	key_third_person = "crosses"
@@ -58,10 +68,32 @@
 	message = "coughs!"
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/cough/can_run_emote(mob/user, status_check = TRUE)
+/datum/emote/living/cough/run_emote(mob/user, params)
 	. = ..()
-	if(user.reagents.get_reagent("menthol") || user.reagents.get_reagent("peppermint_patty"))
-		return FALSE
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
+			if(user.gender == FEMALE)
+				playsound(H, pick('sound/voice/human/cough_f_1.ogg', 'sound/voice/human/cough_f_2.ogg'), 50, 1)
+			else
+				playsound(H, pick('sound/voice/human/cough_m_1.ogg', 'sound/voice/human/cough_m_2.ogg', 'sound/voice/human/cough_m_3.ogg'), 50, 1)
+
+
+/datum/emote/living/cry
+	key = "cry"
+	key_third_person = "cries"
+	message = "cries."
+	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/cry/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
+			if(user.gender == FEMALE)
+				playsound(H, pick('sound/voice/human/cry_f_1.ogg', 'sound/voice/human/cry_f_2.ogg', 'sound/voice/human/cry_f_3.ogg'), 50, 1)
+			else
+				playsound(H, pick('sound/voice/human/cry_m_1.ogg', 'sound/voice/human/cry_m_2.ogg'), 50, 1)
 
 /datum/emote/living/dance
 	key = "dance"
@@ -158,12 +190,33 @@
 	message_mime = "giggles silently!"
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/living/giggle/can_run_emote(mob/living/user, status_check = TRUE)
+	. = ..()
+	if(. && iscarbon(user))
+		var/mob/living/carbon/C = user
+		return !C.silent
+
+/datum/emote/living/giggle/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
+			if(user.gender == FEMALE)
+				playsound(H, pick('sound/voice/human/giggle_f_1.ogg', 'sound/voice/human/giggle_f_2.ogg'), 50, 1)
+			else
+				playsound(H, pick('sound/voice/human/giggle_m_1.ogg', 'sound/voice/human/giggle_m_2.ogg'), 50, 1)
+
 /datum/emote/living/glare
 	key = "glare"
 	key_third_person = "glares"
 	message = "glares."
 	message_param = "glares at %t."
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/scratch
+	key = "scratch"
+	key_third_person = "scratches"
+	message = "scratches."
 
 /datum/emote/living/grin
 	key = "grin"
@@ -213,9 +266,26 @@
 		var/mob/living/carbon/human/H = user
 		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
 			if(user.gender == FEMALE)
-				playsound(H, 'sound/voice/human/womanlaugh.ogg', 50, 1)
+				playsound(H, 'sound/voice/human/laugh_f_1.ogg', 50, 1)
 			else
-				playsound(H, pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg'), 50, 1)
+				playsound(H, pick('sound/voice/human/laugh_m_1.ogg', 'sound/voice/human/laugh_m_2.ogg', 'sound/voice/human/laugh_m_3.ogg'), 50, 1)
+
+
+/datum/emote/living/moan
+	key = "moan"
+	key_third_person = "moans"
+	message = "moans."
+	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/moan/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
+			if(user.gender == FEMALE)
+				playsound(H, pick('sound/voice/human/moan_f_1.ogg', 'sound/voice/human/moan_f_2.ogg', 'sound/voice/human/moan_f_3.ogg'), 50, 1)
+			else
+				playsound(H, pick('sound/voice/human/moan_m_1.ogg', 'sound/voice/human/moan_m_2.ogg', 'sound/voice/human/moan_m_3.ogg'), 50, 1)
 
 /datum/emote/living/look
 	key = "look"
@@ -262,6 +332,22 @@
 	message_mime = "acts out a scream!"
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/living/scream/can_run_emote(mob/living/user, status_check = TRUE)
+	. = ..()
+	if(. && iscarbon(user))
+		var/mob/living/carbon/C = user
+		return !C.silent
+
+/datum/emote/living/scream/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
+			if(user.gender == FEMALE)
+				playsound(H, pick('sound/voice/human/scream_f_1.ogg', 'sound/voice/human/scream_f_2.ogg', 'sound/voice/human/scream_f_3.ogg'), 50, 1)
+			else
+				playsound(H, pick('sound/voice/human/scream_m_1.ogg', 'sound/voice/human/scream_m_2.ogg', 'sound/voice/human/scream_m_3.ogg', 'sound/voice/human/scream_m_4.ogg'), 50, 1)
+
 /datum/emote/living/scowl
 	key = "scowl"
 	key_third_person = "scowls"
@@ -286,6 +372,16 @@
 	message = "sighs."
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/living/sigh/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
+			if(user.gender == FEMALE)
+				playsound(H, 'sound/voice/human/sigh_f_1.ogg', 50, 1)
+			else
+				playsound(H, 'sound/voice/human/sigh_m_1.ogg', 50, 1)
+
 /datum/emote/living/sit
 	key = "sit"
 	key_third_person = "sits"
@@ -301,6 +397,13 @@
 	key_third_person = "sneezes"
 	message = "sneezes."
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/sneeze/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
+			playsound(H, 'sound/voice/human/sneeze.ogg', 50, 1)
 
 /datum/emote/living/smug
 	key = "smug"
@@ -320,6 +423,13 @@
 	message_mime = "sleeps soundly."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
+
+/datum/emote/living/snore/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
+			playsound(H, pick('sound/voice/human/snore_1.ogg', 'sound/voice/human/snore_2.ogg', 'sound/voice/human/snore_3.ogg', 'sound/voice/human/snore_4.ogg', 'sound/voice/human/snore_1.ogg', 'sound/voice/human/snore_6.ogg', 'sound/voice/human/snore_7.ogg'), 50, 1)
 
 /datum/emote/living/stare
 	key = "stare"
@@ -389,6 +499,47 @@
 	key_third_person = "yawns"
 	message = "yawns."
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/whistle
+	key = "whistle"
+	key_third_person = "whistles"
+	message = "whistles."
+	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/whistle/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
+			playsound(H, 'sound/voice/human/whistle.ogg', 50, 1)
+
+/datum/emote/living/notice
+	key = "fart"
+	key_third_person = "farts"
+	message = "farts."
+	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/notice
+	key = "shakes"
+	key_third_person = "shakes"
+	message = "shakes."
+	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/notice
+	key = "quiver"
+	key_third_person = "quivers"
+	message = "quivers."
+	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/yawn/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
+			if(user.gender == FEMALE)
+				playsound(H, pick('sound/voice/human/yawn_f_1.ogg', 'sound/voice/human/yawn_f_2.ogg', 'sound/voice/human/yawn_f_3.ogg'), 50, 1)
+			else
+				playsound(H, pick('sound/voice/human/yawn_m_1.ogg', 'sound/voice/human/yawn_m_2.ogg'), 50, 1)
 
 /datum/emote/living/custom
 	key = "me"
