@@ -583,7 +583,7 @@
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier5 //TIER 5 MELEE WEAPON
 	name = "tier 5 melee"
-	icon_state = "icon_state = "special""
+	icon_state = "special"
 	lootcount = 1
 	loot = list(
 				/obj/item/twohanded/required/thermic_lance,
