@@ -4031,7 +4031,7 @@
 	subcategory = CAT_WEAPON
 
 //moulds
-
+/*
 /datum/crafting_recipe/mould
 	result = /obj/item/prefabs/mould/barrel/m556
 	name = "556 Barrel Mould"
@@ -4251,6 +4251,7 @@
 	category = CAT_MOULD
 	subcategory = CAT_MOULD_ONE
 */
+
 /*
 /datum/crafting_recipe/ultrapistol
 	name = "Ultracite Pistol"
@@ -4305,3 +4306,4 @@
 	category = CAT_EXPERIMENTAL
 	subcategory = CAT_UNREFIENED
 	time = 30
+*/
