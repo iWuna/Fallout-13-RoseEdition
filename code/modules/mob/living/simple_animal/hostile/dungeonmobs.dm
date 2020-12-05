@@ -4,10 +4,10 @@
 /mob/living/simple_animal/hostile/dungemobs/ghoul
 	name = "feral ghoul"
 	desc = "A ghoul that has lost it's mind and become aggressive."
-	icon = 'icons/mob/wastemobs.dmi'
-	icon_state = "feralghoul"
-	icon_living = "feralghoul"
-	icon_dead = "feralghoul_dead"
+	icon = 'icons/mob/ghouls.dmi'
+	icon_state = "retro_ghoul"
+	icon_living = "retro_ghoul"
+	icon_dead = "retro_ghoul_d"
 	mob_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
 	robust_searching = 1
 	turns_per_move = 5
@@ -40,6 +40,11 @@
 	aggrosound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
 	idlesound = list('sound/f13npc/ghoul/idle.ogg')
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
+
+/mob/living/simple_animal/hostile/dungemobs/ghoul/Initialize()
+	. = ..()
+	icon_state = "retro_ghoul-[rand(1,10)]"
+	icon_living = "retro_ghoul-[rand(1,10)]"
 
 /mob/living/simple_animal/hostile/dungemobs/ghoul/reaver
 	name = "feral ghoul reaver"
@@ -93,9 +98,9 @@
 /mob/living/simple_animal/hostile/dungemobs/ghoul/glowing
 	name = "glowing feral ghoul"
 	desc = "A feral ghoul that has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
-	icon_state = "glowinghoul"
-	icon_living = "glowinghoul"
-	icon_dead = "glowinghoul_dead"
+	icon_state = "retro_glowghoul-6"
+	icon_living = "retro_glowghoul-6"
+	icon_dead = "retro_glowghoul_d"
 	maxHealth = 80
 	health = 80
 	speed = 2
@@ -106,9 +111,9 @@
 /mob/living/simple_animal/hostile/dungemobs/ghoul/legendary
 	name = "legendary ghoul"
 	desc = "A ghoul that has lost it's mind and become aggressive. This one is exceptionally large, bulging muscles. It looks quite strong."
-	icon_state = "glowinghoul"
-	icon_living = "glowinghoul"
-	icon_dead = "glowinghoul_dead"
+	icon_state = "retro_glowghoul"
+	icon_living = "retro_glowghoul"
+	icon_dead = "retro_glowghoul_d"
 	color = "#FFFF00"
 	maxHealth = 600
 	health = 600
@@ -122,6 +127,8 @@
 /mob/living/simple_animal/hostile/dungemobs/ghoul/glowing/Initialize()
 	. = ..()
 	set_light(2)
+	icon_state = "retro_glowghoul-[rand(1,10)]"
+	icon_living = "retro_glowghoul-[rand(1,10)]"
 
 /mob/living/simple_animal/hostile/dungemobs/ghoul/glowing/Aggro()
 	..()

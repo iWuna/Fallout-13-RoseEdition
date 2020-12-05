@@ -2,8 +2,8 @@
 	name = "feral ghoul"
 	desc = "A ghoul that has lost it's mind and become aggressive."
 	icon = 'icons/mob/ghouls.dmi'
-	icon_state = "retro_ghoul"
-	icon_living = "retro_ghoul"
+	icon_state = "retro_ghoul-1"
+	icon_living = "retro_ghoul-1"
 	icon_dead = "retro_ghoul_d"
 	mob_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
 	robust_searching = 1
@@ -96,7 +96,7 @@
 	icon = 'icons/mob/ghouls.dmi'
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"
-	icon_dead = "glowinghoul_dead"
+	icon_dead = "retro_glowghoul_d"
 	color = "#FFFF00"
 	maxHealth = 600
 	health = 600
