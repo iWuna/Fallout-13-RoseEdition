@@ -663,6 +663,13 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	grind_results = list("carbon" = 10)
 	merge_type = /obj/item/stack/sheet/bone
 
+GLOBAL_LIST_INIT(bone_recipes, list(
+	new /datum/stack_recipe("Bone Throne", /obj/structure/chair/throne, 10, one_per_turf = TRUE, on_floor = TRUE, time = 40)))
+
+/obj/item/stack/sheet/bone/Initialize(maplosad, new_amount, merge = TRUE)
+	recipes = GLOB.bone_recipes
+	. = ..()
+
 GLOBAL_LIST_INIT(plastic_recipes, list(
 	new /datum/stack_recipe("plastic flaps", /obj/structure/plasticflaps, 5, one_per_turf = TRUE, on_floor = TRUE, time = 40), \
 	new /datum/stack_recipe("water bottle", /obj/item/reagent_containers/glass/beaker/waterbottle/empty), \

@@ -134,6 +134,8 @@
 #define F13PUNRAIDER	(1<<4)
 #define F13DETECTIVE	(1<<5)
 #define EVENTCOVEN		(1<<6)
+#define F13LOCUSTCAPTAIN	(1<<7)
+#define F13LOCUST		(1<<8)
 
 #define ENCLAVE			(1<<9)
 

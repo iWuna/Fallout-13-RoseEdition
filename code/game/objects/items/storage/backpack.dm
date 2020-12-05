@@ -10,7 +10,7 @@
  */
 
 /obj/item/storage/backpack
-	name = "backpack"
+	name = "hiking backpack"
 	desc = "You wear this on your back and put items into it."
 	icon_state = "backpack"
 	item_state = "backpack"
@@ -585,3 +585,53 @@
 	new /obj/item/clothing/mask/gas/clown_hat(src)
 	new /obj/item/bikehorn(src)
 	new /obj/item/implanter/sad_trombone(src)
+	
+/obj/item/storage/backpack/backsheath
+	name = "back sheath"
+	desc = "A sheath that allows you to hold a sword on your back. It even has a pouch for your basic storage needs, how cool is that?"
+	icon_state = "sheathback"
+	item_state = "sheathback"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+
+/obj/item/storage/backpack/backsheath/ComponentInitialize()
+	. = ..()
+	GET_COMPONENT(STR, /datum/component/storage)
+	STR.max_items = 2
+	STR.rustle_sound = FALSE
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.can_hold = typecacheof(list(
+		/obj/item/storage/backpack/backsheathstorage,
+		/obj/item/claymore,
+		/obj/item/katana,
+		/obj/item/twohanded/fireaxe/bmprsword
+		))
+
+/obj/item/storage/backpack/backsheath/update_icon()
+	icon_state = "sheathback"
+	item_state = "sheathback"
+	if(contents.len == 2)
+		icon_state += "-full"
+		item_state += "-full"
+	if(loc && isliving(loc))
+		var/mob/living/L = loc
+		L.regenerate_icons()
+	..()
+
+/obj/item/storage/backpack/backsheath/PopulateContents()
+	new /obj/item/storage/backpack/backsheathstorage(src)
+	update_icon()
+
+/obj/item/storage/backpack/backsheathstorage
+	name = "open inventory"
+	desc = "Open your belt's inventory"
+	icon_state = "open"
+	anchored = 1
+
+/obj/item/storage/backpack/backsheathstorage/ComponentInitialize()
+	. = ..()
+	GET_COMPONENT(STR, /datum/component/storage)
+	STR.max_combined_w_class = 14
+	STR.max_w_class = WEIGHT_CLASS_GIGANTIC
+	STR.max_items = 14
+	STR.clickopen = TRUE

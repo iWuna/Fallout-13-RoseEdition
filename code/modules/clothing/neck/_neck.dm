@@ -279,3 +279,11 @@ GLOBAL_VAR_INIT(collar_number, 0)
 	icon_state = "corditeclamps"
 	item_color = "corditeclamps"
 	item_state = "corditeclamps"
+
+/obj/item/clothing/neck/jamrock
+	name = "Eldritch Tie"
+	desc = "The necktie is adorned with a garish pattern. It's disturbingly vivid. Somehow you feel as if it would be wrong to ever take it off. It's your friend now. You will betray it if you change it for some boring scarf."
+	icon_state = "eldritch_tie"
+	item_color = "eldritch_tie"
+	item_state = "eldritch_tie"
+	w_class = WEIGHT_CLASS_SMALL

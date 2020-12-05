@@ -88,6 +88,9 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 
 "Cyborg",
 "Vault-tec Security",
+"Vault-tec Doctor",
+"Vault-tec Scientist",
+"Vault-tec Engineer",
 "Chief of Security",
 "Overseer"
 ))

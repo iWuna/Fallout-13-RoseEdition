@@ -112,6 +112,7 @@
 	select = 0
 	actions_types = list()
 	casing_ejector = FALSE
+	spawnwithmagazine = TRUE
 
 /obj/item/gun/ballistic/automatic/tribalbow/update_icon()
 	return

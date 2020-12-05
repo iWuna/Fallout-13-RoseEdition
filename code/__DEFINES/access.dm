@@ -92,6 +92,7 @@
 #define ACCESS_MEDICAL_F13	129	//general medical access
 #define ACCESS_COMMAND		130	//general command access
 #define ACCESS_TRIBE		131	//general tribe access
+#define ACCESS_NCROFFDUTY			132 //general NCR access
 
 	//The Syndicate
 #define ACCESS_SYNDICATE 150//General Syndicate Access. Includes Syndicate mechs and ruins.

@@ -824,6 +824,14 @@
 	materials = list(MAT_METAL = 50000)
 	build_path = /obj/item/ammo_box/a50MG/incendiary
 	category = list("initial", "Security")
+	
+/datum/design/m2mm
+	name = "2mm Electromagnetic Magazine"
+	id = "m2mm"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 50000)
+	build_path = /obj/item/ammo_box/magazine/m2mm
+	category = list("initial", "Security")
 
 /*
 /datum/design/a50MGAP

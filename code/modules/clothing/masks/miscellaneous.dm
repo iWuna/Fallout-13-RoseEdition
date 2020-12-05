@@ -191,6 +191,12 @@
 	item_state = "rat"
 	flags_inv = HIDEFACE
 	flags_cover = MASKCOVERSMOUTH
+	
+/obj/item/clothing/mask/rat/stupid
+	name = "Ratt's Mask"
+	desc = "Looks like he finally got his own fucking mask."
+	icon_state = "greenrat"
+	item_state = "greenrat"
 
 /obj/item/clothing/mask/rat/fox
 	name = "fox mask"
@@ -320,8 +326,8 @@
 	actions_types = list(/datum/action/item_action/adjust)
 
 /obj/item/clothing/mask/bandana/jonesbandana
-	name = "An ornate veteran bandana"
-	desc = "An intricately-designed bandana. The design is quite obviously derived from that of a standard veteran legionary bandana. There's a gold stripe running down the middle of the bandana, seemingly made to match the design of a helmet. In-between layers of cloth are small metal plates, kinda like a brigandine, except all the plates really do is make the bandana feel nice and stop fingers from being inserted into the throat."
+	name = "ornate veteran bandana"
+	desc = "An intricately-designed bandana. The design is quite obviously derived from that of a standard veteran legionary bandana. There's a gold stripe running down the middle of the bandana, seemingly made to match the design of a helmet. In-between layers of cloth are small metal plates, kinda like a brigandine, except all the plates really do is make the bandana feel nice, make the wearer's voice metallic and echoey, and stop fingers from being inserted into the throat."
 	icon_state = "jonesbandana"
 	item_state = "jonesbandana"
 	flags_inv = HIDEFACE

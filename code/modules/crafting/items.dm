@@ -1,20 +1,52 @@
+/obj/item/ammo_box/magazine/internal/cylinder/custom
+
+/obj/item/ammo_box/magazine/internal/custom
+
+/obj/item/ammo_box/magazine/custom
+
+
+
 /obj/item/components
-    name = "crafting items"
-    icon = 'icons/fallout/objects/items.dmi'
-    icon_state = "blueprint_empty"
-    w_class = WEIGHT_CLASS_TINY
+	name = "crafting items"
+	icon = 'icons/fallout/objects/items.dmi'
+	icon_state = "blueprint_empty"
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/blueprint
-    name = "crafting blueprint"
-    icon = 'icons/fallout/objects/items.dmi'
-    icon_state = "blueprint_empty"
-    w_class = WEIGHT_CLASS_TINY
+	name = "crafting blueprint"
+	icon = 'icons/fallout/objects/items.dmi'
+	icon_state = "blueprint_empty"
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/prefabs
-    name = "crafting prefabs"
-    icon = 'icons/fallout/objects/crafting.dmi'
-    icon_state = "blueprint_empty"
-    w_class = WEIGHT_CLASS_TINY
+	name = "crafting prefabs"
+	icon = 'icons/fallout/objects/crafting.dmi'
+	icon_state = "blueprint_empty"
+	w_class = WEIGHT_CLASS_TINY
+	var/list/tags = list()
+	var/list/incompatible_tags = list()
+	var/complexity = 10
+	var/part_type = "generic" //These are for ensuring you can always swap out similar parts even if item paths differ, mostly fixing barrels
+	var/mag_type
+	var/enables_automatic = FALSE
+	var/burst_mod = 0
+	var/dam_mod = 0
+	var/canpulloutmag = TRUE
+	var/armorpen_mod = 0
+	var/recoil_mod = 0
+	var/spread_mod = 0
+	var/burst_delay_mod = 0
+	var/bullet_speed_mod = 0
+	var/force_mod = 0
+	var/fire_delay_mod = 0
+	var/gun_weight_class = WEIGHT_CLASS_TINY //bulky, tiny, small. uses the highest weighted part
+	var/caliber_name = ""
+	var/frame_type = "pistol"
+	var/scope = FALSE
+
+	//energy weapons
+	var/energyAmmoType = null
+	var/energyProjType = null
 
 /obj/item/stack/prefabs
     name = "crafting prefabs"
@@ -55,10 +87,10 @@
 	name = "Lever Action shotgun blueprint"
 
 /obj/item/blueprint/weapon/kar98
-	name = "Karabiner 98k blueprint"
+	name = "Ancient rifle blueprint"
 
 /obj/item/blueprint/weapon/kar98/limited
-	name = "Damaged Karabiner 98k blueprint"
+	name = "Damaged ancient rifle blueprint"
 
 //mid tier
 /obj/item/blueprint/weapon/thatgun
@@ -68,16 +100,16 @@
 	name = "Damaged .223 pistol blueprint"
 
 /obj/item/blueprint/weapon/pps
-	name = "PPSh-41 blueprint"
+	name = "Ancient SMG blueprint"
 
 /obj/item/blueprint/weapon/pps/limited
-	name = "Damaged PPSh-41 blueprint"
+	name = "Damaged ancient SMG blueprint"
 
 /obj/item/blueprint/weapon/mg34
-	name = "Maschinengewehr 34 blueprint"
+	name = "Ancient machine gun blueprint"
 
 /obj/item/blueprint/weapon/mg34/limited
-	name = "Damaged Maschinengewehr 34 blueprint"
+	name = "Damaged ancient machine gun blueprint"
 
 /obj/item/blueprint/weapon/marksmanrifle
 	name = "Marksman Rifle blueprint"
@@ -148,7 +180,7 @@
 
 /obj/item/blueprint/weapon/lmg
 	name = "LMG blueprint"
-	
+
 /obj/item/blueprint/weapon/lmg/limited
 	name = "Damaged LMG blueprint"
 
@@ -225,468 +257,765 @@
 	desc = ""
 	//icon_state = ""
 
-/obj/item/prefabs/complex/simpleWeaponFrame
+/obj/item/prefabs/complex
 
-	var/obj/item/prefabs/complex/action/simple/actionsimple
-	var/obj/item/prefabs/complex/action/auto/actionauto
-
-	var/obj/item/prefabs/complex/barrel/m556/m556barrel
-	var/obj/item/prefabs/complex/barrel/mm10/mm10barrel
-	var/obj/item/prefabs/complex/barrel/mm9/mm9barrel
-	var/obj/item/prefabs/complex/barrel/m357/m357barrel
-	var/obj/item/prefabs/complex/barrel/m44/m44barrel
-	var/obj/item/prefabs/complex/barrel/m45/m45barrel
-	var/obj/item/prefabs/complex/barrel/m762/m762barrel
-	var/obj/item/prefabs/complex/barrel/m4570/m4570barrel
-	var/obj/item/prefabs/complex/barrel/shotgun/shotgunbarrel
-
-	var/obj/item/prefabs/complex/trigger/trigger
-
-	var/obj/item/prefabs/complex/bolt/simple/boltsimple
-	var/obj/item/prefabs/complex/bolt/high/boltadvanced
-
-	var/obj/item/prefabs/complex/stock/mid/stockplastic
-	var/obj/item/prefabs/complex/stock/low/stockwood
-
-	var/obj/item/prefabs/complex/screw/screw
-
-	var/obj/item/advanced_crafting_components/alloys/alloys
-	var/obj/item/advanced_crafting_components/receiver/receiver
-	var/obj/item/advanced_crafting_components/assembly/assembly
-	name = "Simple Weapon Frame"
-	desc = ""
+/obj/item/prefabs/complex/eWeaponFrame
+	name = "Weapon Frame"
+	desc = "An unfinished energy gun."
 	icon_state = "gunframe"
 
-/obj/item/prefabs/complex/simpleWeaponFrame/attackby(obj/item/W, mob/user, params)//todo me more recipes
-	if(istype(W, /obj/item/screwdriver))
-		if(src.contents.len > 0)			
-			to_chat(usr,"You remove the [src.contents[1]] from the [src].")
-			usr.transferItemToLoc(src.contents[1],usr.loc)
+	var/max_complexity = 100
+	complexity = 0
+
+	var/destroy_chance =  15
+	var/needs_stock = FALSE
+	var/quality = 0
+
+	var/obj/item/prefabs/barrel = null //plasma/laser/etc
+	var/obj/item/prefabs/cell = null //type of ammo
+	var/obj/item/prefabs/lens = null //required
+	var/obj/item/prefabs/conductors = null //bonus stats
+	var/obj/item/prefabs/flux = null //required
+	var/obj/item/prefabs/burst = null
+
+/obj/item/prefabs/complex/eWeaponFrame/pistol
+	name = "Energy Pistol Frame"
+	desc = "An unfinished energy gun."
+	icon_state = "gunframe"
+
+	max_complexity = 100
+
+/obj/item/prefabs/complex/eWeaponFrame/rifle
+	name = "Energy Rifle Frame"
+	desc = "An unfinished energy gun."
+	icon_state = "gunframe"
+
+	max_complexity = 200
+
+/obj/item/prefabs/complex/WeaponFrame
+	name = "Weapon Frame"
+	desc = "An unfinished gun."
+	icon_state = "gunframe"
+
+	var/max_complexity = 100
+	complexity = 0
+
+	var/destroy_chance =  15
+	var/needs_stock = FALSE
+	var/quality = 0
+
+	var/obj/item/prefabs/action = null
+	var/obj/item/prefabs/barrel = null
+	var/obj/item/prefabs/trigger = null
+	var/obj/item/prefabs/bolt = null
+	var/obj/item/prefabs/screw = null
+	var/obj/item/prefabs/receiver = null
+	var/obj/item/prefabs/alloys = null
+	var/obj/item/prefabs/assembly = null
+	var/obj/item/prefabs/stock = null
+	var/obj/item/prefabs/ammo_loader = null
+
+
+/obj/item/prefabs/complex/WeaponFrame/makeshift
+	name = "Makeshift weapon frame"
+	max_complexity = 100
+	destroy_chance = 30
+	tags = list("makeshift_quality")
+	incompatible_tags = list("masterwork_quality")
+	quality = "makeshift" //This just adds a suffix at the end of the gun name
+
+/obj/item/prefabs/complex/WeaponFrame/standard
+	max_complexity = 140
+	destroy_chance = 10
+	tags = list("standard_quality")
+	quality = "standard"
+
+/obj/item/prefabs/complex/WeaponFrame/improved
+	name = "Improved Weapon Frame"
+	max_complexity = 170
+	destroy_chance = 25
+	tags = list("improved_quality")
+	quality = "improved"
+
+/obj/item/prefabs/complex/WeaponFrame/masterwork
+	name = "Masterwork Weapon Frame"
+	max_complexity = 270
+	destroy_chance = 0
+	tags = list("masterwork_quality")
+	incompatible_tags = "makeshift_quality"
+	quality = "masterwork"
+
+/obj/item/prefabs/complex/WeaponFrame/examine(mob/user)
+	..()
+
+	if(action)
+		to_chat(user,"<span class='notice'>It's got [action] installed.</span>")
+	else
+		to_chat(user,"<span class='warning'>There is no action mechanism installed!</span>")
+	if(barrel)
+		to_chat(user,"<span class='notice'>It's got [barrel] installed.</span>")
+	else
+		to_chat(user,"<span class='warning'>There is no barrel!</span>")
+	if(trigger)
+		to_chat(user,"<span class='notice'>It's got [trigger] installed.</span>")
+	else
+		to_chat(user,"<span class='warning'>There is no trigger!</span>")
+	if(bolt)
+		to_chat(user,"<span class='notice'>It's got [bolt] installed.</span>")
+	else
+		to_chat(user,"<span class='warning'>There is no bolt!</span>")
+	if(screw)
+		to_chat(user,"<span class='notice'>It's got [screw] installed.</span>")
+	else
+		to_chat(user,"<span class='warning'>There is no screw!</span>")
+	if(receiver)
+		to_chat(user,"<span class='notice'>It's got [receiver] installed.</span>")
+	else
+		to_chat(user,"<span class='warning'>There is no receiver!</span>")
+	if(ammo_loader)
+		to_chat(user,"<span class='notice'>It's got [ammo_loader] installed.</span>")
+	else
+		to_chat(user,"<span class='warning'>There is no ammo loader!</span>")
+	if(stock)
+		to_chat(user,"<span class='notice'>It's got [stock] installed.</span>")
+	else
+		if(needs_stock)
+			to_chat(user,"<span class='warning'>There is no stock installed!</span>")
 		else
-			to_chat(usr,"The weapon frame does not contain anything.")
-	if(istype(W, /obj/item/wrench))
-		if (FALSE)
-			var/obj/item/gun/ballistic/gun = new /obj/item/gun/ballistic/automatic/pistol/n99(usr.loc)//some base gun idk
-			for(var/obj/item/prefabs/complex/F in src.contents)
-				if(istype(F,/obj/item/prefabs/complex/barrel))
-					gun.mag_type = F.mag_type
-				if(istype(F,/obj/item/prefabs/complex/action))
-					gun.burst_size = F.burst_size
-				//etc
-				//choose gun sound and model based on?(overall stats?, idk)
-				//gun.icon/item state = x
-	/*
+			to_chat(user,"<span class='notice'>There is no stock, but it will work without one.</span>")
+	if(alloys)
+		to_chat(user,"<span class='notice'>It's got [alloys] installed.</span>")
+	else
+		to_chat(user,"<span class='notice'>There is no outer frame installed, but it will work without one.</span>")
+
+	if(assembly)
+		to_chat(user,"<span class='notice'>It's got [assembly] installed.</span>")
+	else
+		to_chat(user,"<span class='warning'>There is no gun assembly installed! Activate the assembly in-hand to shape it.</span>")
+
+	to_chat(user,"<span class='notice'>The frame's complexity is [complexity]/[max_complexity].</span>")
+
+/obj/item/prefabs/complex/eWeaponFrame/examine(mob/user)
+	..()
+	if(barrel)
+		to_chat(user,"<span class='notice'>It's got [barrel] installed.</span>")
+	else
+		to_chat(user,"<span class='warning'>There is no barrel installed!</span>")
+	if(cell)
+		to_chat(user,"<span class='notice'>It's got [cell] installed.</span>")
+	else
+		to_chat(user,"<span class='warning'>There is no cell assembly installed!</span>")
+	if(burst)
+		to_chat(user,"<span class='notice'>It's got [burst] installed.</span>")
+	else
+		to_chat(user,"<span class='warning'>There is no stream adapter assembly installed!</span>")
+	if(lens)
+		to_chat(user,"<span class='notice'>It's got [lens] installed.</span>")
+	else
+		to_chat(user,"<span class='warning'>There is no lens assembly installed!</span>")
+	if(conductors)
+		to_chat(user,"<span class='notice'>It's got [conductors] installed.</span>")
+	else
+		to_chat(user,"<span class='notice'>There is no superconductors installed, but it will work without them!</span>")
+	if(flux)
+		to_chat(user,"<span class='notice'>It's got [flux] installed.</span>")
+	else
+		to_chat(user,"<span class='warning'>There is no capacitator installed!</span>")
+
+	to_chat(user,"<span class='notice'>The frame's complexity is [complexity]/[max_complexity].</span>")
+
+
+/obj/item/prefabs/complex/WeaponFrame/attackby(obj/item/W, mob/user, params)
+	var/mob/living/M = user
+	var/obj/item/dropitem = null
+
+	if(istype(W,/obj/item/prefabs/complex/WeaponFrame))
+		return
+
+	if(istype(W,/obj/item/wrench))
+		finish_gun(user)
+
+	if(istype(W,/obj/item/screwdriver))
+		if(!LAZYLEN(src.contents))
+			to_chat(M,"\The [src] does not contain anything.")
+			return 0
+		
+		for(var/obj/item/advanced_crafting_components/A in src.contents)
+			receiver = null
+			alloys = null
+			assembly = null
+			to_chat(M,"You remove \the [A] from \the [src].")
+			A.forceMove(get_turf(src))
+
+		for(var/obj/item/prefabs/P in src.contents)
+			action = null
+			barrel = null
+			trigger = null
+			bolt = null
+			screw = null
+			ammo_loader = null
+			stock = null
+
+			//temp disabled
+			//if(!M.has_trait(TRAIT_MASTER_GUNSMITH) && prob(destroy_chance))
+			//	to_chat(M,"<span_class='warning'>[P] is ruined when you remove it!</span>")
+			//	P.forceMove(get_turf(src))
+			//	qdel(P)
+			//	continue
+			to_chat(M,"You remove \the [P] from \the [src].")
+			P.forceMove(get_turf(src))
+
+		enables_automatic = 0
+		complexity = 0
+		playsound(loc, 'sound/items/screwdriver.ogg', 50, 1)
+		return 0
+
+	if(istype(W,/obj/item/prefabs))
+		var/obj/item/prefabs/I = W
+		if(complexity + I.complexity > max_complexity)
+			to_chat(usr,"<span class='warning'>[I] cannot fit on that frame! The system is too complicated and needs simpler parts.</span>")
+			return
+
+		for(var/obj/item/prefabs/P in src.contents)
+			if(I.part_type == P.part_type) //Always able to swap out barrel with barrel, etc
+				continue
+
+			for(var/tag in I.tags)
+				if(tag in P.incompatible_tags)//Something already in it is incompatible
+					to_chat(usr,"<span class='warning'>[I] cannot fit on that frame! \The [P] makes it incompatible.</span>")
+					return
+				for(var/inner_tag in P.tags) //This part we're holding is incompatible with something already in it. Hello recursion my old friend
+					if(inner_tag in I.incompatible_tags)
+						to_chat(usr,"<span class='warning'>[I] cannot fit on that frame! It's incompatible with \the [P].</span>")
+						return
+
+		if(!do_after(user,20,target = src))
+			return
+
+		complexity += I.complexity
+		if(I.enables_automatic)
+			enables_automatic = TRUE
+	if(istype(W,/obj/item/prefabs/complex/action))//automatic/burst/etc, lower damage for burst
+		dropitem = action
+		if(action)
+			to_chat(usr,"<span_class='notice'>You swap out \the [action].</span>")
+			action = null
+		action = W
+	else if(istype(W,/obj/item/prefabs/complex/barrel))//bullet speed
+		dropitem = barrel
+		if(barrel)
+			to_chat(usr,"<span_class='notice'>You swap out \the [barrel].</span>")
+			barrel = null
+		barrel = W
+	else if(istype(W,/obj/item/prefabs/complex/trigger))//fire delay, burst delay, more spread for better
+		dropitem = trigger
+		if(trigger)
+			to_chat(usr,"<span_class='notice'>You swap out \the [trigger].</span>")
+			trigger = null
+		trigger = W
+	else if(istype(W,/obj/item/prefabs/complex/bolt))//damage, armorpen mod
+		dropitem = bolt
+		if(bolt)
+			to_chat(usr,"<span_class='notice'>You swap out \the [bolt].</span>")
+			bolt = null
+		bolt = W
+	else if(istype(W,/obj/item/prefabs/complex/screw))//spread
+		dropitem = screw
+		if(screw)
+			to_chat(usr,"<span_class='notice'>You swap out \the [screw].</span>")
+			screw = null
+		screw = W
+	else if(istype(W,/obj/item/advanced_crafting_components/receiver))//req
+		dropitem = receiver
+		if(receiver)
+			to_chat(usr,"<span_class='notice'>You swap out \the [receiver].</span>")
+			receiver = null
+		receiver = W
+	else if(istype(W,/obj/item/advanced_crafting_components/alloys))//extra random stats if present
+		dropitem = alloys
+		if(alloys)
+			to_chat(usr,"<span_class='notice'>You swap out \the [alloys].</span>")
+			alloys = null
+		alloys = W
+	else if(istype(W,/obj/item/prefabs/complex/ammo_loader))//ammo type
+		dropitem = ammo_loader
+		if(ammo_loader)
+			to_chat(usr,"<span_class='notice'>You swap out \the [ammo_loader].</span>")
+			ammo_loader = null
+		ammo_loader = W
+	else if(istype(W,/obj/item/prefabs/complex/gunframe))
+		var/obj/item/prefabs/complex/gunframe/G = W
+		dropitem = assembly
+		if(assembly)
+			to_chat(usr,"<span_class='notice'>You swap out \the [assembly].</span>")
+			assembly = null
+		assembly = W
+		icon_state = assembly.icon_state
+		src.name = "[G.gun_type] frame"
+		needs_stock = G.needs_stock
+	else if(istype(W,/obj/item/prefabs/complex/stock))//spread reduction
+		dropitem = stock
+		if(stock)
+			to_chat(usr,"<span_class='notice'>You swap out \the [stock].</span>")
+			stock = null
+		stock = W
+	else
+		return ..()
+
+	if(dropitem)
+		dropitem.forceMove(get_turf(src))
+
+	playsound(get_turf(src), 'sound/items/screwdriver.ogg', 50, 1)
+	user.transferItemToLoc(W,src)
+
+//Alloys are not needed, but buff stats a bit
+
+/obj/item/prefabs/complex/eWeaponFrame/attackby(obj/item/W, mob/user, params)
+	var/mob/living/M = user
+	var/obj/item/dropitem = null
+
+	if(istype(W,/obj/item/prefabs/complex/eWeaponFrame))
+		return
+
+	if(istype(W,/obj/item/wrench))
+		finish_egun(user)
+
+	if(istype(W,/obj/item/screwdriver))
+		if(!LAZYLEN(src.contents))
+			to_chat(M,"\The [src] does not contain anything.")
+			return 0
+		
+		for(var/obj/item/advanced_crafting_components/A in src.contents)
+			lens = null
+			flux = null
+			conductors = null
+			to_chat(M,"You remove \the [A] from \the [src].")
+			A.forceMove(get_turf(src))
+
+		for(var/obj/item/prefabs/P in src.contents)
+			barrel = null
+			cell = null
+
+			//temp disabled
+			//if(!M.has_trait(TRAIT_MASTER_GUNSMITH) && prob(destroy_chance))
+			//	to_chat(M,"<span_class='warning'>[P] is ruined when you remove it!</span>")
+			//	P.forceMove(get_turf(src))
+			//	qdel(P)
+			//	continue
+			to_chat(M,"You remove \the [P] from \the [src].")
+			P.forceMove(get_turf(src))
+
+		enables_automatic = 0
+		complexity = 0
+		playsound(loc, 'sound/items/screwdriver.ogg', 50, 1)
+		return 0
+
+	if(istype(W,/obj/item/prefabs))
+		var/obj/item/prefabs/I = W
+		if(complexity + I.complexity > max_complexity)
+			to_chat(usr,"<span class='warning'>[I] cannot fit on that frame! The system is too complicated and needs simpler parts.</span>")
+			return
+
+		for(var/obj/item/prefabs/P in src.contents)
+			if(I.part_type == P.part_type) //Always able to swap out barrel with barrel, etc
+				continue
+
+			for(var/tag in I.tags)
+				if(tag in P.incompatible_tags)//Something already in it is incompatible
+					to_chat(usr,"<span class='warning'>[I] cannot fit on that frame! \The [P] makes it incompatible.</span>")
+					return
+				for(var/inner_tag in P.tags) //This part we're holding is incompatible with something already in it. Hello recursion my old friend
+					if(inner_tag in I.incompatible_tags)
+						to_chat(usr,"<span class='warning'>[I] cannot fit on that frame! It's incompatible with \the [P].</span>")
+						return
+
+		if(!do_after(user,20,target = src))
+			return
+
+		complexity += I.complexity
+		if(I.enables_automatic)
+			enables_automatic = TRUE
+	if(istype(W,/obj/item/prefabs/complex/ebarrel))//automatic/burst/etc, lower damage for burst
+		dropitem = barrel
+		if(barrel)
+			to_chat(usr,"<span_class='notice'>You swap out \the [barrel].</span>")
+			barrel = null
+		barrel = W
+	else if(istype(W,/obj/item/prefabs/complex/eburst))//bullet speed
+		dropitem = burst
+		if(burst)
+			to_chat(usr,"<span_class='notice'>You swap out \the [burst].</span>")
+			burst = null
+		burst = W
+	else if(istype(W,/obj/item/prefabs/complex/ecell))//bullet speed
+		dropitem = cell
+		if(cell)
+			to_chat(usr,"<span_class='notice'>You swap out \the [cell].</span>")
+			cell = null
+		cell = W
+	else if(istype(W,/obj/item/advanced_crafting_components/lenses))//req
+		dropitem = lens
+		if(lens)
+			to_chat(usr,"<span_class='notice'>You swap out \the [lens].</span>")
+			lens = null
+		lens = W
+	else if(istype(W,/obj/item/advanced_crafting_components/flux))//extra random stats if present
+		dropitem = flux
+		if(flux)
+			to_chat(usr,"<span_class='notice'>You swap out \the [flux].</span>")
+			flux = null
+		flux = W
+	else if(istype(W,/obj/item/advanced_crafting_components/conductors))//extra random stats if present
+		dropitem = conductors
+		if(conductors)
+			to_chat(usr,"<span_class='notice'>You swap out \the [conductors].</span>")
+			conductors = null
+		conductors = W
+	else
+		return ..()
+
+	if(dropitem)
+		dropitem.forceMove(get_turf(src))
+
+	playsound(get_turf(src), 'sound/items/screwdriver.ogg', 50, 1)
+	user.transferItemToLoc(W,src)
+
+//Alloys are not needed, but buff stats a bit
+
+/obj/item/prefabs/complex/eWeaponFrame/proc/finish_egun(mob/user)
+	var/mob/living/M = user
+
+	if(!barrel || !burst || !cell || !lens || !flux || !conductors)
+		if(user)
+			to_chat(user,"<span_class='notice'>It's missing a part! Examine it for more details.</span>")
+		return 0
+
+	var/gun_path
+	var/gun_icon
+	var/prefix = ""
+	var/quality = ""
+	var/obj/item/gun/G
+
+	if(istype(src,/obj/item/prefabs/complex/eWeaponFrame/pistol))
+		gun_path = /obj/item/gun/energy/laser/pistol
+		gun_icon = "AEP7"//Garbage default pistol
+		prefix = "Portable"
+	else if(istype(src,/obj/item/prefabs/complex/eWeaponFrame/rifle))
+		gun_path = /obj/item/gun/energy/laser/aer9
+		gun_icon = "laser"
+		prefix = "Full Length"
+
+	if(!ispath(gun_path)) //Something went fucky
+		return 0
+
+	G = new gun_path(get_turf(src))
+	G.icon_state = gun_icon
+	G.gun_icon_state = gun_icon
+	G.item_state = gun_icon
+	G.desc = ""
+
+	if(conductors)
+		to_chat(user,"You use the conductors to improve the weapon.")
+		G.extra_damage += pick(6,4,2)
+		G.extra_penetration += pick(6,4,2)
+
+	if(M.has_trait(TRAIT_MASTER_GUNSMITH))
+		to_chat(user,"Your skills come in handy while assembling the weapon")
+		if(prob(25))
+			G.extra_damage += 5
+		if(prob(25))
+			G.extra_penetration += 5
+
+	for(var/obj/item/prefabs/C in src.contents)
+		G.extra_damage += C.dam_mod//0
+		G.burst_size += C.burst_mod//1
+		G.customburst += C.burst_mod//1
+		G.burst_delay += C.burst_delay_mod//2
+		G.extra_penetration += C.armorpen_mod//0
+		G.recoil += C.recoil_mod//0
+		G.spread += C.spread_mod//0
+		G.projectile_speed += C.bullet_speed_mod //Should be tiny increments, normally is 0.8
+		G.fire_delay += C.fire_delay_mod
+		if(G.w_class < C.gun_weight_class)
+			G.w_class = C.gun_weight_class
+		if(C.energyAmmoType)
+			var/obj/item/gun/energy/E = G
+			E.cell_type = C.energyAmmoType
+		if (C.energyProjType)
+			var/obj/item/gun/energy/E = G
+			E.ammo_type = C.energyProjType
+		G.force += C.force_mod
+
+	if(complexity < 50)
+		quality = "crude" //It shouldn't even be possible to get this low, maybe VERY basic shotguns
+	else if(complexity < 50)
+		quality = "makeshift"
+	else if(complexity < 75)
+		quality = "standard"
+	else if(complexity < 100)
+		quality = "good"
+	else if(complexity < 130)
+		quality = "improved"
+	else if(complexity < 150)
+		quality = "excellent"
+	else if(complexity < 180)
+		quality = "superior"
+	else
+		quality = "masterwork"
+
+	if(max_complexity / 2 > complexity) //You got lazy and didn't even fill half the possible complexity
+		G.extra_damage += pick(-2,-1,0)
+		if(quality == "standard")
+			quality = "substandard"
+		if(quality == "improved")
+			quality = "modified"
+		if(quality == "masterwork")
+			quality = "enhanced"
+
+	G.name = "[prefix] [burst.name] [barrel.name] ([quality])"
 	
-	*/
-		else if(screw&&trigger&&boltsimple&&actionsimple&&mm10barrel)//10mm
-			if(istype(src,/obj/item/prefabs/complex/simpleWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/pistol/n99
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/simpleWeaponFrame/mid)&&alloys)//gunslinger
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/pistol/n99/pers/gunslinger
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/simpleWeaponFrame/mid)&&receiver)//glock
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/pistol/n99/pers/glock
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/simpleWeaponFrame/mid)&&assembly)//long
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/pistol/n99/pers/long
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/simpleWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/pistol/n99/mid
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/simpleWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/pistol/n99/high
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-		else if(screw&&trigger&&boltsimple&&actionsimple&&m357barrel)//357
-			if(istype(src,/obj/item/prefabs/complex/simpleWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/revolver/colt357
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-		else if(screw&&trigger&&boltsimple&&actionsimple&&m44barrel)//44
-			if(istype(src,/obj/item/prefabs/complex/simpleWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/revolver/m29
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-		else if(screw&&trigger&&boltsimple&&actionsimple&&m4570barrel)//hunting revolver
-			if(istype(src,/obj/item/prefabs/complex/simpleWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/revolver/sequoia/scoped
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/simpleWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/revolver/sequoia/scoped/mid
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-		/*	else if(istype(src,/obj/item/prefabs/complex/simpleWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/revolver/sequoia/scoped/high
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)*/
-		else if(screw&&trigger&&boltadvanced&&actionsimple&&m556barrel)//556 pistol
-			if(istype(src,/obj/item/prefabs/complex/simpleWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/revolver/thatgun
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-		else 
-			to_chat(usr,"This isn't quite right...")
-	if(istype(W, /obj/item/advanced_crafting_components/alloys))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		alloys = W
-	if(istype(W, /obj/item/advanced_crafting_components/receiver))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		receiver = W
-	if(istype(W, /obj/item/advanced_crafting_components/assembly))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		assembly = W
-	if(istype(W, /obj/item/prefabs/complex/action/simple))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		actionsimple = W
-	if(istype(W, /obj/item/prefabs/complex/action/auto))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		actionauto = W
-	if(istype(W, /obj/item/prefabs/complex/trigger))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		trigger = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/m556))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		m556barrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/shotgun))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		shotgunbarrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/mm9))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		mm9barrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/mm10))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		mm10barrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/m357))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		m357barrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/m44))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		m44barrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/m45))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		m45barrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/m762))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		m762barrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/m4570))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		m4570barrel = W
-	if(istype(W, /obj/item/prefabs/complex/bolt/simple))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		boltsimple = W
-	if(istype(W, /obj/item/prefabs/complex/bolt/high))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		boltadvanced = W
-	if(istype(W, /obj/item/prefabs/complex/stock/mid))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		stockplastic = W
-	if(istype(W, /obj/item/prefabs/complex/stock/low))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		stockwood = W
-	if(istype(W, /obj/item/prefabs/complex/screw))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		screw = W
+	var/obj/item/gun/energy/B = G
+	B.cell = new B.cell_type(B)
 
-/obj/item/prefabs/complex/complexWeaponFrame//todo me more recipes
+	B.Initialize()
 
-	var/obj/item/prefabs/complex/action/simple/actionsimple
-	var/obj/item/prefabs/complex/action/auto/actionauto
+	src.forceMove(G) //Entire assembly gets thrown in the gun
 
-	var/obj/item/prefabs/complex/barrel/m556/m556barrel
-	var/obj/item/prefabs/complex/barrel/mm10/mm10barrel
-	var/obj/item/prefabs/complex/barrel/m357/m357barrel
-	var/obj/item/prefabs/complex/barrel/mm9/mm9barrel
-	var/obj/item/prefabs/complex/barrel/m44/m44barrel
-	var/obj/item/prefabs/complex/barrel/m45/m45barrel
-	var/obj/item/prefabs/complex/barrel/m762/m762barrel
-	var/obj/item/prefabs/complex/barrel/m4570/m4570barrel
-	var/obj/item/prefabs/complex/barrel/shotgun/shotgunbarrel
 
-	var/obj/item/prefabs/complex/trigger/trigger
+/obj/item/prefabs/complex/WeaponFrame/proc/finish_gun(mob/user)
+	var/mob/living/M = user
 
-	var/obj/item/prefabs/complex/bolt/simple/boltsimple
-	var/obj/item/prefabs/complex/bolt/high/boltadvanced
+	if(!action || !barrel || !trigger || !bolt || !screw || !receiver || !assembly || (!stock && needs_stock))
+		if(user)
+			to_chat(user,"<span_class='notice'>It's missing a part! Examine it for more details.</span>")
+		return 0
 
-	var/obj/item/prefabs/complex/stock/mid/stockplastic
-	var/obj/item/prefabs/complex/stock/low/stockwood
-	var/obj/item/prefabs/complex/screw/screw
+	var/gun_path
+	var/gun_icon
+	var/prefix = ""
+	var/quality = ""
+	var/obj/item/gun/G
 
-	var/obj/item/advanced_crafting_components/alloys/alloys
-	var/obj/item/advanced_crafting_components/receiver/receiver
-	var/obj/item/advanced_crafting_components/assembly/assembly
-	name = "Complex Weapon Frame"
-	desc = ""
-	icon_state = "gunframe"
+	switch(assembly.frame_type) //Specific item sprites - weird ones are genericized
+		if("pistol")
+			gun_path = /obj/item/gun/ballistic/automatic/pistol //Generic pistol!
+			gun_icon = "m1911"//Garbage default pistol
+			switch(ammo_loader.caliber_name) //Here we do some basic life hacks to get our nice sprites out there
+				if("10mm")
+					gun_icon = "n99"
+				if("9mm")
+					gun_icon = "ninemil"
+				if("5.56")
+					gun_icon = "thatgun"
+				if("7.62")
+					gun_icon = "aps"
+				if(".45-70")
+					if(complexity > 100)
+						gun_icon = "maria"
+				if(".50")
+					if(complexity > 100)
+						gun_icon = "deagle"
+		if("rifle")
+			//if(enables_automatic)
+			gun_path = /obj/item/gun/ballistic/automatic
+			gun_icon = "service_rifle"
+			//else
+			//	gun_path = /obj/item/gun/ballistic/shotgun //It's a bolt action rifle
+			//	gun_icon = pick("varmint_rifle","308")
+			switch(ammo_loader.caliber_name)
+				if("9mm")
+					gun_icon = "auto_pipe_rifle"
+				if("5.56")
+					if(complexity < 50)
+						gun_icon = "varmint_rifle"
+					else if(complexity < 125)
+						gun_icon = "service_rifle"
+					else if(complexity < 150)
+						gun_icon = "assault_rifle"
+					else if(complexity < 200)
+						gun_icon = "assault_carbine"
+					else if(complexity < 250)
+						gun_icon = "R82"
+					else
+						gun_icon = "type93"
+				if("7.62")
+					if(enables_automatic)
+						gun_icon = "rangemaster"
+					else
+						gun_icon = "moistnugget"
 
-/obj/item/prefabs/complex/complexWeaponFrame/attackby(obj/item/W, mob/user, params)//todo me more recipes
-	if(istype(W, /obj/item/screwdriver))
-		if(src.contents.len > 0)			
-			to_chat(usr,"You remove the [src.contents[1]] from the [src].")
-			usr.transferItemToLoc(src.contents[1],usr.loc)
-		else
-			to_chat(usr,"The weapon frame does not contain anything.")
-	if(istype(W, /obj/item/wrench))
-		if(screw&&trigger&&boltsimple&&actionsimple&&m556barrel&&stockplastic)//service
-			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/marksman/servicerifle
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/marksman/servicerifle/mid
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/marksman/servicerifle/high
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-		else if(screw&&trigger&&boltsimple&&actionsimple&&m556barrel&&stockwood)//varmint
-			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-		else if(screw&&trigger&&boltsimple&&actionsimple&&m44barrel&&stockwood)//trail carbine
-			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-		else if(screw&&trigger&&boltsimple&&actionsimple&&m4570barrel&&stockwood)//brush gun
-			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped/mid
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped/high
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-		else if(screw&&trigger&&boltsimple&&actionauto&&mm9barrel&&stockwood&&receiver)//pps
-			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/pps
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/pps/mid
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/pps/high
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-		else if(screw&&trigger&&boltsimple&&actionauto&&mm9barrel&&stockplastic&&receiver)//uzi
-			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/mini_uzi
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/mini_uzi/mid
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/mini_uzi/high
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-		else if(screw&&trigger&&boltsimple&&actionauto&&mm10barrel&&stockplastic&&receiver)//10mmsmg
-			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg10mm
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg10mm/mid
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg10mm/high
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-		else if(screw&&trigger&&boltsimple&&actionauto&&m45barrel&&stockplastic&&receiver)//grease gun
-			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/greasegun
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/greasegun/mid
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/greasegun/high
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-		else if(screw&&trigger&&boltadvanced&&actionsimple&&m762barrel&&stockplastic&&receiver&&assembly)//rangemaster
-			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/rangemaster/scoped
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/rangemaster/scoped/mid
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			/*else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/rangemaster/scoped/high
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)*/
-		else if(screw&&trigger&&boltadvanced&&actionauto&&m556barrel&&stockplastic&&receiver&&assembly)//assault rifle
-			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/assault_rifle
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/assault_rifle/mid
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)
-			/*else if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/assault_rifle/high
-				B.forceMove(usr.loc)
-				to_chat(usr,"You make a [B]")
-				qdel(src)*/
-		else
-			to_chat(usr,"This isn't quite right...")
-	if(istype(W, /obj/item/advanced_crafting_components/alloys))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		alloys = W
-	if(istype(W, /obj/item/advanced_crafting_components/receiver))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		receiver = W
-	if(istype(W, /obj/item/advanced_crafting_components/assembly))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		assembly = W
-	if(istype(W, /obj/item/prefabs/complex/action/simple))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		actionsimple = W
-	if(istype(W, /obj/item/prefabs/complex/action/auto))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		actionauto = W
-	if(istype(W, /obj/item/prefabs/complex/trigger))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		trigger = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/shotgun))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		shotgunbarrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/m556))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		m556barrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/mm10))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		mm10barrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/mm9))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		mm9barrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/m357))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		m357barrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/m44))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		m44barrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/m45))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		m45barrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/m762))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		m762barrel = W
-	if(istype(W, /obj/item/prefabs/complex/barrel/m4570))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		m4570barrel = W
-	if(istype(W, /obj/item/prefabs/complex/bolt/simple))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		boltsimple = W
-	if(istype(W, /obj/item/prefabs/complex/bolt/high))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		boltadvanced = W
-	if(istype(W, /obj/item/prefabs/complex/stock/mid))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		stockplastic = W
-	if(istype(W, /obj/item/prefabs/complex/stock/low))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		stockwood = W
-	if(istype(W, /obj/item/prefabs/complex/screw))
-		usr.transferItemToLoc(W,src)
-		to_chat(usr,"You install the [W] into the [src]")
-		screw = W
+		if("shotgun")
+			gun_path = /obj/item/gun/ballistic/shotgun/automatic
+			//if(!istype(barrel,/obj/item/prefabs/complex/barrel/shotgun))
+			//	if(user)
+			//		to_chat(user,"<span class='warning'>Shotguns must have shotgun barrels!</span>")
+			//	return 0
+			if(complexity < 50)
+				gun_icon = "single_shotgun"
+			else if(complexity < 75)
+				gun_icon = "caravan_shotgun"
+			else if(complexity < 100)
+				gun_icon = "hunting"
+			else if(complexity < 125)
+				gun_icon = "trenchgun"
+			else if(complexity < 200)
+				gun_icon = "riot_shotgun"
+			else
+				gun_icon = "bulldog"
+		if("revolver")
+			gun_path = /obj/item/gun/ballistic/revolver
+			gun_icon = "detective_panther"
+			switch(ammo_loader.caliber_name)
+				if("10mm")
+					gun_icon = "colt6250"
+				if("9mm")
+					gun_icon = "zipgun"
+				if(".357")
+					gun_icon = "colt357"
+				if(".44")
+					gun_icon = "m29"
+				if(".45")
+					gun_icon = "mysterious_m29"
+				if(".45-70")
+					gun_icon = "hunting_revolverscopeless"
+				if(".50")
+					gun_icon = "mateba"
+				if("12g")
+					gun_icon = "hunting-sawn"
+		if("smg")
+			gun_path = /obj/item/gun/ballistic/automatic
+			gun_icon = "smg10mm"
+			switch(ammo_loader.caliber_name)
+				if("10mm")
+					gun_icon = "smg10mm"
+				if("9mm")
+					gun_icon = "mini-uzi"
+				if(".44")
+					gun_icon = "grease_gun"
+				if(".45")
+					gun_icon = "tommygun"
+				if(".45-70")
+					gun_icon = "m90"
+		if("lmg")
+			gun_path = /obj/item/gun/ballistic/automatic
+			gun_icon = "R84"
+			if(complexity < 100)
+				gun_icon = "R84"
+			else
+				gun_icon = "fnfal"
+
+		if("sniper")
+			scope = TRUE
+			//if(enables_automatic)
+			gun_path = /obj/item/gun/ballistic/automatic
+			//else
+			//	gun_path = /obj/item/gun/ballistic/shotgun //Bolt action
+			gun_icon = "308"
+			switch(barrel.caliber_name)
+				if(".357")
+					gun_icon = "cowboyrepeater"
+				if(".44")
+					gun_icon = "trailcarbine"
+				if(".45")
+					gun_icon = "sniper"
+				if(".45-70")
+					gun_icon = "gold_sniper"
+				if("5.56")
+					gun_icon = "rat_slayer"
+				if("7.62")
+					gun_icon = "rangemaster"
+				if(".50")
+					gun_icon = "bozar"
+
+	if(!ispath(gun_path)) //Something went fucky
+		return 0
+
+	G = new gun_path(get_turf(src))
+	G.icon_state = gun_icon
+	G.gun_icon_state = gun_icon
+	G.item_state = gun_icon
+	G.desc = ""
+
+	if(alloys)
+		to_chat(user,"You use the alloys to improve the weapon.")
+		G.extra_damage += pick(6,4,2)
+		G.extra_penetration += pick(6,4,2)
+	if(enables_automatic)
+		G.automatic = 1
+
+	if(M.has_trait(TRAIT_MASTER_GUNSMITH))
+		to_chat(user,"Your skills come in handy while assembling the weapon")
+		if(prob(7))
+			G.extra_damage += 5
+		if(prob(7))
+			G.extra_penetration += 5
+		if(prob(7))
+			G.burst_size += 1
+		if(prob(7))
+			G.spread += -15
+		if(prob(7))
+			G.projectile_speed += -0.2
+		if(prob(7))
+			G.fire_delay += -0.5
+
+	for(var/obj/item/prefabs/C in src.contents)
+		G.extra_damage += C.dam_mod//0
+		G.burst_size += C.burst_mod//1
+		G.customburst += C.burst_mod//1
+		G.burst_delay += C.burst_delay_mod//2
+		G.extra_penetration += C.armorpen_mod//0
+		G.recoil += C.recoil_mod//0
+		G.spread += C.spread_mod//0
+		G.projectile_speed += C.bullet_speed_mod //Should be tiny increments, normally is 0.8
+		G.fire_delay += C.fire_delay_mod
+		if(G.w_class < C.gun_weight_class)
+			G.w_class = C.gun_weight_class
+		if(C.mag_type && istype(G,/obj/item/gun/ballistic))
+			var/obj/item/gun/ballistic/B = G
+			B.mag_type = C.mag_type
+			B.pulloutmag = C.canpulloutmag
+		else if(C.mag_type && istype(G,/obj/item/gun/energy))
+			var/obj/item/gun/energy/E = G
+			E.cell_type = C.mag_type
+		G.force += C.force_mod
+
+	if(complexity < 50)
+		quality = "crude" //It shouldn't even be possible to get this low, maybe VERY basic shotguns
+	else if(complexity < 75)
+		quality = "makeshift"
+	else if(complexity < 100)
+		quality = "standard"
+	else if(complexity < 150)
+		quality = "good"
+	else if(complexity < 170)
+		quality = "improved"
+	else if(complexity < 200)
+		quality = "excellent"
+	else if(complexity < 250)
+		quality = "superior"
+	else
+		quality = "masterwork"
+
+	if(max_complexity / 2 > complexity) //You got lazy and didn't even fill half the possible complexity
+		G.extra_damage += pick(-2,-1,0)
+		if(quality == "standard")
+			quality = "substandard"
+		if(quality == "improved")
+			quality = "modified"
+		if(quality == "masterwork")
+			quality = "enhanced"
+
+	G.name = "[prefix][ammo_loader.caliber_name] [assembly.frame_type] ([quality])"
+	
+	if(scope)
+		G.zoomable = TRUE
+		G.zoom_amt = 10
+		G.zoom_out_amt = 13
+		G.build_zooming()
+
+	var/obj/item/gun/ballistic/B = G
+	B.magazine = new B.mag_type(B)
+	src.forceMove(G) //Entire assembly gets thrown in the gun
 
 /obj/item/prefabs/complex/simpleWeaponFrame/low
 	name = "Simple Weapon Frame (standard)"
@@ -725,177 +1054,529 @@
 	desc = ""
 	icon_state = "mould"
 
+	var/item_path
+	var/mould_sheet_type = /obj/item/stack/sheet/metal
+	var/sheet_amount = 1
+
 /obj/item/prefabs/mould/action/simple
 	name = "Simple Action Mould"
 	desc = ""
+	item_path = /obj/item/prefabs/complex/action/simple
+	sheet_amount = 1
 
 /obj/item/prefabs/mould/action/auto
 	name = "Automatic Action Mould"
 	desc = ""
+	item_path = /obj/item/prefabs/complex/action/auto
+	sheet_amount = 2
 
-/obj/item/prefabs/mould/barrel/shotgun
-	name = "Shotgun Barrel Mould"
+/obj/item/prefabs/mould/barrel/short
+	name = "Short Barrel Mould"
 	desc = ""
+	item_path = /obj/item/prefabs/complex/barrel/short
+	sheet_amount = 1
 
-/obj/item/prefabs/mould/barrel/m357
-	name = ".357 Barrel Mould"
+/obj/item/prefabs/mould/barrel/medium
+	name = "Medium Barrel Mould"
 	desc = ""
+	item_path = /obj/item/prefabs/complex/barrel/medium
+	sheet_amount = 2
 
-/obj/item/prefabs/mould/barrel/mm10
-	name = "10mm Barrel Mould"
+/obj/item/prefabs/mould/barrel/long
+	name = "Long Barrel Mould"
 	desc = ""
-
-/obj/item/prefabs/mould/barrel/mm9
-	name = "9mm Barrel Mould"
-	desc = ""
-
-/obj/item/prefabs/mould/barrel/m44
-	name = ".44 Barrel Mould"
-	desc = ""
-
-/obj/item/prefabs/mould/barrel/m45
-	name = ".45 Barrel Mould"
-	desc = ""
-
-/obj/item/prefabs/mould/barrel/m4570
-	name = ".45-70 Barrel Mould"
-	desc = ""
-
-/obj/item/prefabs/mould/barrel/m556
-	name = "556 Barrel Mould"
-	desc = ""
-
-/obj/item/prefabs/mould/barrel/m762
-	name = "762 Barrel Mould"
-	desc = ""
+	item_path = /obj/item/prefabs/complex/barrel/long
+	sheet_amount = 3
 
 /obj/item/prefabs/mould/bolt/simple
 	name = "Simple Bolt Mould"
 	desc = ""
+	item_path = /obj/item/prefabs/complex/bolt/simple
+	sheet_amount = 2
 
 /obj/item/prefabs/mould/bolt/high
 	name = "Advanced Bolt Mould"
 	desc = ""
+	item_path = /obj/item/prefabs/complex/bolt/high
+	sheet_amount = 2
 
 /obj/item/prefabs/mould/trigger
-	name = "Trigger Mould"
+	name = "Simple Trigger Mould"
 	desc = ""
+	item_path = /obj/item/prefabs/complex/trigger/simple
+	sheet_amount = 2
 
 /obj/item/prefabs/mould/stock
 	name = "Stock Mould"
 	desc = ""
+	item_path = /obj/item/prefabs/complex/stock/mid
+	mould_sheet_type = /obj/item/stack/sheet/plastic
 
 /obj/item/prefabs/mould/screw
 	name = "Screw Mould"
 	desc = ""
+	item_path = /obj/item/prefabs/complex/screw
 
 /obj/item/prefabs/mould/simpleWeaponFrame
 	name = "Simple Weapon Frame Mould"
 	desc = ""
+	item_path = /obj/item/prefabs/complex/WeaponFrame/makeshift
+	sheet_amount = 5
 
 /obj/item/prefabs/mould/complexWeaponFrame
 	name = "Complex Weapon Frame Mould"
 	desc = ""
+	item_path = /obj/item/prefabs/complex/WeaponFrame/standard
+	sheet_amount = 5
+
+/obj/item/prefabs/mould/prewarWeaponFrame
+	name = "Prewar Weapon Frame Mould"
+	desc = ""
+	item_path = /obj/item/prefabs/complex/WeaponFrame/improved
+	sheet_amount = 5
+
+/obj/item/prefabs/mould/masterworkWeaponFrame
+	name = "Masterwork Weapon Frame Mould"
+	desc = ""
+	item_path = /obj/item/prefabs/complex/WeaponFrame/masterwork
+	sheet_amount = 1
+	mould_sheet_type = /obj/item/stack/sheet/prewar
+
+/obj/item/prefabs/mould/m10mm
+	name = "10mm Magazine Ammo Loader Mould"
+	desc = ""
+	item_path = /obj/item/prefabs/complex/ammo_loader/m10mm
+	sheet_amount = 2
+
+/obj/item/prefabs/mould/m10mmdouble
+	name = "10mm Magazine Double Ammo Loader Mould"
+	desc = ""
+	item_path = /obj/item/prefabs/complex/ammo_loader/m10mmdouble
+	sheet_amount = 2
+
+/obj/item/prefabs/mould/m9mm
+	name = "9mm Magazine Ammo Loader Mould"
+	desc = ""
+	item_path = /obj/item/prefabs/complex/ammo_loader/m9mm
+	sheet_amount = 2
+
+/obj/item/prefabs/mould/m9mmdouble
+	name = "9mm Magazine Double Ammo Loader Mould"
+	desc = ""
+	item_path = /obj/item/prefabs/complex/ammo_loader/m9mmdouble
+	sheet_amount = 2
+
+/obj/item/prefabs/mould/m9mmext
+	name = "9mm Magazine Extended Ammo Loader Mould"
+	desc = ""
+	item_path = /obj/item/prefabs/complex/ammo_loader/m9mmext
+	sheet_amount = 2
+
+/obj/item/prefabs/mould/m556
+	name = "556 Magazine Ammo Loader Mould"
+	desc = ""
+	item_path = /obj/item/prefabs/complex/ammo_loader/m556
+	sheet_amount = 2
+
+//energy components
+/obj/item/prefabs/complex/ebarrel
+	part_type = "ebarrel"
+	icon_state = "flux"
+	desc = "Energy Emitter"
+
+/obj/item/prefabs/complex/ebarrel/laser/weak
+	name = "Weak Laser Emitter"
+	energyProjType = list(/obj/item/ammo_casing/energy/laser/pistol)
+	complexity = 25
+
+/obj/item/prefabs/complex/ebarrel/laser/avg
+	name = "Laser Emitter"
+	energyProjType = list(/obj/item/ammo_casing/energy/laser/lasgun)
+	complexity = 50
+
+/obj/item/prefabs/complex/ebarrel/laser/strong
+	name = "Strong Laser Emitter"
+	energyProjType = list(/obj/item/ammo_casing/energy/laser/musket)
+	complexity = 60
+
+/obj/item/prefabs/complex/ebarrel/laser/scatter
+	name = "Scatter Laser Emitter"
+	energyProjType = list(/obj/item/ammo_casing/energy/laser/scatter)
+	complexity = 100
+
+
+/obj/item/prefabs/complex/ebarrel/plasma/weak
+	name = "Weak Plasma Emitter"
+	energyProjType = list(/obj/item/ammo_casing/energy/plasma/pistol)
+	complexity = 50
+
+/obj/item/prefabs/complex/ebarrel/plasma/avg
+	name = "Plasma Emitter"
+	energyProjType = list(/obj/item/ammo_casing/energy/plasma)
+	complexity = 100
+
+/obj/item/prefabs/complex/eburst
+	part_type = "eburst"
+	icon_state = "flux"
+	desc = "Energy Stream Adapter"
+
+/obj/item/prefabs/complex/eburst/simple
+	name = "Single Stream"
+	burst_mod = 0
+	complexity = 25
+
+/obj/item/prefabs/complex/eburst/dual
+	name = "Dual Stream"
+	burst_mod = 1
+	burst_delay_mod = -0.5
+	complexity = 75
+
+/obj/item/prefabs/complex/eburst/fast
+	name = "Fast Dual Stream"
+	burst_mod = 1
+	burst_delay_mod = -2
+	complexity = 100
+
+/obj/item/prefabs/complex/eburst/triple
+	name = "Triple Stream"
+	burst_mod = 2
+	burst_delay_mod = -0.5
+	complexity = 100
+
+/obj/item/prefabs/complex/ecell
+	part_type = "ecell"
+	icon_state = "flux"
+	desc = "Power Source Adapater"
+
+/obj/item/prefabs/complex/ecell/ec
+	name = "EC Adapter"
+	energyAmmoType = /obj/item/stock_parts/cell/ammo/ec
+	dam_mod = -7
+	armorpen_mod = -7
+	complexity = 25
+
+/obj/item/prefabs/complex/ecell/mfc
+	name = "MFC Adapter"
+	energyAmmoType = /obj/item/stock_parts/cell/ammo/mfc
+	dam_mod = 3
+	armorpen_mod = 3
+	complexity = 50
+
+/obj/item/prefabs/complex/ecell/ecp
+	name = "ECP Adapter"
+	energyAmmoType = /obj/item/stock_parts/cell/ammo/ecp
+	dam_mod = 10
+	armorpen_mod = 10
+	complexity = 50
 
 //components
-/obj/item/prefabs/complex
-	var/burst_size = 1
-	var/mag_type = null
+/obj/item/prefabs/complex/action
+	part_type = "action"
 
 /obj/item/prefabs/complex/action/simple
 	name = "Simple Action"
 	desc = ""
 	icon_state = "action"
+	complexity = 10
+	tags = list("semiauto")
+	incompatible_tags = list("automatic")
 
 /obj/item/prefabs/complex/action/auto
 	name = "Automatic Action"
 	desc = ""
 	icon_state = "action"
-	burst_size = 2
+	complexity = 30
+	tags = list("automatic")
+	incompatible_tags = list("semiauto")
+	spread_mod = 10
+	enables_automatic = TRUE
+
+/obj/item/prefabs/complex/action/autoburst
+	name = "Automatic Burst Action"
+	desc = ""
+	icon_state = "action"
+	complexity = 50
+	tags = list("automatic","burst")
+	incompatible_tags = list("revolver","shotgun","sniper")
+	burst_mod = 1
+	spread_mod = 20
+	enables_automatic = TRUE
+
+/obj/item/prefabs/complex/action/rapid
+	name = "Rapid Blowback Action"
+	desc = "Rare!"
+	icon_state = "action"
+	part_type = "action"
+	complexity = 80
+	tags = list("automatic","burst")
+	incompatible_tags = list("revolver","shotgun","sniper","pistol")
+	spread_mod = 30
+	burst_mod = 2
+	burst_delay_mod = -1
+	enables_automatic = TRUE
 
 /obj/item/prefabs/complex/barrel
 	name = "Barrel"
 	desc = ""
 	icon_state = "barrel"
+	part_type = "barrel"
+	complexity = 10
 
-/obj/item/prefabs/complex/barrel/shotgun
-	name = "Shotgun Barrel"
+/obj/item/prefabs/complex/barrel/short
+	name = "Short Barrel"
 	desc = ""
 	icon_state = "barrel"
+	complexity = 10
+	bullet_speed_mod = 0
+	dam_mod = -3
+	armorpen_mod = -3
 
-/obj/item/prefabs/complex/barrel/mm10
-	name = "10mm Barrel"
+/obj/item/prefabs/complex/barrel/medium
+	name = "Medium Barrel"
 	desc = ""
 	icon_state = "barrel"
-	mag_type = /obj/item/ammo_box/magazine/m10mm_auto
+	complexity = 20
+	bullet_speed_mod = -0.2
 
-/obj/item/prefabs/complex/barrel/mm9
-	name = "9mm Barrel"
+/obj/item/prefabs/complex/barrel/long
+	name = "Long Barrel"
 	desc = ""
 	icon_state = "barrel"
+	complexity = 40
+	bullet_speed_mod = -0.4
 
-/obj/item/prefabs/complex/barrel/m357
-	name = ".357 Barrel"
+/obj/item/prefabs/complex/barrel/dual
+	name = "Multiple barrels"
 	desc = ""
+	icon_state = "barrel"
+	tags = list("automatic")
+	complexity = 70
+	burst_mod = 1
+	burst_delay_mod = -1.5
+	spread_mod = 30
 
-/obj/item/prefabs/complex/barrel/m44
-	name = ".44 Barrel"
-	desc = ""
-
-/obj/item/prefabs/complex/barrel/m45
-	name = ".45 Barrel"
-	desc = ""
-
-/obj/item/prefabs/complex/barrel/m4570
-	name = ".45-70 Barrel"
-	desc = ""
-
-/obj/item/prefabs/complex/barrel/m556
-	name = "556 Barrel"
-	desc = ""
-
-/obj/item/prefabs/complex/barrel/m762
-	name = "762 Barrel"
-	desc = ""
-
+// obsolete
 /obj/item/prefabs/complex/bolt
 	name = "Bolt"
 	desc = ""
 	icon_state = "bolt"
+	part_type = "bolt"
 
 /obj/item/prefabs/complex/bolt/simple
 	name = "Simple Bolt"
 	desc = ""
 	icon_state = "bolt"
+	tags = list("crude_quality")
+	incompatible_tags = list("masterwork_quality")
+	complexity = 10
 
 /obj/item/prefabs/complex/bolt/high
 	name = "Advanced Bolt"
 	desc = ""
+	tags = list("prewar_quality","bonusdmg")
+	incompatible_tags = list("crude_quality")
+	complexity = 40
+	dam_mod = 6
+	armorpen_mod = 6
 
-/obj/item/prefabs/complex/trigger
-	name = "Trigger"
+/obj/item/prefabs/complex/trigger/simple
+	name = "Simple Trigger"
 	desc = ""
 	icon_state = "trigger"
+	complexity = 10
+	part_type = "trigger"
+
+/obj/item/prefabs/complex/trigger/hair
+	name = "Hair Trigger"
+	desc = ""
+	icon_state = "trigger"
+	complexity = 20
+	part_type = "trigger"
+	fire_delay_mod = -2.5
+
+/obj/item/prefabs/complex/trigger/advhair
+	name = "Advanced Hair Trigger"
+	desc = ""
+	icon_state = "trigger"
+	complexity = 40
+	part_type = "trigger"
+	fire_delay_mod = -5
 
 /obj/item/prefabs/complex/stock
 	name = "Stock"
 	desc = ""
 	icon_state = "stockwood"
+	//tags = list("rifle","shotgun","lmg")
+	//tags = list("rifle")
+	incompatible_tags = list("pistol","revolver")
+	complexity = 5
+	part_type = "stock"
 
 /obj/item/prefabs/complex/stock/low
 	name = "Wooden Stock"
 	desc = ""
 	icon_state = "stockwood"
+	complexity = 5
+	spread_mod = -5
 
 /obj/item/prefabs/complex/stock/mid
 	name = "Plastic Stock"
 	desc = ""
 	icon_state = "stock"
+	complexity = 15
+	spread_mod = -15
 
 /obj/item/prefabs/complex/screw
 	name = "Screw"
 	desc = ""
 	icon_state = "screw"
+	complexity = 10
+	part_type = "screw"
+
+/obj/item/prefabs/complex/ammo_loader
+    name = "Basic Ammo Loader"
+    desc = ""
+    icon_state = "ammo" //whatever
+    part_type = "ammo"
+    tags = list()
+    incompatible_tags = list()
+
+/obj/item/prefabs/complex/ammo_loader/m556
+	name = "556 Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/m556
+	complexity = 30
+	caliber_name = "5.56"
+	incompatible_tags = list("revolver")
+
+/obj/item/prefabs/complex/ammo_loader/m762
+	name = "762 Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/m762
+	complexity = 80
+	caliber_name = "7.62"
+	incompatible_tags = list("revolver")
+
+/obj/item/prefabs/complex/ammo_loader/m9mm
+	name = "9mm Simple Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	complexity = 10
+	caliber_name = "9mm"
+	incompatible_tags = list("revolver")
+
+/obj/item/prefabs/complex/ammo_loader/m9mmdouble
+	name = "9mm Double Stack Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/m9mmds
+	complexity = 15
+	caliber_name = "9mm"
+	incompatible_tags = list("revolver")
+
+/obj/item/prefabs/complex/ammo_loader/m9mmext
+	name = "9mm Extended Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	complexity = 20
+	caliber_name = "9mm"
+	incompatible_tags = list("revolver")
+
+/obj/item/prefabs/complex/ammo_loader/m10mm
+	name = "10mm Simple Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
+	complexity = 12
+	caliber_name = "10mm"
+	incompatible_tags = list("revolver")
+
+/obj/item/prefabs/complex/ammo_loader/m10mmdouble
+	name = "10mm Double Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/m10mm_auto
+	complexity = 20
+	caliber_name = "10mm"
+	incompatible_tags = list("revolver")
+
+/obj/item/prefabs/complex/ammo_loader/m45mm
+	name = ".45 Simple Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/m45
+	complexity = 8
+	caliber_name = ".45"
+	incompatible_tags = list("revolver")
+
+/obj/item/prefabs/complex/ammo_loader/m45mmdouble
+	name = ".45 Double Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/greasegun
+	complexity = 18
+	caliber_name = ".45"
+	incompatible_tags = list("revolver")
+
+/obj/item/prefabs/complex/ammo_loader/m45mmext
+	name = ".45 Extended Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/tommygunm45
+	complexity = 30
+	caliber_name = ".45"
+	incompatible_tags = list("revolver")
+
+/obj/item/prefabs/complex/ammo_loader/m50AE
+	name = ".50AE Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/a50
+	complexity = 30
+	caliber_name = ".50"
+	incompatible_tags = list("revolver")
+
+/obj/item/prefabs/complex/ammo_loader/m12g
+	name = "12g Drum Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/d12g
+	complexity = 60
+	caliber_name = "12g"
+	incompatible_tags = list("bonusdmg","burst","revolver","pistol")
+
+/obj/item/prefabs/complex/ammo_loader/m4570
+	name = "45-70 Internal Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
+	complexity = 60
+	caliber_name = ".45-70"
+	incompatible_tags = list("pistol")
+	canpulloutmag = FALSE
+
+/obj/item/prefabs/complex/ammo_loader/m44
+	name = ".44 Internal Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
+	complexity = 15
+	caliber_name = ".44"
+	incompatible_tags = list("pistol")
+	canpulloutmag = FALSE
+
+/obj/item/prefabs/complex/ammo_loader/m44
+	name = ".357 Internal Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
+	complexity = 10
+	caliber_name = ".357"
+	incompatible_tags = list("pistol")
+	canpulloutmag = FALSE
+
+/obj/item/prefabs/complex/ammo_loader/m50MG
+	name = ".50MG Internal Magazine Loader"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/antimateriel
+	complexity = 80
+	caliber_name = ".50"
+	tags = list("semiauto")
+	incompatible_tags = list("automatic","pistol","shotgun")
+	canpulloutmag = FALSE
+
+//more stuff here
+//internal shotgun magazines
+//etc
+//energy weapons
+
+/obj/item/prefabs/complex/gunframe
+	name = "frame"
+	part_type = "frame"
+	icon_state = "rifleframe"
+	var/gun_type = ""
+	var/needs_stock = FALSE
+
+/obj/item/prefabs/complex/loot
+	name = "Ruined Pre-War Assembly"
+	desc = "You might be able to salvage this using an advanced workbench, a gunsmith might get better results..."
+	icon_state = "advancedframe"
+
+/obj/item/prefabs/complex/loot/energy
+	name = "Ruined Pre-War Energy Assembly"
 
 //plasma
 /obj/item/advanced_crafting_components/flux
@@ -923,9 +1604,46 @@
 
 //rifles
 /obj/item/advanced_crafting_components/assembly
-	name = "Pre-war weapon assembly"
-	desc = "A ballistic weapon part, a craftsman might want to have this."
-	icon_state = "weapon_parts_1"
+	name = "weapon assembly"
+	desc = "A ballistic weapon part, a craftsman might want to have this. Activate it in hand to shape it into a type of firearm. This cannot be undone!"
+	icon_state = "rifleframe"
+
+	//Ideally these would all have their own sprites
+	var/list/frame_types = list("pistol" = WEIGHT_CLASS_TINY,
+							"rifle" = WEIGHT_CLASS_BULKY,
+							"smg" = WEIGHT_CLASS_SMALL,
+							"lmg" = WEIGHT_CLASS_BULKY,
+							"shotgun" = WEIGHT_CLASS_BULKY,
+							"revolver" = WEIGHT_CLASS_SMALL,
+							"sniper" = WEIGHT_CLASS_BULKY) //add more here, energy weapons etc
+
+/obj/item/advanced_crafting_components/assembly/attack_self(mob/user)
+	var/selection = input(user,"What do you want to shape this assembly into?") as null|anything in frame_types
+	if(!selection)
+		return
+
+	to_chat(user,"<span class='notice'>You begin shaping the metal into a gun frame... Sit tight! This cannot be undone!")
+	if(do_after(user,80,target = src))
+		var/obj/item/prefabs/complex/gunframe/G = new(get_turf(src))
+		if(selection == "pistol" || selection == "revolver")
+			G.icon_state = "pistolframe" //lil pistol icon hackiness
+		G.frame_type = selection
+		G.gun_type = selection
+		G.tags = list(selection)
+		for(var/F in frame_types)
+			if(F == selection)
+				continue
+			LAZYADD(G.incompatible_tags,F) //Add our opposing ones, rifle shit cannot go in a pistol frame, etc
+
+		G.gun_weight_class = frame_types[selection]
+		G.name = "[selection] [initial(G.name)]" //ie. pistol frame
+		to_chat(user,"<span class='notice'>You finish shaping the metal and end up with \the [G]!")
+		user.dropItemToGround(src) //Clear it the UI/inventory
+		if(selection == "pistol" || selection == "smg" || selection == "revolver")
+			G.needs_stock = FALSE //negates the need to add a stock
+		else
+			G.needs_stock = TRUE
+		qdel(src)
 
 //general
 /obj/item/advanced_crafting_components/alloys

@@ -43,7 +43,7 @@ GLOBAL_LIST_INIT(ghost_forms_with_accessories_list, list("ghost")) //stores the 
 GLOBAL_LIST_INIT(security_depts_prefs, list(SEC_DEPT_RANDOM, SEC_DEPT_NONE, SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, SEC_DEPT_SCIENCE, SEC_DEPT_SUPPLY))
 
 	//Backpacks
-#define GBACKPACK "Grey Backpack"
+#define GBACKPACK "Hiking Backpack"
 #define GSATCHEL "Grey Satchel"
 #define GDUFFELBAG "Grey Duffel Bag"
 #define LSATCHEL "Leather Satchel"
