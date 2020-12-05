@@ -16,12 +16,13 @@ Main doors: ACCESS_CAPTAIN 20
 /datum/outfit/job/bos
 	name = "bosdatums"
 	jobtype = /datum/job/bos
-	backpack = /obj/item/storage/backpack/explorer
-	ears = /obj/item/radio/headset/headset_bos
-	uniform =		/obj/item/clothing/under/syndicate/brotherhood
-	shoes = /obj/item/clothing/shoes/combat/swat
-	gloves = /obj/item/clothing/gloves/combat
-	id = /obj/item/card/id/dogtag
+	backpack = 	/obj/item/storage/backpack/explorer
+	satchel = 	/obj/item/storage/backpack/satchel/explorer
+	ears = 		/obj/item/radio/headset/headset_bos
+	uniform =	/obj/item/clothing/under/syndicate/brotherhood
+	shoes = 	/obj/item/clothing/shoes/combat/swat
+	gloves = 	/obj/item/clothing/gloves/combat
+	id = 		/obj/item/card/id/dogtag
 
 /datum/outfit/job/bos/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -617,13 +618,13 @@ datum/job/bos/f13seniorknight
 /datum/outfit/job/bos/f13seniorknight
 	name = "Senior Knight"
 	jobtype = /datum/job/bos/f13seniorknight
-	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood
+	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood/senior
 	accessory = 	/obj/item/clothing/accessory/bos/seniorknight
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	glasses =       /obj/item/clothing/glasses/night
 	mask =			/obj/item/clothing/mask/gas/sechailer/swat
 	belt = 			/obj/item/storage/belt/military
-	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood
+	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood/senior
 	id = 			/obj/item/card/id/dogtag
 	gunsmith_one = TRUE
 	gunsmith_two = TRUE

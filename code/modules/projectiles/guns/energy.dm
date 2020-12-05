@@ -4,6 +4,7 @@
 	desc = "A basic energy-based gun."
 	icon = 'icons/obj/guns/energy.dmi'
 
+	burst_delay = 4
 	var/obj/item/stock_parts/cell/cell //What type of power cell this uses
 	var/cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	var/modifystate = 0

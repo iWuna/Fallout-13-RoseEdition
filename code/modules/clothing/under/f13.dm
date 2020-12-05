@@ -63,6 +63,14 @@
 	icon_state = "scoutclothes"
 	item_state = "scoutclothes"
 	item_color = "scoutclothes"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/f13/ncrcf
+	name = "NCRCF fatigues"
+	desc = "A set of cheap, worn-in blue dress shirt and slacks. Emblazened on the back are the initials of the NCR Correctional Facility, as a meek reminder of who owns you."
+	icon_state = "ncrcf"
+	item_state = "ncrcf"
+	item_color = "ncrcf"
 
 //Settlers
 
@@ -198,7 +206,7 @@
 
 /obj/item/clothing/under/f13/legskirt
 	name = "legionary fatigues"
-	desc = "A black learthery skirt and a thick long sleeve cotton shirt."
+	desc = "A leathery skirt and a thick, long-sleeve cotton shirt."
 	icon_state = "legskirt"
 	item_state = "legskirt"
 	item_color = "legskirt"
@@ -207,6 +215,13 @@
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
 	alt_covers_chest = TRUE
 	can_adjust = TRUE
+
+/obj/item/clothing/under/f13/legskirt/tac //whoaaa mama humina humina
+	name = "\improper ''tactical'' combat skirt"
+	desc = "A leathery skirt below a thick, black, long-sleeve cotton shirt. Perfect for operatives favoring wardrobe malfunctions."
+	icon_state = "tacskirt"
+	item_state = "tacskirt"
+	item_color = "tacskirt"
 
 /obj/item/clothing/under/f13/priestess
 	name = "priestess robes"
@@ -871,7 +886,6 @@
 	desc = "An ancient combat uniform, that went out of use around the time of the Great War. it has scratch marks and a skull painted on it to symbolize that its part of the gunners"
 	icon_state = "GunnerPlates"
 	item_state = "GunnerPlates"
-	item_color = "GunnerPlates"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/combat/militia
@@ -919,6 +933,13 @@
 	icon_state = "chinese"
 	item_state = "bl_suit"
 	item_color = "chinese"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
+
+/obj/item/clothing/under/f13/locust
+	name = "locust uniform"
+	desc = "An ancient pre-war army combat uniform. In use by the locust mercenaries."
+	icon_state = "locust"
+	item_state = "locust"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 //Fluff
@@ -1136,3 +1157,15 @@
 	desc = "A harness made out of a number of black belts sewn together end on end to form a coiling piece of clothing. A symbol in red has been painted on the front, and a pair of hide pants go with it."
 	icon_state = "raven_harness"
 	item_state = "raven_harness"
+
+/obj/item/clothing/under/f13/jamrock
+	name = "Disco-Ass Shirt and Pants"
+	desc = "This white satin shirt used to be fancy. It used to really catch the light. Now it smells like someone took a piss in the armpits while the golden brown trousers are flare-cut. Normal bell-bottom trousers would be boot-cut, but these are far from normal. They are someone's piss-soaked, cum-stained party pants."
+	icon_state = "jamrock_uniform"
+	item_state = "jamrock_uniform"
+
+/obj/item/clothing/under/f13/keksweater
+	name = "Red Sweater"
+	desc = "A dark red-sweater with some cargo-pants. Perfect for when it just gets too cold down in local air-conditioned areas."
+	icon_state = "brahminsss"
+	item_state = "brahminsss"

@@ -459,3 +459,101 @@
 	del_on_death = FALSE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
 	dextrous = TRUE
+
+// Halloween Event Mobs //
+/mob/living/simple_animal/hostile/handy/Fleshtron
+	name = "Flesh covered assaultron"
+	desc = "A Robco Assaultron mutated by unknown means, it's second head screams in pain constantly."
+	icon_state = "twinatron"
+	icon_living = "twinatron"
+	gender = FEMALE //Pffffffffffffffffffffff
+	icon_dead = "gib7"
+	health = 450
+	maxHealth = 450
+	speed = 0
+	melee_damage_lower = 55
+	melee_damage_upper = 60
+	environment_smash = 2 //can smash walls
+	attacktext = "rends"
+	faction = list("Apex","vault")
+	speak = list("Enemy spotted!","HGRH!!","Engaging!","KILL!!")
+	speak_emote = list("States", "Screams")
+	emote_hear = list("groans.","beeps.")
+	emote_taunt = list("screams at", "glares")
+	speak_chance = 10
+	taunt_chance = 25
+	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/crafting/electronicparts/three, /obj/item/stock_parts/cell/ammo/mfc)
+
+	emote_taunt_sound = FALSE
+	emote_taunt = FALSE
+
+	aggrosound = FALSE
+	idlesound = FALSE
+
+/mob/living/simple_animal/hostile/handy/Fleshtron/playable
+	see_in_dark = 8
+	force_threshold = 15
+	wander = 0
+	anchored = FALSE
+	del_on_death = FALSE
+	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
+	dextrous = TRUE
+
+/mob/living/simple_animal/hostile/handy/fleshsecuritron
+	name = "Flesh covered securitron"
+	desc = "a Securitron that's been mutated by unknown means, three gnashing mouths have grown on and in it's shell."
+	icon_state = "fleshitron"
+	icon_living = "fleshitron"
+	icon_dead = "gib7"
+	health = 250
+	maxHealth = 250
+	melee_damage_lower = 40
+	melee_damage_upper = 50
+	attack_sound = 'sound/items/welder.ogg'
+	attacktext = "bites on"
+	projectilesound = 'sound/f13weapons/varmint_rifle.ogg'
+	projectiletype = /obj/item/projectile/bullet/F13/c556Bullet/heap
+	extra_projectiles = 3
+	ranged = TRUE
+	retreat_distance = 2
+	minimum_distance = 2
+	speak = list("Enemy spotted!","HGRH!!","Engaging!","KILL!!")
+	speak_emote = list("States", "Screams")
+	emote_hear = list("groans.","beeps.")
+	emote_taunt = list("screams at", "glares")
+	speak_chance = 10
+	taunt_chance = 25
+	check_friendly_fire = TRUE
+	faction = list("Apex","vault")
+	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/crafting/electronicparts/three, /obj/item/stock_parts/cell/ammo/mfc)
+	emote_taunt_sound = null
+	aggrosound = null
+	idlesound = null
+	death_sound = null
+	attack_sound = null
+
+
+/mob/living/simple_animal/hostile/handy/titan
+	name = "Large Monstrosity"
+	desc = "A large military robot that's been changed by unknown means, it lumbers forward and smells of rotten flesh."
+	ranged = FALSE
+	icon_state = "titan"
+	icon_living = "titan"
+	melee_damage_lower = 55
+	melee_damage_upper = 60
+	health = 500
+	maxHealth = 500
+	speak_emote = list("States", "Screams")
+	speed = 1
+	attacktext = "smashes,slashes"
+	faction = list("Apex","vault")
+	emote_taunt_sound = null
+	emote_taunt = null
+	aggrosound = null
+	idlesound = null
+	see_in_dark = 8
+	environment_smash = 2
+	wander = 0
+	force_threshold = 10
+	anchored = TRUE
+	del_on_death = FALSE

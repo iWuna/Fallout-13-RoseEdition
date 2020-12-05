@@ -325,6 +325,8 @@
 			return "BOS Access"
 		if(ACCESS_NCR)
 			return "NCR Access"
+		if (ACCESS_NCROFFDUTY)
+			return "NCR Off-Duty Access"
 
 /proc/get_centcom_access_desc(A)
 	switch(A)

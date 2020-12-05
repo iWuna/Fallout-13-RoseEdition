@@ -231,7 +231,6 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("wooden bucket", /obj/item/reagent_containers/glass/bucket/wooden, 10), \
 	new/datum/stack_recipe("wood floor tile", /obj/item/stack/tile/wood, 1, 4, 20), \
 	new/datum/stack_recipe("wood table frame", /obj/structure/table_frame/wood, 2, time = 10), \
-	new/datum/stack_recipe("wooden stock", /obj/item/prefabs/complex/stock/low, 2, time = 50), \
 	new/datum/stack_recipe("rolling pin", /obj/item/kitchen/rollingpin, 2, time = 30), \
 	new/datum/stack_recipe("chopping block", /obj/item/chopping_block, 2, time = 30), \
 	new/datum/stack_recipe("wooden chair", /obj/structure/chair/wood/, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
@@ -662,6 +661,13 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	throw_range = 3
 	grind_results = list("carbon" = 10)
 	merge_type = /obj/item/stack/sheet/bone
+
+GLOBAL_LIST_INIT(bone_recipes, list(
+	new /datum/stack_recipe("Bone Throne", /obj/structure/chair/throne, 10, one_per_turf = TRUE, on_floor = TRUE, time = 40)))
+
+/obj/item/stack/sheet/bone/Initialize(maplosad, new_amount, merge = TRUE)
+	recipes = GLOB.bone_recipes
+	. = ..()
 
 GLOBAL_LIST_INIT(plastic_recipes, list(
 	new /datum/stack_recipe("plastic flaps", /obj/structure/plasticflaps, 5, one_per_turf = TRUE, on_floor = TRUE, time = 40), \

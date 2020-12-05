@@ -12,6 +12,7 @@
 	var/buildstacktype = /obj/item/stack/sheet/metal
 	var/buildstackamount = 1
 	var/item_chair = /obj/item/chair // if null it can't be picked up
+	var/can_be_rotated = TRUE
 	layer = OBJ_LAYER
 
 /obj/structure/chair/examine(mob/user)
@@ -30,7 +31,7 @@
 	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE, CALLBACK(src, .proc/can_user_rotate),CALLBACK(src, .proc/can_be_rotated),null)
 
 /obj/structure/chair/proc/can_be_rotated(mob/user)
-	return TRUE
+	return can_be_rotated
 
 /obj/structure/chair/proc/can_user_rotate(mob/user)
 	var/mob/living/L = user
@@ -517,6 +518,15 @@
 	desc = "It has some unsavory stains on it..."
 	icon_state = "f13stool"
 	item_chair = /obj/item/chair/stool/bar
+
+/obj/structure/chair/throne
+	icon = 'icons/obj/throne.dmi'
+	name = "Throne"
+	desc = ""
+	icon_state = "throne"
+	buildstacktype = /obj/item/stack/sheet/bone
+	buildstackamount = 10
+	can_be_rotated = FALSE
 
 /obj/structure/chair/booth
 	name = "single booth"
