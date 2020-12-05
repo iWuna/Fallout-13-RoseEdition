@@ -35,7 +35,6 @@
 	icon_state = "advanced_bench"
 	desc = "A large and advanced pre-war workbench to tackle any project!"
 	machine_tool_behaviour = list(TOOL_AWORKBENCH, TOOL_WORKBENCH)
-/*
 	var/list/salvage_typeTrait = list("Automatic Burst Action" = /obj/item/prefabs/complex/action/autoburst,
 							"Rapid Blowback Action" = /obj/item/prefabs/complex/action/rapid,
 							"Long Barrel" = /obj/item/prefabs/complex/barrel/long,
@@ -97,7 +96,6 @@
 				var/item_path = salvage_typeNoTrait[pick(salvage_typeNoTrait)]
 				new item_path(get_turf(src))
 				qdel(W)
-*/
 
 /obj/machinery/workbench/mbench
 	name = "machine workbench"
@@ -111,7 +109,6 @@
 	desc = "An assembly bench, useful for assembling complex parts into semi-finished products."
 	machine_tool_behaviour = list(TOOL_ASSWORKBENCH)
 
-/*
 /obj/machinery/workbench/fbench
 	name = "moulding workbench"
 	icon_state = "moulding"
@@ -153,7 +150,7 @@
 		return 1
 	else if(user.transferItemToLoc(W, drop_location()))
 		return TRUE
-
+/*
 /obj/machinery/workbench/fbench/Crossed(atom/movable/AM)
 	for(var/A in src.loc)
 		if(A == src)

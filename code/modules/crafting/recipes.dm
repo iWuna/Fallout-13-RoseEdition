@@ -1655,7 +1655,7 @@
 /*
 /datum/crafting_recipe/n99
 	name = "10mm pistol"
-	result = /obj/item/gun/ballistic/automatic/pistol/n99
+	result = /obj/item/gun/ballistic/au`atic/pistol/n99
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 3,
 				/datum/reagent/blackpowder = 10,
@@ -2514,7 +2514,6 @@
 	category = CAT_ASSEM
 	subcategory = CAT_MACHINES
 
-/*
 /datum/crafting_recipe/fbench
 	name = "Moulding bench"
 	result = /obj/machinery/workbench/fbench
@@ -2523,7 +2522,6 @@
 	time = 200
 	category = CAT_ASSEM
 	subcategory = CAT_MACHINES
-*/
 
 //Knives
 
@@ -3277,7 +3275,7 @@
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/stack/crafting/metalparts = 3,
-				/datum/reagent/blackpowder = 60,
+				/datum/reagent/blackpowder = 60, 
 				/obj/item/blueprint/weapon/mg34/limited = 1
 				)
 	tools = list(TOOL_WORKBENCH)
@@ -3306,7 +3304,7 @@
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/obj/item/stack/crafting/metalparts = 3,
-				/datum/reagent/blackpowder = 10,
+				/datum/reagent/blackpowder = 10, 
 				/obj/item/blueprint/weapon/kar98/limited = 1
 				)
 	tools = list(TOOL_WORKBENCH)
@@ -3389,7 +3387,7 @@
 	result = /obj/item/gun/ballistic/automatic/smg10mm
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/receiver = 1,
-				/datum/reagent/blackpowder = 30,
+				/datum/reagent/blackpowder = 30, 
 				/obj/item/blueprint/weapon/smg10mm/limited = 1
 				)
 	tools = list(TOOL_WORKBENCH)
@@ -3404,7 +3402,7 @@
 	result = /obj/item/gun/ballistic/automatic/greasegun
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/receiver = 1,
-				/datum/reagent/blackpowder = 30,
+				/datum/reagent/blackpowder = 30, 
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/grease_gun)
 	time = 120
@@ -3416,7 +3414,7 @@
 	result = /obj/item/gun/ballistic/automatic/greasegun
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/receiver = 1,
-				/datum/reagent/blackpowder = 30,
+				/datum/reagent/blackpowder = 30, 
 				/obj/item/blueprint/weapon/grease_gun/limited = 1
 				)
 	tools = list(TOOL_WORKBENCH)
@@ -3605,7 +3603,7 @@
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/datum/reagent/blackpowder = 30,
 				/obj/item/stack/sheet/mineral/wood = 5,
-				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/stack/crafting/goodparts = 5, 
 				/obj/item/blueprint/weapon/sniper/limited = 1
 				)
 	tools = list(TOOL_WORKBENCH)
@@ -3669,7 +3667,7 @@
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/datum/reagent/blackpowder = 30,
 				/obj/item/stack/sheet/mineral/wood = 5,
-				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/stack/crafting/goodparts = 5, 
 				/obj/item/blueprint/weapon/deagle/limited = 1
 				)
 	tools = list(TOOL_WORKBENCH)
@@ -3716,7 +3714,7 @@
 				/obj/item/advanced_crafting_components/lenses = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/stack/crafting/goodparts = 3,
-				/obj/item/stack/crafting/electronicparts = 3,
+				/obj/item/stack/crafting/electronicparts = 3, 
 				/obj/item/blueprint/weapon/AER9/limited = 1
 				)
 	tools = list(TOOL_WORKBENCH)
@@ -3747,7 +3745,7 @@
 				/obj/item/advanced_crafting_components/conductors = 2,
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/stack/crafting/metalparts = 3,
-				/obj/item/stack/crafting/electronicparts = 3,
+				/obj/item/stack/crafting/electronicparts = 3, 
 				/obj/item/blueprint/weapon/plasmarifle/limited = 1
 				)
 	tools = list(TOOL_WORKBENCH)
@@ -3796,7 +3794,7 @@
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/datum/reagent/blackpowder = 30,
-				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/stack/crafting/goodparts = 5, 
 				/obj/item/blueprint/weapon/AM_rifle/limited = 1
 				)
 	tools = list(TOOL_WORKBENCH)
@@ -3863,7 +3861,7 @@
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/datum/reagent/blackpowder = 30,
-				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/stack/crafting/goodparts = 5, 
 				/obj/item/blueprint/weapon/rangemaster/limited = 1
 				)
 	tools = list(TOOL_WORKBENCH)
@@ -3880,8 +3878,8 @@
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/datum/reagent/blackpowder = 30,
-				/obj/item/stack/crafting/goodparts = 5,
-
+				/obj/item/stack/crafting/goodparts = 5, 
+				
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/bozar)
 	time = 120
@@ -3896,7 +3894,7 @@
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/datum/reagent/blackpowder = 30,
-				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/stack/crafting/goodparts = 5, 
 				/obj/item/blueprint/weapon/bozar/limited = 1
 				)
 	tools = list(TOOL_WORKBENCH)
@@ -3905,7 +3903,7 @@
 	subcategory = CAT_BPWEAPON_ONEUSE
 
 //BP copy
-/datum/crafting_recipe/bpcopy
+/datum/crafting_recipe/bpcopy	
 	result = /obj/item/blueprint/weapon/marksmanrifle/limited
 	name = "Marksman Rifle blueprint"
 	reqs = list(/obj/item/paper = 1)
@@ -3924,7 +3922,7 @@
 	result = /obj/item/blueprint/weapon/uzi/limited
 	name = "UZI blueprint"
 	tools = list(TOOL_AWORKBENCH, TOOL_GUNTIER3, /obj/item/blueprint/weapon/uzi)
-
+	
 /datum/crafting_recipe/bpcopy/smg10mm
 	result = /obj/item/blueprint/weapon/smg10mm/limited
 	name = "10mm SMG blueprint"
@@ -4087,8 +4085,6 @@
 	category = CAT_MOULD
 	subcategory = CAT_MOULD_ONE
 */
-
-/*
 /datum/crafting_recipe/mould/boltadvanced
 	result = /obj/item/prefabs/mould/bolt/high
 	name = "Advanced Bolt Mould"
@@ -4250,8 +4246,6 @@
 	time = 30
 	category = CAT_MOULD
 	subcategory = CAT_MOULD_ONE
-*/
-
 /*
 /datum/crafting_recipe/ultrapistol
 	name = "Ultracite Pistol"

@@ -10,12 +10,10 @@
 	var/obj/item/ammo_box/magazine/magazine
 	var/casing_ejector = TRUE //whether the gun ejects the chambered casing
 	var/en_bloc = 0
-/*
 	var/list/gunparts = list(/obj/item/prefabs/complex/screw,
                 /obj/item/prefabs/complex/trigger
 				)
 	var/list/extra_parts = list()
-*/
 	var/can_disassemble = FALSE
 
 /obj/item/gun/ballistic/Initialize()
