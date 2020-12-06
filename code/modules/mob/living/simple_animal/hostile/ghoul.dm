@@ -94,8 +94,8 @@
 	name = "legendary ghoul"
 	desc = "A ghoul that has lost it's mind and become aggressive. This one is exceptionally large, bulging muscles. It looks quite strong."
 	icon = 'icons/mob/ghouls.dmi'
-	icon_state = "glowinghoul"
-	icon_living = "glowinghoul"
+	icon_state = "retro_glowghoul-1"
+	icon_living = "retro_glowghoul-1"
 	icon_dead = "retro_glowghoul_d"
 	color = "#FFFF00"
 	maxHealth = 600
