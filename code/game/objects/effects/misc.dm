@@ -85,12 +85,10 @@
 /obj/effect/forcefield/fog/Initialize()
 	. = ..()
 	dir  = pick(CARDINAL_DIRS)
-	GLOB.fog_blockers += src
 
 
 /obj/effect/forcefield/fog/Destroy()
-//	GLOB.fog_blockers -= src
-//	return ..()
+	return ..()
 
 
 /obj/effect/forcefield/fog/attack_hand(mob/living/user)
