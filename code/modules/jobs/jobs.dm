@@ -12,6 +12,7 @@ GLOBAL_LIST_INIT(command_positions, list(
     "NCR Captain",
     "NCR Ambassador",
 	"NCR Administrator",
+	"NCR Veteran Ranger",
 
     "Overseer",
     "Chief of Security",
@@ -237,7 +238,8 @@ GLOBAL_LIST_INIT(ncr_positions, list(
 	"NCR Scout Ranger",
     "NCR Recruit",
     "NCR Citizen",
-    "NCR Administrator"
+    "NCR Administrator",
+    "NCR Veteran Ranger"
 ))
 
 GLOBAL_LIST_INIT(vault_command_positions, list(
@@ -344,8 +346,8 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 
     EXP_TYPE_TRIBALCOMMAND = list("titles" = list("Chief","Shaman","Head Hunter")),
     EXP_TYPE_FOLLOWERSCOMMAND = list("titles" = list("Lead Practitioner")),
-  	EXP_TYPE_NCRCOMMAND    = list("titles" = list("NCR Lieutenant","NCR Sergeant","NCR Captain","NCR Ambassador"))
-  	// EXP_TYPE_ENCLAVE = list("titles" = enclave_positions),
+  	EXP_TYPE_NCRCOMMAND    = list("titles" = list("NCR Lieutenant","NCR Sergeant","NCR Captain","NCR Ambassador"),
+  	EXP_TYPE_ENCLAVE = list("titles" = ankap_positions))
     // EXP_TYPE_CREW = list("titles" = command_positions | engineering_positions | medical_positions | science_positions | supply_positions | security_positions | civilian_positions | list("AI","Cyborg")), // crew positions
     // EXP_TYPE_COMMAND = list("titles" = command_positions),
     // EXP_TYPE_ENGINEERING = list("titles" = engineering_positions),
