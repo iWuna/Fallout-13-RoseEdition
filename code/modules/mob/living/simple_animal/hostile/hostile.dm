@@ -52,7 +52,7 @@
 /mob/living/simple_animal/hostile/Destroy()
 	targets_from = null
 	return ..()
-
+/*
 /mob/living/simple_animal/hostile/Life()
 	. = ..()
 	if(!.) //dead
@@ -62,7 +62,7 @@
 				visible_message("<span class='notice'>\The dead body of the [src] decomposes!</span>")
 				gib(FALSE, FALSE, FALSE, TRUE)
 		return 0
-
+*/ //Тестируем восстановление стабильноти гулей.
 /mob/living/simple_animal/hostile/handle_automated_action()
 	if(AIStatus == AI_OFF)
 		return 0
