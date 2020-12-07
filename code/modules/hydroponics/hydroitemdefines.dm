@@ -80,9 +80,10 @@
 	lefthand_file = 'icons/mob/inhands/equipment/hydroponics_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/hydroponics_righthand.dmi'
 	flags_1 = CONDUCT_1
-	force = 10
+	force = 15
+	embedding = list("embedded_pain_multiplier" = 4, "embed_chance" = 100, "embedded_fall_chance" = 0)
 	w_class = WEIGHT_CLASS_SMALL
-	throwforce = 15
+	throwforce = 20
 	throw_speed = 3
 	throw_range = 4
 	materials = list(MAT_METAL = 15000)

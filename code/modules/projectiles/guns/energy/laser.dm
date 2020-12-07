@@ -214,6 +214,7 @@
 	scope_x_offset = 12
 	scope_y_offset = 20
 	fire_delay = 1.5 //Default 3
+	burst_delay = 4
 	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
@@ -243,6 +244,7 @@
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 1
+	burst_delay = 4
 	can_scope = TRUE
 	scopestate = "AEP7_scope"
 	scope_x_offset = 7

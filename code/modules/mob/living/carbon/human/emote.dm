@@ -1,12 +1,6 @@
 /datum/emote/living/carbon/human
 	mob_type_allowed_typecache = list(/mob/living/carbon/human)
 
-/datum/emote/living/carbon/human/cry
-	key = "cry"
-	key_third_person = "cries"
-	message = "cries."
-	emote_type = EMOTE_AUDIBLE
-
 /datum/emote/living/carbon/human/dap
 	key = "dap"
 	key_third_person = "daps"
@@ -61,6 +55,18 @@
 	message = "salutes."
 	message_param = "salutes to %t."
 	restraint_check = TRUE
+
+/datum/emote/living/carbon/human/salute/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
+			playsound(H, 'sound/voice/human/salute.ogg', 50, 1)
+
+/datum/emote/living/carbon/human/shudder
+	key = "shudder"
+	key_third_person = "shudders"
+	message = "shudders."
 
 /datum/emote/living/carbon/human/shrug
 	key = "shrug"

@@ -858,6 +858,15 @@
 	item_color = "corset"
 	can_adjust = FALSE
 
+
+/obj/item/clothing/under/jamrock
+	name = "Disco-Ass Shirt and Pants"
+	desc = "This white satin shirt used to be fancy. It used to really catch the light. Now it smells like someone took a piss in the armpits while the golden brown trousers are flare-cut. Normal bell-bottom trousers would be boot-cut, but these are far from normal. They are someone's piss-soaked, cum-stained party pants. "
+	icon_state = "jamrock_uniform"
+	item_state = "jamrock_uniform"
+	item_color = "jamrock_uniform"
+	can_adjust = FALSE
+
 /obj/item/clothing/under/qipao/black
 	name = "black qipao"
 	desc = "A traditional, form fitting oriental dress. This one is black."

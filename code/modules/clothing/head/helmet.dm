@@ -377,6 +377,16 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
+/obj/item/clothing/head/helmet/f13/raider/ant
+	name = "AntAgonizer's cowl"
+	desc = "A handmade cowl made from the chitin of oversized ants. Seriously looks like something out of a comic book. Could probably be reinforced, if you're so inclined."
+	icon_state = "anthelm"
+	item_state = "anthelm"
+
+/obj/item/clothing/head/helmet/f13/raider/ant/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /*
 /obj/item/clothing/head/helmet/f13/raider/r
 	name = "reinforced base raider helmet"
@@ -454,6 +464,27 @@
 	item_state = "brotherhood_helmet"
 	armor = list("melee" = 40, "bullet" = 45, "laser" = 40, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
+/obj/item/clothing/head/helmet/f13/combat/brotherhood/senior
+	name = "brotherhood senior knight combat helmet"
+	desc = "An improved combat helmet, bearing the symbol of the Knights in silver."
+	icon_state = "brotherhood_helmet_senior"
+	item_state = "brotherhood_helmet_senior"
+
+/obj/item/clothing/head/helmet/f13/combat/environmental
+	name = "environmental armor helmet"
+	desc = "A full head helmet and gas mask, developed for use in heavily contaminated environments."
+	icon_state = "env_helmet"
+	item_state = "env_helmet"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEFACE|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+	armor = list("melee" = 40, "bullet" = 45, "laser" = 40, "energy" = 45, "bomb" = 55, "bio" = 70, "rad" = 100, "fire" = 60, "acid" = 50)
+	strip_delay = 60
+	equip_delay_other = 60
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+
+/obj/item/clothing/head/helmet/f13/combat/environmental/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/rad_insulation, RAD_NO_INSULATION, TRUE, FALSE)
+
 /obj/item/clothing/head/helmet/f13/atomzealot
 	name = "zealot helm"
 	desc = "The helmet of an agent of the Division."
@@ -489,6 +520,13 @@
 	item_state = "Hooded_Gas_Mask"
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 65, "acid" = 30)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
+/obj/item/clothing/head/helmet/f13/jasonmask
+	name = "jasons mask"
+	desc = "A metal mask made specifically for jason."
+	icon_state = "jasonmask"
+	item_state = "jasonmask"
+	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 65, "acid" = 30)
 
 /obj/item/clothing/head/helmet/f13/brahmincowboyhat
 	name = "brahmin leather cowboy hat"
@@ -636,10 +674,16 @@
 
 /obj/item/clothing/head/helmet/f13/legion/vet/jonesarmorhelmet
 	name= "Galea Articuli"
-	desc = "A hand-forged helmet seemingly made for a veteran legionary, taking into account the general shape and similarity to the standard-issue helmet. Not only does it look sturdy as hell, it also looks absolutely beautiful to the average engraving enjoyer. The patterns of the engravings are elegant and they curve and twist around the helmet with the utmost grace as to not sully a helmet of such high quality. In place of the standard red stripe going down the middle of the helmet, there's a gold one instead. It shines beautifully in light, and hides the wearer well in darkness. Upon closer inspection, there's a small space carved out inside the helmet. It's not rough or makeshift, in fact, it looks like it was designed with that space in mind. As a result of not being solid metal, the area the space resides in is slightly thinner and provides less protection than a normal helmet. The space is similar in size to that of a fedora's, but without the capacity to store guns or other larger items due to the rigidity of the helmet. Don't worry, though. You can still tip it."
+	desc = "A hand-forged helmet seemingly made for a veteran legionary, taking into account the general shape and similarity to the standard-issue helmet. Not only does it look sturdy as hell, it also looks absolutely beautiful to the average engraving enjoyer. The patterns of the engravings are elegant, curving and twisting around the helmet with the utmost grace as to not sully a helmet of such high quality. In place of the standard red stripe going down the middle of the helmet, there's a gold one instead. It shines beautifully in light, and hides the wearer well in darkness. Upon closer inspection, there's a small space carved out inside the helmet. It's not rough or makeshift, in fact, it looks like it was designed with that space in mind. As a result of not being solid metal, the area the space resides in is slightly thinner and provides less protection than a normal helmet. The space is similar in size to that of a fedora's, but without the capacity to store guns or other large items due to the rigidity of the helmet. Don't worry, though. It's been loosened around the neck area, so you can still tip it."
 	icon_state = "jonesarmorhelmet"
 	item_state = "jonesarmorhelmet"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/detective
+
+/obj/item/clothing/head/helmet/f13/legion/vet/jonesarmorhelmet/decan
+	name = "Galea Plumosus Articuli"
+	desc = "A hand-forged helmet seemingly made for a veteran legionary, taking into account the general shape and similarity to the standard-issue helmet. Not only does it look sturdy as hell, it also looks absolutely beautiful to the average engraving enjoyer. The patterns of the engravings are elegant, curving and twisting around the helmet with the utmost grace as to not sully a helmet of such high quality. In place of the standard red stripe going down the middle of the helmet, there's a gold one instead. It shines beautifully in light, and hides the wearer well in darkness. Upon closer inspection, there's a small space carved out inside the helmet. It's not rough or makeshift, in fact, it looks like it was designed with that space in mind. As a result of not being solid metal, the area the space resides in is slightly thinner and provides less protection than a normal helmet. The space is similar in size to that of a fedora's, but without the capacity to store guns or other large items due to the rigidity of the helmet. Don't worry, though. It's been loosened around the neck area, so you can still tip it. In addition, a large amount of feathers have been added to the helmet. They're not useful for much, except for both denoting the rank of a veteran decanus due to the differing feather colors, and serving to cover up the area of thin metal around the helmet's storage space."
+	icon_state = "jonesarmordecan"
+	item_state = "jonesarmordecan"
 
 /obj/item/clothing/head/helmet/f13/legion/heavy
 	name = "legion veteran decan helmet"
@@ -672,6 +716,12 @@
 	icon_state = "legvenator"
 	item_state = "legvenator"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/legion/venator/diohelmet
+	name = "stilio oculatus helmet"
+	desc = "The hollowed head of a deadly golden gecko carefully affixed over a reinforced legion helmet. Its ghastly appearance serves as an intimidating gesture to those who do not yet fear the Lizard King."
+	icon_state = "diohelmet"
+	item_state = "diohelmet"
 
 /obj/item/clothing/head/helmet/f13/legion/libritor
 	name = "legion libritor helmet"
@@ -803,11 +853,19 @@
 		darkness_view = 128
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/rigscustom
-	name = "11th Armored Calvary Helmet"
+	name = "11th armored calvary helmet"
 	desc = "An advanced combat helmet used by the 11th Armored Calvary Regiment before the war. There is a worn and faded 11th Armored Calvary Regiment's insignia just above the visor. The helmet itself has some scratches and dents sustained from battle."
 	icon_state = "rigscustom_helmet"
 	item_state = "rigscustom_helmet"
 	icon = 'icons/fallout/clothing/hats.dmi'
+
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/mosshelmet
+	name = "veteran patrol stetson"
+	desc = "A weathered campaign hat tightly fitted over the viscera of a ranger combat helmet. The old stetson is faded with age and heavy use, having seen the green shores of California to the white peaks of the rockies."
+	icon_state = "mosshelmet"
+	item_state = "mosshelmet"
+	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACE
+	flags_cover = HEADCOVERSEYES
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
 	name = "desert ranger combat helmet"

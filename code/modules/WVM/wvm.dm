@@ -768,12 +768,33 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	desc = "A vending machine filled with parts for crafting various things, labeled with a faded prewar ArmCo logo."
 	icon_state = "components_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Advanced Modular Receiver",		/obj/item/advanced_crafting_components/receiver,					200),
-		new /datum/data/wasteland_equipment("Weapon Assembly",					/obj/item/advanced_crafting_components/assembly,					200),
-		new /datum/data/wasteland_equipment("Superconductor Coils",				/obj/item/advanced_crafting_components/conductors,					200),
-		new /datum/data/wasteland_equipment("Focused crystal lenses",			/obj/item/advanced_crafting_components/lenses,						200),
-		new /datum/data/wasteland_equipment("Flux capacitator",					/obj/item/advanced_crafting_components/flux,						200),
-		new /datum/data/wasteland_equipment("Superlight Alloys",				/obj/item/advanced_crafting_components/alloys,						200)
+		new /datum/data/wasteland_equipment("Advanced Modular Receiver",		/obj/item/advanced_crafting_components/receiver,					150),
+		new /datum/data/wasteland_equipment("Weapon Assembly",					/obj/item/advanced_crafting_components/assembly,					150),
+		new /datum/data/wasteland_equipment("Superconductor Coils",				/obj/item/advanced_crafting_components/conductors,					150),
+		new /datum/data/wasteland_equipment("Focused crystal lenses",			/obj/item/advanced_crafting_components/lenses,						150),
+		new /datum/data/wasteland_equipment("Flux capacitator",					/obj/item/advanced_crafting_components/flux,						150),
+		new /datum/data/wasteland_equipment("Superlight Alloys",				/obj/item/advanced_crafting_components/alloys,						150),
+		new /datum/data/wasteland_equipment("Energy Rifle Frame",				/obj/item/prefabs/complex/eWeaponFrame/rifle, 						100),
+		new /datum/data/wasteland_equipment("Energy Pistol Frame",				/obj/item/prefabs/complex/eWeaponFrame/pistol,						100),
+		new /datum/data/wasteland_equipment("Barrel",							/obj/item/prefabs/complex/barrel, 									25),
+		new /datum/data/wasteland_equipment("Short Barrel",						/obj/item/prefabs/complex/barrel/short, 							50),
+		new /datum/data/wasteland_equipment("Medium Barrel",					/obj/item/prefabs/complex/barrel/medium, 							100),
+		new /datum/data/wasteland_equipment("Long Barrel",						/obj/item/prefabs/complex/barrel/long, 								200),
+		new /datum/data/wasteland_equipment("Dual Barrel",						/obj/item/prefabs/complex/barrel/dual, 								300),
+		new /datum/data/wasteland_equipment("Simple Action",					/obj/item/prefabs/complex/action/simple, 							50),
+		new /datum/data/wasteland_equipment("Automatic Action",					/obj/item/prefabs/complex/action/auto, 								100),
+		new /datum/data/wasteland_equipment("Automatic Burst Action",			/obj/item/prefabs/complex/action/autoburst, 						200),
+		new /datum/data/wasteland_equipment("Rapid Blowback Action",			/obj/item/prefabs/complex/action/rapid, 							300),
+		new /datum/data/wasteland_equipment("EC Adapter",						/obj/item/prefabs/complex/ecell/ec, 								50),
+		new /datum/data/wasteland_equipment("MFC Adapter",						/obj/item/prefabs/complex/ecell/mfc, 								100),
+		new /datum/data/wasteland_equipment("ECP Adapter",						/obj/item/prefabs/complex/ecell/ecp, 								150),
+		new /datum/data/wasteland_equipment("Single Stream",					/obj/item/prefabs/complex/eburst/simple, 							100),
+		new /datum/data/wasteland_equipment("Dual Stream",						/obj/item/prefabs/complex/eburst/dual, 								200),
+		new /datum/data/wasteland_equipment("Fast Dual Stream",					/obj/item/prefabs/complex/eburst/fast, 								300),
+		new /datum/data/wasteland_equipment("Triple Stream",					/obj/item/prefabs/complex/eburst/triple, 							300),
+		new /datum/data/wasteland_equipment("Improved Weapon Frame",			/obj/item/prefabs/complex/WeaponFrame/improved, 					300),
+		new /datum/data/wasteland_equipment("Masterwork Weapon Frame",			/obj/item/prefabs/complex/WeaponFrame/masterwork, 					500),
+
 		)
 
 /obj/machinery/mineral/wasteland_vendor/attachments

@@ -27,7 +27,7 @@
 	response_harm   = "hits"
 	maxHealth = 550
 	health = 550
-	obj_damage = 60
+	obj_damage = 500
 	armour_penetration = 40
 	melee_damage_lower = 60
 	melee_damage_upper = 65

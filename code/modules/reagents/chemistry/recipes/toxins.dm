@@ -33,6 +33,13 @@
 	required_reagents = list("sacid" = 1, "fluorine" = 1, "hydrogen" = 1, "potassium" = 1)
 	required_temp = 380
 
+/datum/chemical_reaction/sacid
+	name = "sulfuric acid"
+	id = "sacid"
+	results = list("sacid" = 2)
+	required_reagents = list("sulfur" = 1, "hydrogen" = 1, "oxygen" = 1)
+	required_temp = 380
+	
 /datum/chemical_reaction/sulfonal
 	name = "sulfonal"
 	id = "sulfonal"

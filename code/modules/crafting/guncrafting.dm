@@ -35,6 +35,67 @@
 	icon_state = "advanced_bench"
 	desc = "A large and advanced pre-war workbench to tackle any project!"
 	machine_tool_behaviour = list(TOOL_AWORKBENCH, TOOL_WORKBENCH)
+	var/list/salvage_typeTrait = list("Automatic Burst Action" = /obj/item/prefabs/complex/action/autoburst,
+							"Rapid Blowback Action" = /obj/item/prefabs/complex/action/rapid,
+							"Long Barrel" = /obj/item/prefabs/complex/barrel/long,
+							"762 Magazine Loader" = /obj/item/prefabs/complex/ammo_loader/m762,
+							".50AE Magazine Loader" = /obj/item/prefabs/complex/ammo_loader/m50AE,
+							"12g Drum Magazine Loader" = /obj/item/prefabs/complex/ammo_loader/m12g,
+							"45-70 Internal Magazine Loader" = /obj/item/prefabs/complex/ammo_loader/m4570,
+							"Multiple barrels" = /obj/item/prefabs/complex/barrel/dual,
+							".50MG Internal Magazine Loader" = /obj/item/prefabs/complex/ammo_loader/m50MG,
+							"Pre-War Alloys" = /obj/item/stack/sheet/prewar,
+							"Advanced Hair Trigger" = /obj/item/prefabs/complex/trigger/advhair)
+
+	var/list/salvage_typeNoTrait = list("Long Barrel" = /obj/item/prefabs/complex/barrel/long,
+							"762 Magazine Loader" = /obj/item/prefabs/complex/ammo_loader/m762,
+							".50AE Magazine Loader" = /obj/item/prefabs/complex/ammo_loader/m50AE,
+							"12g Drum Magazine Loader" = /obj/item/prefabs/complex/ammo_loader/m12g,
+							"45-70 Internal Magazine Loader" = /obj/item/prefabs/complex/ammo_loader/m4570,
+							"Improved Weapon Frame" = /obj/item/prefabs/complex/WeaponFrame/improved,
+							"Hair Trigger" = /obj/item/prefabs/complex/trigger/hair)
+	
+	var/list/esalvage_type = list(/obj/item/prefabs/complex/ecell/mfc,
+	/obj/item/prefabs/complex/ecell/ecp,
+	/obj/item/prefabs/complex/eburst/triple,
+	/obj/item/prefabs/complex/eburst/fast,
+	/obj/item/prefabs/complex/eburst/dual,
+	/obj/item/prefabs/complex/ebarrel/plasma/weak,
+	/obj/item/prefabs/complex/ebarrel/laser/scatter,
+	/obj/item/prefabs/complex/ebarrel/laser/strong)
+
+/obj/machinery/workbench/advanced/attackby(obj/item/W, mob/user, params)
+	. = ..()
+	var/mob/living/M = user
+	if(istype(W,/obj/item/gun/energy/laser/aer9))
+		if(do_after(user,30,target = src))
+			qdel(W)
+			new /obj/item/prefabs/complex/eWeaponFrame/rifle(get_turf(src))
+			new /obj/item/prefabs/complex/ecell/mfc(get_turf(src))
+			new /obj/item/prefabs/complex/eburst/simple(get_turf(src))
+			new /obj/item/prefabs/complex/ebarrel/laser/avg(get_turf(src))
+	if(istype(W,/obj/item/gun/energy/laser/pistol))
+		if(do_after(user,30,target = src))			
+			qdel(W)
+			new /obj/item/prefabs/complex/eWeaponFrame/pistol(get_turf(src))
+			new /obj/item/prefabs/complex/ecell/ec(get_turf(src))
+			new /obj/item/prefabs/complex/eburst/simple(get_turf(src))
+			new /obj/item/prefabs/complex/ebarrel/laser/weak(get_turf(src))
+	if(istype(W,/obj/item/prefabs/complex/loot/energy))
+		if(do_after(user,80,target = src)&& M.has_trait(TRAIT_MASTER_GUNSMITH))
+			var/item_path = pick(esalvage_type)
+			new item_path(get_turf(src))
+			qdel(W)
+	else if(istype(W,/obj/item/prefabs/complex/loot))
+		if(do_after(user,80,target = src))
+			if(M.has_trait(TRAIT_MASTER_GUNSMITH))
+				var/item_path = salvage_typeTrait[pick(salvage_typeTrait)]
+				new item_path(get_turf(src))
+				qdel(W)
+			else
+				var/item_path = salvage_typeNoTrait[pick(salvage_typeNoTrait)]
+				new item_path(get_turf(src))
+				qdel(W)
 
 /obj/machinery/workbench/mbench
 	name = "machine workbench"
@@ -49,12 +110,13 @@
 	machine_tool_behaviour = list(TOOL_ASSWORKBENCH)
 
 /obj/machinery/workbench/fbench
-	var/obj/item/prefabs/mould
 	name = "moulding workbench"
 	icon_state = "moulding"
 	desc = "A moulding bench, used for superheating metal into its molten form and moulding it."
 	machine_tool_behaviour = list(TOOL_FWORKBENCH)
 	wrenchable = FALSE
+	var/obj/item/prefabs/mould/mould = null
+	var/work_time = 20 //2 seconds
 
 /obj/machinery/workbench/fbench/attackby(obj/item/W, mob/user, params)//todo me
 	var/mob/living/carbon/human/H = usr
@@ -62,26 +124,33 @@
 		to_chat(usr,"You have no clue as to how to work this material.")
 		return
 	else if(istype(W, /obj/item/screwdriver) && mould)
-		var/obj/item/prefabs/mould/B = mould
-		B.forceMove(src.loc)
-		mould = null
-		to_chat(user,"You remove the mould.")
-	else if(istype(W, /obj/item/prefabs/mould) && mould)
-		var/obj/item/prefabs/mould/B = mould
-		var/obj/item/prefabs/mould/C = W
-		B.forceMove(src.loc)
-		mould = null
-		user.transferItemToLoc(C, src)
-		mould = C
-		to_chat(user,"You replace the mould.")
-	else if(istype(W, /obj/item/prefabs/mould) && !mould)
-		var/obj/item/prefabs/mould/C = W
-		user.transferItemToLoc(C, src)
-		mould = C
-		to_chat(user,"You install the [W].")
+		if(do_after(user,work_time,target = src))
+			mould.forceMove(get_turf(src))
+			mould = null
+			to_chat(user,"You remove the mould.")
+		return 1
+	else if(istype(W, /obj/item/prefabs/mould))
+		if(do_after(user,work_time,target = src))
+			if(mould)
+				to_chat(user,"You remove the old mould.")
+				mould.forceMove(get_turf(src))
+			user.transferItemToLoc(W, src)
+			mould = W
+			to_chat(user,"You install the new mould.")
+		return 1
+	else if(mould && istype(W,mould.mould_sheet_type))
+		var/obj/item/stack/sheet/S = W //typecast it so we can use .amount and .use
+		if(S.amount < mould.sheet_amount)
+			to_chat(user,"<span class='warning'>There's not enough material in [W]!</span>")
+			return 0
+		if(do_after(user,work_time,target = src))	 //success
+			S.use(mould.sheet_amount) //This also deletes the stack if empty
+			var/O = new mould.item_path(get_turf(src))
+			to_chat(user,"<span class='notice'>You carefully melt down [W] into [O]!</span>")
+		return 1
 	else if(user.transferItemToLoc(W, drop_location()))
 		return TRUE
-
+/*
 /obj/machinery/workbench/fbench/Crossed(atom/movable/AM)
 	for(var/A in src.loc)
 		if(A == src)
@@ -200,7 +269,7 @@
 							Q.amount -= 1
 							var/obj/item/prefabs/complex/complexWeaponFrame/high/C = new /obj/item/prefabs/complex/complexWeaponFrame/high
 							C.forceMove(src.loc)
-
+*/
 
 
 /obj/machinery/workbench/bottler

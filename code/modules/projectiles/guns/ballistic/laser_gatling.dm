@@ -112,6 +112,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/minigun
 	casing_ejector = FALSE
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
+	spawnwithmagazine = TRUE
 	var/obj/item/minigunpack/ammo_pack
 
 /obj/item/gun/ballistic/minigun/Initialize()
