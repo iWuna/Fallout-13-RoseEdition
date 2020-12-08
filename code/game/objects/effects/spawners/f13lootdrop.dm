@@ -319,12 +319,27 @@
 				/obj/item/clothing/suit/armor/f13/sulphitearmor,
 				/obj/item/clothing/head/helmet/f13/sulphitehelm
 				)
-	var/loot10= list(
-				/obj/item/stealthboy/makeshift
-				)
+
+/obj/effect/spawner/lootdrop/f13/stealthboy
+	name = "stealthboy spawner"
+	lootcount = 2
+	var/loot1 = list(/obj/item/stealthboy/makeshift, /obj/item/storage/pill_bottle/chem_tin/mentats)
+	var loot2 = list(/obj/item/stealthboy, /obj/item/storage/pill_bottle/chem_tin/mentats)
+	var/loot3 = list(/obj/item/stealthboy/mk2, /obj/item/storage/pill_bottle/chem_tin/mentats)
+
+/obj/effect/spawner/lootdrop/f13/stealthboy/Initialize(mapload) //on mapload, pick what shit to spawn
+	if(prob(5))
+		loot = loot1
+	else if (prob(10))
+		loot = loot2
+	else if (prob(15))
+		loot = loot3
+	else
+		loot = list()
+	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/armor/tier3/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10)
+	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9)
 	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/armor/tier4 //TIER 4 ARMOR
@@ -350,13 +365,9 @@
 				/obj/item/clothing/suit/armor/f13/power_armor/hotrod,
 				/obj/item/clothing/head/helmet/f13/power_armor/hotrod
 				)
-	var/loot6 = list(
-				/obj/item/stealthboy,
-				/obj/item/storage/pill_bottle/chem_tin/mentats
-				)
 
 /obj/effect/spawner/lootdrop/f13/armor/tier4/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6)
+	loot = pick(loot1, loot2, loot3, loot4, loot5)
 	. = ..()
 
 
@@ -372,14 +383,9 @@
 				/obj/item/clothing/suit/armor/f13/power_armor/t51b,
 				/obj/item/clothing/head/helmet/f13/power_armor/t51b
 				)
-	var/loot3 = list(
-				/obj/item/stealthboy/mk2,
-				/obj/item/storage/pill_bottle/chem_tin/mentats,
-				/obj/item/storage/pill_bottle/chem_tin/mentats
-				)
 
 /obj/effect/spawner/lootdrop/f13/armor/tier5/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3)
+	loot = pick(loot1, loot2)
 	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/armor/random
@@ -942,7 +948,7 @@
 				""
 				)
 	var/loot16 = list(
-				/obj/item/gun/ballistic/automatic/type93,	
+				/obj/item/gun/ballistic/automatic/type93,
 				/obj/item/ammo_box/magazine/m556/rifle/assault,
 				/obj/item/ammo_box/magazine/m556/rifle/assault
 				)
@@ -1481,7 +1487,7 @@
 	name = "gun comps spawner"
 	icon_state = "blueprint_loot"
 	lootcount = 1
-	loot = list(		
+	loot = list(
 		/obj/item/advanced_crafting_components/flux,
 		/obj/item/advanced_crafting_components/lenses,
 		/obj/item/advanced_crafting_components/conductors,

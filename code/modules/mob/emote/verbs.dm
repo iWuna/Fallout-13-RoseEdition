@@ -238,6 +238,11 @@
 	set category = "Emote"
 	usr.emote("flip")
 
+/mob/living/carbon/human/verb/emote_faint()
+	set name = "> Faint "
+	set category = "Emote"
+	usr.emote("faint")
+
 /mob/living/carbon/human/verb/emote_quiver()
 	set name = "~ Quiver "
 	set category = "Emote"
@@ -337,3 +342,16 @@
 	set name = "< CHAT > "
 	set category = "Emote"
 	usr.emote("h_chat")
+
+
+// Faction
+
+/mob/living/carbon/human/proc/emote_ncr()
+	set name = "< NCR > "
+	set category = "Emote"
+	usr.emote("ncr_r")
+
+/mob/living/carbon/human/proc/emote_ncr_command()
+	set name = "< NCR > "
+	set category = "Emote"
+	usr.emote("ncr_c")
