@@ -781,3 +781,30 @@
 		var/mob/living/carbon/human/H = user
 		if(H.dna.species.id == "supermutant" || H.dna.species.id == "nightkin" && (!H.mind || !H.mind.miming) && !user.is_muzzled())
 			playsound(H, pick('sound/f13npc/supermutant/idle1.ogg', 'sound/f13npc/supermutant/idle2.ogg', 'sound/f13npc/supermutant/idle3.ogg', 'sound/f13npc/supermutant/idle4.ogg'), 50, 0)
+
+/datum/emote/living/carbon/human/ncr
+	key = "ncr_r"
+
+
+
+/datum/emote/living/carbon/human/ncr/run_emote(mob/user, params, type_override, intentional)
+	. = ..()
+	var/mob/living/carbon/H = user
+	if("NCR" in H.faction)
+		if((!H.mind || !H.mind.miming) && !user.is_muzzled())
+			H.say("ЭН-СИ-АР!!")
+
+
+/datum/emote/living/carbon/human/ncr/command
+	key = "ncr_c"
+
+
+/datum/emote/living/carbon/human/ncr/command/run_emote(mob/user, params, type_override, intentional)
+	. = ..()
+	var/mob/living/carbon/H = user
+	if("NCR" in H.faction)
+		if((!H.mind || !H.mind.miming) && !user.is_muzzled())
+			for(var/mob/living/carbon/M in view(12))
+				if(M != H)
+					if("NCR" in M.faction)
+						M.say("ЭН-СИ-АР!!")

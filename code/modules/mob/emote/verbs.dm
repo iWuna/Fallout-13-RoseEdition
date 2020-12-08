@@ -342,3 +342,16 @@
 	set name = "< CHAT > "
 	set category = "Emote"
 	usr.emote("h_chat")
+
+
+// Faction
+
+/mob/living/carbon/human/proc/emote_ncr()
+	set name = "< NCR > "
+	set category = "Emote"
+	usr.emote("ncr_r")
+
+/mob/living/carbon/human/proc/emote_ncr_command()
+	set name = "< NCR > "
+	set category = "Emote"
+	usr.emote("ncr_c")

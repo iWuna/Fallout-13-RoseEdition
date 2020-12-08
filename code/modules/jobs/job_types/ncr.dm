@@ -1,7 +1,7 @@
 /datum/job/ncr //do NOT use this for anything, it's just to store faction datums
 	department_flag = NCR
 	selection_color = "#ffeeaa"
-	verbs = list(/mob/living/proc/NCR_exclaim)
+	verbs = list(/mob/living/carbon/human/proc/emote_ncr)
 
 	access = list(ACCESS_NCR, ACCESS_NCROFFDUTY)
 	minimal_access = list(ACCESS_NCR, ACCESS_NCROFFDUTY)
@@ -28,7 +28,7 @@ Colonel
 	head_announce = list("Security")
 	supervisors = "Генерал"
 	req_admin_notify = 1
-	verbs = list(/mob/living/proc/NCR_command)
+	verbs = list(/mob/living/carbon/human/proc/emote_ncr_command)
 
 	total_positions = 0
 	spawn_positions = 0
@@ -77,7 +77,7 @@ Captain
 	description = "Вы – командующий офицер местных сил в Пахрумпе. Вы попали в данное место за проступки, и как оказалось, в управление вам был дан штрафбат. В вашем распоряжении находится база и прилегающие территории в виде городка, жителей которого вы должны защищать. Лейтенанты, как и Рейнджеры – ваши прямые подчиненные (В случае с Рейнджерами, лучше поставить им определенные цели, ведь их основная цель в регионе немного отличнее от вашей, нежели кидать их в бой вместе с основными силами) Разрабатывая логистику, укрепляя базу и работая совместно с рейнджерами, вы проводите дисциплинарное воспитание штрафбата. Ваша главная цель – установить влияние НКР в регионе, что станет плацдармом для его контроля в будущем. Хоть вы и попали сюда за провинности, она была незначительна, вы должны соблюдать дисциплину в лагере, и следить за её порядком. В данном случае вам может помочь военная полиция НКР."
 	supervisors = "Colonel"
 	req_admin_notify = 1
-	verbs = list(/mob/living/proc/NCR_command)
+	verbs = list(/mob/living/carbon/human/proc/emote_ncr_command)
 
 	exp_requirements = 700
 	exp_type = EXP_TYPE_NCR
@@ -189,7 +189,7 @@ Lieutenant
 	description = "Вы напрямую руководите сержантским и рядовым составом. Вы подчиняетесь Капитану. В отсутствие капитана, вы тесно сотрудничаете с Рейнджерами. Вы поддерживаете дисциплину, разрабатываете патрули, планы, тренировки и миссии. Если есть задание, которое не могут выполнить командный состав, вы можете привлечь к участию рейнджеров.."
 	supervisors = "Капитан и выше"
 	selection_color = "#fff5cc"
-	verbs = list(/mob/living/proc/NCR_command)
+	verbs = list(/mob/living/carbon/human/proc/emote_ncr_command)
 
 	exp_requirements = 500
 	exp_type = EXP_TYPE_NCR
@@ -1066,43 +1066,3 @@ Ranger -- Split into Patrol and Scout
 	suit_store = /obj/item/gun/ballistic/automatic/m1garand
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/garand308=4)
-
-#define EMOTE_COOLDOWN 20
-
-/mob/proc/handle_emote_CD(cooldown = EMOTE_COOLDOWN)
-	if(emote_cd == 3)
-		return FALSE
-	if(emote_cd == 2)
-		return TRUE
-	if(emote_cd == 1)
-		return TRUE
-
-	emote_cd = TRUE
-	spawn(cooldown)
-		if(emote_cd == 2)
-			return TRUE
-		emote_cd = FALSE
-	return FALSE
-
-
-
-/mob/living/proc/NCR_exclaim()
-	set name = "NCR!!"
-	set category = "IC"
-
-	say("ЭН-СИ-АР!!")
-
-
-/mob/living/proc/NCR_command()
-	set name = "NCR!!"
-	set category = "IC"
-
-	say("ЭН-СИ-АР!!")
-
-	for(var/mob/M in view(12))
-		if(M != src)
-			if(istype(M, /mob/living/simple_animal/hostile/ncr))
-				var/mob/living/simple_animal/hostile/ncr/SM = M
-				SM.say("ЭН-СИ-АР!!")
-			if("NCR" in M.faction)
-				M.say("ЭН-СИ-АР!!")
