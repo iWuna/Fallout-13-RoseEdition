@@ -23,7 +23,7 @@
 	var/retreat_distance = null //If our mob runs from players when they're too close, set in tile distance. By default, mobs do not retreat.
 	var/minimum_distance = 1 //Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles to the target, set higher to make mobs keep distance
 
-	var/decompose = FALSE //Does this mob decompose over time when dead?
+	//var/decompose = FALSE //Does this mob decompose over time when dead? //Теперь удалено
 
 //These vars are related to how mobs locate and target
 	var/robust_searching = 0 //By default, mobs have a simple searching method, set this to 1 for the more scrutinous searching (stat_attack, stat_exclusive, etc), should be disabled on most mobs
@@ -52,7 +52,7 @@
 /mob/living/simple_animal/hostile/Destroy()
 	targets_from = null
 	return ..()
-
+/*
 /mob/living/simple_animal/hostile/Life()
 	. = ..()
 	if(!.) //dead
@@ -62,7 +62,7 @@
 				visible_message("<span class='notice'>\The dead body of the [src] decomposes!</span>")
 				gib(FALSE, FALSE, FALSE, TRUE)
 		return 0
-
+*/ //Тестируем восстановление стабильноти гулей.
 /mob/living/simple_animal/hostile/handle_automated_action()
 	if(AIStatus == AI_OFF)
 		return 0
