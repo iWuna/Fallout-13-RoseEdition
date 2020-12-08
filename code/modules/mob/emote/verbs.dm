@@ -238,6 +238,11 @@
 	set category = "Emote"
 	usr.emote("flip")
 
+/mob/living/carbon/human/verb/emote_faint()
+	set name = "> Faint "
+	set category = "Emote"
+	usr.emote("faint")
+
 /mob/living/carbon/human/verb/emote_quiver()
 	set name = "~ Quiver "
 	set category = "Emote"

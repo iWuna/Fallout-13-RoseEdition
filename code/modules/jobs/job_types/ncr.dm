@@ -1090,21 +1090,19 @@ Ranger -- Split into Patrol and Scout
 	set name = "NCR!!"
 	set category = "IC"
 
-	if (!handle_emote_CD(20))
-		say("ЭН-СИ-АР!!")
+	say("ЭН-СИ-АР!!")
 
 
 /mob/living/proc/NCR_command()
 	set name = "NCR!!"
 	set category = "IC"
 
-	if (!handle_emote_CD(20))
-		say("ЭН-СИ-АР!!")
+	say("ЭН-СИ-АР!!")
 
-		for(var/mob/M in view(12))
-			if(M != src)
-				if(istype(M, /mob/living/simple_animal/hostile/ncr))
-					var/mob/living/simple_animal/hostile/ncr/SM = M
-					SM.say("ЭН-СИ-АР!!")
-				if("NCR" in M.faction)
-					M.say("ЭН-СИ-АР!!")
+	for(var/mob/M in view(12))
+		if(M != src)
+			if(istype(M, /mob/living/simple_animal/hostile/ncr))
+				var/mob/living/simple_animal/hostile/ncr/SM = M
+				SM.say("ЭН-СИ-АР!!")
+			if("NCR" in M.faction)
+				M.say("ЭН-СИ-АР!!")
