@@ -46,6 +46,7 @@
 
 	var/attack_hand_interact = TRUE					//interact on attack hand.
 	var/quickdraw = FALSE							//altclick interact
+	var/clickopen = FALSE							//instantly open with a click
 
 	var/datum/action/item_action/storage_gather_mode/modeswitch_action
 
@@ -676,6 +677,10 @@
 		user.active_storage.close(user)
 		close(user)
 		. = COMPONENT_NO_ATTACK_HAND
+		return
+
+	if (clickopen == TRUE)
+		show_to(user)
 		return
 
 	if(rustle_sound)

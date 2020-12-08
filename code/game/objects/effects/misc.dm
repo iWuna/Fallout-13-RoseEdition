@@ -66,3 +66,72 @@
 /obj/effect/abstract/marker/at
 	name = "active turf marker"
 
+//я сделала хуйню, имею право.//
+#define CARDINAL_DIRS 		list(1,2,4,8)
+
+/obj/effect/forcefield
+	anchored = TRUE
+	opacity = FALSE
+	density = TRUE
+
+/obj/effect/forcefield/fog
+	name = "dense fog"
+	desc = "It looks way too dangerous to traverse. Best wait until it has cleared up."
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "smoke"
+	opacity = TRUE
+
+
+/obj/effect/forcefield/fog/Initialize()
+	. = ..()
+	dir  = pick(CARDINAL_DIRS)
+
+
+/obj/effect/forcefield/fog/Destroy()
+	return ..()
+
+
+/obj/effect/forcefield/fog/attack_hand(mob/living/user)
+	to_chat(user, "<span class='notice'>You peer through the fog, but it's impossible to tell what's on the other side...</span>")
+	return TRUE
+
+
+/obj/effect/forcefield/fog/attack_alien(M)
+	return attack_hand(M)
+
+
+/obj/effect/forcefield/fog/attack_paw(mob/living/carbon/monkey/user)
+	return attack_hand(user)
+
+
+/obj/effect/forcefield/fog/attack_animal(M)
+	return attack_hand(M)
+
+
+/obj/effect/forcefield/fog/CanPass(atom/movable/mover, turf/target)
+	if(isobj(mover))
+		return TRUE
+	return FALSE
+
+/obj/effect/forcefield/fog/passable_fog
+	name = "fog"
+	desc = "It looks dangerous to traverse."
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "smoke"
+	density = FALSE
+	alpha = 255
+
+/obj/effect/forcefield/fog/passable_fog/CanPass(atom/movable/mover, turf/target)
+	return TRUE
+
+/obj/effect/forcefield/fog/passable_fog/Crossed(atom/movable/mover, oldloc)
+	. = ..()
+	if(!opacity)
+		return
+	set_opacity(FALSE)
+	alpha = 180
+	addtimer(CALLBACK(src, .proc/reset), 30 SECONDS)
+
+/obj/effect/forcefield/fog/passable_fog/proc/reset()
+	alpha = initial(alpha)
+	set_opacity(TRUE)

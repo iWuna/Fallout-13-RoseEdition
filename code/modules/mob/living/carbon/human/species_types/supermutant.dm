@@ -20,3 +20,11 @@
 	name = "Nightkin"
 	id = "nightkin"
 	limbs_id = "night"
+
+/datum/species/supermutant/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+	. = ..()
+	
+
+/datum/species/supermutant/on_species_loss(mob/living/carbon/C)
+	. = ..()
+	C.verbs |= /mob/living/carbon

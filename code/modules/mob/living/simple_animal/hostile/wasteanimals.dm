@@ -279,10 +279,10 @@
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	faction = list("gecko")
+	faction = list("ant")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
-	decompose = TRUE
+	//decompose = TRUE // Посибл перегрузка
 
 /mob/living/simple_animal/hostile/giantant/Initialize()
 	. = ..()
@@ -320,9 +320,9 @@
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	faction = list("gecko")
+	faction = list("ant")
 	gold_core_spawnable = HOSTILE_SPAWN
-	decompose = TRUE
+	//decompose = TRUE //Посибл перегрузка.
 	a_intent = INTENT_HARM
 
 /mob/living/simple_animal/hostile/fireant/Initialize()
@@ -337,6 +337,83 @@
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
 		H.reagents.add_reagent("napalm", 0.1)
+
+/mob/living/simple_animal/hostile/giantantqueen
+	name = "giant ant queen"
+	desc = "The queen of a giant ant colony."
+	icon = 'icons/mob/wastemobslong.dmi'
+	icon_state = "antqueen"
+	icon_living = "antqueen"
+	icon_dead = "antqueen_dead"
+	icon_gib = "GiantAnt_gib"
+	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	speak_chance = 0
+	turns_per_move = 5
+	butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 2, /obj/item/reagent_containers/food/snacks/rawantbrain = 1)
+	response_help = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm = "hits"
+	emote_taunt = list("chitters")
+	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
+	taunt_chance = 30
+	speed = 1
+	maxHealth = 700
+	health = 700
+	ranged = 1
+	harm_intent_damage = 8
+	obj_damage = 20
+	melee_damage_lower = 15
+	melee_damage_upper = 15
+	attacktext = "stings"
+	attack_sound = 'sound/creatures/radroach_attack.ogg'
+	projectiletype = /obj/item/projectile/bile
+	projectilesound = 'sound/f13npc/centaur/spit.ogg'
+	extra_projectiles = 2
+	speak_emote = list("skitters")
+	retreat_distance = 5
+	minimum_distance = 7
+	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	faction = list("ant")
+	gold_core_spawnable = HOSTILE_SPAWN
+	//decompose = TRUE  //посибл перегрузка.
+	a_intent = INTENT_HARM
+	var/list/spawned_mobs = list()
+	var/max_mobs = 2
+	var/mob_types = list(/mob/living/simple_animal/hostile/giantant)
+	var/spawn_delay = 0
+	var/spawn_time = 30 SECONDS
+	var/spawn_text = "hatches from"
+
+
+/mob/living/simple_animal/hostile/giantantqueen/Initialize()
+	. = ..()
+	GLOB.mob_nests += src
+
+/mob/living/simple_animal/hostile/giantantqueen/death()
+	GLOB.mob_nests -= src
+	. = ..()
+
+/mob/living/simple_animal/hostile/giantantqueen/Aggro()
+	..()
+	summon_backup(10)
+
+/obj/item/projectile/bile
+	name = "spit"
+	damage = 20
+	icon_state = "toxin"
+
+/mob/living/simple_animal/hostile/giantantqueen/proc/spawn_mob()
+	if(world.time < spawn_delay)
+		return 0
+	spawn_delay = world.time + spawn_time
+	if(spawned_mobs.len >= max_mobs)
+		return FALSE
+	var/chosen_mob_type = pickweight(mob_types)
+	var/mob/living/simple_animal/L = new chosen_mob_type(src.loc)
+	L.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)	//If we were admin spawned, lets have our children count as that as well.
+	spawned_mobs += L
+	L.nest = src
+	visible_message("<span class='danger'>[L] [spawn_text] [src].</span>")
 
 /obj/item/clothing/head/f13/stalkerpelt
 	name = "nightstalker pelt"

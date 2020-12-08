@@ -134,6 +134,10 @@
 #define CAT_BP_COPY	"Copy Blueprints"
 #define CAT_MOULD "Moulds"
 #define CAT_MOULD_ONE "Moulds"
+#define CAT_EXPERIMENTAL "Experimental"
+#define CAT_WEAPONS "Weapons"
+#define CAT_UNREFIENED "Unrefined"
+#define CAT_DEPLETED "Depleted"
 
 #define RCD_FLOORWALL 1
 #define RCD_AIRLOCK 2

@@ -482,3 +482,15 @@
 /obj/structure/flora/rock/pile/largejungle/Initialize()
 	. = ..()
 	icon_state = "[initial(icon_state)][rand(1,3)]"
+
+/obj/structure/pondlily_small
+	name = "lily pad"
+	icon = 'icons/obj/flora/plants.dmi'
+	icon_state = "pondlily_small"
+	desc = "A small lily pad with a single purple lily flower in the middle."
+
+/obj/structure/pondlily_big
+	name = "Large lily pad"
+	icon = 'icons/obj/flora/plants.dmi'
+	icon_state = "pondlily_big"
+	desc = "A large lily pad with a single purple lily flower in full bloom that rests in the middle."

@@ -12,7 +12,8 @@
 				CAT_FOOD,
 				CAT_CLOTHING,
 				CAT_BLUEPRINTS,
-				CAT_MOULD)
+				CAT_MOULD,
+				CAT_EXPERIMENTAL)
 	var/list/subcategories = list(
 						list(	//Weapon subcategories
 							CAT_WEAPON,
@@ -68,8 +69,10 @@
 							CAT_BPWEAPON_ONEUSE,
 							CAT_BP_COPY),
 						list( //moulds
-							CAT_MOULD_ONE)
-							)
+							CAT_MOULD_ONE),
+						list(CAT_WEAPONS,
+							CAT_UNREFIENED,
+							CAT_DEPLETED))
 
 	var/datum/action/innate/crafting/button
 	var/display_craftable_only = FALSE

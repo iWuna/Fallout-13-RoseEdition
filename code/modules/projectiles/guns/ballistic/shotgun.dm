@@ -14,11 +14,12 @@
 	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
 	var/nocase = FALSE
 	randomspread = 0
+	spawnwithmagazine = TRUE
 	fire_delay = 2
 	distro = 1
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	equipsound = 'sound/f13weapons/equipsounds/shotgunequip.ogg'
-
+/*
 /obj/item/gun/ballistic/shotgun/attackby(obj/item/A, mob/user, params)
 	. = ..()
 	if(.)
@@ -29,7 +30,7 @@
 		playsound(user, 'sound/weapons/shotguninsert.ogg', 60, 1)
 		A.update_icon()
 		update_icon()
-
+*/
 /obj/item/gun/ballistic/shotgun/process_chamber(empty_chamber = 0)
 	return ..() //changed argument value
 
@@ -346,6 +347,15 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_LIGHT
 
+/obj/item/gun/ballistic/shotgun/trench/hatchet	
+	embedding = list("embedded_pain_multiplier" = 4, "embed_chance" = 100, "embedded_fall_chance" = 0)
+	force = 35
+	throwforce = 40
+	name = "lever action shotgun (with axe)"
+	desc = "A lever action hunting shotgun with a five-shell capacity underneath plus one in chamber. This one has an axe attached to it."
+	icon_state = "trenchgun-axe"
+	hitsound = 'sound/weapons/bladeslice.ogg'	
+
 /obj/item/gun/ballistic/shotgun/hunting
 	name = "hunting shotgun"
 	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
@@ -572,7 +582,7 @@
 	can_scope = TRUE
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped
-	name = "scoped brush gun (standard)"
+	name = "scoped brush gun"
 	desc = "A short lever action rifle chambered in the heavy 45-70 round. Issued to NCR Veteran Rangers in the absence of heavier weaponry."
 	icon_state = "scopedbrushgun"
 	item_state = "scopedbrushgun"
@@ -585,28 +595,6 @@
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 6
 	can_scope = FALSE
-	extra_penetration = -5
-	extra_damage = -5
-
-/obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped/attackby(obj/item/W, mob/user, params)
-	if(istype(W,/obj/item/screwdriver))
-		var/obj/item/A = new /obj/item/prefabs/complex/screw
-		var/obj/item/B = new /obj/item/prefabs/complex/trigger
-		var/obj/item/C = new /obj/item/prefabs/complex/bolt/simple
-		var/obj/item/D = new /obj/item/prefabs/complex/action/simple
-		var/obj/item/E = new /obj/item/prefabs/complex/barrel/m4570
-		var/obj/item/F = new /obj/item/prefabs/complex/stock/low
-		var/obj/item/G = new /obj/item/prefabs/complex/complexWeaponFrame/low
-		A.forceMove(usr.loc)
-		B.forceMove(usr.loc)
-		C.forceMove(usr.loc)
-		D.forceMove(usr.loc)
-		E.forceMove(usr.loc)
-		F.forceMove(usr.loc)
-		G.forceMove(usr.loc)
-		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
-	. = ..()
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped/mid
 	name = "scoped brush gun (improved)"
@@ -614,51 +602,12 @@
 	extra_penetration = 5
 	fire_delay = 5
 
-/obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped/mid/attackby(obj/item/W, mob/user, params)
-	if(istype(W,/obj/item/screwdriver))
-		var/obj/item/A = new /obj/item/prefabs/complex/screw
-		var/obj/item/B = new /obj/item/prefabs/complex/trigger
-		var/obj/item/C = new /obj/item/prefabs/complex/bolt/simple
-		var/obj/item/D = new /obj/item/prefabs/complex/action/simple
-		var/obj/item/E = new /obj/item/prefabs/complex/barrel/m4570
-		var/obj/item/F = new /obj/item/prefabs/complex/stock/low
-		var/obj/item/G = new /obj/item/prefabs/complex/complexWeaponFrame/mid
-		A.forceMove(usr.loc)
-		B.forceMove(usr.loc)
-		C.forceMove(usr.loc)
-		D.forceMove(usr.loc)
-		E.forceMove(usr.loc)
-		F.forceMove(usr.loc)
-		G.forceMove(usr.loc)
-		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
-	. = ..()
-
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped/high
 	name = "scoped brush gun (masterwork)"
 	extra_damage = 12
 	extra_damage = 12
 	fire_delay = 4
 
-/obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped/high/attackby(obj/item/W, mob/user, params)
-	if(istype(W,/obj/item/screwdriver))
-		var/obj/item/A = new /obj/item/prefabs/complex/screw
-		var/obj/item/B = new /obj/item/prefabs/complex/trigger
-		var/obj/item/C = new /obj/item/prefabs/complex/bolt/simple
-		var/obj/item/D = new /obj/item/prefabs/complex/action/simple
-		var/obj/item/E = new /obj/item/prefabs/complex/barrel/m4570
-		var/obj/item/F = new /obj/item/prefabs/complex/stock/low
-		var/obj/item/G = new /obj/item/prefabs/complex/complexWeaponFrame/high
-		A.forceMove(usr.loc)
-		B.forceMove(usr.loc)
-		C.forceMove(usr.loc)
-		D.forceMove(usr.loc)
-		E.forceMove(usr.loc)
-		F.forceMove(usr.loc)
-		G.forceMove(usr.loc)
-		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
-	. = ..()
 
 /obj/item/gun/ballistic/revolver/widowmaker
 	name = "winchester widowmaker"

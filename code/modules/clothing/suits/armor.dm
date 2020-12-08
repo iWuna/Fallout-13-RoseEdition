@@ -138,6 +138,16 @@
 	strip_delay = 70
 	equip_delay_other = 50
 
+/obj/item/clothing/suit/armor/locustjacket
+	name = "locust jacket"
+	desc = "A reinforced jacket used primarily by the locust mercenaries"
+	icon_state = "locustjacket"
+	item_state = "locustjacket"
+	blood_overlay_type = "armor"
+	armor = list("melee" = 35, "bullet" = 55, "laser" = 35, "energy" = 35, "bomb" = 55, "bio" = 0, "rad" = 0, "fire" = 55, "acid" = 55)
+	strip_delay = 70
+	equip_delay_other = 50
+
 /obj/item/clothing/suit/armor/laserproof
 	name = "tesla armor"
 	desc = "A prewar armor design by Nikola Tesla before being confinscated by the U.S. government. Provides the high energy weapons resistance."
@@ -430,11 +440,25 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/f13/raider/iconoclast/
+/obj/item/clothing/suit/armor/f13/raider/combatduster
+    name = "Combat Duster"
+    desc = "An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
+    icon_state = "combatduster"
+    item_state = "combatduster"
+
+/obj/item/clothing/suit/armor/f13/raider/combatduster/Initialize()
+    . = ..()
+    AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/suit/armor/f13/raider/iconoclast
 	name = "iconoclast raider armor"
 	desc = "A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
 	icon_state = "iconoclast"
 	item_state = "iconoclast"
+
+/obj/item/clothing/suit/armor/f13/raider/iconoclast/Initialize()
+    . = ..()
+    AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/armor/f13/harbingermantle
 	name = "Harbinger's Mantle"
@@ -446,6 +470,16 @@
 
 
 /obj/item/clothing/suit/armor/f13/raider/iconoclast/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/suit/armor/f13/raider/ant
+	name = "AntAgonizer's suit"
+	desc = "Coming to a wasteland near you: replica armor, right out of Grognak the Barbarian. Hand-sewn from only the finest insect chitin around, it'll inspire gasps at the next costume party, guaranteed!"
+	icon_state = "antsuit"
+	item_state = "antsuit"
+
+/obj/item/clothing/suit/armor/f13/raider/ant/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
@@ -582,7 +616,7 @@
 	icon_state = "GunnerPlates"
 	item_state = "GunnerPlates"
 	slowdown = 0
-	flags_inv = HIDEJUMPSUIT|HIDENECK
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	icon = 'icons/fallout/clothing_w/suit.dmi'
 	armor = list("melee" = 45, "bullet" = 55, "laser" = 45, "energy" = 45, "bomb" = 55, "bio" = 65, "rad" = 10, "fire" = 60, "acid" = 20)
 
@@ -686,12 +720,37 @@
 	item_state = "brotherhood_armor"
 	armor = list("melee" = 40, "bullet" = 45, "laser" = 40, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
+/obj/item/clothing/suit/armor/f13/combat/brotherhood/senior
+	name = "brotherhood senior knight combat armor"
+	desc = "A superior combat armor set made by the Brotherhood of Steel, standard issue for all Senior Knights. It bears a silver stripe, and the crest of the Brotherhood of Steel."
+	icon_state = "brotherhood_armor_senior"
+	item_state = "brotherhood_armor_senior"
+
 /obj/item/clothing/suit/armor/f13/combat/knightcap
 	name = "knight-captain combat armor"
 	desc = "A customized set of combat armor designed for the Knight-Captain, with golden embroidery."
 	icon_state = "knightcap"
 	item_state = "knightcap"
 	armor = list("melee" = 45, "bullet" = 50, "laser" = 45, "energy" = 45, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
+
+/obj/item/clothing/suit/armor/f13/combat/environmental
+	name = "environmental armor"
+	desc = "A pre-war suit developed for use in heavily contaminated environments, and is prized in the Wasteland for its ability to protect against biological threats."
+	icon_state = "environmental_armor"
+	item_state = "environmental_armor"
+	w_class = WEIGHT_CLASS_BULKY
+	gas_transfer_coefficient = 0.9
+	permeability_coefficient = 0.5
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/geiger_counter, /obj/item/gun)
+	armor = list("melee" = 40, "bullet" = 45, "laser" = 45,"energy" = 45, "bomb" = 55, "bio" = 70, "rad" = 100, "fire" = 60, "acid" = 50)
+	strip_delay = 60
+	equip_delay_other = 60
+	flags_inv = HIDEJUMPSUIT
+
+/obj/item/clothing/suit/armor/f13/combat/environmental/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/rad_insulation, RAD_NO_INSULATION, TRUE, FALSE)
 
 /obj/item/clothing/suit/armor/f13/combat/enclave
 	name = "enclave combat armor"
@@ -731,11 +790,17 @@
 	armor = list("melee" = 55, "bullet" = 55, "laser" = 55, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 20)
 
 /obj/item/clothing/suit/armor/f13/rangercombat/rigscustom
-	name = "11th Armored Calvary Armor"
+	name = "11th armored calvary armor"
 	desc = "A suit of special military grade riot control gear and a duster, worn by 11th Armored Calvary Regiment members in The Divide before the war. Yellow markings are painted on the shoulderpads and forearm guards."
 	icon_state = "rigscustom_suit"
 	item_state = "rigscustom_suit"
 	icon = 'icons/fallout/clothing/suits.dmi'
+
+/obj/item/clothing/suit/armor/f13/rangercombat/mossarmor
+	name = "veteran patrol armor"
+	desc = "A full suit of ballistic patrol ranger armor, weathered and faded with age. This set has been modified heavily, with added layering on exposed or vital areas and with a thick rawhide duster worn over."
+	icon_state = "mossarmor"
+	item_state = "mossarmor"
 
 /obj/item/clothing/suit/armor/f13/rangercombat/desert
 	name = "desert ranger combat armor"
@@ -841,7 +906,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	flags_inv = HIDEJUMPSUIT
+	//flags_inv = HIDEJUMPSUIT
 	item_flags = SLOWS_WHILE_IN_HAND
 	clothing_flags = THICKMATERIAL
 	equip_delay_self = 50
@@ -850,6 +915,8 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	var/emped = 0
 	var/requires_training = TRUE
+	flags_inv = HIDEJUMPSUIT|HIDENECK|HIDEEYES|HIDEEARS|HIDEFACE|HIDEMASK|HIDEGLOVES|HIDESHOES
+	var/traits = list(TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
     var/mob/living/carbon/human/H = user
@@ -859,15 +926,37 @@
         to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
         return 0
     if(slot == SLOT_WEAR_SUIT)
+        for(var/trait in traits)
+            H.add_trait(trait)
+        return ..()
+
+/obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
+    var/mob/living/carbon/human/H = user
+    for(var/trait in traits)
+        H.remove_trait(trait)
+    return ..()
+
+/*/obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
+    var/mob/living/carbon/human/H = user
+    if(src == H.wear_suit) //Suit is already equipped
+        return TRUE
+    if (!H.has_trait(TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
+        to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+        return 0
+    if(slot == SLOT_WEAR_SUIT)
         H.add_trait(TRAIT_STUNIMMUNE)
         H.add_trait(TRAIT_PUSHIMMUNE)
+        H.add_trait(TRAIT_IRONFIST)
         return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
 	var/mob/living/carbon/human/H = user
 	H.remove_trait(TRAIT_STUNIMMUNE)
 	H.remove_trait(TRAIT_PUSHIMMUNE)
+	H.remove_trait(TRAIT_IRONFIST)
+
 	return ..()
+	*/ //Вернуть после теста
 
 /obj/item/clothing/suit/armor/f13/power_armor/emp_act(mob/living/carbon/human/owner, severity)
 	. = ..()
@@ -890,9 +979,10 @@
 	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and stripped out servomotors. Bulky and slow, but almost as good as the real thing."
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
-	armor = list("melee" = 75, "bullet" = 60, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 30, "fire" = 80, "acid" = 0)
+	armor = list("melee" = 75, "bullet" = 65, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 30, "fire" = 80, "acid" = 0)
 	requires_training = FALSE
-	slowdown = 1.45
+	slowdown = 1.35
+	traits = list()
 	cold_protection = 2547 //Why it here?
 
 /obj/item/clothing/suit/armor/f13/power_armor/ncr
@@ -900,32 +990,35 @@
 	desc = "It's a set of T-45b power armor with a air conditioning module installed, it however lacks servomotors to enhance the users strength. This one has brown paint trimmed along the edge and a two headed bear painted onto the chestplate."
 	icon_state = "ncrpowerarmor"
 	item_state = "ncrpowerarmor"
-	armor = list("melee" = 75, "bullet" = 60, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 30, "fire" = 80, "acid" = 0)
+	armor = list("melee" = 75, "bullet" = 65, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 30, "fire" = 80, "acid" = 0)
 	requires_training = FALSE
 	cold_protection = 1046 //Why it here?
-	slowdown = 1.45
+	slowdown = 1.35
+	traits = list()
 
 /obj/item/clothing/suit/armor/f13/power_armor/raiderpa
 	name = "raider T-45b power armor"
 	desc = "It's a set of T-45b power armor with some of its plating heavily reconditioned. This set has seen better days, metal scrap has been spot welded to the chassis "
 	icon_state = "raiderpa"
 	item_state = "raiderpa"
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 40, "fire" = 80, "acid" = 0)
-	slowdown = 1.45
+	armor = list("melee" = 65, "bullet" = 65, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 30, "fire" = 80, "acid" = 0)
+	slowdown = 1.35
 	cold_protection = 1046
 	heat_protection = 1046
 	requires_training = FALSE
+	traits = list()
 
 /obj/item/clothing/suit/armor/f13/power_armor/hotrod
 	name = "hotrod T-45b power armor"
 	desc = "It's a set of T-45b power armor with a with some of its plating removed. This set has exhaust pipes piped to the pauldrons, flames erupting from them."
 	icon_state = "t45hotrod"
 	item_state = "t45hotrod"
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
-	slowdown = 0.7 // No servo, but faster.
+	armor = list("melee" = 60, "bullet" = 65, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 30, "fire" = 80, "acid" = 0)
+	slowdown = 0.65 // No servo, but faster.
 	cold_protection = 2246
 	heat_protection = 5046
 	requires_training = FALSE
+	traits = list()
 
 /obj/item/clothing/suit/armor/f13/power_armor/excavator
 	name = "excavator power armor"
@@ -935,6 +1028,7 @@
 	slowdown = 0.5 //+0.1 from helmet
 	cold_protection = 2646
 	heat_protection = 5046
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 60, "bullet" = 55, "laser" = 45, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d
@@ -943,6 +1037,7 @@
 	icon_state = "t45dpowerarmor"
 	item_state = "t45dpowerarmor"
 	cold_protection = 2546
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/gunslinger
@@ -951,13 +1046,15 @@
 	icon_state = "t51bgs"
 	item_state = "t51bgs"
 	slowdown = 0 //Okay??
-	flags_inv = HIDEJUMPSUIT|HIDENECK
+	//flags_inv = HIDEJUMPSUIT|HIDENECK
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
 	name = "sierra power armor"
 	desc = "A captured set of T-45d power armor put into use by the NCR, it's been heavily modified and decorated with the head of a bear and intricate gold trimming. A two headed bear is scorched into the breastplate."
 	icon_state = "sierra"
 	item_state = "sierra"
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/knightcaptain
 	name = "Knight-Captain's T-45d Power Armour"
@@ -965,6 +1062,7 @@
 	icon_state = "t45dkc"
 	item_state = "t45dkc"
 	slowdown = 0.16
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t60
@@ -974,6 +1072,7 @@
 	item_state = "t60powerarmor"
 	slowdown = 0.16
 	cold_protection = 3046
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 75, "bullet" = 70, "laser" = 60, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
@@ -983,6 +1082,7 @@
 	item_state = "t51bpowerarmor"
 	slowdown = 0.15 //+0.1 from helmet = total 0.25
 	cold_protection = 6046
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 70, "bullet" = 75, "laser" = 55, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b/ultra
@@ -990,6 +1090,7 @@
 	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer. Now ultracite enhanced."
 	icon_state = "ultracitepa"
 	item_state = "ultracitepa"
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	slowdown = 0
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced
@@ -998,6 +1099,7 @@
 	icon_state = "advpowerarmor1"
 	item_state = "advpowerarmor1"
 	cold_protection = 4046
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 75, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced/mk2
@@ -1007,6 +1109,7 @@
 	item_state = "advpowerarmor2"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	cold_protection = 4046
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 90, "bullet" = 90, "laser" = 60, "energy" = 90, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/power_armor/tesla
@@ -1015,6 +1118,7 @@
 	icon_state = "tesla"
 	item_state = "tesla"
 	cold_protection = 4046
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 95, "energy" = 95, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/power_armor/midwest
@@ -1022,12 +1126,14 @@
 	desc = "This set of power armor once belonged to the Mid Western branch of the Brotherhood of Steel now residing wherever it's user currently is situated."
 	icon_state = "midwestpa"
 	item_state = "midwestpa"
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/power_armor/midwest/reinforced
 	name = "hardened midwestern power armor"
 	desc = "This set of power armor once belonged to the Mid Western branch of the Brotherhood of Steel now residing wherever it's user currently is situated. This particular one has gone through a chemical hardening process, increasing it's armor capabilities."
 	slowdown = 0.15 //+0.1 from helmet = total 0.25
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 70, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legion
@@ -1212,6 +1318,13 @@
 	desc = "A specialized variant of combat armor issued to officers of the 3rd Scout Battalion."
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 40, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
 
+/obj/item/clothing/suit/armor/f13/ncrcfjacket
+	name = "NCRCF jacket"
+	icon_state = "ncrcfjacket"
+	item_state = "ncrcfjacket"
+	desc = "A cheap, standard issue teal canvas jacket issued to poor suckers who find themselves at the butt-end of the NCR's judiciary system."
+	armor = list("melee" = 10, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
 /obj/item/clothing/suit/armor/f13/ghostechoe
 	name = "tattered peace coat"
 	desc = "An old coat belonging to a Desert Ranger once. It has been stripped of most useful protection, and has seen better days. A crude peace symbol has been painted on the back in white."
@@ -1317,3 +1430,19 @@
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 15, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	flags_inv = HIDEJUMPSUIT
+
+/obj/item/clothing/suit/armor/f13/harpercoat
+	name = "outlaw coat"
+	desc = "A combat duster"
+	icon_state = "harperduster"
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 25, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/raider/reptiliatenebris
+	name = "Reptilia Tenebris"
+	desc = "An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic. The color of this duster has been washed out time and time again, giving it a more faded look as if time gripped it heavily. Along with that, the duster has been dyed a deep shade of grey, and the body armor a darker shade of green."
+	icon_state = "reptiliatenebris"
+	item_state = "reptiliatenebris"
+
+/obj/item/clothing/suit/armor/f13/raider/reptiliatenebris/Initialize()
+    . = ..()
+    AddComponent(/datum/component/armor_plate)

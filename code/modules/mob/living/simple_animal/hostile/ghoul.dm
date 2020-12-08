@@ -2,8 +2,8 @@
 	name = "feral ghoul"
 	desc = "A ghoul that has lost it's mind and become aggressive."
 	icon = 'icons/mob/ghouls.dmi'
-	icon_state = "retro_ghoul"
-	icon_living = "retro_ghoul"
+	icon_state = "retro_ghoul-1"
+	icon_living = "retro_ghoul-1"
 	icon_dead = "retro_ghoul_d"
 	mob_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
 	robust_searching = 1
@@ -24,7 +24,7 @@
 	robust_searching = 0
 	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("ghoul")
-	decompose = TRUE
+	//decompose = FALSE //Закоменочено на случай если это нужно.
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
 							/obj/item/stack/sheet/animalhide/human = 1,
 							/obj/item/stack/sheet/bone = 1)
@@ -94,9 +94,9 @@
 	name = "legendary ghoul"
 	desc = "A ghoul that has lost it's mind and become aggressive. This one is exceptionally large, bulging muscles. It looks quite strong."
 	icon = 'icons/mob/ghouls.dmi'
-	icon_state = "glowinghoul"
-	icon_living = "glowinghoul"
-	icon_dead = "glowinghoul_dead"
+	icon_state = "retro_glowghoul-1"
+	icon_living = "retro_glowghoul-1"
+	icon_dead = "retro_glowghoul_d"
 	color = "#FFFF00"
 	maxHealth = 600
 	health = 600

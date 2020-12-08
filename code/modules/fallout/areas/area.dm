@@ -228,6 +228,16 @@
 	environment = 11
 	grow_chance = 5
 
+/area/f13/locustbunker
+	name = "Locust Bunker"
+	icon_state = "bunker"
+//	ambience_area =  list('sound/f13ambience/building.ogg')
+//	ambientmusic = list('sound/f13music/fo2_vats.ogg','sound/f13music/fo2_outpost.ogg','sound/f13music/fo2_ruins.ogg','sound/misc/null.ogg')
+	ambientsounds = list('sound/f13ambience/ambigen_1.ogg','sound/f13ambience/ambigen_2.ogg','sound/f13ambience/ambigen_9.ogg','sound/f13ambience/ambigen_10.ogg','sound/f13ambience/ambigen_11.ogg', \
+	'sound/f13ambience/ambigen_12.ogg','sound/f13ambience/ambigen_13.ogg')
+	environment = 11
+	grow_chance = 5
+
 /area/f13/tunnel
 	name = "Tunnel"
 	icon_state = "tunnel"
