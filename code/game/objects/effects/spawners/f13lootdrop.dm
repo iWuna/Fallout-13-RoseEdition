@@ -324,7 +324,7 @@
 	name = "stealthboy spawner"
 	lootcount = 2
 	var/loot1 = list(/obj/item/stealthboy/makeshift, /obj/item/storage/pill_bottle/chem_tin/mentats)
-	var loot2 = list(/obj/item/stealthboy, /obj/item/storage/pill_bottle/chem_tin/mentats)
+	var/loot2 = list(/obj/item/stealthboy, /obj/item/storage/pill_bottle/chem_tin/mentats)
 	var/loot3 = list(/obj/item/stealthboy/mk2, /obj/item/storage/pill_bottle/chem_tin/mentats)
 
 /obj/effect/spawner/lootdrop/f13/stealthboy/Initialize(mapload) //on mapload, pick what shit to spawn
