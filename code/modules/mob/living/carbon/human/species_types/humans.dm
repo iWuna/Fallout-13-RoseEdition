@@ -10,7 +10,7 @@
 	liked_food = JUNKFOOD | FRIED
 
 /datum/species/human/after_equip_job(datum/job/J, mob/living/carbon/human/H)
-	if(H.special_i < 4)
+	if(H.special_i < 3)
 		H.grant_language(/datum/language/aphasia)
 		H.remove_language(/datum/language/common)
 	if(H.special_i > 8)

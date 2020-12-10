@@ -121,6 +121,24 @@ Medic
 /*
 HEAVY!
 */
+
+
+/datum/outfit/loadout/enclave_heavy_1
+	name = "Tesla Heavy"
+	suit_store = /obj/item/gun/energy/laser/plasma
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/tesla
+	head =  /obj/item/clothing/head/helmet/f13/power_armor/tesla
+	backpack_contents = list(
+			/obj/item/stock_parts/cell/ammo/mfc = 3
+		)
+
+/datum/outfit/loadout/enclave_heavy_2
+	name = "Ballistic Heavy"
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/advanced
+	head = /obj/item/clothing/head/helmet/f13/power_armor/advanced
+	back = /obj/item/minigunpackbal
+
+
 /datum/job/enclave/f13usheavy
 	title = "US Heavy Soldier"
 	flag = F13USPRIVATE
@@ -139,6 +157,11 @@ HEAVY!
 	exp_requirements = 4500
 	exp_type = EXP_TYPE_ENCLAVE
 
+	loadout_options = list(
+		/datum/outfit/loadout/enclave_heavy_1,
+		/datum/outfit/loadout/enclave_heavy_2
+	)
+
 /datum/outfit/job/enclave/f13usheavy
 	name = "US Heavy"
 	jobtype = /datum/job/enclave/f13usheavy
@@ -147,11 +170,7 @@ HEAVY!
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/headset_enclave
-	head = /obj/item/clothing/head/helmet/f13/power_armor/advanced
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/advanced
 	belt = /obj/item/storage/belt/military
-	backpack_contents = list(
-		/obj/item/minigunpack = 1)
 	pa_wear = TRUE
 
 /*
@@ -183,7 +202,7 @@ Private
 
 /datum/outfit/loadout/enclave_soldier_1
 	name = "Enclave Plasma soldier"
-	uniform = /obj/item/clothing/under/color/black
+	uniform = /obj/item/clothing/under/f13/dbdu
 	suit_store = /obj/item/gun/energy/laser/plasma
 	accessory = /obj/item/clothing/accessory/enclave/sergeant
 	backpack_contents = list(
@@ -191,7 +210,7 @@ Private
 
 /datum/outfit/loadout/enclave_soldier_2
 	name = "Enclave Ballistic soldier"
-	uniform = /obj/item/clothing/under/color/black
+	uniform = /obj/item/clothing/under/f13/dbdu
 	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine
 	accessory = /obj/item/clothing/accessory/enclave/private
 	backpack_contents = list(
@@ -300,8 +319,13 @@ Engineer
 	name = "Enclave Combat Engineer"
 	suit_store = /obj/item/gun/energy/laser/plasma/pistol
 	accessory = /obj/item/clothing/accessory/enclave/sergeant
+	head = /obj/item/clothing/head/welding/weldingjapan
+	glasses = /obj/item/clothing/glasses/night
+	suit = /obj/item/clothing/suit/armor/f13/combat/enclave
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/mfc = 3)
+		/obj/item/construction/rcd/combat = 1,
+		/obj/item/rcd_ammo/large = 2,
+		/obj/item/stock_parts/cell/ammo/ec = 3)
 
 /datum/outfit/loadout/enclave_eng_2
 	name = "Enclave Flamethrower"
@@ -314,7 +338,7 @@ Engineer
 
 /datum/outfit/loadout/enclave_eng_3
 	name = "Enclave Pilot"
-	head = /obj/item/clothing/head/helmet/f13/combat/enclave
+	head = /obj/item/clothing/head/soft/f13/enclave
 	suit_store = /obj/item/gun/energy/laser/plasma/pistol
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ec = 2, /obj/item/key/vertibird = 1)

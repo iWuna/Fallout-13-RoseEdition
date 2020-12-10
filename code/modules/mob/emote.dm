@@ -9,6 +9,9 @@
 
 	var/datum/emote/E
 	E = E.emote_list[act]
+	if (emote_cd > world.time)
+		return
+	emote_cd = world.time + 20
 	if(!E)
 		to_chat(src, "<span class='notice'>Unusable emote '[act]'. Say *help for a list.</span>")
 		return

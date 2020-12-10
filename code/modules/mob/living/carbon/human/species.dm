@@ -1221,6 +1221,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		return 0
 	if(attacker_style && attacker_style.grab_act(user,target))
 		return 1
+	if(target.wear_suit == "/obj/item/clothing/suit/armor/f13/power_armor")
+		target.visible_message("<span class='warning'>[target] too heavy for [user]'s grab attempt!</span>")
+		return 0
 	else
 		target.grabbedby(user)
 		return 1
