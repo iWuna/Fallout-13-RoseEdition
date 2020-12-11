@@ -103,7 +103,8 @@
 /mob/living/simple_animal/Initialize()
 	. = ..()
 	GLOB.simple_animals[AIStatus] += src
-	handcrafting = new()
+	if (dextrous)
+		handcrafting = new()
 	if(gender == PLURAL)
 		gender = pick(MALE,FEMALE)
 	if(!real_name)
