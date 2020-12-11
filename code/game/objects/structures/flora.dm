@@ -3,6 +3,18 @@
 	max_integrity = 150
 	anchored = TRUE
 
+/obj/structure/flora/Destroy()
+	var/turf = get_turf(src)
+	if(istype(turf, /turf/open/indestructible/ground))
+		var/turf/open/indestructible/ground/g = turf
+		g.turfPlant = null
+	else if(istype(turf, /turf/open/floor/plating/f13/outside/desert))
+		var/turf/open/floor/plating/f13/outside/desert/d = turf
+		d.turfPlant = null
+	
+	return ..()
+	
+
 //trees
 /obj/structure/flora/tree
 	name = "tree"
