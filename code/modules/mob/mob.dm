@@ -16,7 +16,7 @@
 	client_colours = null
 	ghostize()
 	..()
-	return QDEL_HINT_HARDDEL
+	return ..()
 
 /mob/Initialize()
 	GLOB.mob_list += src
