@@ -8,6 +8,9 @@ GLOBAL_PROTECT(security_mode)
 //So subsystems globals exist, but are not initialised
 /world/New()
 	enable_debugger()
+#ifdef REFERENCE_TRACKING
+	enable_reference_tracking()
+#endif
 
 	log_world("World loaded at [time_stamp()]!")
 
@@ -22,6 +25,8 @@ GLOBAL_PROTECT(security_mode)
 	TgsNew()
 
 	GLOB.revdata = new
+
+
 
 	config.Load(params[OVERRIDE_CONFIG_DIRECTORY_PARAMETER])
 
