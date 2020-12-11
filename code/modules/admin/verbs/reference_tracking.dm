@@ -110,7 +110,7 @@ GLOBAL_LIST_EMPTY(deletion_failures)
 	set name = "Find References"
 	set src in world
 
-	find_references(FALSE)
+	find_references_legacy(FALSE)
 
 
 /datum/proc/find_references_legacy(skip_alert)
@@ -158,14 +158,14 @@ GLOBAL_LIST_EMPTY(deletion_failures)
 	SSgarbage.next_fire = world.time + world.tick_lag
 
 
-/datum/verb/qdel_then_find_references()
+/datum/verb/qdel_then_find_references(atom/D in world)
 	set category = "Debug"
 	set name = "qdel() then Find References"
 	set src in world
 
-	qdel(src, TRUE) //force a qdel
+	qdel(D, TRUE) //force a qdel
 	if(!running_find_references)
-		find_references(TRUE)
+		find_references_legacy(TRUE)
 
 
 /datum/verb/qdel_then_if_fail_find_references()
