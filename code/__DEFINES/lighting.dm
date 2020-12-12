@@ -1,3 +1,13 @@
+///Object doesn't use any of the light systems. Should be changed to add a light source to the object.
+#define NO_LIGHT_SUPPORT 0
+///Light made with the lighting datums, applying a matrix.
+#define STATIC_LIGHT 1
+///Light made by masking the lighting darkness plane.
+#define MOVABLE_LIGHT 2
+
+///Is a movable light source attached to another movable (its loc), meaning that the lighting component should go one level deeper.
+#define LIGHT_ATTACHED (1<<0)
+
 //Bay lighting engine shit, not in /code/modules/lighting because BYOND is being shit about it
 #define LIGHTING_INTERVAL       5 // frequency, in 1/10ths of a second, of the lighting process
 
@@ -89,6 +99,14 @@ do { \
 #define DYNAMIC_LIGHTING_FORCED 2 //dynamic lighting enabled even if the area doesn't require power
 #define DYNAMIC_LIGHTING_IFSTARLIGHT 3 //dynamic lighting enabled only if starlight is.
 #define IS_DYNAMIC_LIGHTING(A) A.dynamic_lighting
+
+
+#define FLASH_LIGHT_DURATION 2
+#define FLASH_LIGHT_POWER 3
+#define FLASH_LIGHT_RANGE 3.8
+
+#define MINIMUM_USEFUL_LIGHT_RANGE 1.4
+
 
 //flags for lighting datum lightFlag
 #define GLOBAL_LIGHTING 1 //Don't affect turfs that are GLOBAL_LIGHT_TURF_2 in flags_2

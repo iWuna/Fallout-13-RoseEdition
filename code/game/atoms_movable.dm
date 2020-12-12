@@ -31,6 +31,15 @@
 	var/atom/movable/pulling
 	var/grab_state = 0
 	var/throwforce = 0
+	///Lazylist to keep track on the sources of illumination.
+	var/list/affected_dynamic_lights
+	///Highest-intensity light affecting us, which determines our visibility.
+	var/affecting_dynamic_lumi = 0
+
+/atom/movable/Initialize(mapload)
+	. = ..()
+	if(light_system == MOVABLE_LIGHT)
+		AddComponent(/datum/component/overlay_lighting)
 
 /atom/movable/vv_edit_var(var_name, var_value)
 	var/static/list/banned_edits = list("step_x", "step_y", "step_size")
@@ -179,6 +188,9 @@
 			continue
 		var/atom/movable/thing = i
 		thing.Crossed(src)
+
+	if(light_system == MOVABLE_LIGHT)
+		AddComponent(/datum/component/overlay_lighting)
 //
 ////////////////////////////////////////
 

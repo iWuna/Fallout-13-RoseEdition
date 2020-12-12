@@ -20,6 +20,7 @@
 	speed = 3
 	maxHealth = 200
 	health = 200
+	light_system = MOVABLE_LIGHT
 	harm_intent_damage = 5
 	obj_damage = 60
 	melee_damage_lower = 12

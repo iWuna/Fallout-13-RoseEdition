@@ -11,7 +11,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 20)
 	barricade = TRUE
 	proj_pass_rate = 65
-	var/brightness_on = 2
+	light_range = 2
 	var/icon_keyboard = "generic_key"
 	var/icon_screen = "generic"
 	var/clockwork = FALSE
@@ -63,9 +63,9 @@
 /obj/machinery/computer/power_change()
 	..()
 	if(stat & NOPOWER)
-		set_light(0)
+		set_light_on(FALSE)
 	else
-		set_light(brightness_on)
+		set_light_on(TRUE)
 	update_icon()
 	return
 

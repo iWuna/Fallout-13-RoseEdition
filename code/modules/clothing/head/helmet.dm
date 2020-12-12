@@ -975,7 +975,7 @@
 	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
 	var/emped = 0
 	var/requires_training = TRUE
-	var/brightness_on = 4 //luminosity when the light is on
+	light_range = 4 //luminosity when the light is on
 	var/on = 0
 	light_color = LIGHT_COLOR_YELLOW
 
@@ -993,10 +993,10 @@
 		A.UpdateButtonIcon()
 
 /obj/item/clothing/head/helmet/f13/power_armor/proc/turn_on(mob/user)
-	set_light(brightness_on)
+	set_light_on(TRUE)
 
 /obj/item/clothing/head/helmet/f13/power_armor/proc/turn_off(mob/user)
-	set_light(0)
+	set_light_on(FALSE)
 
 /obj/item/clothing/head/helmet/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
 	var/mob/living/carbon/human/H = user
@@ -1178,7 +1178,7 @@
 					return
 				to_chat(user, "<span class='notice'>You click [S] into place on [src].</span>")
 				if(S.on)
-					set_light(0)
+					set_light_on(FALSE)
 				F = S
 				update_icon()
 				update_helmlight(user)
@@ -1225,13 +1225,13 @@
 /obj/item/clothing/head/helmet/proc/update_helmlight(mob/user = null)
 	if(F)
 		if(F.on)
-			set_light(F.brightness_on)
+			set_light_on(TRUE)
 		else
-			set_light(0)
+			set_light_on(FALSE)
 		update_icon()
 
 	else
-		set_light(0)
+		set_light_on(FALSE)
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
