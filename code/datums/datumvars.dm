@@ -10,6 +10,8 @@
 	vars[var_name] = var_value
 	datum_flags |= DF_VAR_EDITED
 
+#define VV_DROPDOWN_OPTION(href_key, name) . += "<option value='?_src_=vars;[HrefToken()];[href_key]=TRUE;target=[REF(src)]'>[name]</option>"
+
 /datum/proc/vv_get_var(var_name)
 	switch(var_name)
 		if ("vars")
