@@ -13,15 +13,19 @@
 	desc = "Looks like this would make good cover."
 	anchored = 1
 	density = 1
-	obj_integrity = 100
-	max_integrity = 100
+	obj_integrity = 350
+	max_integrity = 350
 	proj_pass_rate = 50 //How many projectiles will pass the cover. Lower means stronger cover
 	material = METAL
 	var/dirlike = FALSE
 	var/canpass = FALSE
+	var/obj_state = 4
+	var/state_max = 4
 
-/obj/structure/barricade/better/Initialize()
+/obj/structure/barricade/better/New()
 	..()
+	checkbarricade()
+	max_integrity = state_max * 50
 	if(dir == 2)
 		layer = ABOVE_MOB_LAYER
 
@@ -67,13 +71,27 @@
 	else
 		return TRUE
 
+/obj/structure/barricade/better/take_damage()
+	..()
+	if(obj_integrity <= (obj_state - 1) * 50)
+		obj_state --
+		checkbarricade()
+	return
+
+/obj/structure/barricade/better/proc/checkbarricade()
+	icon_state = initial(icon_state) + "_[obj_state]"
+	if(obj_state <= 1)
+		density = 0
+		layer = LOW_OBJ_LAYER
+		proj_pass_rate = 100
+
 /////BARRICADE TYPES///////
 
 /obj/structure/barricade/better/sandbags
 	name = "sandbags"
 	desc = "Good barricade, but.."
 	icon = 'icons/Marine/barricades.dmi'
-	icon_state = "sandbag_0"
+	icon_state = "sandbag"
 	obj_integrity = 300
 	max_integrity = 300
 	proj_pass_rate = 20
@@ -81,3 +99,4 @@
 	material = SAND
 	climbable = TRUE
 	dirlike = TRUE
+	pixel_y = -2
