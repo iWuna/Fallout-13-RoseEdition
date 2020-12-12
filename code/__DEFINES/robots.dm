@@ -8,6 +8,8 @@
 
 #define DEFAULT_SCAN_RANGE		7	//default view range for finding targets.
 
+#define BORG_LAMP_CD_RESET -1
+
 //Mode defines
 #define BOT_IDLE 			0	// idle
 #define BOT_HUNT 			1	// found target, hunting

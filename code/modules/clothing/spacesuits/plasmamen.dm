@@ -43,7 +43,7 @@
 	strip_delay = 80
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 0, "fire" = 100, "acid" = 75)
 	resistance_flags = FIRE_PROOF
-	var/brightness_on = 4 //luminosity when the light is on
+	light_range = 4 //luminosity when the light is on
 	var/on = FALSE
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 
@@ -54,9 +54,9 @@
 	user.update_inv_head() //So the mob overlay updates
 
 	if(on)
-		set_light(brightness_on)
+		set_light_on(TRUE)
 	else
-		set_light(0)
+		set_light_on(FALSE)
 
 	for(var/X in actions)
 		var/datum/action/A=X

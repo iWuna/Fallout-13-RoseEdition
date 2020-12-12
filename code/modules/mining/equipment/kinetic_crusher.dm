@@ -15,6 +15,7 @@
 	force_wielded = 72
 	throwforce = 5
 	throw_speed = 4
+	light_system = MOVABLE_LIGHT
 	light_range = 5
 	light_power = 1
 	armour_penetration = 10
