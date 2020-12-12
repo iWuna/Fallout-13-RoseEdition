@@ -40,6 +40,8 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	var/charging = FALSE
 
+	pixel_w = -16
+
 	emote_taunt_sound = list('sound/f13npc/deathclaw/taunt.ogg')
 	aggrosound = list('sound/f13npc/deathclaw/aggro1.ogg', 'sound/f13npc/deathclaw/aggro2.ogg', )
 	idlesound = list('sound/f13npc/deathclaw/idle.ogg',)
