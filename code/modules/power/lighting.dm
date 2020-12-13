@@ -354,9 +354,9 @@
 		on_gs = on
 		if(on)
 			static_power_used = brightness * 20 //20W per unit luminosity
-			addStaticPower(static_power_used, STATIC_LIGHT)
+			addStaticPower(static_power_used, STATIC_LIGHT_AREA)
 		else
-			removeStaticPower(static_power_used, STATIC_LIGHT) //I hate these
+			removeStaticPower(static_power_used, STATIC_LIGHT_AREA) //I hate these
 
 //This is purely used for emergency mode. What a shit
 /obj/machinery/light/process()

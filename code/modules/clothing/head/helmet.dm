@@ -836,21 +836,21 @@
 	dynamic_fhair_suffix = ""
 
 //Ranger Armors
-	/obj/item/clothing/head/helmet/f13/ncr/rangercombat
-		name = "ranger combat helmet"
-		desc = "An old combat helmet, out of use around the time of the war."
-		icon_state = "ranger"
-		item_state = "ranger"
-		armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 50, "bomb" = 39, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
-		flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
-		flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-		resistance_flags = LAVA_PROOF | FIRE_PROOF
-		dynamic_hair_suffix = ""
-		dynamic_fhair_suffix = ""
-		flash_protect = 1
-		glass_colour_type = /datum/client_colour/glass_colour/red
-		lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
-		darkness_view = 128
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat
+	name = "ranger combat helmet"
+	desc = "An old combat helmet, out of use around the time of the war."
+	icon_state = "ranger"
+	item_state = "ranger"
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 50, "bomb" = 39, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
+	flash_protect = 1
+	glass_colour_type = /datum/client_colour/glass_colour/red
+	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
+	darkness_view = 128
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/rigscustom
 	name = "11th armored calvary helmet"

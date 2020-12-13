@@ -1,7 +1,3 @@
-#define SINGLE "single"
-#define VERTICAL "vertical"
-#define HORIZONTAL "horizontal"
-
 #define METAL 1
 #define WOOD 2
 #define SAND 3

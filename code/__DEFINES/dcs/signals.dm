@@ -242,8 +242,6 @@
 #define COMSIG_XENO_TURF_CLICK_CTRL "xeno_turf_click_alt"					//from turf AltClickOn(): (/mob)
 #define COMSIG_XENO_MONKEY_CLICK_CTRL "xeno_monkey_click_ctrl"				//from monkey CtrlClickOn(): (/mob)
 
-///Called right before the atom changes the value of light_flags to a different one, from base atom/set_light_flags(): (new_value)
-#define COMSIG_ATOM_SET_LIGHT_FLAGS "atom_set_light_flags"
 
 ///Called right before the atom changes the value of light_range to a different one, from base atom/set_light_range(): (new_range)
 #define COMSIG_ATOM_SET_LIGHT_RANGE "atom_set_light_range"
@@ -253,10 +251,6 @@
 #define COMSIG_ATOM_SET_LIGHT_COLOR "atom_set_light_color"
 ///Called right before the atom changes the value of light_on to a different one, from base atom/set_light_on(): (new_value)
 #define COMSIG_ATOM_SET_LIGHT_ON "atom_set_light_on"
-///Called right before the atom changes the value of light_flags to a different one, from base atom/set_light_flags(): (new_value)
-#define COMSIG_ATOM_SET_LIGHT_FLAGS "atom_set_light_flags"
-///called for each movable in a turf contents on /turf/zImpact(): (atom/movable/A, levels)
-#define COMSIG_ATOM_INTERCEPT_Z_FALL "movable_intercept_z_impact"
 ///called on a movable (NOT living) when someone starts pulling it (atom/movable/puller, state, force)
 #define COMSIG_ATOM_START_PULL "movable_start_pull"
 ///called on /living when someone starts pulling it (atom/movable/puller, state, force)
