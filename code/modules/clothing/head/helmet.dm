@@ -976,27 +976,21 @@
 	var/emped = 0
 	var/requires_training = TRUE
 	light_range = 4 //luminosity when the light is on
-	var/on = 0
+	light_on = FALSE
+	var/on = FALSE
 	light_color = LIGHT_COLOR_YELLOW
+	light_system = MOVABLE_LIGHT
+	actions_types = list(/datum/action/item_action/toggle_light)
 
 /obj/item/clothing/head/helmet/f13/power_armor/attack_self(mob/user)
 	on = !on
 //	icon_state = "[initial(icon_state)][on]"
 	user.update_inv_head()	//so our mob-overlays update
 
-	if(on)
-		turn_on(user)
-	else
-		turn_off(user)
+	set_light_on(on)
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
-
-/obj/item/clothing/head/helmet/f13/power_armor/proc/turn_on(mob/user)
-	set_light_on(TRUE)
-
-/obj/item/clothing/head/helmet/f13/power_armor/proc/turn_off(mob/user)
-	set_light_on(FALSE)
 
 /obj/item/clothing/head/helmet/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
 	var/mob/living/carbon/human/H = user
@@ -1063,6 +1057,7 @@
 	item_state = "t45hotrod_helm"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 30, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 50, "fire" = 0, "acid" = 0)
 	darkness_view = 110 //Some worse NV
+	light_color = COLOR_RED_LIGHT
 	lighting_alpha = null
 	requires_training = FALSE
 
@@ -1089,6 +1084,7 @@
 	icon_state = "tesla"
 	item_state = "tesla"
 	armor = list("melee" = 90, "bullet" = 50, "laser" = 95, "energy" = 95, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
+	light_color = COLOR_DARK_CYAN
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b
 	name = "T-51b power helmet"
@@ -1104,6 +1100,7 @@
 	icon_state = "ultracitepa_helm"
 	item_state = "ultracitepa_helm"
 	slowdown = 0
+	light_color = COLOR_DARK_CYAN
 
 /obj/item/clothing/head/helmet/f13/power_armor/t60
 	name = "T-60a power helmet"
