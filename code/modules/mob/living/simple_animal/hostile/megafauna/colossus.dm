@@ -42,6 +42,7 @@ Difficulty: Very Hard
 	ranged = 1
 	pixel_x = -32
 	del_on_death = 1
+	light_system = MOVABLE_LIGHT
 	medal_type = BOSS_MEDAL_COLOSSUS
 	score_type = COLOSSUS_SCORE
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/colossus/crusher)

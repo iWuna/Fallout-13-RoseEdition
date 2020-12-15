@@ -836,21 +836,21 @@
 	dynamic_fhair_suffix = ""
 
 //Ranger Armors
-	/obj/item/clothing/head/helmet/f13/ncr/rangercombat
-		name = "ranger combat helmet"
-		desc = "An old combat helmet, out of use around the time of the war."
-		icon_state = "ranger"
-		item_state = "ranger"
-		armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 50, "bomb" = 39, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
-		flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
-		flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-		resistance_flags = LAVA_PROOF | FIRE_PROOF
-		dynamic_hair_suffix = ""
-		dynamic_fhair_suffix = ""
-		flash_protect = 1
-		glass_colour_type = /datum/client_colour/glass_colour/red
-		lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
-		darkness_view = 128
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat
+	name = "ranger combat helmet"
+	desc = "An old combat helmet, out of use around the time of the war."
+	icon_state = "ranger"
+	item_state = "ranger"
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 50, "bomb" = 39, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
+	flash_protect = 1
+	glass_colour_type = /datum/client_colour/glass_colour/red
+	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
+	darkness_view = 128
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/rigscustom
 	name = "11th armored calvary helmet"
@@ -975,28 +975,22 @@
 	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
 	var/emped = 0
 	var/requires_training = TRUE
-	var/brightness_on = 4 //luminosity when the light is on
-	var/on = 0
+	light_range = 4 //luminosity when the light is on
+	light_on = FALSE
+	var/on = FALSE
 	light_color = LIGHT_COLOR_YELLOW
+	light_system = MOVABLE_LIGHT_DIRECTIONAL
+	actions_types = list(/datum/action/item_action/toggle_light)
 
 /obj/item/clothing/head/helmet/f13/power_armor/attack_self(mob/user)
 	on = !on
 //	icon_state = "[initial(icon_state)][on]"
 	user.update_inv_head()	//so our mob-overlays update
 
-	if(on)
-		turn_on(user)
-	else
-		turn_off(user)
+	set_light_on(on)
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
-
-/obj/item/clothing/head/helmet/f13/power_armor/proc/turn_on(mob/user)
-	set_light(brightness_on)
-
-/obj/item/clothing/head/helmet/f13/power_armor/proc/turn_off(mob/user)
-	set_light(0)
 
 /obj/item/clothing/head/helmet/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
 	var/mob/living/carbon/human/H = user
@@ -1063,6 +1057,7 @@
 	item_state = "t45hotrod_helm"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 30, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 50, "fire" = 0, "acid" = 0)
 	darkness_view = 110 //Some worse NV
+	light_color = COLOR_RED_LIGHT
 	lighting_alpha = null
 	requires_training = FALSE
 
@@ -1089,6 +1084,7 @@
 	icon_state = "tesla"
 	item_state = "tesla"
 	armor = list("melee" = 90, "bullet" = 50, "laser" = 95, "energy" = 95, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
+	light_color = COLOR_DARK_CYAN
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b
 	name = "T-51b power helmet"
@@ -1104,6 +1100,7 @@
 	icon_state = "ultracitepa_helm"
 	item_state = "ultracitepa_helm"
 	slowdown = 0
+	light_color = COLOR_DARK_CYAN
 
 /obj/item/clothing/head/helmet/f13/power_armor/t60
 	name = "T-60a power helmet"
@@ -1178,7 +1175,7 @@
 					return
 				to_chat(user, "<span class='notice'>You click [S] into place on [src].</span>")
 				if(S.on)
-					set_light(0)
+					set_light_on(FALSE)
 				F = S
 				update_icon()
 				update_helmlight(user)
@@ -1225,13 +1222,13 @@
 /obj/item/clothing/head/helmet/proc/update_helmlight(mob/user = null)
 	if(F)
 		if(F.on)
-			set_light(F.brightness_on)
+			set_light_on(TRUE)
 		else
-			set_light(0)
+			set_light_on(FALSE)
 		update_icon()
 
 	else
-		set_light(0)
+		set_light_on(FALSE)
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()

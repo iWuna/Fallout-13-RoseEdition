@@ -9,6 +9,9 @@
 	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
 	flag = "laser"
 	eyeblur = 0
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 1
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
 	light_color = LIGHT_COLOR_RED
 	ricochets_max = 50	//Honk!
@@ -286,6 +289,10 @@
 	flag = "laser" //checks vs. energy protection
 	eyeblur = 0
 	is_reflectable = TRUE
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 1
+	light_color = LIGHT_COLOR_GREEN
 
 /obj/item/projectile/plasmacarbine //Plasma carbine
 	name = "plasma bolt"
@@ -296,6 +303,9 @@
 	flag = "laser" //checks vs. energy protection
 	eyeblur = 0
 	is_reflectable = TRUE
+	light_range = 2
+	light_power = 1
+	light_color = LIGHT_COLOR_GREEN
 
 /obj/item/projectile/plasma/repeater //Plasma repeater
 	name = "plasma stream"

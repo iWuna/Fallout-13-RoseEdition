@@ -16,6 +16,9 @@
 	var/to_be_destroyed = 0 //Used for fire, if a melting temperature was reached, it will be destroyed
 	var/max_fire_temperature_sustained = 0 //The max temperature of the fire which it was subjected to
 
+	///Lumcount added by sources other than lighting datum objects, such as the overlay lighting component.
+	var/dynamic_lumcount = 0
+
 	var/blocks_air = FALSE
 
 	var/list/image/blueprint_data //for the station blueprints, images of objects eg: pipes

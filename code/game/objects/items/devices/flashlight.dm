@@ -11,24 +11,29 @@
 	slot_flags = ITEM_SLOT_BELT
 	materials = list(MAT_METAL=50, MAT_GLASS=20)
 	actions_types = list(/datum/action/item_action/toggle_light)
+	light_system = MOVABLE_LIGHT_DIRECTIONAL
+	light_range = 4
+	light_power = 1
+	light_on = FALSE
 	var/on = FALSE
-	var/brightness_on = 4 //range of light when on
-	var/flashlight_power = 1 //strength of the light when on
+
+	///Boolean that switches when a full color flip ends, so the light can appear in all colors.
+	var/even_cycle = FALSE
+	///Base light_range that can be set on Initialize to use in smooth light range expansions and contractions.
+	var/base_light_range = 4
 
 /obj/item/flashlight/Initialize()
 	. = ..()
 	update_brightness()
 
-/obj/item/flashlight/proc/update_brightness(mob/user = null)
+/obj/item/flashlight/proc/update_brightness(mob/user)
 	if(on)
 		icon_state = "[initial(icon_state)]-on"
-		if(flashlight_power)
-			set_light(l_range = brightness_on, l_power = flashlight_power)
-		else
-			set_light(brightness_on)
 	else
 		icon_state = initial(icon_state)
-		set_light(0)
+	set_light_on(on)
+	if(light_system == STATIC_LIGHT)
+		update_light()
 
 /obj/item/flashlight/attack_self(mob/user)
 	on = !on
@@ -56,7 +61,7 @@
 			to_chat(user, "<span class='warning'>[M] doesn't have a head!</span>")
 			return
 
-		if(flashlight_power < 1)
+		if(light_power < 1)
 			to_chat(user, "<span class='warning'>\The [src] isn't bright enough to see anything!</span> ")
 			return
 
@@ -160,7 +165,7 @@
 	icon_state = "penlight"
 	item_state = ""
 	flags_1 = CONDUCT_1
-	brightness_on = 2
+	light_range = 2
 	var/holo_cooldown = 0
 
 /obj/item/flashlight/pen/afterattack(atom/target, mob/user, proximity_flag)
@@ -196,7 +201,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	force = 9 // Not as good as a stun baton.
-	brightness_on = 5 // A little better than the standard flashlight.
+	light_range = 5 // A little better than the standard flashlight.
 	hitsound = 'sound/weapons/genhit1.ogg'
 
 // the desk lamps are a bit special
@@ -208,7 +213,8 @@
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	force = 10
-	brightness_on = 5
+	light_range = 5
+	light_system = STATIC_LIGHT
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 = CONDUCT_1
 	materials = list()
@@ -244,7 +250,7 @@
 	name = "flare"
 	desc = "A standard red flare. There are instructions on the side, it reads 'pull cord, make light'."
 	w_class = WEIGHT_CLASS_SMALL
-	brightness_on = 7 // Pretty bright.
+	light_range = 7 // Pretty bright.
 	icon_state = "flare"
 	item_state = "flare"
 	actions_types = list()
@@ -252,6 +258,7 @@
 	var/on_damage = 7
 	var/produce_heat = 1500
 	heat = 1000
+	light_system = MOVABLE_LIGHT
 	light_color = LIGHT_COLOR_FLARE
 	grind_results = list("sulfur" = 15)
 
@@ -318,7 +325,7 @@
 	name = "torch"
 	desc = "A self-lighting handheld torch fashioned from some cloth wrapped around a wooden handle. It could probably fit in a backpack while it isn't burning."
 	w_class = WEIGHT_CLASS_NORMAL
-	brightness_on = 5
+	light_range = 5
 	icon_state = "torch"
 	item_state = "torch"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
@@ -359,7 +366,8 @@
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	desc = "A mining lantern."
-	brightness_on = 6			// luminosity when on
+	light_range = 6			// luminosity when on
+	light_system = MOVABLE_LIGHT
 
 
 /obj/item/flashlight/slime
@@ -372,7 +380,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	materials = list()
-	brightness_on = 6 //luminosity when on
+	light_range = 6 //luminosity when on
 
 /obj/item/flashlight/emp
 	var/emp_max_charges = 4
@@ -433,7 +441,8 @@
 	name = "glowstick"
 	desc = "A military-grade glowstick."
 	w_class = WEIGHT_CLASS_SMALL
-	brightness_on = 4
+	light_range = 4
+	light_system = MOVABLE_LIGHT
 	color = LIGHT_COLOR_GREEN
 	icon_state = "glowstick"
 	item_state = "glowstick"
@@ -442,12 +451,12 @@
 
 /obj/item/flashlight/glowstick/Initialize()
 	fuel = rand(1600, 2000)
-	light_color = color
-	. = ..()
+	set_light_color(color)
+	return ..()
 
 /obj/item/flashlight/glowstick/Destroy()
 	STOP_PROCESSING(SSobj, src)
-	. = ..()
+	return ..()
 
 /obj/item/flashlight/glowstick/process()
 	fuel = max(fuel - 1, 0)
@@ -466,13 +475,13 @@
 	if(!fuel)
 		icon_state = "glowstick-empty"
 		cut_overlays()
-		set_light(0)
+		set_light_on(FALSE)
 	else if(on)
 		var/mutable_appearance/glowstick_overlay = mutable_appearance(icon, "glowstick-glow")
 		glowstick_overlay.color = color
 		add_overlay(glowstick_overlay)
 		item_state = "glowstick-on"
-		set_light(brightness_on)
+		set_light_on(TRUE)
 	else
 		icon_state = "glowstick"
 		cut_overlays()
@@ -534,30 +543,50 @@
 	name = "disco light"
 	desc = "Groovy..."
 	icon_state = null
-	light_color = null
-	brightness_on = 0
-	light_range = 0
+	light_system = MOVABLE_LIGHT
+	light_range = 4
 	light_power = 10
 	alpha = 0
 	layer = 0
 	on = TRUE
 	anchored = TRUE
-	var/range = null
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/item/flashlight/spotlight/Initialize(mapload, _light_range, _light_power, _light_color)
+	. = ..()
+	if(!isnull(_light_range))
+		base_light_range = _light_range
+		set_light_range(_light_range)
+	if(!isnull(_light_power))
+		set_light_power(_light_power)
+	if(!isnull(_light_color))
+		set_light_color(_light_color)
 
 /obj/item/flashlight/flashdark
 	name = "flashdark"
 	desc = "A strange device manufactured with mysterious elements that somehow emits darkness. Or maybe it just sucks in light? Nobody knows for sure."
 	icon_state = "flashdark"
 	item_state = "flashdark"
-	brightness_on = 2.5
-	flashlight_power = -3
+	light_system = STATIC_LIGHT //The overlay light component is not yet ready to produce darkness.
+	light_range = 0
+	///Variable to preserve old lighting behavior in flashlights, to handle darkness.
+	var/dark_light_range = 2.5
+	///Variable to preserve old lighting behavior in flashlights, to handle darkness.
+	var/dark_light_power = -3
+
+obj/item/flashlight/flashdark/update_brightness(mob/user)
+	. = ..()
+	if(on)
+		set_light(dark_light_range, dark_light_power)
+	else
+		set_light(0)
 
 /obj/item/flashlight/eyelight
 	name = "eyelight"
 	desc = "This shouldn't exist outside of someone's head, how are you seeing this?"
-	brightness_on = 15
-	flashlight_power = 1
+	light_range = 15
+	light_power = 1
+	light_system = MOVABLE_LIGHT
 	flags_1 = CONDUCT_1
 	item_flags = DROPDEL
 	actions_types = list()
