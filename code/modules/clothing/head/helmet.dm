@@ -979,7 +979,7 @@
 	light_on = FALSE
 	var/on = FALSE
 	light_color = LIGHT_COLOR_YELLOW
-	light_system = MOVABLE_LIGHT
+	light_system = MOVABLE_LIGHT_DIRECTIONAL
 	actions_types = list(/datum/action/item_action/toggle_light)
 
 /obj/item/clothing/head/helmet/f13/power_armor/attack_self(mob/user)

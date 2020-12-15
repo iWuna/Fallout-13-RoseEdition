@@ -166,3 +166,6 @@
 
 /obj/effect/abstract/directional_lighting
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+/obj/effect/abstract/directional_lighting
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT

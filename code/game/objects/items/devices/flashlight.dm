@@ -11,7 +11,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	materials = list(MAT_METAL=50, MAT_GLASS=20)
 	actions_types = list(/datum/action/item_action/toggle_light)
-	light_system = MOVABLE_LIGHT
+	light_system = MOVABLE_LIGHT_DIRECTIONAL
 	light_range = 4
 	light_power = 1
 	light_on = FALSE
@@ -32,6 +32,8 @@
 	else
 		icon_state = initial(icon_state)
 	set_light_on(on)
+	if(light_system == STATIC_LIGHT)
+		update_light()
 
 /obj/item/flashlight/attack_self(mob/user)
 	on = !on
@@ -212,6 +214,7 @@
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	force = 10
 	light_range = 5
+	light_system = STATIC_LIGHT
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 = CONDUCT_1
 	materials = list()
@@ -255,6 +258,7 @@
 	var/on_damage = 7
 	var/produce_heat = 1500
 	heat = 1000
+	light_system = MOVABLE_LIGHT
 	light_color = LIGHT_COLOR_FLARE
 	grind_results = list("sulfur" = 15)
 
@@ -363,6 +367,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	desc = "A mining lantern."
 	light_range = 6			// luminosity when on
+	light_system = MOVABLE_LIGHT
 
 
 /obj/item/flashlight/slime
@@ -437,6 +442,7 @@
 	desc = "A military-grade glowstick."
 	w_class = WEIGHT_CLASS_SMALL
 	light_range = 4
+	light_system = MOVABLE_LIGHT
 	color = LIGHT_COLOR_GREEN
 	icon_state = "glowstick"
 	item_state = "glowstick"
@@ -580,6 +586,7 @@ obj/item/flashlight/flashdark/update_brightness(mob/user)
 	desc = "This shouldn't exist outside of someone's head, how are you seeing this?"
 	light_range = 15
 	light_power = 1
+	light_system = MOVABLE_LIGHT
 	flags_1 = CONDUCT_1
 	item_flags = DROPDEL
 	actions_types = list()

@@ -19,6 +19,9 @@
 #define ELEMENT_BESPOKE		(1 << 1)
 
 
+#define ALL_CARDINALS (NORTH|SOUTH|EAST|WEST)
+
+
 /*
 	These defines are specific to the atom/flags_1 bitmask
 */
