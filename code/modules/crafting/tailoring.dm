@@ -41,6 +41,18 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
+
+/datum/crafting_recipe/mmask
+	name = "Reinforced raider combat helmet"
+	result = /obj/item/clothing/head/helmet/f13/raidercombathelmet/mk2
+	time = 60
+	reqs = list(/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/clothing/head/helmet/f13/raidercombathelmet = 1)
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
+
 /datum/crafting_recipe/leatherarmor
 	name = "leather armor"
 	result = /obj/item/clothing/suit/armor/f13/leatherarmor

@@ -550,6 +550,12 @@
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 35, "energy" = 35, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 65, "acid" = 30)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
+
+/obj/item/clothing/head/helmet/f13/raidercombathelmet/mk2
+	name = "reinforced raider combat helmet"
+	desc = "A combat helmet modified with high quality armor plating"
+	armor = list("melee" = 45, "bullet" = 50, "laser" = 45, "energy" = 40, "bomb" = 39, "bio" = 70, "rad" = 70, "fire" = 70, "acid" = 0)
+
 /obj/item/clothing/head/helmet/f13/combat/knightcap
 	name = "knight-captain combat helmet"
 	desc = "The specialized combat helmet of the Knight-Captain, with a golden crest."
