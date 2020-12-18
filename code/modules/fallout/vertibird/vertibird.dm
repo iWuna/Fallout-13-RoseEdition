@@ -18,6 +18,7 @@
 	var/engine = FALSE
 	var/locked = TRUE
 	var/inFly = FALSE
+	anchored = TRUE
 	var/obj/machinery/camera/portable/builtInCamera
 
 /obj/vertibird/New()
