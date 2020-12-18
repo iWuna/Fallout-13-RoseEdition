@@ -173,6 +173,12 @@
 	cost = 20
 	item_path = /obj/item/switchblade
 
+/datum/gang_item/weapon/penknife
+	name = "Penknife"
+	id = "penknife"
+	cost = 20
+	item_path = /obj/item/switchblade/penknife
+
 /datum/gang_item/weapon/sappers
 	name = "Sappers"
 	id = "sappers"

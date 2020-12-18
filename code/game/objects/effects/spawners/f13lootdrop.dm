@@ -538,6 +538,7 @@
 				/obj/item/pickaxe,
 				/obj/item/shovel,
 				/obj/item/switchblade,
+				/obj/item/switchblade/penknife,
 				/obj/item/throwing_star/spear,
 				/obj/item/surgicaldrill,
 				/obj/item/kitchen/knife/combat,

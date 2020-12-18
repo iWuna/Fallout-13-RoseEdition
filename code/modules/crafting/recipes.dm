@@ -2602,6 +2602,17 @@
 	category = CAT_FORGE
 	subcategory = CAT_FORGEWEAPON
 
+/datum/crafting_recipe/survival
+	name = "Penknife"
+	result = /obj/item/switchblade/penknife
+	time = 300
+	reqs = list(/obj/item/stack/sheet/metal = 4,
+				/obj/item/stack/sheet/cloth = 1)
+	traits = list(TRAIT_TECHNOPHOBE)
+	tools = list(TOOL_FORGE)
+	category = CAT_FORGE
+	subcategory = CAT_FORGEWEAPON
+
 /datum/crafting_recipe/throwingknife
 	name = "Throwing Knife"
 	result = /obj/item/throwing_star/throwingknife
