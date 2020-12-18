@@ -50,6 +50,14 @@
 	message = "chuckles."
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/living/chuckle/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if((!H.mind || !H.mind.miming) && !user.is_muzzled())
+			if(user.gender != FEMALE)
+				playsound(H, pick('sound/voice/human/chuckle_m_1.ogg'), 50, 0)
+
 /datum/emote/living/collapse
 	key = "collapse"
 	key_third_person = "collapses"
@@ -74,7 +82,7 @@
 		var/mob/living/carbon/human/H = user
 		if((!H.mind || !H.mind.miming) && !user.is_muzzled())
 			if(user.gender == FEMALE)
-				playsound(H, pick('sound/voice/human/cough_f_1.ogg', 'sound/voice/human/cough_f_2.ogg'), 50, 0)
+				playsound(H, pick('sound/voice/human/cough_f_1.ogg', 'sound/voice/human/cough_f_2.ogg', 'sound/voice/human/cough_f_3.ogg'), 50, 0)
 			else
 				playsound(H, pick('sound/voice/human/cough_m_1.ogg', 'sound/voice/human/cough_m_2.ogg', 'sound/voice/human/cough_m_3.ogg'), 50, 0)
 
@@ -225,9 +233,9 @@
 		var/mob/living/carbon/human/H = user
 		if((!H.mind || !H.mind.miming) && !user.is_muzzled())
 			if(user.gender == FEMALE)
-				playsound(H, pick('sound/voice/human/giggle_f_1.ogg', 'sound/voice/human/giggle_f_2.ogg'), 50, 0)
+				playsound(H, pick('sound/voice/human/giggle_f_1.ogg', 'sound/voice/human/giggle_f_2.ogg', 'sound/voice/human/giggle_f_3.ogg'), 50, 0)
 			else
-				playsound(H, pick('sound/voice/human/giggle_m_1.ogg', 'sound/voice/human/giggle_m_2.ogg'), 50, 0)
+				playsound(H, pick('sound/voice/human/giggle_m_1.ogg', 'sound/voice/human/giggle_m_2.ogg', 'sound/voice/human/giggle_m_3.ogg'), 50, 0)
 
 /datum/emote/living/glare
 	key = "glare"
@@ -251,6 +259,17 @@
 	key_third_person = "groans"
 	message = "groans!"
 	message_mime = "appears to groan!"
+
+/datum/emote/living/groan/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if((!H.mind || !H.mind.miming) && !user.is_muzzled())
+			if(user.gender == FEMALE)
+				playsound(H, pick('sound/voice/human/groan_f_1.ogg', 'sound/voice/human/groan_f_2.ogg', 'sound/voice/human/groan_f_3.ogg'), 50, 0)
+			else
+				playsound(H, pick('sound/voice/human/groan_m_1.ogg', 'sound/voice/human/groan_m_2.ogg', 'sound/voice/human/groan_m_3.ogg'), 50, 0)
+
 
 /datum/emote/living/grimace
 	key = "grimace"
@@ -288,10 +307,13 @@
 	if(. && ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if((!H.mind || !H.mind.miming) && !user.is_muzzled())
-			if(user.gender == FEMALE)
-				playsound(H, 'sound/voice/human/laugh_f_1.ogg', 50, 0)
+			if(H.dna.species.id == "supermutant")
+				playsound(H, 'sound/voice/human/laugh_sm_1.ogg', 50, 0)
 			else
-				playsound(H, pick('sound/voice/human/laugh_m_1.ogg', 'sound/voice/human/laugh_m_2.ogg', 'sound/voice/human/laugh_m_3.ogg'), 50, 0)
+				if(user.gender == FEMALE)
+					playsound(H, 'sound/voice/human/laugh_f_1.ogg', 50, 0)
+				else
+					playsound(H, pick('sound/voice/human/laugh_m_1.ogg', 'sound/voice/human/laugh_m_2.ogg', 'sound/voice/human/laugh_m_3.ogg'), 50, 0)
 
 
 /datum/emote/living/moan
@@ -306,7 +328,7 @@
 		var/mob/living/carbon/human/H = user
 		if((!H.mind || !H.mind.miming) && !user.is_muzzled())
 			if(user.gender == FEMALE)
-				playsound(H, pick('sound/voice/human/moan_f_1.ogg', 'sound/voice/human/moan_f_2.ogg', 'sound/voice/human/moan_f_3.ogg'), 50,0)
+				playsound(H, pick('sound/voice/human/moan_f_1.wav', 'sound/voice/human/moan_f_2.wav', 'sound/voice/human/moan_f_3.wav'), 50,0)
 			else
 				playsound(H, pick('sound/voice/human/moan_m_1.ogg', 'sound/voice/human/moan_m_2.ogg', 'sound/voice/human/moan_m_3.ogg'), 50, 0)
 
@@ -369,7 +391,10 @@
 			if(user.gender == FEMALE)
 				playsound(H, pick('sound/voice/human/scream_f_1.ogg', 'sound/voice/human/scream_f_2.ogg', 'sound/voice/human/scream_f_3.ogg', 'sound/voice/human/goonstation/female_scream.ogg'), 50, 0)
 			else
-				playsound(H, pick('sound/voice/human/scream_m_1.ogg', 'sound/voice/human/scream_m_2.ogg', 'sound/voice/human/scream_m_3.ogg', 'sound/voice/human/scream_m_4.ogg'), 50, 0)
+				if(istype(H.w_uniform, /obj/item/clothing/under/jabroni))
+					playsound(H, 'sound/voice/human/scream_boss.ogg', 50, 0)
+				else
+					playsound(H, pick('sound/voice/human/scream_m_1.ogg', 'sound/voice/human/scream_m_2.ogg', 'sound/voice/human/scream_m_3.ogg', 'sound/voice/human/scream_m_4.ogg', 'sound/voice/human/scream_m_5.ogg', 'sound/voice/human/scream_m_6.ogg'), 50, 0)
 
 /datum/emote/living/scowl
 	key = "scowl"
@@ -401,9 +426,9 @@
 		var/mob/living/carbon/human/H = user
 		if((!H.mind || !H.mind.miming) && !user.is_muzzled())
 			if(user.gender == FEMALE)
-				playsound(H, 'sound/voice/human/sigh_f_1.ogg', 50, 0)
+				playsound(H, pick('sound/voice/human/sigh_f_1.ogg', 'sound/voice/human/sigh_f_2.wav'), 50, 0)
 			else
-				playsound(H, 'sound/voice/human/sigh_m_1.ogg', 50, 0)
+				playsound(H, pick('sound/voice/human/sigh_m_1.ogg', 'sound/voice/human/sigh_m_2.wav'), 50, 0)
 
 /datum/emote/living/sit
 	key = "sit"
@@ -511,6 +536,14 @@
 	key_third_person = "whimpers"
 	message = "whimpers."
 	message_mime = "appears hurt."
+
+/datum/emote/living/whimper/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if((!H.mind || !H.mind.miming) && !user.is_muzzled())
+			if(user.gender == FEMALE)
+				playsound(H, pick('sound/voice/human/whimper_f_1.ogg', 'sound/voice/human/whimper_f_2.ogg', 'sound/voice/human/whimper_f_3.ogg'), 50, 0)
 
 /datum/emote/living/wsmile
 	key = "wsmile"

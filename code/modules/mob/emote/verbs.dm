@@ -39,7 +39,7 @@
 	usr.emote("choke")
 
 /mob/living/carbon/human/verb/emote_chuckle()
-	set name = "~ Chuckle "
+	set name = "> Chuckle "
 	set category = "Emote"
 	usr.emote("chuckle")
 
@@ -84,7 +84,7 @@
 	usr.emote("glare")
 
 /mob/living/carbon/human/verb/emote_groan()
-	set name = "~ Groan "
+	set name = "> Groan "
 	set category = "Emote"
 	usr.emote("groan")
 
@@ -104,7 +104,7 @@
 	usr.emote("nod")
 
 /mob/living/carbon/human/verb/emote_moan()
-	set name = "~ Moan "
+	set name = "> Moan "
 	set category = "Emote"
 	usr.emote("moan")
 
@@ -179,7 +179,7 @@
 	usr.emote("wave")
 
 /mob/living/carbon/human/verb/emote_whimper()
-	set name = "~ Whimper "
+	set name = "> Whimper "
 	set category = "Emote"
 	usr.emote("whimper")
 
