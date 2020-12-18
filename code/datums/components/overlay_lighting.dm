@@ -419,12 +419,10 @@
 
 ///Called when current_holder changes loc.
 /datum/component/overlay_lighting/proc/on_holder_dir_change(atom/movable/source, olddir, newdir)
-	SIGNAL_HANDLER
 	set_direction(current_holder.dir)
 
 ///Called when parent changes loc.
 /datum/component/overlay_lighting/proc/on_parent_dir_change(atom/movable/source, olddir, newdir)
-	SIGNAL_HANDLER
 	// var/atom/movable/current_holder
 	set_direction(current_holder.dir)
 
