@@ -189,6 +189,19 @@
 	name = "Toggle Stealth Boy"
 
 
+/datum/action/item_action/chainsword/swing
+	name = "Swing!"
+
+
+/datum/action/item_action/chainsaw/swing
+	name = "Swing!"
+
+
+/datum/action/item_action/chainsaw/swing/Trigger()
+	if(target)
+		var/obj/item/twohanded/required/chainsaw/s = target
+		s.swing()
+
 /datum/action/item_action/toggle_light
 	name = "Toggle Light"
 

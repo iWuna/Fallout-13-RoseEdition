@@ -650,8 +650,9 @@
 	attack_verb = list("sawn", "torn", "carved", "chopped", "ripped")
 	hitsound = "swing_hit"
 	sharpness = IS_SHARP
-	actions_types = list(/datum/action/item_action/startchainsaw)
+	actions_types = list(/datum/action/item_action/startchainsaw, /datum/action/item_action/chainsaw/swing)
 	var/on = FALSE
+	var/swing_cooldown = 0
 
 /obj/item/twohanded/required/chainsaw/Initialize()
 	. = ..()
@@ -688,6 +689,13 @@
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
+
+/obj/item/twohanded/required/chainsaw/proc/swing()
+	if(on)
+		if(swing_cooldown < world.time)
+			swing_cooldown = world.time + 20
+			playsound(src, hitsound, 50)
+
 
 /obj/item/twohanded/required/chainsaw/get_dismemberment_chance()
 	if(wielded)

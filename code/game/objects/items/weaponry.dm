@@ -492,6 +492,10 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	resistance_flags = FIRE_PROOF
 	var/extended = 0
 
+/obj/item/switchblade/penknife
+	name = "penknife"
+	icon_state = "penknife"
+
 /obj/item/switchblade/attack_self(mob/user)
 	extended = !extended
 	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, 1)
@@ -499,7 +503,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		force = 25
 		w_class = WEIGHT_CLASS_NORMAL
 		throwforce = 25
-		icon_state = "switchblade_ext"
+		icon_state = initial(icon_state) + "_ext"
 		attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 		hitsound = 'sound/weapons/bladeslice.ogg'
 		sharpness = IS_SHARP
@@ -507,7 +511,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		force = 3
 		w_class = WEIGHT_CLASS_SMALL
 		throwforce = 5
-		icon_state = "switchblade"
+		icon_state = initial(icon_state)
 		attack_verb = list("stubbed", "poked")
 		hitsound = 'sound/weapons/genhit.ogg'
 		sharpness = IS_BLUNT
