@@ -307,6 +307,14 @@
 	slot_flags = ITEM_SLOT_BELT
 	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
 	hitsound = 'sound/weapons/chainsawhit.ogg'
+	actions_types = list(/datum/action/item_action/chainsword/swing)
+	var/swing_cooldown = 0
+
+
+/obj/item/nullrod/claymore/chainsaw_sword/attack_self(mob/user)
+	if (swing_cooldown < world.time)
+		playsound(src, hitsound, 50)
+		swing_cooldown = world.time + 30
 
 /obj/item/nullrod/claymore/glowing
 	icon_state = "swordon"

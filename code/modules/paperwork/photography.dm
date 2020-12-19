@@ -132,6 +132,9 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	materials = list(MAT_METAL = 50, MAT_GLASS = 150)
+	light_system = MOVABLE_LIGHT //Used as a flash here.
+	light_range = 8
+	light_on = FALSE
 	var/pictures_max = 10
 	var/pictures_left = 10
 	var/on = TRUE
@@ -139,6 +142,7 @@
 	var/list/aipictures = list() //Allows for storage of pictures taken by AI, in a similar manner the datacore stores info. Keeping this here allows us to share some procs w/ regualar camera
 	var/see_ghosts = 0 //for the spoop of it
 	var/obj/item/disk/holodisk/disk
+	var/flash_enabled = TRUE
 
 
 /obj/item/camera/CheckParts(list/parts_list)
@@ -323,6 +327,11 @@
 				turfs += T
 				mobs += camera_get_mobs(T)
 
+	if(flash_enabled)
+		flash_lighting_fx(8, light_power, light_color)
+		set_light_on(TRUE)
+		addtimer(CALLBACK(src, .proc/flash_end), FLASH_LIGHT_DURATION, TIMER_OVERRIDE|TIMER_UNIQUE)
+
 	var/icon/temp = icon('icons/effects/96x96.dmi',"")
 	temp.Blend("#000", ICON_OVERLAY)
 	temp.Blend(camera_get_icon(turfs, target), ICON_OVERLAY)
@@ -333,6 +342,8 @@
 		aipicture(user, temp, mobs, isAi, blueprints)
 
 
+/obj/item/camera/proc/flash_end()
+	set_light_on(FALSE)
 
 
 /obj/item/camera/proc/printpicture(mob/user, icon/temp, mobs, flag) //Normal camera proc for creating photos

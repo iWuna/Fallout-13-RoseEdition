@@ -646,6 +646,9 @@ SUBSYSTEM_DEF(ticker)
 	save_admin_data()
 	if(!round_end_sound)
 		round_end_sound = pick(\
+		'sound/roundend/round_end_title_1.wav',
+		'sound/roundend/round_end_title_2.wav',
+		'sound/roundend/round_end_title_3.wav',
 		'sound/roundend/newroundsexy.ogg',
 		'sound/roundend/bangindonk.ogg',
 		'sound/roundend/its_only_game.ogg',

@@ -11,7 +11,7 @@
 	body_parts_covered = HEAD
 	heat_protection =    HEAD
 	cold_protection =    HEAD
-	var/brightness_on = 4
+	light_range = 4
 	var/on = 0
 	/*
 	sprite_sheets = list(
@@ -37,10 +37,7 @@
 		on = !on
 		icon_state = "[item_color][on]"
 
-		if(on)
-			set_light(brightness_on)
-		else
-			set_light(0)
+		set_light_on(on)
 	else
 		to_chat(user, "<span class='warning'>You cannot turn the light on while the suit isn't sealed.</span>")
 

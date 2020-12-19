@@ -436,7 +436,9 @@
 	desc = "Tell a coder if you're seeing this."
 	icon_state = "nothing"
 	light_color = "#FFFFFF"
+	light_system = MOVABLE_LIGHT
 	light_range = LUMINESCENT_DEFAULT_GLOW
+	light_power = 2.5
 
 /obj/effect/dummy/luminescent_glow/Initialize()
 	. = ..()

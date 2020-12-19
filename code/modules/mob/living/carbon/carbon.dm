@@ -462,7 +462,7 @@
 	if(stun)
 		Stun(80)
 
-	playsound(get_turf(src), 'sound/effects/splat.ogg', 50, 1)
+	playsound(get_turf(src), pick('sound/effects/splat.ogg', 'sound/effects/vomit_1.ogg', 'sound/effects/vomit_2.ogg', 'sound/effects/vomit_3.ogg'), 50, 1)
 	var/turf/T = get_turf(src)
 	if(!blood)
 		nutrition -= lost_nutrition

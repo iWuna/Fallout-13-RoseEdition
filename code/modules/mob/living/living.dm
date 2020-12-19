@@ -369,7 +369,7 @@
 /mob/proc/get_contents()
 
 /mob/living/proc/lay_down()
-	set name = "Craw"
+	set name = "Crawl"
 	set category = "IC"
 
 	if(stat)
@@ -377,13 +377,13 @@
 
 	if(!under_object)
 		resting = !resting
-		to_chat(src, "<span class='notice'>Теперь вы [resting ? "лежите" : "встаете"].</span>")
+		to_chat(src, "<span class='notice'>Now you [resting ? "crawling" : "getting up"].</span>")
 		update_canmove()
 	else
 		playsound(loc, pick('sound/f13weapons/pan.ogg', 'sound/items/trayhit2.ogg', 'sound/items/trayhit1.ogg'), 50, 1)
 		Stun(1)
 		apply_damage(5, BRUTE, get_bodypart("head"))
-		to_chat(src, "<span class='danger'>Когда вы попытались встать, вы ударились о [under_object] своей головой!<br>Ай!</span>")
+		to_chat(src, "<span class='danger'>Когда вы попытались встать, вы ударились о [under_object] своей головой!<br>Ouch!</span>")
 
 /mob/living/proc/surrender()
 	set name = "Surrender"

@@ -89,6 +89,8 @@
 	armour_penetration = 45
 	throw_speed = 1
 	throw_range = 3
+	light_system = MOVABLE_LIGHT
+	light_range = 4
 	sharpness = IS_SHARP
 	light_color = "#ff0000"
 	attack_verb = list("cleaved", "slashed", "torn", "hacked", "ripped", "diced", "carved")
@@ -109,7 +111,6 @@
 
 /obj/item/twohanded/required/cult_bastard/Initialize()
 	. = ..()
-	set_light(4)
 	jaunt = new(src)
 	linked_action = new(src)
 	AddComponent(/datum/component/butchering, 50, 80)
@@ -339,7 +340,8 @@
 	icon_state = "cult_helmet"
 	item_state = "cult_helmet"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 30,"energy" = 15, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 40, "acid" = 75)
-	brightness_on = 0
+	light_system = NO_LIGHT_SUPPORT
+	light_range = 0
 	actions_types = list()
 
 /obj/item/clothing/suit/space/hardsuit/cult
@@ -608,7 +610,7 @@
 	name = "void torch"
 	desc = "Used by veteran cultists to instantly transport items to their needful bretheren."
 	w_class = WEIGHT_CLASS_SMALL
-	brightness_on = 1
+	light_range = 1
 	icon_state = "torch"
 	item_state = "torch"
 	color = "#ff0000"
