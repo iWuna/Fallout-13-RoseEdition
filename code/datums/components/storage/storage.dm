@@ -30,6 +30,7 @@
 	var/silent = FALSE								//whether this makes a message when things are put in.
 	var/click_gather = FALSE						//whether this can be clicked on items to pick it up rather than the other way around.
 	var/rustle_sound = TRUE							//play rustle sound on interact.
+	var/interact_sound = null						//custom interact sound.
 	var/allow_quick_empty = FALSE					//allow empty verb which allows dumping on the floor of everything inside quickly.
 	var/allow_quick_gather = FALSE					//allow toggle mob verb which toggles collecting all items from a tile.
 
@@ -606,6 +607,8 @@
 		return
 	if(rustle_sound)
 		playsound(parent, "rustle", 50, 1, -5)
+	else if(interact_sound)
+		playsound(parent, interact_sound, 50, 1, -5)
 	for(var/mob/viewing in viewers(user, null))
 		if(M == viewing)
 			to_chat(usr, "<span class='notice'>You put [I] [insert_preposition]to [parent].</span>")
@@ -685,6 +688,8 @@
 
 	if(rustle_sound)
 		playsound(A, "rustle", 50, 1, -5)
+	else if(interact_sound)
+		playsound(parent, interact_sound, 50, 1, -5)
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user

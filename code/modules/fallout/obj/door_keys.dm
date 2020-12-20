@@ -58,23 +58,6 @@
 	goto CYCLE
 	return null
 
-/obj/item/storage/keys_set
-	name = "ключница"
-	desc = "сюда вы можете поместить ваши ключи!"
-	icon = 'icons/fallout/objects/keys.dmi'
-	icon_state = "keychain_0"
-	slot_flags = SLOT_BELT
-	w_class = WEIGHT_CLASS_TINY
-
-/obj/item/weapon/storage/keys_set/update_icon()
-	icon_state = "keychain_[contents.len]"
-
-/obj/item/weapon/storage/keys_set/proc/get_key_with_id(id)
-	for(var/obj/item/door_key/K in contents)
-		if(K.id == id)
-			return K
-	return null
-
 
 /obj/item/lock
 	name = "неиспользованный замок"
