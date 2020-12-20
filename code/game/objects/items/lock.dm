@@ -87,7 +87,7 @@ GLOBAL_LIST_EMPTY(global_locks)
 	desc = "You can store keys here!"
 	icon = 'icons/fallout/objects/keys.dmi'
 	icon_state = "keychain_0"
-	slot_flags = ITEM_SLOT_ID|SLOT_BELT
+	slot_flags = ITEM_SLOT_ID
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/storage/keys_chain/ComponentInitialize()
