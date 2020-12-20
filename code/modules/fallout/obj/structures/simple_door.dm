@@ -172,6 +172,7 @@
 				if (istype(I, /obj/item/lock_construct))
 					desc = "[src.desc] Has a lock."//Fuck it im not doing this bullshit tonight. This will do. :) -with love, harcourt
 				padlock = I
+				return
 	if(istype(I, /obj/item/key))
 		if(!padlock)
 			to_chat(user, "[src] has no lock attached")
