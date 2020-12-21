@@ -30,6 +30,7 @@
 	var/close_sound = 'sound/machines/door_close.ogg'
 	var/opening_time = 2
 	var/closing_time = 4
+	var/knock_cd = 0
 
 /obj/structure/simple_door/New(location)
 	..()
@@ -113,7 +114,9 @@
 			if(!padlock.locked)
 				Open(animate)
 			else
-				playsound(src.loc, pick('sound/f13items/door_knock1.wav', 'sound/f13items/door_knock2.wav', 'sound/f13items/door_knock3.wav', 'sound/f13items/door_knock4.wav'), 80, 0, 0)
+				if(knock_cd < world.time)
+					knock_cd = world.time + 20
+					playsound(src.loc, pick('sound/f13items/door_knock1.wav', 'sound/f13items/door_knock2.wav', 'sound/f13items/door_knock3.wav', 'sound/f13items/door_knock4.wav'), 80, 0, 0)
 
 		else
 			Open(animate)
@@ -169,12 +172,19 @@
 				if (istype(I, /obj/item/lock_construct))
 					desc = "[src.desc] Has a lock."//Fuck it im not doing this bullshit tonight. This will do. :) -with love, harcourt
 				padlock = I
+				return
 	if(istype(I, /obj/item/key))
 		if(!padlock)
 			to_chat(user, "[src] has no lock attached")
 			return
 		else
 			return padlock.check_key(I,user)
+	if(istype(I, /obj/item/storage/keys_chain))
+		if(!padlock)
+			to_chat(user, "[src] has no lock attached")
+			return
+		else
+			return padlock.check_chain(I,user)
 	if(user.a_intent == INTENT_HARM)
 		if(padlock)
 			add_logs(user, src, "attacked", src)

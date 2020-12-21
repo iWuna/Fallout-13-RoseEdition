@@ -211,6 +211,8 @@
 		return add_lock(I, user) /* call add_lock proc, so we can disable for airlocks */
 	else if(istype(I, /obj/item/key))
 		return check_key(I, user)
+	else if(istype(I, /obj/item/storage/keys_chain))
+		return Lock.check_chain(I, user)
 	else if(!(I.item_flags & NOBLUDGEON) && user.a_intent != INTENT_HARM)
 		try_to_activate_door(user)
 		return TRUE
