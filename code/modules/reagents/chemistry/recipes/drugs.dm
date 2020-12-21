@@ -38,3 +38,25 @@
 	id = "aranesp"
 	results = list("aranesp" = 3)
 	required_reagents = list("epinephrine" = 1, "atropine" = 1, "morphine" = 1)
+
+/datum/chemical_reaction/jet
+	name = "Jet Inhalant"
+	id = "jet"
+	results = list("jet" = 2, "mercury" = 1)
+	required_reagents = list("mercury" = 1, "phenol" = 1, "ethanol" = 1)
+
+/datum/chemical_reaction/turbo
+	name = "Turbo Inhalant"
+	id = "turbo"
+	results = list("turbo" = 3)
+	required_reagents = list("mercury" = 1, "phenol" = 1, "ephedrine" = 1)
+	required_catalysts = list("acetone" = 1)
+	required_temp = 380
+
+/datum/chemical_reaction/psycho
+	name = "Psycho Fluid"
+	id = "psycho"
+	results = list("psycho" = 2, "mercury" = 1)
+	required_reagents = list("mercury" = 1, "ammonia" = 1, "ephedrine" = 1)
+	required_catalysts = list("bromine" = 1)
+	required_temp = 422
