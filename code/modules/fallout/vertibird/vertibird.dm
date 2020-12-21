@@ -97,10 +97,7 @@ obj/vertibird/proc/beginFly()
 
 obj/vertibird/proc/flyGlobal()
 	to_chat(world, "<font size='3' color='orange'>The ever increasing roar of an aircraft tearing through the skies above enters your ears.</font>")
-	var/sound/global_sound
-	global_sound = sound("sound/f13machines/vertibird_global.ogg", repeat = 0, wait = 0, channel = 776)
-	global_sound.priority = 250
-	global_sound.status = SOUND_UPDATE|SOUND_STREAM
+	sound_to_playing_players("sound/f13machines/vertibird_global.ogg", 50, 0)
 
 
 obj/vertibird/proc/fly(targetX, targetY, targetZ)
