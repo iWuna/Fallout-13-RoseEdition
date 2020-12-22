@@ -322,6 +322,24 @@
 	message = "moans."
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/living/moan_p/run_emote(mob/user, params)
+	. = ..()
+	if(. && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if((!H.mind || !H.mind.miming) && !user.is_muzzled())
+			if(user.gender == FEMALE)
+				playsound(H, pick('sound/voice/human/moan_f_1.ogg', 'sound/voice/human/moan_f_2.ogg', 'sound/voice/human/moan_f_3.ogg'), 50,0)
+			else
+				playsound(H, pick('sound/voice/human/moan_m_1.ogg', 'sound/voice/human/moan_m_2.ogg', 'sound/voice/human/moan_m_3.ogg'), 25, 0)
+
+
+/datum/emote/living/moan_p
+	key = "moan_p"
+	key_third_person = "moans"
+	message = "moans."
+	emote_type = EMOTE_AUDIBLE
+
+
 /datum/emote/living/moan/run_emote(mob/user, params)
 	. = ..()
 	if(. && ishuman(user))
@@ -329,8 +347,7 @@
 		if((!H.mind || !H.mind.miming) && !user.is_muzzled())
 			if(user.gender == FEMALE)
 				playsound(H, pick('sound/voice/human/moan_f_1.wav', 'sound/voice/human/moan_f_2.wav', 'sound/voice/human/moan_f_3.wav'), 50,0)
-			else
-				playsound(H, pick('sound/voice/human/moan_m_1.ogg', 'sound/voice/human/moan_m_2.ogg', 'sound/voice/human/moan_m_3.ogg'), 50, 0)
+
 
 /datum/emote/living/look
 	key = "look"
