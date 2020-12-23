@@ -103,10 +103,15 @@
 	set category = "Emote"
 	usr.emote("nod")
 
-/mob/living/carbon/human/verb/emote_moan()
+/mob/living/carbon/human/verb/emote_moan_pain()
 	set name = "> Moan "
 	set category = "Emote"
 	usr.emote("moan")
+
+/mob/living/carbon/human/verb/emote_moan()
+	set name = "> Moan pain"
+	set category = "Emote"
+	usr.emote("moan_p")
 
 /mob/living/carbon/human/verb/emote_shake()
 	set name = "~ Shake "

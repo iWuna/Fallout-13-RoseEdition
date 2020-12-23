@@ -42,12 +42,6 @@
 	message = "gnarls and shows its teeth..."
 	mob_type_allowed_typecache = list(/mob/living/carbon/monkey, /mob/living/carbon/alien)
 
-/datum/emote/living/carbon/moan
-	key = "moan"
-	key_third_person = "moans"
-	message = "moans!"
-	message_mime = "appears to moan!"
-	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/roll
 	key = "roll"
