@@ -157,6 +157,25 @@
 	traitname = "trekking"
 	remarks = list("It never hurts to take the road less travelled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
 
+
+/obj/item/book/granter/trait/field_surgery
+	name = "Field Surgery Handbook"
+	desc = "Most trusted and up-to-date manual offered by the Department of Defense for military medical personnel in the field"
+	oneuse = TRUE
+	granted_trait = TRAIT_MEDICALEXPERT
+	traitname = "Field Surgery"
+	remarks = list("Keep missing limbs fresh...", "Every second matters...", "Bodies can be brought to life after applying a direct charge...", "Makeshift instruments is a handy replacement...", "Right actions can patch up a dead body without chemicals...")
+
+
+/obj/item/book/granter/trait/brain_surgery
+	name = "Brain Surgery Manual"
+	desc = "Handbook of advanced brain surgery techniques. Approved by 9 experts out of 10."
+	oneuse = TRUE
+	granted_trait = TRAIT_ADVANCED_SURGEON
+	traitname = "Brain Surgery"
+	remarks = list("Pacient can be pacified just by cutting...", "Lobotomy is used for curing severe cerebral traumas...", "Bodies can be brought to life after applying a direct charge...", "Pacient can be kept in symbiotic relationship with a virus...")
+
+
 /*
 /obj/item/book/granter/trait/iron_fist
 	name = "Brawler's Guide to Fisticuffs"
