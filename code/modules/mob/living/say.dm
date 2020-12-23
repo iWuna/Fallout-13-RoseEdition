@@ -2,67 +2,37 @@ GLOBAL_LIST_INIT(department_radio_prefixes, list(":", "."))
 
 GLOBAL_LIST_INIT(department_radio_keys, list(
 	// Location
-	"r" = "right hand",
-	"l" = "left hand",
-	"i" = "intercom",
+	"r" = "right hand", 	"к" = "right hand",
+	"l" = "left hand",		"д" = "left hand",
+	"i" = "intercom",		"ш" = "intercom",
 
 	// Department
-	"h" = "department",
-	"c" = "Command",
-	"n" = "Science",
-	"m" = "Medical",
+	"h" = "department",		"р" = "department",
+	"c" = "Command",		"с" = "Command",
+	"n" = "Science",		"т" = "Science",
+	"m" = "Medical",		"ь" = "Medical",
 	//"e" = "Engineering", // Stealing for lEgion
-	"s" = "Security",
-	"u" = "Supply",
+	"s" = "Security",		"ы" = "Security",
+	"u" = "Supply",			"г" = "Supply",
 	//"v" = "Service",
 
 	// Faction
-	"t" = "Syndicate",
-	"y" = "CentCom",
-	"v" = "Vault",
-	"w" = "NCR",
-	"q" = "BOS",
-	"z" = "Enclave",
-	"f" = "Town",
-	"e" = "Legion",
+	"t" = "Syndicate",		"е" = "Syndicate",
+	"y" = "CentCom",		"н" = "CentCom",
+	"v" = "Vault",			"м" = "Vault",
+	"w" = "NCR",			"ц" = "NCR",
+	"q" = "BOS",			"й" = "BOS",
+	"z" = "Enclave",		"я" = "Enclave",
+	"f" = "Town",			"а" = "Town",
+	"e" = "Legion",			"у" = "Legion",
 
 	// Admin
-	"p" = "admin",
-	"d" = "deadmin",
+	"p" = "admin",			"з" = "admin",
+	"d" = "deadmin",		"в" = "deadmin",
 
 	// Misc
-	"o" = "AI Private", // AI Upload channel
-	"x" = "cords",		// vocal cords, used by Voice of God
-
-
-	//kinda localization -- rastaf0
-	//same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
-	// Location
-	"ê" = "right hand",
-	"ä" = "left hand",
-	"ø" = "intercom",
-
-	// Department
-	"ð" = "department",
-	"ñ" = "Command",
-	"ò" = "Science",
-	"ü" = "Medical",
-	"ó" = "Engineering",
-	"û" = "Security",
-	"ã" = "Supply",
-	"ì" = "Service",
-
-	// Faction
-	"å" = "Syndicate",
-	"í" = "CentCom",
-
-	// Admin
-	"ç" = "admin",
-	"â" = "deadmin",
-
-	// Misc
-	"ù" = "AI Private",
-	"÷" = "cords"
+	"o" = "AI Private",		"щ" = "AI Private", // AI Upload channel
+	"x" = "cords",			"ч" = "cords",		// vocal cords, used by Voice of God
 ))
 
 /mob/living/proc/Ellipsis(original_msg, chance = 50, keep_words)
