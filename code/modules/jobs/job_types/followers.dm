@@ -22,6 +22,7 @@
 
 /datum/outfit/job/followers/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
+	H.add_trait(TRAIT_MEDICALEXPERT)
 	if(visualsOnly)
 		return
 

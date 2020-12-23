@@ -290,6 +290,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/storage/firstaid/regular,
+		/obj/item/book/granter/trait/field_surgery,
 		/obj/item/clothing/accessory/armband/medblue  \
 		)
 
