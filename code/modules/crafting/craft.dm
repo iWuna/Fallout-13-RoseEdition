@@ -69,7 +69,11 @@
 							CAT_BPWEAPON_ONEUSE,
 							CAT_BP_COPY),
 						list( //moulds
-							CAT_MOULD_ONE),
+							CAT_MOULD_ACTION,
+							CAT_MOULD_FRAME,
+							CAT_MOULD_LOADER,
+							CAT_MOULD_BARREL,
+							CAT_MOULD_MISC),
 						list(CAT_WEAPONS,
 							CAT_UNREFIENED,
 							CAT_DEPLETED))
