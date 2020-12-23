@@ -19,6 +19,11 @@
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = 0
 
+/datum/surgery/advanced/reconstruction/can_start(mob/living/carbon/user, mob/living/carbon/target)
+	if(!..() && !user.has_trait(TRAIT_MEDICALEXPERT))
+		return FALSE
+	return TRUE
+
 /datum/surgery_step/reconstruct
 	name = "repair body"
 	implements = list(/obj/item/hemostat = 100, TOOL_SCREWDRIVER = 35, /obj/item/pen = 15)

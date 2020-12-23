@@ -84,7 +84,8 @@
 #define TRAIT_TECHNOPHOBE		"luddite" //Cannot use autolathes/biogens
 #define TRAIT_TECHNOPHREAK		"technophreak"	//needed to use the autolathe, renamed and sprited 30/06/2020
 #define TRAIT_PA_WEAR           "pa_wear"
-#define TRAIT_MEDICALEXPERT		"Medicinal Expert" //Can do revival surgery
+#define TRAIT_MEDICALEXPERT		"Field Surgeon" //Can do revival and restoration surgery
+#define TRAIT_ADVANCED_SURGEON	"Brain Surgery" //lobotomy, pacification, viral bonding
 #define TRAIT_PRACTITIONER		"Practitioner" //Has access to FoA specific surgeries
 #define TRAIT_MACHINE_SPIRITS	"machine_spirits" //for tribe unique functions.
 

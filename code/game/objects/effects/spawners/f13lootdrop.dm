@@ -1478,6 +1478,8 @@
 	lootcount = 1
 	loot = list(/obj/item/book/granter/trait/chemistry = 10,
 	/obj/item/book/granter/trait/trekking = 10,
+	/obj/item/book/granter/trait/field_surgery = 20,
+	/obj/item/book/granter/trait/brain_surgery = 10,
 	/obj/item/book/granter/trait/pa_wear = 1,
 	/obj/item/book/granter/trait/gunsmith_one = 50,
 	/obj/item/book/granter/trait/gunsmith_two = 20,

@@ -244,6 +244,7 @@ Lieutenant
 		/obj/item/storage/pill_bottle/mining=1,
 		/obj/item/storage/firstaid/regular=1,
 		/obj/item/book/granter/trait/chemistry=1,
+		/obj/item/book/granter/trait/field_surgery=1,
 		/obj/item/reagent_containers/hypospray/CMO=1)
 
 /datum/outfit/loadout/ltinf
@@ -434,6 +435,7 @@ Corporal
 		/obj/item/clothing/accessory/armband/medblue=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=3,
 		/obj/item/book/granter/trait/chemistry=1,
+		/obj/item/book/granter/trait/field_surgery=1,
 		/obj/item/storage/pill_bottle/mining=1,
 		/obj/item/storage/firstaid/regular=1,
 		/obj/item/ammo_box/needle=3

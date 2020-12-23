@@ -15,8 +15,8 @@
 	species = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST)
 
-/datum/surgery/advanced/viral_bonding/can_start(mob/user, mob/living/carbon/target)
-	if(!..())
+/datum/surgery/advanced/viral_bonding/can_start(mob/living/carbon/user, mob/living/carbon/target)
+	if(!..() && !user.has_trait(TRAIT_ADVANCED_SURGEON))
 		return FALSE
 	if(!LAZYLEN(target.diseases))
 		return FALSE
