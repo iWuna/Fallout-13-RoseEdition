@@ -97,7 +97,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("iron door", /obj/structure/simple_door/metal/store, 10, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("lock", /obj/item/lock_construct, 1), \
 	new/datum/stack_recipe("key", /obj/item/key, 1), \
-	new/datum/stack_recipe("key chain", /obj/item/storage/keys_set, 1), \
+	new/datum/stack_recipe("key chain", /obj/item/storage/keys_chain, 1), \
 	new/datum/stack_recipe("metal parts", /obj/item/stack/crafting/metalparts, 5), \
 	null, \
 	new /datum/stack_recipe_list("racks", list( \

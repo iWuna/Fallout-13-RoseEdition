@@ -32,7 +32,7 @@ Commander
 	minimal_access = list(ACCESS_ENCLAVE)
 
 	exp_requirements = 5500
-	exp_type = EXP_TYPE_ENCLAVE
+	exp_type = EXP_TYPE_NCR
 
 /datum/outfit/job/enclave/f13uscommander
 	name = "US Commander"
@@ -69,7 +69,7 @@ Medic
 	minimal_access = list(ACCESS_ENCLAVE)
 
 	exp_requirements = 2500
-	exp_type = EXP_TYPE_ENCLAVE
+	exp_type = EXP_TYPE_NCR
 
 	loadout_options = list(
 	/datum/outfit/loadout/enclave_medic_1,
@@ -106,7 +106,11 @@ Medic
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	back = /obj/item/storage/backpack/duffelbag/med/surgery
 	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 1, /obj/item/stock_parts/cell/ammo/ec = 2, /obj/item/clothing/mask/surgical = 1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 1,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/clothing/mask/surgical = 1,
+		/obj/item/book/granter/trait/field_surgery = 1, 
+		  )
 
 /datum/outfit/loadout/enclave_medic_3
 	name = "Enclave Chemist"
@@ -116,7 +120,10 @@ Medic
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	back = /obj/item/storage/backpack/satchel/med
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/ec = 2, /obj/item/book/granter/trait/chemistry = 1, /obj/item/storage/box/beakers = 1)
+		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/book/granter/trait/chemistry = 1, 
+		/obj/item/storage/box/beakers = 1
+		)
 
 /*
 HEAVY!
@@ -155,7 +162,7 @@ HEAVY!
 	minimal_access = list(ACCESS_ENCLAVE)
 
 	exp_requirements = 4500
-	exp_type = EXP_TYPE_ENCLAVE
+	exp_type = EXP_TYPE_NCR
 
 	loadout_options = list(
 		/datum/outfit/loadout/enclave_heavy_1,
@@ -192,7 +199,7 @@ Private
 	minimal_access = list(ACCESS_ENCLAVE)
 
 	exp_requirements = 3500
-	exp_type = EXP_TYPE_ENCLAVE
+	exp_type = EXP_TYPE_NCR
 
 	loadout_options = list(
 	/datum/outfit/loadout/enclave_soldier_1,
@@ -255,8 +262,8 @@ Scientist
 	access = list(ACCESS_ENCLAVE)
 	minimal_access = list(ACCESS_ENCLAVE)
 
-	exp_requirements = 500
-	exp_type = EXP_TYPE_ENCLAVE
+	exp_requirements = 600
+	exp_type = EXP_TYPE_NCR
 
 /datum/outfit/job/enclave/f13usscientist
 	name = "US Scientist"

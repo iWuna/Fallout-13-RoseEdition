@@ -256,6 +256,29 @@
 	name = "Stimpak Fluid"
 	id = "stimpak"
 	results = list("stimpak" = 2)
-	required_reagents = list("blood" = 2, "spaceacillin" = 2) //- Review at later date
+	required_reagents = list("blood" = 1, "spaceacillin" = 1)
 	required_temp = 300
+
+/datum/chemical_reaction/medx
+	name = "Med-X Fluid"
+	id = "medx"
+	results = list("medx" = 2)
+	required_reagents = list("morphine" = 1, "ephedrine" = 1)
+	required_catalysts = list("mercury" = 1)
+	required_temp = 480
+
+/datum/chemical_reaction/mentat
+	name = "Mentat Fluid"
+	id = "mentat"
+	results = list("mentat" = 2)
+	required_reagents = list("jet" = 1, "ephedrine" = 1)
+	required_catalysts = list("mercury" = 1)
+	required_temp = 360
+
+/datum/chemical_reaction/fixer
+	name = "Fixer Fluid"
+	id = "fixer"
+	results = list("fixer" = 2)
+	required_reagents = list("phenol" = 1, "antitoxin" = 1, "acetone" = 1)
+	required_temp = 255
 

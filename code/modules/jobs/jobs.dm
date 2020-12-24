@@ -347,7 +347,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
     EXP_TYPE_TRIBALCOMMAND = list("titles" = list("Chief","Shaman","Head Hunter")),
     EXP_TYPE_FOLLOWERSCOMMAND = list("titles" = list("Lead Practitioner")),
   	EXP_TYPE_NCRCOMMAND    = list("titles" = list("NCR Lieutenant","NCR Sergeant","NCR Captain","NCR Ambassador"),
-  	EXP_TYPE_ENCLAVE = list("titles" = ankap_positions))
+  	EXP_TYPE_ENCLAVE = list("titles" = list("US Private", "US Medic", "US Engineer", "US Commander")))
     // EXP_TYPE_CREW = list("titles" = command_positions | engineering_positions | medical_positions | science_positions | supply_positions | security_positions | civilian_positions | list("AI","Cyborg")), // crew positions
     // EXP_TYPE_COMMAND = list("titles" = command_positions),
     // EXP_TYPE_ENGINEERING = list("titles" = engineering_positions),
