@@ -8,7 +8,7 @@
 	subcategory = CAT_MOULD_ACTION
 
 /datum/crafting_recipe/mould/autoaction
-	result = /obj/item/prefabs/mould/action/auto
+	result = /obj/item/prefabs/complex/action/auto
 	name = "Automatic Action"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER3)
 	traits = list(TRAIT_GUNSMITH_THREE)
