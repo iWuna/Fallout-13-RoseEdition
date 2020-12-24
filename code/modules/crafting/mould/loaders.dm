@@ -62,7 +62,7 @@
 	subcategory = CAT_MOULD_LOADER
 
 /datum/crafting_recipe/mould/load/m45mm
-	result = /obj/item/prefabs/complex/ammo_loader/m45mm
+	result = /obj/item/prefabs/mould/m45mm
 	name = ".45 Simple Magazine Loader"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER2)
 	traits = list(TRAIT_GUNSMITH_TWO)
@@ -71,7 +71,7 @@
 	subcategory = CAT_MOULD_LOADER
 
 /datum/crafting_recipe/mould/load/m45mmdouble
-	result = /obj/item/prefabs/complex/ammo_loader/m45mmdouble
+	result = /obj/item/prefabs/mould/m45mmdouble
 	name = ".45 Double Magazine Loader"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER3)
 	traits = list(TRAIT_GUNSMITH_THREE)
@@ -80,7 +80,7 @@
 	subcategory = CAT_MOULD_LOADER
 
 /datum/crafting_recipe/mould/load/tommygunm45
-	result = /obj/item/ammo_box/magazine/tommygunm45
+	result = /obj/item/prefabs/mould/tommygunm45
 	name = ".45 Extended Magazine Loader"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER3)
 	traits = list(TRAIT_GUNSMITH_THREE)
@@ -89,7 +89,7 @@
 	subcategory = CAT_MOULD_LOADER
 
 /datum/crafting_recipe/mould/load/a50
-	result = /obj/item/ammo_box/magazine/a50
+	result = /obj/item/prefabs/mould/a50
 	name = ".50AE Magazine Loader"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER4)
 	traits = list(TRAIT_GUNSMITH_FOUR)
@@ -98,7 +98,7 @@
 	subcategory = CAT_MOULD_LOADER
 
 /datum/crafting_recipe/mould/load/d12g
-	result = /obj/item/ammo_box/magazine/d12g
+	result = /obj/item/prefabs/mould/d12g
 	name = "12g Drum Magazine Loader"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER3)
 	traits = list(TRAIT_GUNSMITH_THREE)
@@ -107,7 +107,7 @@
 	subcategory = CAT_MOULD_LOADER
 
 /datum/crafting_recipe/mould/load/tube4570
-	result = /obj/item/ammo_box/magazine/internal/shot/tube4570
+	result = /obj/item/prefabs/mould/tube4570
 	name = "45-70 Internal Magazine Loader"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER4)
 	traits = list(TRAIT_GUNSMITH_FOUR)
@@ -116,7 +116,7 @@
 	subcategory = CAT_MOULD_LOADER
 
 /datum/crafting_recipe/mould/load/tube44
-	result = /obj/item/ammo_box/magazine/internal/shot/tube44
+	result = /obj/item/prefabs/mould/tube44
 	name = ".44 Internal Magazine Loader"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER2)
 	traits = list(TRAIT_GUNSMITH_TWO)
@@ -125,7 +125,7 @@
 	subcategory = CAT_MOULD_LOADER
 
 /datum/crafting_recipe/mould/load/tube357
-	result = /obj/item/ammo_box/magazine/internal/shot/tube357
+	result = /obj/item/prefabs/mould/tube357
 	name = ".357 Internal Magazine Loader"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER2)
 	traits = list(TRAIT_GUNSMITH_TWO)
@@ -134,7 +134,7 @@
 	subcategory = CAT_MOULD_LOADER
 
 /datum/crafting_recipe/mould/load/antimateriel
-	result = /obj/item/ammo_box/magazine/internal/boltaction/antimateriel
+	result = /obj/item/prefabs/mould/antimateriel
 	name = ".50MG Internal Magazine Loader"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER4)
 	traits = list(TRAIT_GUNSMITH_FOUR)
