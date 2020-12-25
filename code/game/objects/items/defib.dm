@@ -25,8 +25,8 @@
 	var/grab_ghost = FALSE // Do we pull the ghost back into their body?
 
 /obj/item/defibrillator/ghetto
-	name = "Car battery"
-	desc = "Old rusted car battery wirh two cutters attached. Can be used as powerful shock source."
+	name = "automobile battery"
+	desc = "Old 24V car battery wirh two cutters attached. Can be used as powerful shock source."
 	safety = FALSE
 	icon_state = "defibunit_ghetto"
 	item_state = "defibunit_ghetto"

@@ -950,7 +950,8 @@ Auxilia
 		/obj/item/cautery=1,
 		/obj/item/book/granter/trait/field_surgery=1,
 		/obj/item/surgical_drapes=1,
-		/obj/item/storage/firstaid/ancient=1
+		/obj/item/storage/firstaid/ancient=1,
+		/obj/item/defibrillator/ghetto=1
 	)
 
 /datum/outfit/loadout/auxengi

@@ -307,7 +307,18 @@
 	density = 1
 	layer = ABOVE_MOB_LAYER
 	resistance_flags = INDESTRUCTIBLE
+	var/looted = FALSE
 	var/weld = 0
+
+/obj/structure/car/attack_hand(mob/user)
+	. = ..()
+	if(!looted)
+		if(do_after(user, 5, TRUE, src))
+			to_chat(user, "You remove the old battery.")
+			new /obj/item/defibrillator/ghetto(user.loc)
+			looted = TRUE
+	else
+		to_chat(user, "Its empty.")
 
 /obj/structure/car/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/weldingtool))
