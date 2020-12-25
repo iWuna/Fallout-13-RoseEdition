@@ -493,27 +493,36 @@
 	display_name = "Energy Weapons"
 	description = "Weapons using electric technology"
 	prereq_ids = list("weaponry", "adv_power", "emp_basic")
-	design_ids = list("stunrevolver", "ew_frame", "ew_frame_pistol", "ew_adapter_EC", "ew_weak_emitter", "ew_emitter", "ew_weak_plasma", "ew_stream", "ew_stream_dual")
+	design_ids = list("stunrevolver", "ew_frame", "ew_frame_pistol", "ew_adapter_EC", "ew_weak_emitter", "ew_emitter", "ew_stream", "ew_stream_dual")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 12500)
 	export_price = 10000
 
 /datum/techweb_node/electric_weapons_mk2
 	id = "electronic_weapons_mk2"
-	display_name = "Energy Weapons mk2"
+	display_name = "Advanced Energy Weapons"
 	description = "Weapons using electric technology"
 	prereq_ids = list("electronic_weapons")
-	design_ids = list("ew_scatter_emitter", "ew_frame_rifle", "ew_adapter_MFC", "ew_adapter_ECP", "ew_strong_emitter", "ew_stream_fast")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 25000)
-	export_price = 15000
+	design_ids = list("ew_scatter_emitter", "ew_frame_rifle", "ew_adapter_MFC")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 5000
 
-/datum/techweb_node/electric_weapons_mk3
-	id = "electronic_weapons_mk3"
-	display_name = "Energy Weapons mk3"
-	description = "Weapons using electric technology"
-	prereq_ids = list("electronic_weapons_mk2")
-	design_ids = list("ew_frame_hqrifle", "ew_stream_triple", "ew_plasma")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 25000)
-	export_price = 15000
+/datum/techweb_node/plasma_weapons
+	id = "plasma_weapons"
+	display_name = "Plasma Weapons"
+	description = "Weapons using plasma technology"
+	prereq_ids = list("electronic_weapons_mk2", "electronic_weapons")
+	design_ids = list("ew_adapter_ECP", "ew_weak_plasma", "ew_stream_triple")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	export_price = 5000
+
+/datum/techweb_node/plasma_weapons
+	id = "plasma_weapons"
+	display_name = "Advanced Plasma Weapons"
+	description = "Weapons using plasma technology"
+	prereq_ids = list("electronic_weapons_mk2", "electronic_weapons")
+	design_ids = list("ew_plasma", "ew_strong_emitter", "ew_stream_fast")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 5000
 /*
 /datum/techweb_node/medical_weapons
 	id = "medical_weapons"
