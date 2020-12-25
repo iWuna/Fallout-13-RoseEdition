@@ -1418,7 +1418,7 @@
 	incompatible_tags = list("pistol")
 	canpulloutmag = FALSE
 
-/obj/item/prefabs/complex/ammo_loader/m44
+/obj/item/prefabs/complex/ammo_loader/m357
 	name = ".357 Internal Magazine Loader"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	complexity = 10
