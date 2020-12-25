@@ -53,7 +53,7 @@
 	subcategory = CAT_MOULD_LOADER
 
 /datum/crafting_recipe/mould/load/m762
-	result = /obj/item/prefabs/complex/ammo_loader/m762
+	result = /obj/item/prefabs/mould/m762
 	name = "762 Magazine Loader"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER2)
 	traits = list(TRAIT_GUNSMITH_TWO)
