@@ -292,6 +292,13 @@
 
 	max_complexity = 200
 
+/obj/item/prefabs/complex/eWeaponFrame/hqrifle
+	name = "Advanced Energy Rifle Frame"
+	desc = "An unfinished energy gun."
+	icon_state = "gunframe"
+
+	max_complexity = 300
+
 /obj/item/prefabs/complex/WeaponFrame
 	name = "Weapon Frame"
 	desc = "An unfinished gun."

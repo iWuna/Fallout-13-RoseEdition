@@ -24,6 +24,25 @@
 	var/combat = FALSE //can we revive through space suits?
 	var/grab_ghost = FALSE // Do we pull the ghost back into their body?
 
+/obj/item/defibrillator/ghetto
+	name = "automobile battery"
+	desc = "Old 24V car battery wirh two cutters attached. Can be used as powerful shock source."
+	safety = FALSE
+	icon_state = "defibunit_ghetto"
+	item_state = "defibunit_ghetto"
+
+/obj/item/defibrillator/ghetto/Initialize()
+	. = ..()
+	if(prob(50))
+		cell = new(src)
+
+/obj/item/defibrillator/ghetto/loaded/Initialize()
+	. = ..()
+	cell = new(src)
+
+/obj/item/defibrillator/ghetto/make_paddles()
+	return new /obj/item/twohanded/shockpaddles/ghetto(src)
+
 /obj/item/defibrillator/get_cell()
 	return cell
 
@@ -652,5 +671,18 @@
 	icon_state = "defibpaddles0"
 	item_state = "defibpaddles0"
 	req_defib = FALSE
+
+/obj/item/twohanded/shockpaddles/ghetto
+	icon_state = "defibpaddles0_ghetto"
+	item_state = "defibpaddles0_ghetto"
+
+/obj/item/twohanded/shockpaddles/ghetto/update_icon()
+	icon_state = "defibpaddles[wielded]_ghetto"
+	item_state = "defibpaddles[wielded]_ghetto"
+	if(cooldown)
+		icon_state = "defibpaddles[wielded]_ghetto_cooldown"
+	if(iscarbon(loc))
+		var/mob/living/carbon/C = loc
+		C.update_inv_hands()
 
 #undef HALFWAYCRITDEATH
