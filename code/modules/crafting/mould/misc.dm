@@ -65,7 +65,7 @@
 	result = /obj/item/prefabs/mould/pstock
 	name = "Plastic Stock"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER3)
-	traits = list(TRAIT_GUNSMITH_THREE)
+	traits = list(TRAIT_GUNSMITH_THREE, TRAIT_MASTER_GUNSMITH)
 	time = 30
 	category = CAT_MOULD
 	subcategory = CAT_MOULD_MISC

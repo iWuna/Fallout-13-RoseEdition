@@ -92,7 +92,7 @@
 	result = /obj/item/prefabs/mould/a50
 	name = ".50AE Magazine Loader"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER4)
-	traits = list(TRAIT_GUNSMITH_FOUR)
+	traits = list(TRAIT_GUNSMITH_FOUR, TRAIT_MASTER_GUNSMITH)
 	time = 30
 	category = CAT_MOULD
 	subcategory = CAT_MOULD_LOADER
@@ -110,7 +110,7 @@
 	result = /obj/item/prefabs/mould/tube4570
 	name = "45-70 Internal Magazine Loader"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER4)
-	traits = list(TRAIT_GUNSMITH_FOUR)
+	traits = list(TRAIT_GUNSMITH_FOUR, TRAIT_MASTER_GUNSMITH)
 	time = 30
 	category = CAT_MOULD
 	subcategory = CAT_MOULD_LOADER
@@ -137,7 +137,7 @@
 	result = /obj/item/prefabs/mould/antimateriel
 	name = ".50MG Internal Magazine Loader"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER4)
-	traits = list(TRAIT_GUNSMITH_FOUR)
+	traits = list(TRAIT_GUNSMITH_FOUR, TRAIT_MASTER_GUNSMITH)
 	time = 30
 	category = CAT_MOULD
 	subcategory = CAT_MOULD_LOADER

@@ -21,7 +21,7 @@
 	result = /obj/item/prefabs/complex/action/autoburst
 	name = "Automatic Burst Action"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER2)
-	traits = list(TRAIT_GUNSMITH_TWO)
+	traits = list(TRAIT_GUNSMITH_TWO, TRAIT_MASTER_GUNSMITH)
 	time = 30
 	category = CAT_MOULD
 	subcategory = CAT_MOULD_ACTION
@@ -31,7 +31,7 @@
 	result = /obj/item/prefabs/complex/action/rapid
 	name = "Rapid Blowback Action"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER4)
-	traits = list(TRAIT_GUNSMITH_FOUR)
+	traits = list(TRAIT_GUNSMITH_FOUR, TRAIT_MASTER_GUNSMITH)
 	time = 30
 	category = CAT_MOULD
 	subcategory = CAT_MOULD_ACTION
