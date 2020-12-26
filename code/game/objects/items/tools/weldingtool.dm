@@ -138,7 +138,7 @@
 		var/turf/location = get_turf(user)
 		location.hotspot_expose(550, 10, 1)
 		if(get_fuel() <= 0)
-			set_light(0)
+			set_light_on(FALSE)
 
 		if(isliving(O))
 			var/mob/living/L = O
@@ -223,6 +223,7 @@
 /obj/item/weldingtool/proc/switched_off(mob/user)
 	welding = 0
 	set_welding(FALSE)
+	set_light_on(FALSE)
 
 	force = 3
 	damtype = "brute"
