@@ -6,17 +6,24 @@
 
 /obj/item/clothing/head/beret/mixanoff
 	name = "officer beret"
-	desc = "A green beret, standard issue for all commissioned NCR Officers."
-	icon_state = "ncr_officer_beret"
-	item_state = "ncr_officer_beret"
+	desc = "A green beret, standard issue for all commissioned Officers."
+	icon_state = "hosberetblack"
+	item_state = "hosberetblack"
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 40, "rad" = 30, "fire" = 60, "acid" = 10)
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/modified
+	name = "modified power armor"
+	desc = "A captured set of T-45d power armor, it's been heavily modified and decorated with the head of a bear and intricate gold trimming. A two headed bear is scorched into the breastplate."
+	icon_state = "sierra"
+	item_state = "sierra"
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 
 /obj/item/storage/briefcase/mixanoff
 	name = "коробочка говна нахуй"
 	desc = "Удали блять."
 
 /obj/item/storage/briefcase/mixanoff/PopulateContents()
-	new /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra(src)
+	new /obj/item/clothing/suit/armor/f13/power_armor/t45d/modified(src)
 	new /obj/item/clothing/head/beret/mixanoff(src)
 	new /obj/item/book/granter/trait/pa_wear(src)
 	new /obj/item/gun/ballistic/automatic/marksman/servicerifle/r82(src)
