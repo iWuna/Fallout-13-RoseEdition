@@ -10,6 +10,7 @@
 	use_skintones = TRUE
 	mutant_heart = /obj/item/organ/heart/vampire
 	mutanttongue = /obj/item/organ/tongue/vampire
+	mutanteyes = /obj/item/organ/eyes/night_vision/vampire
 	blacklisted = FALSE
 	limbs_id = "human"
 	skinned_type = /obj/item/stack/sheet/animalhide/human
@@ -42,13 +43,10 @@
 
 /datum/species/strigoi/spec_life(mob/living/carbon/human/C)
 	. = ..()
-	if(istype(C.loc, /obj/structure/closet/crate/coffin))
+	if(C.health < 100)
 		C.heal_overall_damage(2,2)
 		C.adjustToxLoss(-2)
 		C.adjustOxyLoss(-2)
 		C.adjustCloneLoss(-2)
+		C.blood_volume -= 1
 		return
-	C.blood_volume -= 0.75
-	if(C.blood_volume <= BLOOD_VOLUME_SURVIVE)
-		to_chat(C, "<span class='danger'>You ran out of blood!</span>")
-		C.dust()

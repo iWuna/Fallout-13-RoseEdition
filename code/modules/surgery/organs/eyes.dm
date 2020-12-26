@@ -71,6 +71,10 @@
 	name = "undead eyes"
 	desc = "Somewhat counterintuitively, these half-rotten eyes actually have superior vision to those of a living human."
 
+/obj/item/organ/eyes/night_vision/vampire
+	name = "undead eyes"
+	desc = "Even without their shadowy owner, looking at these eyes gives you a sense of dread."
+
 /obj/item/organ/eyes/night_vision/nightmare
 	name = "burning red eyes"
 	desc = "Even without their shadowy owner, looking at these eyes gives you a sense of dread."
