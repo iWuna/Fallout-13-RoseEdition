@@ -13,7 +13,7 @@
 	blacklisted = FALSE
 	limbs_id = "human"
 	skinned_type = /obj/item/stack/sheet/animalhide/human
-	var/info_text = "You are a <span class='danger'>Стригой</span>. You will slowly but constantly lose blood if outside of a coffin. If inside a coffin, you will slowly heal. You may gain more blood by grabbing a live victim and using your drain ability."
+	var/info_text = "You are a <span class='danger'>Strigoi</span>. You will slowly but constantly lose blood if outside of a coffin. If inside a coffin, you will slowly heal. You may gain more blood by grabbing a live victim and using your drain ability."
 
 /datum/species/strigoi/check_roundstart_eligible(mob/living/L)
 	return FALSE

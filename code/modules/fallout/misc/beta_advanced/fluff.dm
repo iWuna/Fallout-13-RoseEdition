@@ -4,14 +4,21 @@
 	icon = 'icons/obj/betaadvanced.dmi'
 	icon_state = "compliance_regulatorfluff"
 
+/obj/item/clothing/head/beret/mixanoff
+	name = "officer beret"
+	desc = "A green beret, standard issue for all commissioned NCR Officers."
+	icon_state = "ncr_officer_beret"
+	item_state = "ncr_officer_beret"
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 40, "rad" = 30, "fire" = 60, "acid" = 10)
 
-/obj/item/storage/box/mixanoff
+/obj/item/storage/briefcase/mixanoff
 	name = "коробочка говна нахуй"
 	desc = "Удали блять."
-	icon_state = "secbox"
-	illustration = "flashbang"
 
-/obj/item/storage/box/mixanoff/PopulateContents()
-	new /obj/item/storage/box/mixanoff(src)
-	new /obj/item/clothing/head/helmet/f13/power_armor/advanced(src)
+/obj/item/storage/briefcase/mixanoff/PopulateContents()
+	new /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra(src)
+	new /obj/item/clothing/head/beret/mixanoff(src)
 	new /obj/item/book/granter/trait/pa_wear(src)
+	new /obj/item/gun/ballistic/automatic/marksman/servicerifle/r82(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended(src)
