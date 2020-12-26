@@ -19,30 +19,26 @@
 // Hydroponics trays have no reagents holder and handle reagents in their own snowflakey way.
 // This is a dirty hack to make injecting reagents into them work.
 // TODO: refactor that.
-/obj/item/integrated_circuit/reagent/proc/inject_tray(obj/machinery/hydroponics/tray, atom/movable/source, amount)
-	var/atom/movable/acting_object = get_object()
-	var/list/trays = list(tray)
-	var/visi_msg = "[acting_object] transfers fluid into [tray]"
+//Time for someone to refactor this. Trays can now hold reagents.
+//obj/item/integrated_circuit/reagent/proc/inject_tray(obj/machinery/hydroponics/tray, atom/movable/source, amount)
+	//var/atom/movable/acting_object = get_object()
+	//var/list/trays = list(tray)
+	//var/visi_msg = "[acting_object] transfers fluid into [tray]"
 
-	if(amount > 30 && source.reagents.total_volume >= 30 && tray.using_irrigation)
-		trays = tray.FindConnected()
-		if (trays.len > 1)
-			visi_msg += ", setting off the irrigation system"
+	//acting_object.visible_message("<span class='notice'>[visi_msg].</span>")
+	//playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 
-	acting_object.visible_message("<span class='notice'>[visi_msg].</span>")
-	playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
+	//var/split = round(amount/trays.len)
 
-	var/split = round(amount/trays.len)
+	//for(var/obj/machinery/hydroponics/H in trays)
+		//var/datum/reagents/temp_reagents = new /datum/reagents()
+		//temp_reagents.my_atom = H
 
-	for(var/obj/machinery/hydroponics/H in trays)
-		var/datum/reagents/temp_reagents = new /datum/reagents()
-		temp_reagents.my_atom = H
+		//source.reagents.trans_to(temp_reagents, split)
+		//H.on_hydroponics_apply(temp_reagents)
 
-		source.reagents.trans_to(temp_reagents, split)
-		H.applyChemicals(temp_reagents)
-
-		temp_reagents.clear_reagents()
-		qdel(temp_reagents)
+		//temp_reagents.clear_reagents()
+		//qdel(temp_reagents)
 
 /obj/item/integrated_circuit/reagent/injector
 	name = "integrated hypo-injector"
@@ -51,7 +47,6 @@
 	extended_desc = "This autoinjector can push up to 30 units of reagents into another container or someone else outside of the machine. The target \
 	must be adjacent to the machine, and if it is a person, they cannot be wearing thick clothing. Negative given amounts makes the injector suck out reagents instead."
 
-	container_type = OPENCONTAINER
 	volume = 30
 
 	complexity = 20
@@ -65,7 +60,7 @@
 		)
 	outputs = list(
 		"volume used" = IC_PINTYPE_NUMBER,
-		"self reference" = IC_PINTYPE_REF
+		"self reference" = IC_PINTYPE_SELFREF
 		)
 	activators = list(
 		"inject" = IC_PINTYPE_PULSE_IN,
@@ -80,6 +75,10 @@
 	var/transfer_amount = 10
 	var/busy = FALSE
 
+/obj/item/integrated_circuit/reagent/injector/Initialize()
+	. = ..()
+	ENABLE_BITFIELD(reagents.reagents_holder_flags, OPENCONTAINER)
+
 /obj/item/integrated_circuit/reagent/injector/on_reagent_change(changetype)
 	push_vol()
 
@@ -91,7 +90,7 @@
 	else
 		direction_mode = SYRINGE_INJECT
 	if(isnum(new_amount))
-		new_amount = CLAMP(new_amount, 0, volume)
+		new_amount = clamp(new_amount, 0, volume)
 		transfer_amount = new_amount
 
 
@@ -113,10 +112,10 @@
 		return
 
 	if(!AM.reagents)
-		if(istype(AM, /obj/machinery/hydroponics) && direction_mode == SYRINGE_INJECT && reagents.total_volume && transfer_amount)//injection into tray.
-			inject_tray(AM, src, transfer_amount)
-			activate_pin(2)
-			return
+		//if(istype(AM, /obj/machinery/hydroponics) && direction_mode == SYRINGE_INJECT && reagents.total_volume && transfer_amount)//injection into tray.
+			//inject_tray(AM, src, transfer_amount)
+			//activate_pin(2)
+			//return
 		activate_pin(3)
 		return
 
@@ -133,7 +132,7 @@
 
 			//Always log attemped injections for admins
 			var/contained = reagents.log_list()
-			add_logs(src, L, "attemped to inject", addition="which had [contained]")
+			log_combat(src, L, "attempted to inject", addition="which had [contained]")
 			L.visible_message("<span class='danger'>[acting_object] is trying to inject [L]!</span>", \
 								"<span class='userdanger'>[acting_object] is trying to inject you!</span>")
 			busy = TRUE
@@ -141,7 +140,7 @@
 				var/fraction = min(transfer_amount/reagents.total_volume, 1)
 				reagents.reaction(L, INJECT, fraction)
 				reagents.trans_to(L, transfer_amount)
-				add_logs(src, L, "injected", addition="which had [contained]")
+				log_combat(src, L, "injected", addition="which had [contained]")
 				L.visible_message("<span class='danger'>[acting_object] injects [L] with its needle!</span>", \
 									"<span class='userdanger'>[acting_object] injects you with its needle!</span>")
 			else
@@ -219,7 +218,7 @@
 	else
 		direction_mode = SYRINGE_INJECT
 	if(isnum(new_amount))
-		new_amount = CLAMP(new_amount, 0, 50)
+		new_amount = clamp(new_amount, 0, 50)
 		transfer_amount = new_amount
 
 /obj/item/integrated_circuit/reagent/pump/do_work()
@@ -239,13 +238,14 @@
 	if(!source.reagents)
 		return
 
-	if(!target.reagents)
+	//if(!target.reagents)
 		// Hydroponics trays have no reagents holder and handle reagents in their own snowflakey way.
 		// This is a dirty hack to make injecting reagents into them work.
-		if(istype(target, /obj/machinery/hydroponics) && source.reagents.total_volume)
-			inject_tray(target, source, transfer_amount)
-			activate_pin(2)
-		return
+		//Someone should redo this. Trays should hold reagents now.
+		//if(istype(target, /obj/machinery/hydroponics) && source.reagents.total_volume)
+			//inject_tray(target, source, transfer_amount)
+			//activate_pin(2)
+		//return
 
 	if(!source.is_drainable() || !target.is_refillable())
 		return
@@ -260,19 +260,20 @@
 	icon_state = "reagent_storage"
 	extended_desc = "This is effectively an internal beaker."
 
-	container_type = OPENCONTAINER
 	volume = 60
 
 	complexity = 4
 	inputs = list()
 	outputs = list(
 		"volume used" = IC_PINTYPE_NUMBER,
-		"self reference" = IC_PINTYPE_REF
+		"self reference" = IC_PINTYPE_SELFREF
 		)
 	activators = list("push ref" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-
+/obj/item/integrated_circuit/reagent/storage/Initialize()
+	. = ..()
+	ENABLE_BITFIELD(reagents.reagents_holder_flags, OPENCONTAINER)
 
 /obj/item/integrated_circuit/reagent/storage/do_work()
 	set_pin_data(IC_OUTPUT, 2, WEAKREF(src))
@@ -291,10 +292,18 @@
 	complexity = 16
 	spawn_flags = IC_SPAWN_RESEARCH
 
+/obj/item/integrated_circuit/reagent/storage/cryo
+	name = "cryo reagent storage"
+	desc = "Stores liquid inside the device away from electrical components. It can store up to 60u. This will also prevent reactions."
+	icon_state = "reagent_storage_cryo"
+	extended_desc = "This is effectively an internal cryo beaker."
+
+	complexity = 8
+	spawn_flags = IC_SPAWN_RESEARCH
 
 /obj/item/integrated_circuit/reagent/storage/cryo/Initialize()
 	. = ..()
-	reagents.set_reacting(FALSE)
+	ENABLE_BITFIELD(reagents.reagents_holder_flags, NO_REACT)
 
 /obj/item/integrated_circuit/reagent/storage/grinder
 	name = "reagent grinder"
@@ -306,7 +315,7 @@
 		)
 	outputs = list(
 		"volume used" = IC_PINTYPE_NUMBER,
-		"self reference" = IC_PINTYPE_REF
+		"self reference" = IC_PINTYPE_SELFREF
 		)
 	activators = list(
 		"grind" = IC_PINTYPE_PULSE_IN,
@@ -353,7 +362,7 @@
 		)
 	outputs = list(
 		"volume used" = IC_PINTYPE_NUMBER,
-		"self reference" = IC_PINTYPE_REF
+		"self reference" = IC_PINTYPE_SELFREF
 		)
 	activators = list(
 		"juice" = IC_PINTYPE_PULSE_IN,
@@ -398,7 +407,7 @@
 	complexity = 8
 	outputs = list(
 		"volume used" = IC_PINTYPE_NUMBER,
-		"self reference" = IC_PINTYPE_REF,
+		"self reference" = IC_PINTYPE_SELFREF,
 		"list of reagents" = IC_PINTYPE_LIST
 		)
 	activators = list(
@@ -412,7 +421,7 @@
 		if(1)
 			var/cont[0]
 			for(var/datum/reagent/RE in reagents.reagent_list)
-				cont += RE.id
+				cont += RE.type
 			set_pin_data(IC_OUTPUT, 3, cont)
 			push_data()
 		if(2)
@@ -456,7 +465,7 @@
 	else
 		direction_mode = SYRINGE_INJECT
 	if(isnum(new_amount))
-		new_amount = CLAMP(new_amount, 0, 50)
+		new_amount = clamp(new_amount, 0, 50)
 		transfer_amount = new_amount
 
 /obj/item/integrated_circuit/reagent/filter/do_work()
@@ -480,11 +489,11 @@
 
 	for(var/datum/reagent/G in source.reagents.reagent_list)
 		if(!direction_mode)
-			if(G.id in demand)
-				source.reagents.trans_id_to(target, G.id, transfer_amount)
+			if(G.type in demand)
+				source.reagents.trans_id_to(target, G.type, transfer_amount)
 		else
-			if(!(G.id in demand))
-				source.reagents.trans_id_to(target, G.id, transfer_amount)
+			if(!(G.type in demand))
+				source.reagents.trans_id_to(target, G.type, transfer_amount)
 	activate_pin(2)
 	push_data()
 
@@ -493,16 +502,17 @@
 	desc = "Stores liquid inside the device away from electrical components. It can store up to 60u. It will heat or cool the reagents \
 	to the target temperature when turned on."
 	icon_state = "heater"
-	container_type = OPENCONTAINER
 	complexity = 8
 	inputs = list(
 		"target temperature" = IC_PINTYPE_NUMBER,
 		"on" = IC_PINTYPE_BOOLEAN
 		)
 	inputs_default = list("1" = 300)
-	outputs = list("volume used" = IC_PINTYPE_NUMBER,"self reference" = IC_PINTYPE_REF,"temperature" = IC_PINTYPE_NUMBER)
+	outputs = list("volume used" = IC_PINTYPE_NUMBER,"self reference" = IC_PINTYPE_SELFREF,"temperature" = IC_PINTYPE_NUMBER)
 	spawn_flags = IC_SPAWN_RESEARCH
 	var/heater_coefficient = 0.1
+	var/max_temp = 1000
+	var/min_temp = 2.7
 
 /obj/item/integrated_circuit/reagent/storage/heater/on_data_written()
 	if(get_pin_data(IC_INPUT, 2))
@@ -520,7 +530,7 @@
 
 /obj/item/integrated_circuit/reagent/storage/heater/process()
 	if(power_draw_idle)
-		var/target_temperature = get_pin_data(IC_INPUT, 1)
+		var/target_temperature = clamp(get_pin_data(IC_INPUT, 1), min_temp, max_temp)
 		if(reagents.chem_temp > target_temperature)
 			reagents.chem_temp += min(-1, (target_temperature - reagents.chem_temp) * heater_coefficient)
 		if(reagents.chem_temp < target_temperature)
@@ -530,3 +540,258 @@
 		reagents.handle_reactions()
 		set_pin_data(IC_OUTPUT, 3, reagents.chem_temp)
 		push_data()
+
+
+//Hippie Ported Code--------------------------------------------------------------------------------------------------------
+
+
+/obj/item/integrated_circuit/reagent/smoke
+	name = "smoke generator"
+	desc = "Unlike most electronics, creating smoke is completely intentional."
+	icon_state = "smoke"
+	extended_desc = "This smoke generator creates clouds of smoke on command. It can also hold liquids inside, which will go \
+	into the smoke clouds when activated. The reagents are consumed when the smoke is made. Requires at least 10 units of reagents to generate smoke."
+	ext_cooldown = 1
+
+	volume = 100
+
+	complexity = 20
+	cooldown_per_use = 1 SECONDS
+	inputs = list()
+	outputs = list(
+		"volume used" = IC_PINTYPE_NUMBER,
+		"self reference" = IC_PINTYPE_SELFREF
+		)
+	activators = list(
+		"create smoke" = IC_PINTYPE_PULSE_IN,
+		"on smoked" = IC_PINTYPE_PULSE_OUT,
+		"push ref" = IC_PINTYPE_PULSE_IN
+		)
+	spawn_flags = IC_SPAWN_RESEARCH
+	power_draw_per_use = 20
+	var/smoke_radius = 5
+	var/notified = FALSE
+
+/obj/item/integrated_circuit/reagent/smoke/Initialize()
+	. = ..()
+	ENABLE_BITFIELD(reagents.reagents_holder_flags, OPENCONTAINER)
+
+/obj/item/integrated_circuit/reagent/smoke/on_reagent_change(changetype)
+	//reset warning only if we have reagents now
+	if(changetype == ADD_REAGENT)
+		notified = FALSE
+	push_vol()
+
+/obj/item/integrated_circuit/reagent/smoke/do_work(ord)
+	switch(ord)
+		if(1)
+			if(!reagents || (reagents.total_volume < IC_SMOKE_REAGENTS_MINIMUM_UNITS))
+				return
+			var/location = get_turf(src)
+			var/datum/effect_system/smoke_spread/chem/S = new
+			S.attach(location)
+			playsound(location, 'sound/effects/smoke.ogg', 50, 1, -3)
+			if(S)
+				S.set_up(reagents, smoke_radius, location, notified)
+				if(!notified)
+					notified = TRUE
+				S.start()
+			reagents.clear_reagents()
+			activate_pin(2)
+		if(3)
+			set_pin_data(IC_OUTPUT, 2, WEAKREF(src))
+			push_data()
+
+// - Integrated extinguisher - //
+/obj/item/integrated_circuit/reagent/extinguisher
+	name = "integrated extinguisher"
+	desc = "This circuit sprays any of its contents out like an extinguisher."
+	icon_state = "injector"
+	extended_desc = "This circuit can hold up to 30 units of any given chemicals. On each use, it sprays these reagents like a fire extinguisher. Requires at least 10 units of reagents to work."
+
+	volume = 30
+
+	complexity = 20
+	cooldown_per_use = 6 SECONDS
+	inputs = list(
+		"target X rel" = IC_PINTYPE_NUMBER,
+		"target Y rel" = IC_PINTYPE_NUMBER
+		)
+	outputs = list(
+		"volume" = IC_PINTYPE_NUMBER,
+		"self reference" = IC_PINTYPE_SELFREF
+		)
+	activators = list(
+		"spray" = IC_PINTYPE_PULSE_IN,
+		"on sprayed" = IC_PINTYPE_PULSE_OUT,
+		"on fail" = IC_PINTYPE_PULSE_OUT
+		)
+	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
+	power_draw_per_use = 15
+	var/busy = FALSE
+
+/obj/item/integrated_circuit/reagent/extinguisher/Initialize()
+	.=..()
+	ENABLE_BITFIELD(reagents.reagents_holder_flags, OPENCONTAINER)
+	set_pin_data(IC_OUTPUT,2, src)
+
+/obj/item/integrated_circuit/reagent/extinguisher/on_reagent_change(changetype)
+	push_vol()
+
+/obj/item/integrated_circuit/reagent/extinguisher/do_work()
+	//Check if enough volume
+	set_pin_data(IC_OUTPUT, 1, reagents.total_volume)
+	if(!reagents || reagents.total_volume < IC_SMOKE_REAGENTS_MINIMUM_UNITS || busy)
+		push_data()
+		activate_pin(3)
+		return
+
+	playsound(loc, 'sound/effects/extinguish.ogg', 75, 1, -3)
+	//Get the tile on which the water particle spawns
+	var/turf/Spawnpoint = get_turf(src)
+	if(!Spawnpoint)
+		push_data()
+		activate_pin(3)
+		return
+
+	//Get direction and target turf for each water particle
+	var/turf/T = locate(Spawnpoint.x + get_pin_data(IC_INPUT, 1),Spawnpoint.y + get_pin_data(IC_INPUT, 2),Spawnpoint.z)
+	if(!T)
+		push_data()
+		activate_pin(3)
+		return
+	var/direction = get_dir(Spawnpoint, T)
+	var/turf/T1 = get_step(T,turn(direction, 90))
+	var/turf/T2 = get_step(T,turn(direction, -90))
+	var/list/the_targets = list(T,T1,T2)
+	busy = TRUE
+
+	// Create list with particles and their targets
+	var/list/water_particles=list()
+	for(var/a=0, a<5, a++)
+		var/obj/effect/particle_effect/water/W = new /obj/effect/particle_effect/water(get_turf(src))
+		water_particles[W] = pick(the_targets)
+		var/datum/reagents/R = new/datum/reagents(5)
+		W.reagents = R
+		R.my_atom = W
+		reagents.trans_to(W,1)
+
+	//Make em move dat ass, hun
+	addtimer(CALLBACK(src, /obj/item/integrated_circuit/reagent/extinguisher/proc/move_particles, water_particles), 2)
+
+//This whole proc is a loop
+/obj/item/integrated_circuit/reagent/extinguisher/proc/move_particles(var/list/particles, var/repetitions=0)
+	//Check if there's anything in here first
+	if(!particles || particles.len == 0)
+		return
+	// Second loop: Get all the water particles and make them move to their target
+	for(var/obj/effect/particle_effect/water/W in particles)
+		var/turf/my_target = particles[W]
+		if(!W)
+			continue
+		step_towards(W,my_target)
+		if(!W.reagents)
+			continue
+		W.reagents.reaction(get_turf(W))
+		for(var/A in get_turf(W))
+			W.reagents.reaction(A)
+		if(W.loc == my_target)
+			break
+	if(repetitions < 4)
+		repetitions++	//Can't have math operations in addtimer(CALLBACK())
+		addtimer(CALLBACK(src, /obj/item/integrated_circuit/reagent/extinguisher/proc/move_particles, particles, repetitions), 2)
+	else
+		push_data()
+		activate_pin(2)
+		busy = FALSE
+
+// - Beaker Connector - //
+/obj/item/integrated_circuit/input/beaker_connector
+	category_text = "Reagent"
+	cooldown_per_use = 1
+	name = "beaker slot"
+	desc = "Lets you add a beaker to your assembly and remove it even when the assembly is closed."
+	icon_state = "reagent_storage"
+	extended_desc = "It can help you extract reagents easier."
+	complexity = 4
+
+	inputs = list()
+	outputs = list(
+		"volume used" = IC_PINTYPE_NUMBER,
+		"current beaker" = IC_PINTYPE_REF
+		)
+	activators = list(
+		"on insert" = IC_PINTYPE_PULSE_OUT,
+		"on remove" = IC_PINTYPE_PULSE_OUT,
+		"push ref" = IC_PINTYPE_PULSE_OUT
+		)
+
+	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
+	can_be_asked_input = TRUE
+	demands_object_input = TRUE
+	can_input_object_when_closed = TRUE
+
+	var/obj/item/reagent_containers/glass/beaker/current_beaker
+
+
+/obj/item/integrated_circuit/input/beaker_connector/attackby(var/obj/item/reagent_containers/I, var/mob/living/user)
+	//Check if it truly is a reagent container
+	if(!istype(I,/obj/item/reagent_containers/glass/beaker))
+		to_chat(user,"<span class='warning'>The [I.name] doesn't seem to fit in here.</span>")
+		return
+
+	//Check if there is no other beaker already inside
+	if(current_beaker)
+		to_chat(user,"<span class='notice'>There is already a reagent container inside.</span>")
+		return
+
+	//The current beaker is the one we just attached, its location is inside the circuit
+	current_beaker = I
+	user.transferItemToLoc(I,src)
+
+	to_chat(user,"<span class='warning'>You put the [I.name] inside the beaker connector.</span>")
+
+	//Set the pin to a weak reference of the current beaker
+	push_vol()
+	set_pin_data(IC_OUTPUT, 2, WEAKREF(current_beaker))
+	push_data()
+	activate_pin(1)
+	activate_pin(3)
+
+
+/obj/item/integrated_circuit/input/beaker_connector/ask_for_input(mob/user)
+	attack_self(user)
+
+
+/obj/item/integrated_circuit/input/beaker_connector/attack_self(mob/user)
+	//Check if no beaker attached
+	if(!current_beaker)
+		to_chat(user, "<span class='notice'>There is currently no beaker attached.</span>")
+		return
+
+	//Remove beaker and put in user's hands/location
+	to_chat(user, "<span class='notice'>You take [current_beaker] out of the beaker connector.</span>")
+	user.put_in_hands(current_beaker)
+	current_beaker = null
+	//Remove beaker reference
+	push_vol()
+	set_pin_data(IC_OUTPUT, 2, null)
+	push_data()
+	activate_pin(2)
+	activate_pin(3)
+
+
+/obj/item/integrated_circuit/input/beaker_connector/proc/push_vol()
+	var/beakerVolume = 0
+	if(current_beaker)
+		beakerVolume = current_beaker.reagents.total_volume
+
+	set_pin_data(IC_OUTPUT, 1, beakerVolume)
+	push_data()
+
+
+/obj/item/reagent_containers/glass/beaker/on_reagent_change()
+	..()
+	if(istype(loc,/obj/item/integrated_circuit/input/beaker_connector))
+		var/obj/item/integrated_circuit/input/beaker_connector/current_circuit = loc
+		current_circuit.push_vol()
