@@ -229,7 +229,7 @@
 		to_chat(user, "<span class ='warning'>You extend the baton.</span>")
 		w_class = WEIGHT_CLASS_BULKY //doesnt fit in backpack when its on for balance
 		force = 10 //stunbaton damage
-		stunforce = 200
+		stunforce = 120
 		hitcost = 1500
 		attack_verb = list("smacked", "struck", "cracked", "beaten")
 		item_state = "baton"
