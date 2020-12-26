@@ -159,6 +159,12 @@
 	if(.)
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
+	if(istype(user, /mob/living/simple_animal))
+		var/mob/living/simple_animal/M = user
+		if(((M.environment_smash & ENVIRONMENT_SMASH_WALLS) || (M.environment_smash & ENVIRONMENT_SMASH_RWALLS)) && user.a_intent != INTENT_HELP)
+			playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
+			dismantle_wall(1)
+			return
 	to_chat(user, "<span class='notice'>You push the wall but nothing happens!</span>")
 	playsound(src, 'sound/weapons/genhit.ogg', 25, 1)
 	add_fingerprint(user)
