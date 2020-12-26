@@ -516,11 +516,11 @@
 	export_price = 5000
 
 /datum/techweb_node/plasma_weapons
-	id = "plasma_weapons"
+	id = "plasma_weapons_mk2"
 	display_name = "Advanced Plasma Weapons"
 	description = "Weapons using plasma technology"
 	prereq_ids = list("electronic_weapons_mk2", "electronic_weapons")
-	design_ids = list("ew_plasma", "ew_strong_emitter", "ew_stream_fast")
+	design_ids = list("ew_plasma", "ew_strong_emitter", "ew_stream_fast", "ew_frame_hqrifle")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 /*

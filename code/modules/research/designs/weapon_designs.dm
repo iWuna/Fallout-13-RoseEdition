@@ -94,7 +94,7 @@
 	id = "advw_capacitor"
 	build_type = PROTOLATHE
 	materials = list(MAT_SILVER = 600, MAT_DIAMOND = 2600, MAT_SILVER = 3200)
-	build_path = /obj/item/advanced_crafting_components/flux
+	build_path = /obj/item/advanced_crafting_components/conductors
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -202,7 +202,7 @@
 /datum/design/ew_stream_fast
 	name = "Fast Dual Stream"
 	desc = "Energy Stream Adapter"
-	id = "ew_stream_dual"
+	id = "ew_stream_fast"
 	build_type = PROTOLATHE
 	materials = list(MAT_GLASS = 4000, MAT_GOLD = 4400, MAT_DIAMOND = 2500, MAT_URANIUM = 4500)
 	build_path = /obj/item/prefabs/complex/eburst/fast
@@ -284,7 +284,7 @@
 
 
 /datum/design/ew_frame_hqrifle
-	name = "Advanced Rifle Frame"
+	name = "Advanced Energy Rifle Frame"
 	desc = "An unfinished energy gun."
 	id = "ew_frame_hqrifle"
 	build_type = PROTOLATHE
