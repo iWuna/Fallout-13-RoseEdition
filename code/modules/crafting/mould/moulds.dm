@@ -81,6 +81,12 @@
 	sheet_amount = 4
 	mould_sheet_type = /obj/item/stack/sheet/plasteel
 
+/obj/item/prefabs/mould/assembly
+	name = "Weapon Assembly Mould"
+	item_path = /obj/item/advanced_crafting_components/assembly
+	sheet_amount = 2
+	mould_sheet_type = /obj/item/stack/crafting/goodparts
+
 // Loader
 
 /obj/item/prefabs/mould/m10mm
@@ -131,17 +137,17 @@
 
 /obj/item/prefabs/mould/tommygunm45
 	name = ".45 Extended Magazine Loader Mould"
-	item_path = /obj/item/ammo_box/magazine/tommygunm45
+	item_path = /obj/item/prefabs/complex/ammo_loader/m45mmext
 	sheet_amount = 6
 
 /obj/item/prefabs/mould/a50
-	name = ".45 Extended Magazine Loader Mould"
-	item_path = /obj/item/ammo_box/magazine/a50
+	name = "handgun magazine (.50 AE)"
+	item_path = /obj/item/prefabs/complex/ammo_loader/m50AE
 	sheet_amount = 8
 
 /obj/item/prefabs/mould/d12g
 	name = "12g Drum Magazine Loader Mould"
-	item_path = /obj/item/ammo_box/magazine/d12g
+	item_path = /obj/item/prefabs/complex/ammo_loader/m12g
 	sheet_amount = 10
 
 /obj/item/prefabs/mould/tube4570
@@ -151,17 +157,17 @@
 
 /obj/item/prefabs/mould/tube44
 	name = ".44 Internal Magazine Loader Mould"
-	item_path = /obj/item/ammo_box/magazine/internal/shot/tube44
+	item_path = /obj/item/prefabs/complex/ammo_loader/m44
 	sheet_amount = 4
 
 /obj/item/prefabs/mould/tube357
 	name = ".357 Internal Magazine Loader Mould"
-	item_path = /obj/item/ammo_box/magazine/internal/shot/tube357
+	item_path = /obj/item/prefabs/complex/ammo_loader/m357
 	sheet_amount = 2
 
 /obj/item/prefabs/mould/antimateriel
 	name = ".50MG Internal Magazine Loader Mould"
-	item_path = /obj/item/ammo_box/magazine/internal/boltaction/antimateriel
+	item_path = /obj/item/prefabs/complex/ammo_loader/m50MG
 	sheet_amount = 20
 
 // Bolt
@@ -218,3 +224,10 @@
 	name = "Screw Mould"
 	item_path = /obj/item/prefabs/complex/screw
 	sheet_amount = 1
+
+
+/obj/item/prefabs/mould/receiver
+	name = "Receiver Mould"
+	item_path = /obj/item/advanced_crafting_components/receiver
+	mould_sheet_type = /obj/item/stack/crafting/goodparts
+	sheet_amount = 2

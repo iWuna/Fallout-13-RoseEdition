@@ -34,3 +34,11 @@
 	category = CAT_MOULD
 	subcategory = CAT_MOULD_FRAME
 
+/datum/crafting_recipe/mould/assembly
+	result = /obj/item/prefabs/mould/assembly
+	name = "Weapon Assembly Mould"
+	tools = list(TOOL_FORGE, TOOL_GUNTIER4)
+	traits = list(TRAIT_GUNSMITH_FOUR, TRAIT_MASTER_GUNSMITH)
+	time = 30
+	category = CAT_MOULD
+	subcategory = CAT_MOULD_FRAME
