@@ -1212,6 +1212,9 @@
 /mob/living/carbon/human/species/ghoul
 	race = /datum/species/ghoul
 
+/mob/living/carbon/human/species/strigoi
+	race = /datum/species/strigoi
+
 mob/living/carbon/human/species/supermutant
 	race = /datum/species/supermutant
 

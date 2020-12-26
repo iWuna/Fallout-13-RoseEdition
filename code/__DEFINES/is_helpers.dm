@@ -61,6 +61,7 @@
 #define ishumanbasic(A) (is_species(A, /datum/species/human))
 //f13 edit
 #define isghoul(A) (is_species(A, /datum/species/ghoul))
+#define isstrigoi(A) (is_species(A, /datum/species/strigoi))
 
 //why arent catpeople a subspecies
 #define iscatperson(A) (ishumanbasic(A) && ( A.dna.features["ears"] == "Cat" || A.dna.features["tail_human"] == "Cat") )
