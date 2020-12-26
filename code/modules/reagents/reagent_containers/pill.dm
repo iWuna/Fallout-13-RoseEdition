@@ -181,3 +181,9 @@
 	desc = "A pill that stabilizes radiation levels and treats small amounts of toxin damage."
 	icon_state = "pill18"
 	list_reagents = list("radx" = 20)
+
+/obj/item/reagent_containers/pill/strigoi_donate
+	name = "Mutation pill"
+	desc = "Таблетка содержащая токсин, инициирующий процесс мутации."
+	icon_state = "pill18"
+	list_reagents = list("strigoimutationtoxin" = 5)

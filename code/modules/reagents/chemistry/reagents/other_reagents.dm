@@ -431,6 +431,13 @@
 	race = /datum/species/android
 	mutationtext = "<span class='danger'>The pain subsides. You feel... artificial.</span>"
 
+/datum/reagent/mutationtoxin/strigoi
+	name = "Vampire Mutation Toxin"
+	id = "strigoimutationtoxin"
+	description = "A Vampirezing toxin."
+	color = "#5EFF3B" //RGB: 94, 255, 59
+	race = /datum/species/strigoi
+	mutationtext = "<span class='danger'>The pain subsides. You feel... thirsty for blood.</span>"
 
 //BLACKLISTED RACES
 /datum/reagent/mutationtoxin/skeleton
