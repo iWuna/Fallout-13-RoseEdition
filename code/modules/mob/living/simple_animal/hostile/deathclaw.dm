@@ -56,6 +56,10 @@
 	environment_smash = 2 //can smash walls
 	wander = 0
 	anchored = FALSE
+	dextrous = TRUE
+	held_items = list(null, null)
+	mob_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
+	possible_a_intents = list(INTENT_HELP, INTENT_GRAB, INTENT_DISARM, INTENT_HARM)
 
 /mob/living/simple_animal/hostile/deathclaw/playable/cloak
 	icon = 'icons/fallout/mobs/deathclaw_playable.dmi'
