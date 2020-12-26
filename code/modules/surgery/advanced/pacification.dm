@@ -16,11 +16,14 @@
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = 0
 
-/datum/surgery/advanced/pacify/can_start(mob/user, mob/living/carbon/target)
+/datum/surgery/advanced/pacify/can_start(mob/living/carbon/user, mob/living/carbon/target)
 	. = ..()
+	if(!..() && !user.has_trait(TRAIT_ADVANCED_SURGEON))
+		return FALSE
 	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)
 	if(!B)
 		return FALSE
+	return TRUE
 
 /datum/surgery_step/pacify
 	name = "rewire brain"

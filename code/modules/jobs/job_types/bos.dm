@@ -790,6 +790,7 @@ Initiate
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/book/granter/trait/chemistry=1,
+		/obj/item/book/granter/trait/field_surgery,
 		/obj/item/clothing/accessory/bos/initiateS=1
 		)
 

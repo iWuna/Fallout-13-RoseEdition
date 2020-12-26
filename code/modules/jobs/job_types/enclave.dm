@@ -106,7 +106,11 @@ Medic
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	back = /obj/item/storage/backpack/duffelbag/med/surgery
 	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 1, /obj/item/stock_parts/cell/ammo/ec = 2, /obj/item/clothing/mask/surgical = 1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 1,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/clothing/mask/surgical = 1,
+		/obj/item/book/granter/trait/field_surgery = 1, 
+		  )
 
 /datum/outfit/loadout/enclave_medic_3
 	name = "Enclave Chemist"
@@ -116,7 +120,10 @@ Medic
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	back = /obj/item/storage/backpack/satchel/med
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/ec = 2, /obj/item/book/granter/trait/chemistry = 1, /obj/item/storage/box/beakers = 1)
+		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/book/granter/trait/chemistry = 1, 
+		/obj/item/storage/box/beakers = 1
+		)
 
 /*
 HEAVY!

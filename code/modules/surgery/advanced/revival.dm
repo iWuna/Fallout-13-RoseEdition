@@ -18,13 +18,11 @@
 	requires_bodypart_type = 0
 
 /datum/surgery/advanced/revival/can_start(mob/living/carbon/user, mob/living/carbon/target)
-	if(!..())
+	if(!..() && !user.has_trait(TRAIT_MEDICALEXPERT))
 		return FALSE
 	if(target.stat != DEAD)
 		return FALSE
 	if(target.suiciding || target.has_trait(TRAIT_NOCLONE) || target.hellbound)
-		return FALSE
-	if(!user.has_trait(TRAIT_MEDICALEXPERT))
 		return FALSE
 	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)
 	if(!B)

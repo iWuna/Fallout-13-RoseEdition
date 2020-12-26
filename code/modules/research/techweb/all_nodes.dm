@@ -484,17 +484,44 @@
 	display_name = "Advanced Weapon Development Technology"
 	description = "Our weapons are breaking the rules of reality by now."
 	prereq_ids = list("adv_engi", "weaponry")
-	design_ids = list("pin_loyalty", "ecp")
+	design_ids = list("pin_loyalty", "ecp", "advw_capacitor", "advw_flux", "advw_lense", "advw_alloys")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
 
 /datum/techweb_node/electric_weapons
 	id = "electronic_weapons"
-	display_name = "Electric Weapons"
+	display_name = "Energy Weapons"
 	description = "Weapons using electric technology"
 	prereq_ids = list("weaponry", "adv_power", "emp_basic")
-	design_ids = list("stunrevolver")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	design_ids = list("stunrevolver", "ew_frame", "ew_frame_pistol", "ew_adapter_EC", "ew_weak_emitter", "ew_emitter", "ew_stream", "ew_stream_dual")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 12500)
+	export_price = 10000
+
+/datum/techweb_node/electric_weapons_mk2
+	id = "electronic_weapons_mk2"
+	display_name = "Advanced Energy Weapons"
+	description = "Weapons using electric technology"
+	prereq_ids = list("electronic_weapons")
+	design_ids = list("ew_scatter_emitter", "ew_frame_rifle", "ew_adapter_MFC")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 5000
+
+/datum/techweb_node/plasma_weapons
+	id = "plasma_weapons"
+	display_name = "Plasma Weapons"
+	description = "Weapons using plasma technology"
+	prereq_ids = list("electronic_weapons_mk2", "electronic_weapons")
+	design_ids = list("ew_adapter_ECP", "ew_weak_plasma", "ew_stream_triple")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	export_price = 5000
+
+/datum/techweb_node/plasma_weapons
+	id = "plasma_weapons_mk2"
+	display_name = "Advanced Plasma Weapons"
+	description = "Weapons using plasma technology"
+	prereq_ids = list("electronic_weapons_mk2", "electronic_weapons")
+	design_ids = list("ew_plasma", "ew_strong_emitter", "ew_stream_fast", "ew_frame_hqrifle")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 /*
 /datum/techweb_node/medical_weapons

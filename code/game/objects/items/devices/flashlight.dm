@@ -26,6 +26,12 @@
 	. = ..()
 	update_brightness()
 
+/obj/item/flashlight/proc/toggle()
+	if (on)
+		playsound(src, 'sound/items/flashlight_off.ogg', 25, 1)
+	else
+		playsound(src, 'sound/items/flashlight_on.ogg', 25, 1) 
+
 /obj/item/flashlight/proc/update_brightness(mob/user)
 	if(on)
 		icon_state = "[initial(icon_state)]-on"
@@ -37,6 +43,7 @@
 
 /obj/item/flashlight/attack_self(mob/user)
 	on = !on
+	toggle()
 	update_brightness(user)
 	for(var/X in actions)
 		var/datum/action/A = X
@@ -292,6 +299,9 @@
 	else
 		update_brightness(null)
 
+/obj/item/flashlight/flare/toggle()
+	//empty
+
 /obj/item/flashlight/flare/update_brightness(mob/user = null)
 	..()
 	if(on)
@@ -369,6 +379,9 @@
 	light_range = 6			// luminosity when on
 	light_system = MOVABLE_LIGHT
 
+
+/obj/item/flashlight/lantern/toggle()
+	//empty
 
 /obj/item/flashlight/slime
 	gender = PLURAL
@@ -485,6 +498,9 @@
 	else
 		icon_state = "glowstick"
 		cut_overlays()
+
+/obj/item/flashlight/glowstick/toggle()
+	//empty
 
 /obj/item/flashlight/glowstick/attack_self(mob/user)
 	if(!fuel)

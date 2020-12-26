@@ -109,6 +109,25 @@
 	attack_sound = 'sound/voice/liveagain.ogg'
 	butcher_results = list(/obj/effect/gibspawner/robot = 1)
 
+/mob/living/simple_animal/pet/dog/eyebot/attackby(obj/item/O, mob/user, params)
+	if(!istype(O, /obj/item/multitool))
+		return ..()
+	if(user.special_i < 5)
+		to_chat(user,"<span class='notice'>You are too stupid to understand how it works.")
+		return
+	var/action = input(user, "Select action", "Reprogram eyebot") in list("Wipe", "Update")
+	if (action == "Wipe")
+		speak = list()
+		playsound(src.loc, 'sound/machines/ping.ogg', 25, 0)
+		to_chat(user,"<span class='notice'>You clear eyebot's preinstalled slogans.")
+	else if (action == "Update")
+		var/value = input(user, "Add value", "Update eyebot program")
+		if(value)
+			speak += value
+			playsound(src.loc, 'sound/machines/ping.ogg', 25, 0)
+			to_chat(user,"<span class='notice'>You load new slogan into eyebot program.")
+	
+
 /mob/living/simple_animal/pet/dog/eyebot/playable
 	health = 200
 	maxHealth = 200

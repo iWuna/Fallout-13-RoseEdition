@@ -118,19 +118,32 @@
 	var/obj/item/prefabs/mould/mould = null
 	var/work_time = 20 //2 seconds
 
+/obj/machinery/workbench/fbench/examine(mob/user)
+	. = ..()
+	if (mould)
+		var/obj/item/stack/sheet/sheet = new mould.mould_sheet_type
+		to_chat(user, "There is [mould.name] installed.")
+		to_chat(user, "Recipe requires [mould.sheet_amount] [sheet.name].")
+	else
+		to_chat(user, "Mould slot is empty.")
+
 /obj/machinery/workbench/fbench/attackby(obj/item/W, mob/user, params)//todo me
 	var/mob/living/carbon/human/H = usr
 	if (istype(W, /obj/item/stack/sheet/prewar) && !H.has_trait(TRAIT_MASTER_GUNSMITH))
 		to_chat(usr,"You have no clue as to how to work this material.")
 		return
 	else if(istype(W, /obj/item/screwdriver) && mould)
+		playsound(src, 'sound/items/screwdriver2.ogg', 50, 0)
 		if(do_after(user,work_time,target = src))
+			playsound(src, 'sound/items/screwdriver.ogg', 50, 0)
 			mould.forceMove(get_turf(src))
 			mould = null
 			to_chat(user,"You remove the mould.")
 		return 1
 	else if(istype(W, /obj/item/prefabs/mould))
+		playsound(src, 'sound/items/screwdriver2.ogg', 50, 0)
 		if(do_after(user,work_time,target = src))
+			playsound(src, 'sound/items/screwdriver.ogg', 50, 0)
 			if(mould)
 				to_chat(user,"You remove the old mould.")
 				mould.forceMove(get_turf(src))

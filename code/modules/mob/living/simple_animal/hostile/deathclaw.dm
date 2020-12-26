@@ -56,6 +56,52 @@
 	environment_smash = 2 //can smash walls
 	wander = 0
 	anchored = FALSE
+	dextrous = TRUE
+	held_items = list(null, null)
+	mob_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
+	possible_a_intents = list(INTENT_HELP, INTENT_GRAB, INTENT_DISARM, INTENT_HARM)
+
+/mob/living/simple_animal/hostile/deathclaw/playable/cloak
+	icon = 'icons/fallout/mobs/deathclaw_playable.dmi'
+	icon_gib = "deathclaw_gib"
+	var/cloak_color = null
+	var/sitting = FALSE
+	var/lie = FALSE
+	
+
+/mob/living/simple_animal/hostile/deathclaw/playable/cloak/Initialize()
+	. = ..()
+	cloak_color = pick("pur", "red", "whi", "gry", "hub", "bro")
+	icon_dead = "dead_[cloak_color]"
+	icon_state = "deathclaw_[cloak_color]"
+
+/mob/living/simple_animal/hostile/deathclaw/playable/cloak/verb/sit()
+	set category = "IC"
+	set name = "* Sit"
+	
+	if(sitting)
+		icon_state = "deathclaw_[cloak_color]"
+		canmove = TRUE
+	else
+		canmove = FALSE
+		icon_state = "hide_[cloak_color]"
+	sitting = !sitting
+	lie = FALSE
+
+
+/mob/living/simple_animal/hostile/deathclaw/playable/cloak/verb/lay()
+	set category = "IC"
+	set name = "* Lay"
+	
+	if(lie)
+		icon_state = "deathclaw_[cloak_color]"
+		canmove = TRUE
+	else
+		icon_state = "lie_[cloak_color]"
+		canmove = FALSE
+	lie = !lie
+	sitting = FALSE
+
 
 /mob/living/simple_animal/hostile/deathclaw/mother
 	name = "mother deathclaw"
