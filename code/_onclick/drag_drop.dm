@@ -85,7 +85,14 @@
 	return
 
 /obj/item
+	var/snow = FALSE
 	var/canMouseDown = FALSE
+
+/obj/item/proc/snow_act()
+	return
+
+/obj/item/proc/heat_act()
+	return
 
 /obj/item/gun
 	var/automatic = 0 //can gun use it, 0 is no, anything above 0 is the delay between clicks in ds

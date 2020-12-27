@@ -4,7 +4,7 @@
 	probability = 7
 
 	telegraph_message = "<span class='userdanger'><i>Heat wave is coming to the area, increasing temperature of anyone caught outside.</i></span>"
-	telegraph_duration = 300
+	telegraph_duration = 10
 	telegraph_overlay = "light_ash"
 	telegraph_sound = 'sound/f13effects/sandstorm_warning.ogg'
 
@@ -24,7 +24,20 @@
 
 	barometer_predictable = TRUE
 
+	affects_turfs = TRUE
 	carbons_only = TRUE
 
 /datum/weather/heat_wave/weather_act(mob/living/L)
 	L.adjust_bodytemperature(rand(10, 20))
+
+/datum/weather/heat_wave/weather_act_turf(turf/T)
+	T.heat_act()
+	for(var/obj/structure/S in T.contents)
+		if(S.snow)
+			S.heat_act()
+	for(var/obj/machinery/M in T.contents)
+		if(M.snow)
+			M.heat_act()
+	for(var/obj/item/I in T.contents)
+		if(I.snow)
+			I.heat_act()

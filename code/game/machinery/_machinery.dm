@@ -73,6 +73,7 @@ Class Procs:
 	max_integrity = 200
 	drag_delay = 0.15 SECONDS
 	anchored = TRUE
+	var/snow = FALSE
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
 
 	var/stat = 0
@@ -96,6 +97,15 @@ Class Procs:
 	var/machine_tool_behaviour = NONE //can it be used as a tool in crafting?
 	var/barricade = TRUE //if true, acts as barricade
 	var/proj_pass_rate = 65 //percentage change for bullets to fly over, if barricade=1
+
+
+/obj/machinery/proc/snow_act()
+	return
+
+
+/obj/machinery/proc/heat_act()
+	return
+
 
 /obj/machinery/Initialize()
 	if(!armor)

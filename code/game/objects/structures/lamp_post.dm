@@ -18,6 +18,22 @@
 
 	pixel_x = -32
 
+/obj/structure/lamp_post/proc/snow_cover()
+	icon_state = "[initial(icon_state)]_snow"
+
+/obj/structure/lamp_post/proc/snow_melt()
+	icon_state = initial(icon_state)
+
+/obj/structure/lamp_post/snow_act()
+	if(!snow)
+		snow = !snow
+		addtimer(addtimer(CALLBACK(src, .proc/snow_cover), rand(0, 100)))
+
+/obj/structure/lamp_post/heat_act()
+	if(snow)
+		snow = !snow
+		addtimer(addtimer(CALLBACK(src, .proc/snow_melt), rand(0, 100)))
+
 /obj/structure/lamp_post/doubles
 	icon_state = "nvlamp-straight-doubles"
 
