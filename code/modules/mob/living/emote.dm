@@ -653,7 +653,7 @@
 				else
 					alert("Unable to use this emote, must be either hearable or visible.")
 					return
-			var/static/regex/slurs = regex("nigg|fag|tranny|dyke|kike|pedo|loli|shota", "i")
+			var/static/regex/slurs = regex("nigg|fag|tranny|dyke|kike|pedo|loli|shota|нигер|ниггер", "i")
 			if(findtext(custom_emote, slurs))
 				//to_chat(user, "<B>Slurs are not allowed on Desert Rose.</B>")
 				log_admin("[key_name(user)] has triggered the slur filter in IC (emote): [custom_emote]")
