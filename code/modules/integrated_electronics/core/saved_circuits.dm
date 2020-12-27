@@ -91,7 +91,7 @@
 /obj/item/integrated_circuit/proc/load(list/component_params)
 	// Load name
 	if(component_params["name"])
-		displayed_name = html_encode(component_params["name"])
+		displayed_name = component_params["name"]
 
 	// Load input values
 	if(component_params["inputs"])
@@ -104,7 +104,7 @@
 
 			var/datum/integrated_io/pin = inputs[index]
 			// The pins themselves validate the data.
-			pin.write_data_to_pin(istext(input_value)? html_encode(input_value) : input_value)
+			pin.write_data_to_pin(input_value)
 			// TODO: support for special input types, such as internal refs and maybe typepaths
 
 	if(!isnull(component_params["special"]))
@@ -124,7 +124,7 @@
 	// Save modified name
 	if(initial(name) != name)
 		assembly_params["name"] = name
-
+	
 	// Save modified description
 	if(initial(desc) != desc)
 		assembly_params["desc"] = desc
@@ -144,7 +144,7 @@
 		return "Bad assembly name."
 	if(assembly_params["desc"] && !reject_bad_text(assembly_params["desc"]))
 		return "Bad assembly description."
-	if(assembly_params["detail_color"] && !reject_bad_text(assembly_params["detail_color"], 7))
+	if(assembly_params["detail_color"] && !(assembly_params["detail_color"] in color_whitelist))
 		return "Bad assembly color."
 
 // Loads assembly parameters from a list
@@ -152,16 +152,18 @@
 /obj/item/electronic_assembly/proc/load(list/assembly_params)
 	// Load modified name, if any.
 	if(assembly_params["name"])
-		name = html_encode(assembly_params["name"])
-
+		name = assembly_params["name"]
+		
 	// Load modified description, if any.
 	if(assembly_params["desc"])
-		desc = html_encode(assembly_params["desc"])
+		desc = assembly_params["desc"]
 
 	if(assembly_params["detail_color"])
 		detail_color = assembly_params["detail_color"]
 
 	update_icon()
+
+
 
 // Attempts to save an assembly into a save file format.
 // Returns null if assembly is not complete enough to be saved.
@@ -258,7 +260,7 @@
 	blocks["max_space"] = assembly.max_components
 
 	// Start keeping track of total metal cost
-	blocks["metal_cost"] = assembly.custom_materials[SSmaterials.GetMaterialRef(/datum/material/iron)]
+	blocks["metal_cost"] = assembly.materials[MAT_METAL]
 
 
 	// Block 2. Components.
@@ -289,7 +291,7 @@
 		// Update estimated assembly complexity, taken space and material cost
 		blocks["complexity"] += component.complexity
 		blocks["used_space"] += component.size
-		blocks["metal_cost"] += component.custom_materials[SSmaterials.GetMaterialRef(/datum/material/iron)]
+		blocks["metal_cost"] += component.materials[MAT_METAL]
 
 		// Check if the assembly requires printer upgrades
 		if(!(component.spawn_flags & IC_SPAWN_DEFAULT))

@@ -71,7 +71,7 @@
 	var/result = null
 	var/A = get_pin_data(IC_INPUT, 1)
 	if(!isnull(A))
-		result = tan(A)
+		result = TAN(A)
 
 	set_pin_data(IC_OUTPUT, 1, result)
 	push_data()

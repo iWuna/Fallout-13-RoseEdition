@@ -76,25 +76,6 @@
 		push_data()
 		activate_pin(1)
 
-/obj/item/integrated_circuit/input/colorpad
-	name = "color pad"
-	desc = "This small color pad allows someone to input a hexadecimal color into the system."
-	icon_state = "colorpad"
-	complexity = 2
-	can_be_asked_input = 1
-	inputs = list()
-	outputs = list("color entered" = IC_PINTYPE_STRING)
-	activators = list("on entered" = IC_PINTYPE_PULSE_IN)
-	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
-	power_draw_per_use = 4
-
-/obj/item/integrated_circuit/input/colorpad/ask_for_input(mob/user)
-	var/new_color = input(user, "Enter a color, please.", "Color", "#ffffff") as color|null
-	if(new_color && user.IsAdvancedToolUser())
-		set_pin_data(IC_OUTPUT, 1, new_color)
-		push_data()
-		activate_pin(1)
-
 /obj/item/integrated_circuit/input/med_scanner
 	name = "integrated medical analyser"
 	desc = "A very small version of the common medical analyser. This allows the machine to know how healthy someone is."
@@ -161,6 +142,11 @@
 
 	push_data()
 	activate_pin(2)
+
+//please delete at a later date after people stop using the old named circuit
+/obj/item/integrated_circuit/input/adv_med_scanner/old
+	name = "integrated advanced medical analyser"
+	spawn_flags = 0
 
 /obj/item/integrated_circuit/input/slime_scanner
 	name = "slime_scanner"
@@ -261,11 +247,13 @@
 		set_pin_data(IC_OUTPUT, 12, H.pestlevel)
 		set_pin_data(IC_OUTPUT, 13, H.toxic)
 		set_pin_data(IC_OUTPUT, 14, H.waterlevel)
-		set_pin_data(IC_OUTPUT, 15, H.reagents.total_volume)
+		set_pin_data(IC_OUTPUT, 15, H.nutrilevel)
 		set_pin_data(IC_OUTPUT, 16, H.harvest)
 		set_pin_data(IC_OUTPUT, 17, H.dead)
 		set_pin_data(IC_OUTPUT, 18, H.plant_health)
 		set_pin_data(IC_OUTPUT, 19, H.self_sustaining)
+		set_pin_data(IC_OUTPUT, 20, H.using_irrigation)
+		set_pin_data(IC_OUTPUT, 21, H.FindConnected())
 	push_data()
 	activate_pin(2)
 
@@ -347,11 +335,10 @@
 		set_pin_data(IC_OUTPUT, 2, H.desc)
 
 		if(istype(H, /mob/living))
-			var/mob/living/carbon/human/D = generate_or_wait_for_human_dummy(DUMMY_HUMAN_SLOT_EXAMINER)
-			var/msg = H.examine(D)
+			var/mob/living/M = H
+			var/msg = M.examine()
 			if(msg)
 				set_pin_data(IC_OUTPUT, 2, msg)
-			unset_busy_human_dummy(DUMMY_HUMAN_SLOT_EXAMINER)
 
 		set_pin_data(IC_OUTPUT, 3, H.x-T.x)
 		set_pin_data(IC_OUTPUT, 4, H.y-T.y)
@@ -387,8 +374,8 @@
 		activate_pin(3)
 		return
 	var/turf/T = get_turf(assembly)
-	var/target_x = clamp(get_pin_data(IC_INPUT, 1), 0, world.maxx)
-	var/target_y = clamp(get_pin_data(IC_INPUT, 2), 0, world.maxy)
+	var/target_x = CLAMP(get_pin_data(IC_INPUT, 1), 0, world.maxx)
+	var/target_y = CLAMP(get_pin_data(IC_INPUT, 2), 0, world.maxy)
 	var/turf/A = locate(target_x, target_y, T.z)
 	set_pin_data(IC_OUTPUT, 1, null)
 	if(!A || !(A in view(T)))
@@ -530,7 +517,7 @@
 	var/rad = get_pin_data(IC_INPUT, 2)
 
 	if(isnum(rad))
-		rad = clamp(rad, 0, 8)
+		rad = CLAMP(rad, 0, 8)
 		radius = rad
 
 /obj/item/integrated_circuit/input/advanced_locator_list/do_work()
@@ -592,7 +579,7 @@
 /obj/item/integrated_circuit/input/advanced_locator/on_data_written()
 	var/rad = get_pin_data(IC_INPUT, 2)
 	if(isnum(rad))
-		rad = clamp(rad, 0, 8)
+		rad = CLAMP(rad, 0, 8)
 		radius = rad
 
 /obj/item/integrated_circuit/input/advanced_locator/do_work()
@@ -723,7 +710,8 @@
 	inputs = list(
 		"target NTNet addresses"= IC_PINTYPE_STRING,
 		"data to send"			= IC_PINTYPE_STRING,
-		"secondary text"		= IC_PINTYPE_STRING
+		"secondary text"		= IC_PINTYPE_STRING,
+		"passkey"				= IC_PINTYPE_STRING,							//No this isn't a real passkey encryption scheme but that's why you keep your nodes secure so no one can find it out!
 		)
 	outputs = list(
 		"address received"			= IC_PINTYPE_STRING,
@@ -749,13 +737,14 @@
 	var/target_address = get_pin_data(IC_INPUT, 1)
 	var/message = get_pin_data(IC_INPUT, 2)
 	var/text = get_pin_data(IC_INPUT, 3)
+	var/key = get_pin_data(IC_INPUT, 4)
 
 	var/datum/netdata/data = new
 	data.recipient_ids = splittext(target_address, ";")
-	data.standard_format_data(message, text, assembly ? strtohex(XorEncrypt(json_encode(assembly.access_card.access), SScircuit.cipherkey)) : null)
+	data.standard_format_data(message, text, key)
 	ntnet_send(data)
 
-/obj/item/integrated_circuit/input/ntnet_receive(datum/netdata/data)
+/obj/item/integrated_circuit/input/ntnet_recieve(datum/netdata/data)
 	set_pin_data(IC_OUTPUT, 1, data.sender_id)
 	set_pin_data(IC_OUTPUT, 2, data.data["data"])
 	set_pin_data(IC_OUTPUT, 3, data.data["data_secondary"])
@@ -766,12 +755,12 @@
 	activate_pin(2)
 
 /obj/item/integrated_circuit/input/ntnet_advanced
-	name = "Low level NTNet transreceiver"
+	name = "Low level NTNet transreciever"
 	desc = "Enables the sending and receiving of messages over NTNet via packet data protocol. Allows advanced control of message contents and signalling. Must use associative lists. Outputs associative list. Has a slower transmission rate than normal NTNet circuits, due to increased data processing complexity."
 	extended_desc = "Data can be sent or received using the second pin on each side, \
-	When a message is received, the second activation pin will pulse whatever is connected to it. \
-	Pulsing the first activation pin will send a message. Messages can be sent to multiple recepients. \
-	Addresses must be separated with a semicolon, like this: Address1;Address2;Etc."
+	with additonal data reserved for the third pin. When a message is received, the second activation pin \
+	will pulse whatever is connected to it. Pulsing the first activation pin will send a message. Messages \
+	can be sent to multiple recepients. Addresses must be separated with a semicolon, like this: Address1;Address2;Etc."
 	icon_state = "signal"
 	complexity = 4
 	cooldown_per_use = 10
@@ -779,7 +768,7 @@
 		"target NTNet addresses"= IC_PINTYPE_STRING,
 		"data"					= IC_PINTYPE_LIST,
 		)
-	outputs = list("received data" = IC_PINTYPE_LIST, "is_broadcast" = IC_PINTYPE_BOOLEAN)
+	outputs = list("recieved data" = IC_PINTYPE_LIST, "is_broadcast" = IC_PINTYPE_BOOLEAN)
 	activators = list("send data" = IC_PINTYPE_PULSE_IN, "on data received" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	action_flags = IC_ACTION_LONG_RANGE
@@ -801,10 +790,9 @@
 	var/datum/netdata/data = new
 	data.recipient_ids = splittext(target_address, ";")
 	data.data = message
-	data.passkey = assembly.access_card.access
 	ntnet_send(data)
 
-/obj/item/integrated_circuit/input/ntnet_advanced/ntnet_receive(datum/netdata/data)
+/obj/item/integrated_circuit/input/ntnet_advanced/ntnet_recieve(datum/netdata/data)
 	set_pin_data(IC_OUTPUT, 1, data.data)
 	set_pin_data(IC_OUTPUT, 2, data.broadcast)
 	push_data()
@@ -814,11 +802,11 @@
 /obj/item/integrated_circuit/input/gps
 	name = "global positioning system"
 	desc = "This allows you to easily know the position of a machine containing this device."
-	extended_desc = "The coordinates that the GPS outputs are absolute, not relative. The full coords output has the coords separated by commas and is in string format."
+	extended_desc = "The coordinates that the GPS outputs are absolute, not relative."
 	icon_state = "gps"
 	complexity = 4
 	inputs = list()
-	outputs = list("X"= IC_PINTYPE_NUMBER, "Y" = IC_PINTYPE_NUMBER, "Z" = IC_PINTYPE_NUMBER, "full coords" = IC_PINTYPE_STRING)
+	outputs = list("X"= IC_PINTYPE_NUMBER, "Y" = IC_PINTYPE_NUMBER, "Z" = IC_PINTYPE_NUMBER)
 	activators = list("get coordinates" = IC_PINTYPE_PULSE_IN, "on get coordinates" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	power_draw_per_use = 30
@@ -829,14 +817,13 @@
 	set_pin_data(IC_OUTPUT, 1, null)
 	set_pin_data(IC_OUTPUT, 2, null)
 	set_pin_data(IC_OUTPUT, 3, null)
-	set_pin_data(IC_OUTPUT, 4, null)
 	if(!T)
 		return
 
 	set_pin_data(IC_OUTPUT, 1, T.x)
 	set_pin_data(IC_OUTPUT, 2, T.y)
 	set_pin_data(IC_OUTPUT, 3, T.z)
-	set_pin_data(IC_OUTPUT, 4, "[T.x],[T.y],[T.z]")
+
 	push_data()
 	activate_pin(2)
 
@@ -858,12 +845,11 @@
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	power_draw_per_use = 5
 
-/obj/item/integrated_circuit/input/microphone/Hear(message, atom/movable/speaker, message_langs, raw_message, radio_freq, spans, message_mode, atom/movable/source)
-	. = ..()
+/obj/item/integrated_circuit/input/microphone/Hear(message, atom/movable/speaker, message_langs, raw_message, radio_freq, spans, message_mode)
 	var/translated = FALSE
 	if(speaker && message)
 		if(raw_message)
-			if(message_langs != get_selected_language())
+			if(message_langs != get_default_language())
 				translated = TRUE
 		set_pin_data(IC_OUTPUT, 1, speaker.GetVoice())
 		set_pin_data(IC_OUTPUT, 2, raw_message)
@@ -892,7 +878,7 @@
 		return FALSE
 	var/ignore_bags = get_pin_data(IC_INPUT, 1)
 	if(ignore_bags)
-		var/datum/component/storage/STR = A.GetComponent(/datum/component/storage)
+		GET_COMPONENT_FROM(STR, /datum/component/storage, A)
 		if(STR)
 			return FALSE
 	set_pin_data(IC_OUTPUT, 1, WEAKREF(A))
@@ -1087,9 +1073,8 @@
 		"Uranium"				= IC_PINTYPE_NUMBER,
 		"Bananium"				= IC_PINTYPE_NUMBER,
 		"Titanium"		= IC_PINTYPE_NUMBER,
-		"Bluespace Mesh"		= IC_PINTYPE_NUMBER,
+		"Quantum Mesh"		= IC_PINTYPE_NUMBER,
 		"Biomass"				= IC_PINTYPE_NUMBER,
-		"Plastic"				= IC_PINTYPE_NUMBER
 		)
 	activators = list(
 		"scan" = IC_PINTYPE_PULSE_IN,
@@ -1098,84 +1083,26 @@
 		)
 	spawn_flags = IC_SPAWN_RESEARCH
 	power_draw_per_use = 40
-	var/list/mtypes = list(/datum/material/iron, /datum/material/glass, /datum/material/silver, /datum/material/gold, /datum/material/diamond, /datum/material/plasma, /datum/material/uranium, /datum/material/bananium, /datum/material/titanium, /datum/material/bluespace, /datum/material/biomass, /datum/material/plastic)
+	var/list/mtypes = list(MAT_METAL, MAT_GLASS, MAT_SILVER, MAT_GOLD, MAT_DIAMOND, MAT_PLASMA, MAT_URANIUM, MAT_BANANIUM, MAT_TITANIUM, MAT_BLUESPACE, MAT_BIOMASS)
 
 
 /obj/item/integrated_circuit/input/matscan/do_work()
 	var/atom/movable/H = get_pin_data_as_type(IC_INPUT, 1, /atom/movable)
 	var/turf/T = get_turf(src)
-	var/datum/component/material_container/mt = H.GetComponent(/datum/component/material_container)
+	GET_COMPONENT_FROM(mt, /datum/component/material_container, H)
 	if(!mt) //Invalid input
 		return
 	if(H in view(T)) // This is a camera. It can't examine thngs,that it can't see.
-		for(var/I in mtypes)
-			if(I in mt.materials)
-				set_pin_data(IC_OUTPUT, I, mt.materials[I])
+		for(var/I in 1 to mtypes.len)
+			var/datum/material/M = mt.materials[mtypes[I]]
+			if(M)
+				set_pin_data(IC_OUTPUT, I, M.amount)
 			else
 				set_pin_data(IC_OUTPUT, I, null)
 		push_data()
 		activate_pin(2)
 	else
 		activate_pin(3)
-
-/obj/item/integrated_circuit/input/atmospheric_analyzer
-	name = "atmospheric analyzer"
-	desc = "A miniaturized analyzer which can scan anything that contains gases. Leave target as NULL to scan the air around the assembly."
-	extended_desc = "The nth element of gas amounts is the number of moles of the \
-					nth gas in gas list. \
-					Pressure is in kPa, temperature is in Kelvin. \
-					Due to programming limitations, scanning an object that does \
-					not contain a gas will return the air around it instead."
-	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
-	inputs = list(
-			"target" = IC_PINTYPE_REF
-			)
-	outputs = list(
-			"gas list" = IC_PINTYPE_LIST,
-			"gas amounts" = IC_PINTYPE_LIST,
-			"total moles" = IC_PINTYPE_NUMBER,
-			"pressure" = IC_PINTYPE_NUMBER,
-			"temperature" = IC_PINTYPE_NUMBER,
-			"volume" = IC_PINTYPE_NUMBER
-			)
-	activators = list(
-			"scan" = IC_PINTYPE_PULSE_IN,
-			"on success" = IC_PINTYPE_PULSE_OUT,
-			"on failure" = IC_PINTYPE_PULSE_OUT
-			)
-	power_draw_per_use = 5
-
-/obj/item/integrated_circuit/input/atmospheric_analyzer/do_work()
-	for(var/i=1 to 6)
-		set_pin_data(IC_OUTPUT, i, null)
-	var/atom/target = get_pin_data_as_type(IC_INPUT, 1, /atom)
-	if(!target)
-		target = get_turf(src)
-	if( get_dist(get_turf(target),get_turf(src)) > 1 )
-		activate_pin(3)
-		return
-
-	var/datum/gas_mixture/air_contents = target.return_air()
-	if(!air_contents)
-		activate_pin(3)
-		return
-
-	var/list/gas_names = list()
-	var/list/gas_amounts = list()
-	for(var/id in air_contents.get_gases())
-		var/name = GLOB.meta_gas_names[id]
-		var/amt = round(air_contents.get_moles(id), 0.001)
-		gas_names.Add(name)
-		gas_amounts.Add(amt)
-
-	set_pin_data(IC_OUTPUT, 1, gas_names)
-	set_pin_data(IC_OUTPUT, 2, gas_amounts)
-	set_pin_data(IC_OUTPUT, 3, round(air_contents.total_moles(), 0.001))
-	set_pin_data(IC_OUTPUT, 4, round(air_contents.return_pressure(), 0.001))
-	set_pin_data(IC_OUTPUT, 5, round(air_contents.return_temperature(), 0.001))
-	set_pin_data(IC_OUTPUT, 6, round(air_contents.return_volume(), 0.001))
-	push_data()
-	activate_pin(2)
 
 /obj/item/integrated_circuit/input/data_card_reader
 	name = "data card reader"
@@ -1218,20 +1145,7 @@
 		return FALSE
 	return TRUE
 
-
-//Hippie Ported Code--------------------------------------------------------------------------------------------------------
-
-
-	//Adding some color to cards aswell, because why not
-/obj/item/card/data/attackby(obj/item/I, mob/living/user)
-	if(istype(I, /obj/item/integrated_electronics/detailer))
-		var/obj/item/integrated_electronics/detailer/D = I
-		detail_color = D.detail_color
-		update_icon()
-	return ..()
-
-
-
+////////////////////////////////////Hippiestation port//////////////////////////////////////////
 // -Inputlist- //
 /obj/item/integrated_circuit/input/selection
 	name = "selection circuit"
@@ -1269,42 +1183,3 @@
 	set_pin_data(IC_OUTPUT, 1, selected)
 	push_data()
 	activate_pin(1)
-
-
-// -storage examiner- // **works**
-/obj/item/integrated_circuit/input/storage_examiner
-	name = "storage examiner circuit"
-	desc = "This circuit lets you scan a storage's content. (backpacks, toolboxes etc.)"
-	extended_desc = "The items are put out as reference, which makes it possible to interact with them. Additionally also gives the amount of items."
-	icon_state = "grabber"
-	can_be_asked_input = 1
-	complexity = 6
-	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
-	inputs = list(
-		"storage" = IC_PINTYPE_REF
-	)
-	activators = list(
-		"examine" = IC_PINTYPE_PULSE_IN,
-		"on examined" = IC_PINTYPE_PULSE_OUT
-	)
-	outputs = list(
-		"item amount" = IC_PINTYPE_NUMBER,
-		"item list" = IC_PINTYPE_LIST
-	)
-	power_draw_per_use = 85
-
-/obj/item/integrated_circuit/input/storage_examiner/do_work()
-	var/obj/item/storage = get_pin_data_as_type(IC_INPUT, 1, /obj/item)
-	if(!istype(storage,/obj/item/storage))
-		return
-
-	set_pin_data(IC_OUTPUT, 1, storage.contents.len)
-
-	var/list/regurgitated_contents = list()
-	for(var/obj/o in storage.contents)
-		regurgitated_contents.Add(WEAKREF(o))
-
-
-	set_pin_data(IC_OUTPUT, 2, regurgitated_contents)
-	push_data()
-	activate_pin(2)

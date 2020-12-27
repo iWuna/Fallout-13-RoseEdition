@@ -9,7 +9,7 @@
 	icon = 'icons/obj/assemblies/electronic_setups.dmi'
 	icon_state = "setup_small"
 	item_flags = NOBLUDGEON
-	custom_materials = null		// To be filled later
+	materials = list()		// To be filled later
 	datum_flags = DF_USE_TAG
 	var/list/assembly_components = list()
 	var/list/ckeys_allowed_to_scan = list() // Players who built the circuit can scan it as a ghost.
@@ -34,9 +34,9 @@
 	var/creator // circuit creator if any
 	var/static/next_assembly_id = 0
 	hud_possible = list(DIAG_STAT_HUD, DIAG_BATT_HUD, DIAG_TRACK_HUD, DIAG_CIRCUIT_HUD) //diagnostic hud overlays
-	max_integrity = 50
+	max_integrity = 40 //one decent .308 shot
 	pass_flags = 0
-	armor = list("melee" = 50, "bullet" = 70, "laser" = 70, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 	anchored = FALSE
 	var/can_anchor = TRUE
 	var/detail_color = COLOR_ASSEMBLY_BLACK
@@ -59,31 +59,18 @@
 		COLOR_ASSEMBLY_PURPLE
 		)
 
-/obj/item/electronic_assembly/New()
-	..()
-	src.max_components = round(max_components)
-	src.max_complexity = round(max_complexity)
-
 /obj/item/electronic_assembly/GenerateTag()
-	tag = "assembly_[next_assembly_id++]"
+    tag = "assembly_[next_assembly_id++]"
 
 /obj/item/electronic_assembly/examine(mob/user)
 	. = ..()
 	if(can_anchor)
-		. += "<span class='notice'>The anchoring bolts [anchored ? "are" : "can be"] <b>wrenched</b> in place and the maintenance panel [opened ? "can be" : "is"] <b>screwed</b> in place.</span>"
+		to_chat(user, "<span class='notice'>The anchoring bolts [anchored ? "are" : "can be"] <b>wrenched</b> in place and the maintainence panel [opened ? "can be" : "is"] <b>screwed</b> in place.</span>")
 	else
-		. += "<span class='notice'>The maintenance panel [opened ? "can be" : "is"] <b>screwed</b> in place.</span>"
+		to_chat(user, "<span class='notice'>The maintainence panel [opened ? "can be" : "is"] <b>screwed</b> in place.</span>")
 
-	if((isobserver(user) && ckeys_allowed_to_scan[user.ckey]) || IsAdminGhost(user))
-		. += "You can <a href='?src=[REF(src)];ghostscan=1'>scan</a> this circuit."
-
-	for(var/I in assembly_components)
-		var/obj/item/integrated_circuit/IC = I
-		var/text = IC.external_examine(user)
-		if(text)
-			. += text
-	if(opened)
-		interact(user)
+	if(isobserver(user) && ckeys_allowed_to_scan[user.ckey])
+		to_chat(user, "You can <a href='?src=[REF(src)];ghostscan=1'>scan</a> this circuit.");
 
 /obj/item/electronic_assembly/proc/check_interactivity(mob/user)
 	return user.canUseTopic(src, BE_CLOSE)
@@ -97,9 +84,9 @@
 			D.open()
 
 /obj/item/electronic_assembly/Initialize()
-	LAZYSET(custom_materials, /datum/material/iron, round((max_complexity + max_components) * 0.25) * SScircuit.cost_multiplier)
 	.=..()
 	START_PROCESSING(SScircuit, src)
+	materials[MAT_METAL] = round((max_complexity + max_components) / 4) * SScircuit.cost_multiplier
 
 	//sets up diagnostic hud view
 	prepare_huds()
@@ -151,7 +138,7 @@
 	var/total_complexity = return_total_complexity()
 	var/HTML = ""
 
-	HTML += "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>[name]</title></head><body>"
+	HTML += "<html><head><title>[name]</title></head><body>"
 
 	HTML += "<a href='?src=[REF(src)]'>\[Refresh\]</a>  |  <a href='?src=[REF(src)];rename=1'>\[Rename\]</a><br>"
 	HTML += "[total_part_size]/[max_components] ([round((total_part_size / max_components) * 100, 0.1)]%) space taken up in the assembly.<br>"
@@ -205,7 +192,7 @@
 		return 1
 
 	if(href_list["ghostscan"])
-		if((isobserver(usr) && ckeys_allowed_to_scan[usr.ckey]) || IsAdminGhost(usr))
+		if(isobserver(usr) && ckeys_allowed_to_scan[usr.ckey])
 			if(assembly_components.len)
 				var/saved = "On circuit printers with cloning enabled, you may use the code below to clone the circuit:<br><br><code>[SScircuit.save_electronic_assembly(src)]</code>"
 				usr << browse(saved, "window=circuit_scan;size=500x600;border=1;can_resize=1;can_close=1;can_minimize=1")
@@ -307,17 +294,25 @@
 /obj/item/electronic_assembly/proc/can_move()
 	return FALSE
 
-/obj/item/electronic_assembly/update_icon_state()
+/obj/item/electronic_assembly/update_icon()
 	if(opened)
 		icon_state = initial(icon_state) + "-open"
 	else
 		icon_state = initial(icon_state)
-
-/obj/item/electronic_assembly/update_overlays()
-	. = ..()
+	cut_overlays()
 	if(detail_color == COLOR_ASSEMBLY_BLACK) //Black colored overlay looks almost but not exactly like the base sprite, so just cut the overlay and avoid it looking kinda off.
 		return
-	. += mutable_appearance('icons/obj/assemblies/electronic_setups.dmi', "[icon_state]-color", color = detail_color)
+	var/mutable_appearance/detail_overlay = mutable_appearance('icons/obj/assemblies/electronic_setups.dmi', "[icon_state]-color")
+	detail_overlay.color = detail_color
+	add_overlay(detail_overlay)
+
+/obj/item/electronic_assembly/examine(mob/user)
+	..()
+	for(var/I in assembly_components)
+		var/obj/item/integrated_circuit/IC = I
+		IC.external_examine(user)
+	if(opened)
+		interact(user)
 
 /obj/item/electronic_assembly/proc/return_total_complexity()
 	. = 0
@@ -425,15 +420,12 @@
 
 
 /obj/item/electronic_assembly/afterattack(atom/target, mob/user, proximity)
-	. = ..()
 	for(var/obj/item/integrated_circuit/input/S in assembly_components)
 		if(S.sense(target,user,proximity))
 			visible_message("<span class='notice'> [user] waves [src] around [target].</span>")
 
 
 /obj/item/electronic_assembly/screwdriver_act(mob/living/user, obj/item/I)
-	if(..())
-		return TRUE
 	I.play_tool_sound(src)
 	opened = !opened
 	to_chat(user, "<span class='notice'>You [opened ? "open" : "close"] the maintenance hatch of [src].</span>")
@@ -447,6 +439,7 @@
 		if(!user.canUnEquip(I))
 			return FALSE
 		if(try_add_component(I, user))
+			interact(user)
 			return TRUE
 		else
 			for(var/obj/item/integrated_circuit/input/S in assembly_components)
@@ -472,87 +465,57 @@
 			for(var/obj/item/integrated_circuit/input/S in assembly_components)
 				S.attackby_react(I,user,user.a_intent)
 			return ..()
-		I.forceMove(src)
-		battery = I
+		var/obj/item/stock_parts/cell = I
+		user.transferItemToLoc(I, loc)
+		cell.forceMove(src)
+		battery = cell
 		diag_hud_set_circuitstat() //update diagnostic hud
 		playsound(get_turf(src), 'sound/items/Deconstruct.ogg', 50, 1)
-		to_chat(user, "<span class='notice'>You slot the [I] inside \the [src]'s power supplier.</span>")
+		to_chat(user, "<span class='notice'>You slot \the [cell] inside \the [src]'s power supplier.</span>")
+		interact(user)
 		return TRUE
 	else if(istype(I, /obj/item/integrated_electronics/detailer))
 		var/obj/item/integrated_electronics/detailer/D = I
 		detail_color = D.detail_color
 		update_icon()
 	else
-		if(user.a_intent != INTENT_HELP)
-			return ..()
-		var/list/input_selection = list()
-		//Check all the components asking for an input
-		for(var/obj/item/integrated_circuit/input in assembly_components)
-			if((input.demands_object_input && opened) || (input.demands_object_input && input.can_input_object_when_closed))
-				var/i = 0
-				//Check if there is another component with the same name and append a number for identification
-				for(var/s in input_selection)
-					var/obj/item/integrated_circuit/s_circuit = input_selection[s]
-					if(s_circuit.name == input.name && s_circuit.displayed_name == input.displayed_name && s_circuit != input)
-						i++
-				var/disp_name= "[input.displayed_name] \[[input]\]"
-				if(i)
-					disp_name += " ([i+1])"
-				//Associative lists prevent me from needing another list and using a Find proc
-				input_selection[disp_name] = input
-
-		var/obj/item/integrated_circuit/choice
-		if(input_selection)
-			if(input_selection.len == 1)
-				choice = input_selection[input_selection[1]]
-			else
-				var/selection = input(user, "Where do you want to insert that item?", "Interaction") as null|anything in input_selection
-				if(!check_interactivity(user))
-					return ..()
-				if(selection)
-					choice = input_selection[selection]
-			if(choice)
-				choice.additem(I, user)
 		for(var/obj/item/integrated_circuit/input/S in assembly_components)
 			S.attackby_react(I,user,user.a_intent)
-		return ..()
+		if(user.a_intent != INTENT_HELP)
+			return ..()
 
 
 /obj/item/electronic_assembly/attack_self(mob/user)
-	set waitfor = FALSE
 	if(!check_interactivity(user))
 		return
 	if(opened)
 		interact(user)
 
 	var/list/input_selection = list()
-	//Check all the components asking for an input
+	var/list/available_inputs = list()
 	for(var/obj/item/integrated_circuit/input/input in assembly_components)
 		if(input.can_be_asked_input)
+			available_inputs.Add(input)
 			var/i = 0
-			//Check if there is another component with the same name and append a number for identification
-			for(var/s in input_selection)
-				var/obj/item/integrated_circuit/s_circuit = input_selection[s]
-				if(s_circuit.name == input.name && s_circuit.displayed_name == input.displayed_name && s_circuit != input)
+			for(var/obj/item/integrated_circuit/s in available_inputs)
+				if(s.name == input.name && s.displayed_name == input.displayed_name && s != input)
 					i++
 			var/disp_name= "[input.displayed_name] \[[input]\]"
 			if(i)
 				disp_name += " ([i+1])"
-			//Associative lists prevent me from needing another list and using a Find proc
-			input_selection[disp_name] = input
+			input_selection.Add(disp_name)
 
 	var/obj/item/integrated_circuit/input/choice
-
-
-	if(input_selection)
-		if(input_selection.len ==1)
-			choice = input_selection[input_selection[1]]
+	if(available_inputs)
+		if(available_inputs.len ==1)
+			choice = available_inputs[1]
 		else
 			var/selection = input(user, "What do you want to interact with?", "Interaction") as null|anything in input_selection
 			if(!check_interactivity(user))
 				return
 			if(selection)
-				choice = input_selection[selection]
+				var/index = input_selection.Find(selection)
+				choice = available_inputs[index]
 
 	if(choice)
 		choice.ask_for_input(user)
@@ -612,19 +575,14 @@
 		return
 	..()
 
-/obj/item/electronic_assembly/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
+/obj/item/electronic_assembly/attack_hand(mob/user)
 	if(anchored)
 		attack_self(user)
 		return
 	..()
 
-/obj/item/electronic_assembly/can_trigger_gun(mob/living/user) //sanity checks against pocket death weapon circuits
-	if(!can_fire_equipped || !user.is_holding(src))
-		return FALSE
-	return ..()
-
 /obj/item/electronic_assembly/default //The /default electronic_assemblys are to allow the introduction of the new naming scheme without breaking old saves.
-	name = "type-a electronic assembly"
+  name = "type-a electronic assembly"
 
 /obj/item/electronic_assembly/calc
 	name = "type-b electronic assembly"
@@ -650,47 +608,6 @@
 	name = "type-f electronic assembly"
 	icon_state = "setup_small_pda"
 	desc = "It's a case, for building small electronics with. This one resembles a PDA."
-
-/obj/item/electronic_assembly/dildo
-	name = "type-g electronic assembly"
-	icon_state = "setup_dildo_medium"
-	desc = "It's a case, for building small electronics with. This one has a phallic design."
-
-/obj/item/electronic_assembly/small
-	name = "electronic device"
-	icon_state = "setup_device"
-	desc = "It's a case, for building tiny-sized electronics with."
-	w_class = WEIGHT_CLASS_TINY
-	max_components = IC_MAX_SIZE_BASE / 2
-	max_complexity = IC_COMPLEXITY_BASE / 2
-
-/obj/item/electronic_assembly/small/default
-	name = "type-a electronic device"
-
-/obj/item/electronic_assembly/small/cylinder
-	name = "type-b electronic device"
-	icon_state = "setup_device_cylinder"
-	desc = "It's a case, for building tiny-sized electronics with. This one has a cylindrical design."
-
-/obj/item/electronic_assembly/small/scanner
-	name = "type-c electronic device"
-	icon_state = "setup_device_scanner"
-	desc = "It's a case, for building tiny-sized electronics with. This one has a scanner-like design."
-
-/obj/item/electronic_assembly/small/hook
-	name = "type-d electronic device"
-	icon_state = "setup_device_hook"
-	desc = "It's a case, for building tiny-sized electronics with. This one looks like it has a belt clip, but it's purely decorative."
-
-/obj/item/electronic_assembly/small/box
-	name = "type-e electronic device"
-	icon_state = "setup_device_box"
-	desc = "It's a case, for building tiny-sized electronics with. This one has a boxy design."
-
-/obj/item/electronic_assembly/small/dildo
-	name = "type-f electronic device"
-	icon_state = "setup_dildo_small"
-	desc = "It's a case, for building tiny-sized electronics with. This one has a phallic design."
 
 /obj/item/electronic_assembly/medium
 	name = "electronic mechanism"
@@ -731,12 +648,6 @@
 	name = "type-f electronic mechanism"
 	icon_state = "setup_medium_radio"
 	desc = "It's a case, for building medium-sized electronics with. This one resembles an old radio."
-
-/obj/item/electronic_assembly/medium/dildo
-	name = "type-g electronic mechanism"
-	icon_state = "setup_dildo_large"
-	desc = "It's a case, for building medium-sized electronics with. This one has a phallic design."
-
 
 /obj/item/electronic_assembly/large
 	name = "electronic machine"
@@ -839,14 +750,6 @@
 	max_components = IC_MAX_SIZE_BASE
 	max_complexity = IC_COMPLEXITY_BASE
 
-/obj/item/electronic_assembly/wallmount/tiny
-	name = "tiny wall-mounted electronic assembly"
-	icon_state = "setup_wallmount_tiny"
-	desc = "It's a case, for building tiny electronics with. It has a magnetized backing to allow it to stick to walls, but you'll still need to wrench the anchoring bolts in place to keep it on."
-	w_class = WEIGHT_CLASS_TINY
-	max_components = IC_MAX_SIZE_BASE / 2
-	max_complexity = IC_COMPLEXITY_BASE / 2
-
 /obj/item/electronic_assembly/wallmount/proc/mount_assembly(turf/on_wall, mob/user) //Yeah, this is admittedly just an abridged and kitbashed version of the wallframe attach procs.
 	if(get_dist(on_wall,user)>1)
 		return
@@ -874,8 +777,3 @@
 			pixel_x = -31
 		if(WEST)
 			pixel_x = 31
-	plane = ABOVE_WALL_PLANE
-
-/obj/item/electronic_assembly/wallmount/Moved(atom/OldLoc, Dir, Forced = FALSE) //reset the plane if moved off the wall.
-	. = ..()
-	plane = GAME_PLANE
