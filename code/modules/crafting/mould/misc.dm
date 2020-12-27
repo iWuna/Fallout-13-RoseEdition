@@ -80,7 +80,7 @@
 	subcategory = CAT_MOULD_MISC
 
 
-/datum/crafting_recipe/mould/screw
+/datum/crafting_recipe/mould/receiver
 	result = /obj/item/prefabs/mould/receiver
 	name = "Receiver Mould"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER4)

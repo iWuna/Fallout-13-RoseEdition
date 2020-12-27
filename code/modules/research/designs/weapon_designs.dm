@@ -83,7 +83,7 @@
 	desc = "An energy weapon part, a craftsman might want to have this."
 	id = "advw_flux"
 	build_type = PROTOLATHE
-	materials = list(MAT_GOLD = 6000, MAT_DIAMOND = 600, MAT_URANIUM = 2000)
+	materials = list(MAT_GOLD = 6000, MAT_DIAMOND = 3600, MAT_URANIUM = 4000)
 	build_path = /obj/item/advanced_crafting_components/flux
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -93,7 +93,7 @@
 	desc = "An energy weapon part, a craftsman might want to have this."
 	id = "advw_capacitor"
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 600, MAT_DIAMOND = 2600, MAT_SILVER = 3200)
+	materials = list(MAT_SILVER = 6000, MAT_DIAMOND = 4600, MAT_SILVER = 6200)
 	build_path = /obj/item/advanced_crafting_components/conductors
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -103,7 +103,7 @@
 	desc = "An energy weapon part, a craftsman might want to have this."
 	id = "advw_lense"
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 800, MAT_DIAMOND = 1000, MAT_GLASS = 6000)
+	materials = list(MAT_SILVER = 4000, MAT_DIAMOND = 2000, MAT_GLASS = 10000)
 	build_path = /obj/item/advanced_crafting_components/lenses
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -113,7 +113,7 @@
 	desc = "A general crafting part, a craftsman might want to have this."
 	id = "advw_alloys"
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 2600, MAT_DIAMOND = 800, MAT_URANIUM = 2000)
+	materials = list(MAT_SILVER = 5600, MAT_DIAMOND = 2800, MAT_URANIUM = 4000)
 	build_path = /obj/item/advanced_crafting_components/alloys
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -123,7 +123,7 @@
 	desc = "Energy Emitter"
 	id = "ew_weak_emitter"
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 4000, MAT_DIAMOND = 100, MAT_URANIUM = 2000)
+	materials = list(MAT_SILVER = 8000, MAT_DIAMOND = 3000, MAT_URANIUM = 4000)
 	build_path = /obj/item/prefabs/complex/ebarrel/laser/weak
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -133,7 +133,7 @@
 	desc = "Energy Emitter"
 	id = "ew_emitter"
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 6000, MAT_DIAMOND = 1600, MAT_URANIUM = 3000)
+	materials = list(MAT_SILVER = 12000, MAT_DIAMOND = 5600, MAT_URANIUM = 6000)
 	build_path = /obj/item/prefabs/complex/ebarrel/laser/avg
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -143,7 +143,7 @@
 	desc = "Energy Emitter"
 	id = "ew_strong_emitter"
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 6000, MAT_DIAMOND = 2000, MAT_URANIUM = 4000)
+	materials = list(MAT_SILVER = 12000, MAT_DIAMOND = 4000, MAT_URANIUM = 8000)
 	build_path = /obj/item/prefabs/complex/ebarrel/laser/strong
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -153,7 +153,7 @@
 	desc = "Energy Emitter"
 	id = "ew_scatter_emitter"
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 6000, MAT_GOLD = 6000, MAT_DIAMOND = 2600, MAT_URANIUM = 5000)
+	materials = list(MAT_SILVER = 12000, MAT_GOLD = 12000, MAT_DIAMOND = 4600, MAT_URANIUM = 10000)
 	build_path = /obj/item/prefabs/complex/ebarrel/laser/scatter
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -163,7 +163,7 @@
 	desc = "Energy Emitter"
 	id = "ew_weak_plasma"
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 3000, MAT_GOLD = 3000, MAT_DIAMOND = 1000, MAT_URANIUM = 3000)
+	materials = list(MAT_SILVER = 8000, MAT_GOLD = 8000, MAT_DIAMOND = 3000, MAT_URANIUM = 6000)
 	build_path = /obj/item/prefabs/complex/ebarrel/plasma/weak
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -173,7 +173,7 @@
 	desc = "Energy Emitter"
 	id = "ew_plasma"
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 7000, MAT_GOLD = 7000, MAT_DIAMOND = 2000, MAT_URANIUM = 8500)
+	materials = list(MAT_SILVER = 14000, MAT_GOLD = 14000, MAT_DIAMOND = 6000, MAT_URANIUM = 18500)
 	build_path = /obj/item/prefabs/complex/ebarrel/plasma/avg
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -183,7 +183,7 @@
 	desc = "Energy Stream Adapter"
 	id = "ew_stream"
 	build_type = PROTOLATHE
-	materials = list(MAT_GLASS = 1000, MAT_GOLD = 2000, MAT_DIAMOND = 1000, MAT_URANIUM = 1500)
+	materials = list(MAT_GLASS = 4000, MAT_GOLD = 6000, MAT_DIAMOND = 3000, MAT_URANIUM = 3500)
 	build_path = /obj/item/prefabs/complex/eburst/simple
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -193,7 +193,7 @@
 	desc = "Energy Stream Adapter"
 	id = "ew_stream_dual"
 	build_type = PROTOLATHE
-	materials = list(MAT_GLASS = 2000, MAT_GOLD = 2400, MAT_DIAMOND = 2000, MAT_URANIUM = 2500)
+	materials = list(MAT_GLASS = 4000, MAT_GOLD = 4400, MAT_DIAMOND = 4000, MAT_URANIUM = 4500)
 	build_path = /obj/item/prefabs/complex/eburst/dual
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -204,7 +204,7 @@
 	desc = "Energy Stream Adapter"
 	id = "ew_stream_fast"
 	build_type = PROTOLATHE
-	materials = list(MAT_GLASS = 4000, MAT_GOLD = 4400, MAT_DIAMOND = 2500, MAT_URANIUM = 4500)
+	materials = list(MAT_GLASS = 8000, MAT_GOLD = 8400, MAT_DIAMOND = 4500, MAT_URANIUM = 4500)
 	build_path = /obj/item/prefabs/complex/eburst/fast
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -215,7 +215,7 @@
 	desc = "Energy Stream Adapter"
 	id = "ew_stream_triple"
 	build_type = PROTOLATHE
-	materials = list(MAT_GLASS = 4000, MAT_GOLD = 4400, MAT_DIAMOND = 2500, MAT_URANIUM = 4500)
+	materials = list(MAT_GLASS = 8000, MAT_GOLD = 8400, MAT_DIAMOND = 4500, MAT_URANIUM = 8500)
 	build_path = /obj/item/prefabs/complex/eburst/triple
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -225,7 +225,7 @@
 	desc = "Power Source Adapater"
 	id = "ew_adapter_EC"
 	build_type = PROTOLATHE
-	materials = list(MAT_GLASS = 1500, MAT_GOLD = 500, MAT_DIAMOND = 1000, MAT_URANIUM = 1000)
+	materials = list(MAT_GLASS = 4500, MAT_GOLD = 5500, MAT_DIAMOND = 6000, MAT_URANIUM = 8000)
 	build_path = /obj/item/prefabs/complex/ecell/ec
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -235,7 +235,7 @@
 	desc = "Power Source Adapater"
 	id = "ew_adapter_MFC"
 	build_type = PROTOLATHE
-	materials = list(MAT_GLASS = 2500, MAT_GOLD = 1500, MAT_DIAMOND = 1500, MAT_URANIUM = 1000)
+	materials = list(MAT_GLASS = 6500, MAT_GOLD = 3500, MAT_DIAMOND = 3500, MAT_URANIUM = 3000)
 	build_path =/obj/item/prefabs/complex/ecell/mfc
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -245,7 +245,7 @@
 	desc = "Power Source Adapater"
 	id = "ew_adapter_ECP"
 	build_type = PROTOLATHE
-	materials = list(MAT_GLASS = 3500, MAT_GOLD = 2500, MAT_DIAMOND = 2000, MAT_URANIUM = 2000)
+	materials = list(MAT_GLASS = 6500, MAT_GOLD = 4500, MAT_DIAMOND = 4000, MAT_URANIUM = 4000)
 	build_path = /obj/item/prefabs/complex/ecell/ecp
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -256,7 +256,7 @@
 	desc = "An unfinished energy gun."
 	id = "ew_frame"
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 1500, MAT_METAL = 1500)
+	materials = list(MAT_SILVER = 7500, MAT_METAL = 7500)
 	build_path = /obj/item/prefabs/complex/eWeaponFrame
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -267,7 +267,7 @@
 	desc = "An unfinished energy gun."
 	id = "ew_frame_pistol"
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 1500, MAT_METAL = 1500)
+	materials = list(MAT_SILVER = 9500, MAT_METAL = 8500, MAT_TITANIUM=5000)
 	build_path = /obj/item/prefabs/complex/eWeaponFrame/pistol
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -277,7 +277,7 @@
 	desc = "An unfinished energy gun."
 	id = "ew_frame_rifle"
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 3500, MAT_METAL = 3500)
+	materials = list(MAT_SILVER = 8500, MAT_METAL = 14500, MAT_TITANIUM=12000)
 	build_path = /obj/item/prefabs/complex/eWeaponFrame/rifle
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -288,8 +288,8 @@
 	desc = "An unfinished energy gun."
 	id = "ew_frame_hqrifle"
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 6500, MAT_GOLD=6500, MAT_DIAMOND=1000, MAT_METAL = 3500)
-	build_path = /obj/item/prefabs/complex/eWeaponFrame/rifle
+	materials = list(MAT_SILVER = 12500, MAT_GOLD=12500, MAT_DIAMOND=3000, MAT_METAL = 6500, MAT_TITANIUM=14000)
+	build_path = /obj/item/prefabs/complex/eWeaponFrame/hqrifle
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
