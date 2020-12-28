@@ -482,3 +482,96 @@
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/suit/f13/nwcoat
+	name = "Red winter coat"
+	desc = "Warm and cool winter coat."
+	icon = 'icons/fallout/clothing/suits.dmi'
+	icon_state = "nw_coat_red"
+	body_parts_covered = FULL_BODY
+	armor = list(melee = 20, bullet = 20, laser = 20, energy = 20, bomb = 20, bio = 20, rad = 20, fire = 60, acid = 20)
+
+/obj/item/clothing/suit/f13/nwcoat/blue
+	name = "Blue winter coat"
+	icon_state = "nw_coat_blue"
+
+/obj/item/clothing/suit/f13/nwcoat/green
+	name = "Green winter coat"
+	icon_state = "nw_coat_green"
+
+/obj/item/clothing/suit/f13/nwcoat/gay
+	name = "Gayish winter coat"
+	desc = "Warm and comfort from ERP"
+	icon_state = "nw_coat_gay"
+
+/obj/item/clothing/suit/f13/nwcoat_old
+	name = "Old red winter coat"
+	desc = "Old and dirty winter coat."
+	icon = 'icons/fallout/clothing/suits.dmi'
+	icon_state = "nw_coat_red_old"
+	body_parts_covered = FULL_BODY
+	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 10, rad = 10, fire = 30, acid = 10)
+
+/obj/item/clothing/suit/f13/nwcoat_old/blue
+	name = "Old blue winter coat"
+	icon_state = "nw_coat_blue_old"
+
+/obj/item/clothing/suit/f13/nwcoat_old/green
+	name = "Old green winter coat"
+	icon_state = "nw_coat_green_old"
+
+/obj/item/clothing/suit/f13/nwcoat_old/gay
+	name = "Old gayish winter coat"
+	icon_state = "nw_coat_gay_old"
+
+/obj/item/clothing/suit/f13/nwcoat_old/bomj
+	name = "Old bomj's winter coat"
+	icon_state = "nw_coat_bomj"
+
+/obj/item/clothing/suit/f13/nwcoat_arm
+	name = "Armored red winter coat"
+	desc = "Armored, warm and cool winter coat."
+	icon = 'icons/fallout/clothing/suits.dmi'
+	icon_state = "nw_coat_red_arm"
+	body_parts_covered = FULL_BODY
+	armor = list(melee = 30, bullet = 30, laser = 30, energy = 30, bomb = 30, bio = 30, rad = 30, fire = 60, acid = 30)
+
+/obj/item/clothing/suit/f13/nwcoat_arm/blue
+	name = "Armored blue winter coat"
+	icon_state = "nw_coat_blue_arm"
+
+/obj/item/clothing/suit/f13/nwcoat_arm/green
+	name = "Armored green winter coat"
+	icon_state = "nw_coat_green_arm"
+
+/obj/item/clothing/suit/f13/nwcoat_arm/gay
+	name = "Armored gay winter coat"
+	icon_state = "nw_coat_gay_arm"
+
+/obj/item/clothing/suit/f13/nwcoat_arm/bomj
+	name = "Armored bomj's winter coat"
+	icon_state = "nw_coat_bomj_arm"
+
+/obj/item/clothing/suit/f13/nw_anarchist
+	name = "Anarchist coat"
+	desc = "Anarchy - mother of discipline!"
+	icon = 'icons/fallout/clothing/suits.dmi'
+	icon_state = "nw_anarchist"
+	body_parts_covered = FULL_BODY
+	armor = list(melee = 20, bullet = 20, laser = 20, energy = 20, bomb = 20, bio = 20, rad = 20, fire = 30, acid = 20)
+
+/obj/item/clothing/suit/f13/nw_anarchist_thirty
+	name = "Armored anarchist coat"
+	desc = "Anarchy, but better!"
+	icon = 'icons/fallout/clothing/suits.dmi'
+	icon_state = "nw_anarchist13"
+	body_parts_covered = FULL_BODY
+	armor = list(melee = 30, bullet = 30, laser = 30, energy = 30, bomb = 30, bio = 30, rad = 30, fire = 30, acid = 30)
+
+/obj/item/clothing/suit/f13/stas
+	name = "Stas jacket"
+	desc = "Wide original."
+	icon = 'icons/fallout/clothing/suits.dmi'
+	icon_state = "stas"
+	body_parts_covered = FULL_BODY
+	armor = list(melee = 30, bullet = 30, laser = 30, energy = 30, bomb = 30, bio = 30, rad = 30, fire = 30, acid = 30)
