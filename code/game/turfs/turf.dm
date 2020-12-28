@@ -20,6 +20,7 @@
 	var/dynamic_lumcount = 0
 
 	var/blocks_air = FALSE
+	var/snow = FALSE
 
 	var/list/image/blueprint_data //for the station blueprints, images of objects eg: pipes
 
@@ -35,6 +36,12 @@
 
 	var/turf_light_range = 0 // Used for the nightcycle subsystem
 	var/turf_light_power = 0 // Used for the nightcycle subsystem
+
+/turf/proc/snow_act()
+	return
+
+/turf/proc/heat_act()
+	return
 
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")

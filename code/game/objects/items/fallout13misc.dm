@@ -200,6 +200,58 @@
 	item_state = "followersflag"
 	faction = "Followers"
 
+/obj/item/flag/proc/snow_cover()
+	if(!faction)
+		item_state = "emptyflag_snow"
+		icon_state = "emptyflag_snow"
+	else if (faction == "Followers")
+		item_state = "followersflag_snow"
+		icon_state = "followersflag_snow"
+	else if (faction == "NCR")
+		item_state = "ncrflag_snow"
+		icon_state = "ncrflag_snow"
+	else if (faction == "Legion")
+		item_state = "legionflag_snow"
+		icon_state = "legionflag_snow"
+	else if (faction == "Oasis")
+		item_state = "oasisflag_snow"
+		icon_state = "oasisflag_snow"
+	else if (faction == "BOS")
+		item_state = "bosflag_snow"
+		icon_state = "bosflag_snow"
+
+/obj/item/flag/proc/snow_melt()
+	if(!faction)
+		item_state = "emptyflag"
+		icon_state = "emptyflag"
+	else if (faction == "Followers")
+		item_state = "followersflag"
+		icon_state = "followersflag"
+	else if (faction == "NCR")
+		item_state = "ncrflag"
+		icon_state = "ncrflag"
+	else if (faction == "Legion")
+		item_state = "legionflag"
+		icon_state = "legionflag"
+	else if (faction == "Oasis")
+		item_state = "oasisflag"
+		icon_state = "oasisflag"
+	else if (faction == "BOS")
+		item_state = "bosflag"
+		icon_state = "bosflag"
+
+/obj/item/flag/snow_act()
+	if(!snow)
+		snow = !snow
+		addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 300))
+
+
+/obj/item/flag/heat_act()
+	if(snow)
+		snow = !snow
+		addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 300))
+
+
 /obj/item/flag/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/stack/sheet/leather) && item_state == "emptyflag")
 		visible_message("<span class='notice'>[user] begins to make a flag.</span>")
@@ -226,6 +278,12 @@
 						icon_state = "oasisflag"
 						item_state = "oasisflag"
 						faction = "Oasis"
+					if("Followers")
+						name = "Followers flag"
+						desc = "A flag depicting a stylised pink flower on a green background. It's the symbol of the town of Followers."
+						icon_state = "followersflag"
+						item_state = "followersflag"
+						faction = "Followers"
 				update_icon()
 	else
 		attack_hand(user)
