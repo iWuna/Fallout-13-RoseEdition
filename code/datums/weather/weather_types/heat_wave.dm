@@ -4,7 +4,7 @@
 	probability = 7
 
 	telegraph_message = "<span class='userdanger'><i>Heat wave is coming to the area, increasing temperature of anyone caught outside.</i></span>"
-	telegraph_duration = 10
+	telegraph_duration = 300
 	telegraph_overlay = "light_ash"
 	telegraph_sound = 'sound/f13effects/sandstorm_warning.ogg'
 
@@ -13,7 +13,7 @@
 	weather_duration_lower = 1200
 	weather_duration_upper = 2400
 
-	end_duration = 100
+	end_duration = 300
 	end_message = "<span class='boldannounce'>The heat wave dies down, it should be safe to go outside again.</span>"
 
 	areas_type = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
@@ -41,3 +41,5 @@
 	for(var/obj/item/I in T.contents)
 		if(I.snow)
 			I.heat_act()
+	for(var/obj/structure/snow/pile/P in T.contents)
+		addtimer(CALLBACK(P, .proc/Destroy), rand(0,100))

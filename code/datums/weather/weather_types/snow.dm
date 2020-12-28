@@ -4,23 +4,23 @@
 	probability = 7
 
 	telegraph_message = "<span class='userdanger'><i>Drifting particles of snow begin to dust the surrounding area..</i></span>"
-	telegraph_duration = 10
-	telegraph_overlay = "light_snow"
+	telegraph_duration = 300
+	telegraph_overlay = "snow_storm"
 	telegraph_sound = 'sound/f13effects/sandstorm_warning.ogg'
 
 	weather_message = "<span class='userdanger'>Harsh winds pick up as dense snow begins to fall from the sky!</span>"
-	weather_overlay = "light_snow"
+	weather_overlay = "snow"
 	weather_duration_lower = 1200
 	weather_duration_upper = 2400
 
-	end_duration = 100
+	end_duration = 300
 	end_message = "<span class='boldannounce'>The snowfall begins to slow.</span>"
 
 	areas_type = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 
-	immunity_type = "snow"
+	immunity_type = "light_snow"
 
 	barometer_predictable = TRUE
 
@@ -32,6 +32,8 @@
 
 /datum/weather/snow/weather_act_turf(turf/T)
 	T.snow_act()
+	if(prob(15))
+		addtimer(CALLBACK(GLOBAL_PROC, /proc/create_pile, T), rand(0, 100))
 	for(var/obj/structure/S in T.contents)
 		if(!S.snow)
 			S.snow_act()
@@ -41,4 +43,13 @@
 	for(var/obj/item/I in T.contents)
 		if(!I.snow)
 			I.snow_act()
+
+/datum/weather/snow/strong
+	telegraph_overlay = "snow"
+	weather_overlay = "heavy_snow"
+
+/datum/weather/snow/strong/weather_act(mob/living/L)
+	L.adjust_bodytemperature(-rand(10, 20))
 	
+/proc/create_pile(loc)
+	new/obj/structure/snow/pile(loc)
