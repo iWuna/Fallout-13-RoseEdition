@@ -204,3 +204,44 @@
 /obj/item/melee/baton/cattleprod/baton_stun()
 	if(sparkler.activate())
 		..()
+
+/obj/item/melee/baton/enclave
+	name = "advancedbaton"
+	desc = "An modified stun baton."
+	icon_state = "advancedbaton"
+	item_state = "baton"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	w_class = WEIGHT_CLASS_BULKY
+	force = 0
+	throwforce = 5
+	stunforce = 0
+	hitcost = 0
+	throw_hit_chance = 10
+	slot_flags = ITEM_SLOT_BACK
+	preload_cell_type = /obj/item/stock_parts/cell/high
+	var/on = FALSE
+
+/obj/item/melee/baton/enclave/attack_self(mob/user)
+	..()
+	on = !on
+	if(on)
+		to_chat(user, "<span class ='warning'>You extend the baton.</span>")
+		w_class = WEIGHT_CLASS_BULKY //doesnt fit in backpack when its on for balance
+		force = 10 //stunbaton damage
+		stunforce = 120
+		hitcost = 1500
+		attack_verb = list("smacked", "struck", "cracked", "beaten")
+		item_state = "baton"
+	else
+		to_chat(user, "<span class ='notice'>You collapse the baton.</span>")
+		item_state = null //no sprite for concealment even when in hand
+		slot_flags = ITEM_SLOT_BELT
+		w_class = WEIGHT_CLASS_SMALL
+		force = 0 //not so robust now
+		stunforce = 0
+		hitcost = 0
+		attack_verb = list("hit", "poked")
+		item_state = "baton"
+
+	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, 1)

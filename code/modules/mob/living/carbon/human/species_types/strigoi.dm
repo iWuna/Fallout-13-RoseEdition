@@ -10,10 +10,11 @@
 	use_skintones = TRUE
 	mutant_heart = /obj/item/organ/heart/vampire
 	mutanttongue = /obj/item/organ/tongue/vampire
+	mutanteyes = /obj/item/organ/eyes/night_vision/vampire
 	blacklisted = FALSE
 	limbs_id = "human"
 	skinned_type = /obj/item/stack/sheet/animalhide/human
-	var/info_text = "You are a <span class='danger'>Стригой</span>. You will slowly but constantly lose blood if outside of a coffin. If inside a coffin, you will slowly heal. You may gain more blood by grabbing a live victim and using your drain ability."
+	var/info_text = "You are a <span class='danger'>Strigoi</span>. You will slowly but constantly lose blood if outside of a coffin. If inside a coffin, you will slowly heal. You may gain more blood by grabbing a live victim and using your drain ability."
 
 /datum/species/strigoi/check_roundstart_eligible(mob/living/L)
 	return FALSE
@@ -42,13 +43,10 @@
 
 /datum/species/strigoi/spec_life(mob/living/carbon/human/C)
 	. = ..()
-	if(istype(C.loc, /obj/structure/closet/crate/coffin))
+	if(C.health < 100)
 		C.heal_overall_damage(2,2)
 		C.adjustToxLoss(-2)
 		C.adjustOxyLoss(-2)
 		C.adjustCloneLoss(-2)
+		C.blood_volume -= 1
 		return
-	C.blood_volume -= 0.75
-	if(C.blood_volume <= BLOOD_VOLUME_SURVIVE)
-		to_chat(C, "<span class='danger'>You ran out of blood!</span>")
-		C.dust()

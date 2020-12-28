@@ -4,6 +4,7 @@
 	max_integrity = 300
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
 	drag_delay = 0.15 SECONDS
+	var/snow = FALSE
 	var/machine_tool_behaviour = NONE
 	var/climb_time = 20
 	var/climb_stun = 20
@@ -12,6 +13,13 @@
 	var/broken = 0 //similar to machinery's stat BROKEN
 	var/barricade = TRUE //set to true to allow projectiles to always pass over it, default false (checks vs density)
 	var/proj_pass_rate = 65 //if barricade=1, sets how many projectiles will pass the cover. Lower means stronger cover
+	var/pre_snow_state = ""
+
+/obj/structure/proc/snow_act()
+	return
+
+/obj/structure/proc/heat_act()
+	return
 
 /obj/structure/Initialize()
 	if (!armor)

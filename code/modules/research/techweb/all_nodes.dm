@@ -511,7 +511,7 @@
 	display_name = "Plasma Weapons"
 	description = "Weapons using plasma technology"
 	prereq_ids = list("electronic_weapons_mk2", "electronic_weapons")
-	design_ids = list("ew_adapter_ECP", "ew_weak_plasma", "ew_stream_triple")
+	design_ids = list("ew_adapter_ECP", "ew_weak_plasma", "ew_stream_fast")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
 
@@ -519,8 +519,8 @@
 	id = "plasma_weapons_mk2"
 	display_name = "Advanced Plasma Weapons"
 	description = "Weapons using plasma technology"
-	prereq_ids = list("electronic_weapons_mk2", "electronic_weapons")
-	design_ids = list("ew_plasma", "ew_strong_emitter", "ew_stream_fast", "ew_frame_hqrifle")
+	prereq_ids = list("electronic_weapons_mk2", "plasma_weapons")
+	design_ids = list("ew_plasma", "ew_strong_emitter", "ew_stream_triple", "ew_frame_hqrifle")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 /*

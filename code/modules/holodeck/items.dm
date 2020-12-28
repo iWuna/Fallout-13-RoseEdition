@@ -102,6 +102,23 @@
 	anchored = TRUE
 	density = TRUE
 
+/obj/structure/holohoop/proc/snow_cover()
+	icon_state = "hoop_snow"
+
+/obj/structure/holohoop/proc/snow_melt()
+	icon_state = initial(icon_state)
+
+/obj/structure/holohoop/snow_act()
+	if(!snow)
+		addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 150))
+		snow = !snow
+
+/obj/structure/holohoop/heat_act()
+	if(snow)
+		addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 150))
+		snow = !snow
+
+
 /obj/structure/holohoop/attackby(obj/item/W as obj, mob/user as mob, params)
 	if(get_dist(src,user)<2)
 		if(user.transferItemToLoc(W, drop_location()))

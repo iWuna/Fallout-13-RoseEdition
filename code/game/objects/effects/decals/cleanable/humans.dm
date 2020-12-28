@@ -109,7 +109,6 @@
 /obj/effect/decal/cleanable/blood/drip/can_bloodcrawl_in()
 	return TRUE
 
-
 //BLOODY FOOTPRINTS
 /obj/effect/decal/cleanable/blood/footprints
 	name = "footprints"

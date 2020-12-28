@@ -109,7 +109,7 @@ Medic
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/clothing/mask/surgical = 1,
-		/obj/item/book/granter/trait/field_surgery = 1, 
+		/obj/item/book/granter/trait/field_surgery = 1,
 		  )
 
 /datum/outfit/loadout/enclave_medic_3
@@ -121,7 +121,7 @@ Medic
 	back = /obj/item/storage/backpack/satchel/med
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ec = 2,
-		/obj/item/book/granter/trait/chemistry = 1, 
+		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/storage/box/beakers = 1
 		)
 
@@ -229,7 +229,7 @@ Private
 	r_pocket = /obj/item/encryptionkey/syndicate
 	belt = /obj/item/stealthboy
 	backpack_contents = list(
-		/obj/item/storage/box/syndie_kit/chameleon = 1, /obj/item/storage/box/syndie_kit/imp_microbomb = 1, /obj/item/jammer = 1, /obj/item/card/id/syndicate/anyone = 1)
+		/obj/item/storage/box/syndie_kit/chameleon = 1, /obj/item/storage/box/syndie_kit/imp_microbomb = 1, /obj/item/jammer = 1, /obj/item/card/id/syndicate/anyone = 1, /obj/item/melee/baton/enclave = 1)
 
 /datum/outfit/job/enclave/f13usprivate
 	name = "US Private"

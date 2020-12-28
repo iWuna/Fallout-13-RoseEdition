@@ -48,6 +48,7 @@
 //////////////////////////////////////////////////////////////////////
 
 /turf/open/indestructible/ground/outside
+	var/pre_snow_state = null
 	turf_light_range = 3
 	turf_light_power = 0.75
 
@@ -59,6 +60,18 @@
 #define GRASS_WEIGHT_GROUND			4
 #define LUSH_PLANT_SPAWN_LIST_GROUND list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/wasteplant/wild_broc = 7, /obj/structure/flora/wasteplant/wild_mesquite = 4, /obj/structure/flora/wasteplant/wild_feracactus = 5, /obj/structure/flora/wasteplant/wild_punga = 5, /obj/structure/flora/wasteplant/wild_coyote = 5, /obj/structure/flora/wasteplant/wild_tato = 5, /obj/structure/flora/wasteplant/wild_yucca = 5, /obj/structure/flora/wasteplant/wild_mutfruit = 5, /obj/structure/flora/wasteplant/wild_prickly = 5, /obj/structure/flora/wasteplant/wild_datura = 5, /obj/structure/flora/wasteplant/wild_buffalogourd = 5, /obj/structure/flora/wasteplant/wild_pinyon = 3, /obj/structure/flora/wasteplant/wild_xander = 5, /obj/structure/flora/wasteplant/wild_agave = 5, /obj/structure/flora/tree/joshua = 3, /obj/structure/flora/tree/cactus = 2, /obj/structure/flora/tree/wasteland = 2)
 #define DESOLATE_PLANT_SPAWN_LIST_GROUND list(/obj/structure/flora/grass/wasteland = 1)
+
+/obj/structure/snow/pile
+	gender = PLURAL
+	anchored = TRUE
+	name = "pile of snow"
+	desc = "Dont eat the yellow snow"
+	icon = 'icons/effects/blood.dmi'
+	icon_state = "snow_1"
+
+/obj/structure/snow/pile/Initialize()
+	. = ..()
+	icon_state = "snow_[rand(1,5)]"
 
 /turf/open/indestructible/ground/outside/desert
 	name = "desert"
@@ -76,6 +89,24 @@
 	var/pitcontents = list()
 	var/obj/dugpit/mypit
 	var/unburylevel = 0
+
+/turf/open/indestructible/ground/outside/proc/snow_cover()
+	pre_snow_state = icon_state
+	icon_state = "[pre_snow_state]_s"
+
+/turf/open/indestructible/ground/outside/proc/snow_melt()
+	icon_state = pre_snow_state
+	icon = initial(icon)
+
+/turf/open/indestructible/ground/outside/snow_act()
+	if(!snow)
+		addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 150))
+		snow = !snow
+
+/turf/open/indestructible/ground/outside/heat_act()
+	if(snow)
+		addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 150))
+		snow = !snow
 
 /turf/open/indestructible/ground/outside/desert/Initialize()
 	. = ..()
@@ -120,6 +151,13 @@
 	anchored = TRUE
 	resistance_flags = INDESTRUCTIBLE
 
+/turf/open/indestructible/ground/outside/desert/snow_cover()
+	pre_snow_state = icon_state
+	icon = 'icons/fallout/turfs/snow.dmi'
+	icon_state = "snow[rand(0,12)]"
+
+	
+
 /turf/open/indestructible/ground/outside/desert/proc/plantGrass(Plantforce = FALSE)
 	var/Weight = 0
 	var/randPlant = null
@@ -161,22 +199,42 @@
 	icon_state = "dirtfull"
 	step_sounds = list("human" = "dirtfootsteps")
 //	allowed_plants = list(/obj/item/seeds/poppy/broc, /obj/item/seeds/xander, /obj/item/seeds/mutfruit,
-//	/obj/item/seeds/potato, /obj/item/seeds/carrot, /obj/item/seeds/pumpkin, /obj/item/seeds/corn, /obj/item/seeds/agave)
+//	/obj/item/seeds/potato, /obj/item/seeds/carrot, /obj/item/seeds/pumpkin, /obj/item/seeds/corn, /ob7j/item/seeds/agave)
 	slowdown = 0.2
 	flags_1 = CAN_HAVE_NATURE
 	air = /datum/gas_mixture/turf
 
+/turf/open/indestructible/ground/outside/dirt/snow_cover()
+	pre_snow_state = icon_state
+	icon_state = "[pre_snow_state]_s"
+
+/turf/open/indestructible/ground/outside/dirt/snow_melt()
+	icon_state = pre_snow_state
+	icon = initial(icon)
+
 /turf/open/indestructible/ground/outside/road
 	name = "\proper road"
 	icon_state = "innermiddle"
-	icon = 'icons/fallout/turfs/asphalt.dmi'
+	icon = 'icons/turf/f13road.dmi'
 	step_sounds = list("human" = "erikafootsteps")
+
+/turf/open/indestructible/ground/outside/road/snow_cover()
+	icon = 'icons/turf/f13road_snow.dmi'
+
+/turf/open/indestructible/ground/outside/road/snow_melt()
+	icon = initial(icon)
 
 /turf/open/indestructible/ground/outside/sidewalk
 	name = "\proper sidewalk"
 	icon_state = "outermiddle"
-	icon = 'icons/fallout/turfs/sidewalk.dmi'
+	icon = 'icons/turf/f13road.dmi'
 	step_sounds = list("human" = "erikafootsteps")
+
+/turf/open/indestructible/ground/outside/sidewalk/snow_cover()
+	icon = 'icons/turf/f13road_snow.dmi'
+
+/turf/open/indestructible/ground/outside/sidewalk/snow_melt()
+	icon = initial(icon)
 
 /obj/effect/overlay/sidewalk_side
 	name = "desert"
@@ -205,6 +263,12 @@
 	icon = 'icons/turf/floors.dmi'
 	step_sounds = list("human" = "woodfootsteps")
 
+/turf/open/indestructible/ground/outside/wood/snow_act()
+	return
+
+/turf/open/indestructible/ground/outside/wood/heat_act()
+	return
+
 /turf/open/indestructible/ground/outside/water
 	gender = PLURAL
 	name = "river water"
@@ -213,6 +277,12 @@
 	icon_state = "riverwater_motion"
 	slowdown = 2
 	step_sounds = list("human" = "waterfootsteps")
+
+/turf/open/indestructible/ground/outside/water/snow_act()
+	return
+	
+/turf/open/indestructible/ground/outside/water/heat_act()
+	return
 
 /turf/open/indestructible/ground/outside/water/Initialize()
 	. = ..()

@@ -350,7 +350,6 @@
 
 /obj/structure/car/highwayman/Initialize()
 	icon_state = "car[rand(1, 4)]"
-
 	var/atom/movable/S = new (locate(x+1,y,z))
 	S.density = 1
 	S.anchored = 1
@@ -362,6 +361,24 @@
 	S.anchored = 1
 	S.icon = null
 	S.verbs.Cut()
+
+
+/obj/structure/car/highwayman/snow_cover()
+	pre_snow_state = icon_state
+	icon_state = "[icon_state]_snow"
+
+/obj/structure/car/highwayman/snow_melt()
+	icon_state = pre_snow_state
+
+/obj/structure/car/highwayman/snow_act()
+	if(!snow)
+		snow = !snow
+		addtimer(addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 150)))
+
+/obj/structure/car/highwayman/heat_act()
+	if(snow)
+		snow = !snow
+		addtimer(addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 150)))
 
 
 /obj/structure/debris/v1
