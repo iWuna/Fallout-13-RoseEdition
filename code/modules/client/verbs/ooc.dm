@@ -45,10 +45,10 @@
 			log_admin("[key_name(src)] has attempted to advertise in OOC: [msg]")
 			message_admins("[key_name_admin(src)] попытался рекламировать: [msg]")
 			return
-		var/static/regex/slurs = regex("тр_п|tr_pik|тр_пик|андрейгей|фурри|onyx|инфинити|infinity|тр̲а̲п̲и̲к|tpaп|тpaп|трaп|тpaпик|nидорасище|тpaп|тр4п|tрaпиk|tрaпик|трaпик|хуя|траппи|транни|trappy|tranny|тр@п|ебашутся|хуярили|долбоёба|хуесосю|хуесошу|куколд|нигeр|салоед|салохуйка|каклошвайн|nigger|трахну|черномазый|нигер|ниггер|хуеблядская|пиздомудопрохуёбина|ублюдок|pedo|loli|shota|негр|хуйло|трап|трансуха|педик|пидор|лесбуха|хуйлан|лошара|сучара|хуесос|пизда|хуёвина|fagg|asshole|fuck|blyat|блять|блядь|pidor|dolboeb|долбоеб|пиздохуёвина|педик|desrt rose|сучка|нахуй|сука|ебучий|уебан|хуйлан|уеби", "i")
+		var/static/regex/slurs = regex("андрейгей|опух|onyx|инфинити|infinity|libeb|лубеб|лабеб|lifeweb|лайфвеб|нигeр|салоед|салохуйка|каклошвайн|nigger|черномазый|нигер|ниггер|pedo|loli|shota|desert rose|негр", "i")
 		if(findtext(msg, slurs))
 			to_chat(src, "<B>Slurs are not allowed.</B>")
-			to_chat(src, "<img src=\"https://media.discordapp.net/attachments/436187285919236096/782277547370479666/89149bf1-32d4-4585-8d5d-cbf31608ab6e.png\">")
+			to_chat(src, "<img style='max-height: 200px' src=\"https://media.discordapp.net/attachments/436187285919236096/782277547370479666/89149bf1-32d4-4585-8d5d-cbf31608ab6e.png\">")
 			log_admin("[key_name(src)] has triggered the slur filter (OOC): [msg].")
 			message_admins("[key_name_admin(src)] спровоцировал фильтр оскорблений (OOC): [msg].")
 			return
