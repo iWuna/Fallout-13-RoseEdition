@@ -100,12 +100,12 @@
 
 /turf/open/indestructible/ground/outside/snow_act()
 	if(!snow)
-		addtimer(CALLBACK(src, .proc/snow_cover), rand(0, 100))
+		addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 150))
 		snow = !snow
 
 /turf/open/indestructible/ground/outside/heat_act()
 	if(snow)
-		addtimer(CALLBACK(src, .proc/snow_melt), rand(0, 100))
+		addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 150))
 		snow = !snow
 
 /turf/open/indestructible/ground/outside/desert/Initialize()
@@ -262,6 +262,12 @@
 	icon_state = "housewood1"
 	icon = 'icons/turf/floors.dmi'
 	step_sounds = list("human" = "woodfootsteps")
+
+/turf/open/indestructible/ground/outside/wood/snow_act()
+	return
+
+/turf/open/indestructible/ground/outside/wood/heat_act()
+	return
 
 /turf/open/indestructible/ground/outside/water
 	gender = PLURAL

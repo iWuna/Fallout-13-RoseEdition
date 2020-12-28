@@ -110,12 +110,12 @@
 
 /obj/structure/holohoop/snow_act()
 	if(!snow)
-		addtimer(CALLBACK(src, .proc/snow_cover), rand(0, 100))
+		addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 150))
 		snow = !snow
 
 /obj/structure/holohoop/heat_act()
 	if(snow)
-		addtimer(CALLBACK(src, .proc/snow_melt), rand(0, 100))
+		addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 150))
 		snow = !snow
 
 

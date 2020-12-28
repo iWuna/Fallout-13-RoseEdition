@@ -1,7 +1,7 @@
 /datum/weather/snow
 	name = "Snow"
 	desc = "Harsh snowstorms roam the topside of this area surface, burying any area unfortunate enough to be in its path."
-	probability = 7
+	probability = 0
 
 	telegraph_message = "<span class='userdanger'><i>Drifting particles of snow begin to dust the surrounding area..</i></span>"
 	telegraph_duration = 300
@@ -20,7 +20,7 @@
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 
-	immunity_type = "light_snow"
+	immunity_type = "heavy_snow"
 
 	barometer_predictable = TRUE
 
@@ -31,22 +31,16 @@
 	L.adjust_bodytemperature(-rand(5, 15))
 
 /datum/weather/snow/weather_act_turf(turf/T)
-	T.snow_act()
-	if(prob(15))
-		addtimer(CALLBACK(GLOBAL_PROC, /proc/create_pile, T), rand(0, 100))
-	for(var/obj/structure/S in T.contents)
-		if(!S.snow)
+	if(!T.snow)
+		T.snow_act()
+		if(prob(20))
+			addtimer(CALLBACK(GLOBAL_PROC, /proc/create_pile, T), rand(50, 150))
+		for(var/obj/structure/S in T.contents)
 			S.snow_act()
-	for(var/obj/machinery/M in T.contents)
-		if(!M.snow)
+		for(var/obj/machinery/M in T.contents)
 			M.snow_act()
-	for(var/obj/item/I in T.contents)
-		if(!I.snow)
+		for(var/obj/item/I in T.contents)
 			I.snow_act()
-
-/datum/weather/snow/strong
-	telegraph_overlay = "snow"
-	weather_overlay = "heavy_snow"
 
 /datum/weather/snow/strong/weather_act(mob/living/L)
 	L.adjust_bodytemperature(-rand(10, 20))

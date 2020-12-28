@@ -167,12 +167,12 @@
 /obj/structure/kitchenspike/cross/snow_act()
 	if(!snow)
 		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_cover), rand(0, 100)))
+		addtimer(addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 150)))
 
 /obj/structure/kitchenspike/cross/heat_act()
 	if(snow)
 		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_melt), rand(0, 100)))
+		addtimer(addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 150)))
 
 /obj/structure/kitchenspike/cross/crowbar_act(mob/living/user, obj/item/I)
 	if(has_buckled_mobs())

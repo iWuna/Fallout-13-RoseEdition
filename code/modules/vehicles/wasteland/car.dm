@@ -25,12 +25,12 @@
 /obj/structure/car/snow_act()
 	if(!snow)
 		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_cover), rand(0, 100)))
+		addtimer(addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 150)))
 
 /obj/structure/car/heat_act()
 	if(snow)
 		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_melt), rand(0, 100)))
+		addtimer(addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 150)))
 
 /obj/structure/car/New()
 	..()

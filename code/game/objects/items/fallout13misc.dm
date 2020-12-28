@@ -243,13 +243,13 @@
 /obj/item/flag/snow_act()
 	if(!snow)
 		snow = !snow
-		addtimer(CALLBACK(src, .proc/snow_cover), rand(0, 100))
+		addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 300))
 
 
 /obj/item/flag/heat_act()
 	if(snow)
 		snow = !snow
-		addtimer(CALLBACK(src, .proc/snow_melt), rand(0, 100))
+		addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 300))
 
 
 /obj/item/flag/attackby(obj/item/I, mob/user, params)

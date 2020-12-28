@@ -8,12 +8,12 @@
 /obj/machinery/vending/cola/snow_act()
 	if(!snow)
 		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_cover), rand(0, 100)))
+		addtimer(addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 150)))
 
 /obj/machinery/vending/cola/heat_act()
 	if(snow)
 		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_melt), rand(0, 100)))
+		addtimer(addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 150)))
 
 /obj/machinery/vending/cola
 	name = "\improper Nuka-Cola Vending Machine"
