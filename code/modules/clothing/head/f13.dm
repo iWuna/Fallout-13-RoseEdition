@@ -456,3 +456,17 @@
 	item_state = "militiacap"
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEHAIR
+
+/obj/item/clothing/head/f13/inquisition_hat
+	name = "Inquisition hat"
+	desc = "A red spanish inquisition hat."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	icon_state = "inquisition_hat"
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/head/f13/anarchist_hat
+	name = "Anarchist hat"
+	desc = "Very strange black circle hat."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	icon_state = "anarchist_hat"
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
