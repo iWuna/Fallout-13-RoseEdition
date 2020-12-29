@@ -57,7 +57,7 @@
 			return FALSE
 		to_chat(user, "<span class='notice'>You begin to smash though [src]...</span>")
 		I.play_tool_sound(src, 75)
-		if(do_after(user, 150, target = src))
+		if(do_after(user, 300, target = src))
 			if(!istype(src, /turf/closed/wall/r_wall))
 				return TRUE
 			I.play_tool_sound(src, 75)

@@ -258,10 +258,12 @@
 		if(!iswallturf(src))
 			return TRUE
 		if(user.loc == T)
-			I.play_tool_sound(src)
-			dismantle_wall()
-			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
-			return TRUE
+			I.play_tool_sound(src, 75)
+			if(do_after(user, 150, target = src))
+				I.play_tool_sound(src, 75)
+				dismantle_wall()
+				visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
+				return TRUE
 	return FALSE
 
 /turf/closed/wall/singularity_pull(S, current_size)
