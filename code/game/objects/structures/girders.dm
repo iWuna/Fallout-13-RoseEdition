@@ -41,11 +41,11 @@
 			M.add_fingerprint(user)
 			qdel(src)
 
-	else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
-		to_chat(user, "<span class='notice'>You smash through the girder!</span>")
-		new /obj/item/stack/sheet/metal(get_turf(src))
-		W.play_tool_sound(src)
-		qdel(src)
+	// else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
+	// 	to_chat(user, "<span class='notice'>You smash through the girder!</span>")
+	// 	new /obj/item/stack/sheet/metal(get_turf(src))
+	// 	W.play_tool_sound(src)
+	// 	qdel(src)
 
 
 	else if(istype(W, /obj/item/stack))
@@ -346,12 +346,12 @@
 			transfer_fingerprints_to(R)
 			qdel(src)
 
-	else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
-		to_chat(user, "<span class='notice'>Your jackhammer smashes through the girder!</span>")
-		var/obj/item/stack/sheet/runed_metal/R = new(drop_location(), 2)
-		transfer_fingerprints_to(R)
-		W.play_tool_sound(src)
-		qdel(src)
+	// else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
+	// 	to_chat(user, "<span class='notice'>Your jackhammer smashes through the girder!</span>")
+	// 	var/obj/item/stack/sheet/runed_metal/R = new(drop_location(), 2)
+	// 	transfer_fingerprints_to(R)
+	// 	W.play_tool_sound(src)
+	// 	qdel(src)
 
 	else if(istype(W, /obj/item/stack/sheet/runed_metal))
 		var/obj/item/stack/sheet/runed_metal/R = W
