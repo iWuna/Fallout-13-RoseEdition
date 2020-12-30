@@ -42,18 +42,19 @@
 	var/turf/T = get_turf(src)
 		
 	//Snow footprints
-	if(!lying && !buckled)
-		if(loc == NewLoc)
-			if(!has_gravity(loc))
-				return
-			var/obj/effect/decal/cleanable/snow/footprints/oldFP = locate(/obj/effect/decal/cleanable/snow/footprints) in T
-			if(oldFP)
-				oldFP.entered_dirs |= dir
-				oldFP.update_icon()
-			else
-				var/obj/effect/decal/cleanable/blood/footprints/FP = new /obj/effect/decal/cleanable/snow/footprints(T)
-				FP.entered_dirs |= dir
-				FP.update_icon()
+	if(T.snow && T.snow_trail)
+		if(!lying && !buckled)
+			if(loc == NewLoc)
+				if(!has_gravity(loc))
+					return
+				var/obj/effect/decal/cleanable/snow/footprints/oldFP = locate(/obj/effect/decal/cleanable/snow/footprints) in T
+				if(oldFP)
+					oldFP.entered_dirs |= dir
+					oldFP.update_icon()
+				else
+					var/obj/effect/decal/cleanable/blood/footprints/FP = new /obj/effect/decal/cleanable/snow/footprints(T)
+					FP.entered_dirs |= dir
+					FP.update_icon()
 
 	if(shoes)
 		if(!lying && !buckled)

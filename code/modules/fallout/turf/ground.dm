@@ -65,9 +65,30 @@
 	gender = PLURAL
 	anchored = TRUE
 	name = "pile of snow"
+	var/max_digs = 4
+
 	desc = "Dont eat the yellow snow"
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "snow_1"
+
+/obj/structure/snow/pile/attack_hand(mob/user)
+	to_chat(user, "<span class='notice'>You begin digging the [src] with your hands.</span>")
+	if(do_after(user, 40, target = loc))
+		new/obj/item/stack/sheet/mineral/snow(user.loc, rand(1,4))
+		to_chat(user, "<span class='notice'>You dig some snow.</span>")
+		max_digs -= 1
+		if(!max_digs)
+			qdel(src)
+
+/obj/structure/snow/pile/attackby(obj/item/shovel/I, mob/living/user)
+	to_chat(user, "<span class='notice'>You begin digging the [src] with [I].</span>")
+	playsound(src, 'sound/effects/shovel_dig.ogg', 50, 1)
+	if(do_after(user, 20, target = loc))
+		new/obj/item/stack/sheet/mineral/snow(user.loc, rand(6, 12))
+		to_chat(user, "<span class='notice'>You dig some snow.</span>")
+		max_digs -= 2
+		if(!max_digs)
+			qdel(src)
 
 /obj/structure/snow/pile/Initialize()
 	. = ..()
