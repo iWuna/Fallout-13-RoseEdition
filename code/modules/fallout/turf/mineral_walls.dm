@@ -191,6 +191,24 @@
 	sheet_type = /obj/item/stack/sheet/mineral/snow
 	canSmoothWith = null
 
+/turf/closed/wall/mineral/snow/attack_hand(mob/user)
+	var/mob/living/carbon/C = user
+	to_chat(user, "You begin licking the [src].")
+	visible_message("[user] begins to lick the [src]")
+	if(do_after(user, 15, target=src))
+		if(prob(50))
+			C.Knockdown(50)
+			C.adjustFireLoss(5)
+			visible_message("<span class='danger'>[user] falis to lick the [src], [user.p_their()] tongue has frozen to the [src].</span>")
+			to_chat(user, "<span class='userdanger'>You fail to lick the [src], your tongue has frozen.</span>")
+		else
+			visible_message("<span class='danger'>[user] successfully licks the [src], weaking its structure.</span>")
+			playsound(user.loc,'sound/items/eatfood.ogg', rand(10,50), 1)
+			take_damage(rand(5,20))
+	else
+		. = ..()
+	
+
 /turf/closed/wall/mineral/abductor
 	name = "alien wall"
 	desc = "A wall with alien alloy plating."

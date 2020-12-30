@@ -33,8 +33,8 @@
 /datum/weather/snow/weather_act_turf(turf/T)
 	if(!T.snow)
 		T.snow_act()
-		if(prob(20))
-			addtimer(CALLBACK(GLOBAL_PROC, /proc/create_pile, T), rand(50, 150))
+		if(prob(30))
+			new/obj/structure/snow/pile(T)
 		for(var/obj/structure/S in T.contents)
 			S.snow_act()
 		for(var/obj/machinery/M in T.contents)
@@ -43,7 +43,4 @@
 			I.snow_act()
 
 /datum/weather/snow/strong/weather_act(mob/living/L)
-	L.adjust_bodytemperature(-rand(10, 20))
-	
-/proc/create_pile(loc)
-	new/obj/structure/snow/pile(loc)
+	L.adjust_bodytemperature(-rand(10, 30))

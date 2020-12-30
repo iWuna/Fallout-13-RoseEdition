@@ -102,21 +102,14 @@
 	anchored = TRUE
 	density = TRUE
 
-/obj/structure/holohoop/proc/snow_cover()
-	icon_state = "hoop_snow"
-
-/obj/structure/holohoop/proc/snow_melt()
-	icon_state = initial(icon_state)
 
 /obj/structure/holohoop/snow_act()
-	if(!snow)
-		addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 150))
-		snow = !snow
+	snow = TRUE
+	icon_state = "hoop_snow"
 
 /obj/structure/holohoop/heat_act()
-	if(snow)
-		addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 150))
-		snow = !snow
+	snow = FALSE
+	icon_state = initial(icon_state)
 
 
 /obj/structure/holohoop/attackby(obj/item/W as obj, mob/user as mob, params)

@@ -158,21 +158,13 @@
 	anchored = TRUE
 	bound_height = 64
 
-/obj/structure/kitchenspike/cross/proc/snow_cover()
+/obj/structure/kitchenspike/cross/snow_act()
+	snow = TRUE
 	icon_state = "cross_snow"
 
-/obj/structure/kitchenspike/cross/proc/snow_melt()
-	icon_state = initial(icon_state)
-
-/obj/structure/kitchenspike/cross/snow_act()
-	if(!snow)
-		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 150)))
-
 /obj/structure/kitchenspike/cross/heat_act()
-	if(snow)
-		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 150)))
+	snow = FALSE
+	icon_state = initial(icon_state)
 
 /obj/structure/kitchenspike/cross/crowbar_act(mob/living/user, obj/item/I)
 	if(has_buckled_mobs())

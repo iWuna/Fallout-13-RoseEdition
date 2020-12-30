@@ -1,19 +1,10 @@
-/obj/machinery/vending/cola/proc/snow_cover()
+/obj/machinery/vending/cola/snow_act()
+	..()
 	add_overlay(image('icons/obj/f13vending.dmi', "[icon_state]_snow"))
 
-/obj/machinery/vending/cola/proc/snow_melt()
-	cut_overlay(image('icons/obj/f13vending.dmi', "[icon_state]_snow"))
-	
-
-/obj/machinery/vending/cola/snow_act()
-	if(!snow)
-		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 150)))
-
 /obj/machinery/vending/cola/heat_act()
-	if(snow)
-		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 150)))
+	..()
+	cut_overlay(image('icons/obj/f13vending.dmi', "[icon_state]_snow"))
 
 /obj/machinery/vending/cola
 	name = "\improper Nuka-Cola Vending Machine"

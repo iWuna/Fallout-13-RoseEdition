@@ -200,7 +200,8 @@
 	item_state = "followersflag"
 	faction = "Followers"
 
-/obj/item/flag/proc/snow_cover()
+/obj/item/flag/snow_act()
+	snow = TRUE
 	if(!faction)
 		item_state = "emptyflag_snow"
 		icon_state = "emptyflag_snow"
@@ -220,7 +221,8 @@
 		item_state = "bosflag_snow"
 		icon_state = "bosflag_snow"
 
-/obj/item/flag/proc/snow_melt()
+/obj/item/flag/heat_act()
+	snow = FALSE
 	if(!faction)
 		item_state = "emptyflag"
 		icon_state = "emptyflag"
@@ -239,18 +241,6 @@
 	else if (faction == "BOS")
 		item_state = "bosflag"
 		icon_state = "bosflag"
-
-/obj/item/flag/snow_act()
-	if(!snow)
-		snow = !snow
-		addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 300))
-
-
-/obj/item/flag/heat_act()
-	if(snow)
-		snow = !snow
-		addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 300))
-
 
 /obj/item/flag/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/stack/sheet/leather) && item_state == "emptyflag")

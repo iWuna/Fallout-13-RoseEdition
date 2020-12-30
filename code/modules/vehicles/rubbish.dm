@@ -362,24 +362,14 @@
 	S.icon = null
 	S.verbs.Cut()
 
-
-/obj/structure/car/highwayman/snow_cover()
+/obj/structure/car/highwayman/snow_act()
+	snow = TRUE
 	pre_snow_state = icon_state
 	icon_state = "[icon_state]_snow"
 
-/obj/structure/car/highwayman/snow_melt()
-	icon_state = pre_snow_state
-
-/obj/structure/car/highwayman/snow_act()
-	if(!snow)
-		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 150)))
-
 /obj/structure/car/highwayman/heat_act()
-	if(snow)
-		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 150)))
-
+	snow = FALSE
+	icon_state = pre_snow_state
 
 /obj/structure/debris/v1
 	name = "pre-War building debris"

@@ -170,6 +170,8 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 #define BLOOD_STATE_OIL				"oil"
 #define BLOOD_STATE_NOT_BLOODY		"no blood whatsoever"
 
+#define SNOW_STATE_GENERIC			"snow"
+
 //suit sensors: sensor_mode defines
 
 #define SENSOR_OFF 0
