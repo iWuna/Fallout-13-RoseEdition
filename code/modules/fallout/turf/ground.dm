@@ -153,7 +153,7 @@
 
 /turf/open/indestructible/ground/outside/desert/snow_cover()
 	pre_snow_state = icon_state
-	icon = 'icons/fallout/turfs/snow.dmi'
+	icon = 'icons/turf/snow.dmi'
 	icon_state = "snow[rand(0,12)]"
 
 	
