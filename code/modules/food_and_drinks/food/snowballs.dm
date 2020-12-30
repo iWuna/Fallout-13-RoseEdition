@@ -38,7 +38,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slices_num = 4
 	volume = 40
-	list_reagents = list("nutriment" = 5, "water" = 10, "glass_shreds" = 25)
+	list_reagents = list("nutriment" = 5, "water" = 20, "glass_shreds" = 15)
 	tastes = list("water" = 1, "snow" = 1, "glass" = 1)
 	foodtype = TOXIC
 
