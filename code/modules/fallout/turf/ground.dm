@@ -205,6 +205,7 @@
 	icon_state = "innermiddle"
 	icon = 'icons/turf/f13road.dmi'
 	step_sounds = list("human" = "erikafootsteps")
+	snow_trail = FALSE
 
 /turf/open/indestructible/ground/outside/road/snow_act()
 	snow = TRUE
@@ -219,6 +220,7 @@
 	icon_state = "outermiddle"
 	icon = 'icons/turf/f13road.dmi'
 	step_sounds = list("human" = "erikafootsteps")
+	snow_trail = FALSE
 
 /turf/open/indestructible/ground/outside/sidewalk/snow_act()
 	snow = TRUE

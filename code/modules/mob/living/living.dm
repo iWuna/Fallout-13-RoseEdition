@@ -535,6 +535,8 @@
 
 	if(lying && !buckled && prob(getBruteLoss()*200/maxHealth))
 		makeTrail(newloc, T, old_direction)
+	if(lying && !buckled)
+		makeSnowTrail(newloc, T, old_direction)
 
 /mob/living/movement_delay(ignorewalk = 0)
 	. = 0
@@ -558,6 +560,36 @@
 				. += config_walk_delay.value_cache
 		if(pulling?.drag_delay)
 			. += pulling.drag_delay
+
+/mob/living/proc/makeSnowTrail(turf/target_turf, turf/start, direction)
+	if(!has_gravity())
+		return
+	var/snow_exists = FALSE
+	for(var/obj/effect/decal/cleanable/snow_trail/C in start) //checks for blood splatter already on the floor
+		snow_exists = TRUE
+
+	if(isturf(start))
+
+		if(target_turf.snow && target_turf.snow_trail)
+			var/newdir_s = get_dir(target_turf, start)
+			if(newdir_s != direction)
+				newdir_s = newdir_s | direction
+				if(newdir_s == 3) //N + S
+					newdir_s = NORTH
+				else if(newdir_s == 12) //E + W
+					newdir_s = EAST
+			if((newdir_s in GLOB.cardinals) && (prob(50)))
+				newdir_s = turn(get_dir(target_turf, start), 180)
+			if(!snow_exists)
+				new /obj/effect/decal/cleanable/snow_trail(start, get_static_viruses())
+			for(var/obj/effect/decal/cleanable/snow_trail/TH in start)
+				if(!(newdir_s in TH.existing_dirs) && TH.existing_dirs.len <= 16) //maximum amount of overlays is 16 (all light & heavy directions filled)
+					TH.existing_dirs += newdir_s
+					TH.add_overlay(image('icons/effects/blood.dmi', getSnowTrail(), dir = newdir_s))
+					TH.transfer_mob_blood_dna(src)
+
+/mob/living/proc/getSnowTrail()
+	return "strail"
 
 /mob/living/proc/makeTrail(turf/target_turf, turf/start, direction)
 	if(!has_gravity())

@@ -21,6 +21,7 @@
 
 	var/blocks_air = FALSE
 	var/snow = FALSE
+	var/snow_trail = TRUE
 
 	var/list/image/blueprint_data //for the station blueprints, images of objects eg: pipes
 

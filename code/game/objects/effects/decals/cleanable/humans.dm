@@ -36,6 +36,14 @@
 	random_icon_states = null
 	var/list/existing_dirs = list()
 
+/obj/effect/decal/cleanable/snow_trail
+	name = "snow"
+	icon_state = "strail"
+	desc = "Your instincts say you shouldn't be following these."
+	layer = ABOVE_BELOW_NORMAL_TURF_LAYER
+	random_icon_states = null
+	var/list/existing_dirs = list()
+
 /obj/effect/decal/cleanable/trail_holder/can_bloodcrawl_in()
 	return TRUE
 
