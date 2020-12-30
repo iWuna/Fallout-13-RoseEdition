@@ -94,7 +94,7 @@
 	snow = TRUE
 	pre_snow_state = icon_state
 	icon_state = "[pre_snow_state]_s"
-	step_sounds = list("human" = "snowdirtfootsteps")
+	step_sounds = list("human" = "snowfootsteps")
 
 /turf/open/indestructible/ground/outside/heat_act()
 	snow = FALSE
@@ -202,7 +202,7 @@
 	snow = TRUE
 	pre_snow_state = icon_state
 	icon_state = "[pre_snow_state]_s"
-	step_sounds = list("human" = "snowfootsteps")
+	step_sounds = list("human" = "snowdirtfootsteps")
 
 /turf/open/indestructible/ground/outside/road
 	name = "\proper road"
