@@ -94,11 +94,13 @@
 	snow = TRUE
 	pre_snow_state = icon_state
 	icon_state = "[pre_snow_state]_s"
+	step_sounds = list("human" = "snowdirtfootsteps")
 
 /turf/open/indestructible/ground/outside/heat_act()
 	snow = FALSE
 	icon_state = pre_snow_state
 	icon = initial(icon)
+	step_sounds = initial(step_sounds)
 
 /turf/open/indestructible/ground/outside/desert/Initialize()
 	. = ..()
@@ -147,7 +149,8 @@
 	snow = TRUE
 	pre_snow_state = icon_state
 	icon = 'icons/turf/snow.dmi'
-	icon_state = "snow[rand(0,12)]"	
+	icon_state = "snow[rand(0,12)]"
+	step_sounds = list("human" = "snowfootsteps")
 
 /turf/open/indestructible/ground/outside/desert/proc/plantGrass(Plantforce = FALSE)
 	var/Weight = 0
@@ -199,6 +202,7 @@
 	snow = TRUE
 	pre_snow_state = icon_state
 	icon_state = "[pre_snow_state]_s"
+	step_sounds = list("human" = "snowfootsteps")
 
 /turf/open/indestructible/ground/outside/road
 	name = "\proper road"
