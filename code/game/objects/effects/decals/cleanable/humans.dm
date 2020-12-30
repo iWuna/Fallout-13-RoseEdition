@@ -117,6 +117,48 @@
 /obj/effect/decal/cleanable/blood/drip/can_bloodcrawl_in()
 	return TRUE
 
+/obj/effect/decal/cleanable/snow/footprints
+	name = "footprints"
+	icon = 'icons/effects/footprints.dmi'
+	icon_state = "nothingwhatsoever"
+	desc = "WHOSE FOOTPRINTS ARE THESE?"
+	random_icon_states = null
+	var/entered_dirs = 0
+	var/exited_dirs = 0
+	blood_state = SNOW_STATE_GENERIC
+	var/list/shoe_types = list()
+
+/obj/effect/decal/cleanable/snow/footprints/Crossed(atom/movable/O)
+	..()
+	var/mob/living/carbon/human/H = O
+	if (!(entered_dirs & H.dir))
+		entered_dirs |= H.dir
+		update_icon()
+
+/obj/effect/decal/cleanable/snow/footprints/Uncrossed(atom/movable/O)
+	..()
+	var/mob/living/carbon/human/H = O
+	if (!(exited_dirs & H.dir))
+		exited_dirs |= H.dir
+		update_icon()
+
+/obj/effect/decal/cleanable/snow/footprints/update_icon()
+	cut_overlays()
+
+	for(var/Ddir in GLOB.cardinals)
+		if(entered_dirs & Ddir)
+			var/image/bloodstep_overlay = GLOB.bloody_footprints_cache["entered-[blood_state]-[Ddir]"]
+			if(!bloodstep_overlay)
+				GLOB.bloody_footprints_cache["entered-[blood_state]-[Ddir]"] = bloodstep_overlay = image(icon, "[blood_state]1", dir = Ddir)
+			add_overlay(bloodstep_overlay)
+		if(exited_dirs & Ddir)
+			var/image/bloodstep_overlay = GLOB.bloody_footprints_cache["exited-[blood_state]-[Ddir]"]
+			if(!bloodstep_overlay)
+				GLOB.bloody_footprints_cache["exited-[blood_state]-[Ddir]"] = bloodstep_overlay = image(icon, "[blood_state]2", dir = Ddir)
+			add_overlay(bloodstep_overlay)
+
+	alpha = BLOODY_FOOTPRINT_BASE_ALPHA+bloodiness
+
 //BLOODY FOOTPRINTS
 /obj/effect/decal/cleanable/blood/footprints
 	name = "footprints"

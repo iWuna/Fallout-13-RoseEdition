@@ -4,7 +4,7 @@
 	probability = 7
 
 	telegraph_message = "<span class='userdanger'><i>Heat wave is coming to the area, increasing temperature of anyone caught outside.</i></span>"
-	telegraph_duration = 300
+	telegraph_duration = 10
 	telegraph_overlay = "light_ash"
 	telegraph_sound = 'sound/f13effects/sandstorm_warning.ogg'
 
@@ -41,3 +41,7 @@
 			I.heat_act()
 	for(var/obj/structure/snow/pile/P in T.contents)
 		P.Destroy()
+	for(var/obj/effect/decal/cleanable/snow_trail/ST in T.contents)
+		ST.Destroy()
+	for(var/obj/effect/decal/cleanable/snow/footprints/FP in T.contents)
+		FP.Destroy()
