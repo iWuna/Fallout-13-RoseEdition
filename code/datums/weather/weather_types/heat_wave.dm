@@ -4,7 +4,7 @@
 	probability = 7
 
 	telegraph_message = "<span class='userdanger'><i>Heat wave is coming to the area, increasing temperature of anyone caught outside.</i></span>"
-	telegraph_duration = 10
+	telegraph_duration = 300
 	telegraph_overlay = "light_ash"
 	telegraph_sound = 'sound/f13effects/sandstorm_warning.ogg'
 

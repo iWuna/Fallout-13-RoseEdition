@@ -4,7 +4,7 @@
 	probability = 0
 
 	telegraph_message = "<span class='userdanger'><i>Drifting particles of snow begin to dust the surrounding area..</i></span>"
-	telegraph_duration = 10
+	telegraph_duration = 300
 	telegraph_overlay = "snow_storm"
 	telegraph_sound = 'sound/f13effects/sandstorm_warning.ogg'
 
@@ -43,4 +43,4 @@
 			I.snow_act()
 
 /datum/weather/snow/strong/weather_act(mob/living/L)
-	L.adjust_bodytemperature(-rand(10, 20))
+	L.adjust_bodytemperature(-rand(10, 30))

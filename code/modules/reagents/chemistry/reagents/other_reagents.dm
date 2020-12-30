@@ -1778,3 +1778,4 @@
 	if(prob(45))
 		to_chat(M, "<span class='danger'>You feel glass shreds moving down your stomach!</span>")
 		M.adjustBruteLoss(4*REM, 0)
+	..()
