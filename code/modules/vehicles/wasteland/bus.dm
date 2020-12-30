@@ -16,21 +16,13 @@
 	max_integrity = 200
 	integrity_failure = 50
 
-/obj/structure/closet/bus/proc/snow_cover()
+/obj/structure/closet/bus/snow_act()
+	snow = TRUE
 	icon_state = "[initial(icon_state)]_snow"
 
-/obj/structure/closet/bus/proc/snow_melt()
-	icon_state = initial(icon_state)
-
-/obj/structure/closet/bus/snow_act()
-	if(!snow)
-		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 150)))
-
 /obj/structure/closet/bus/heat_act()
-	if(snow)
-		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 150)))
+	snow = FALSE
+	icon_state = initial(icon_state)
 
 /obj/structure/closet/bus/New()
 	..()

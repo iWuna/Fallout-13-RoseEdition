@@ -16,21 +16,13 @@
 	var/S3
 	var/S4
 
-/obj/structure/car/proc/snow_cover()
+/obj/structure/car/snow_act()
+	snow = TRUE
 	icon_state = "[initial(icon_state)]_snow"
 
-/obj/structure/car/proc/snow_melt()
-	icon_state = initial(icon_state)
-
-/obj/structure/car/snow_act()
-	if(!snow)
-		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 150)))
-
 /obj/structure/car/heat_act()
-	if(snow)
-		snow = !snow
-		addtimer(addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 150)))
+	snow = FALSE
+	icon_state = initial(icon_state)
 
 /obj/structure/car/New()
 	..()

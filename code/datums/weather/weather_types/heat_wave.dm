@@ -39,5 +39,5 @@
 			M.heat_act()
 		for(var/obj/item/I in T.contents)
 			I.heat_act()
-		for(var/obj/structure/snow/pile/P in T.contents)
-			addtimer(CALLBACK(P, .proc/Destroy), rand(0,100))
+	for(var/obj/structure/snow/pile/P in T.contents)
+		P.Destroy()

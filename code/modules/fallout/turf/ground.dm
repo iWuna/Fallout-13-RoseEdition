@@ -90,23 +90,15 @@
 	var/obj/dugpit/mypit
 	var/unburylevel = 0
 
-/turf/open/indestructible/ground/outside/proc/snow_cover()
+/turf/open/indestructible/ground/outside/snow_act()
+	snow = TRUE
 	pre_snow_state = icon_state
 	icon_state = "[pre_snow_state]_s"
 
-/turf/open/indestructible/ground/outside/proc/snow_melt()
+/turf/open/indestructible/ground/outside/heat_act()
+	snow = FALSE
 	icon_state = pre_snow_state
 	icon = initial(icon)
-
-/turf/open/indestructible/ground/outside/snow_act()
-	if(!snow)
-		addtimer(CALLBACK(src, .proc/snow_cover), rand(50, 150))
-		snow = !snow
-
-/turf/open/indestructible/ground/outside/heat_act()
-	if(snow)
-		addtimer(CALLBACK(src, .proc/snow_melt), rand(50, 150))
-		snow = !snow
 
 /turf/open/indestructible/ground/outside/desert/Initialize()
 	. = ..()
@@ -151,12 +143,11 @@
 	anchored = TRUE
 	resistance_flags = INDESTRUCTIBLE
 
-/turf/open/indestructible/ground/outside/desert/snow_cover()
+/turf/open/indestructible/ground/outside/desert/snow_act()
+	snow = TRUE
 	pre_snow_state = icon_state
 	icon = 'icons/turf/snow.dmi'
-	icon_state = "snow[rand(0,12)]"
-
-	
+	icon_state = "snow[rand(0,12)]"	
 
 /turf/open/indestructible/ground/outside/desert/proc/plantGrass(Plantforce = FALSE)
 	var/Weight = 0
@@ -204,13 +195,10 @@
 	flags_1 = CAN_HAVE_NATURE
 	air = /datum/gas_mixture/turf
 
-/turf/open/indestructible/ground/outside/dirt/snow_cover()
+/turf/open/indestructible/ground/outside/dirt/snow_act()
+	snow = TRUE
 	pre_snow_state = icon_state
 	icon_state = "[pre_snow_state]_s"
-
-/turf/open/indestructible/ground/outside/dirt/snow_melt()
-	icon_state = pre_snow_state
-	icon = initial(icon)
 
 /turf/open/indestructible/ground/outside/road
 	name = "\proper road"
@@ -218,10 +206,12 @@
 	icon = 'icons/turf/f13road.dmi'
 	step_sounds = list("human" = "erikafootsteps")
 
-/turf/open/indestructible/ground/outside/road/snow_cover()
+/turf/open/indestructible/ground/outside/road/snow_act()
+	snow = TRUE
 	icon = 'icons/turf/f13road_snow.dmi'
 
-/turf/open/indestructible/ground/outside/road/snow_melt()
+/turf/open/indestructible/ground/outside/road/heat_act()
+	snow = FALSE
 	icon = initial(icon)
 
 /turf/open/indestructible/ground/outside/sidewalk
@@ -230,10 +220,12 @@
 	icon = 'icons/turf/f13road.dmi'
 	step_sounds = list("human" = "erikafootsteps")
 
-/turf/open/indestructible/ground/outside/sidewalk/snow_cover()
+/turf/open/indestructible/ground/outside/sidewalk/snow_act()
+	snow = TRUE
 	icon = 'icons/turf/f13road_snow.dmi'
 
-/turf/open/indestructible/ground/outside/sidewalk/snow_melt()
+/turf/open/indestructible/ground/outside/sidewalk/heat_act()
+	snow = FALSE
 	icon = initial(icon)
 
 /obj/effect/overlay/sidewalk_side
