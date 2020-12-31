@@ -1638,3 +1638,12 @@ proc/newchildtypesof()
 	if(length(prevtypes))
 		for(var/t in prevtypes)
 			. += new t
+
+proc/scale_agility(time, mob/user)
+	var/agility = user.special_a
+	if(agility >= 5)
+		return time *(1 - (agility - 5)/5)
+	else if(agility <= 5)
+		return time *(1 + (5 - agility)/5)
+	else
+		return time
