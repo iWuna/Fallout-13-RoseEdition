@@ -70,6 +70,19 @@
 	desc = "Dont eat the yellow snow"
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "snow_1"
+	var/list/pre_init_sound
+
+/obj/structure/snow/pile/Initialize()
+	. = ..()
+	var/turf/T = get_turf(src)
+	pre_init_sound = T.step_sounds
+	T.step_sounds = list("human" = "snowfootsteps")
+
+/obj/structure/snow/pile/Destroy()
+	var/turf/T = get_turf(src)
+	T.step_sounds = pre_init_sound
+	. = ..()
+
 
 /obj/structure/snow/pile/attack_hand(mob/user)
 	to_chat(user, "<span class='notice'>You begin digging the [src] with your hands.</span>")
@@ -126,7 +139,7 @@
 	snow = FALSE
 	icon_state = pre_snow_state
 	icon = initial(icon)
-	step_sounds = initial(step_sounds)
+	step_sounds = list("human" = "dirtfootsteps")
 
 /turf/open/indestructible/ground/outside/desert/Initialize()
 	. = ..()
