@@ -38,6 +38,23 @@
 	. = ..()
 	for(var/datum/mutation/human/HM in dna.mutations)
 		HM.on_move(src, NewLoc)
+	
+	var/turf/T = get_turf(src)
+		
+	//Snow footprints
+	if(T.snow && T.snow_trail)
+		if(!lying && !buckled)
+			if(loc == NewLoc)
+				if(!has_gravity(loc))
+					return
+				var/obj/effect/decal/cleanable/snow/footprints/oldFP = locate(/obj/effect/decal/cleanable/snow/footprints) in T
+				if(oldFP)
+					oldFP.entered_dirs |= dir
+					oldFP.update_icon()
+				else
+					var/obj/effect/decal/cleanable/blood/footprints/FP = new /obj/effect/decal/cleanable/snow/footprints(T)
+					FP.entered_dirs |= dir
+					FP.update_icon()
 
 	if(shoes)
 		if(!lying && !buckled)
@@ -45,9 +62,6 @@
 				if(!has_gravity(loc))
 					return
 				var/obj/item/clothing/shoes/S = shoes
-
-				//Bloody footprints
-				var/turf/T = get_turf(src)
 				if(S.bloody_shoes && S.bloody_shoes[S.blood_state])
 					var/obj/effect/decal/cleanable/blood/footprints/oldFP = locate(/obj/effect/decal/cleanable/blood/footprints) in T
 					if(oldFP && oldFP.blood_state == S.blood_state)

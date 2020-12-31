@@ -191,4 +191,8 @@
 				soundin = pick('sound/f13ambience/rain4.ogg')
 			if ("eastbladeslice")
 				soundin = pick('sound/f13weapons/eastbladeslice1.ogg','sound/f13weapons/eastbladeslice2.ogg','sound/f13weapons/eastbladeslice3.ogg','sound/f13weapons/eastbladeslice4.ogg')
+			if ("snowfootsteps")
+				soundin = pick('sound/effects/footsteps/snow/snow1.wav','sound/effects/footsteps/snow/snow2.wav','sound/effects/footsteps/snow/snow3.wav','sound/effects/footsteps/snow/snow4.wav', 'sound/effects/footsteps/snow/snow5.wav', 'sound/effects/footsteps/snow/snow6.wav')
+			if ("snowdirtfootsteps")
+				soundin = pick('sound/effects/footsteps/snow/dirt1.wav','sound/effects/footsteps/snow/dirt2.wav','sound/effects/footsteps/snow/dirt3.wav')
 	return soundin

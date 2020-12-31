@@ -252,13 +252,18 @@
 
 /turf/closed/wall/proc/try_destroy(obj/item/I, mob/user, turf/T)
 	if(istype(I, /obj/item/pickaxe/drill/jackhammer))
+		if(user.special_s < 7)
+			to_chat(user, "<span class='warning'>You are too weak for for wall drilling!</span>")
+			return FALSE
 		if(!iswallturf(src))
 			return TRUE
 		if(user.loc == T)
-			I.play_tool_sound(src)
-			dismantle_wall()
-			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
-			return TRUE
+			I.play_tool_sound(src, 75)
+			if(do_after(user, 150, target = src))
+				I.play_tool_sound(src, 75)
+				dismantle_wall()
+				visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
+				return TRUE
 	return FALSE
 
 /turf/closed/wall/singularity_pull(S, current_size)

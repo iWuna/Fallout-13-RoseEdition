@@ -1766,3 +1766,16 @@
 	M.adjustToxLoss(0.5*REM, 0)
 	. = 1
 	..()
+
+/datum/reagent/shredded_glass
+	name = "Shredded glass"
+	id = "glass_shreds"
+	reagent_state = SOLID
+	color = "#00B4FF"
+	taste_description = "shreds"
+
+/datum/reagent/shredded_glass/on_mob_life(mob/living/carbon/M)
+	if(prob(45))
+		to_chat(M, "<span class='danger'>You feel glass shreds moving down your stomach!</span>")
+		M.adjustBruteLoss(4*REM, 0)
+	..()

@@ -1169,3 +1169,36 @@
 	desc = "A dark red-sweater with some cargo-pants. Perfect for when it just gets too cold down in local air-conditioned areas."
 	icon_state = "brahminsss"
 	item_state = "brahminsss"
+
+/obj/item/clothing/under/f13/inquisition
+	name = "Inquisition uniform"
+	desc = "Nobody expects the spanish inquisition!"
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+	icon_state = "inquisition"
+	can_adjust = TRUE
+	item_state = "inquisition"
+	item_color = "inquisition"
+
+/obj/item/clothing/under/f13/joshua
+	name = "Joshua uniform"
+	desc = "Just Joshua's uniform"
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+	icon_state = "joshua"
+	item_state = "joshua"
+	item_color = "joshua"
+
+/obj/item/clothing/under/f13/nw_sweater
+	name = "Warm sweater"
+	desc = "Sewed by your mommy."
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+	icon_state = "sweater"
+	item_state = "sweater"
+	item_color = "sweater"
+
+/obj/item/clothing/under/f13/ny_trap
+	name = "Sexy Santa Suit"
+	desc = "Best gift for you boyfriend."
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+	icon_state = "ny_trap"
+	item_state = "ny_trap"
+	item_color = "ny_trap"

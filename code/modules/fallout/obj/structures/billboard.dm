@@ -9,6 +9,17 @@
 	layer = 5
 	icon = 'icons/obj/Ritas.dmi'
 	resistance_flags = INDESTRUCTIBLE
+	pre_snow_state = null
+
+/obj/structure/billboard/snow_act()
+	snow = TRUE
+	pre_snow_state = icon_state
+	icon_state = "[icon_state]_snow"
+
+/obj/structure/billboard/heat_act()
+	snow = FALSE
+	icon_state = pre_snow_state
+	
 /*
 /obj/structure/billboard/New()
 	..()

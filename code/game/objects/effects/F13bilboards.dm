@@ -5,7 +5,17 @@
 	anchored = TRUE
 	layer = MASSIVE_OBJ_LAYER
 	var/random_basetype
-	var/never_random = FALSE // used for the 'random' subclasses.
+	pre_snow_state = null
+	var/never_random = FALSE // used for the 'random' subclasses.\
+
+/obj/structure/sign/bilboards/snow_act()
+	snow = TRUE
+	pre_snow_state = icon_state
+	icon_state = "[icon_state]_snow"
+
+/obj/structure/sign/bilboards/heat_act()
+	snow = FALSE
+	icon_state = pre_snow_state
 
 /obj/structure/sign/bilboards/random
 	name = "\improper Random signs"
