@@ -41,6 +41,7 @@
 	list_reagents = list("nutriment" = 5, "water" = 20, "glass_shreds" = 15)
 	tastes = list("water" = 1, "snow" = 1, "glass" = 1)
 	foodtype = TOXIC
+	throwforce = 12
 
 /obj/item/reagent_containers/food/snacks/snowball/harmball/throw_impact(atom/target)
 	if(..() || !iscarbon(target))
