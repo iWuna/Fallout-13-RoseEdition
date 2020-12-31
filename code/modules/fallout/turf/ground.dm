@@ -70,18 +70,11 @@
 	desc = "Dont eat the yellow snow"
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "snow_1"
-	
-
-/obj/structure/snow/pile/Crossed(atom/movable/AM, oldloc)
-	if(istype(AM, /mob/living/carbon))
-		if(prob(50))
-			playsound(src, get_sfx("snowfootsteps"), 50)
-	. = ..()
 
 /obj/structure/snow/pile/attack_hand(mob/user)
 	to_chat(user, "<span class='notice'>You begin digging the [src] with your hands.</span>")
 	playsound(src, get_sfx("snowfootsteps"), 50)
-	if(do_after(user, scale_agility(60, user), target = loc))
+	if(do_after(user, scale_agility(60, user), target = src))
 		new/obj/item/stack/sheet/mineral/snow(user.loc, rand(0, 2))
 		to_chat(user, "<span class='notice'>You dig some snow.</span>")
 		max_digs -= 1
