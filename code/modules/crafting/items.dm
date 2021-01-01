@@ -706,12 +706,15 @@
 	if(istype(src,/obj/item/prefabs/complex/eWeaponFrame/pistol))
 		gun_path = /obj/item/gun/energy/laser/pistol
 		gun_icon = "AEP7"//Garbage default pistol
-		prefix = "Portable"
+		prefix = "portable"
 	else if(istype(src,/obj/item/prefabs/complex/eWeaponFrame/rifle))
 		gun_path = /obj/item/gun/energy/laser/aer9
 		gun_icon = "laser"
-		prefix = "Full Length"
-
+		prefix = "full Length"
+	else if(istype(src,/obj/item/prefabs/complex/eWeaponFrame/hqrifle))
+		gun_path = /obj/item/gun/energy/laser/rcw
+		gun_icon = "lasercw"
+		prefix = "advanced"
 	if(!ispath(gun_path)) //Something went fucky
 		return 0
 
