@@ -134,7 +134,7 @@
 		return
 	else if(istype(W, /obj/item/screwdriver) && mould)
 		playsound(src, 'sound/items/screwdriver2.ogg', 50, 0)
-		if(do_after(user,work_time,target = src))
+		if(do_after(user, scale_a_i(work_time, user), target = src))
 			playsound(src, 'sound/items/screwdriver.ogg', 50, 0)
 			mould.forceMove(get_turf(src))
 			mould = null
@@ -142,7 +142,7 @@
 		return 1
 	else if(istype(W, /obj/item/prefabs/mould))
 		playsound(src, 'sound/items/screwdriver2.ogg', 50, 0)
-		if(do_after(user,work_time,target = src))
+		if(do_after(user, scale_a_i(work_time, user),target = src))
 			playsound(src, 'sound/items/screwdriver.ogg', 50, 0)
 			if(mould)
 				to_chat(user,"You remove the old mould.")
@@ -156,7 +156,7 @@
 		if(S.amount < mould.sheet_amount)
 			to_chat(user,"<span class='warning'>There's not enough material in [W]!</span>")
 			return 0
-		if(do_after(user,work_time,target = src))	 //success
+		if(do_after(user, scale_a_i(work_time, user), target = src))	 //success
 			S.use(mould.sheet_amount) //This also deletes the stack if empty
 			var/O = new mould.item_path(get_turf(src))
 			to_chat(user,"<span class='notice'>You carefully melt down [W] into [O]!</span>")
