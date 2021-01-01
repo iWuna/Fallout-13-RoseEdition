@@ -260,4 +260,4 @@
 #define TYPING_INDICATOR_TIMEOUT 5 MINUTES
 
 //Respawn timer
-#define RESPAWN_TIMER 2000 // in deciseconds, the time to wait before allowing respawn. 15 minutes = 15 * 60 (seconds in minute) * 15 (seconds to deciseconds) 6000 - 15 минут, 2000 - 5 минут
+#define RESPAWN_TIMER 6000 // in deciseconds, the time to wait before allowing respawn. 15 minutes = 15 * 60 (seconds in minute) * 15 (seconds to deciseconds) 6000 - 15 минут, 2000 - 5 минут
