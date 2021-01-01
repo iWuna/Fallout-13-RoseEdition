@@ -208,13 +208,13 @@
 	item_path = /obj/item/prefabs/complex/stock
 	sheet_amount = 2
 
-/obj/item/prefabs/mould/wstock
+/obj/item/prefabs/mould/stock/wooden
 	name = "Wooden Stock Mould"
 	item_path = /obj/item/prefabs/complex/stock/low
 	sheet_amount = 2
 	mould_sheet_type = /obj/item/stack/sheet/mineral/wood
 
-/obj/item/prefabs/mould/pstock
+/obj/item/prefabs/mould/stock/plastic
 	name = "Plastic Stock Mould"
 	item_path = /obj/item/prefabs/complex/stock/mid
 	sheet_amount = 2
