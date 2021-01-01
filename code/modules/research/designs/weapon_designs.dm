@@ -223,7 +223,7 @@
 /datum/design/ew_adapter_EC
 	name = "EC Adapter"
 	desc = "Power Source Adapater"
-	id = "ew_adapter_EC"
+	id = "EC_ew_adapter"
 	build_type = PROTOLATHE
 	materials = list(MAT_GLASS = 4500, MAT_GOLD = 5500, MAT_DIAMOND = 6000, MAT_URANIUM = 8000)
 	build_path = /obj/item/prefabs/complex/ecell/ec
@@ -233,7 +233,7 @@
 /datum/design/ew_adapter_MFC
 	name = "MFC Adapter"
 	desc = "Power Source Adapater"
-	id = "ew_adapter_MFC"
+	id = "MFC_ew_adapter"
 	build_type = PROTOLATHE
 	materials = list(MAT_GLASS = 6500, MAT_GOLD = 3500, MAT_DIAMOND = 3500, MAT_URANIUM = 3000)
 	build_path =/obj/item/prefabs/complex/ecell/mfc
@@ -243,7 +243,7 @@
 /datum/design/ew_adapter_ECP
 	name = "ECP Adapter"
 	desc = "Power Source Adapater"
-	id = "ew_adapter_ECP"
+	id = "ECP_ew_adapter"
 	build_type = PROTOLATHE
 	materials = list(MAT_GLASS = 6500, MAT_GOLD = 4500, MAT_DIAMOND = 4000, MAT_URANIUM = 4000)
 	build_path = /obj/item/prefabs/complex/ecell/ecp
