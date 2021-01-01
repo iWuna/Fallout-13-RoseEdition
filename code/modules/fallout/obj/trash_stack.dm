@@ -24,6 +24,9 @@
 			return
 		playsound(user, get_sfx("rustle"), 50)
 		if(do_after(user, scale_agility(40, user), target = loc))
+			if(user in loot_players)
+				to_chat(user, "<span class='notice'>You already have looted [src].</span>")
+				return
 			for(var/i=0, i < rand(1, 1 + user.special_l), i++)
 				var/itemtype = pickweight(GLOB.trash_list)
 				if(itemtype)
@@ -44,6 +47,9 @@
 			return
 		playsound(user, 'sound/effects/shovel_dig.ogg', 50)
 		if(do_after(user, scale_agility(20, user), target = loc))
+			if(user in loot_players)
+				to_chat(user, "<span class='notice'>You already have looted [src].</span>")
+				return
 			for(var/i=0, i < rand(3, 3 + user.special_l), i++)
 				var/itemtype = pickweight(GLOB.trash_list)
 				if(itemtype)

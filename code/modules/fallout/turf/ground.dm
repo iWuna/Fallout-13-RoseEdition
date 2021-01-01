@@ -70,25 +70,43 @@
 	desc = "Dont eat the yellow snow"
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "snow_1"
+	var/list/pre_init_sound
+
+/obj/structure/snow/pile/Initialize()
+	. = ..()
+	var/turf/T = get_turf(src)
+	pre_init_sound = T.step_sounds
+	T.step_sounds = list("human" = "snowfootsteps")
+
+/obj/structure/snow/pile/Destroy()
+	var/turf/T = get_turf(src)
+	T.step_sounds = pre_init_sound
+	. = ..()
+
 
 /obj/structure/snow/pile/attack_hand(mob/user)
 	to_chat(user, "<span class='notice'>You begin digging the [src] with your hands.</span>")
-	if(do_after(user, 40, target = loc))
-		new/obj/item/stack/sheet/mineral/snow(user.loc, rand(1,4))
+	playsound(src, get_sfx("snowfootsteps"), 50)
+	if(do_after(user, scale_agility(60, user), target = src))
+		new/obj/item/stack/sheet/mineral/snow(user.loc, rand(0, 2))
 		to_chat(user, "<span class='notice'>You dig some snow.</span>")
 		max_digs -= 1
-		if(!max_digs)
-			qdel(src)
+		if(max_digs <= 0)
+			Destroy()
+	else
+		..()
 
 /obj/structure/snow/pile/attackby(obj/item/shovel/I, mob/living/user)
 	to_chat(user, "<span class='notice'>You begin digging the [src] with [I].</span>")
 	playsound(src, 'sound/effects/shovel_dig.ogg', 50, 1)
-	if(do_after(user, 20, target = loc))
-		new/obj/item/stack/sheet/mineral/snow(user.loc, rand(6, 12))
+	if(do_after(user, scale_agility(30, user), target = loc))
+		new/obj/item/stack/sheet/mineral/snow(user.loc, rand(0, 3))
 		to_chat(user, "<span class='notice'>You dig some snow.</span>")
 		max_digs -= 2
-		if(!max_digs)
-			qdel(src)
+		if(max_digs <= 0)
+			Destroy()
+	else
+		..()
 
 /obj/structure/snow/pile/Initialize()
 	. = ..()
@@ -121,7 +139,7 @@
 	snow = FALSE
 	icon_state = pre_snow_state
 	icon = initial(icon)
-	step_sounds = initial(step_sounds)
+	step_sounds = list("human" = "dirtfootsteps")
 
 /turf/open/indestructible/ground/outside/desert/Initialize()
 	. = ..()
