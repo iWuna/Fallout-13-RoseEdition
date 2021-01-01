@@ -212,6 +212,11 @@
 		to_chat(user, "<span class='userdanger'>You can't pull the trigger, you too weak!</span>")
 		return
 
+	if(istype(src, /obj/item/gun/energy) && user.special_i <= 3)
+		user.dropItemToGround(src, TRUE)
+		to_chat(user, "<span class='userdanger'>YOU CAN'T UNDERSTAND HOW GUN CAN SHOOT WITH LASER'S AND TRYING TO SHOOT FROM GUN THIS FORM YOU JUST DROP IT ON THE FLOOR!</span>")
+		return
+
 	//DUAL (or more!) WIELDING
 	var/bonus_spread = 0
 	var/loop_counter = 0
