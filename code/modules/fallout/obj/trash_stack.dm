@@ -39,9 +39,10 @@
 		return ..()
 
 
-/obj/item/storage/trash_stack/attackby(obj/item/shovel/S, mob/user)
-	var/turf/ST = get_turf(src)
-	if(user?.a_intent != INTENT_HARM)
+/obj/item/storage/trash_stack/attackby(obj/item/I, mob/user)
+	if(user?.a_intent != INTENT_HARM && istype(I, /obj/item/shovel))
+		var/obj/item/shovel/S = I
+		var/turf/ST = get_turf(src)
 		if(user in loot_players)
 			to_chat(user, "<span class='notice'>You already have looted [src].</span>")
 			return
