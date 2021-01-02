@@ -760,6 +760,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",	/obj/item/book/granter/trait/trekking,							400),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 4",			/obj/item/book/granter/trait/gunsmith_four, 					400),
 		new /datum/data/wasteland_equipment("Craftsmanship Monthly",			/obj/item/book/granter/trait/techno,							600),
+		new /datum/data/wasteland_equipment("Gunsmithing for dummies",			/obj/item/book/granter/trait/gunsmith,							600),
 		new /datum/data/wasteland_equipment("Advanced Armor and You",			/obj/item/book/granter/trait/pa_wear,							600),
 		)
 

@@ -133,6 +133,16 @@
 	traitname = "The Machine Spirits"
 	remarks = list("There are five Machine Spirits...", "Each govern an aspect of life...", "Always respect the Machine Spirits", "Never use them for selfish reasons", "Honour and love those blessed by the machine spirits.")
 
+
+/obj/item/book/granter/trait/gunsmith
+	name = "Gunsmithing for dummies"
+	desc = "A book on how to use smith deadly weapons. It's pretty complicated."
+	oneuse = TRUE
+	granted_trait = TRAIT_MASTER_GUNSMITH
+	traitname = "Master Gunsmith"
+	remarks = list("Try turning it off and on again...","Alwyas craft in good form.", "Dont forget PPE.", "Keep your mechanisms OILED.", "Stay organised.")
+
+
 /obj/item/book/granter/trait/techno
 	name = "Craftsmanship Monthly"
 	desc = "A book on how to use advanced tools and production machinery. It's pretty complicated."

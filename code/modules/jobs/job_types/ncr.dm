@@ -402,8 +402,6 @@ Corporal
 	///datum/outfit/loadout/specmech //Power armor, assault rifle
 	)
 
-/datum/job/ncr/f13specialist/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Master Gunsmith")
 
 /datum/outfit/job/ncr/f13specialist
 	name = "NCR Corporal"
@@ -454,7 +452,8 @@ Corporal
 		/obj/item/stack/sheet/metal/fifty=2,
 		/obj/item/stack/sheet/glass/fifty=1,
 		/obj/item/ammo_box/magazine/m556/rifle=2,
-		/obj/item/book/granter/trait/techno
+		/obj/item/book/granter/trait/techno,
+		/obj/item/book/granter/trait/gunsmith
 		)
 
 /datum/outfit/loadout/specscout
