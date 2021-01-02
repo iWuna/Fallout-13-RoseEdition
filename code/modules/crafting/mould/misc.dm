@@ -99,7 +99,7 @@
 	subcategory = CAT_MOULD_MISC
 
 
-/datum/crafting_recipe/mould/receiver
+/datum/crafting_recipe/mould/alloy
 	result = /obj/item/prefabs/mould/receiver
 	name = "Alloy Mould"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER4)
