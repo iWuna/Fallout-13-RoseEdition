@@ -523,6 +523,25 @@
 	design_ids = list("ew_plasma", "ew_strong_emitter", "ew_stream_triple", "ew_frame_hqrifle")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
+
+
+/datum/techweb_node/stealth
+	id = "stealth_tec"
+	display_name = "Stealth technology"
+	description = "Modulating field that transmits the reflected light from one side of an object to another"
+	prereq_ids = list("syndicate_basic")
+	design_ids = list("stealth_boy")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 10000
+
+/datum/techweb_node/stealth_mk2
+	id = "stealth_tec_mk2"
+	display_name = "Advanced Stealth technology"
+	description = "Advanced and more safe stealth field modulation"
+	prereq_ids = list("stealth_tec")
+	design_ids = list("stealth_boy_mk2")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 15000)
+	export_price = 20000
 /*
 /datum/techweb_node/medical_weapons
 	id = "medical_weapons"

@@ -166,7 +166,6 @@ Medical Doctor
 	backpack_contents = list(
 		/obj/item/reagent_containers/dropper/SR/Vault =1,
 		/obj/item/crowbar = 1,
-		/obj/item/book/granter/trait/field_surgery
 		)
 
 /datum/outfit/job/vault/f13doctor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

@@ -107,7 +107,8 @@ GLOBAL_LIST_INIT(maintenance_loot, list(
 	"" = 3
 	))
 
-GLOBAL_VAR_INIT(trash_list,list(/obj/item/crafting/duct_tape = 5, 
+GLOBAL_VAR_INIT(trash_list,list(/obj/item/crafting/duct_tape = 5,
+								/obj/item/stealthboy/makeshift = 3,
 								/obj/item/crafting/wonderglue = 5,
 								/obj/item/crafting/turpentine = 5, 
 								/obj/item/crafting/abraxo = 5, 

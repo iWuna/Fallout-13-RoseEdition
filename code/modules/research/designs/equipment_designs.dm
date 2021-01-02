@@ -41,3 +41,25 @@
 	construction_time = 100
 	category = list("Misc")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+
+/datum/design/stealth_boy
+	name = "Stealthboy"
+	desc = "Pre-war device that generates a modulating field that transmits the reflected light from one side of an object to another"
+	id = "stealth_boy"
+	build_type = PROTOLATHE
+	build_path = /obj/item/stealthboy
+	materials = list(MAT_METAL = 18000, MAT_GLASS = 5000, MAT_GOLD = 18050, MAT_SILVER = 16050, MAT_BLUESPACE=30000)
+	construction_time = 100
+	category = list("Misc")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+
+/datum/design/stealth_boy_mk2
+	name = "Stealthboy"
+	desc = "Advanced Pre-war device that generates a modulating field that transmits the reflected light from one side of an object to another"
+	id = "stealth_boy_mk2"
+	build_type = PROTOLATHE
+	build_path = /obj/item/stealthboy/mk2
+	materials = list(MAT_METAL = 35000, MAT_GLASS = 10000, MAT_GOLD = 25050, MAT_SILVER = 20050, MAT_BLUESPACE=50000)
+	construction_time = 100
+	category = list("Misc")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING

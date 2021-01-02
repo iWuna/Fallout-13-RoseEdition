@@ -1,7 +1,7 @@
 /datum/weather/snow
 	name = "Snow"
 	desc = "Harsh snowstorms roam the topside of this area surface, burying any area unfortunate enough to be in its path."
-	probability = 0
+	probability = 15
 
 	telegraph_message = "<span class='userdanger'><i>Drifting particles of snow begin to dust the surrounding area..</i></span>"
 	telegraph_duration = 300
@@ -41,6 +41,14 @@
 			M.snow_act()
 		for(var/obj/item/I in T.contents)
 			I.snow_act()
+
+/datum/weather/snow
+	name = "Strong Snow"
+	desc = "Harsh snowstorms roam the topside of this area surface, burying any area unfortunate enough to be in its path."
+	probability = 15
+
+	telegraph_message = "<span class='userdanger'><i>Drifting particles of snow begin to dust the surrounding area... You feel the temperature is decreasing...</i></span>"
+
 
 /datum/weather/snow/strong/weather_act(mob/living/L)
 	L.adjust_bodytemperature(-rand(10, 30))
