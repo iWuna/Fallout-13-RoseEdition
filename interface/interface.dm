@@ -1,6 +1,6 @@
 //Please use mob or src (not usr) in these procs. This way they can be called in the same fashion as procs.
 /client/verb/wiki()
-	set name = "Вики"
+	set name = "wiki"
 	set desc = "Открывает вики в вашем браузере."
 	set hidden = 1
 	var/wikiurl = CONFIG_GET(string/wikiurl)
@@ -26,12 +26,12 @@
 	return
 
 /client/verb/rules()
-	set name = "Правила"
+	set name = "rules"
 	set desc = "Показать правила сервера."
 	set hidden = 1
 	var/rulesurl = CONFIG_GET(string/rulesurl)
-	switch(alert("Где вы хотите посмотреть правила?", null, "Дискорд (внешняя ссылка)", "Показать здесь", "Дискорд"))
-		if("Discord (external link)")
+	switch(alert("Где вы хотите посмотреть правила?", null, "Дискорд (внешняя ссылка)", "Показать здесь", "Закрыть"))
+		if("Дискорд (внешняя ссылка)")
 			if(!rulesurl)
 				to_chat(src, "<span class='danger'>The rules URL is not set in the server configuration.</span>")
 				return
