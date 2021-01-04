@@ -12,8 +12,8 @@
 //Vault
 
 /obj/item/clothing/under/f13/vault
-	name = "vault jumpsuit"
-	desc = "A blue jumpsuit with a yellow vault pattern printed on it."
+	name = "Комбинезон убежища"
+	desc = "Синий комбинезон с распечатанным на нём жёлтым логотипом убежища."
 	icon_state = "vault"
 	item_state = "vault"
 	item_color = "vault"
@@ -24,8 +24,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/vault13
-	name = "vault 113 jumpsuit"
-	desc = "A blue jumpsuit with a yellow vault pattern and the number 113 printed on it."
+	name = "Комбинезон убежища 113"
+	desc = "Синий комбинезон с распечатанным на нём логотипом убежища 113."
 	icon_state = "vault13"
 	item_state = "vault13"
 	item_color = "vault13"
@@ -38,8 +38,8 @@
 //NCR
 
 /obj/item/clothing/under/f13/ncr
-	name = "NCR desert fatigues"
-	desc = "A set of standard issue New California Republic trooper fatigues."
+	name = "Пустынная форма НКР"
+	desc = "Комлпект стандартной униформы солдата Новой Калифорнийской Республики."
 	icon_state = "ncr_uniform"
 	can_adjust = TRUE
 	item_state = "ncr_uniform"
@@ -47,27 +47,27 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/ncr/officer
-	name = "NCR desert officer fatigues"
-	desc = "A set of NCR officer fatigues"
+	name = "Пустынная форма офицера НКР"
+	desc = "Комплект офицерской формы НКР."
 
 /obj/item/clothing/under/f13/caravaneer
-	name = "caravaneer outfit"
-	desc = "A soft outfit used by NCR caravaneers."
+	name = "Костюм караванщика"
+	desc = "Мягкий костюм, используемый караванщиками НКР."
 	icon_state = "caravaneer"
 	item_state = "caravaneer"
 	item_color = "caravaneer"
 
 /obj/item/clothing/under/f13/ncr/scout
-	name = "NCR scouting fatigues"
-	desc = "A standard duty uniform for members of the 3rd Scout Battalion."
+	name = "Форма скаута НКР"
+	desc = "Стандартная служебная форма для членов третьего разведывательного батальона."
 	icon_state = "scoutclothes"
 	item_state = "scoutclothes"
 	item_color = "scoutclothes"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/f13/ncrcf
-	name = "NCRCF fatigues"
-	desc = "A set of cheap, worn-in blue dress shirt and slacks. Emblazened on the back are the initials of the NCR Correctional Facility, as a meek reminder of who owns you."
+	name = "Форма исправительного учерждения НКР"
+	desc = "Дешёвые, поношенные синяя рубашка и брюки. На обороте красуются инициалы усправительного учерждения НКР, напоминающие о том, кому ты принадлежишь."
 	icon_state = "ncrcf"
 	item_state = "ncrcf"
 	item_color = "ncrcf"
@@ -75,45 +75,45 @@
 //Settlers
 
 /obj/item/clothing/under/f13/brahminm
-	name = "brahmin skin outfit"
-	desc = "A basic outfit consisting of a white shirt and patched trousers with Y-shaped suspenders"
+	name = "Костюм из кожи брамина"
+	desc = "Простой костюм из белой рубашки и заплатанных брюк с Y-образной подтяжкой."
 	icon_state = "brahmin_m"
 	item_state = "brahmin_m"
 	item_color = "brahmin_m"
 
 /obj/item/clothing/under/f13/brahminf
-	name = "brahmin skin outfit"
-	desc = "A basic outfit consisting of a white shirt and patched trousers with Y-shaped suspenders"
+	name = "Костюм из кожи брамина"
+	desc = "Простой костюм из белой рубашки и заплатанных брюк с Y-образной подтяжкой."
 	icon_state = "brahmin_f"
 	item_state = "brahmin_f_s"
 	item_color = "brahmin_f"
 
 /obj/item/clothing/under/f13/doctorm
-	name = "doctor fatigues"
-	desc = "It's a white t-shirt with brown trousers made for those who treasure life."
+	name = "Костюм доктора"
+	desc = "Белая футболка с коричневыми брюками, сшитая для тех, кто дорожит жизнью."
 	icon_state = "doctor_m"
 	item_state = "doctor_m"
 	item_color = "doctor_m"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/doctorf
-	name = "doctor fatigues"
-	desc = "It's a white t-shirt with brown trousers made for those who treasure life."
+	name = "Костюм доктора"
+	desc = "Белая футболка с коричневыми брюками, сшитая для тех, кто дорожит жизнью."
 	icon_state = "doctor_f"
 	item_state = "doctor_f"
 	item_color = "doctor_f"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/caravan
-	name = "caravan pants"
-	desc = "Brown thick caravaneer pants."
+	name = "Штаны караванщика"
+	desc = "Толстые коричневые штаны караванщика"
 	icon_state = "caravan"
 	item_state = "caravan"
 	item_color = "caravan"
 
 /obj/item/clothing/under/f13/settler
-	name = "settler outfit"
-	desc = "A crudely made cloth robe with a belt worn over grey pants."
+	name = "Костюм поселенца"
+	desc = "Грубо сшитый халат с поясом, надетым поверх серых штанов"
 	icon_state = "settler"
 	item_state = "settler"
 	item_color = "settler"
@@ -121,48 +121,48 @@
 //The City
 
 /obj/item/clothing/under/f13/ranger
-	name = "ranger outfit"
-	desc = "Simple rustic clothes for a big iron packin' lawman."
+	name = "Костюм рейнджера"
+	desc = "Простая деревенская одежда для закалённого слуги закона."
 	icon_state = "ranger"
 	item_state = "ranger"
 	item_color = "ranger"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/trailranger
-	name = "ranger outfit"
-	desc = "Simple rustic clothes for a big iron packin' lawman. Worn often by NCR rangers."
+	name = "Костюм рейнджера"
+	desc = "Простая деревенская одежда для заколённого слуги закона. Часто носили рейнджеры НКР."
 	icon_state = "cowboyrang"
 	item_state = "cowboyrang"
 	item_color = "cowboyrang"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/patrolranger
-	name = "patrol ranger outfit"
-	desc = "A pair of brown slacks and a breathable shirt, meant to be worn under NCR patrol ranger armour."
+	name = "Костюм рейнджера-патрульного"
+	desc = "Пара коричневых брюк и дышащая рубашка, предназначенные для ношения под броней патрульного рейнджера НКР."
 	icon_state = "patrolranger"
 	item_state = "patrolranger"
 	item_color = "patrolranger"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/vetranger
-	name = "veteran ranger outfit"
-	desc = "Simple rustic clothes for any big iron packin' ranger."
+	name = "Костюм рейнджера-ветерана"
+	desc = "Простая деревенская одежда для закалённого рейнджера."
 	icon_state = "vetranger"
 	item_state = "vetranger"
 	item_color = "vetranger"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 40, "fire" = 30, "acid" = 70)
 
 /obj/item/clothing/under/f13/rustic
-	name = "rustic outfit"
-	desc = "Simple rustic clothes for your day to day life in the wastes."
+	name = "Деревенский костюм"
+	desc = "Простая деревенская одежда для жизни в пустошах."
 	icon_state = "vetranger"
 	item_state = "rustictown"
 	item_color = "rustictown"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/sheriff
-	name = "sheriff outfit"
-	desc = "The symbol of law and civilization, a black vest over a well starched white shirt."
+	name = "Костюм шерифа"
+	desc = "Символ закона и цивилизации, чёрный жилет поверх хорошо накрахмаленной белой рубашки."
 	icon_state = "vest_and_slacks"
 	item_state = "vest_and_slacks"
 	item_color = "vest_and_slacks"
@@ -177,16 +177,16 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/follower
-	name = "citzen outfit"
-	desc = "A civilized well cared for outfit that good citzens wear."
+	name = "Костюм гражданина"
+	desc = "Цивилизованная, хорошо ухоженная одежда, которую носят хорошие граждане"
 	icon_state = "follower"
 	item_state = "follower"
 	item_color = "follower"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 50, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/medic
-	name = "doctor outfit"
-	desc = "A completly white outfit deserving of a doctor."
+	name = "Костюм доктора"
+	desc = "Полностью белый костюм, достойный доктора"
 	icon_state = "chef"
 	item_state = "chef"
 	item_color = "chef"
@@ -195,8 +195,8 @@
 //Brotherhood of Steel
 
 /obj/item/clothing/under/f13/recon
-	name = "recon bodysuit"
-	desc = "A vacuum-sealed asbestos jumpsuit covering the entire body."
+	name = "Костюм разведчика"
+	desc = "ГГерметичный абсетовый комбинезон, покрывающий всё тело"
 	icon_state = "recon"
 	item_state = "recon"
 	item_color = "recon"
@@ -205,8 +205,8 @@
 //Legion
 
 /obj/item/clothing/under/f13/legskirt
-	name = "legionary fatigues"
-	desc = "A leathery skirt and a thick, long-sleeve cotton shirt."
+	name = "Форма легионера"
+	desc = "Кожчаная юбка и толстая рубашка из хлопка с длинными рукавами."
 	icon_state = "legskirt"
 	item_state = "legskirt"
 	item_color = "legskirt"
@@ -217,22 +217,22 @@
 	can_adjust = TRUE
 
 /obj/item/clothing/under/f13/legskirt/tac //whoaaa mama humina humina
-	name = "\improper ''tactical'' combat skirt"
-	desc = "A leathery skirt below a thick, black, long-sleeve cotton shirt. Perfect for operatives favoring wardrobe malfunctions."
+	name = "неподходящая \"тактическая\" боевая юбка"
+	desc = "Кожаная юбка под толстой черной рубашкой из хлопка с длинными рукавами. Идеально подходит для оперативников, предпочитающих неисправности гардероба."
 	icon_state = "tacskirt"
 	item_state = "tacskirt"
 	item_color = "tacskirt"
 
 /obj/item/clothing/under/f13/priestess
-	name = "priestess robes"
-	desc = "The robes worn by a Priestess of Mars."
+	name = "Роба жрицы"
+	desc = "Роба, которую носили жрицы Марса."
 	icon_state = "priestess"
 	item_state = "priestess"
 	item_color = "priestess"
 
 /obj/item/clothing/under/f13/pmarsrobe
-	name = "priestess of mars robe"
-	desc = "A red robe decorated with bird feathers for the Priestess of Mars."
+	name = "Роба жрицы Марса"
+	desc = "Красная мантия, украшенная птичьими перьями для жрицы Марса."
 	icon_state = "pmars_robe"
 	item_state = "pmars_robe"
 	armor = list(melee = 0, bullet = 0, laser = 20, energy = 20, bomb = 5, bio = 0, rad = 0, fire = 100, acid = 0)
@@ -243,15 +243,15 @@
 //Roma Legion
 
 /obj/item/clothing/under/f13/romaskirt
-	name = "roma legionary fatigues"
-	desc = "A worn and abused pair of fatigues, leftover from the legionary's service to Caesar."
+	name = "Форма римского легонера"
+	desc = "Изношенная и поношенная пара униформы, оставшаяся от службы легионера Цезарю."
 	icon_state = "roma_legion"
 	item_state = "roma_legion"
 	item_color = "roma_legion"
 
 /obj/item/clothing/under/f13/romaskirt/auxilia
-	name = "roma auxilia fatigues"
-	desc = "A black skirt and a thick long sleeve cotton shirt."
+	name = "Форма римского ауксилии"
+	desc = "Черная юбка и толстая рубашка из хлопка с длинным рукавом."
 	icon_state = "roma_auxilia"
 	item_state = "roma_auxilia"
 	item_color = "roma_auxilia"
@@ -264,67 +264,67 @@
 // Generic
 
 /obj/item/clothing/under/f13/machinist
-	name = "machinist bodysuit"
-	desc = "Apparel of an old-time machinist."
+	name = "Костюм машиниста"
+	desc = "Старомодная одежда машиниста."
 	icon_state = "machinist"
 	item_state = "machinist"
 	item_color = "machinist"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/lumberjack
-	name = "lumberjack outfit"
-	desc = "Apparel of an old-time lumberjack."
+	name = "Костюм лесоруба"
+	desc = "Старомодная одежда лесоруба."
 	icon_state = "lumberjack"
 	item_state = "lumberjack"
 	item_color = "lumberjack"
 
 /obj/item/clothing/under/f13/shiny
-	name = "shiny outfit"
-	desc = "Perfect outfit for a brave and reckless cowboy. Shiny!"
+	name = "Блестящий костюм"
+	desc = "Идеальный наряд для храброго и безрассудного ковбоя. Блестящий!"
 	icon_state = "shiny"
 	item_state = "shiny"
 	item_color = "shiny"
 
 /obj/item/clothing/under/f13/merca
-	name = "merc outfit"
-	desc = "A mercenary ragtag outfit."
+	name = "Костюм наёмника"
+	desc = "Поношенный костюм наёмника."
 	icon_state = "merca"
 	item_state = "merca"
 	item_color = "merca"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/mercc
-	name = "merc outfit"
-	desc = "A mercenary ragtag outfit."
+	name = "Костюм наёмника"
+	desc = "Поношенный костюм наёмника."
 	icon_state = "mercc"
 	item_state = "mercc"
 	item_color = "mercc"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/cowboyb
-	name = "cowboy outfit"
-	desc = "A dirt brown cowboy outfit. Specially usefull for herding brahmins."
+	name = "Костюм ковбоя"
+	desc = "Грязный коричневый костюм ковбоя. Особенно полезен для выпаса брахманов."
 	icon_state = "cowboyb"
 	item_state = "cowboyb"
 	item_color = "cowboyb"
 
 /obj/item/clothing/under/f13/cowboyg
-	name = "cowboy outfit"
-	desc = "A dirt grey cowboy outfit. Specially usefull for herding brahmins."
+	name = "Костюм ковбоя"
+	desc = "Грязный коричневый костюм ковбоя. Особенно полезен для выпаса брахманов."
 	icon_state = "cowboyg"
 	item_state = "cowboyg"
 	item_color = "cowboyg"
 
 /obj/item/clothing/under/f13/combat_shirt
-	name = "combat uniform"
-	desc = "An old combat uniform, out of use around the time of the war."
+	name = "Боевая форма"
+	desc = "Старая боевая форма, вышедшая из употребления во время войны."
 	icon_state = "combat_shirt"
 	item_state = "combat_shirt"
 	item_color = "combat_shirt"
 
 /obj/item/clothing/under/f13/Retro_Biker_Vest
-	name = "future vest"
-	desc = "A Pink Vest with Black Pants. Quite futuristic looking."
+	name = "Футуристичный жилет"
+	desc = "Розовый жилет с черными брюками. Довольно футуристично выглядит."
 	icon_state = "Biker"
 	item_state = "Biker"
 
@@ -337,163 +337,162 @@
 */
 
 /obj/item/clothing/under/f13/erpdress
-	name = "bandage dress"
-	desc = "Made by the famous pre-war fashion designer Marie Calluna, this dress was made to hug your every curve and show off some deep cleavage."
+	name = "Бандажное платье"
+	desc = "Сшитое знаменитым довоенным модельером Мари Каллуной, это платье было сделано так, чтобы огибать каждый ваш изгиб и демонстрировать глубокое декольте."
 	icon_state = "bandagedress"
 	item_state = "bandagedress"
 
 /obj/item/clothing/under/f13/classdress
-	name = "classy dress"
-	desc = "A dress that shows off all of your assets in the best ways, while remaining quite formal and tasteful."
+	name = "Элегантное платье"
+	desc = "Платье, которое наилучшим образом демонстрирует все ваши достоинства, оставаясь при этом довольно формальным и со вкусом подобранным."
 	icon_state = "societydress"
 	item_state = "societydress"
 
 /obj/item/clothing/under/f13/bluedress
-	name = "blue dress"
-	desc = "A cute, but plain, common pre-war dress."
+	name = "Синее платье"
+	desc = "Милое, но простое, обычное довоенное платье."
 	icon_state = "blue_dress"
 	item_state = "blue_dress"
 
 /obj/item/clothing/under/f13/pinkdress
-	name = "pink dress"
-	desc = "A cute, but plain, common pre-war dress."
+	name = "Розовое платье"
+	desc = "Милое, но простое, обычное довоенное платье."
 	icon_state = "pink_dress"
 	item_state = "pink_dress"
 
 /obj/item/clothing/under/f13/greendress
-	name = "green dress"
-	desc = "A cute, but plain, common pre-war dress."
+	name = "Зелёное платье"
+	desc = "Милое, но простое, обычное довоенное платье."
 	icon_state = "green_dress"
 	item_state = "green_dress"
 
 /obj/item/clothing/under/f13/blackdress
-	name = "black dress"
-	desc = "A dark and revealing dress that mixes formality and seduction."
+	name = "Чёрное платье"
+	desc = "Темное и откровенное платье, в котором сочетаются формальность и соблазнительность."
 	icon_state = "blackdress"
 	item_state = "blackdress"
 
 /obj/item/clothing/under/f13/xenon
-	name = "flashy jumpsuit"
-	desc = "A jumpsuit that seems to come from another time."
+	name = "Яркий комбинезон"
+	desc = "Комбинезон, который, кажется, пришел из другого времени."
 	icon_state = "xenon"
 	item_state = "xenon"
 
 /obj/item/clothing/under/f13/roving
-	name = "roving trader outfit "
-	desc = "It's an outfit commonly worn by the roving traders."
+	name = "Костюм бродячего торговца"
+	desc = "Этот костюм обычно носят бродячие торговцы."
 	icon_state = "roving"
 	item_state = "roving"
 	item_color = "roving"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/follower
-	name = "follower volunteer uniform"
-	desc = "The uniform of the volunteers in the followers of the apocalypse retinue."
+	name = "Форма волонтёра последоветелей"
+	desc = "Униформа добровольцев последователей апокалипсиса."
 	icon_state = "follower"
 	item_state = "follower"
 	item_color = "follower"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/raider_leather
-	name = "raider leathers"
-	desc = "Scraps of material thrown together and typically worn by raiders."
+	name = "Кожанка рейдера"
+	desc = "Сшитые вместе обрывки, обычно носятся рейдерами."
 	icon_state = "raider_leather"
 	item_state = "raider_leather"
 	item_color = "raider_leather"
 
 /obj/item/clothing/suit/armor/fluff/chestplate/rusty
-	name = "rusty armor"
-	desc = "scrap beaten together until it becomes something wearable"
+	name = "Ржавая броня"
+	desc = "Металлолом, который ковали, пока его не стало возможно надевать"
 	icon_state = "rusty_armor"
 	item_state = "rustyl_armor"
 	item_color = "rusty_armor"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|FEET
 
 /obj/item/clothing/under/f13/raiderrags
-	name = "raider rags"
-	desc = "Fragments of clothing crudely stitched together, worn unanimously by raiders."
+	name = "Лохмотья рейдера"
+	desc = "Обрывки грубо сшитой вместе одежды, которую обычно носят рейдеры."
 	icon_state = "raiderrags"
 	item_state = "raiderrags"
 	item_color = "raiderrags"
 
 /obj/item/clothing/under/f13/khan
-	name = "great khan uniform"
-	desc = "The uniform of the the Great Khans."
+	name = "Униформа великого ханка"
+	desc = "Униформа члена Великих Ханов."
 	icon_state = "khan"
 	item_state = "khan"
 	item_color = "khan"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 40)
 
 /obj/item/clothing/suit/armor/khan_jacket
-	name = "khan armored jacket"
-	desc = "The symbol of the greatest pushers."
+	name = "Бронированая куртка ханов"
+	desc = "Символ величайших барыг."
 	icon_state = "khan_jacket"
 	item_state = "khan_jacket"
 
 /obj/item/clothing/suit/armor/warriors
-	name = "warriors armored vest"
-	desc = "The symbol of the greatest gangers."
+	name = "Бронежилет воина"
+	desc = "Символ величайших гангстеров"
 	icon_state = "warriors"
 	item_state = "warriors"
 
 /obj/item/clothing/under/f13/tribe
-	name = "tribal rags"
-	desc = "Dusty rags decorated with strips of leather and small pieces of turquoise."
+	name = "Племенные лохмотья"
+	desc = "Пыльные тряпки, украшенные полосками кожи и маленькими кусочками бирюзы."
 	icon_state = "tribalrags"
 	item_state = "tribalrags"
 
 /obj/item/clothing/under/f13/tribe_chief
-	name = "tribal chief robes"
-	desc = "Well maintained robes adorned with fine leather and polished turquoise."
+	name = "Одеяние вождя племени"
+	desc = "Ухоженная роба, украшенная тонкой кожей и полированной бирюзой."
 	icon_state = "chiefrags"
 	item_state = "chiefrags"
 
 /obj/item/clothing/under/f13/tribe_Hhunter
-	name = "Razorclaw robes"
-	desc = "Tanned leather robes, decorated with bones of deathclaws and marked with the great machine spirit of earth."
+	name = "Одеяние бритвенного когтя"
+	desc = "Дубленые кожаные одежды, украшенные костями когтей смерти и отмеченные великим машинным духом земли."
 	icon_state = "hhunterrags"
 	item_state = "hhunterrags"
 
 /obj/item/clothing/under/f13/tribe_shaman
-
-	name = "tribal shaman robes"
-	desc = "Carefully hand wozen cloth robes with heavy turqoise jewelry drapped over top."
+	name = "Одеяние шамана племени"
+	desc = "Аккуратно сшитое вручную одеяние из ткани с тяжелыми бирюзовыми украшениями, наброшенными поверх."
 	icon_state = "shamanrags"
 	item_state = "shamanrags"
 
 /obj/item/clothing/under/f13/exile
-	name = "disheveled NCR fatigues"
-	desc = "A disheveled and modified duty uniform resembling NCR fatigues."
+	name = "Растрепанная униформа НКР"
+	desc = "Взъерошенная и модифицированная форма дежурного, напоминающая форму НКР."
 	icon_state = "ncr_uniformexile"
 	item_state = "ncr_uniformexile"
 	item_color = "ncr_uniformexile"
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/exile/legion
-	name = "disheveled Legion fatigues"
-	desc = "A disheveled and modified uniform resembling Legion standard fatigues."
+	name = "Расртепанная форма легионера"
+	desc = "Растрепанная и модифицрованная форма, напоминающая стандартную форму Легиона."
 	icon_state = "legion_uniformexile"
 	item_state = "legion_uniformexile"
 	item_color = "legion_uniformexile"
 
 /obj/item/clothing/under/f13/exile/vault
-	name = "disheveled Dweller jumpsuit"
-	desc = "A disheveled and torn uniform resembling a Vault-Tech standard Jumpsuit."
+	name = "Расртепанный комбинезон жителя убежища"
+	desc = "Взъерошенная и рваная униформа, похожая на стандартный комбинезон Vault-Tech."
 	icon_state = "vault_exile"
 	item_state = "vault_exile"
 	item_color = "vault_exile"
 
 //stuff ported from WW2
 /obj/item/clothing/under/f13/ncr_formal_uniform
-	name = "NCR pre-war uniform"
-	desc = "An old pre-war uniform repurposed for the NCR armed forces"
+	name = "Довоенная униформа НКР"
+	desc = "Старая довоенная форма, перепрофилированная для Вооруженных сил НКР"
 	icon_state = "us_uniform"
 	item_state = "us_uniform"
 	item_color = "us_uniform"
 
 /obj/item/clothing/under/f13/ncr_camo
-	name = "NCR pre-war camo"
-	desc = "Old pre-war camo repurposed for the NCR armed forces"
+	name = "Довоеный комуфляж НКР"
+	desc = "Старый довоенный камуфляж, перепрофилированный для Вооруженных сил НКР"
 	icon_state = "nato_uniform"
 	item_state = "nato_uniform"
 	item_color = "nato_uniform"
@@ -503,8 +502,8 @@
 //Prom Dress
 
 /obj/item/clothing/under/f13/prom_dress
-	name = "purple prom dress"
-	desc = "This purple dress has miraculously survived the war, and seems mostly undamaged, except for a few loose ends from wear and tear. The dress is made from a soft fabric, likely a marbled velvet."
+	name = "Фиолетовое платье для выпускного"
+	desc = "Это фиолетовое платье чудесным образом пережило войну и, кажется, почти не пострадало, за исключением нескольких свободных концов от износа. Платье сшито из мягкой ткани, скорее всего из мраморного бархата."
 	icon_state = "promdress"
 	item_state = "promdress"
 	item_color = "promdress"
@@ -538,45 +537,45 @@
 //Remnants
 
 /obj/item/clothing/under/f13/enclave_officer
-	name = "enclave officer uniform"
-	desc = "A standard Enclave officer uniform.<br>The outer layer is made of a sturdy material designed to withstand the harsh conditions of the wasteland."
+	name = "Униформа офицера Анклава"
+	desc = "Стандартная униформа оциера Анклава.<br>Внешний слой выполнен из прочного материала, предназначенного для того, чтобы выдерживать суровые условия пустоши."
 	icon_state = "enclave_o"
 	item_state = "bl_suit"
 	item_color = "enclave_o"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/navy
-	name = "navy jumpsuit"
-	desc = "Pre-War standard naval uniform."
+	name = "Комбинезон морского флота"
+	desc = "Довоенная стандартная форма морского флота."
 	icon_state = "navy"
 	item_state = "bl_suit"
 	item_color = "navy"
 
 /obj/item/clothing/under/f13/navyofficer
-	name = "navy officer jumpsuit"
-	desc = "Pre-War standard naval uniform for ranked officers."
+	name = "Комбинезон офицера морского флота"
+	desc = "Стандартная довоеная морская форма для рядовых офицеров."
 	icon_state = "navyofficer"
 	item_state = "bl_suit"
 	item_color = "navyofficer"
 
 /obj/item/clothing/under/f13/machinist
-	name = "workman outfit"
-	desc = "The apparel of an old-time machinist."
+	name = "Костюм рабочего"
+	desc = "Старомодная одежда машиниста."
 	icon_state = "machinist"
 	item_state = "lb_suit"
 	item_color = "machinist"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/lumberjack
-	name = "lumberjack outfit"
-	desc = "The apparel of an old-time lumberjack."
+	name = "Костюм лесоруба"
+	desc = "Старомодная одежда лесоруба"
 	icon_state = "lumberjack"
 	item_state = "r_suit"
 	item_color = "lumberjack"
 
 /obj/item/clothing/under/f13/police
-	name = "pre-War police uniform"
-	desc = "Golden classics of pre-War police officers."
+	name = "Довоенная униформа полицейского"
+	desc = "Золотая классика довоенных полицейских."
 	icon_state = "retro_police"
 	item_state = "b_suit"
 	item_color = "retro_police"
@@ -584,46 +583,46 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 40)
 
 /obj/item/clothing/under/f13/cowboyt //Originally cowboy and mafia stuff by Nienhaus
-	name = "dusty prospector outfit"
-	desc = "A white shirt with shiny brass buttons and a pair of tan trousers, commonly worn by prospectors."
+	name = "Пыльный костюм старателя"
+	desc = "Белая рубашка с блестящими медными пуговицами и коричневые брюки, которые обычно носят старатели."
 	icon_state = "cowboyt"
 	item_state = "det"
 	item_color = "cowboyt"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/cowboyb
-	name = "sleek prospector outfit"
-	desc = "A white shirt with brass buttons and a pair of brown trousers, commonly worn by prospectors."
+	name = "Гладкий костюм старателя"
+	desc = "Белая рубашка с медными пуговицами и коричневые брюки, которые обычно носят старатели."
 	icon_state = "cowboyb"
 	item_state = "det"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/cowboyg
-	name = "well-heeled prospector outfit"
-	desc = "A white shirt with black buttons and a pair of gray trousers, commonly worn by prospectors."
+	name = "Дорогой костюм старателя"
+	desc = "Белая рубашка с черными пуговицами и серые брюки, которые обычно носят старатели."
 	icon_state = "cowboyg"
 	item_state = "sl_suit"
 	item_color = "cowboyg"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/female/flapper
-	name = "flapper dress"
-	desc = "An outfit commonly worn by old-time prostitutes from around New Reno, but can be seen all over the wasteland."
+	name = "Легкомысленное платье"
+	desc = "Наряд, который обычно носят старомодные проститутки со всего Нью-Рино, но его можно увидеть по всей пустоши."
 	icon_state = "flapper"
 	item_state = "gy_suit"
 	item_color = "flapper"
 
 /obj/item/clothing/under/f13/bdu //WalterJe military standarts.
-	name = "battle dress uniform"
-	desc = "A standard military Battle Dress Uniform."
+	name = "Боевая парадная форма"
+	desc = "Стандартная военная парадная форма."
 	icon_state = "bdu"
 	item_state = "xenos_suit"
 	item_color = "bdu"
 	can_adjust = TRUE
 
 /obj/item/clothing/under/f13/dbdu
-	name = "desert battle dress uniform"
-	desc = "A military Desert Battle Dress Uniform."
+	name = "Пустынная боевая парадная форма"
+	desc = "Стандартная пустынная военная парадная форма."
 	icon_state = "dbdu"
 	item_state = "brownjsuit"
 	item_color = "dbdu"
@@ -631,22 +630,22 @@
 	can_adjust = TRUE
 
 /obj/item/clothing/under/f13/shiny //Firefly, yay!
-	name = "shiny outfit"
-	desc = "The perfect outfit for a brave and reckless space cowboy. Shiny!"
+	name = "Блестящий костюм"
+	desc = "Идеальный наряд для храброго и безрассудного космического ковбоя. Блестящий!"
 	icon_state = "shiny"
 	item_state = "owl"
 	item_color = "shiny"
 
 /obj/item/clothing/under/f13/batter //I guess we're going OFF limits.
-	name = "worn baseball uniform"
-	desc = "<b>Purification in progress...</b>"
+	name = "Поношенная форма бейсболиста"
+	desc = "<b>Очищение в процессе ... </b>"
 	icon_state = "batter"
 	item_state = "w_suit"
 	item_color = "batter"
 
 /obj/item/clothing/under/f13/bennys //Benny's suit from Fallout: New Vegas. But Benny was just a kid back in 2255, so it's just a fancy suit for you.
-	name = "fancy suit"
-	desc = "A black and white buffalo plaid suit. Fancy!"
+	name = "Модный костюм"
+	desc = "Чёрно-белый клетчатый костюм из буйвола. Модный!"
 	icon_state = "benny"
 	item_state = "white_suit"
 	item_color = "benny"
@@ -666,45 +665,44 @@
 	item_color = "spring_m"
 
 /obj/item/clothing/under/f13/formal
-	name = "pre-war male formal wear"
-	desc = "A black jacket with an old white shirt and dirty dark purple trousers.<br>Traditionally worn by the richest of the post-War world."
+	name = "Довоенная мужская официальная одежда"
+	desc = "Черный пиджак, старая белая рубашка и грязные темно-фиолетовые брюки.<br>Традиционно его носили самые богатые люди послевоенного мира."
 	icon_state = "formal_m"
 	item_state = "judge"
 	item_color = "formal_m"
 
 /obj/item/clothing/under/f13/bodyguard
-	name = "bodyguard outfit"
-	desc = "A grimy pair of pre-War slacks, tie, and a dress shirt with some makeshift pauldrons made of scrap metal attached with leather straps."
+	name = "Костюм телохранителя"
+	desc = "Грязные довоенные брюки, галстук и парадная рубашка с какими-то самодельными наплечниками из металлолома, прикрепленными кожаными ремнями."
 	icon_state = "bodyguard"
 	item_state = "sl_suit"
 	item_color = "bodyguard"
 
 /obj/item/clothing/under/f13/westender
-	name = "classic tender outfit"
-	desc = "A refined bartenders suit, adorned with a classic frontiersmen western tie."
+	name = "Классический костюм бармена"
+	desc = "Изысканный костюм бармена, украшенный классическим западным галстуком фронтирмена."
 	icon_state = "westender"
 	item_state = "sl_suit"
 	item_color = "westender"
 
 /obj/item/clothing/under/f13/rag
-	name = "torn rags"
-	desc = "A shirt - or whatever it is, made of ripped cloth.<br>It has soaked in sweat, and has a bad smell.<br>Only the poorest of settlers, mostly the drug addicts, raiders or slaves wear something like that."
-	icon_state = "rag"
+	name = "Рваные тряпки"
+	desc = "Рубашка или что там еще из рваной ткани.<br>Оно пропиталось потом и имеет неприятный запах.<br>Только самые бедные из поселенцев, в основном наркоманы, налетчики или рабы носят что-то подобное."
 	item_state = "lgloves"
 	item_color = "rag"
 	can_adjust = 0
 
 /obj/item/clothing/under/f13/tribal
-	name = "male tribal outfit"
-	desc = "A male outfit made of gecko hides.<br>It doesn't cover some parts of body, yet it's better than to walk around naked..."
+	name = "Мужской племенной наряд"
+	desc = "Мужской наряд из шкур гекконов.<br>Он не покрывает некоторые части тела,но все же это лучше, чем ходить голым..."
 	icon_state = "tribal_m"
 	item_state = "lgloves"
 	item_color = "tribal_m"
 	can_adjust = 0
 
 /obj/item/clothing/under/f13/female/tribal
-	name = "female tribal outfit"
-	desc = "A female outfit made of gecko hides.<br>It doesn't cover some parts of body, yet it's better than to walk around naked..."
+	name = "Женский племенной наряд"
+	desc = "Женский наряд из шкур гекконов.<br>Он не покрывает некоторые части тела, но все же это лучше, чем ходить голым..."
 	icon_state = "tribal_f"
 	item_state = "lgloves"
 	item_color = "tribal_f"
@@ -712,62 +710,62 @@
 	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/f13/settler
-	name = "settler outfit"
-	desc = "A more or less a crudely made tan robe with a makeshift belt made from cloth.<br>Paired with worn grey pants."
+	name = "Костюм поселенца"
+	desc = "Более или менее грубо сшитый коричневый халат с импровизированным поясом из ткани.<br>В паре с поношенными серыми брюками."
 	icon_state = "settler"
 	item_state = "brownjsuit"
 	item_color = "settler"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/brahmin //Male version
-	name = "male brahmin-skin outfit"
-	desc = "A basic male outfit consisting of a white shirt and patched trousers with Y-shaped suspenders."
+	name = "Мужской костюм из кожи брамина"
+	desc = "Простой костюм из белой рубашки и заплатанных брюк с Y-образной подтяжкой."
 	icon_state = "brahmin_m"
 	item_state = "brownjsuit"
 	item_color = "brahmin_m"
 
 /obj/item/clothing/under/f13/female/brahmin //Female version
-	name = "female brahmin-skin outfit"
-	desc = "A basic female outfit consisting of a rolled-up long-sleeve shirt and patched trousers with Y-shaped suspenders.<br>Fitted for female wastelanders."
+	name = "Мужской костюм из кожи брамина"
+	desc = "Простой костюм из белой рубашки и заплатанных брюк с Y-образной подтяжкой.<br>Для женщин."
 	icon_state = "brahmin_f"
 	item_state = "brownjsuit"
 	item_color = "brahmin_f"
 
 /obj/item/clothing/under/f13/doctor //Male version
-	name = "male doctor fatigues"
-	desc = "A white t-shirt, a small brown satchel bag and brown trousers with pouches attached to the belt.<br>Fitted for male wastelanders."
+	name = "Мужской костюм доктора"
+	desc = "Белая футболка, коричневые брюки и маленькая коричневая сумка, крикреплённая к ним.<br>Для мужчин."
 	icon_state = "doctor_m"
 	item_state = "brownjsuit"
 	item_color = "doctor_m"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/female/doctor //Female version
-	name = "female doctor fatigues"
-	desc = "A white t-shirt with brown trousers, and a small brown satchel bag attached to it.<br>Fitted for female wastelanders."
+	name = "Женский костюм доктора"
+	desc = "Белая футболка, коричневые брюки и маленькая коричневая сумка, крикреплённая к ним.<br>Для женщин."
 	icon_state = "doctor_f"
 	item_state = "brownjsuit"
 	item_color = "doctor_f"
 	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/f13/mercadv //Male version
-	name = "male merc adventurer outfit"
-	desc = "A large leather jacket with torn-off sleeves, paired with a red sweater, a necklace with three teeth of unknown origin strung on, and a pair of brown leather pants.<br>There is also a rough leather bandolier for additional storage capacity.<br>Fitted for male wastelanders."
+	name = "Мужской костюм наемника-авантюриста"
+	desc = "Большая кожаная куртка с оторванными рукавами, красный свитер, ожерелье с тремя зубами неизвестного происхождения и коричневые кожаные штаны.<br>Прикреплён грубый кожаный патронташ для хранения вещей.<br>Для мужчин."
 	icon_state = "merca_m"
 	item_state = "bl_suit"
 	item_color = "merca_m"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/female/mercadv //Female version
-	name = "female merc adventurer outfit"
-	desc = "A large leather jacket with torn-off sleeves, paired with a midriff-revealing red and black top and a pair of brown leather pants.<br>There is also a rough leather bandolier and belt for additional storage capacity.<br>Fitted for female wastelanders."
+	name = "Женский костюм наемника-авантюриста"
+	desc = "Большая кожаная куртка с оторванными рукавами, красный свитер, ожерелье с тремя зубами неизвестного происхождения и коричневые кожаные штаны.<br>Прикреплён грубый кожаный патронташ для хранения вещей.<br>Для женщин."
 	icon_state = "merca_f"
 	item_state = "bl_suit"
 	item_color = "merca_f"
 	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/f13/merccharm //Male version
-	name = "male merc charmer outfit"
-	desc = "A blue and gray outfit resembling a three piece suit, heavily stitched and reinforced with a small metal cup on the groin area.<br>Fitted for male wastelanders."
+	name = "Мужской костюм обоятельного наёмника"
+	desc = "Сине-серый костюм, напоминающий костюм-тройку, плотно сшитый и усиленный маленькой металлической чашечкой в области паха.<br>Для мужчин."
 	icon_state = "mercc_m"
 	item_state = "mercc_f"
 	item_color = "mercc_m"
@@ -784,24 +782,24 @@
 */
 
 /obj/item/clothing/under/f13/mechanic
-	name = "worn blue jumpsuit"
-	desc = "A worn jumpsuit, made of soft-blue colored cloth, with old machine oil stains on it.<br>Long time ago it could have belonged to a repair mechanic."
+	name = "Поношенный синий комбинезон"
+	desc = "Поношенный комбинезон, сшитый из ткани нежно-голубого цвета, со старыми пятнами машинного масла на нем.<br>Давным-давно он мог принадлежать ремонтному механику."
 	icon_state = "mechanic"
 	item_state = "syndicate-blue"
 	item_color = "mechanic"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/petrochico
-	name = "worn green jumpsuit"
-	desc = "A dark green colored jumpsuit, with white lines on its sleeves and a Petro-Chico patch sewn on the right breast."
+	name = "Поношенный зелёный комбинезон"
+	desc = "Темно-зеленый комбинезон с белыми полосками на рукавах и нашивкой \"Петро-Чико\" на правой части груди."
 	icon_state = "petrochico"
 	item_state = "centcom"
 	item_color = "petrochico"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/caravaneer
-	name = "caravaneer outift"
-	desc = "A striped brown shirt, with a pair of dark blue pants on suspenders.<br>That type of outfit is commonly worn by caravaneers and travelers."
+	name = "Костюм караванщика"
+	desc = "Коричневая рубашка в полоску, темно-синие брюки на подтяжках.<br>Такую одежду обычно носят караванщики и путешественники."
 	icon_state = "caravaneer"
 	item_state = "syndicate-blue"
 	item_color = "caravaneer"
@@ -818,23 +816,23 @@
 */
 
 /obj/item/clothing/under/f13/merchant
-	name = "merchant outfit "
-	desc = "An outfit commonly worn by various wastelanders - mostly wandering traders and merchants on the market.<br>So what do you say if I buy it from you with 10% discount?"
+	name = "Костюм торговца"
+	desc = "Наряд, обычно носимый различными жителями пустоши - в основном бродячими торговцами и торговцами на рынке.<br>Как насчёт продать его мне со скидкой 10%?"
 	icon_state = "merchant"
 	item_state = "brownjsuit"
 	item_color = "merchant"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/worn
-	name = "worn outfit "
-	desc = "A worn khaki shirt without any buttons left, and a ragged pair of jeans.<br>It may seem a bad outfit choice at first, yet there are wastelanders out there who can't afford even that."
+	name = "Поношенный костюм"
+	desc = "Поношенная рубашка цвета хаки без пуговиц и рваные джинсы.<br>Поначалу это может показаться плохим выбором одежды, но есть жители пустошей, которые не могут позволить себе даже этого."
 	icon_state = "worn"
 	item_state = "brownjsuit"
 	item_color = "worn"
 
 /obj/item/clothing/under/f13/vault
-	name = "vault jumpsuit"
-	desc = "The regulation clothing worn by the vault dwellers of Vault-Tec vaults. It's made of sturdy leather.<br>This particular jumpsuit has no number on the back."
+	name = "Комбинезон жителя убежища"
+	desc = "Нормативная одежда, которую носят обитатели убежищ Vault-Tec. Cделан из прочной кожи.<br>У этого комбинезона нет номера на спине."
 	icon_state = "vault"
 	item_state = "b_suit"
 	item_color = "vault"
@@ -842,83 +840,83 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 30, "fire" = 30, "acid" = 40)
 
 /obj/item/clothing/under/f13/vault/v13 //The Legend is here.
-	name = "Vault 13 jumpsuit"
-	desc = "The regulation clothing worn by the vault dwellers of Vault-Tec vaults. It's made of sturdy leather.<br>This jumpsuit has number 13 on the back."
+	name = "Комбинезон убежища 13"
+	desc = "Нормативная одежда, которую носят обитатели убежищ Vault-Tec. Cделан из прочной кожи.<br>У этого комбинезона номер 13 на спине."
 	icon_state = "vault13"
 	item_color = "vault13"
 
 /obj/item/clothing/under/f13/vault/v113
-	name = "Vault 113 jumpsuit"
-	desc = "The regulation clothing worn by the vault dwellers of Vault-Tec vaults. It's made of sturdy leather.<br>This jumpsuit has number 113 on the back."
+	name = "Комбинезон убежища 113"
+	desc = "Нормативная одежда, которую носят обитатели убежищ Vault-Tec. Cделан из прочной кожи.<br>У этого комбинезона номер 113 на спине."
 	icon_state = "vault113"
 	item_color = "vault113"
 
 /obj/item/clothing/under/f13/vault/v21
-	name = "Vault 21 jumpsuit"
-	desc = "The regulation clothing worn by the vault dwellers of Vault-Tec vaults. It's made of sturdy leather.<br>This jumpsuit has number 21 on the back."
+	name = "Комбинезон убежища 21"
+	desc = "Нормативная одежда, которую носят обитатели убежищ Vault-Tec. Cделан из прочной кожи.<br>У этого комбинезона номер 21 на спине."
 	icon_state = "vault21"
 	item_color = "vault21"
 
 /obj/item/clothing/under/f13/vault/v42
-	name = "Vault 42 jumpsuit"
-	desc = "The regulation clothing worn by the vault dwellers, of Vault-Tec vaults built to solve the Ultimate Question of life, Universe, and everything. It's made of sturdy leather.<br>This jumpsuit has number 42 on the back."
+	name = "Комбинезон убежища 42"
+	desc = "Нормативная одежда, которую носят жители убежищ Vault-Tec, построенных для того, чтобы решить главный вопрос жизни, вселенной и всего остального. Cделан из прочной кожи.<br>This jumpsuit has number 42 on the back."
 	icon_state = "vault42"
 	item_color = "vault42"
 
 /obj/item/clothing/under/f13/followers
-	name = "followers outfit "
-	desc = "A white shirt with a pair of dark brown cargo pants - an outfit commonly worn by Followers of the Apocalypse.<br><i>Nihil boni sine labore.</i>"
+	name = "Костюм последователя"
+	desc = "Белая рубашка с темно-коричневыми брюками-карго - наряд, который обычно носят последователи Апокалипсиса.<br><i>Nihil boni sine labore.</i>"
 	icon_state = "followers"
 	item_state = "bar_suit"
 	item_color = "followers"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/combat
-	name = "combat uniform"
-	desc = "An ancient combat uniform, that went out of use around the time of the Great War."
+	name = "Боевая униформа"
+	desc = "Древняя боевая форма, вышедшая из употребления во времена Великой войны."
 	icon_state = "combat"
 	item_state = "bl_suit"
 	item_color = "combat"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/gunner
-	name = "gunner combat uniform"
-	desc = "An ancient combat uniform, that went out of use around the time of the Great War. it has scratch marks and a skull painted on it to symbolize that its part of the gunners"
+	name = "Боевая форма наводчика"
+	desc = "Древняя боевая форма, вышедшая из употребления во времена Великой войны. На ней есть царапины и нарисованный череп, символизирующий, что он принадлежит наводчик"
 	icon_state = "GunnerPlates"
 	item_state = "GunnerPlates"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/combat/militia
-	name = "ODF fatigues"
-	desc = "An olive-green combat uniform, issued to members of the Oasis Defense Force."
+	name = "Роба ODF"
+	desc = "Оливково-зеленая боевая форма, выданная членам Сил обороны оазиса."
 
 /obj/item/clothing/under/f13/enclave_officer
-	name = "officer uniform"
-	desc = "A standard Enclave officer uniform.<br>The outer layer is made of a sturdy material designed to withstand the harsh conditions of the wasteland."
+	name = "Униформа офицера"
+	desc = "Стандартная форма офицера анклава.<br>Внешний слой сделан из прочного материала, предназначенного для того, чтобы выдерживать суровые условия пустоши."
 	icon_state = "enclave_o"
 	item_state = "bl_suit"
 	item_color = "enclave_o"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/ncr/torn
-	name = "torn overcoat"
-	desc = "Some time ago it looked like a regular NCR uniform, but now it looks like a total mess of ripped cloth."
+	name = "Порванное пальто"
+	desc = "Некоторое время назад это выглядело как обычная форма НКР, но теперь это выглядит как беспорядочно разоваранная ткань."
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	icon_state = "tornovercoat"
 	item_color = "tornovercoat"
 
 /obj/item/clothing/under/f13/general
-	name = "general overcoat"
-	desc = "A grim looking overcoat - preferable standard for General commander of New California Republic.<br>It's decorated with golden stars, and an insignia plaque that adorns the left side."
+	name = "Генеральское пальто"
+	desc = "Мрачно выглядящее пальто - предпочтительный стандарт для главнокомандующего Новой Калифорнийской республики.<br>Оно украшено золотыми звездами и эмблемой, которая украшает левую сторону."
 	icon_state = "general"
 	item_state = "lb_suit"
 	item_color = "general"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 40, "acid" = 40)
 
 /obj/item/clothing/under/f13/recon
-	name = "recon armor"
-	desc = "Intended to serve as the under-armor of the T-45d power armor, the recon armor is a vacuum-sealed asbestos jumpsuit covering the entire body.<br>Attached to it is the interface and mounts for the power armor.<br>Its purpose is twofold - it allows the user to actually operate the armor and protect soft tissue from moving parts inside the suit and heat."
+	name = "Разведывательная броня"
+	desc = "Предназначенная для ношения под броней силовой брони Т-45д, разведывательная броня представляет собой герметичный асбестовый комбинезон, покрывающий все тело.<br>К ней прилагается интерфейс и крепления для силовой брони.<br>Она имеет двойное назначение -  позволяет пользователю фактически управлять броней и защищает мягкие ткани от движущихся частей внутри скафандра и тепла."
 	icon_state = "recon"
 	item_state = "rig_suit"
 	item_color = "recon"
@@ -928,16 +926,16 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HEAD
 
 /obj/item/clothing/under/f13/chinese
-	name = "chinese jumpsuit"
-	desc = "An ancient Chinese combat uniform. In use before the war."
+	name = "Китайский комбинезон"
+	desc = "Древняя китайская боевая форма. Использовалась до войны."
 	icon_state = "chinese"
 	item_state = "bl_suit"
 	item_color = "chinese"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/locust
-	name = "locust uniform"
-	desc = "An ancient pre-war army combat uniform. In use by the locust mercenaries."
+	name = "Униформа саранчи"
+	desc = "Старинная довоенная боевая униформа. Используется наёмниками саранчи."
 	icon_state = "locust"
 	item_state = "locust"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
@@ -945,168 +943,168 @@
 //Fluff
 
 /obj/item/clothing/under/f13/agent47
-	name = "mysterious suit"
-	desc = "This dark suit was made by a blind man named Tommy, who ran a tailor shop in the ruins of Old Chicago.<br>It seems to be reinforced with an unknown material."
+	name = "Мистический костюм"
+	desc = "Этот темный костюм был сшит слепым человеком по имени Томми, который держал портняжную мастерскую в развалинах старого Чикаго.<br>Кажется, он укреплён неизвестным металлом"
 	icon_state = "agent47"
 	item_state = "lawyer_black"
 	item_color = "agent47"
 
 /obj/item/clothing/under/f13/psychologist
-	name = "psychologist's turtleneck"
-	desc = "A turqouise turtleneck and a pair of dark blue slacks, belonging to a psychologist."
+	name = "Водолазка психолога"
+	desc = "Бирюзовая водолазка и темно-синие брюки, принадлежащие психологу."
 	icon_state = "psychturtle"
 	item_state = "b_suit"
 	item_color = "psychturtle"
 /obj/item/clothing/under/f13/villain //Doubles as Gang Leader primary uniform for extra villainy
-	name = "green and black suit"
-	desc = "There is something evil in this suit, only a villain would wear something like that."
+	name = "Зелёно-чёрный костюм"
+	desc = "В этом костюме есть что-то злое, только злодей может носить что-то подобное."
 	icon_state = "villain"
 	item_state = "syndicate-green"
 	item_color = "villain"
 
 /obj/item/clothing/under/f13/gentlesuit
-	name = "gentlemans suit"
-	desc = "A silk black shirt with a white tie and a matching gray vest and slacks. Feels proper."
+	name = "Джентельменский костюм"
+	desc = "Шелковая черная рубашка с белым галстуком, серый жилет и брюки в тон. Чувствуется нормально"
 	icon_state = "gentlesuit"
 	item_state = "gy_suit"
 	item_color = "gentlesuit"
 
 /obj/item/clothing/under/f13/detectivealt
-	name = "fancy detective suit"
-	desc = "An immaculate white dress shirt, paired with a pair of fancy black dress pants, a red tie, and a charcoal vest."
+	name = "Модный костюм детектива"
+	desc = "Безукоризненно белая парадная рубашка в паре с модными черными брюками, красным галстуком и угольно-черным жилетом."
 	icon_state = "detectivealt"
 	item_state = "bl_suit"
 	item_color = "detectivealt"
 	can_adjust = TRUE
 
 /obj/item/clothing/under/f13/hopalt
-	name = "head of personnel's suit"
-	desc = "A blue jacket and red tie, with matching red cuffs! Snazzy. Wearing this makes you feel more important than your job title does."
+	name = "Костюм главы персонала"
+	desc = "Синий пиджак и красный галстук с такими же красными манжетами! Шикарно. Нося это, вы чувствуете себя более важным, чем ваша должность."
 	icon_state = "hopalt"
 	item_state = "b_suit"
 	item_color = "hopalt"
 
 /obj/item/clothing/under/f13/roboticistalt
-	name = "roboticist's jumpsuit"
-	desc = "A slimming black with bright reinforced orange seams; great for industrial work."
+	name = "Комбинезон роботехника"
+	desc = "Облегающий черный с яркими усиленными оранжевыми швами, отлично подходит для промышленных работ"
 	icon_state = "roboticsalt"
 	item_state = "jensensuit"
 	item_color = "roboticsalt"
 	can_adjust = TRUE
 
 /obj/item/clothing/under/f13/bartenderalt
-	name = "fancy bartender's uniform"
-	desc = "A rather fancy uniform for a real professional."
+	name = "Модная униформа бармена"
+	desc = "Довольно модная униформа для настоящего профессионала."
 	icon_state = "barmanalt"
 	item_state = "bl_suit"
 	item_color = "barmanalt"
 
 /obj/item/clothing/under/f13/spaceship
-	name = "crewman uniform"
-	desc = "The insignia on this uniform tells you that this uniform belongs to some sort of crewman."
+	name = "Униформа члена экипажа"
+	desc = "Знаки отличия на этой форме говорят вам, что эта форма принадлежит какому-то члену экипажа."
 	icon_state = "spaceship_crewman"
 	item_state = "syndicate-black-red"
 	item_color = "spaceship_crewman"
 
 /obj/item/clothing/under/f13/spaceship/officer
-	name = "officer uniform"
-	desc = "The insignia on this uniform tells you that this uniform belongs to some sort of officer."
+	name = "Униформа офицера"
+	desc = "Знаки различия на этой форме говорят вам, что эта форма принадлежит какому-то офицеру"
 	icon_state = "spaceship_officer"
 	item_color = "spaceship_officer"
 
 /obj/item/clothing/under/f13/spaceship/captain
-	name = "captain uniform"
-	desc = "The insignia on this uniform tells you that this uniform belongs to some sort of captain."
+	name = "Униформа капитана"
+	desc = "Знаки отличия на этом мундире говорят вам, что этот мундир принадлежит какому-то капитану."
 	icon_state = "spaceship_captain"
 	item_color = "spaceship_captain"
 
 //Female clothing! It's not misogyny, yet dresses shall be separate from /f13/ as Fallout build has its own female subtype.
 
 /obj/item/clothing/under/pants/f13/ghoul
-	name = "ripped pants"
-	desc = "A pair of ripped pants that were not washed for over a hundred years.<br>Thanks to these you don't get to see ghouls genitals too often.<br><i>You can also wear these, to pretend you are a feral ghoul, just saying...</i>"
+	name = "Рваные брюки"
+	desc = "AПара рваных штанов, которые не стирали больше ста лет.<br>Как хорошо, что вы не слишком часто видите гениталии гулей.<br><i>Кстати говоря, вы также можете носить их, чтобы притвориться диким гулем...</i>"
 	icon_state = "ghoul"
 	item_color = "ghoul"
 
 /obj/item/clothing/under/pants/f13/cloth
-	name = "cloth pants"
-	desc = "A pair of worn dusty cloth pants made of various textile pieces.<br>Commonly found all over the wasteland."
+	name = "Брюки из ткани"
+	desc = "Пара поношенных пыльных суконных штанов, сшитых из различных текстильных изделий.<br>Обычно встречается по всей пустоши."
 	icon_state = "cloth"
 	item_color = "cloth"
 
 /obj/item/clothing/under/pants/f13/caravan //Caravanner - someone who travels with caravan. Caravaneer - caravan leader.
-	name = "caravanner pants"
-	desc = "A pair of wide dusty cargo pants.<br>Commonly worn by caravanners or caravan robbers."
+	name = "Брюки караванщика"
+	desc = "Пара широких пыльных брюк-карго.<br>Обычно их носят караванщики или грабители караванов."
 	icon_state = "caravan"
 	item_color = "caravan"
 
 /obj/item/clothing/under/pants/f13/khan
-	name = "Great Khan pants"
-	desc = "A cloth pants with leather armor pads attached on sides.<br>These are commonly worn by the Great Khans raiders."
+	name = "Брюки Великих Ханов"
+	desc = "Суконные штаны с кожаными накладками для брони, прикрепленными по бокам.<br>Обычно их носят рейдеры из Великих Ханов."
 	icon_state = "khan"
 	item_color = "khan"
 	body_parts_covered = LEGS
 
 /obj/item/clothing/under/pants/f13/warboy //Mad Max 4 2015 babe!
-	name = "war boy pants"
-	desc = "A pair of dark brown pants, perfect for the one who grabs the sun, riding to Valhalla."
+	name = "Мужские военные брюки"
+	desc = "Пара темно-коричневых брюк, идеально подходящих для того, кто захватывает солнце, отправляясь в Валгаллу."
 	icon_state = "warboy"
 	item_color = "warboy"
 	body_parts_covered = LEGS
 
 /obj/item/clothing/under/pants/f13/doom
-	name = "green pants"
-	desc = "An odd green pants made of synthetic material."
+	name = "Зелёные брюки"
+	desc = "Странные зеленые штаны из синтетического материала."
 	icon_state = "green"
 	item_color = "green"
 	resistance_flags = UNACIDABLE
 	body_parts_covered = LEGS
 
 /obj/item/clothing/under/f13/bosform_f
-	name = "female initiate service uniform"
-	desc = "A dry-cleaned and fitted formal uniform of the Brotherhood of Steel, for special occasions. This one has no markings, and looks to be for a feminine person."
+	name = "Женская униформа послушника"
+	desc = "Сухая и хорошо подогнанная форма Братства Стали для особых случаев. У этого нет никаких отметин,и он выглядит как женский."
 	icon_state = "bosform_f"
 	item_state = "bosform_f"
 	item_color = "bosform_f"
 
 /obj/item/clothing/under/f13/bosform_m
-	name = "male initiate service uniform"
-	desc = "A dry-cleaned and fitted formal uniform of the Brotherhood of Steel, for special occasions. This one has no markings, and looks to be for a masculine person."
+	name = "Мужская униформа послушника"
+	desc = "Сухая и хорошо подогнанная форма Братства Стали для особых случаев. У этого нет никаких отметин,и он выглядит как мужской."
 	icon_state = "bosform_m"
 	item_state = "bosform_m"
 	item_color = "bosform_m"
 
 /obj/item/clothing/under/f13/bosformsilver_f
-	name = "female brotherhood service uniform"
-	desc = "A dry-cleaned and fitted formal uniform of the Brotherhood of Steel, for special occasions. This one bears a silver chain, and looks to be for a feminine person."
+	name = "Женская униформа рыцаря"
+	desc = "Сухая и хорошо подогнанная форма Братства Стали для особых случаев. На этом костюме серебрянная цепь, и он выглядит как женский."
 	icon_state = "bosformsilver_f"
 	item_state = "bosformsilver_f"
 	item_color = "bosformsilver_f"
 
 /obj/item/clothing/under/f13/bosformsilver_m
-	name = "male brotherhood service uniform"
-	desc = "A dry-cleaned and fitted formal uniform of the Brotherhood of Steel, for special occasions. This one bears a silver chain, and looks to be for a masculine person."
+	name = "Мужская униформа рыцаря"
+	desc = "Сухая и хорошо подогнанная форма Братства Стали для особых случаев. На этом костюме серебрянная цепь, и он выглядит как мужской."
 	icon_state = "bosformsilver_m"
 	item_state = "bosformsilver_m"
 	item_color = "bosformsilver_m"
 
 /obj/item/clothing/under/f13/bosformgold_f
-	name = "female ranking service uniform"
-	desc = "A dry-cleaned and fitted formal uniform of the Brotherhood of Steel, for special occasions. This one bears a gold chain; denoting authority, and looks to be for a feminine person."
+	name = "Женская униформа паладина"
+	desc = "Сухая и хорошо подогнанная форма Братства Стали для особых случаев. На этом костюме золотая цепь, обозначающая власть, и он выглядит как женский."
 	icon_state = "bosformgold_f"
 	item_state = "bosformgold_f"
 	item_color = "bosformgold_f"
 
 /obj/item/clothing/under/f13/bosformgold_m
-	name = "male ranking service uniform"
-	desc = "A dry-cleaned and fitted formal uniform of the Brotherhood of Steel, for special occasions. This one bears a gold chain; denoting authority, and looks to be for a masculine person."
+	name = "Мужская униформа паладина"
+	desc = "Сухая и хорошо подогнанная форма Братства Стали для особых случаев. На этом костюме золотая цепь, обозначающая власть, и он выглядит как мужской."
 	icon_state = "bosformgold_m"
 	item_state = "bosformgold_m"
 	item_color = "bosformgold_m"
 
 /obj/item/clothing/under/f13/atomfaithful
-	name = "faithful attire"
-	desc = "The attire worn by those Faithful to the Division."
+	name = "Наряд верующего"
+	desc = "Одежда, которую носили верующие в единство"
 	icon_state = "atomfaithful"
 	item_state = "atomfaithful"
 	item_color = "atomfaithful"
@@ -1114,8 +1112,8 @@
 
 
 /obj/item/clothing/under/f13/atomwitchunder
-	name = "seers underclothes"
-	desc = "The underclothes of the female seers of the Division."
+	name = "Нижнее белье провидицы"
+	desc = "Нижнее белье женщин-провидиц единства."
 	icon_state = "atomwitchunder"
 	item_state = "atomwitchunder"
 	item_color = "atomwitchunder"
@@ -1123,8 +1121,8 @@
 
 
 /obj/item/clothing/under/f13/atombeliever
-	name = "believer clothes"
-	desc = "The clothes of a true Believer in the Division."
+	name = "Одежда верующего"
+	desc = "Одежда истинно верующего в единство."
 	icon_state = "atombeliever"
 	item_state = "atombeliever"
 	item_color = "atombeliever"
@@ -1132,47 +1130,47 @@
 
 
 /obj/item/clothing/under/f13/raiderharness
-	name = "raider harness"
-	desc = "A leather harness that barely covered the essentials."
+	name = "Жгут рейдера"
+	desc = "Кожаная сбруя, едва прикрывавшая самое необходимое."
 	icon_state = "raiderharness"
 	item_state = "raiderharness"
 	item_color = "raiderharness"
 
 /obj/item/clothing/under/f13/fprostitute
-	name = "feminine prostitute outfit"
-	desc = "A latex outfit for someone who sells their companionship. Or really likes the breeze."
+	name = "Костюм проститутки"
+	desc = "Латексный наряд для тех, кто продает свое общество. Или действительно любит ветерок."
 	icon_state = "fprostitute"
 	item_state = "fprostitute"
 	item_color = "fprostitute"
 
 /obj/item/clothing/under/f13/mprostitute
-	name = "masculine prostitute outfit"
-	desc = "A latex outfit for someone who sells their companionship. Or really likes the breeze."
+	name = "Костюм мужчины-проституки"
+	desc = "Латексный наряд для тех, кто продает свое общество. Или действительно любит ветерок."
 	icon_state = "mprostitute"
 	item_state = "mprostitute"
 	item_color = "mprostitute"
 
 /obj/item/clothing/under/f13/ravenharness
-	name = "raven harness"
-	desc = "A harness made out of a number of black belts sewn together end on end to form a coiling piece of clothing. A symbol in red has been painted on the front, and a pair of hide pants go with it."
+	name = "Вороний жгут"
+	desc = "Жгут, сделанный из нескольких черных ремней, сшитых вместе, образуя свернувшийся кусок одежды. Спереди нарисован символ красного цвета, к нему прилагается пара кожаных штанов."
 	icon_state = "raven_harness"
 	item_state = "raven_harness"
 
 /obj/item/clothing/under/f13/jamrock
-	name = "Disco-Ass Shirt and Pants"
-	desc = "This white satin shirt used to be fancy. It used to really catch the light. Now it smells like someone took a piss in the armpits while the golden brown trousers are flare-cut. Normal bell-bottom trousers would be boot-cut, but these are far from normal. They are someone's piss-soaked, cum-stained party pants."
+	name = "Рубашки и брюки диско-задницы"
+	desc = "Эта белая атласная рубашка когда-то была модной. Раньше она действительно ловил свет. Теперь пахнет так, будто кто-то помочился в подмышки, а золотисто-коричневые брюки разрезаны. Обычные расклешенные брюки были бы сапожного покроя, но это далеко не нормально. Это чьи-то пропитанные мочой, испачканные спермой брюки для вечеринок."
 	icon_state = "jamrock_uniform"
 	item_state = "jamrock_uniform"
 
 /obj/item/clothing/under/f13/keksweater
-	name = "Red Sweater"
-	desc = "A dark red-sweater with some cargo-pants. Perfect for when it just gets too cold down in local air-conditioned areas."
+	name = "Красный свитер"
+	desc = "Темно-красный свитер с брюками-карго. Идеально подходит для тех случаев, когда в местных кондиционируемых помещениях становится слишком холодно."
 	icon_state = "brahminsss"
 	item_state = "brahminsss"
 
 /obj/item/clothing/under/f13/inquisition
-	name = "Inquisition uniform"
-	desc = "Nobody expects the spanish inquisition!"
+	name = "Униформа инквизитора"
+	desc = "Никто не ожидал испанской инквизиции!"
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	icon_state = "inquisition"
 	can_adjust = TRUE
@@ -1180,24 +1178,24 @@
 	item_color = "inquisition"
 
 /obj/item/clothing/under/f13/joshua
-	name = "Joshua uniform"
-	desc = "Just Joshua's uniform"
+	name = "Униформа Джошуа"
+	desc = "Просто униформа Джошуа"
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	icon_state = "joshua"
 	item_state = "joshua"
 	item_color = "joshua"
 
 /obj/item/clothing/under/f13/nw_sweater
-	name = "Warm sweater"
-	desc = "Sewed by your mommy."
+	name = "Тёплый свитер"
+	desc = "Связан твоей мамочкой."
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	icon_state = "sweater"
 	item_state = "sweater"
 	item_color = "sweater"
 
 /obj/item/clothing/under/f13/ny_trap
-	name = "Sexy Santa Suit"
-	desc = "Best gift for you boyfriend."
+	name = "Сексуальный костюм санты"
+	desc = "Лучший подарок для твоего парня."
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	icon_state = "ny_trap"
 	item_state = "ny_trap"

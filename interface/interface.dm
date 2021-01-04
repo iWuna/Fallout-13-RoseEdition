@@ -1,11 +1,11 @@
 //Please use mob or src (not usr) in these procs. This way they can be called in the same fashion as procs.
 /client/verb/wiki()
-	set name = "wiki"
-	set desc = "Opens the Wiki in your browser."
+	set name = "Вики"
+	set desc = "Открывает вики в вашем браузере."
 	set hidden = 1
 	var/wikiurl = CONFIG_GET(string/wikiurl)
 	if(wikiurl)
-		if(alert("This will open the Wiki in your browser. Are you sure?",,"Yes","No")!="Yes")
+		if(alert("Это откроет вики в вашем браузере. Вы уверены?",,"Да","Нет")!="Да")
 			return
 		src << link(wikiurl)
 	else
@@ -13,8 +13,8 @@
 	return
 
 /client/verb/discord()
-	set name = "дискорд"
-	set desc = "Visit the Discord."
+	set name = "Discord"
+	set desc = "Посетить Discord сервера."
 	set hidden = 1
 	var/discordurl = CONFIG_GET(string/discordurl)
 	if(discordurl)
@@ -26,27 +26,27 @@
 	return
 
 /client/verb/rules()
-	set name = "rules"
-	set desc = "Show Server Rules."
+	set name = "Правила"
+	set desc = "Показать правила сервера."
 	set hidden = 1
 	var/rulesurl = CONFIG_GET(string/rulesurl)
-	switch(alert("Where would you like to see the rules?", null, "Discord (external link)", "View here", "Cancel"))
+	switch(alert("Где вы хотите посмотреть правила?", null, "Дискорд (внешняя ссылка)", "Показать здесь", "Дискорд"))
 		if("Discord (external link)")
 			if(!rulesurl)
 				to_chat(src, "<span class='danger'>The rules URL is not set in the server configuration.</span>")
 				return
 			src << link(rulesurl)
-		if("View here")
+		if("Показать здесь")
 			src << browse('html/rules.html', "window=changes")
 
 
 /client/verb/github()
-	set name = "гитхаб"
-	set desc = "Visit Github"
+	set name = "Github"
+	set desc = "Посетить Github сервера"
 	set hidden = 1
 	var/githuburl = CONFIG_GET(string/githuburl)
 	if(githuburl)
-		if(alert("This will open the Github repository in your browser. Are you sure?",,"Yes","No")!="Yes")
+		if(alert("Это откроет репозиторий Github в вашем браузере. Вы уверены?",,"Да","Нет")!="Да")
 			return
 		src << link(githuburl)
 	else
@@ -54,29 +54,29 @@
 	return
 
 /client/verb/reportissue()
-	set name = "report-issue"
-	set desc = "Report an issue"
+	set name = "Сообщить об ошибке"
+	set desc = "Сообщить об ошибке"
 	set hidden = 1
 	var/githuburl = CONFIG_GET(string/githuburl)
 	if(githuburl)
-		var/message = "This will open the Github issue reporter in your browser. Are you sure?"
+		var/message = "Откроется страница сообщений об ошибках на Гитхабе. Вы уверены?"
 		if(GLOB.revdata.testmerge.len)
 			message += "<br>The following experimental changes are active and are probably the cause of any new or sudden issues you may experience. If possible, please try to find a specific thread for your issue instead of posting to the general issue tracker:<br>"
 			message += GLOB.revdata.GetTestMergeInfo(FALSE)
-		if(tgalert(src, message, "Report Issue","Yes","No")!="Yes")
+		if(tgalert(src, message, "Сообщить о баге","Да","Нет")!="Да")
 			return
 		var/static/issue_template = file2text(".github/ISSUE_TEMPLATE.md")
 		var/servername = CONFIG_GET(string/servername)
-		var/url_params = "Reporting client version: [byond_version]\n\n[issue_template]"
+		var/url_params = "Передаю версию клиента: [byond_version]\n\n[issue_template]"
 		if(GLOB.round_id || servername)
-			url_params = "Issue reported from [GLOB.round_id ? " Round ID: [GLOB.round_id][servername ? " ([servername])" : ""]" : servername]\n\n[url_params]"
+			url_params = "Отчёт отправлен [GLOB.round_id ? " Round ID: [GLOB.round_id][servername ? " ([servername])" : ""]" : servername]\n\n[url_params]"
 		DIRECT_OUTPUT(src, link("[githuburl]/issues/new?body=[url_encode(url_params)]"))
 	else
 		to_chat(src, "<span class='danger'>The Github URL is not set in the server configuration.</span>")
 	return
 
 /client/verb/hotkeys_help()
-	set name = "hotkeys-help"
+	set name = "Горячие клавиши"
 	set category = "OOC"
 
 	var/adminhotkeys = {"<font color='purple'>
@@ -95,7 +95,7 @@ Admin:
 		to_chat(src, adminhotkeys)
 
 /client/verb/changelog()
-	set name = "Changelog"
+	set name = "Изменения"
 	set category = "OOC"
 	var/datum/asset/changelog = get_asset_datum(/datum/asset/simple/changelog)
 	changelog.send(src)
@@ -108,63 +108,63 @@ Admin:
 
 /mob/proc/hotkey_help()
 	var/hotkey_mode = {"<font color='purple'>
-Hotkey-Mode: (hotkey-mode must be on)
-\tTAB = toggle hotkey-mode
-\ta = left
-\ts = down
-\td = right
-\tw = up
-\tq = drop
-\te = equip
-\tr = throw
-\tm = me
-\tt = say
+Горячие клавиши: (Горячие клавиши должны быть активированы)
+\tTAB = Активировать режим горячих клавиш
+\ta = Налево
+\ts = Вниз
+\td = Направо
+\tw = Вверх
+\tq = Бросить
+\te = Экипировать
+\tr = Кинуть
+\tm = Эмоция
+\tt = Говорить
 \to = OOC
-\tb = resist
-\t<B></B>h = stop pulling
-\tx = swap-hand
-\tz = activate held object (or y)
-\tShift+e = Put held item into belt or take out most recent item added to belt.
-\tShift+b = Put held item into backpack or take out most recent item added to backpack.
-\tf = cycle-intents-left
-\tg = cycle-intents-right
-\t1 = help-intent
-\t2 = disarm-intent
-\t3 = grab-intent
-\t4 = harm-intent
-\tNumpad = Body target selection (Press 8 repeatedly for Head->Eyes->Mouth)
-\tAlt(HOLD) = Alter movement intent
+\tb = Сопротивляться
+\t<B></B>h = Прекратить тащить
+\tx = Сменить руку
+\tz = Активировать удерживаемый предмет (или y)
+\tShift+e = Поместить удерживаемый предмет на пояс или взять последний помещенный на пояс предмет
+\tShift+b = Поместить удерживаемый предмет в портфель или взять последний помещенный в портфель предмет
+\tf = Влево по кругу намерений
+\tg = Вправо по кругу намерений
+\t1 = Намерение помочь
+\t2 = Намерение обезоружить
+\t3 = Намерение схватить
+\t4 = Намерение вредить
+\tNumpad = Выбрать часть тела (Нажмите восемь раз для Голова->Глаза->Рот)
+\tAlt(HOLD) = Изменить намерение
 </font>"}
 
 	var/other = {"<font color='purple'>
-Any-Mode: (hotkey doesn't need to be on)
-\tCtrl+a = left
-\tCtrl+s = down
-\tCtrl+d = right
-\tCtrl+w = up
-\tCtrl+q = drop
-\tCtrl+e = equip
-\tCtrl+r = throw
-\tCtrl+b = resist
-\tCtrl+h = stop pulling
+Любой режим: (Включение горячих клавиш не обязательно)
+\tCtrl+a = Налево
+\tCtrl+s = Вниз
+\tCtrl+d = Направо
+\tCtrl+w = Вверх
+\tCtrl+q = Бросить
+\tCtrl+e = Экипировать
+\tCtrl+r = Кинуть
+\tCtrl+b = Сопротивляться
+\tCtrl+h = Прекратить тащить
 \tCtrl+o = OOC
-\tCtrl+x = swap-hand
-\tCtrl+z = activate held object (or Ctrl+y)
-\tCtrl+f = cycle-intents-left
-\tCtrl+g = cycle-intents-right
-\tCtrl+1 = help-intent
-\tCtrl+2 = disarm-intent
-\tCtrl+3 = grab-intent
-\tCtrl+4 = harm-intent
-\tCtrl+'+/-' OR
-\tShift+Mousewheel = Ghost zoom in/out
-\tDEL = stop pulling
-\tINS = cycle-intents-right
-\tHOME = drop
-\tPGUP = swap-hand
-\tPGDN = activate held object
-\tEND = throw
-\tCtrl+Numpad = Body target selection (Press 8 repeatedly for Head->Eyes->Mouth)
+\tCtrl+x = Сменить руку
+\tCtrl+z = Активировать удерживаемый предмет (или Ctrl+y)
+\tCtrl+f = Влево по кругу намерений
+\tCtrl+g = Вправо по кругу намерений
+\tCtrl+1 = Намерение помочь
+\tCtrl+2 = Намерение обезоружить
+\tCtrl+3 = Намерение схватить
+\tCtrl+4 = Намерение вредить
+\tCtrl+'+/-' ИЛИ
+\tShift+Mousewheel = Приблизить/отдалить для призрака
+\tDEL = Прекратить тащить
+\tINS = Вправо по кругу намерений
+\tHOME = Бросить
+\tPGUP = Сменить руку
+\tPGDN = Активировать удерживаемый предмет
+\tEND = Кинуть
+\tCtrl+Numpad = Выбрать часть тела (Нажмите восемь раз для Голова->Глаза->Рот)
 </font>"}
 
 	to_chat(src, hotkey_mode)
@@ -173,50 +173,50 @@ Any-Mode: (hotkey doesn't need to be on)
 /mob/living/silicon/robot/hotkey_help()
 	//h = talk-wheel has a nonsense tag in it because \th is an escape sequence in BYOND.
 	var/hotkey_mode = {"<font color='purple'>
-Hotkey-Mode: (hotkey-mode must be on)
-\tTAB = toggle hotkey-mode
-\ta = left
-\ts = down
-\td = right
-\tw = up
-\tq = unequip active module
-\t<B></B>h = stop pulling
-\tm = me
-\tt = say
+Горячие клавиши: (Горячие клавиши должны быть активированы)
+\tTAB = Активировать режим горячих клавиш
+\ta = Налево
+\ts = Вниз
+\td = Направо
+\tw = Наверх
+\tq = Снять активный модуль
+\t<B></B>h = Прекратить тащить
+\tm = Эмоция
+\tt = Говорить
 \to = OOC
-\tx = cycle active modules
-\tb = resist
-\tz = activate held object (or y)
-\tf = cycle-intents-left
-\tg = cycle-intents-right
-\t1 = activate module 1
-\t2 = activate module 2
-\t3 = activate module 3
-\t4 = toggle intents
+\tx = Изменить активный модуль
+\tb = Сопротивляться
+\tz = Активировать удерживаемый предмет (или y)
+\tf = Влево по кругу намерений
+\tg = Вправо по кругу намерений
+\t1 = Активировать модуль 1
+\t2 = Активировать модуль 2
+\t3 = Активировать модуль 3
+\t4 = Переключить намерение
 </font>"}
 
 	var/other = {"<font color='purple'>
-Any-Mode: (hotkey doesn't need to be on)
-\tCtrl+a = left
-\tCtrl+s = down
-\tCtrl+d = right
-\tCtrl+w = up
-\tCtrl+q = unequip active module
-\tCtrl+x = cycle active modules
-\tCtrl+b = resist
-\tCtrl+h = stop pulling
+Любой режим: (Включение горячих клавиш не обязательно)
+\tCtrl+a = Налево
+\tCtrl+s = Вниз
+\tCtrl+d = Направо
+\tCtrl+w = Вверх
+\tCtrl+q = Снять активный модуль
+\tCtrl+x = Изменить активный модуль
+\tCtrl+b = Сопротивляться
+\tCtrl+h = Прекратить тащить
 \tCtrl+o = OOC
-\tCtrl+z = activate held object (or Ctrl+y)
-\tCtrl+f = cycle-intents-left
-\tCtrl+g = cycle-intents-right
-\tCtrl+1 = activate module 1
-\tCtrl+2 = activate module 2
-\tCtrl+3 = activate module 3
-\tCtrl+4 = toggle intents
-\tDEL = stop pulling
-\tINS = toggle intents
-\tPGUP = cycle active modules
-\tPGDN = activate held object
+\tCtrl+z = Активировать удерживаемый предмет (или Ctrl+y)
+\tCtrl+f = Влево по кругу намерений
+\tCtrl+g = Вправо по кругу намерений
+\tCtrl+1 = Активировать модуль 1
+\tCtrl+2 = Активировать модуль 2
+\tCtrl+3 = Активировать модуль 3
+\tCtrl+4 = Переключить намерение
+\tDEL = Прекратить тащить
+\tINS = Переключить намерение
+\tPGUP = Переключить активный модуль
+\tPGDN = Активировать удерживаемый предмет
 </font>"}
 
 	to_chat(src, hotkey_mode)
