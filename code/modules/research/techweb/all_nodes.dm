@@ -524,6 +524,23 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
+/datum/techweb_node/ion_weapons
+	id = "ion_weapons"
+	display_name = "Ion Weapons"
+	description = "Advanced weapons designed to affect electronic devices"
+	prereq_ids = list("electronic_weapons_mk2", "plasma_weapons")
+	design_ids = list("ion_beam")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	export_price = 15000
+
+/datum/techweb_node/ion_weapons_mk2
+	id = "ion_weapons_mk2"
+	display_name = "Advanced Ion Weapons"
+	description = "Advanced weapons designed to affect electronic devices"
+	prereq_ids = list("ion_weapons")
+	design_ids = list("ion_beam_mk2")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 25000
 
 /datum/techweb_node/stealth
 	id = "stealth_tec"
@@ -531,7 +548,7 @@
 	description = "Modulating field that transmits the reflected light from one side of an object to another"
 	prereq_ids = list("syndicate_basic")
 	design_ids = list("stealth_boy")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 15000)
 	export_price = 10000
 
 /datum/techweb_node/stealth_mk2
@@ -540,7 +557,7 @@
 	description = "Advanced and more safe stealth field modulation"
 	prereq_ids = list("stealth_tec")
 	design_ids = list("stealth_boy_mk2")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 15000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 25000)
 	export_price = 20000
 /*
 /datum/techweb_node/medical_weapons

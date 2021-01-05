@@ -12,6 +12,29 @@
 	var/obj/item/stack/sheet/sheet = new mould_sheet_type
 	to_chat(user, "It requires [sheet_amount] [sheet.name] and moulding bench")
 
+// Attachment
+
+/obj/item/prefabs/mould/attachment/scope
+	name = "Weapon Optics Mould"
+	item_path = /obj/item/attachments/scope
+	sheet_amount = 8
+	mould_sheet_type = /obj/item/stack/sheet/glass
+
+/obj/item/prefabs/mould/attachment/recoil_decrease
+	name = "Recoil Compensator Mould"
+	item_path = /obj/item/attachments/recoil_decrease
+	sheet_amount = 5
+
+/obj/item/prefabs/mould/attachment/bullet_speed
+	name = "Improved Barrel Mould"
+	item_path = /obj/item/attachments/bullet_speed
+	sheet_amount = 10
+
+/obj/item/prefabs/mould/attachment/burst_improvement
+	name = "Burst Cam Mould"
+	item_path = /obj/item/attachments/burst_improvement
+	sheet_amount = 7
+
 // Action
 
 /obj/item/prefabs/mould/action/simple

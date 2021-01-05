@@ -88,7 +88,7 @@ GLOBAL_LIST_INIT(maintenance_loot, list(
 	/obj/item/wirecutters = 1,
 	/obj/item/wrench = 4,
 	/obj/item/relic = 3,
-	/obj/item/weaponcrafting/receiver = 2,
+	/obj/item/advanced_crafting_components/receiver = 2,
 	/obj/item/clothing/head/cone = 2,
 	/obj/item/grenade/smokebomb = 2,
 	/obj/item/geiger_counter = 3,
@@ -108,7 +108,7 @@ GLOBAL_LIST_INIT(maintenance_loot, list(
 	))
 
 GLOBAL_VAR_INIT(trash_list,list(/obj/item/crafting/duct_tape = 5,
-								/obj/item/stealthboy/makeshift = 3,
+								/obj/item/stealthboy/makeshift = 2,
 								/obj/item/crafting/wonderglue = 5,
 								/obj/item/crafting/turpentine = 5, 
 								/obj/item/crafting/abraxo = 5, 

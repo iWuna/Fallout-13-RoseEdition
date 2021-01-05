@@ -178,6 +178,26 @@
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+/datum/design/ion_beam
+	name = "Ion Emitter"
+	desc = "Ion particles emitter"
+	id = "ion_beam"
+	build_type = PROTOLATHE
+	materials = list(MAT_SILVER = 25000, MAT_GOLD = 25000, MAT_DIAMOND = 10000, MAT_URANIUM = 45000)
+	build_path = /obj/item/prefabs/complex/ebarrel/ion
+	category = list("Weapon Parts")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/ion_beam_mk2
+	name = "Advanced Ion Emitter"
+	desc = "More advanced and efficient ion particles emitter"
+	id = "ion_beam_mk2"
+	build_type = PROTOLATHE
+	materials = list(MAT_SILVER = 30000, MAT_GOLD = 40000, MAT_DIAMOND = 18000, MAT_URANIUM = 60500)
+	build_path = /obj/item/prefabs/complex/ebarrel/ion/strong
+	category = list("Weapon Parts")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 /datum/design/ew_stream
 	name = "Single Stream"
 	desc = "Energy Stream Adapter"
