@@ -524,6 +524,23 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
+/datum/techweb_node/ion_weapons
+	id = "ion_weapons"
+	display_name = "Ion Weapons"
+	description = "Advanced weapons designed to affect electronic devices"
+	prereq_ids = list("electronic_weapons_mk2", "plasma_weapons")
+	design_ids = list("ion_beam")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	export_price = 15000
+
+/datum/techweb_node/ion_weapons_mk2
+	id = "ion_weapons_mk2"
+	display_name = "Advanced Ion Weapons"
+	description = "Advanced weapons designed to affect electronic devices"
+	prereq_ids = list("ion_weapons")
+	design_ids = list("ion_beam_mk2")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 25000
 
 /datum/techweb_node/stealth
 	id = "stealth_tec"

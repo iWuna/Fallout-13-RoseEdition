@@ -143,19 +143,32 @@
 	var/prefix = ""
 	var/quality = ""
 	var/obj/item/gun/G
+	var/lethal = TRUE
 
 	if(istype(src,/obj/item/prefabs/complex/eWeaponFrame/pistol))
 		gun_path = /obj/item/gun/energy/laser/pistol
 		gun_icon = "AEP7"//Garbage default pistol
-		prefix = "portable"
+		prefix = "Portable"
 	else if(istype(src,/obj/item/prefabs/complex/eWeaponFrame/rifle))
 		gun_path = /obj/item/gun/energy/laser/aer9
 		gun_icon = "laser"
-		prefix = "full Length"
+		prefix = "Full Length"
 	else if(istype(src,/obj/item/prefabs/complex/eWeaponFrame/hqrifle))
 		gun_path = /obj/item/gun/energy/laser/rcw
 		gun_icon = "lasercw"
-		prefix = "advanced"
+		prefix = "Advanced"
+
+	if(istype(barrel, /obj/item/prefabs/complex/ebarrel/ion))
+		lethal = FALSE
+		if(istype(src,/obj/item/prefabs/complex/eWeaponFrame/pistol))
+			gun_path = /obj/item/gun/energy/ionrifle/carbine
+			gun_icon = "ioncarbine"
+			prefix = "Portable Ion"
+		else
+			gun_path = /obj/item/gun/energy/ionrifle
+			gun_icon = "ionrifle"
+			prefix = "Ion"
+
 	if(!ispath(gun_path)) //Something went fucky
 		return 0
 
@@ -165,19 +178,19 @@
 	G.item_state = gun_icon
 	G.desc = ""
 
-	if(conductors)
+	if(conductors && lethal)
 		to_chat(user,"You use the conductors to improve the weapon.")
 		G.extra_damage += pick(6,4,2)
 		G.extra_penetration += pick(6,4,2)
 
-	if(M.has_trait(TRAIT_MASTER_GUNSMITH))
+	if(M.has_trait(TRAIT_MASTER_GUNSMITH) && lethal)
 		to_chat(user,"Your skills come in handy while assembling the weapon")
 		if(prob(25))
 			G.extra_damage += 5
 		if(prob(25))
 			G.extra_penetration += 5
 
-	for(var/obj/item/prefabs/C in src.contents)
+	for(var/obj/item/prefabs/C in src.contents && lethal)
 		G.extra_damage += C.dam_mod//0
 		G.burst_size += C.burst_mod//1
 		G.customburst += C.burst_mod//1
@@ -223,7 +236,8 @@
 		if(quality == "masterwork")
 			quality = "enhanced"
 
-	G.name = "[prefix] [burst.name] [barrel.name] ([quality])"
+	G.desc = "[prefix] [burst.name] [barrel.name] ([quality])"
+	G.name = "[G.name] ([capitalize(quality)])"
 	
 	var/obj/item/gun/energy/B = G
 	B.cell = new B.cell_type(B)

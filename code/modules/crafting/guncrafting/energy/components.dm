@@ -39,6 +39,15 @@
 	energyProjType = list(/obj/item/ammo_casing/energy/plasma)
 	complexity = 100
 
+/obj/item/prefabs/complex/ebarrel/ion
+	name = "Weak Ion Emitter"
+	energyProjType = list(/obj/item/ammo_casing/energy/ion/pistol)
+	complexity = 75
+
+/obj/item/prefabs/complex/ebarrel/ion/strong
+	name = "Strong Ion Emitter"
+	energyProjType = list(/obj/item/ammo_casing/energy/ion)
+	complexity = 125
 
 // BURST
 /obj/item/prefabs/complex/eburst
@@ -110,7 +119,7 @@
 	name = "Energy Pistol Frame"
 	desc = "An unfinished energy gun."
 	icon_state = "gunframe"
-	max_complexity = 100
+	max_complexity = 125
 
 
 /obj/item/prefabs/complex/eWeaponFrame/rifle
@@ -124,7 +133,7 @@
 	name = "Advanced Energy Rifle Frame"
 	desc = "An unfinished energy gun."
 	icon_state = "gunframe"
-	max_complexity = 300
+	max_complexity = 250
 
 
 // COMPONENTS
