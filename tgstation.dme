@@ -1547,6 +1547,7 @@
 #include "code\modules\crafting\guncrafting\projectile\components\stock.dm"
 #include "code\modules\crafting\guncrafting\projectile\components\trigger.dm"
 #include "code\modules\crafting\mould\actions.dm"
+#include "code\modules\crafting\mould\attachments.dm"
 #include "code\modules\crafting\mould\barrels.dm"
 #include "code\modules\crafting\mould\frames.dm"
 #include "code\modules\crafting\mould\loaders.dm"
