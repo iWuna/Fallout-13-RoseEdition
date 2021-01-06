@@ -20,7 +20,7 @@
 /obj/item/prefabs/complex/ebarrel/laser/strong
 	name = "Strong Laser Emitter"
 	energyProjType = list(/obj/item/ammo_casing/energy/laser/musket)
-	complexity = 60
+	complexity = 75
 
 
 /obj/item/prefabs/complex/ebarrel/laser/scatter
@@ -32,12 +32,12 @@
 /obj/item/prefabs/complex/ebarrel/plasma/weak
 	name = "Weak Plasma Emitter"
 	energyProjType = list(/obj/item/ammo_casing/energy/plasma/pistol)
-	complexity = 50
+	complexity = 75
 
 /obj/item/prefabs/complex/ebarrel/plasma/avg
 	name = "Plasma Emitter"
 	energyProjType = list(/obj/item/ammo_casing/energy/plasma)
-	complexity = 100
+	complexity = 150
 
 /obj/item/prefabs/complex/ebarrel/ion
 	name = "Weak Ion Emitter"
