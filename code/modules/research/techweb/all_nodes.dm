@@ -494,7 +494,7 @@
 	description = "Weapons using electric technology"
 	prereq_ids = list("weaponry", "adv_power", "emp_basic")
 	design_ids = list("stunrevolver", "ew_frame", "ew_frame_pistol", "EC_ew_adapter", "ew_weak_emitter", "ew_emitter", "ew_stream", "ew_stream_dual")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 12500)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 22500)
 	export_price = 10000
 
 /datum/techweb_node/electric_weapons_mk2
@@ -503,7 +503,7 @@
 	description = "Weapons using electric technology"
 	prereq_ids = list("electronic_weapons")
 	design_ids = list("ew_scatter_emitter", "ew_frame_rifle", "MFC_ew_adapter")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 15000)
 	export_price = 5000
 
 /datum/techweb_node/plasma_weapons
@@ -512,7 +512,7 @@
 	description = "Weapons using plasma technology"
 	prereq_ids = list("electronic_weapons_mk2", "electronic_weapons")
 	design_ids = list("ECP_ew_adapter", "ew_weak_plasma", "ew_stream_fast")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 20000)
 	export_price = 5000
 
 /datum/techweb_node/plasma_weapons_mk2
@@ -521,7 +521,7 @@
 	description = "Weapons using plasma technology"
 	prereq_ids = list("electronic_weapons_mk2", "plasma_weapons")
 	design_ids = list("ew_plasma", "ew_strong_emitter", "ew_stream_triple", "ew_frame_hqrifle")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 15000)
 	export_price = 5000
 
 /datum/techweb_node/ion_weapons
@@ -530,7 +530,7 @@
 	description = "Advanced weapons designed to affect electronic devices"
 	prereq_ids = list("electronic_weapons_mk2", "plasma_weapons")
 	design_ids = list("ion_beam")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 15000)
 	export_price = 15000
 
 /datum/techweb_node/ion_weapons_mk2
@@ -539,7 +539,7 @@
 	description = "Advanced weapons designed to affect electronic devices"
 	prereq_ids = list("ion_weapons")
 	design_ids = list("ion_beam_mk2")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 15000)
 	export_price = 25000
 
 /datum/techweb_node/stealth
