@@ -61,17 +61,17 @@
 
 /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	name = "buckshot pellet"
-	damage = 10
+	damage = 20
 
 /obj/item/projectile/bullet/pellet/magnum_buckshot
 	name = "magnum buckshot pellet"
-	damage = 11.5
-	armour_penetration = 7
+	damage = 23
+	armour_penetration = 10
 
 /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"
 	damage = 0
-	stamina = 8
+	stamina = 16
 
 /obj/item/projectile/bullet/pellet/Range()
 	..()
@@ -84,7 +84,7 @@
 
 /obj/item/projectile/bullet/pellet/shotgun_improvised
 	tile_dropoff = 0.55		//Come on it does 6 damage don't be like that.
-	damage = 12
+	damage = 24
 
 /obj/item/projectile/bullet/pellet/shotgun_improvised/Initialize()
 	. = ..()
