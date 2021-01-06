@@ -73,6 +73,8 @@
 	name = "Fast Dual Stream"
 	burst_mod = 1
 	burst_delay_mod = -2
+	dam_mod = -3
+	armorpen_mod = -3
 	complexity = 100
 
 
@@ -80,6 +82,8 @@
 	name = "Triple Stream"
 	burst_mod = 2
 	burst_delay_mod = -0.5
+	dam_mod = -5
+	armorpen_mod = -5
 	complexity = 100
 
 
@@ -109,8 +113,8 @@
 /obj/item/prefabs/complex/ecell/ecp
 	name = "ECP Adapter"
 	energyAmmoType = /obj/item/stock_parts/cell/ammo/ecp
-	dam_mod = 10
-	armorpen_mod = 10
+	dam_mod = 5
+	armorpen_mod = 5
 	complexity = 50
 
 
