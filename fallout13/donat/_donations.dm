@@ -33,7 +33,7 @@
 GLOBAL_LIST_EMPTY(donate_icon_cache)
 GLOBAL_LIST_EMPTY(donators)
 
-#define DONATIONS_SPAWN_WINDOW 6000
+#define DONATIONS_SPAWN_WINDOW 18000
 
 /datum/donator
 	var/ownerkey
@@ -51,7 +51,7 @@ GLOBAL_LIST_EMPTY(donators)
 
 /datum/donator/proc/ShowPanel(mob/user)
 	var/list/dat = list("<center>")
-	dat += "Пожертвования в материю!"
+	dat += "Подношение Хаббологу!"
 	dat += "</center>"
 
 	dat += "<HR>"
