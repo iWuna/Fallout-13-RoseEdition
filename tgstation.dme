@@ -13,7 +13,7 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
-#include "_maps\_oregon.dm"
+#include "_maps\runtimestation.dm"
 #include "_maps\templates\fallout_templates.dm"
 #include "_maps\templates\oasisbunker\east_minibunker.dm"
 #include "_maps\templates\ranch\ranch.dm"
@@ -2907,6 +2907,8 @@
 #include "desertrose\obj\kinkyclothes.dm"
 #include "desertrose\obj\milking machine.dm"
 #include "desertrose\obj\pregnancytester.dm"
+#include "fallout13\donat\_donations.dm"
+#include "fallout13\donat\_lists.dm"
 #include "interface\interface.dm"
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
