@@ -29,5 +29,5 @@
 
 /obj/item/projectile/energy/tesla/cannon
 	name = "tesla orb"
-	power = 20000
-	zap_range = 8
+	power = 60000
+	zap_range = 6

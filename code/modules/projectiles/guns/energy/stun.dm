@@ -24,11 +24,18 @@
 	can_attachments = FALSE
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 	ammo_type = list(/obj/item/ammo_casing/energy/tesla_rifle)
+	can_scope = TRUE
 	burst_size = 3
-	burst_delay = 2
+	burst_delay = 3
+
 	can_flashlight = 0
 	shaded_charge = 1
+
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
 
 /obj/item/gun/energy/tesla_cannon
 	name = "tesla cannon"
@@ -38,7 +45,9 @@
 	can_attachments = FALSE
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_HUGE
+	weapon_weight = WEAPON_HEAVY
 	ammo_type = list(/obj/item/ammo_casing/energy/tesla_cannon)
+	
 	can_flashlight = 0
 	shaded_charge = 1
 

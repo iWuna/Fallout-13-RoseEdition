@@ -71,12 +71,12 @@
 
 /obj/item/ammo_casing/energy/tesla_rifle
 	fire_sound = 'sound/magic/lightningbolt.ogg'
-	e_cost = 250
+	e_cost = 300
 	select_name = "stun"
 	projectile_type = /obj/item/projectile/energy/tesla/rifle
 
 /obj/item/ammo_casing/energy/tesla_cannon
 	fire_sound = 'sound/magic/lightningbolt.ogg'
-	e_cost = 300
+	e_cost = 2000
 	select_name = "stun"
 	projectile_type = /obj/item/projectile/energy/tesla/cannon
