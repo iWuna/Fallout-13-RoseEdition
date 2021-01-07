@@ -175,7 +175,7 @@
 
 /obj/item/prefabs/mould/tube4570
 	name = "45-70 Internal Magazine Loader Mould"
-	item_path = /obj/item/ammo_box/magazine/internal/shot/tube4570
+	item_path = /obj/item/prefabs/complex/ammo_loader/m4570
 	sheet_amount = 8
 
 /obj/item/prefabs/mould/tube44
