@@ -5,73 +5,73 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/pants/classicjeans
-	name = "classic jeans"
-	desc = "You feel cooler already."
+	name = "Классические джинсы"
+	desc = "Ты уже чувствуешь себя круче."
 	icon_state = "jeansclassic"
 	item_color = "jeansclassic"
 
 /obj/item/clothing/under/pants/mustangjeans
-	name = "Must Hang jeans"
-	desc = "Made in the finest jeans factory this side of Alpha Centauri."
+	name = "Висячие джинсы"
+	desc = "Сделаны на самой лучшей джинсовой фабрике по эту сторону Альфы Центавра."
 	icon_state = "jeansmustang"
 	item_color = "jeansmustang"
 
 /obj/item/clothing/under/pants/blackjeans
-	name = "black jeans"
-	desc = "Only for those who can pull it off."
+	name = "Черные джинсы"
+	desc = "Только для тех, кто может себе позволить."
 	icon_state = "jeansblack"
 	item_color = "jeansblack"
 
 /obj/item/clothing/under/pants/youngfolksjeans
-	name = "denim jeans"
-	desc = "Classic blue denim jeans. Guaranteed to last a hundred years!"
+	name = "Джинсовые джинсы"
+	desc = "Классические синие джинсы. Гарантированно прослужат сто лет!"
 	icon_state = "jeansyoungfolks"
 	item_color = "jeansyoungfolks"
 
 /obj/item/clothing/under/pants/white
-	name = "white pants"
-	desc = "Plain white pants. Boring."
+	name = "Белые брюки"
+	desc = "Просто белые брюки. Скучно."
 	icon_state = "whitepants"
 	item_color = "whitepants"
 
 /obj/item/clothing/under/pants/red
-	name = "red pants"
-	desc = "Bright red pants. Overflowing with personality."
+	name = "Красные брюки"
+	desc = "Ярко-красные брюки. Переполнены личностью."
 	icon_state = "redpants"
 	item_color = "redpants"
 
 /obj/item/clothing/under/pants/black
-	name = "black pants"
-	desc = "These pants are dark, like your soul."
+	name = "Черные брюки"
+	desc = "Такие же тёмные, как твоя душа."
 	icon_state = "blackpants"
 	item_color = "blackpants"
 
 /obj/item/clothing/under/pants/tan
-	name = "tan pants"
-	desc = "Some tan pants. You look like a white collar worker with these on."
+	name = "Коричневые брюки"
+	desc = "Какие-то коричневые брюки. В них ты выглядишь как белый воротничок."
 	icon_state = "tanpants"
 	item_color = "tanpants"
 
 /obj/item/clothing/under/pants/track
-	name = "track pants"
-	desc = "A pair of track pants, for the athletic."
+	name = "Спортивные штаны"
+	desc = "Пара спортивных штанов, для спортсменов."
 	icon_state = "trackpants"
 	item_color = "trackpants"
 
 /obj/item/clothing/under/pants/jeans
-	name = "jeans"
-	desc = "A nondescript pair of tough blue jeans."
+	name = "Джинсы"
+	desc = "Невзрачная пара крепких синих джинсов."
 	icon_state = "jeans"
 	item_color = "jeans"
 
 /obj/item/clothing/under/pants/khaki
-	name = "khaki pants"
-	desc = "A pair of dust beige khaki pants."
+	name = "Брюки цвета хаки"
+	desc = "Пыльно-бежевые брюки цвета хаки."
 	icon_state = "khaki"
 	item_color = "khaki"
 
 /obj/item/clothing/under/pants/camo
-	name = "camo pants"
-	desc = "A pair of woodland camouflage pants. Probably not the best choice for the desert."
+	name = "Камуфляжные брюки"
+	desc = "Лесные камуфляжные штаны. Наверное, не самый лучший выбор для пустыни."
 	icon_state = "camopants"
 	item_color = "camopants"

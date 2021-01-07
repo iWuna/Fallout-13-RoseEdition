@@ -2,29 +2,29 @@
 //Hat Station 13
 
 /obj/item/clothing/head/collectable
-	name = "collectable hat"
-	desc = "A rare collectable hat."
+	name = "Колекционная шляпа"
+	desc = "Редкая колекционная шляпа."
 	icon_state = "viking"
 
 /obj/item/clothing/head/collectable/petehat
-	name = "ultra rare Pete's hat!"
-	desc = "It smells faintly of plasma."
+	name = "Очень редка шляпа Пита!"
+	desc = "Слегка пахнет плазмой."
 	icon_state = "petehat"
 
 /obj/item/clothing/head/collectable/slime
-	name = "collectable slime cap!"
-	desc = "It just latches right in place!"
+	name = "Коллекционная шляпа со слаймом"
+	desc = "Он просто закрепляется на месте!"
 	icon_state = "slime"
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/collectable/xenom
-	name = "collectable xenomorph helmet!"
-	desc = "Hiss hiss hiss!"
+	name = "Колекционный шлем ксеноморфа"
+	desc = "Шшш шшш шшш!"
 	icon_state = "xenom"
 
 /obj/item/clothing/head/collectable/chef
-	name = "collectable chef's hat"
-	desc = "A rare chef's hat meant for hat collectors!"
+	name = "Коллекционная шляпа повара"
+	desc = "Редкая поварская шляпа, предназначенная для коллекционеров шляп!"
 	icon_state = "chef"
 	item_state = "chef"
 	dynamic_hair_suffix = ""
@@ -32,67 +32,67 @@
 	dog_fashion = /datum/dog_fashion/head/chef
 
 /obj/item/clothing/head/collectable/paper
-	name = "collectable paper hat"
-	desc = "What looks like an ordinary paper hat is actually a rare and valuable collector's edition paper hat. Keep away from water, fire, and Curators."
+	name = "Колекционная бумажная шляпа"
+	desc = "То, что выглядит как обычная бумажная шляпа, на самом деле является редким и ценным коллекционным изданием бумажной шляпы. Держитесь подальше от воды, огня и кураторов."
 	icon_state = "paper"
 
 	dog_fashion = /datum/dog_fashion/head
 
 /obj/item/clothing/head/collectable/tophat
-	name = "collectable top hat"
-	desc = "A top hat worn by only the most prestigious hat collectors."
+	name = "Колекционный цилиндр"
+	desc = "Цилиндр, который носят только самые престижные коллекционеры шляп."
 	icon_state = "tophat"
 	item_state = "that"
 
 /obj/item/clothing/head/collectable/captain
-	name = "collectable captain's hat"
-	desc = "A collectable hat that'll make you look just like a real comdom!"
+	name = "Коллекционная шляпа капитана"
+	desc = "Коллекционная шляпа, которая заставит вас выглядеть как настоящий гандон!"
 	icon_state = "captain"
 	item_state = "caphat"
 
 	dog_fashion = /datum/dog_fashion/head/captain
 
 /obj/item/clothing/head/collectable/police
-	name = "collectable police officer's hat"
-	desc = "A collectable police officer's Hat. This hat emphasizes that you are THE LAW."
+	name = "Колекционная шляпа офицера полиции"
+	desc = "Коллекционная полицейская шляпа. Эта шляпа подчеркивает, что ВЫ - ЗАКОН!"
 	icon_state = "policehelm"
 	dynamic_hair_suffix = ""
 
 	dog_fashion = /datum/dog_fashion/head/warden
 
 /obj/item/clothing/head/collectable/police/cos
-	name = "Chief of Security Hat"
-	desc = "This hat emphasizes that you are THE LAW."
+	name = "Шляпа Главы Службы Безопасности"
+	desc = "Эта шляпа подчеркивает, что ВЫ - ЗАКОН!"
 
 /obj/item/clothing/head/collectable/beret
-	name = "collectable beret"
-	desc = "A collectable red beret. It smells faintly of garlic."
+	name = "Колекционный берет"
+	desc = "Колекционный красный берет. Слегка пахнет чесноком."
 	icon_state = "beret"
 
 	dog_fashion = /datum/dog_fashion/head/beret
 
 /obj/item/clothing/head/collectable/welding
-	name = "collectable welding helmet"
-	desc = "A collectable welding helmet. Now with 80% less lead! Not for actual welding. Any welding done while wearing this helmet is done so at the owner's own risk!"
+	name = "Колекционный сварочный шлем"
+	desc = "Коллекционный сварочный шлем. Теперь на 80% меньше свинца! Не для настоящей сварки. Любая сварка, выполняемая во время ношения этого шлема, производится на собственный страх и риск владельца!"
 	icon_state = "welding"
 	item_state = "welding"
 	resistance_flags = NONE
 
 /obj/item/clothing/head/collectable/slime
-	name = "collectable slime hat"
-	desc = "Just like a real brain slug!"
+	name = "Коллекционная шляпа слизень"
+	desc = "Прямо как настоящий мозговой слизень!"
 	icon_state = "headslime"
 	item_state = "headslime"
 
 /obj/item/clothing/head/collectable/flatcap
-	name = "collectable flat cap"
-	desc = "A collectible farmer's flat cap!"
+	name = "Колекционная плоская шляпа"
+	desc = "Колекционная фермерская плоская шляпа!"
 	icon_state = "flat_cap"
 	item_state = "detective"
 
 /obj/item/clothing/head/collectable/pirate
-	name = "collectable pirate hat"
-	desc = "You'd make a great Dread Syndie Roberts!"
+	name = "Колекционная шляпа пирата"
+	desc = "Из тебя получился бы ужасный Синди Робертс!"
 	icon_state = "pirate"
 	item_state = "pirate"
 
@@ -108,8 +108,8 @@
 	dog_fashion = /datum/dog_fashion/head/kitty
 */
 /obj/item/clothing/head/collectable/rabbitears
-	name = "collectable rabbit ears"
-	desc = "Not as lucky as the feet!"
+	name = "Колекционные заячьи ушки"
+	desc = "Не настолько удачливы, как ножки!"
 	icon_state = "bunny"
 	item_state = "bunny"
 	dynamic_hair_suffix = ""
@@ -117,43 +117,43 @@
 	dog_fashion = /datum/dog_fashion/head/rabbit
 
 /obj/item/clothing/head/collectable/wizard
-	name = "collectable wizard's hat"
-	desc = "NOTE: Any magical powers gained from wearing this hat are purely coincidental."
+	name = "Колекционная шляпа волшебника"
+	desc = "Примечание: любые магические силы, полученные от ношения этой шляпы, являются чисто случайными."
 	icon_state = "wizard"
 
 	dog_fashion = /datum/dog_fashion/head/blue_wizard
 
 /obj/item/clothing/head/collectable/hardhat
-	name = "collectable hard hat"
-	desc = "WARNING! Offers no real protection, or luminosity, but damn, is it fancy!"
+	name = "Колекционная каска"
+	desc = "Внимание! Не предлагает никакой реальной защиты или яркости, но, черт возьми, она такая классная!"
 	icon_state = "hardhat0_yellow"
 	item_state = "hardhat0_yellow"
 
 	dog_fashion = /datum/dog_fashion/head
 
 /obj/item/clothing/head/collectable/HoS
-	name = "collectable HoS hat"
-	desc = "Now you too can beat prisoners, set silly sentences, and arrest for no reason!"
+	name = "Колекционная шляпа ХОСа"
+	desc = "Теперь вы тоже можете избивать заключенных, назначать глупые приговоры и арестовывать без всякой причины!"
 	icon_state = "hoscap"
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/collectable/HoP
-	name = "collectable HoP hat"
-	desc = "It's your turn to demand excessive paperwork, signatures, stamps, and hire more clowns! Papers, please!"
+	name = "Колекционная шляпа ХОПа"
+	desc = "Теперь ваша очередь требовать лишних бумаг, подписей, штампов и нанимать новых клоунов! Бумаги, пожалуйста!"
 	icon_state = "hopcap"
 	dog_fashion = /datum/dog_fashion/head/hop
 
 /obj/item/clothing/head/collectable/thunderdome
-	name = "collectable Thunderdome helmet"
-	desc = "Go Red! I mean Green! I mean Red! No Green!"
+	name = "Коллекционный шлем Громобоя"
+	desc = "Давайте Красный! Я имею в виду зеленый! Я имею в виду красный! Никакого Зеленого!"
 	icon_state = "thunderdome"
 	item_state = "thunderdome"
 	resistance_flags = NONE
 	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/collectable/swat
-	name = "collectable SWAT helmet"
-	desc = "That's not real blood. That's red paint." //Reference to the actual description
+	name = "Колекционный шлем спецназа"
+	desc = "Это не настоящая кровь. Это просто красная краска." //Reference to the actual description
 	icon_state = "swat"
 	item_state = "swat"
 	resistance_flags = NONE

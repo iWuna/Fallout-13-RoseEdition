@@ -14,8 +14,8 @@
 //Apparently due to code limitations you have to detect mob movement with.. shoes.
 //The object that handles the flying itself - FLIGHT PACK --------------------------------------------------------------------------------------
 /obj/item/flightpack
-	name = "flight pack"
-	desc = "An advanced back-worn system that has dual ion engines powerful enough to grant a humanoid flight. Contains an internal self-recharging high-current capacitor for short, powerful boosts."
+	name = "Реактивный ранец"
+	desc = "Усовершенствованная наспинная система с двумя ионными двигателями, достаточно мощными, чтобы обеспечить полет гуманоида. Содержит внутренний самозаряжающийся сильноточный конденсатор для коротких мощных импульсов."
 	icon = 'icons/obj/device.dmi'
 	icon_state = FLIGHTPACK_SPRITE_BASE
 	item_state = FLIGHTPACK_SPRITE_BASE
@@ -1076,8 +1076,8 @@
 
 //FLIGHT HELMET----------------------------------------------------------------------------------------------------------------------------------------------------
 /obj/item/clothing/head/helmet/space/hardsuit/flightsuit
-	name = "flight helmet"
-	desc = "A sealed helmet attached to a flight suit for EVA usage scenarios. Its visor contains an information uplink HUD."
+	name = "Летный шлем"
+	desc = "Герметичный шлем, прикрепленный к летному костюму для использования с скафандром. Его забрало подключео с дисплею визора."
 	icon_state = "flighthelmet"
 	item_state = "flighthelmet"
 	item_color = "flight"

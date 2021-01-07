@@ -1,5 +1,5 @@
 /obj/item/clothing/neck
-	name = "necklace"
+	name = "Ошейник"
 	icon = 'icons/obj/clothing/neck.dmi'
 	body_parts_covered = NECK
 	slot_flags = ITEM_SLOT_NECK
@@ -16,8 +16,8 @@
 				. += mutable_appearance('icons/effects/blood.dmi', "maskblood")
 
 /obj/item/clothing/neck/tie
-	name = "tie"
-	desc = "A neosilk clip-on tie."
+	name = "Галстук"
+	desc = "Галстук-клипса из шёлка"
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "bluetie"
 	item_state = ""	//no inhands
@@ -25,29 +25,29 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/neck/tie/blue
-	name = "blue tie"
+	name = "Синий галстук"
 	icon_state = "bluetie"
 	item_color = "bluetie"
 
 /obj/item/clothing/neck/tie/red
-	name = "red tie"
+	name = "Красный галстук"
 	icon_state = "redtie"
 	item_color = "redtie"
 
 /obj/item/clothing/neck/tie/black
-	name = "black tie"
+	name = "Черный галстук"
 	icon_state = "blacktie"
 	item_color = "blacktie"
 
 /obj/item/clothing/neck/tie/horrible
-	name = "horrible tie"
-	desc = "A neosilk clip-on tie. This one is disgusting."
+	name = "Ужасный галстук"
+	desc = "Галстук-клипса из шёлка. Этот выглядит ужасно."
 	icon_state = "horribletie"
 	item_color = "horribletie"
 
 /obj/item/clothing/neck/stethoscope
-	name = "stethoscope"
-	desc = "A medical apparatus for listening to the sounds of the human body. It also makes you look like you know what you're doing."
+	name = "Сетоскоп"
+	desc = "Медицинский инструмент для прослушивания звуков человеческого тела. Он также заставляет вас выглядеть так, будто вы знаете, что делаете."
 	icon_state = "stethoscope"
 	item_color = "stethoscope"
 
@@ -89,9 +89,9 @@
 ///////////
 
 /obj/item/clothing/neck/scarf //Default white color, same functionality as beanies.
-	name = "scarf"
+	name = "Шарф"
 	icon_state = "scarf"
-	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
+	desc = "Стильный шарф. Идеальный зимний аксессуар для тех, кто обладает острым чувством моды, и тех, кто просто не может справиться с холодным ветерком на шее."
 	item_color = "white"
 	dog_fashion = /datum/dog_fashion/head
 
@@ -101,55 +101,55 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/item/clothing/neck/scarf/black
-	name = "black scarf"
+	name = "Черный шарф"
 	icon_state = "scarf"
 	item_color = "black"
 	color = "#4A4A4B" //Grey but it looks black
 
 /obj/item/clothing/neck/scarf/pink
-	name = "pink scarf"
+	name = "Розовый шарф"
 	icon_state = "scarf"
 	item_color = "pink"
 	color = "#F699CD" //Pink
 
 /obj/item/clothing/neck/scarf/red
-	name = "red scarf"
+	name = "Красный шарф"
 	icon_state = "scarf"
 	item_color = "red"
 	color = "#D91414" //Red
 
 /obj/item/clothing/neck/scarf/green
-	name = "green scarf"
+	name = "Зелёный шарф"
 	icon_state = "scarf"
 	item_color = "green"
 	color = "#5C9E54" //Green
 
 /obj/item/clothing/neck/scarf/darkblue
-	name = "dark blue scarf"
+	name = "Тёмно-синий шарф"
 	icon_state = "scarf"
 	item_color = "blue"
 	color = "#1E85BC" //Blue
 
 /obj/item/clothing/neck/scarf/purple
-	name = "purple scarf"
+	name = "Фиолетовый шарф"
 	icon_state = "scarf"
 	item_color = "purple"
 	color = "#9557C5" //Purple
 
 /obj/item/clothing/neck/scarf/yellow
-	name = "yellow scarf"
+	name = "Желтый шарф"
 	icon_state = "scarf"
 	item_color = "yellow"
 	color = "#E0C14F" //Yellow
 
 /obj/item/clothing/neck/scarf/orange
-	name = "orange scarf"
+	name = "Оранжевый шарф"
 	icon_state = "scarf"
 	item_color = "orange"
 	color = "#C67A4B" //Orange
 
 /obj/item/clothing/neck/scarf/cyan
-	name = "cyan scarf"
+	name = "Голубой шарф"
 	icon_state = "scarf"
 	item_color = "cyan"
 	color = "#54A3CE" //Cyan
@@ -158,12 +158,12 @@
 //Striped scarves get their own icons
 
 /obj/item/clothing/neck/scarf/zebra
-	name = "zebra scarf"
+	name = "Шарф-зебра"
 	icon_state = "zebrascarf"
 	item_color = "zebrascarf"
 
 /obj/item/clothing/neck/scarf/christmas
-	name = "christmas scarf"
+	name = "Рождественский шарф"
 	icon_state = "christmasscarf"
 	item_color = "christmasscarf"
 
@@ -171,17 +171,17 @@
 //This is because Ian can equip anything from that subtype
 //However, these 3 don't have corgi versions of their sprites
 /obj/item/clothing/neck/stripedredscarf
-	name = "striped red scarf"
+	name = "Шарф в красную полоску"
 	icon_state = "stripedredscarf"
 	item_color = "stripedredscarf"
 
 /obj/item/clothing/neck/stripedgreenscarf
-	name = "striped green scarf"
+	name = "Шарф в зелёную полоску"
 	icon_state = "stripedgreenscarf"
 	item_color = "stripedgreenscarf"
 
 /obj/item/clothing/neck/stripedbluescarf
-	name = "striped blue scarf"
+	name = "Шарф в синюю полоску"
 	icon_state = "stripedbluescarf"
 	item_color = "stripedbluescarf"
 
@@ -192,8 +192,8 @@
 GLOBAL_VAR_INIT(collar_number, 0)
 
 /obj/item/clothing/neck/petcollar
-	name = "pet collar"
-	desc = "A sturdy brown leather dog collar. Kinky."
+	name = "Ошейник питомца"
+	desc = "Крепкий коричневый кожаный ошейник."
 	icon_state = "petcollar"
 	item_color = "petcollar"
 	var/tagname = null
@@ -203,8 +203,8 @@ GLOBAL_VAR_INIT(collar_number, 0)
 	name = "[initial(name)] - [tagname]"
 
 /obj/item/clothing/neck/petcollar/locked
-	name = "locked collar"
-	desc = "A collar that has a small lock on it to keep it from being removed."
+	name = "Закрытый ошибник"
+	desc = "Ошейник с маленьким замком, чтобы его не снимали."
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/collar/locked
 	body_parts_covered = NECK
 	var/lock = FALSE
@@ -213,11 +213,11 @@ GLOBAL_VAR_INIT(collar_number, 0)
 /obj/item/clothing/neck/petcollar/locked/attackby(obj/item/K, mob/user, params)
 	if(istype(K, /obj/item/key/collar))
 		if(lock != FALSE)
-			to_chat(user, "<span class='warning'>With a click the collar unlocks!</span>")
+			to_chat(user, "<span class='warning'>С щелчком замок на ошейнике открывается!</span>")
 			lock = FALSE
 			item_flags = null
 		else
-			to_chat(user, "<span class='warning'>With a click the collar locks!</span>")
+			to_chat(user, "<span class='warning'>С щелчком замок на ошейнике закрывается!</span>")
 			lock = TRUE
 			if(!ismob(src.loc))
 				return
@@ -228,13 +228,13 @@ GLOBAL_VAR_INIT(collar_number, 0)
 
 /obj/item/clothing/neck/petcollar/locked/attack_hand(mob/user)
 	if(loc == user && user.get_item_by_slot(SLOT_NECK) && lock != FALSE)
-		to_chat(user, "<span class='warning'>The collar is locked! You'll need unlock the collar before you can take it off!</span>")
+		to_chat(user, "<span class='warning'>Ошейник заперт! Вам нужно будет открыть замок , прежде чем вы сможете его снять!</span>")
 		return
 	..()
 
 /obj/item/key/collar
-	name = "Collar Key"
-	desc = "A key for a tiny lock on a collar or bag."
+	name = "Ключ от ошейника"
+	desc = "Ключ от небольшего замка, скорее всего от ошейника или чемодана."
 //	var/keyID = 0 //USE FOR UNIQUE KEYING?
 
 /obj/item/key/collar/Initialize()
@@ -257,8 +257,8 @@ GLOBAL_VAR_INIT(collar_number, 0)
 //////////////
 
 /obj/item/clothing/neck/necklace/dope
-	name = "gold necklace"
-	desc = "Damn, it feels good to be a gangster."
+	name = "Золотая цепочка"
+	desc = "Йоу, теперь ты чувствуешь себя крутым гангстером."
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "bling"
 	item_color = "bling"
@@ -268,21 +268,21 @@ GLOBAL_VAR_INIT(collar_number, 0)
 ///////////////////////////
 
 /obj/item/clothing/neck/scarf/cptpatriot
-	name = "desert scarf"
+	name = "Пустынный шарф"
 	icon_state = "cptpatriotscarf"
 	item_color = "cptpatriotscarf"
-	desc = "A stylish scarf. This one has a camoflage pattern popularized during the great war."
+	desc = "Стильный шарф. Этот имеет камуфляжный рисунок, популяризированный во время Великой войны."
 
 /obj/item/clothing/neck/corditeclamp
-	name = "Cordite Clamps Y-72"
-	desc = "People say having a glass jaw is a bad thing but when that jaw is a RobCo alloy-infused combat facial prosthetic made for the U.S army and the American Elite, they are inclined to think twice about throwing a punch. At least a bare fisted one."
+	name = "Кордитовый зажим Y-72"
+	desc = "Люди говорят, что иметь стеклянную челюсть-это плохо, но когда эта челюсть представляет собой боевой лицевой протез из сплава RobCo, изготовленный для армии США и американской элиты, они склонны дважды подумать, прежде чем нанести удар. По крайней мере, голым кулаком."
 	icon_state = "corditeclamps"
 	item_color = "corditeclamps"
 	item_state = "corditeclamps"
 
 /obj/item/clothing/neck/jamrock
-	name = "Eldritch Tie"
-	desc = "The necktie is adorned with a garish pattern. It's disturbingly vivid. Somehow you feel as if it would be wrong to ever take it off. It's your friend now. You will betray it if you change it for some boring scarf."
+	name = "Старый галстук"
+	desc = "Галстук украшен кричащим узором. Он тревожно яркий. Почему-то вы чувствуете, что было бы неправильно когда-либо снимать его. Теперь это твой друг. Ты предашь его, если поменяешь на какой-нибудь скучный шарф."
 	icon_state = "eldritch_tie"
 	item_color = "eldritch_tie"
 	item_state = "eldritch_tie"

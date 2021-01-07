@@ -1,6 +1,6 @@
 /obj/item/clothing/mask/muzzle
-	name = "muzzle"
-	desc = "To stop that awful noise."
+	name = "Беруши"
+	desc = "Чтобы остановить этот мерзкий звук."
 	icon_state = "muzzle"
 	item_state = "blindfold"
 	flags_cover = MASKCOVERSMOUTH
@@ -17,8 +17,8 @@
 //	..()
 
 /obj/item/clothing/mask/surgical
-	name = "sterile mask"
-	desc = "A sterile mask designed to help prevent the spread of diseases."
+	name = "Стерильная маска"
+	desc = "Стерильная маска, предназначенная для предотвращения распространения болезней."
 	icon_state = "sterile"
 	item_state = "sterile"
 	w_class = WEIGHT_CLASS_TINY
@@ -37,8 +37,8 @@
 //NCR Facewrap
 
 /obj/item/clothing/mask/ncr_facewrap
-	name = "desert facewrap"
-	desc = "A facewrap commonly employed by NCR troops in the Mojave."
+	name = "Пустынные повязки на лицо"
+	desc = "Лицевая повязка, обычно используемая войсками НКР в Мохаве."
 	icon_state = "ncr_facewrap"
 	w_class = WEIGHT_CLASS_TINY
 	flags_inv = HIDEFACE
@@ -53,14 +53,14 @@
 	adjustmask(user)
 
 /obj/item/clothing/mask/fakemoustache
-	name = "moustache"
-	desc = "Warning: moustache is fake."
+	name = "Усы"
+	desc = "Осторожно: эти усы не настоящие."
 	icon_state = "fake-moustache"
 	flags_inv = HIDEFACE
 
 /obj/item/clothing/mask/fakemoustache/italian
-	name = "italian moustache"
-	desc = "Made from authentic Italian moustache hairs. Gives the wearer an irresistable urge to gesticulate wildly."
+	name = "Итальянские усы"
+	desc = "Изготовлены из настоящих итальянских усов. Дает владельцу непреодолимое желание дико жестикулировать."
 
 /obj/item/clothing/mask/fakemoustache/italian/speechModification(M)
 	if(copytext(M, 1, 2) != "*")
@@ -87,8 +87,8 @@
 */
 
 /obj/item/clothing/mask/pig
-	name = "pig mask"
-	desc = "It's a very stylish pig mask which seems to have a voice modulator built into it."
+	name = "Маска свиньи"
+	desc = "Это очень стильная маска свиньи, в которую, кажется, встроен голосовой модулятор."
 	icon_state = "pig"
 	item_state = "pig"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
@@ -106,8 +106,8 @@
 	return message
 
 /obj/item/clothing/mask/spig //needs to be different otherwise you could turn the speedmodification off and on
-	name = "Pig face"
-	desc = "It's a very stylish pig mask which seems to have a voice modulator built into it."
+	name = "Лицо свиньи"
+	desc = "Это очень стильная маска свиньи, в которую, кажется, встроен голосовой модулятор."
 	icon_state = "pig"
 	item_state = "pig"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
@@ -121,8 +121,8 @@
 
 ///frog mask - reeee!!
 /obj/item/clothing/mask/frog
-	name = "frog mask"
-	desc = "An ancient mask carved in the shape of a frog.<br> Sanity is like gravity, all it needs is a push."
+	name = "Маска лягушки"
+	desc = "Древняя маска, вырезанная в форме лягушки.<br>Здравомыслие подобно гравитации, все, что ему нужно, - это толчок."
 	icon_state = "frog"
 	item_state = "frog"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
@@ -156,8 +156,8 @@
 */
 
 /obj/item/clothing/mask/cowmask
-	name = "Cowface"
-	desc = "It's a very stylish cow mask which seems to have a voice modulator built into it."
+	name = "Лицо коровы"
+	desc = "Это очень стильная маска коровы, в которую, кажется, встроен голосовой модулятор."
 	icon = 'icons/mob/mask.dmi'
 	icon_state = "cowmask"
 	item_state = "cowmask"
@@ -171,8 +171,8 @@
 	return message
 
 /obj/item/clothing/mask/horsehead
-	name = "horse head mask"
-	desc = "A mask made of soft vinyl and latex, representing the head of a horse."
+	name = "Маска лошади"
+	desc = "Маска из мягкого винила и латекса, изображающая голову лошади."
 	icon_state = "horsehead"
 	item_state = "horsehead"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEEYES|HIDEEARS
@@ -185,64 +185,64 @@
 	return message
 
 /obj/item/clothing/mask/rat
-	name = "rat mask"
-	desc = "A mask made of soft vinyl and latex, representing the head of a rat."
+	name = "Маска крысы"
+	desc = "Маска из мягкого винила и латекса, изображающая голову крысы."
 	icon_state = "rat"
 	item_state = "rat"
 	flags_inv = HIDEFACE
 	flags_cover = MASKCOVERSMOUTH
-	
+
 /obj/item/clothing/mask/rat/stupid
-	name = "Ratt's Mask"
-	desc = "Looks like he finally got his own fucking mask."
+	name = "Маска Рэта"
+	desc = "Похоже, он наконец-то получил свою собственную гребаную маску."
 	icon_state = "greenrat"
 	item_state = "greenrat"
 
 /obj/item/clothing/mask/rat/fox
-	name = "fox mask"
-	desc = "A mask made of soft vinyl and latex, representing the head of a fox."
+	name = "Маска лицы"
+	desc = "Маска из мягкого винила и латекса, изображающая голову лисы."
 	icon_state = "fox"
 	item_state = "fox"
 
 /obj/item/clothing/mask/rat/bee
-	name = "bee mask"
-	desc = "A mask made of soft vinyl and latex, representing the head of a bee."
+	name = "Маска пчелы"
+	desc = "Маска из мягкого винила и латекса, изображающая голову пчелы."
 	icon_state = "bee"
 	item_state = "bee"
 
 /obj/item/clothing/mask/rat/bear
-	name = "bear mask"
-	desc = "A mask made of soft vinyl and latex, representing the head of a bear."
+	name = "Маска медведя"
+	desc = "Маска из мягкого винила и латекса, изображающая голову медведя."
 	icon_state = "bear"
 	item_state = "bear"
 
 /obj/item/clothing/mask/rat/bat
-	name = "bat mask"
-	desc = "A mask made of soft vinyl and latex, representing the head of a bat."
+	name = "Маска ворона"
+	desc = "Маска из мягкого винила и латекса, изображающая голову летучей мыши."
 	icon_state = "bat"
 	item_state = "bat"
 
 /obj/item/clothing/mask/rat/raven
 	name = "raven mask"
-	desc = "A mask made of soft vinyl and latex, representing the head of a raven."
+	desc = "Маска из мягкого винила и латекса, изображающая голову ворона."
 	icon_state = "raven"
 	item_state = "raven"
 
 /obj/item/clothing/mask/rat/jackal
-	name = "jackal mask"
-	desc = "A mask made of soft vinyl and latex, representing the head of a jackal."
+	name = "Маска шакала"
+	desc = "Маска из мягкого винила и латекса, изображающая голову шакала."
 	icon_state = "jackal"
 	item_state = "jackal"
 
 /obj/item/clothing/mask/rat/tribal
-	name = "tribal mask"
-	desc = "A mask carved out of wood, detailed carefully by hand."
+	name = "Племенная маска"
+	desc = "Маска, вырезанная из дерева, тщательно детализированная вручную."
 	icon_state = "bumba"
 	item_state = "bumba"
 
 /obj/item/clothing/mask/bandana
-	name = "botany bandana"
-	desc = "A fine bandana with nanotech lining and a hydroponics pattern."
+	name = "Бандана ботаника"
+	desc = "Тонкая бандана с нанотехнологической подкладкой и рисунком гидропоники."
 	w_class = WEIGHT_CLASS_TINY
 	flags_cover = MASKCOVERSMOUTH
 	flags_inv = HIDEFACE|HIDEFACIALHAIR
@@ -266,50 +266,50 @@
 		return ..()
 
 /obj/item/clothing/mask/bandana/red
-	name = "red bandana"
-	desc = "A fine red bandana with linen lining."
+	name = "Красная бандана"
+	desc = "Тонкая красная бандана на льняной подкладке."
 	icon_state = "bandred"
 
 /obj/item/clothing/mask/bandana/blue
-	name = "blue bandana"
-	desc = "A fine blue bandana with linen lining."
+	name = "Синяя бандана"
+	desc = "Тонкая синяя бандана на льняной подкладке."
 	icon_state = "bandblue"
 
 /obj/item/clothing/mask/bandana/green
-	name = "green bandana"
-	desc = "A fine green bandana with linen lining."
+	name = "Зелёная бандана"
+	desc = "Тонкая зелёная бандана на льняной подкладке."
 	icon_state = "bandgreen"
 
 /obj/item/clothing/mask/bandana/gold
-	name = "gold bandana"
-	desc = "A fine gold bandana with linen lining."
+	name = "Золотая бандана"
+	desc = "Тонкая золотая бандана на льняной подкладке."
 	icon_state = "bandgold"
 
 /obj/item/clothing/mask/bandana/brown
-	name = "brown bandana"
-	desc = "A fine brown bandana with linen lining."
+	name = "Коричневая бандана"
+	desc = "Тонкая коричневая бандана на льняной подкладке."
 	icon_state = "bandbrown"
 
 /obj/item/clothing/mask/bandana/black
-	name = "black bandana"
-	desc = "A fine black bandana with linen lining."
+	name = "Черная бандана"
+	desc = "Тонкая черная бандана на льняной подкладке."
 	icon_state = "bandblack"
 
 /obj/item/clothing/mask/bandana/white
-	name = "bandana"
-	desc = "A fine bandana with linen lining."
+	name = "Бандана"
+	desc = "Тонкая бандана на льняной подкладке."
 	icon_state = "bandwhite"
 
 /obj/item/clothing/mask/bandana/skull
-	name = "skull bandana"
-	desc = "A fine black bandana with linen lining and a skull emblem."
+	name = "Бандана с черепом"
+	desc = "Тонкая черная бандана с льняной подкладкой и эмблемой в виде черепа."
 	icon_state = "bandskull"
 
 //Legion Bandanas - We make these as much like normal bandanas as possible without repathing them.
 
 /obj/item/clothing/mask/bandana/legrecruit
-	name = "recruit bandana"
-	desc = "A fine recruit bandana."
+	name = "Бандана рекрута"
+	desc = "Тонкая бандана рекрута."
 	icon_state = "legrecruit"
 	flags_inv = HIDEFACE
 	visor_flags_inv = HIDEFACE
@@ -317,8 +317,8 @@
 	actions_types = list(/datum/action/item_action/adjust)
 
 /obj/item/clothing/mask/bandana/legdecan
-	name = "decan bandana"
-	desc = "A fine decan bandana."
+	name = "Бандана декана"
+	desc = "Тонкая бандана декана."
 	icon_state = "legdecan"
 	flags_inv = HIDEFACE
 	visor_flags_inv = HIDEFACE
@@ -326,8 +326,8 @@
 	actions_types = list(/datum/action/item_action/adjust)
 
 /obj/item/clothing/mask/bandana/jonesbandana
-	name = "ornate veteran bandana"
-	desc = "An intricately-designed bandana. The design is quite obviously derived from that of a standard veteran legionary bandana. There's a gold stripe running down the middle of the bandana, seemingly made to match the design of a helmet. In-between layers of cloth are small metal plates, kinda like a brigandine, except all the plates really do is make the bandana feel nice, make the wearer's voice metallic and echoey, and stop fingers from being inserted into the throat."
+	name = "Богато украшенная ветеранская бандана"
+	desc = "Затейливо украшенная бандана. Совершенно очевидно, что этот дизайн заимствован из стандартной банданы ветерана-легионера. Посередине банданы проходит золотая полоса, по-видимому, сделанная в соответствии с дизайном шлема. Между слоями ткани-маленькие металлические пластинки, как у разбойника, но на самом деле все пластины делают бандану приятной на ощупь, делают голос владельца металлическим и гулким и не дают пальцам проникнуть в горло."
 	icon_state = "jonesbandana"
 	item_state = "jonesbandana"
 	flags_inv = HIDEFACE
@@ -336,8 +336,8 @@
 	actions_types = list(/datum/action/item_action/adjust)
 
 /obj/item/clothing/mask/bandana/oldredbandana
-	name = "old bandana"
-	desc = "A fine bandana."
+	name = "Старая бандана"
+	desc = "Тонкая бандана."
 	icon_state = "legdecan"
 	flags_inv = HIDEFACE
 	visor_flags_inv = HIDEFACE
@@ -345,8 +345,8 @@
 	actions_types = list(/datum/action/item_action/adjust)
 
 /obj/item/clothing/mask/bandana/legcenturion
-	name = "centurion bandana"
-	desc = "A fine centurion bandana."
+	name = "Бандана центуриона"
+	desc = "Тонкая бандана центуриона."
 	icon_state = "legcenturion"
 	flags_inv = HIDEFACE
 	visor_flags_inv = HIDEFACE
@@ -354,8 +354,8 @@
 	actions_types = list(/datum/action/item_action/adjust)
 
 /obj/item/clothing/mask/bandana/legvet
-	name = "veteran bandana"
-	desc = "A fine veteran bandana."
+	name = "Бандана ветерана"
+	desc = "Тонкая бандана ветерана."
 	icon_state = "legvet"
 	flags_inv = HIDEFACE
 	visor_flags_inv = HIDEFACE
@@ -363,8 +363,8 @@
 	actions_types = list(/datum/action/item_action/adjust)
 
 /obj/item/clothing/mask/bandana/legprime
-	name = "prime bandana"
-	desc = "A fine prime bandana"
+	name = "Бандана преторианца"
+	desc = "Тонкая бандана преторианца"
 	icon_state = "legdecan"
 	flags_inv = HIDEFACE
 	visor_flags_inv = HIDEFACE
@@ -372,15 +372,15 @@
 	actions_types = list(/datum/action/item_action/adjust)
 
 /obj/item/clothing/mask/mummy
-	name = "mummy mask"
-	desc = "Ancient bandages."
+	name = "Маска мумии"
+	desc = "Древние бинты."
 	icon_state = "mummy_mask"
 	item_state = "mummy_mask"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/mask/scarecrow
-	name = "sack mask"
-	desc = "A burlap sack with eyeholes."
+	name = "Маска из мешка"
+	desc = "Холщовый мешок с прорезями для глаз."
 	icon_state = "scarecrow_sack"
 	item_state = "scarecrow_sack"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
@@ -388,8 +388,8 @@
 //Desert facewrap
 
 /obj/item/clothing/mask/facewrap
-	name = "desert headwrap"
-	desc = "A headwrap to help shield the face from sand and other dirt."
+	name = "Пустынные повязки на лицо"
+	desc = "Повязка на голову, чтобы защитить лицо от песка и другой грязи."
 	icon_state = "facewrap"
 	item_state = "facewrap"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
@@ -400,8 +400,8 @@
 //Society Mask
 
 /obj/item/clothing/mask/society
-	name = "golden facemask"
-	desc = "A burlap sack with eyeholes."
+	name = "Золотая маска для лица"
+	desc = "Холщовый мешок с прорезями для глаз."
 	icon_state = "societymask"
 	item_state = "societymask"
 	flags_inv = HIDEFACE

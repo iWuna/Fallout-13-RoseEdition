@@ -1,7 +1,7 @@
 	//Baseline hardsuits
 /obj/item/clothing/head/helmet/space/hardsuit
-	name = "hardsuit helmet"
-	desc = "A special helmet designed for work in a hazardous, low-pressure environment. Has radiation shielding."
+	name = "Шлем скафандра"
+	desc = "Специальный шлем, предназначенный для работы в опасных условиях низкого давления. Имеет радиационную защиту."
 	icon_state = "hardsuit0-engineering"
 	item_state = "eng_helm"
 	max_integrity = 300
@@ -89,8 +89,8 @@
 
 
 /obj/item/clothing/suit/space/hardsuit
-	name = "hardsuit"
-	desc = "A special suit that protects against hazardous, low pressure environments. Has radiation shielding."
+	name = "Скафандр"
+	desc = "Специальный костюм, который защищает от опасных сред низкого давления. Имеет радиационную защиту."
 	icon_state = "hardsuit-engineering"
 	item_state = "eng_hardsuit"
 	max_integrity = 300
@@ -162,8 +162,8 @@
 
 	//Engineering
 /obj/item/clothing/head/helmet/space/hardsuit/engine
-	name = "engineering hardsuit helmet"
-	desc = "A special helmet designed for work in a hazardous, low-pressure environment. Has radiation shielding."
+	name = "Шлем инженерного скафандра"
+	desc = "Специальный костюм, который защищает от опасных сред низкого давления. Имеет радиационную защиту."
 	icon_state = "hardsuit0-engineering"
 	item_state = "eng_helm"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 5, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
@@ -175,8 +175,8 @@
 	light_on = FALSE
 
 /obj/item/clothing/suit/space/hardsuit/engine
-	name = "engineering hardsuit"
-	desc = "A special suit that protects against hazardous, low pressure environments. Has radiation shielding."
+	name = "Инженерный скафандр"
+	desc = "Специальный костюм, который защищает от опасных сред низкого давления. Имеет радиационную защиту."
 	icon_state = "hardsuit-engineering"
 	item_state = "eng_hardsuit"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 5, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
@@ -185,8 +185,8 @@
 
 	//Atmospherics
 /obj/item/clothing/head/helmet/space/hardsuit/engine/atmos
-	name = "atmospherics hardsuit helmet"
-	desc = "A special helmet designed for work in a hazardous, low-pressure environment. Has thermal shielding."
+	name = "Шлем атмосферного скафандра"
+	desc = "Специальный костюм, который защищает от опасных сред низкого давления. Имеет термическую защиту."
 	icon_state = "hardsuit0-atmospherics"
 	item_state = "atmo_helm"
 	item_color = "atmospherics"
@@ -195,8 +195,8 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_HELM_MAX_TEMP_PROTECT
 
 /obj/item/clothing/suit/space/hardsuit/engine/atmos
-	name = "atmospherics hardsuit"
-	desc = "A special suit that protects against hazardous, low pressure environments. Has thermal shielding."
+	name = "Атмосферный скафандр"
+	desc = "Специальный костюм, который защищает от опасных сред низкого давления. Имеет термическую защиту."
 	icon_state = "hardsuit-atmospherics"
 	item_state = "atmo_hardsuit"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 5, "bomb" = 10, "bio" = 100, "rad" = 25, "fire" = 100, "acid" = 75)
@@ -207,8 +207,8 @@
 
 	//Chief Engineer's hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/engine/elite
-	name = "advanced hardsuit helmet"
-	desc = "An advanced helmet designed for work in a hazardous, low pressure environment. Shines with a high polish."
+	name = "Улучшенный шлем скафандра"
+	desc = "Усовершенствованный шлем, предназначенный для работы в опасных условиях низкого давления. Отполирован до блеска."
 	icon_state = "hardsuit0-white"
 	item_state = "ce_helm"
 	item_color = "white"
@@ -218,8 +218,8 @@
 
 /obj/item/clothing/suit/space/hardsuit/engine/elite
 	icon_state = "hardsuit-white"
-	name = "advanced hardsuit"
-	desc = "An advanced suit that protects against hazardous, low pressure environments. Shines with a high polish."
+	name = "Улучшенный скафандр"
+	desc = "Усовершенствованный скафандр, предназначенный для работы в опасных условиях низкого давления. Отполирован до блеска."
 	item_state = "ce_hardsuit"
 	armor = list("melee" = 40, "bullet" = 5, "laser" = 10, "energy" = 5, "bomb" = 50, "bio" = 100, "rad" = 90, "fire" = 100, "acid" = 90)
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -229,8 +229,8 @@
 
 	//Mining hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/mining
-	name = "mining hardsuit helmet"
-	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has reinforced plating for wildlife encounters and dual floodlights."
+	name = "Шлем шахтерского скафандра"
+	desc = "Специальный шлем, предназначенный для работы в опасных условиях низкого давления. Имеет усиленную обшивку для встреч с дикой природой и двойные прожекторы."
 	icon_state = "hardsuit0-mining"
 	item_state = "mining_helm"
 	item_color = "mining"
@@ -247,8 +247,8 @@
 
 /obj/item/clothing/suit/space/hardsuit/mining
 	icon_state = "hardsuit-mining"
-	name = "mining hardsuit"
-	desc = "A special suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters."
+	name = "Шахтерский скафандр"
+	desc = "Специальный скафандр, предназначенный для работы в опасных условиях низкого давления. Имеет усиленную обшивку для встреч с дикой природой."
 	item_state = "mining_hardsuit"
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
@@ -263,9 +263,9 @@
 
 	//Syndicate hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi
-	name = "blood-red hardsuit helmet"
-	desc = "A dual-mode advanced helmet designed for work in special operations. It is in EVA mode."
-	alt_desc = "A dual-mode advanced helmet designed for work in special operations. It is in combat mode."
+	name = "Кроваво-красный шлем скафандр"
+	desc = "Двухрежимный усовершенствованный шлем, предназначенный для работы в специальных операциях. Он находится в режиме EVA."
+	alt_desc = "Двухрежимный усовершенствованный шлем, предназначенный для работы в специальных операциях. Он находится в боевом режиме."
 	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_helm"
 	item_color = "syndi"
@@ -286,11 +286,11 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/attack_self(mob/user) //Toggle Helmet
 	if(!isturf(user.loc))
-		to_chat(user, "<span class='warning'>You cannot toggle your helmet while in this [user.loc]!</span>" )
+		to_chat(user, "<span class='warning'>Вы не можете активировать шлем, находясь в [user.loc]!</span>" )
 		return
 	on = !on
 	if(on || force)
-		to_chat(user, "<span class='notice'>You switch your hardsuit to EVA mode, sacrificing speed for space protection.</span>")
+		to_chat(user, "<span class='notice'>Вы переключаете свой скафандр в режим EVA, жертвуя скоростью для защиты от космоса.</span>")
 		name = initial(name)
 		desc = initial(desc)
 		set_light_on(TRUE)
@@ -299,7 +299,7 @@
 		flags_inv |= visor_flags_inv
 		cold_protection |= HEAD
 	else
-		to_chat(user, "<span class='notice'>You switch your hardsuit to combat mode and can now run at full speed.</span>")
+		to_chat(user, "<span class='notice'>Вы переключаете свой жесткий костюм в боевой режим и теперь можете бежать на полной скорости.</span>")
 		name += " (combat)"
 		desc = alt_desc
 		set_light_on(FALSE)
@@ -340,9 +340,9 @@
 
 
 /obj/item/clothing/suit/space/hardsuit/syndi
-	name = "blood-red hardsuit"
-	desc = "A dual-mode advanced hardsuit designed for work in special operations. It is in EVA mode."
-	alt_desc = "A dual-mode advanced hardsuit designed for work in special operations. It is in combat mode."
+	name = "Кроваво-красный скафандр"
+	desc = "Двухрежимный усовершенствованный жесткий костюм, предназначенный для работы в специальных операциях. Он находится в режиме EVA."
+	alt_desc = "Двухрежимный усовершенствованный жесткий костюм, предназначенный для работы в специальных операциях. Он находится в боевом режиме."
 	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_hardsuit"
 	item_color = "syndi"
@@ -354,9 +354,9 @@
 
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
-	name = "elite chinese hardsuit helmet"
-	desc = "An elite version of the chinese helmet, with improved armour and fireproofing. It is in EVA mode."
-	alt_desc = "An elite version of the chinese helmet, with improved armour and fireproofing. It is in combat mode."
+	name = "Шлем элитного китайского скафандра"
+	desc = "Элитная версия китайского шлема, с улучшенной броней и огнеупорностью. Он находится в режиме EVA."
+	alt_desc = "Элитная версия китайского шлема, с улучшенной броней и огнеупорностью. Он находится в боевом режиме."
 	icon_state = "hardsuit0-syndielite"
 	item_color = "syndielite"
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 50, "energy" = 25, "bomb" = 55, "bio" = 100, "rad" = 70, "fire" = 100, "acid" = 100)
@@ -369,9 +369,9 @@
 
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite
-	name = "elite chinse hardsuit"
-	desc = "An elite version of the chinese hardsuit, with improved armour and fireproofing. It is in travel mode."
-	alt_desc = "An elite version of the chinese hardsuit, with improved armour and fireproofing. It is in combat mode."
+	name = "Элитный китайский скафандр"
+	desc = "Элитная версия китайского скафандра, с улучшенной броней и огнеупорностью. Он находится в режиме путешествия."
+	alt_desc = "Элитная версия китайского скафандра, с улучшенной броней и огнеупорностью. Он находится в боевом режиме."
 	icon_state = "hardsuit0-syndielite"
 	item_color = "syndielite"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
@@ -382,9 +382,9 @@
 
 //The Owl Hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/owl
-	name = "owl hardsuit helmet"
-	desc = "A dual-mode advanced helmet designed for any crime-fighting situation. It is in travel mode."
-	alt_desc = "A dual-mode advanced helmet designed for any crime-fighting situation. It is in combat mode."
+	name = "Шлем скафандра совы"
+	desc = "Двухрежимный усовершенствованный шлем, предназначенный для любой борьбы с преступностью. Он находится в режиме путешествия."
+	alt_desc = "Двухрежимный усовершенствованный шлем, предназначенный для любой борьбы с преступностью. Он находится в боевом режиме."
 	icon_state = "hardsuit1-owl"
 	item_state = "s_helmet"
 	item_color = "owl"
@@ -393,9 +393,9 @@
 	on = FALSE
 
 /obj/item/clothing/suit/space/hardsuit/syndi/owl
-	name = "owl hardsuit"
-	desc = "A dual-mode advanced hardsuit designed for any crime-fighting situation. It is in travel mode."
-	alt_desc = "A dual-mode advanced hardsuit designed for any crime-fighting situation. It is in combat mode."
+	name = "Скафандр совы"
+	desc = "Двухрежимный усовершенствованный скафандр, предназначенный для любой борьбы с преступностью. Он находится в режиме путешествия."
+	alt_desc = "Двухрежимный усовершенствованный скафандр, предназначенный для любой борьбы с преступностью. Он находится в боевом режиме."
 	icon_state = "hardsuit1-owl"
 	item_state = "s_suit"
 	item_color = "owl"
@@ -404,8 +404,8 @@
 
 	//Wizard hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/wizard
-	name = "gem-encrusted hardsuit helmet"
-	desc = "A bizarre gem-encrusted helmet that radiates magical energies."
+	name = "Шлем скафандра с драгоценными камнями"
+	desc = "Странный, инкрустированный драгоценными камнями шлем, излучающий магическую энергию."
 	icon_state = "hardsuit0-wiz"
 	item_state = "wiz_helm"
 	item_color = "wiz"
@@ -416,8 +416,8 @@
 
 /obj/item/clothing/suit/space/hardsuit/wizard
 	icon_state = "hardsuit-wiz"
-	name = "gem-encrusted hardsuit"
-	desc = "A bizarre gem-encrusted suit that radiates magical energies."
+	name = "Скафандр с драгоценными камнями"
+	desc = "Странный, инкрустированный драгоценными камнями скафандр, излучающий магическую энергию."
 	item_state = "wiz_hardsuit"
 	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -434,8 +434,8 @@
 
 	//Medical hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/medical
-	name = "medical hardsuit helmet"
-	desc = "A special helmet designed for work in a hazardous, low pressure environment. Built with lightweight materials for extra comfort, but does not protect the eyes from intense light."
+	name = "Шлем медицинского скафандра"
+	desc = "Специальный шлем, предназначенный для работы в опасных условиях низкого давления. Построен из легких материалов для дополнительного комфорта, но не защищает глаза от интенсивного света."
 	icon_state = "hardsuit0-medical"
 	item_state = "medical_helm"
 	item_color = "medical"
@@ -445,8 +445,8 @@
 
 /obj/item/clothing/suit/space/hardsuit/medical
 	icon_state = "hardsuit-medical"
-	name = "medical hardsuit"
-	desc = "A special suit that protects against hazardous, low pressure environments. Built with lightweight materials for easier movement."
+	name = "Медицинский скафандр"
+	desc = "Специальный костюм, который защищает от опасных сред низкого давления. Изготовлен из легких материалов для облегчения передвижения."
 	item_state = "medical_hardsuit"
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/firstaid, /obj/item/healthanalyzer, /obj/item/stack/medical)
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 5, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 75)
@@ -454,8 +454,8 @@
 
 	//Research Director hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/rd
-	name = "prototype hardsuit helmet"
-	desc = "A prototype helmet designed for research in a hazardous, low pressure environment. Scientific data flashes across the visor."
+	name = "Прототип шлема скафандра"
+	desc = "Прототип шлема, предназначенный для исследований в опасных условиях низкого давления. На визоре вспыхивают научные данные."
 	icon_state = "hardsuit0-rd"
 	item_color = "rd"
 	resistance_flags = ACID_PROOF | FIRE_PROOF
@@ -483,8 +483,8 @@
 
 /obj/item/clothing/suit/space/hardsuit/rd
 	icon_state = "hardsuit-rd"
-	name = "prototype hardsuit"
-	desc = "A prototype suit that protects against hazardous, low pressure environments. Fitted with extensive plating for handling explosives and dangerous research materials."
+	name = "Прототип скафандра"
+	desc = "Прототип скафандра, защищающего от опасных сред низкого давления. Оснащен обширной обшивкой для работы со взрывчатыми веществами и опасными исследовательскими материалами."
 	item_state = "hardsuit-rd"
 	resistance_flags = ACID_PROOF | FIRE_PROOF
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT //Same as an emergency firesuit. Not ideal for extended exposure.
@@ -497,8 +497,8 @@
 
 	//Security hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/security
-	name = "security hardsuit helmet"
-	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor."
+	name = "Шлем охранного скафандра"
+	desc = "Специальный шлем, предназначенный для работы в опасных условиях низкого давления. Имеет дополнительный слой брони."
 	icon_state = "hardsuit0-sec"
 	item_state = "sec_helm"
 	item_color = "sec"
@@ -507,8 +507,8 @@
 
 /obj/item/clothing/suit/space/hardsuit/security
 	icon_state = "hardsuit-sec"
-	name = "security hardsuit"
-	desc = "A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
+	name = "Скафандр охраны"
+	desc = "Специальный скафандр, предназначенный для работы в опасных условиях низкого давления. Имеет дополнительный слой брони."
 	item_state = "sec_hardsuit"
 	armor = list("melee" = 35, "bullet" = 15, "laser" = 30, "energy" = 10, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security
@@ -519,8 +519,8 @@
 
 	//Head of Security hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/security/hos
-	name = "head of security's hardsuit helmet"
-	desc = "A special bulky helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor."
+	name = "Шлем скафандра Главы Безопасности"
+	desc = "Специальный громоздкий шлем, предназначенный для работы в опасных условиях низкого давления. Имеет дополнительный слой брони."
 	icon_state = "hardsuit0-hos"
 	item_color = "hos"
 	armor = list("melee" = 45, "bullet" = 25, "laser" = 30, "energy" = 10, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95)
@@ -528,18 +528,18 @@
 
 /obj/item/clothing/suit/space/hardsuit/security/hos
 	icon_state = "hardsuit-hos"
-	name = "head of security's hardsuit"
-	desc = "A special bulky suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
+	name = "Скафандр Главы Безопасности"
+	desc = "Специальный громоздкий скафандр, предназначенный для работы в опасных условиях низкого давления. Имеет дополнительный слой брони."
 	armor = list("melee" = 45, "bullet" = 25, "laser" = 30, "energy" = 10, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
 	jetpack = /obj/item/tank/jetpack/suit
 
 	//Captain
 /obj/item/clothing/head/helmet/space/hardsuit/captain
-	name = "captain's hardsuit helmet"
+	name = "Шлем капитанского скафандра"
 	icon_state = "capspace"
 	item_state = "capspacehelmet"
-	desc = "A tactical SWAT helmet MK.II boasting better protection and a horrible fashion sense."
+	desc = "Тактический шлем спецназа второй модели может похвастаться лучшей защитой и ужасным чувством моды."
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 25, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR //we want to see the mask
@@ -551,8 +551,8 @@
 	return //Sprites required for flashlight
 
 /obj/item/clothing/suit/space/hardsuit/captain
-	name = "captain's SWAT suit"
-	desc = "A MK.II SWAT suit with streamlined joints and armor made out of superior materials, insulated against intense heat. The most advanced tactical armor available Usually reserved for heavy hitter corporate security, this one has a regal finish in Vault-Tec company colors. Better not let the assistants get a hold of it."
+	name = "Капитанский скафандр спецназа"
+	desc = "Скафандр спецназа второй модели с обтекаемыми суставами и броней из превосходных материалов, изолированный от интенсивного тепла. Самая совершенная тактическая броня, предназначеная для обеспечения безопасности самых важных сотрудников корпорации, эта покрашена в цветах компании Vault-Tec. Лучше не позволять ассистентам завладеть им."
 	icon_state = "caparmor"
 	item_state = "capspacesuit"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 25, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 100)
@@ -567,16 +567,16 @@
 
 	//Clown
 /obj/item/clothing/head/helmet/space/hardsuit/clown
-	name = "cosmohonk hardsuit helmet"
-	desc = "A special helmet designed for work in a hazardous, low-humor environment. Has radiation shielding."
+	name = "Шлем космического хонка"
+	desc = "Специальный шлем, предназначенный для работы в условиях низкого юмора. Также защищает от радиации."
 	icon_state = "hardsuit0-clown"
 	item_state = "hardsuit0-clown"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 5, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 60, "acid" = 30)
 	item_color = "clown"
 
 /obj/item/clothing/suit/space/hardsuit/clown
-	name = "cosmohonk hardsuit"
-	desc = "A special suit that protects against hazardous, low humor environments. Has radiation shielding. Only a true clown can wear it."
+	name = "Скафандр космического хонка"
+	desc = "Специальный скафандр, предназначенный для работы в условиях низкого юмора. Также защищает от радиации. Только истинный клоун может надеть."
 	icon_state = "hardsuit-clown"
 	item_state = "clown_hardsuit"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 5, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 60, "acid" = 30)
@@ -593,8 +593,8 @@
 
 	//Old Prototype
 /obj/item/clothing/head/helmet/space/hardsuit/ancient
-	name = "prototype RIG hardsuit helmet"
-	desc = "Early prototype RIG hardsuit helmet, designed to quickly shift over a user's head. Design constraints of the helmet mean it has no inbuilt cameras, thus it restricts the users visability."
+	name = "Прототип шлема RIG скафандра"
+	desc = "Ранний прототип шлема скафандра, предназначенного для быстрого перемещения головы пользователя. Конструктивные ограничения шлема означают, что он не имеет встроенных камер, что ограничивает видимость пользователей."
 	icon_state = "hardsuit0-ancient"
 	item_state = "anc_helm"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 5, "energy" = 0, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 75)
@@ -603,8 +603,8 @@
 	var/datum/component/mobhook
 
 /obj/item/clothing/suit/space/hardsuit/ancient
-	name = "prototype RIG hardsuit"
-	desc = "Prototype powered RIG hardsuit. Provides excellent protection from the elements of space while being comfortable to move around in, thanks to the powered locomotives. Remains very bulky however."
+	name = "Прототип RIG скафандра"
+	desc = "Прототип силового RIG скафагжра. Обеспечивает превосходную защиту от элементов космической среды, будучи при этом комфортным для передвижения благодаря приводимым в действие локомотивам. Однако остается очень громоздким"
 	icon_state = "hardsuit-ancient"
 	item_state = "anc_hardsuit"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 5, "energy" = 0, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 75)
@@ -645,8 +645,8 @@
 /////////////SHIELDED//////////////////////////////////
 
 /obj/item/clothing/suit/space/hardsuit/shielded
-	name = "shielded hardsuit"
-	desc = "A hardsuit with built in energy shielding. Will rapidly recharge when not under fire."
+	name = "Экранированный скафандр"
+	desc = "Скафандр со встроенной энергетической защитой. Будет быстро перезаряжаться, когда не находится под огнем."
 	icon_state = "hardsuit-hos"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
 	allowed = null
@@ -671,12 +671,12 @@
 		var/datum/effect_system/spark_spread/s = new
 		s.set_up(2, 1, src)
 		s.start()
-		owner.visible_message("<span class='danger'>[owner]'s shields deflect [attack_text] in a shower of sparks!</span>")
+		owner.visible_message("<span class='danger'> щит [owner] отражает [attack_text] в ливне искр!</span>")
 		current_charges--
 		if(recharge_rate)
 			START_PROCESSING(SSobj, src)
 		if(current_charges <= 0)
-			owner.visible_message("[owner]'s shield overloads!")
+			owner.visible_message("щит [owner] перегружен!")
 			shield_state = "broken"
 			owner.update_inv_wear_suit()
 		return 1
@@ -710,8 +710,8 @@
 ///////////////Capture the Flag////////////////////
 
 /obj/item/clothing/suit/space/hardsuit/shielded/ctf
-	name = "white shielded hardsuit"
-	desc = "Standard issue hardsuit for playing capture the flag."
+	name = "Белый экранированный скафандр"
+	desc = "Стандартный скафандр для игры в захват флага."
 	icon_state = "ert_medical"
 	item_state = "ert_medical"
 	item_color = "ert_medical"
@@ -722,7 +722,7 @@
 	max_charges = 5
 
 /obj/item/clothing/suit/space/hardsuit/shielded/ctf/red
-	name = "red shielded hardsuit"
+	name = "Красный экранированный скафандр"
 	icon_state = "ert_security"
 	item_state = "ert_security"
 	item_color = "ert_security"
@@ -731,8 +731,8 @@
 	shield_on = "shield-red"
 
 /obj/item/clothing/suit/space/hardsuit/shielded/ctf/blue
-	name = "blue shielded hardsuit"
-	desc = "Standard issue hardsuit for playing capture the flag."
+	name = "Синий экранированный скафандр"
+	desc = "Стандартный скафандр для игры в захват флага."
 	icon_state = "ert_command"
 	item_state = "ert_command"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/ctf/blue
@@ -740,8 +740,8 @@
 
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/ctf
-	name = "shielded hardsuit helmet"
-	desc = "Standard issue hardsuit helmet for playing capture the flag."
+	name = "Экранированный шлем"
+	desc = "Стандартный шлем для игры в захват флага."
 	icon_state = "hardsuit0-ert_medical"
 	item_state = "hardsuit0-ert_medical"
 	item_color = "ert_medical"
@@ -754,8 +754,8 @@
 	item_color = "ert_security"
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/ctf/blue
-	name = "shielded hardsuit helmet"
-	desc = "Standard issue hardsuit helmet for playing capture the flag."
+	name = "Экранированный шлем"
+	desc = "Стандартный шлем для игры в захват флага."
 	icon_state = "hardsuit0-ert_commander"
 	item_state = "hardsuit0-ert_commander"
 	item_color = "ert_commander"
@@ -783,8 +783,8 @@
 	. = ..()
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi
-	name = "blood-red hardsuit helmet"
-	desc = "An advanced hardsuit helmet with built in energy shielding."
+	name = "Кроваво-красный шлем"
+	desc = "Усовершенствованный шлем с встроенным генератором щита."
 	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_helm"
 	item_color = "syndi"
@@ -792,8 +792,8 @@
 
 ///SWAT version
 /obj/item/clothing/suit/space/hardsuit/shielded/swat
-	name = "death commando spacesuit"
-	desc = "An advanced hardsuit favored by commandos for use in special operations."
+	name = "Скафандр коммандо смерти"
+	desc = "Улучшенный скафандр, используемый коммандос в специальных операциях."
 	icon_state = "deathsquad"
 	item_state = "swat_suit"
 	item_color = "syndi"
@@ -807,8 +807,8 @@
 	dog_fashion = /datum/dog_fashion/back/deathsquad
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/swat
-	name = "death commando helmet"
-	desc = "A tactical helmet with built in energy shielding."
+	name = "Шлем коммандо смерти"
+	desc = "Тактический шлем с встроенным генератором щита."
 	icon_state = "deathsquad"
 	item_state = "deathsquad"
 	item_color = "syndi"
@@ -828,8 +828,8 @@
 //IT'S MEANT TO BE ACTIVATED AND APPEAR VIA THE BASE SUIT
 
 /*/obj/item/clothing/head/helmet/space/hardsuit/powerarmor
-	name = "default power armor helmet"
-	desc = "Default power armor helmet, this should DEFINITELY not exist at all sadly."
+	name = "Стандартный селовой шлем"
+	desc = "Стандартный силовой шлем, он ТОЧНО не должен существовать."
 	clothing_flags = THICKMATERIAL //It better stop syringes
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
@@ -850,8 +850,8 @@
 	actions_types = list()
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor
-	name = "default power armor suit"
-	desc = "Default power armor suit, this shouldn't really exist at all sadly. Altclick this to get the power cell out, or attack it with a cell to swap out the cells. You may attack this with a welding tool to repair it"
+	name = "Стандартная силовая броня"
+	desc = "По умолчанию силовой бронекостюм, к сожалению, вообще не должен существовать. Alt click , чтобы получить ячейку питания, или примените на нём ячейку, чтобы поменять их местами. Вы можете применить на нём сварку для ремонта"
 	w_class = WEIGHT_CLASS_GIGANTIC //No putting it anywhere
 	slowdown = 1
 	ispowerarmor = 1
@@ -950,10 +950,10 @@
 /obj/item/clothing/suit/space/hardsuit/powerarmor/AltClick(mob/user)
 	if(cell && user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		if(!(user.put_in_hands(cell)))
-			to_chat(user, "Your hands are currently occupied and you can't take out the powercell!")
+			to_chat(user, "Ваши руки заняты, вы не можете извлечь аккумулятор!")
 			return
 		else
-			to_chat(user,"You take the powercell out of the power armor, turning off the power armor.")
+			to_chat(user,"Вы вынимаете аккумулятор из силовой брони, отключая её")
 			cell = null //Power cell no longer in the dang armor
 			if(!offline)
 				togglepower()
@@ -966,18 +966,18 @@
 			health_buffer = min(initial(health_buffer), health_buffer + (initial(health_buffer) / 5)) //Expensive on welding fuel, 200 seconds and 500 welding fuel to repair a just about destroyed power armor
 			return 1
 		else
-			to_chat(user, "Your [I] needs more fuel.")
+			to_chat(user, "Ваш [I] требует больше топлива.")
 	if(istype(I, /obj/item/stock_parts/cell))
 		var/obj/item/stock_parts/cell/cell2 = I
 		if(cell) //Swap
 			cell2.forceMove(src)
 			user.put_in_hands(cell)
 			cell = cell2
-			to_chat(user, "You swap out the cells in the [name].")
+			to_chat(user, "Вы меняете аккумуляторы в [name].")
 		else //Put in if there's no cell
 			cell2.forceMove(src)
 			cell = cell2
-			to_chat(user, "You insert a cell into the [name].")
+			to_chat(user, "Вы вставляете аккумулятор в [name].")
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/mob_can_equip(mob/living/carbon/human/user, mob/living/carbon/human/equipper, slot, disable_warning = 1)
 	if(src == user.wear_suit) //Suit is already equipped; stops message spam
@@ -1045,23 +1045,23 @@
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/t45b
 	ispowerarmor = 0
-	name = "Salvaged T-45b power armor"
-	desc = "It's a set of T-45b power armor recovered by the NCR during the NCR-Brotherhood War.<br>NCR technicians have restored it to working order by replacing the back-mounted cylinders with a custom air conditioning module and stripping out the joint servomotors."
+	name = "Трофейная силовая броня T-45b"
+	desc = "Это набор силовой брони Т-45b, восстановленной НКР во время войны НКР и Братства.<br>Специалисты НКР починили его, заменив установленные сзади цилиндры специальным модулем кондиционирования воздуха и сняв совместные сервомоторы."
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
 	armor = list("melee" = 50, "bullet" = 48, "laser" = 25, "energy" = 25, "bomb" = 48, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t45b
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t45d
-	name = "T-45d power helmet"
-	desc = "It's an old pre-War power armor helmet. It's pretty hot inside of it."
+	name = "Силовой шлем T-45b"
+	desc = "Это старый довоенный силовой шлем. Внутри довольно горячо."
 	icon_state = "t45dhelmet"
 	item_state = "t45dhelmet"
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 0)
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/t45d
-	name = "T-45d power armor"
-	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle."
+	name = "Силовая броня T-45b"
+	desc = "Первоначально разработанный и изготовленный для армии Соединенных Штатов американским оборонным подрядчиком West Tek, силовая броня Т-45b была первой версией силовой брони, которая была успешно применена в бою."
 	icon_state = "t45dpowerarmor"
 	item_state = "t45dpowerarmor"
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 60, "fire" = 0, "acid" = 0)
@@ -1069,15 +1069,15 @@
 	health_buffer = 50
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/advanced
-	name = "Advanced power helmet"
-	desc = "It's an advanced power armor Mk I helmet, typically used by the Enclave. It looks somewhat threatening."
+	name = "Улучшенный силовой шлем"
+	desc = "Шлем от улучшенной силовой брони первой модели, обычно используемой Акнлавом. Выглядит пугающе."
 	icon_state = "advhelmet1"
 	item_state = "advhelmet1"
 	armor = list("melee" = 72, "bullet" = 72, "laser" = 48,"energy" = 48, "bomb" = 72, "bio" = 100,"rad" = 100, "fire" = 50, "acid" = 0)
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/advanced
-	name = "Advanced power armor"
-	desc = "An advanced suit of armor typically used by the Enclave.<br>It is composed of lightweight metal alloys, reinforced with ceramic castings at key stress points.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
+	name = "Улучшенная силовая броня"
+	desc = "Улучшенная силовая броня, обычно используемая Анклавом.<br>Она состоит из легких металлических сплавов, армированных керамическими отливками в ключевых точках напряжения.<br>Кроме того, как и силовая броня Т-51b, она включает в себя систему рециркуляции, которая может превращать человеческие отходы в питьевую воду, и систему кондиционирования воздуха для удобства пользователя."
 	icon_state = "advpowerarmor1"
 	item_state = "advpowerarmor1"
 	armor = list("melee" = 72, "bullet" = 72, "laser" = 48, "energy" = 48, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
@@ -1085,15 +1085,15 @@
 	health_buffer = 150
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/mk2
-	name = "Advanced power helmet MKII"
-	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
+	name = "Улучшенный силовой шлем второй модели"
+	desc = "Это усовершенствованная модель усовершенствованной силовой брони, используемой исключительно вооруженными силами анклава, разработанная после Великой войны.<br>Как и старший брат, стандартная усовершенствованная силовая броня, она матово-черная с угрожающим внешним видом, но с несколькими существенными отличиями - кажется, что она полностью состоит из легких керамических композитов, а не из обычной комбинации металлических и керамических пластин.<br>Кроме того, как и силовая броня Т-51b, она включает в себя систему рециркуляции, которая может превращать человеческие отходы в питьевую воду, и систему кондиционирования воздуха для удобства пользователя."
 	icon_state = "advhelmet2"
 	item_state = "advhelmet2"
 	armor = list("melee" = 72, "bullet" = 72, "laser" = 48, "energy" = 48, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 0)
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/advanced/mk2
-	name = "Advanced power armor MKII"
-	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
+	name = "Улучшенная силовая броня второй модели"
+	desc = "Это усовершенствованная модель усовершенствованной силовой брони, используемой исключительно вооруженными силами анклава, разработанная после Великой войны.<br>Как и старший брат, стандартная усовершенствованная силовая броня, она матово-черная с угрожающим внешним видом, но с несколькими существенными отличиями - кажется, что она полностью состоит из легких керамических композитов, а не из обычной комбинации металлических и керамических пластин.<br>Кроме того, как и силовая броня Т-51b, она включает в себя систему рециркуляции, которая может превращать человеческие отходы в питьевую воду, и систему кондиционирования воздуха для удобства пользователя."
 	icon_state = "advpowerarmor2"
 	item_state = "advpowerarmor2"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
@@ -1102,30 +1102,30 @@
 	health_buffer = 175
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/tesla
-	name = "tesla power helmet"
-	desc = "A helmet typically used by Enclave special forces.<br>There are three orange energy capacitors on the side."
+	name = "Силовой тесла шлем"
+	desc = "Шлем, обычно используемый спецназом анклава.<br>Сбоку расположены три оранжевых энергетических конденсатора."
 	icon_state = "tesla"
 	item_state = "tesla"
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 80, "energy" = 80, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 0)
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/tesla
-	name = "tesla power armor"
-	desc = "A variant of the Enclave's advanced power armor Mk I, jury-rigged with a Tesla device that is capable of dispersing a large percentage of the damage done by directed-energy attacks.<br>As it's made of complex composite materials designed to block most of energy damage - it's notably weaker against kinetic impacts."
+	name = "Силовая тесла броня"
+	desc = "Вариант усовершенствованной силовой брони анклава первой модели, оснащенный устройством Тесла, способный рассеивать большой процент урона, наносимого направленными энергетическими атаками.<br>Поскольку он сделан из сложных композитных материалов, предназначенных для блокирования большей части энергетических повреждений, он заметно слабее против кинетических ударов."
 	icon_state = "tesla"
 	item_state = "tesla"
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 80, "energy" = 80, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/tesla
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t51b
-	name = "T-51b power helmet"
-	desc = "It's a t51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
+	name = "Силовой шлем T-45b"
+	desc = "Это силовой шлем T-45b, обычно используемый Братством. Выглядит довольно очаровательно."
 	icon_state = "t51bhelmet"
 	item_state = "t51bhelmet"
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 0)
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/t51b
-	name = "T-51b power armor"
-	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
+	name = "Силовая броня T-51b"
+	desc = "Вершина довоенной техники. Эта силовая броня обеспечивает существенную защиту владельцу."
 	icon_state = "t51bpowerarmor"
 	item_state = "t51bpowerarmor"
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)

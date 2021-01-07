@@ -169,8 +169,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/sleazeball
-	name = "loanshark outfit"
-	desc = "The symbol of profit and corruption, a black vest over a well starched white shirt."
+	name = "Костюм акулы бизнеса"
+	desc = "Символ наживы и коррупции - черный жилет поверх хорошо накрахмаленной белой рубашки."
 	icon_state = "vest_and_slacks"
 	item_state = "vest_and_slacks"
 	item_color = "vest_and_slacks"
@@ -645,7 +645,7 @@
 
 /obj/item/clothing/under/f13/bennys //Benny's suit from Fallout: New Vegas. But Benny was just a kid back in 2255, so it's just a fancy suit for you.
 	name = "Модный костюм"
-	desc = "Чёрно-белый клетчатый костюм из буйвола. Модный!"
+	desc = "Чёрно-белый клетчатый костюм из буйвола. Последний писк моды!"
 	icon_state = "benny"
 	item_state = "white_suit"
 	item_color = "benny"
@@ -658,8 +658,8 @@
 	item_color = "relaxedwear_m"
 
 /obj/item/clothing/under/f13/spring
-	name = "pre-war male spring outfit"
-	desc = "A dirty long-sleeve beige shirt with a red sweater-vest and brown trousers."
+	name = "Довоенный мужской весенний наряд"
+	desc = "Грязная бежевая рубашка с длинными рукавами, красный свитер-жилет и коричневые брюки."
 	icon_state = "spring_m"
 	item_state = "brownjsuit"
 	item_color = "spring_m"

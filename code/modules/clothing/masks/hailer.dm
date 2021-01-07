@@ -2,8 +2,8 @@
 // **** Security gas mask ****
 
 /obj/item/clothing/mask/gas/sechailer
-	name = "security gas mask"
-	desc = "A standard issue Security gas mask with integrated 'Compli-o-nator 3000' device. Plays over a dozen pre-recorded compliance phrases designed to get scumbags to stand still whilst you taze them. Do not tamper with the device."
+	name = "Противогаз охраны"
+	desc = "Стандартный защитный противогаз со встроенным устройством \"Компли-о-натор 3000\". Воспроизводит более дюжины заранее записанных фраз, предназначенных для того, чтобы заставить отморозков стоять на месте, пока вы их дразните. Не трогайте устройство."
 	actions_types = list(/datum/action/item_action/halt, /datum/action/item_action/adjust)
 	icon_state = "sechailer"
 	item_state = "sechailer"
@@ -21,8 +21,8 @@
 	var/safety = TRUE
 
 /obj/item/clothing/mask/gas/sechailer/swat
-	name = "M5 assault respirator"
-	desc = "A close-fitting tactical mask with an especially aggressive Compli-o-nator 3000."
+	name = "Штурмовой респиратор M5"
+	desc = "Плотно прилегающая тактическая маска с особенно агрессивным \"Компли-о-натор 3000\"."
 	actions_types = list(/datum/action/item_action/halt)
 	icon_state = "swat"
 	item_state = "swat"
@@ -31,8 +31,8 @@
 	visor_flags_inv = 0
 
 /obj/item/clothing/mask/gas/sechailer/cyborg
-	name = "security hailer"
-	desc = "A set of recognizable pre-recorded messages for cyborgs to use when apprehending criminals."
+	name = "Мегафон охраны"
+	desc = "Набор узнаваемых заранее записанных сообщений для киборгов, чтобы использовать их при задержании преступников."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "taperecorder_idle"
 	aggressiveness = 1 //Borgs are nicecurity!

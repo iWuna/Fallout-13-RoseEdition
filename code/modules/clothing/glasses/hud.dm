@@ -1,6 +1,6 @@
 /obj/item/clothing/glasses/hud
 	name = "HUD"
-	desc = "A heads-up display that provides important info in (almost) real time."
+	desc = "Надеваемый на голову дисплей обеспечивает вас важной информацией в (почти) реальном времени."
 	flags_1 = null //doesn't protect eyes because it's a monocle, duh
 	var/hud_type = null
 
@@ -21,25 +21,25 @@
 	if(obj_flags & EMAGGED || . & EMP_PROTECT_SELF)
 		return
 	obj_flags |= EMAGGED
-	desc = "[desc] The display is flickering slightly."
+	desc = "[desc] дисплей слегка мерцает."
 
 /obj/item/clothing/glasses/hud/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
 	to_chat(user, "<span class='warning'>PZZTTPFFFT</span>")
-	desc = "[desc] The display is flickering slightly."
+	desc = "[desc] дисплей слегка мерцает."
 
 /obj/item/clothing/glasses/hud/health
-	name = "health scanner HUD"
-	desc = "A heads-up display that scans the humans in view and provides accurate data about their health status."
+	name = "HUD сканер здоровья"
+	desc = "Дисплей, который сканирует людей в поле зрения и предоставляет точные данные об их состоянии здоровья."
 	icon_state = "healthhud"
 	hud_type = DATA_HUD_MEDICAL_ADVANCED
 	glass_colour_type = /datum/client_colour/glass_colour/lightblue
 
 /obj/item/clothing/glasses/hud/health/night
-	name = "night vision health scanner HUD"
-	desc = "An advanced medical head-up display that allows doctors to find patients in complete darkness."
+	name = "HUD сканер здоровья ночного видения"
+	desc = "Усовершенствованный медицинский дисплей, который позволяет врачам находить пациентов в полной темноте."
 	icon_state = "healthhudnight"
 	item_state = "glasses"
 	darkness_view = 128
@@ -47,8 +47,8 @@
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
 /obj/item/clothing/glasses/hud/health/sunglasses
-	name = "medical HUDSunglasses"
-	desc = "Sunglasses with a medical HUD."
+	name = "Медицинские HUD солнечные очки"
+	desc = "Солнцезащитные очки с медицинским дисплеем."
 	icon_state = "sunhudmed"
 	darkness_view = 1
 	flash_protect = 1
@@ -56,15 +56,15 @@
 	glass_colour_type = /datum/client_colour/glass_colour/blue
 
 /obj/item/clothing/glasses/hud/diagnostic
-	name = "diagnostic HUD"
-	desc = "A heads-up display capable of analyzing the integrity and status of robotics and exosuits."
+	name = "Диагностический HUD"
+	desc = "Дисплей, способный анализировать целостность и состояние робототехники и экзоскелетов."
 	icon_state = "diagnostichud"
 	hud_type = DATA_HUD_DIAGNOSTIC_BASIC
 	glass_colour_type = /datum/client_colour/glass_colour/lightorange
 
 /obj/item/clothing/glasses/hud/diagnostic/night
-	name = "night vision diagnostic HUD"
-	desc = "A robotics diagnostic HUD fitted with a light amplifier."
+	name = "Диагностический HUD ночного виденя"
+	desc = "HUD для диагностики роботехники, снабжённый усилителем света."
 	icon_state = "diagnostichudnight"
 	item_state = "glasses"
 	darkness_view = 128
@@ -72,15 +72,15 @@
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
 /obj/item/clothing/glasses/hud/security
-	name = "security HUD"
-	desc = "A heads-up display that scans the humans in view and provides accurate data about their ID status and security records."
+	name = "Охранный HUD"
+	desc = "Дисплей, который сканирует людей в поле зрения и предоставляет точные данные об их идентификационном статусе и записях безопасности."
 	icon_state = "securityhud"
 	hud_type = DATA_HUD_SECURITY_ADVANCED
 	glass_colour_type = /datum/client_colour/glass_colour/red
 
 /obj/item/clothing/glasses/hud/security/chameleon
-	name = "chameleon security HUD"
-	desc = "A stolen security HUD integrated with Syndicate chameleon technology. Provides flash protection."
+	name = "Хамелеонный охранный HUD"
+	desc = "Украденный охранный HUD, интегрированный с хамелион технологией синдиката. Обеспечивает защиту от вспышки."
 	flash_protect = 1
 
 	// Yes this code is the same as normal chameleon glasses, but we don't
@@ -103,13 +103,13 @@
 
 
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
-	name = "eyepatch HUD"
-	desc = "A heads-up display that connects directly to the optical nerve of the user, replacing the need for that useless eyeball."
+	name = "HUD повязка на глаз"
+	desc = "Дисплей, который подключается непосредственно к оптическому нерву пользователя, заменяя необходимость в этом бесполезном глазном яблоке."
 	icon_state = "hudpatch"
 
 /obj/item/clothing/glasses/hud/security/sunglasses
-	name = "security HUDSunglasses"
-	desc = "Sunglasses with a security HUD."
+	name = "Охранные HUD солнечные очки"
+	desc = "Солнечные очки с охранным HUD."
 	icon_state = "sunhudsec"
 	darkness_view = 1
 	flash_protect = 1
@@ -117,16 +117,16 @@
 	glass_colour_type = /datum/client_colour/glass_colour/darkred
 
 /obj/item/clothing/glasses/hud/security/night
-	name = "night vision security HUD"
-	desc = "An advanced heads-up display which provides id data and vision in complete darkness."
+	name = "Охранный HUD ночного видения"
+	desc = "Улучшенный дисплей, обеспечивающий вас важной информацией и видимость в полной темноте."
 	icon_state = "securityhudnight"
 	darkness_view = 128
 	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
 /obj/item/clothing/glasses/hud/security/sunglasses/gars
-	name = "\improper HUD gar glasses"
-	desc = "GAR glasses with a HUD."
+	name = "Крутые HUD очки"
+	desc = "Крутые очки теперь с HUD."
 	icon_state = "gars"
 	item_state = "garb"
 	force = 10
@@ -137,16 +137,16 @@
 	sharpness = IS_SHARP
 
 /obj/item/clothing/glasses/hud/security/sunglasses/gars/supergars
-	name = "giga HUD gar glasses"
-	desc = "GIGA GAR glasses with a HUD."
+	name = "Супер крутые HUD очки"
+	desc = "Супер крутые очки теперь с HUD."
 	icon_state = "supergars"
 	item_state = "garb"
 	force = 12
 	throwforce = 12
 
 /obj/item/clothing/glasses/hud/toggle
-	name = "Toggle HUD"
-	desc = "A hud with multiple functions."
+	name = "Переключить HUD"
+	desc = "HUD с множеством функций."
 	actions_types = list(/datum/action/item_action/switch_hud)
 
 /obj/item/clothing/glasses/hud/toggle/attack_self(mob/user)
@@ -172,8 +172,8 @@
 		H.add_hud_to(user)
 
 /obj/item/clothing/glasses/hud/toggle/thermal
-	name = "thermal HUD scanner"
-	desc = "Thermal imaging HUD in the shape of glasses."
+	name = "Термический HUD сканер"
+	desc = "Теепловизорный дисплей в форме очков."
 	icon_state = "thermal"
 	hud_type = DATA_HUD_SECURITY_ADVANCED
 	vision_flags = SEE_MOBS

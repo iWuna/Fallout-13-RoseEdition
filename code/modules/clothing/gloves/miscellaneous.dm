@@ -1,7 +1,7 @@
 
 /obj/item/clothing/gloves/fingerless
-	name = "fingerless gloves"
-	desc = "Plain black gloves without fingertips for the hard working."
+	name = "Перчатки без пальцев"
+	desc = "Простые черные перчатки без кончиков пальцев для тяжелой работы."
 	icon_state = "fingerless"
 	item_state = "fingerless"
 	item_color = null	//So they don't wash.
@@ -12,8 +12,8 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 
 /obj/item/clothing/gloves/rifleman
-	name = "rifleman gloves"
-	desc = "A pair of rifleman's gloves. The thumb and finger have been removed to not impair the wearer's shooting ability."
+	name = "Перчатки стрелка"
+	desc = "Пара стрелковых перчаток. Большой и указательный пальцы были удалены, чтобы не ухудшать способность владельца стрелять."
 	icon_state = "rifleman"
 	item_state = "rifleman"
 	item_color = null	//So they don't wash.
@@ -24,8 +24,8 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 
 /obj/item/clothing/gloves/patrol
-	name = "patrol ranger gloves"
-	desc = "A pair of ranger's gloves. The right thumb and finger have been removed to not impair the wearer's shooting ability."
+	name = "Перчатки патрульного рейнджера"
+	desc = "Пара перчаток рейнджера. Большой и указательный пальцы правой руки были удалены, чтобы не ухудшать способность владельца стрелять"
 	icon_state = "patrol"
 	item_state = "patrol"
 	item_color = null	//So they don't wash.
@@ -36,8 +36,8 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 
 /obj/item/clothing/gloves/botanic_leather
-	name = "botanist's leather gloves"
-	desc = "These leather gloves protect against thorns, barbs, prickles, spikes and other harmful objects of floral origin.  They're also quite warm."
+	name = "Кожаные перчатки ботаника"
+	desc = "Эти кожаные перчатки защищают от шипов, колючек, колючек, шипов и других вредных предметов растительного происхождения. К тому же они довольно теплые."
 	icon_state = "leather"
 	item_state = "ggloves"
 	permeability_coefficient = 0.9
@@ -49,8 +49,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 30)
 
 /obj/item/clothing/gloves/combat
-	name = "combat gloves"
-	desc = "These tactical gloves are fireproof and shock resistant."
+	name = "Боевые перчатки"
+	desc = "Эти тактические перчатки огнеупорны и ударопрочны."
 	icon_state = "black"
 	item_state = "blackgloves"
 	siemens_coefficient = 0
@@ -64,8 +64,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 50)
 
 /obj/item/clothing/gloves/legion
-	name = "leather gloves"
-	desc = "Fingerless leather gloves to improve grip worn by legionaires."
+	name = "Кожаные перчатки"
+	desc = "Кожаные перчатки без пальцев для улучшения сцепления, которые носят легионеры."
 	icon_state = "legion"
 	item_state = "legion"
 	item_color = null	//So they don't wash.
@@ -76,22 +76,22 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 
 /obj/item/clothing/gloves/legion/legate
-	name = "metal gauntlet"
-	desc = "Heavy handmade metal gloves."
+	name = "Метталические перчатки"
+	desc = "Тяжелые металлические перчатки, сделанные вручную."
 	icon_state = "legionlegat"
 	item_state = "legionlegat"
 	transfer_prints = FALSE
 
 /obj/item/clothing/gloves/Biker
-	name = "future gloves"
-	desc = "Gloves in a futuristic color."
+	name = "Футуристичные перчатки."
+	desc = "Перчатки футуристичного цвета."
 	icon_state = "biker_gloves"
 	item_state = "biker_gloves"
 	transfer_prints = FALSE
 
 /obj/item/clothing/gloves/bracer
-	name = "bone bracers"
-	desc = "For when you're expecting to get slapped on the wrist. Offers modest protection to your arms."
+	name = "Костяные наручи"
+	desc = "Для тех случаев,когда вы ожидаете получить пощечину. Обеспечивает скромную защиту ваших рук."
 	icon_state = "bracers"
 	item_state = "bracers"
 	item_color = null	//So they don't wash.
@@ -105,8 +105,8 @@
 	resistance_flags = NONE
 
 /obj/item/clothing/gloves/rapid
-	name = "Gloves of the North Star"
-	desc = "Just looking at these fills you with an urge to beat the shit out of people."
+	name = "Перчатки Полярной звезды"
+	desc = "Один только взгляд на них наполняет вас желанием выбить из людей все дерьмо."
 	icon_state = "rapid"
 	item_state = "rapid"
 	transfer_prints = TRUE
@@ -122,6 +122,6 @@
 	.= FALSE
 
 /obj/item/clothing/gloves/rapid/attack_self(mob/user)
-	var/input = stripped_input(user,"What do you want your battlecry to be? Max length of 6 characters.", ,"", 7)
+	var/input = stripped_input(user,"Каким ты хочешь видеть свой боевой клич? Максимальная длина - 6 символов.", ,"", 7)
 	if(input)
 		warcry = input

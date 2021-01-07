@@ -54,7 +54,7 @@
 	return
 
 /client/verb/reportissue()
-	set name = "Сообщить об ошибке"
+	set name = "report-issue"
 	set desc = "Сообщить об ошибке"
 	set hidden = 1
 	var/githuburl = CONFIG_GET(string/githuburl)

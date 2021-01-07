@@ -1,6 +1,6 @@
 /obj/item/clothing/gloves/ring
-	name = "gold ring"
-	desc = "A tiny gold ring, sized to wrap around a finger."
+	name = "Золотое кольцо"
+	desc = "Крохотное золотое кольцо, такого размера, чтобы обернуть вокруг пальца."
 	gender = NEUTER
 	w_class = WEIGHT_CLASS_TINY
 	icon = 'icons/obj/ring.dmi'
@@ -17,8 +17,8 @@
 
 
 /obj/item/clothing/gloves/ring/diamond
-	name = "diamond ring"
-	desc = "An expensive ring, studded with a diamond. Cultures have used these rings in courtship for a millenia."
+	name = "Алмазное кольцо"
+	desc = "Дорогое кольцо, усыпанное бриллиантами. Культуры использовали эти кольца в ухаживании на протяжении тысячелетий."
 	icon_state = "ringdiamond"
 	item_state = "dring"
 
@@ -26,7 +26,7 @@
 	user.visible_message("<span class='warning'>\The [user] gets down on one knee, presenting \the [src].</span>","<span class='warning'>You get down on one knee, presenting \the [src].</span>")
 
 /obj/item/clothing/gloves/ring/silver
-	name = "silver ring"
-	desc = "A tiny silver ring, sized to wrap around a finger."
+	name = "Серебрянное кольцо"
+	desc = "Крошечное серебряное колечко, по размеру, чтобы обернуть вокруг пальца."
 	icon_state = "ringsilver"
 	item_state = "sring"

@@ -1,6 +1,6 @@
 /obj/item/clothing/head/helmet
-	name = "helmet"
-	desc = "Standard Security gear. Protects the head from impacts."
+	name = "Шлем"
+	desc = "Стандартное защитное снаряжение. Защищает голову от ударов."
 	icon_state = "helmet"
 	item_state = "helmet"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 16,"energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
@@ -40,8 +40,8 @@
 	return ..()
 
 /obj/item/clothing/head/helmet/alt
-	name = "bulletproof helmet"
-	desc = "A bulletproof combat helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
+	name = "Пулнепробиваемый шлем"
+	desc = "Пуленепробиваемый боевой шлем, который в незначительной степени защищает владельца от традиционного метательного оружия и взрывчатых веществ."
 	icon_state = "helmetalt"
 	item_state = "helmetalt"
 	armor = list("melee" = 35, "bullet" = 55, "laser" = 35, "energy" = 35, "bomb" = 55, "bio" = 0, "rad" = 0, "fire" = 55, "acid" = 55)
@@ -49,8 +49,8 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/old
-	name = "degrading helmet"
-	desc = "Standard issue security helmet. Due to degradation the helmet's visor obstructs the users ability to see long distances."
+	name = "Устаревший шлем"
+	desc = "Стандартный защитный шлем. Из-за ухудшения качества козырек шлема препятствует возможности пользователя видеть на большие расстояния."
 	tint = 2
 
 /obj/item/clothing/head/helmet/blueshirt
@@ -58,12 +58,12 @@
 	item_state = "blueshift"
 
 /obj/item/clothing/head/helmet/riot
-	name = "riot helmet"
-	desc = "It's a helmet specifically designed to protect against close range attacks."
+	name = "Противоударный шлем"
+	desc = "Это шлем, специально разработанный для защиты от атак с близкого расстояния."
 	icon_state = "riot"
 	item_state = "helmet"
-	toggle_message = "You pull the visor down on"
-	alt_toggle_message = "You push the visor up on"
+	toggle_message = "Вы опустили забрало"
+	alt_toggle_message = "Вы подняли забрало"
 	can_toggle = 1
 	armor = list("melee" = 60, "bullet" = 25, "laser" = 25,"energy" = 25, "bomb" = 25, "bio" = 2, "rad" = 0, "fire" = 50, "acid" = 50)
 	flags_inv = HIDEEARS|HIDEFACE
@@ -96,11 +96,11 @@
 					sleep(15)
 
 /obj/item/clothing/head/helmet/justice
-	name = "helmet of justice"
-	desc = "WEEEEOOO. WEEEEEOOO. WEEEEOOOO."
+	name = "Шлем правосудтя"
+	desc = "ВИИИУУУ. ВИИИИУУУ. ВИИИИУУУУ."
 	icon_state = "justice"
-	toggle_message = "You turn off the lights on"
-	alt_toggle_message = "You turn on the lights on"
+	toggle_message = "Вы выключаете мигалки"
+	alt_toggle_message = "Вы включаете мигалки"
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	can_toggle = 1
 	toggle_cooldown = 20
@@ -108,11 +108,11 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/justice/escape
-	name = "alarm helmet"
-	desc = "WEEEEOOO. WEEEEEOOO. STOP THAT MONKEY. WEEEOOOO."
+	name = "Шлем с сигнализацией"
+	desc = "ВИИИУУУ. ВИИИИИУУУ. ЗАДЕРЖИТЕ ЭТУ МАРТШЫШКУ. ВИИИУУУ."
 	icon_state = "justice2"
-	toggle_message = "You turn off the light on"
-	alt_toggle_message = "You turn on the light on"
+	toggle_message = "Вы выключаете мигалки"
+	alt_toggle_message = "Вы включаете мигалки"
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
@@ -149,8 +149,8 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/roman
-	name = "roman helmet"
-	desc = "An ancient helmet made of bronze and leather."
+	name = "Римский шлем"
+	desc = "Древний шлем, сделанный из бронзы и кожи."
 	flags_inv = HIDEEARS|HIDEHAIR
 	flags_cover = HEADCOVERSEYES
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
@@ -161,21 +161,21 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/roman/fake
-	desc = "An ancient helmet made of plastic and leather."
+	desc = "Не совсем древний шлем, сделанный из пластика и кожи."
 	armor = list("melee" = 15, "bullet" = 10, "laser" = 15, "energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/head/helmet/roman/legionaire
 	name = "roman legionaire helmet"
-	desc = "An ancient helmet made of bronze and leather. Has a red crest on top of it."
+	desc = "Древний шлем, сделанный из бронзы и кожи. На верхней части нарисован крест."
 	icon_state = "roman_c"
 	item_state = "roman_c"
 
 /obj/item/clothing/head/helmet/roman/legionaire/fake
-	desc = "An ancient helmet made of plastic and leather. Has a red crest on top of it."
+	desc = "Не совсем древний шлем, сделанный из пластика и кожи. На верхней части нарисован крест."
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/head/helmet/gladiator
-	name = "gladiator helmet"
+	name = "Шлем гладиатора"
 	desc = "Ave, Imperator, morituri te salutant."
 	icon_state = "gladiator"
 	item_state = "gladiator"
@@ -184,8 +184,8 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/redtaghelm
-	name = "red laser tag helmet"
-	desc = "They have chosen their own end."
+	name = "Красный шлем для лазертага"
+	desc = "Они выбрали смерть."
 	icon_state = "redtaghelm"
 	flags_cover = HEADCOVERSEYES
 	item_state = "redtaghelm"
@@ -194,8 +194,8 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/bluetaghelm
-	name = "blue laser tag helmet"
-	desc = "They'll need more men."
+	name = "Синий шлем для лазертага"
+	desc = "Им нужно больше людей."
 	icon_state = "bluetaghelm"
 	flags_cover = HEADCOVERSEYES
 	item_state = "bluetaghelm"
@@ -204,8 +204,8 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/knight
-	name = "medieval helmet"
-	desc = "A classic metal helmet."
+	name = "Средневековый шлем"
+	desc = "Классический средневековый шлем."
 	icon_state = "knight_green"
 	item_state = "knight_green"
 	armor = list("melee" = 60, "bullet" = 25, "laser" = 25,"energy" = 25, "bomb" = 25, "bio" = 2, "rad" = 0, "fire" = 0, "acid" = 50)
@@ -233,8 +233,8 @@
 	item_state = "knight_red"
 
 /obj/item/clothing/head/helmet/skull
-	name = "skull helmet"
-	desc = "An intimidating tribal helmet, it doesn't look very comfortable."
+	name = "Шлем из черепа"
+	desc = "Устрашающий племенной шлем, он выглядит не очень удобным."
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	flags_cover = HEADCOVERSEYES
 	armor = list("melee" = 40, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 25, "bio" = 5, "rad" = 20, "fire" = 40, "acid" = 20)
@@ -243,8 +243,8 @@
 	strip_delay = 100
 
 /obj/item/clothing/head/helmet/durathread//F13: Needs numbers tuned and perhaps icon.
-	name = "makeshift helmet"
-	desc = "A hardhat with strips of leather and durathread for additional blunt protection."
+	name = "Самодельный шлем"
+	desc = "Жесткий шлем с полосками кожи и резины для дополнительной защиты от тупых предметов."
 	icon_state = "durathread"
 	item_state = "durathread"
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 20,"energy" = 10, "bomb" = 30, "bio" = 15, "rad" = 20, "fire" = 50, "acid" = 50)
@@ -252,47 +252,47 @@
 
 //Fallout 13
 /obj/item/clothing/head/helmet/knight/fluff/metal
-	name = "metal helmet"
-	desc = "An iron helmet forged by tribal warriors, with a unique design to protect the face from arrows and axes."
+	name = "Металлический шлем"
+	desc = "Железный шлем, выкованный племенными воинами, с уникальным дизайном, защищающим лицо от стрел и топоров."
 	icon_state = "metalhelmet"
 	item_state = "metalhelmet"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	armor = list("melee" = 40, "bullet" = 25, "laser" = 25, "energy" = 20, "bomb" = 16, "bio" = 0, "rad" = 0)
 
 /obj/item/clothing/head/helmet/knight/fluff/metal/reinforced
-	name = "reinforced metal helmet"
+	name = "Усиленный металлический шлем"
 	icon_state = "metalhelmet_r"
 	item_state = "metalhelmet_r"
 	armor = list("melee" = 45, "bullet" = 35, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 0, "rad" = 0)
 
 /obj/item/clothing/head/helmet/knight/fluff/metal/strange
-	name = "strange helmet"
-	desc = "A steel helmet forged by tribal warriors, with additional plating to protect again projectile and laser fire."
+	name = "Странный металлический шлем"
+	desc = "Стальной шлем, выкованный племенными воинами, с дополнительной обшивкой для защиты от снарядов и лазерного огня."
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 0, "rad" = 0)
 
 /obj/item/clothing/head/helmet/knight/fluff/rider
-	name = "rider helmet" //Not raider. Rider.
-	desc = "It's a fancy dark metal helmet with orange spray painted flames."
+	name = "Шлем гонщика" //Not raider. Rider.
+	desc = "Это причудливый шлем из темного металла с оранжевыми брызгами, окрашенными пламенем."
 	icon_state = "rider"
 	item_state = "rider"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/head/helmet/riot/vaultsec
-	name = "security helmet"
-	desc = "A standard issue vault security helmet, pretty robust."
+	name = "Шлем охранника"
+	desc = "Стандартный защитный шлем, довольно прочный."
 
 //Remnants
 /obj/item/clothing/head/donor/enclave
-	name = "enclave forge cap"
-	desc = "A resistant, black forage cap issued to Enclave soldiers."
+	name = "Фуражка солдата анклава"
+	desc = "Стойкая черная фуражка, выдаваемая солдатам анклава."
 	icon_state = "enclave_cap"
 	item_state = "enclave_cap"
 	armor = list("melee" = 10, "bullet" = 15, "laser" = 20, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
 
 //Raider
 /obj/item/clothing/head/helmet/f13/raider
-	name = "base raider helmet"
-	desc = "for testing"
+	name = "Базовый шлем рейдера"
+	desc = "Для тестов"
 	icon_state = "supafly"
 	item_state = "supafly"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
@@ -300,8 +300,8 @@
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/head/helmet/f13/raider/supafly
-	name = "supa-fly raider helmet"
-	desc = "It's a makeshift raider helmet, made of leather. It heavily smells with chems and sweat."
+	name = "Шлем рейдера супа-флай"
+	desc = "Это импровизированный шлем рейдера, сделанный из кожи. Он сильно пахнет химией и потом."
 	icon_state = "supafly"
 	item_state = "supafly"
 
@@ -339,8 +339,8 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/helmet/f13/raider/yankee
-	name = "yankee raider helmet"
-	desc = "Long time ago, it has belonged to a football player, now it belongs to wasteland."
+	name = "Шлем рейдера Янки"
+	desc = "Давным-давно он принадлежал футболисту, а теперь принадлежит пустоши."
 	icon_state = "yankee"
 	item_state = "yankee"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE
@@ -350,8 +350,8 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/helmet/f13/raider/eyebot
-	name = "eyebot helmet"
-	desc = "It is a dismantled eyebot, hollowed out to accommodate for a humanoid head."
+	name = "Шлем из робоглаза"
+	desc = "Это разобранный робоглаз, выдолбленный для размещения головы гуманоида."
 	icon_state = "eyebot"
 	item_state = "eyebot"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
@@ -366,8 +366,8 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/helmet/f13/raider/psychotic
-	name = "psycho-tic raider helmet"
-	desc = "A leather skullcap with tufts of hair sticking from each side."
+	name = "Шлем рейдера-психопата"
+	desc = "Кожаная тюбетейка с торчащими по бокам пучками волос."
 	icon_state = "psychotic"
 	item_state = "psychotic"
 	flags_cover = HEADCOVERSEYES
@@ -378,8 +378,8 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/helmet/f13/raider/ant
-	name = "AntAgonizer's cowl"
-	desc = "A handmade cowl made from the chitin of oversized ants. Seriously looks like something out of a comic book. Could probably be reinforced, if you're so inclined."
+	name = "Капюшон антагониста"
+	desc = "Самодельный капюшон из хитина огромных муравьев. Серьезно, похоже на что-то из комикса. Возможно, его можно было бы усилить, если вам так хочется."
 	icon_state = "anthelm"
 	item_state = "anthelm"
 
@@ -415,9 +415,9 @@
 //Combat armor
 
 /obj/item/clothing/head/helmet/f13/combat
-	name = "combat helmet"
-	desc = "An old military grade pre-war combat helmet."
-	desc = "A pre-war ceramic and kevlar helmet designed to absorb kinetic impacts and stop projectiles from entering the users skull. Has the words BORN TO KILL written on the outside in chalk."
+	name = "Боевой шлем"
+	desc = "Старый довоенный боевой шлем."
+	desc = "Довоенный керамический и кевларовый шлем, предназначенный для поглощения кинетических ударов и предотвращения попадания снарядов в череп пользователя. Снаружи мелом написаны слова \"Рожденный убивать\"."
 	icon_state = "combat_helmet"
 	item_state = "combat_helmet"
 	armor = list("melee" = 40, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
@@ -428,8 +428,8 @@
 	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/f13/combat/dark
-	name = "combat helmet"
-	desc = "An old military grade pre-war combat helmet."
+	name = "Боевой шлем"
+	desc = "Старый довоенный боевой шлем."
 	color = "#302E2E" // Dark Grey
 
 /obj/item/clothing/head/helmet/f13/combat/Initialize()
@@ -442,37 +442,37 @@
 	return ..()
 
 /obj/item/clothing/head/helmet/f13/combat/mk2
-	name = "reinforced combat helmet"
-	desc = "An advanced pre-war titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms."
+	name = "Улучшенный боевой шлем"
+	desc = "Усовершенствованный довоенный шлем с титановым покрытием, керамическим покрытием, кевларовым покрытием, предназначенный для того, чтобы выдерживать экстремальные условия всех типов"
 	icon_state = "combat_helmet_mk2"
 	item_state = "combat_helmet_mk2"
 	armor = list("melee" = 45, "bullet" = 50, "laser" = 45, "energy" = 40, "bomb" = 39, "bio" = 70, "rad" = 70, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/combat/remnant
-    desc = "A dark helmet with yellow lenses, used commonly in espionage or shadow ops. Worn by CAG or OS members."
+    desc = "Темный шлем с желтыми линзами, обычно используемый в шпионаже или теневых операциях. Носится членами CAG или OS."
     icon_state = "remnant_helmet"
     item_state = "remnant_helmet"
 
 /obj/item/clothing/head/helmet/f13/combat/mk2/dark
-	name = "reinforced combat helmet"
+	name = "Улучшенный боевой шлем"
 	color = "#302E2E" // Dark Grey
 
 /obj/item/clothing/head/helmet/f13/combat/brotherhood
-	name = "brotherhood combat helmet"
-	desc = "An improved combat helmet, bearing the symbol of the Knights."
+	name = "Боевой шлем братства"
+	desc = "Усовершенствованный боевой шлем с символом рыцарей."
 	icon_state = "brotherhood_helmet"
 	item_state = "brotherhood_helmet"
 	armor = list("melee" = 40, "bullet" = 45, "laser" = 40, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/head/helmet/f13/combat/brotherhood/senior
-	name = "brotherhood senior knight combat helmet"
-	desc = "An improved combat helmet, bearing the symbol of the Knights in silver."
+	name = "Бевой шлем старшего рыцаря братства"
+	desc = "Усовершенствованный боевой шлем с серебрянным символом рыцарей."
 	icon_state = "brotherhood_helmet_senior"
 	item_state = "brotherhood_helmet_senior"
 
 /obj/item/clothing/head/helmet/f13/combat/environmental
-	name = "environmental armor helmet"
-	desc = "A full head helmet and gas mask, developed for use in heavily contaminated environments."
+	name = "Шлем для защиты от окружающей среды"
+	desc = "Шлем, покрывающий всю голову и противогаз, разработанный для использования в сильно загрязненных средах."
 	icon_state = "env_helmet"
 	item_state = "env_helmet"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEFACE|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
@@ -486,65 +486,65 @@
 	AddComponent(/datum/component/rad_insulation, RAD_NO_INSULATION, TRUE, FALSE)
 
 /obj/item/clothing/head/helmet/f13/atomzealot
-	name = "zealot helm"
-	desc = "The helmet of an agent of the Division."
+	name = "Шлем фанатика"
+	desc = "Шлем агента единства."
 	icon_state = "atomzealot"
 	item_state = "atomzealot"
 	armor = list("melee" = 30, "bullet" = 35, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 70, "rad" = 100, "fire" = 65, "acid" = 30)
 
 /obj/item/clothing/head/helmet/f13/shamanhead
-	name = "ritual headress"
-	desc = "Hand carved skull headress, uniquely suited for the spiritual leader of the Wayfarer Tribe."
+	name = "Ритуальный головной убор"
+	desc = "Ручной резной головной убор из черепа, уникально подходящий для духовного вождя племени путников."
 	icon_state = "shamanhead"
 	item_state = "shamanhead"
 	armor = list("melee" = 10, "bullet" = 15, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 70, "rad" = 10, "fire" = 20, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/atombeliever
-	name = "believer headdress"
-	desc = "The headwear of the true faith."
+	name = "Головной убор верующего"
+	desc = "Головной убор истинно верующего"
 	icon_state = "atombeliever"
 	item_state = "atombeliever"
 	armor = list("melee" = 10, "bullet" = 15, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 70, "rad" = 100, "fire" = 20, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/deathskull
-	name = "eerie helm"
-	desc = "A helmet fastened from the skull of a deer. Something about it doesn't look right."
+	name = "Жуткий шлем"
+	desc = "Шлем, сделанный из черепа оленя. Что-то с ним не так."
 	icon_state = "shamskull"
 	item_state = "shamskull"
 	armor = list("melee" = 15, "bullet" = 20, "laser" = 15, "energy" = 20, "bomb" = 30, "bio" = 20, "rad" = 10, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/hoodedmask
-	name = "hooded mask"
-	desc = "A gask mask with the addition of a hood."
+	name = "Маска с капюшоном"
+	desc = "Противогаз с капюшоном."
 	icon_state = "Hooded_Gas_Mask"
 	item_state = "Hooded_Gas_Mask"
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 65, "acid" = 30)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/head/helmet/f13/jasonmask
-	name = "jasons mask"
-	desc = "A metal mask made specifically for jason."
+	name = "Маска Джейсона"
+	desc = "Металлическая маска, сделанная специально для Джейсона."
 	icon_state = "jasonmask"
 	item_state = "jasonmask"
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 65, "acid" = 30)
 
 /obj/item/clothing/head/helmet/f13/brahmincowboyhat
-	name = "brahmin leather cowboy hat"
-	desc = "A cowboy hat made from brahmin hides."
+	name = "Ковбойская шляпа из кожи брамина"
+	desc = "Ковбойская шляпа из шкур браминов."
 	icon_state = "brahmin_leather_cowboy_hat"
 	item_state = "brahmin_leather_cowboy_hat"
 	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 70, "acid" = 15)
 
 /obj/item/clothing/head/helmet/f13/rustedcowboyhat
-	name = "Rusted Cowboy Hat"
-	desc = "A cowboy hat made from tanned leather hides."
+	name = "Ржавая ковбойская шляпа"
+	desc = "Ковбойская шляпа из дубленой кожи."
 	icon_state = "rusted_cowboy"
 	item_state = "rusted_cowboy"
 	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 70, "acid" = 15)
 
 /obj/item/clothing/head/helmet/f13/raidercombathelmet
-	name = "raider combat helmet"
-	desc = "A combat helmet modified with metal plating"
+	name = "Боевой шлем рейдера"
+	desc = "Боевой шлем модифицированный с металлическим покрытием."
 	icon_state = "raider_combat_helmet"
 	item_state = "raider_combat_helmet"
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 35, "energy" = 35, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 65, "acid" = 30)
@@ -552,35 +552,35 @@
 
 
 /obj/item/clothing/head/helmet/f13/raidercombathelmet/mk2
-	name = "reinforced raider combat helmet"
-	desc = "A combat helmet modified with high quality armor plating"
+	name = "Усиленный боевой шлем рейдера"
+	desc = "Боевой шлем, модифицированный высококачественным броневыми пластинами."
 	armor = list("melee" = 45, "bullet" = 50, "laser" = 45, "energy" = 40, "bomb" = 39, "bio" = 70, "rad" = 70, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/combat/knightcap
-	name = "knight-captain combat helmet"
-	desc = "The specialized combat helmet of the Knight-Captain, with a golden crest."
+	name = "Боевой шлем рыцаря-капитана"
+	desc = "Специализированный боевой шлем рыцаря-капитана с золотым гребнем."
 	icon_state = "knightcap"
 	item_state = "knightcap"
 	armor = list("melee" = 45, "bullet" = 50, "laser" = 45, "energy" = 45, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/head/helmet/f13/combat/enclave
-	name = "enclave combat helmet"
-	desc = "An intimidating helmet that is issued with it's corresponding suit."
+	name = "Боевой шлем Анклава"
+	desc = "Устрашающий шлем, который выдается вместе с соответствующим костюмом."
 	icon_state = "enclave_helmet"
 	item_state = "enclave_helmet"
 	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 50, "fire" = 0, "acid" = 20)
 
 /obj/item/clothing/head/helmet/f13/combat/swat
-	name = "SWAT combat helmet"
-	desc = "A prewar combat helmet issued to S.W.A.T. personnel."
+	name = "Боевой шлем спецназа"
+	desc = "Довоенный боевой шлем, выданный сотрудникам спецназа"
 	icon_state = "swatsyndie"
 	item_state = "swatsyndie"
 
 //Sulphite Helm
 
 /obj/item/clothing/head/helmet/f13/sulphitehelm
-	name = "Sulphite Helmet"
-	desc = "A sulphite raider helmet, affixed with thick anti-ballistic glass over the eyes."
+	name = "Сульфитный Шлем"
+	desc = "В сульфитной рейдерский шлем, прикреплённым поверх глаз пуленепробиваемым стеклом."
 	icon_state = "sulphite_helm"
 	item_state = "sulphite_helm"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 35, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 50, "fire" = 0, "acid" = 20)
@@ -590,9 +590,9 @@
 //Strange Combat Helm
 
 /obj/item/clothing/head/helmet/f13/rangerbroken
-	name = "broken riot helmet"
+	name = "Сломанный противоударный шлем"
 	icon_state = "ranger_broken"
-	desc = "An old riot police helmet, out of use around the time of the war."
+	desc = "Старый полицейский шлем, вышедший из употребления во время войны."
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 50, "bomb" = 39, "bio" = 20, "rad" = 20, "fire" = 30, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
@@ -602,10 +602,10 @@
 	flash_protect = 1
 
 /obj/item/clothing/head/helmet/f13/rangercustomflicker
-	name = "broken riot helmet"
+	name = "Сломанный противоударный шлем"
 	icon_state = "rangercustom"
 	item_state = "rangercustom"
-	desc = "A broken old riot police helmet, out of use around the time of the war. The visor of this one has been spray-painted orange and the lower half a deep red."
+	desc = "Разбитый старый полиейский шлем, вышедший из употребления во время войны. Козырек этого был окрашен в оранжевый цвет, а нижняя половина-в темно-красный."
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 20, "energy" = 30, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
@@ -613,8 +613,8 @@
 
 //Legion
 /obj/item/clothing/head/helmet/f13/legion
-	name = "legion helmet"
-	desc = "Unadorned legion helmet"
+	name = "Шлем легиона"
+	desc = "Шлем легиона без знаков отличия"
 	icon_state = "legrecruit"
 	item_state = "legrecruit"
 	lefthand_file = ""
@@ -626,27 +626,27 @@
 	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/f13/legion/recruit
-	name = "legion recruit helmet"
-	desc = "It's a leather legion recruit helmet."
+	name = "Шлем рекрута легиона"
+	desc = "Кожаный шлем рекрута легиона."
 	icon_state = "legrecruit"
 	item_state = "legrecruit"
 
 /obj/item/clothing/head/helmet/f13/legion/recruit/scout
-	name = "legion scout hood"
-	desc = "It's a leather hood worn by legion scouts."
+	name = "Капюшон легиона скаута"
+	desc = "Это кожаный капюшон, который носят разведчики легиона."
 	icon_state = "legscout"
 	item_state = "legscout"
 
 /obj/item/clothing/head/helmet/f13/legion/prime
-	name = "legion prime helmet"
-	desc = "A helmet belonging to a legion prime, it looks sturdier than a normal legion recruit helmet."
+	name = "Шлем преторианца легиона"
+	desc = "Шлем, принадлежащий преторианцу Легиона, выглядит крепче, чем обычный шлем новобранца легиона."
 	item_state = "legprime"
 	icon_state = "legprime"
 	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/prime/alt
-	name = "legion prime helmet"
-	desc = "A helmet belonging to a legion prime, it looks sturdier than a normal legion recruit helmet. Comes with a pair of goggles."
+	name = "Шлем преторианца легиона"
+	desc = "Шлем, принадлежащий преторианцу Легиона, выглядит крепче, чем обычный шлем новобранца легиона. Поставляется с парой защитных очков."
 	item_state = "leglineman"
 	icon_state = "leglineman"
 
@@ -672,85 +672,85 @@
 					sleep(15)
 
 /obj/item/clothing/head/helmet/f13/legion/vet
-	name = "legion veteran helmet"
-	desc = "It's a metal legion veteran helmet, looks pretty sturdy."
+	name = "Шлем ветерана легиона"
+	desc = "Это металлический шлем ветерана легиона, выглядит довольно прочным."
 	icon_state = "legvet"
 	item_state = "legvet"
 	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/vet/jonesarmorhelmet
 	name= "Galea Articuli"
-	desc = "A hand-forged helmet seemingly made for a veteran legionary, taking into account the general shape and similarity to the standard-issue helmet. Not only does it look sturdy as hell, it also looks absolutely beautiful to the average engraving enjoyer. The patterns of the engravings are elegant, curving and twisting around the helmet with the utmost grace as to not sully a helmet of such high quality. In place of the standard red stripe going down the middle of the helmet, there's a gold one instead. It shines beautifully in light, and hides the wearer well in darkness. Upon closer inspection, there's a small space carved out inside the helmet. It's not rough or makeshift, in fact, it looks like it was designed with that space in mind. As a result of not being solid metal, the area the space resides in is slightly thinner and provides less protection than a normal helmet. The space is similar in size to that of a fedora's, but without the capacity to store guns or other large items due to the rigidity of the helmet. Don't worry, though. It's been loosened around the neck area, so you can still tip it."
+	desc = "Шлем ручной ковки, по-видимому, сделанный для ветерана-легионера, учитывая общую форму и сходство со стандартным шлемом. Он не только выглядит чертовски крепким, но и выглядит абсолютно красивым для среднего любителя гравировки. Узоры гравюр изящны, изгибаясь и извиваясь вокруг шлема с предельной грацией, чтобы не запятнать шлем такого высокого качества. Вместо стандартной красной полосы, идущей по середине шлема, вместо нее есть золотая. Он прекрасно сияет на свету и хорошо скрывает владельца в темноте. При ближайшем рассмотрении внутри шлема обнаруживается небольшое пространство. Он не грубый и не самодельный, на самом деле, он выглядит так, как будто был спроектирован с учетом этого пространства. В результате того, что он не является твердым металлом, область, в которой находится пространство, немного тоньше и обеспечивает меньшую защиту, чем обычный шлем. Пространство похоже по размеру на пространство фетровой шляпы, но без возможности хранения оружия или других крупных предметов из-за жесткости шлема. Впрочем, не волнуйся. Он был ослаблен вокруг шеи, так что вы все еще можете наклонить его."
 	icon_state = "jonesarmorhelmet"
 	item_state = "jonesarmorhelmet"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/detective
 
 /obj/item/clothing/head/helmet/f13/legion/vet/jonesarmorhelmet/decan
 	name = "Galea Plumosus Articuli"
-	desc = "A hand-forged helmet seemingly made for a veteran legionary, taking into account the general shape and similarity to the standard-issue helmet. Not only does it look sturdy as hell, it also looks absolutely beautiful to the average engraving enjoyer. The patterns of the engravings are elegant, curving and twisting around the helmet with the utmost grace as to not sully a helmet of such high quality. In place of the standard red stripe going down the middle of the helmet, there's a gold one instead. It shines beautifully in light, and hides the wearer well in darkness. Upon closer inspection, there's a small space carved out inside the helmet. It's not rough or makeshift, in fact, it looks like it was designed with that space in mind. As a result of not being solid metal, the area the space resides in is slightly thinner and provides less protection than a normal helmet. The space is similar in size to that of a fedora's, but without the capacity to store guns or other large items due to the rigidity of the helmet. Don't worry, though. It's been loosened around the neck area, so you can still tip it. In addition, a large amount of feathers have been added to the helmet. They're not useful for much, except for both denoting the rank of a veteran decanus due to the differing feather colors, and serving to cover up the area of thin metal around the helmet's storage space."
+	desc = "Шлем ручной ковки, по-видимому, сделанный для ветерана-легионера, учитывая общую форму и сходство со стандартным шлемом. Он не только выглядит чертовски крепким, но и выглядит абсолютно красивым для среднего любителя гравировки. Узоры гравюр изящны, изгибаясь и извиваясь вокруг шлема с предельной грацией, чтобы не запятнать шлем такого высокого качества. Вместо стандартной красной полосы, идущей по середине шлема, вместо нее есть золотая. Он прекрасно сияет на свету и хорошо скрывает владельца в темноте. При ближайшем рассмотрении внутри шлема обнаруживается небольшое пространство. Он не грубый и не самодельный, на самом деле, он выглядит так, как будто был спроектирован с учетом этого пространства. В результате того, что он не является твердым металлом, область, в которой находится пространство, немного тоньше и обеспечивает меньшую защиту, чем обычный шлем. Пространство похоже по размеру на пространство фетровой шляпы, но без возможности хранения оружия или других крупных предметов из-за жесткости шлема. Впрочем, не волнуйся. Он был ослаблен вокруг шеи, так что вы все еще можете наклонить его. Кроме того, в шлем было добавлено большое количество перьев. Они не очень полезны, за исключением того, что они одновременно обозначают звание ветерана и декана из-за различных цветов перьев и служат для покрытия области тонкого металла вокруг места хранения шлема."
 	icon_state = "jonesarmordecan"
 	item_state = "jonesarmordecan"
 
 /obj/item/clothing/head/helmet/f13/legion/heavy
-	name = "legion veteran decan helmet"
-	desc = "It's a metal legion helmet, with a plume, denoting veteran Decanus status."
+	name = "Шлем декана-ветерана легиона"
+	desc = "Это металлический шлем легиона с плюмажем, обозначающим статус ветерана декана."
 	icon_state = "legheavy"
 	item_state = "legheavy"
 	armor = list("melee" = 65, "bullet" = 45, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/vet/explorer
-	name = "legion explorer hood"
-	desc = "It's a leather hood worn by legion explorers. It looks carefully crafted and reinforced."
+	name = "Капюшон исследователя легиона"
+	desc = "Это кожаный капюшон, который носят исследователи легиона. Он выглядит тщательно обработанным и усиленным."
 	icon_state = "legexplorer"
 	item_state = "legexplorer"
 
 /obj/item/clothing/head/helmet/f13/legion/vet/vexil
-	name = "legion fox vexillarius helmet"
-	desc = "It's leather legion vexillarius helmet."
+	name = "Шлем вексилария легиона"
+	desc = "Это кожаный шлем вексилария легиона."
 	icon_state = "legvexil"
 	item_state = "legvexil"
 
 /obj/item/clothing/head/helmet/f13/legion/vet/combvexil
-	name = "legion bear vexillarius helmet"
-	desc = "It's leather legion vexillarius helmet."
+	name = "Медвежий шлем вексилария легиона"
+	desc = "Это кожаный шлем вексилария легиона."
 	icon_state = "legvexil_alt"
 	item_state = "legvexil_alt"
 
 /obj/item/clothing/head/helmet/f13/legion/venator
-	name = "legion venator hood"
-	desc = "It's a leather hood worn by legion venators. It looks carefully crafted and reinforced."
+	name = "Шлем венатора легиона"
+	desc = "Это кожаный капюшон, который носят венаторы легиона. Он выглядит тщательно обработанным и усиленным."
 	icon_state = "legvenator"
 	item_state = "legvenator"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/venator/diohelmet
-	name = "stilio oculatus helmet"
-	desc = "The hollowed head of a deadly golden gecko carefully affixed over a reinforced legion helmet. Its ghastly appearance serves as an intimidating gesture to those who do not yet fear the Lizard King."
+	name = "Шлем стилио окуларус"
+	desc = "Выдолбленная голова смертоносного золотого геккона была аккуратно прикреплена поверх усиленного шлема легиона. Его жуткий вид служит устрашающим жестом для тех, кто еще не боится короля ящериц."
 	icon_state = "diohelmet"
 	item_state = "diohelmet"
 
 /obj/item/clothing/head/helmet/f13/legion/libritor
-	name = "legion libritor helmet"
-	desc = "A metal legion veteran helmet with an inverted color scheme for libritors"
+	name = "Шлем легата легиона"
+	desc = "Металлический шлем ветерана легиона с перевернутой цветовой схемой для легатов."
 	icon_state = "legheavy"
 	item_state = "legheavy"
 	armor = list("melee" = 65, "bullet" = 50, "laser" = 30, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/recruit/decan
-	name = "legion recruit decanus helmet"
-	desc = "It's a leather legion helmet that's been reinforced with stronger leather patches and anointed with a array of red and dark red feathers."
+	name = "Шлем декана-рекрута легиона"
+	desc = "Это кожаный шлем легиона, усиленный более прочными кожаными нашивками и украшенный множеством красных и темно-красных перьев."
 	icon_state = "legdecan"
 	item_state = "legdecan"
 
 /obj/item/clothing/head/helmet/f13/legion/prime/decan
-	name = "legion prime decanus helmet"
-	desc = "It's a leather legion helmet that's been reinforced with stronger leather patches and anointed with a array of red and dark red feathers. This one has a few small white feathers woven inside of it aswell."
+	name = "Шлем декана-преторианца легиона"
+	desc = "Это кожаный шлем легиона, усиленный более прочными кожаными нашивками и украшенный множеством красных и темно-красных перьев. У этого тоже есть несколько маленьких белых перьев, вплетенных внутрь."
 	item_state = "legdecanprim"
 	icon_state = "legdecanprim"
 
 /obj/item/clothing/head/helmet/f13/legion/vet/decan/alt
-	name = "legion veteran decanus helmet"
-	desc = "This is a metal helmet that's been reinforced with stronger leather patches and anointed with a array of red and dark red feathers. This one has several large white and black feathers sewn along side the rest of the feathers aswell. There is also a ballistic face-shield attached to the helmet that protects the face from physical blows and small pistol calibers."
+	name = "Шлем декана-ветерана легиона"
+	desc = "Это металлический шлем, усиленный более прочными кожаными нашивками и украшенный множеством красных и темно-красных перьев. У этого есть несколько больших белых и черных перьев, пришитых вместе с остальными перьями. К шлему также прикреплен баллистический лицевой щиток, защищающий лицо от физических ударов и небольших пистолетных калибров."
 	item_state = "vetdecalt"
 	icon_state = "vetdecalt"
 
@@ -776,30 +776,30 @@
 					sleep(15)
 
 /obj/item/clothing/head/helmet/f13/legion/vet/decan
-	name = "legion veteran decanus helmet"
-	desc = "It's a leather legion helmet that's been reinforced with stronger leather patches and anointed with a array of red and dark red feathers. This one has several large white and black feathers sewn along side the rest of the feathers aswell."
+	name = "Шлем ветерана-декана легиона"
+	desc = "Это кожаный шлем легиона, усиленный более прочными кожаными нашивками и украшенный множеством красных и темно-красных перьев. У этого есть несколько больших белых и черных перьев, пришитых вместе с остальными перьями."
 	icon_state = "legdecanvet"
 	item_state = "legdecanvet"
 
 /obj/item/clothing/head/helmet/f13/legion/centurion
-	name = "legion centurion helmet"
-	desc = "It's a large forged and case hardened bronze helmet with a steel insert around the skull and back of the neck. It has a large plume of red horse hair across the top of it going horizontally, symbolizing the position of a Centurion."
+	name = "Шлем центуриона легиона"
+	desc = "Это большой кованый и закаленный бронзовый шлем со стальной вставкой вокруг черепа и задней части шеи. У него есть большой плюмаж из красного конского волоса, идущий горизонтально, символизируя положение Центуриона."
 	icon_state = "legcenturion"
 	item_state = "legcenturion"
 	armor = list("melee" = 60, "bullet" = 45, "laser" = 30, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
 /obj/item/clothing/head/helmet/f13/legion/rangercent
-	name = "ranger-hunter centurion helmet"
-	desc = "The helmet of an NCR ranger, repurposed to fit the needs of the Ranger Hunter Centurion. It features a large plume of dyed-red donkey hair, denoting rank."
+	name = "Шлем центуриона охотника-рейнджера"
+	desc = "Шлем рейнджера НКР, переделанный под нужды Центуриона охотника-Рейнджера. Он украшен большим плюмажем из крашеных рыжих ослиных волос, обозначающим ранг."
 	icon_state = "rangercent"
 	item_state = "rangercent"
 	armor = list("melee" = 60, "bullet" = 45, "laser" = 30, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
 /obj/item/clothing/head/helmet/f13/legion/palacent
-	name = "paladin-slayer centurion helmet"
-	desc = "The once-marvelous helmet of the T-45d power armor set, repurposed by the Legion into a symbol of its might. It has a large plume of red horse hair across the top of it going horizontally, donoting the rank of Centurion."
+	name = "Шлем центурион - убийцы паладинов"
+	desc = "Некогда изумительный шлем силовой брони Т-45д, переделанный Легионом в символ своей мощи. У него есть большой плюмаж из красного конского волоса, идущий горизонтально, обозначающий звание Центуриона."
 	icon_state = "palacent"
 	item_state = "palacent"
 	armor = list("melee" = 75, "bullet" = 50, "laser" = 35, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
@@ -812,8 +812,8 @@
 	item_state = "palacent_excess"
 
 /obj/item/clothing/head/helmet/f13/legion/legate
-	name = "legion legate helmet"
-	desc = "A custom forged steel full helmet complete with abstract points and arches. The face is extremely intimidating, as it was meant to be. This particular one was ordered to be forged by Caesar, given to his second legate in exchange for his undying loyalty to Caesar."
+	name = "Шлем легата легиона"
+	desc = "Изготовленный на заказ полный шлем из кованой стали с абстрактными точками и арками. Лицо чрезвычайно устрашающее, как и должно было быть. Именно его приказал сделать Цезарь, отдав своему второму легату в обмен на его бессмертную преданность Цезарю."
 	icon_state = "leglegat"
 	item_state = "leglegat"
 	armor = list("melee" = 85, "bullet" = 60, "laser" = 40, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 60, "fire" = 80, "acid" = 0)
@@ -822,15 +822,15 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
 /obj/item/clothing/head/helmet/f13/legion/marsheaddress
-	name = "priestess' headdress"
-	desc = "A headdress made of feathers and decorated with two golden tassles."
+	name = "Головной убор жрицы"
+	desc = "Головной убор из перьев, украшенный двумя золотыми кистями."
 	icon_state = "mars_headdress"
 	item_state = "mars_headdress"
 	dynamic_hair_suffix = "+generic"
 
 /obj/item/clothing/head/helmet/f13/roma
-	name = "roma legionary helmet"
-	desc = "A well-forged metal helmet standard issue to all Roma Legionaries and Auxilia."
+	name = "Шлем римского легионера"
+	desc = "Хорошо выкованный металлический шлем, стандартный для всех римских легионеров и Ауксилий."
 	icon_state = "roma_helmet"
 	item_state = "roma_helmet"
 	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
@@ -859,38 +859,38 @@
 	darkness_view = 128
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/rigscustom
-	name = "11th armored calvary helmet"
-	desc = "An advanced combat helmet used by the 11th Armored Calvary Regiment before the war. There is a worn and faded 11th Armored Calvary Regiment's insignia just above the visor. The helmet itself has some scratches and dents sustained from battle."
+	name = "11-й бронированный кавалерийский шлемt"
+	desc = "Усовершенствованный боевой шлем, используемый 11-м бронетанковым кавалерийским полком до войны. Чуть выше козырька-потертая и выцветшая эмблема 11-го бронетанкового кавалерийского полка. Сам шлем имеет несколько царапин и вмятин, полученных в бою."
 	icon_state = "rigscustom_helmet"
 	item_state = "rigscustom_helmet"
 	icon = 'icons/fallout/clothing/hats.dmi'
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/mosshelmet
-	name = "veteran patrol stetson"
-	desc = "A weathered campaign hat tightly fitted over the viscera of a ranger combat helmet. The old stetson is faded with age and heavy use, having seen the green shores of California to the white peaks of the rockies."
+	name = "Стенсон патрульного-ветерана"
+	desc = "Потрепанная походная шляпа плотно облегает внутренности боевого шлема рейнджера. Старый стетсон выцвел от старости и интенсивного использования. Он повидал зеленые берега Калифорнии до белых вершин Скалистых гор."
 	icon_state = "mosshelmet"
 	item_state = "mosshelmet"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACE
 	flags_cover = HEADCOVERSEYES
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
-	name = "desert ranger combat helmet"
-	desc = "An U.S Marine Corps helmet, used by the legendary Desert Rangers."
+	name = "Боевой шлем пустынного рейнджера"
+	desc = "Шлем морской пехоты США, используемый легендарными рейнджерами пустыни."
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 50, "bomb" = 39, "bio" = 60, "rad" = 60, "fire" = 40, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/eliteriot
-	name = "elite riot gear helmet"
-	desc = "An old combat helmet seen in the divide, repurposed for higher ranking Rangers."
+	name = "Элитный противоударный шлем"
+	desc = "Старый боевой шлем, замеченный в разделении, переделанный для рейнджеров более высокого ранга."
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
 	armor = list("melee" = 70, "bullet" = 60, "laser" = 40, "energy" = 60, "bomb" = 55, "bio" = 60, "rad" = 60, "fire" = 40, "acid" = 0)
 
 
 /obj/item/clothing/head/helmet/f13/rangercombat/eliteriot/reclaimed
-	name = "reclaimed desert ranger gear"
-	desc = "A refurbished and personalized set of pre-unification desert ranger gear."
+	name = "Восстановленное снаряжение пустынного рейнджера"
+	desc = "Отремонтированный и персонализированный набор снаряжения пустынного рейнджера до объединения."
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 0)
@@ -899,8 +899,8 @@
 //Metal masks
 
 /obj/item/clothing/head/helmet/f13/raidermetal
-	name = "raider metal helmet"
-	desc = "A metal helmet, rusty and awful."
+	name = "Металлический шлем рейдера"
+	desc = "Металлический шлем, ржавый и ужасный."
 	icon_state = "raidermetal"
 	item_state = "raidermetal"
 	can_toggle = TRUE
@@ -911,12 +911,12 @@
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 
 /obj/item/clothing/head/helmet/f13/metalmask
-	name = "metal mask"
-	desc = "A crudely formed metal hockey mask."
+	name = "Металлическая маска"
+	desc = "Грубая металлическая хоккейная маска."
 	icon_state = "metal_mask"
 	item_state = "metal_mask"
-	toggle_message = "You lower"
-	alt_toggle_message = "You raise"
+	toggle_message = "Вы опустили маску"
+	alt_toggle_message = "Вы подняли маску"
 	can_toggle = 1
 	armor = list("melee" = 50, "bullet" = 35, "laser" = 35, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 20, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
@@ -936,15 +936,15 @@
 	return ..()
 
 /obj/item/clothing/head/helmet/f13/metalmask/mk2
-	name = "reflective metal mask"
-	desc = "A reflective metal hockey mask."
+	name = "Светоотражающая металлическая маска"
+	desc = "Светоотражающая металлическая хоккейная маска."
 	icon_state = "metal_mask2"
 	item_state = "metal_mask2"
 	armor = list("melee" = 50, "bullet" = 35, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/tesla
-	name = "tesla helmet"
-	desc = "A prewar armor design by Nikola Tesla before being confinscated by the U.S. government. Provides the high energy weapons resistance."
+	name = "Шлем тесла"
+	desc = "Довоенная броня, разработанная Николой Теслой до того, как ее конфисковало правительство США. Обеспечивает высокую устойчивость против энергетического оружия."
 	icon_state = "tesla_helmet"
 	item_state = "tesla_helmet"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 55, "energy" = 55, "bomb" = 35, "bio" = 0, "rad" = 10, "fire" = 30, "acid" = 80)
@@ -1015,7 +1015,7 @@
 		return
 	if(emped == 0)
 		if(ismob(loc))
-			to_chat(loc, "<span class='warning'>Warning: electromagnetic surge detected in helmet. Rerouting power to emergency systems.</span>")
+			to_chat(loc, "<span class='warning'>Предупреждение: в шлеме обнаружен электромагнитный всплеск. Перенаправление энергии на аварийные системы.</span>")
 			tint += 2
 			if(istype(loc, /mob/living/carbon))
 				var/mob/living/carbon/M = loc
@@ -1023,7 +1023,7 @@
 			armor = armor.modifyRating(melee = -20, bullet = -20, laser = -20)
 			emped = 1
 			spawn(50) //5 seconds of being blind and weak
-				to_chat(loc, "<span class='warning'>Helmet power reroute successful. All systems operational.</span>")
+				to_chat(loc, "<span class='warning'>Питание шлема перенаправлено успешно. Все системы в рабочем состоянии.</span>")
 				tint -= 2
 				if(istype(loc, /mob/living/carbon))
 					var/mob/living/carbon/M = loc
@@ -1032,8 +1032,8 @@
 				emped = 0
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45b
-	name = "salvaged T-45b helmet"
-	desc = "It's a salvaged T-45b power armor helmet."
+	name = "Трофейный шлем T-45b"
+	desc = "Это трофейный шлем с силовой брони T-45b."
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
 	armor = list("melee" = 75, "bullet" = 60, "laser" = 30, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
@@ -1043,8 +1043,8 @@
 	requires_training = FALSE
 
 /obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm
-	name = "raider T-45b power helmet"
-	desc = "This power armor helmet is so decrepit and battle-worn that it have lost most of its capability to protect the wearer from harm. This helmet seems to be heavily modified, heavy metal banding fused to the helmet"
+	name = "Рейдерский силовой шлем T-45b"
+	desc = "Этот шлем силовой брони настолько дряхлый и изношенный в боях, что он потерял большую часть своей способности защищать владельца от вреда. Этот шлем, похоже, сильно модифицирован, тяжелая металлическая привязка вплавлена в шлем."
 	icon_state = "raiderpa_helm"
 	item_state = "raiderpa_helm"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 30, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 50, "fire" = 0, "acid" = 0)
@@ -1057,8 +1057,8 @@
 	return FALSE
 
 /obj/item/clothing/head/helmet/f13/power_armor/hotrod
-	name = "hotrod T-45b power helmet"
-	desc = "This power armor helmet is so decrepit and battle-worn that it have lost most of its capability to protect the wearer from harm."
+	name = "Силовой шлем T-45b с подвеской"
+	desc = "Этот шлем силовой брони настолько дряхлый и изношенный в боях, что он потерял большую часть своей способности защищать владельца от вреда."
 	icon_state = "t45hotrod_helm"
 	item_state = "t45hotrod_helm"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 30, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 50, "fire" = 0, "acid" = 0)
@@ -1068,24 +1068,24 @@
 	requires_training = FALSE
 
 /obj/item/clothing/head/helmet/f13/power_armor/advanced
-	name = "advanced power helmet"
-	desc = "It's an advanced power armor Mk I helmet, typically used by the Enclave. It looks somewhat threatening."
+	name = "Улучшенный силовой шлем"
+	desc = "Это усовершенствованная силовая броня первой модели, обычно используемая анклавом. Выглядит несколько угрожающе."
 	icon_state = "advhelmet1"
 	item_state = "advhelmet1"
 	darkness_view = 150 // Advanced NV
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 75, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/power_armor/advanced/mk2
-	name = "advanced power helmet MK2"
-	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
+	name = "Улучшенный силовой шлем второй модели"
+	desc = "Это усовершенствованная модель усовершенствованной силовой брони, используемой исключительно вооруженными силами анклава, разработанная после Великой войны.<br>Как и старший брат, стандартная усовершенствованная силовая броня, она матово-черная с угрожающим внешним видом, но с несколькими существенными отличиями - кажется, что она полностью состоит из легких керамических композитов, а не из обычной комбинации металлических и керамических пластин.<br>Кроме того, как и силовая броня Т-51b, она включает в себя систему рециркуляции, которая может превращать человеческие отходы в питьевую воду, и систему кондиционирования воздуха для удобства пользователя."
 	icon_state = "advhelmet2"
 	item_state = "advhelmet2"
 	darkness_view = 170 // Advanced NV II
 	armor = list("melee" = 90, "bullet" = 90, "laser" = 60, "energy" = 90, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/power_armor/tesla
-	name = "tesla power helmet"
-	desc = "A helmet typically used by Enclave special forces.<br>There are three orange energy capacitors on the side."
+	name = "Силовой тесла шлем"
+	desc = "Шлем, обычно используемый спецназом анклава.<br>Сбоку есть три оранжевых энергетических конденсатора."
 	darkness_view = 160 // Advanced NV
 	icon_state = "tesla"
 	item_state = "tesla"
@@ -1093,59 +1093,59 @@
 	light_color = COLOR_DARK_CYAN
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b
-	name = "T-51b power helmet"
-	desc = "It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
+	name = "Силовой шлем T-51b"
+	desc = "Это силовой шлем Т-51и, обычно используемый Братством. Выглядит довольно очаровательно."
 	icon_state = "t51bhelmet"
 	item_state = "t51bhelmet"
 	darkness_view = 135 // Advanced NV
 	armor = list("melee" = 70, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/ultra
-	name = "Ultracite power helmet"
-	desc = "It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming. Now enhanced with ultracite."
+	name = "Силовой шлем из ультрасайта"
+	desc = "Это силовой шлем Т-51b, обычно используемый Братством. Это выглядит довольно очаровательно. Теперь с ультрасайтом."
 	icon_state = "ultracitepa_helm"
 	item_state = "ultracitepa_helm"
 	slowdown = 0
 	light_color = COLOR_DARK_CYAN
 
 /obj/item/clothing/head/helmet/f13/power_armor/t60
-	name = "T-60a power helmet"
-	desc = "The T-60 powered helmet, equipped with targetting software suite, Friend-or-Foe identifiers, dynamic HuD, and an internal music player."
+	name = "Силовой шлем T-60a"
+	desc = "Силовой шлем T-60, оснащенный целевым программным комплексом, идентификаторами \"свой-чужой\", динамическим HUD и внутренним музыкальным плеером."
 	icon_state = "t60helmet"
 	item_state = "t60helmet"
 	darkness_view = 145 // Advanced NV
 	armor = list("melee" = 75, "bullet" = 70, "laser" = 60, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d
-	name = "T-45d power helmet"
-	desc = "It's an old pre-War power armor helmet. It's pretty hot inside of it."
+	name = "Силовой шлем T-45d"
+	desc = "Это старый довоенный силовой бронированный шлем. Внутри довольно жарко."
 	icon_state = "t45dhelmet"
 	item_state = "t45dhelmet"
 	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/gunslinger
-	name = "Gunslinger T-51b Helm"
-	desc = "With most of the external plating stripped to allow for internal thermal and night vision scanners, as well as aided targeting assist via onboard systems, this helm provides much more utility then protection. To support these systems, secondary power cells were installed into the helm, and covered with a stylish hat."
+	name = "Шлем стрелка T-51b"
+	desc = "Поскольку большая часть внешней обшивки снята, чтобы обеспечить работу внутренних ночных и тепловых сканеров, а также автоматизированную помощь в наведении через бортовые системы, этот шлем обеспечивает гораздо большую полезность, чем защита. Для поддержки этих систем в шлем были вмонтированы вторичные силовые элементы и накрыты стильной шляпой."
 	icon_state = "t51bgs"
 	item_state = "t51bgs"
 	slowdown = 0
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
 
 /obj/item/clothing/head/helmet/f13/power_armor/midwest
-	name = "midwestern power helmet"
-	desc = "This helmet once belonged to the Mid Western branch of the Brotherhood of Steel now residing wherever it's user currently is situated."
+	name = "Силовой шлем Среднего Запада"
+	desc = "Этот шлем когда-то принадлежал средне-западной ветви Братства Стали, ныне проживающей там, где он используется в настоящее время."
 	icon_state = "midwestpa_helm"
 	item_state = "midwestpa_helm"
 	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
-	name = "hardened midwestern power helmet"
-	desc = "This helmet once belonged to the Mid Western branch of the Brotherhood of Steel now residing wherever it's user currently is situated. This particular one has gone through a chemical hardening process, increasing it's armor capabilities."
+	name = "Закалённый силовой шлем Среднего Запада"
+	desc = "Этот шлем когда-то принадлежал средне-западной ветви Братства Стали, ныне проживающей там, где он используется в настоящее время. Этот конкретный прошел через процесс химического отверждения, увеличивая его броневые возможности."
 	armor = list("melee" = 70, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/power_armor/excavator
-	name = "excavator power helmet"
-	desc = "The helmet of the excavator power armor suit."
+	name = "Силовой шлем экскаватора"
+	desc = "Шлем экскаваторного силового бронекостюма."
 	icon_state = "excavator"
 	item_state = "excavator"
 	armor = list("melee" = 60, "bullet" = 55, "laser" = 45, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)

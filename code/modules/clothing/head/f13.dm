@@ -3,8 +3,8 @@
 /obj/item/clothing/head/helmet/f13
 
 /obj/item/clothing/head/helmet/f13/tribal
-	name = "tribal power helmet"
-	desc = "This power armor helmet was salvaged by savages from the battlefield.<br>They believe that these helmets capture the spirits of their fallen wearers, so they painted some runes on to give it a more sacred meaning."
+	name = "Силовой шлем племени"
+	desc = "Этот шлем силовой брони был найден дикарями на поле боя.<br>Они верят, что эти шлемы захватывают духи их павших владельцев, поэтому они нарисовали на них несколько рун, чтобы придать им более священный вид."
 	icon_state = "tribal"
 	item_state = "tribal"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
@@ -13,8 +13,8 @@
 	strip_delay = 30
 
 /obj/item/clothing/head/helmet/f13/motorcycle
-	name = "motorcycle helmet"
-	desc = "A type of helmet used by motorcycle riders.<br>The primary goal of a motorcycle helmet is motorcycle safety - to protect the rider's head during impact, thus preventing or reducing head injury and saving the rider's life."
+	name = "Шлем мотоциклиста"
+	desc = "Шлем, используемый мотоциклистами<br>Основная цель мотоциклетного шлема - защитить голову носителя во время удара, тем самым предотвращая или уменьшая травму головы и спасая жизнь носителя."
 	icon_state = "motorcycle"
 	item_state = "motorcycle"
 	flags_cover = HEADCOVERSEYES
@@ -23,8 +23,8 @@
 	strip_delay = 10
 
 /obj/item/clothing/head/helmet/f13/firefighter
-	name = "firefighter helmet"
-	desc = "A firefighter's helmet worn on top of a fire-retardant covering and broken gas mask.<br>It smells heavily of sweat."
+	name = "Шлем пожарного"
+	desc = "Шлем пожарного, надетый поверх огнезащитного покрытия, и сломанный противогаз.<br>От него сильно пахнет потом."
 	icon_state = "firefighter"
 	item_state = "firefighter"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
@@ -38,8 +38,8 @@
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/head/helmet/f13/supaflyhelmet
-	name = "supa-fly raider helmet"
-	desc = "A makeshift raider helmet, made of leather.<br>It smells heavily of chems and sweat."
+	name = "Шлем рейдера супа-флай"
+	desc = "Импровизированный шлем рейдера, сделанный из кожи.<br>Он сильно пахнет химикатами и потом."
 	icon_state = "supafly"
 	item_state = "supafly"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
@@ -48,16 +48,16 @@
 	strip_delay = 20
 
 /obj/item/clothing/head/f13/boscap
-	name = "brotherhood formal cap"
-	desc = "A cap typically worn with the formal uniform for the local Brotherhood of Steel Chapter."
+	name = "Формальная шапка братства"
+	desc = "Кепка, обычно носимая с официальной униформой местного отделения братства стали."
 	icon_state = "boscap"
 	item_state = "boscap"
 	armor = list("melee" = 10, "bullet" = 15, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
 	strip_delay = 20
 
 /obj/item/clothing/head/helmet/f13/yankee
-	name = "yankee raider helmet"
-	desc = "A long time ago, this belonged to a football player, now it belongs to the wasteland."
+	name = "Шлем рейдера янки"
+	desc = "Давным-давно это принадлежало футболисту, а теперь это принадлежит пустоши."
 	icon_state = "yankee"
 	item_state = "yankee"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
@@ -67,8 +67,8 @@
 
 
 /obj/item/clothing/head/helmet/f13/localranger
-	name = "Worn Scout Beret"
-	desc = "Once a sign of status, now a faded head covering."
+	name = "Поношенный берет разведчика"
+	desc = "Когда-то знак статуса, теперь выцветший головной убор."
 	icon_state = "localranger"
 	item_state = "localranger"
 	armor = list(melee = 40, bullet = 25, laser = 15, energy = 10, bomb = 16, bio = 20, rad = 0, fire = 50, acid = 0)
@@ -76,40 +76,40 @@
 	strip_delay = 30
 
 /obj/item/clothing/head/helmet/f13/fiend
-	name = "fiend helmet"
-	desc = "A leather cap cobbled together adorned with a bighorner skull, perfect for any drug-fueled frenzy."
+	name = "Дьявольский шлем"
+	desc = "Кожаная кепка, сшитая вместе, украшенная черепом толсторога, идеально подходящая для любого подпитываемого наркотиками безумия."
 	icon_state = "fiend"
 	item_state = "fiend"
 	armor = list("melee" = 40, "bullet" = 25, "laser" = 15, "energy" = 10, "bomb" = 16, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/helmet/f13/drake
-	name = "drake helm"
+	name = "Драконий шлем"
 	icon_state = "dragon"
-	desc = "The skull of a dragon."
+	desc = "Череп дракона"
 	armor = list("melee" = 70, "bullet" = 30, "laser" = 50, "energy" = 40, "bomb" = 70, "bio" = 60, "rad" = 50, "fire" = 100, "acid" = 100)
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_IMMUNITY_HELM_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/head/helmet/f13/fiend_reinforced
-	name = "reinforced fiend helmet"
-	desc = "A leather cap cobbled together adorned with a bighorner skull, perfect for any drug-fueled frenzy. This helmet has been reinforced with metal plates under its skull"
+	name = "Усиленный дьявольский шлем"
+	desc = "Кожаная кепка, сшитая вместе, украшенная черепом толсторога, идеально подходящая для любого подпитываемого наркотиками безумия. Этот шлем был усилен металлическими пластинами под черепом"
 	icon_state = "fiend"
 	item_state = "fiend"
 	armor = list("melee" = 45, "bullet" = 30, "laser" = 20, "energy" = 10, "bomb" = 16, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/helmet/f13/vaquerohat
-	name = "vaquero hat"
-	desc = "An old sombrero worn by Vaqueros to keep off the harsh sun."
+	name = "Шляпа Вакеро"
+	desc = "Старое сомбреро, которое носил Вакеро, чтобы уберечься от палящего солнца."
 	icon_state = "vaquerohat"
 	item_state = "vaquerohat"
 	armor = list("melee" = 10, "bullet" = 15, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/khan
-	name = "Great Khan helmet"
-	desc = "A piece of headwear commonly worn by the Great Khans that appears to resemble stereotypical traditional Mongolian helmets - likely adapted from a pre-War motorcycle helmet.<br>It is black with two horns on either side and a small spike jutting from the top, much like a pickelhaube.<br>A leather covering protects the wearer's neck and ears from sunburn."
+	name = "Шлем Великих Ханов"
+	desc = "Часть головного убора, обычно носимого великими Ханами, которая, по-видимому, напоминает стереотипные традиционные монгольские шлемы - вероятно, собран из довоенного мотоциклетного шлема.<br>Он черный, с двумя рогами по бокам и небольшим шипом, торчащим сверху, очень похожий на пикельхельм.<br>Кожаное покрытие защищает шею и уши владельца от солнечных ожогов."
 	icon_state = "khan"
 	item_state = "khan"
 	armor = list(melee = 35, bullet = 25, laser = 25, energy = 20, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
@@ -121,8 +121,8 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/helmet/f13/khan/fullhelm
-	name = "Great Khan full helmet"
-	desc = "A Khan helmet modified with steel horns and a full guard comprised of red sunglass lenses and a thick metal plate to conceal the lower face."
+	name = "Полный шлем Великих Ханов"
+	desc = "Шлем Хана, модифицированный стальными рогами, и полностью защищающий голову, состоит из красных линз солнцезащитных очков и толстой металлической пластины, чтобы скрыть нижнюю часть лица"
 	icon_state = "khanhelmet"
 	item_state = "khanhelmet"
 	armor = list(melee = 35, bullet = 25, laser = 25, energy = 30, bomb = 30, bio = 0, rad = 0, fire = 0, acid = 0)
@@ -136,16 +136,16 @@
 
 
 /obj/item/clothing/head/helmet/f13/ranger/old
-	name = "old ranger helmet"
-	desc = "An old military helmet, commonly worn by Desert Rangers, that went through the fire and the flames, saving a single life amongst heavy bloodshed.<br>This particular helmet has a \"Forgive me mama\" inscription on the side."
+	name = "Старый шлем рейнджера"
+	desc = "Старый военный шлем, который обычно носили пустынные рейнджеры. Он прошел через огонь и пламя, спасая единственную жизнь среди тяжелого кровопролития.<br>На этом шлеме сбоку есть надпись \"Прости меня, мама\"."
 	icon_state = "oldranger"
 	item_state = "oldranger"
 	armor = list(melee = 40, bullet = 20, laser = 20, energy = 20, bomb = 20, bio = 0, rad = 30, fire = 30, acid = 10)
 	glass_colour_type = /datum/client_colour/glass_colour/lightgreen
 
 /obj/item/clothing/head/f13/strange
-	name = "strange helmet"
-	desc = "A very strange metal helmet...<br>I want to believe."
+	name = "Странный шлем"
+	desc = "Очень странный металический шлем...<br>Мне хочется верить."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	icon_state = "strange"
 	item_state = "helmet"
@@ -159,8 +159,8 @@
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/head/helmet/f13/doom
-	name = "marine helmet"
-	desc = "A helmet made of an unknown alloy.<br>You feel like this helmet would allow you to survive through Hell on Mars... er, Earth."
+	name = "Шлем морпеха"
+	desc = "Шлем, сделанный из неизвестного сплава<br>Вы чувствуете, что этот шлем позволит вам пережить ад на Марсе... э-э, на Земле."
 	icon_state = "doom"
 	item_state = "doom"
 	armor = list(melee = 50, bullet = 40, laser = 40, energy = 40, bomb = 50, bio = 100, rad = 100, fire = 100, acid = 100)
@@ -169,8 +169,8 @@
 	resistance_flags = UNACIDABLE
 
 /obj/item/clothing/head/helmet/f13/magneto
-	name = "magneto's helmet"
-	desc = "This helmet allows its wearer to resist all but the strongest or most unexpected telepathic attacks.<br>This is achieved due to technology wired into the helmet itself."
+	name = "Шлем Магнето"
+	desc = "Этот шлем позволяет его владельцу противостоять всем, кроме самых сильных или самых неожиданных телепатических атак.<br>Это достигается благодаря технологии, встроенной в сам шлем."
 	icon_state = "magneto"
 	item_state = "magneto"
 	armor = list(melee = 60, bullet = 50, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 100, fire = 30, acid = 100)
@@ -181,8 +181,8 @@
 //Knights of the Apocalypse
 
 /obj/item/clothing/head/helmet/knight
-	name = "medieval helmet"
-	desc = "A classic metal helmet worn by all ranks of knights and horsemen of the Old Era."
+	name = "Средневековый шлем"
+	desc = "Классический металлический шлем, который носили все рыцари и всадники старой эпохи."
 	icon_state = "knight_green"
 	item_state = "knight_green"
 	armor = list(melee = 40, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 0, acid = 0)
@@ -192,38 +192,38 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/knight/blue
-	name = "blue medieval helmet"
-	desc = "A classic metal helmet worn by all ranks of knights and horsemen of the Old Era.<br>This one is painted blue."
+	name = "Синий средневековый шлем"
+	desc = "Классический металлический шлем, который носили все рыцари и всадники старой эпохи.<br>Этот покрашен в синий"
 	icon_state = "knight_blue"
 	item_state = "knight_blue"
 
 /obj/item/clothing/head/helmet/knight/yellow
-	name = "yellow medieval helmet"
-	desc = "A classic metal helmet worn by all ranks of knights and horsemen of the Old Era.<br>This one is painted yellow."
+	name = "Желтый средневековый шлем"
+	desc = "Классический металлический шлем, который носили все рыцари и всадники старой эпохи.<br>This one is painted yellow."
 	icon_state = "knight_yellow"
 	item_state = "knight_yellow"
 
 /obj/item/clothing/head/helmet/knight/red
-	name = "red medieval helmet"
-	desc = "A classic metal helmet worn by all ranks of knights and horsemen of the Old Era.<br>This one is painted red."
+	name = "Красный средневековый шлем"
+	desc = "Классический металлический шлем, который носили все рыцари и всадники старой эпохи.<br>This one is painted red."
 	icon_state = "knight_red"
 	item_state = "knight_red"
 
 /obj/item/clothing/head/helmet/knight/templar
-	name = "crusader helmet"
-	desc = "Deus Vult."
+	name = "Шлем крестоносца"
+	desc = "ДЕУС ВУЛЬТ!."
 	icon_state = "knight_templar"
 	item_state = "knight_templar"
 
 /obj/item/clothing/head/helmet/knight/f13/metal
-	name = "metal helmet"
-	desc = "A metal helmet forged in fire.<br>Specially designed for the most fearsome and strongest warriors of the wasteland."
+	name = "Металлический шлем"
+	desc = "Металлический шлем, выкованный в огне.<br>Специально разработан для самых грозных и сильных воинов пустоши."
 	icon_state = "metalhelmet"
 	item_state = "metalhelmet"
 
 /obj/item/clothing/head/helmet/knight/f13/rider
-	name = "rider helmet" //Not raider. Rider.
-	desc = "A fancy dark metal helmet with orange spray-painted flames."
+	name = "Шлем всадника" //Not raider. Rider.
+	desc = "Причудливый шлем из темного металла с оранжевыми брызгами пламени."
 	icon_state = "rider"
 	item_state = "rider"
 
@@ -232,78 +232,78 @@
 /obj/item/clothing/head/soft/f13
 
 /obj/item/clothing/head/soft/f13/baseball
-	name = "baseball cap"
-	desc = "A type of soft cap with a rounded crown and a stiff peak projecting out the front."
+	name = "Бейсболка"
+	desc = "Мягкая шапка с закругленной короной и жестким козырьком, выступающим вперед."
 	icon_state = "baseball"
 	item_color = "baseball"
 
 /obj/item/clothing/head/soft/f13/enclave
-	name = "officer hat"
-	desc = "A standard-issue Enclave officer's cap."
+	name = "Офицерская фуражка"
+	desc = "Стандартная офицерская фуражка анклава."
 	icon_state = "enclave"
 	item_color = "enclave"
 
 /obj/item/clothing/head/soft/f13/utility
-	name = "grey utility cover"
-	desc = "An eight-pointed hat, with a visor similar to a baseball cap, known as utility cover, also called the utility cap or eight-pointed cover."
+	name = "Синяя фуражка"
+	desc = "Восьмиконечная шапка, с козырьком, похожий на бейсбольную кепку, известная как утилитарная фуражка или восьмиконечное покрытие."
 	icon_state = "utility_g"
 	item_color = "utility_g"
 
 /obj/item/clothing/head/soft/f13/utility/navy
-	name = "navy utility cover"
+	name = "Фуражка морского флота"
 	icon_state = "utility_n"
 	item_color = "utility_n"
 
 /obj/item/clothing/head/soft/f13/utility/olive
-	name = "olive utility cover"
+	name = "Оливковая фуражка"
 	icon_state = "utility_o"
 	item_color = "utility_o"
 
 /obj/item/clothing/head/soft/f13/utility/tan
-	name = "tan utility cover"
+	name = "Телесная фуражка"
 	icon_state = "utility_t"
 	item_color = "utility_t"
 
 /obj/item/clothing/head/f13
 
 /obj/item/clothing/head/f13/safari //Referencing the Jebediah from Mad Max 3 1985
-	name = "pith helmet"
-	desc = "A lightweight, cloth-covered helmet made of pith.<br>Suitable for explorers or batshit crazy pilots."
+	name = "Пробковый шлем"
+	desc = "Легкий, обтянутый тканью шлем, сделанный из сердцевины.<br>Подходит для исследователей или сумасшедших пилотов."
 	icon_state = "safari"
 	item_state = "dethat"
 	armor = list(melee = 40, bullet = 10, laser = 0, energy = 0, bomb = 20, bio = 0, rad = 0, fire = 30, acid = 0)
 
 /obj/item/clothing/head/f13/chinese_soldier
-	name = "chinese side cap"
-	desc = "A foldable military cap with straight sides, with insignia of People's Liberation Army, that was supposedly worn by regular troops."
+	name = "Китайская боковая фуражка"
+	desc = "Складная военная фуражка с прямыми боками, со знаками отличия Народно-освободительной армии, такие носили регулярные войска."
 	icon_state = "chinese_s"
 	item_state = "secsoft"
 	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/f13/chinese_officer
-	name = "chinese side cap"
-	desc = "A foldable military cap with straight sides, with insignia of People's Liberation Army, that was supposedly worn by low rank officers."
+	name = "Китайская боковая фуражка"
+	desc = "Складная военная фуражка с прямыми боками, со знаками отличия Народно-освободительной армии, такие носили младшие офицеры."
 	icon_state = "chinese_o"
 	item_state = "secsoft"
 	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/f13/chinese_commander
-	name = "chinese peaked cap"
-	desc = "A peaked cap of dark green in color with a red star on the frontside.<br>It obviously belonged to a high rank officer of People's Liberation Army."
+	name = "Китайская боковая фуражка"
+	desc = "Фуражка темно-зеленого цвета с красной звездой на лицевой стороне.<br>Очевидно, она принадлежала высокопоставленному офицеру Народно-освободительной армии."
 	icon_state = "chinese_c"
 	item_state = "fedora"
 	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/f13/stormchaser
-	name = "stormchaser hat"
-	desc = "Home, home on the wastes,<br>Where the mole rat and the fire gecko play.<br>Where seldom is heard a discouraging word,<br>And my skin is not glowing all day."
+	name = "Шляпа штурмовика"
+	desc = "Дом, дом среди пустыни,<br>Где играют кротокрыс и огненный геккон.<br>Где редко слышены обескураживающие слова,<br>И моя кожа не светится целый день"
 	icon_state = "stormchaser"
 	item_state = "fedora"
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/f13/headscarf
-	name = "headscarf"
-	desc = "A piece of cloth worn on head for a variety of purposes, such as protection of the head or hair from rain, wind, dirt, cold, warmth, for sanitation, for fashion, recognition or social distinction - with religious significance, to hide baldness, out of modesty, or other forms of social convention."
+	name = "Головной платок"
+	desc = "Кусок ткани, надеваемый на голову для различных целей, таких как защита головы или волос от дождя, ветра, грязи, холода, тепла, для санитарии, для моды, признания или социального различия - с религиозным значением, чтобы скрыть лысину, из скромности или других форм социальной условности."
 	icon_state = "headscarf"
 	item_state = "dethat"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
@@ -313,8 +313,8 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/f13/pot
-	name = "metal cooking pot"
-	desc = "Step one: Start with the sauce.<br>Step two: Add the noodles.<br>Step three: Stir the pasta.<br>Step four: Turn up the heat.<br>Step five: Burn the house."
+	name = "Металлическая кастрюля"
+	desc = "Шаг первый: начните с соуса.<br>Шаг второй: добавьте лапшу.<br>Шаг третий: перемешайте макароны.<br>Шаг четвертый: включите печь.<br>Шаг пятый: Сожгите дом"
 	icon_state = "pot"
 	item_state = "fedora"
 	force = 20
@@ -322,29 +322,29 @@
 	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/f13/cowboy
-	name = "cowboy hat"
-	desc = "A high-crowned, wide-brimmed hat best known as the defining piece of attire for the North American cowboy."
+	name = "Шляпа ковбоя"
+	desc = "Широкополая шляпа с высокой тульей, наиболее известная как определяющий наряд североамериканского ковбоя."
 	icon_state = "cowboy"
 	item_state = "dethat"
 	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/f13/bandit
-	name = "bandit hat"
-	desc = "A black cowboy hat with a large brim that's curved to the sides.<br>A silver eagle pin is attached to the front."
+	name = "Шляпа бандита"
+	desc = "Черная ковбойская шляпа с большими загнутыми по бокам полями.<br>Спереди прикреплена серебряная булавка с орлом."
 	icon_state = "bandit"
 	item_state = "fedora"
 	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/f13/gambler
-	name = "gambler hat"
-	desc = "A perfect hat for a ramblin' gamblin' man." //But I got to ramble (ramblin' man) //Oh I got to gamble (gamblin' man) //Got to got to ramble (ramblin' man) //I was born a ramblin' gamblin' man
+	name = "Шляпа игрока"
+	desc = "Идеальная шляпа для бродячего игрока." //But I got to ramble (ramblin' man) //Oh I got to gamble (gamblin' man) //Got to got to ramble (ramblin' man) //I was born a ramblin' gamblin' man
 	icon_state = "gambler"
 	item_state = "dethat"
 	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/f13/general
-	name = "general cap"
-	desc = "A military peaked cap of dark green in color with a golden colored badge on the frontside.<br>The badge is inscripted with the words New California Republic."
+	name = "Фуражка генерала"
+	desc = "Военная фуражка темно-зеленого цвета с золотым значком на лицевой стороне.<br>На значке написано \"Новая Калифорнийская Республика\""
 	icon_state = "general"
 	item_state = "fedora"
 	flags_inv = HIDEHAIR
@@ -353,8 +353,8 @@
 //Fluff
 
 /obj/item/clothing/head/f13/rastacap
-	name = "rastacap"
-	desc = "<font color='#157206'>Him haffi drop him fork and run,</font><br><font color='green'>Him can't stand up to Jah Jah son,</font><br><font color='#fd680e'>Him haffi lef' ya with him gun,</font><br><font color='red'>Dig off with him bomb.</font>"
+	name = "Шляпа растамана"
+	desc = "<font color='#157206'>Он Хаффи, брось ему вилку и беги,</font><br><font color='green'>Он не может встать для джа джа сынок,</font><br><font color='#fd680e'>Он Хаффи леф'я с ним пушка,</font><br><font color='red'>Выкопай с ним бомбу.</font>"
 	icon_state = "rastacap"
 	item_state = "fedora"
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR
@@ -362,40 +362,40 @@
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 
 /obj/item/clothing/head/f13/fez
-	name = "fez"
-	desc = "Fezzes are cool!"
+	name = "Феска"
+	desc = "Фески реально крутые!"
 	icon_state = "fez"
 	item_state = "secsoft"
 
 /obj/item/clothing/head/f13/beaver
-	name = "beaverkin"
-	desc = "A hat made from felted beaver fur which makes the wearer feel both comfortable and elegant."
+	name = "Бобровая шапка"
+	desc = "Шляпа из войлочного бобрового меха, которая заставляет владельца чувствовать себя одновременно комфортно и элегантно."
 	icon_state = "beaver"
 	item_state = "that"
 
 /obj/item/clothing/head/f13/purple
-	name = "purple top hat"
-	desc = "You may not own the best jail in the observed Universe, or the best chocolate factory in the entire world, but at least you can try to have that purple top hat."
+	name = "Фиолетовый цилиндр"
+	desc = "Может быть, вы и не владеете лучшей тюрьмой в наблюдаемой Вселенной или лучшей шоколадной фабрикой во всем мире, но, по крайней мере, вы можете попытаться завладеть этим фиолетовым цилиндром!"
 	icon_state = "ptophat"
 	item_state = "that"
 
 /obj/item/clothing/head/f13/det_hat_alt
-	name = "detective's fedora"
-	desc = "There's only one man who can sniff out the dirty stench of crime, and he's likely wearing this black hat."
+	name = "Фетровая шляпа детектива"
+	desc = "Есть только один человек, который может вынюхать грязную вонь преступления, и он, вероятно, носит эту черную шляпу."
 	icon_state = "detectivealt"
 	item_state = "fedora"
 	flags_inv = HIDEHAIR
 	armor = list(melee = 30, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
 
 /obj/item/clothing/head/f13/trilby
-	name = "feather trilby"
-	desc = "A sharp, stylish blue hat with a feather."
+	name = "Трильби с перьями"
+	desc = "Остроконечная, стильная синяя шляпа с пером."
 	icon_state = "trilby"
 	item_state = "fedora"
 
 /obj/item/clothing/head/f13/battlecruiser
-	name = "captain's hat"
-	desc = "The Yamato is loaded. And so am I."
+	name = "Шляпа капитана"
+	desc = "Ямато заряжен. Я тоже."
 	icon_state = "battlecruiser"
 	item_state = "battlecruiser"
 	armor = list(melee = 30, bullet = 20, laser = 20, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 0, acid = 0)
@@ -405,15 +405,15 @@
 /obj/item/clothing/head/welding/f13
 
 /obj/item/clothing/head/welding/f13/fire
-	name = "cremator welding helmet"
-	desc = "A welding helmet with flames painted on it.<br>It sure is creepy but also badass."
+	name = "Сварочный шлем крематора"
+	desc = "Сварочный шлем с нарисованным на нем пламенем.<br>Он конечно жуткий, но крутой"
 	icon_state = "welding_fire"
 	item_state = "welding"
 	tint = 1
 	armor = list(melee = 20, bullet = 10, laser = 5, energy = 5, bomb = 5, bio = 0, rad = 0, fire = 30, acid = 0)
 
 /obj/item/clothing/head/welding/f13/japan
-	name = "nippon welding helmet"
+	name = "Сварочный шлем Ниппон"
 	desc = "Kojin no ato wo motomezu, kojin no motometaru no tokoro wo motome yo."
 	icon_state = "welding_japan"
 	item_state = "welding"
@@ -421,36 +421,36 @@
 	armor = list(melee = 40, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 30, acid = 0)
 
 /obj/item/clothing/head/f13/town
-	name = "town tricorn"
-	desc = "Why are there tricorns in the desert again?"
+	name = "Городская треуголка"
+	desc = "Да что эти треуголки забыли в пустыне?"
 	icon_state = "tricorn"
 	item_state = "dethat"
 	flags_inv = HIDEHAIR
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 20, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 30, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/head/f13/town/mayor
-	name = "mayoral tricorn"
-	desc = "A tricorn in the desert.  Stranger things have happened."
+	name = "Треуголка мэра"
+	desc = "Треуголка в пустыне? Странные вещи творятся."
 
 /obj/item/clothing/head/f13/town/big
-	name = "big hat"
-	desc = "It's a big hat."
+	name = "Большая шлпяпа"
+	desc = "Эта шляпа действительно большая"
 	icon_state = "bigcowboyhat"
 
 /obj/item/clothing/head/f13/town/deputy
-	name = "deputy hat"
-	desc = "A black cowboy hat."
+	name = "Шляпа депутата"
+	desc = "Чёрная ковбойская шляпа"
 	icon_state = "deputyhat"
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 25, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/head/f13/town/sheriff
-	name = "sheriff hat"
-	desc = "A black cowboy hat with a snakeskin band."
+	name = "Шляпа шерифа"
+	desc = "Черная ковбойская шляпа с лентой из змеиной кожи."
 	icon_state = "sheriffhat"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/head/f13/generalcap
-	name = "Militia cap"
+	name = "Милицейская фуражка"
 	desc = ""
 	icon_state = "militiacap"
 	item_state = "militiacap"
@@ -458,22 +458,22 @@
 	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/f13/inquisition_hat
-	name = "Inquisition hat"
-	desc = "A red spanish inquisition hat."
+	name = "Шляпа инквизитора"
+	desc = "Красная шляпа испанского инквизитора."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	icon_state = "inquisition_hat"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/head/f13/anarchist_hat
-	name = "Anarchist hat"
-	desc = "Very strange black circle hat."
+	name = "Шляпа анархиста"
+	desc = "Очень странная черная круглая шляпа."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	icon_state = "anarchist_hat"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/head/f13/snow_cowboy_hat
-	name = "White Cowboy Hay"
-	desc = "With four-leaf clover"
+	name = "Белая шляпа ковбоя"
+	desc = "С четырехлистным клевером"
 	icon_state = "snow_cowboy_hat"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 

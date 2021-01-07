@@ -3,8 +3,8 @@
 /obj/item/clothing/suit/armor/f13
 
 /obj/item/clothing/suit/armor/f13/cyberpunk
-	name = "armored trenchcoat"
-	desc = "A trenchcoat augmented with a special alloy for some protection and style."
+	name = "Бронированный плащ"
+	desc = "Плащ, дополненный специальным сплавом для некоторой защиты и стиля."
 	icon_state = "jensencoat"
 	item_state = "jensencoat"
 //	flags = THICKMATERIAL
@@ -16,8 +16,8 @@
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/doom
-	name = "green chestplate"
-	desc = "An odd green chestplate.<br>It's lightweight and strangely comfortable."
+	name = "Зеленый нагрудник"
+	desc = "Странный зелёный нагрудник<br>Он легкий и удивительно удобный."
 	icon_state = "praetor"
 	item_state = "g_suit"
 	body_parts_covered = CHEST
@@ -27,8 +27,8 @@
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/punk
-	name = "armor kit"
-	desc = "A couple of armor parts that can be worn over the clothing for moderate protection against the dangers of wasteland.<br>Do you feel lucky now? Well, do ya, punk?"
+	name = "Комлпект брони"
+	desc = "Пара частей брони, которые можно носить поверх одежды для умеренной защиты от опасностей Пустоши.<br>Теперь ты чувствуешь себя счастливчиком? Ну, как ты, панк?"
 	icon_state = "punkit" //Punk it
 	item_state = "punkit" //Pun kit
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
@@ -37,8 +37,8 @@
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/tribal
-	name = "tribal armor"
-	desc = "A set of armor made of gecko hides.<br>It's pretty good for makeshift armor."
+	name = "Племенная броня"
+	desc = "Набор брони, сделанный из шкур геконов.<br>Довольно хроша для самодельной брони."
 	icon_state = "tribal"
 	item_state = "tribal"
 	armor = list(melee = 30, bullet = 20, laser = 20, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
@@ -47,8 +47,8 @@
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/slam
-	name = "slammer raider armor"
-	desc = "Crude armor that appears to employ a tire of some kind as the shoulder pad. What appears to be a quilt is tied around the waist.<br>Come on and slam and turn your foes to jam!"
+	name = "Броня рейдера-громилы"
+	desc = "Грубая броня, которая, похоже, использует какую-то шину в качестве наплечника. То, что-то напоминающее кильт завязано вокруг талии.<br>Давай, круши и превращай своих врагов в варенье!"
 	icon_state = "slam"
 	item_state = "slam"
 	armor = list(melee = 30, bullet = 30, laser = 30, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
@@ -57,8 +57,8 @@
 	icon = 'icons/fallout/clothing/suits.dmi'
 /*
 /obj/item/clothing/suit/armor/f13/leatherarmor
-	name = "leather armor"
-	desc = "A set of light armor made of boiled brahmin leather.<br>It should protect against the average 9mm peashooter, but anything higher caliber will punch through it like butter."
+	name = "Кожаная броня"
+	desc = "Набор легких доспехов из вареной браминской кожи.<br>Он должен защищать от среднего 9-миллиметрового ружья, но все, что выше этого калибра, пробьет его, как масло."
 	icon_state = "leatherarmor"
 	item_state = "leatherarmor"
 	armor = list(melee = 40, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 0, acid = 0)
@@ -70,8 +70,8 @@
 
 /*
 /obj/item/clothing/suit/armor/f13/bmetalarmor //uses the same path as bmetalarmor in armor.dm, causing the assless chaps bug
-	name = "black metal armor"
-	desc = "A set of sturdy metal armor made from various bits of scrap metal. It looks like it might impair movement."
+	name = "Черная металлическая броня"
+	desc = "Набор прочных металлических доспехов, сделанных из различных кусков металлолома. Похоже, они замедляют движение."
 	icon_state = "bmetalarmor"
 	item_state = "bmetalarmor"
 	armor = list(melee = 50, bullet = 40, laser = 30, energy = 30, bomb = 40, bio = 0, rad = 0, fire = 20, acid = 0)
@@ -80,72 +80,72 @@
 	icon = 'icons/fallout/clothing/suits.dmi'
 */
 /obj/item/clothing/suit/armor/f13/ncrarmor/soldier
-	name = "standard issue trooper armor"
-	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons, and gauntlets, worn by NCR soldiers in combat environments.<br>This one has had its breastplate emblazoned with the emblem of the NCR, that has slightly faded over time."
+	name = "Стандартная броня пехотинца"
+	desc = "Набор брони НКР, состоящий из бронированного нагрудника, металлических наплечников и перчаток, которые носят солдаты НКР в боевых условиях.<br>На этом нагруднике красуется эмблема НКР, которая со временем слегка поблекла."
 	icon_state = "ncr_armor2"
 	item_state = "ncr_armor2"
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/patriot
-	name = "trooper armor of \"Patriot\" battalion"
-	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons and gauntlets, worn by NCR patriots in combat environments.<br>This one has a five-pointed star painted over the chestplate with white paint - it must be a battalion insignia."
+	name = "Броня пехотинца батальона \"Патриотов\""
+	desc = "Набор брони НКР, состоящий из бронированного нагрудника, металлических наплечников и перчаток, которые носят патриоты НКР в боевых условиях.<br>У этого на нагруднике белой краской нарисована пятиконечная звезда - эмблема батальона."
 	icon_state = "ncr_armor3"
 	item_state = "ncr_armor3"
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/commie
-	name = "trooper armor of \"Commie\" battalion"
-	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons and gauntlets, worn by NCR comrades in combat environments.<br>This one has a five-pointed star painted over the chestplate with red paint - it must be a battalion insignia."
+	name = "Броня пехотинца батальона \"Коммунистов\""
+	desc = "Набор брони НКР, состоящий из бронированного нагрудника, металлических наплечников и перчаток, которые носят товарищи НКР в боевых условиях.<br>У этого на нагруднике красной краской нарисована пятиконечная звезда - эмблема батальона."
 	icon_state = "ncr_armor4"
 	item_state = "ncr_armor4"
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/preacher
-	name = "trooper armor of \"Preacher\" battalion"
-	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons and gauntlets, worn by NCR zealots in combat environments.<br>This one has a holy cross painted over the chestplate with yellow paint - it must be a battalion insignia."
+	name = "Броня пехотинца батальона \"Проповедников\""
+	desc = "Набор брони НКР, состоящий из бронированного нагрудника, металлических наплечников и перчаток, которые носят фанатики НКР в боевых условиях.<br>У этого на нагруднике желтой краской нарисован святой крест - эмблема батальона."
 	icon_state = "ncr_armor5"
 	item_state = "ncr_armor5"
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/lover
-	name = "trooper armor of \"Lover\" battalion"
-	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons and gauntlets, worn by NCR lovers in combat environments.<br>This one has a heart symbol painted over the chestplate with pink paint - it must be a battalion insignia."
+	name = "Броня пехотинца батальона \"Любящих\""
+	desc = "Набор брони НКР, состоящий из бронированного нагрудника, металлических наплечников и перчаток, которые носят любители НКР в боевых условиях.<br>У этого на нагруднике розовой краской нарисован символ сердца - эмблема батальона."
 	icon_state = "ncr_armor6"
 	item_state = "ncr_armor6"
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/stalker //Cheeki breeki i v damke !!!
-	name = "trooper armor of \"Stalker\" battalion"
-	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons and gauntlets, worn by NCR explorers in combat environments.<br>This one has a radiation symbol painted over the chestplate with yellow paint - it must be a battalion insignia."
+	name = "Броня пехотинца батальона \"Сталкеров\""
+	desc = "Набор брони НКР, состоящий из бронированного нагрудника, металлических наплечников и перчаток, которые носят исследователи НКР в боевых условиях.<br>У этого на нагруднике желтой краской нарисован символ радиации - эмблема батальона."
 	icon_state = "ncr_armor7"
 	item_state = "ncr_armor7"
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/punisher
-	name = "trooper armor of \"Punisher\" battalion"
-	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons and gauntlets, worn by NCR heroes and villains in combat environments.<br>This one has a skull symbol painted over the chestplate with white paint - it must be a battalion insignia."
+	name = "Броня пехотинца батальона \"Карателей\""
+	desc = "Набор брони НКР, состоящий из бронированного нагрудника, металлических наплечников и перчаток, которые носят герои или злодеи НКР в боевых условиях.<br>У этого на нагруднике белой краской нарисован череп - эмблема батальона."
 	icon_state = "ncr_armor8"
 	item_state = "ncr_armor8"
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/facewrap
-	name = "face wrap armor"
-	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons and gauntlets, worn by NCR scouts in combat environments.<br>This one has the facewrap, designed to be pulled over the user's face to protect oneself from dust particles and other mainly radioactive elements."
+	name = "Броня с лицевым покрытием"
+	desc = "Комплект брони НКР, состоящий из бронированного нагрудника, металлических наплечников и перчаток, которые носят разведчики НКР в боевых условиях.<br>У этого есть лицевое покрытие, предназначенное для того, чтобы натягиваться на лицо пользователя и защищать его от частиц пыли и других, главным образом радиоактивных элементов."
 	icon_state = "ncr_armor9"
 	item_state = "ncr_armor9"
 	armor = list(melee = 30, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 30, fire = 10, acid = 10) //Better radiation protection, thank the facewrap bro!
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/rangercombat/old
-	name = "worn veteran ranger combat armor"
-	desc = "A unique armor, that has been in countless battles and caused much bloodshed."
+	name = "Поношенная боевая броня ветерана"
+	desc = "Уникальная броня, побывавшая в бесчисленных битвах и ставшая причиной большого кровопролития."
 	icon_state = "oldranger"
 	item_state = "oldranger"
 	armor = list(melee = 40, bullet = 20, laser = 20, energy = 20, bomb = 20, bio = 0, rad = 30, fire = 20, acid = 20)
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/battlecoat //Maxson's battlecoat from Fallout 4
-	name = "battlecoat"
-	desc = "A heavy padded leather coat, worn by pre-War bomber pilots in the past and post-War zeppelin pilots in the future."
+	name = "Боевое пальто"
+	desc = "Тяжелое мягкое кожаное пальто, которое носили пилоты довоенных бомбардировщиков в прошлом и пилоты послевоенных цеппелинов в будущем."
 	icon_state = "battlecoat"
 	item_state = "battlecoat"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
@@ -155,8 +155,8 @@
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/kaicoat //Kai's battlecoat because he's batman
-	name = "brotherhood greatcoat"
-	desc = "Heavy is the weight we bear to protect our own."
+	name = "Шинель братства"
+	desc = "Тяжела, как тот груз, который мы несем, чтобы защитить себя.."
 	icon_state = "kaicoat"
 	item_state = "kaicoat"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
@@ -166,23 +166,23 @@
 	icon = 'icons/mob/suit.dmi'
 
 /obj/item/clothing/suit/armor/f13/battlecoat/vault
-	name = "command coat"
-	desc = "A heavy pre-war bomber coat, dyed blue with the number '113' embroidered on the back. Most often worn by leaders, such as the Overseer."
+	name = "Пальто коммадования"
+	desc = "Тяжелый довоенный бомбер, выкрашенный в синий цвет, с вышитым на спине номером \"113\". Чаще всего их носят лидеры, например сморители."
 	icon_state = "vault_commandcoat"
 	item_state = "vault_commandcoat"
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 
 /obj/item/clothing/suit/armor/f13/battlecoat/tan
-	name = "tan battlecoat"
-	desc = "A heavy padded leather coat, worn by pre-War bomber pilots in the past and post-War zeppelin pilots in the future. This one's colors have faded somewhat."
+	name = "Дубленое боевое пальто"
+	desc = "Тяжелое мягкое кожаное пальто, которое носили пилоты довоенных бомбардировщиков в прошлом и пилоты послевоенных цеппелинов в будущем. Цвета этого немного поблекли"
 	icon_state = "battlecoat_tan"
 	item_state = "maxson_battlecoat"
 
 //Knights of the Apocalypse
 
 /obj/item/clothing/suit/armor/riot/knight
-	name = "plate armour"
-	desc = "A classic suit of plate armour, highly effective at stopping melee attacks."
+	name = "Рыцарский доспех"
+	desc = "Классический рыцарский доспех, высокоэффективный при остановке атак ближнего боя."
 	icon_state = "knight_green"
 	item_state = "knight_green"
 
@@ -199,30 +199,30 @@
 	item_state = "knight_red"
 
 /obj/item/clothing/suit/armor/riot/knight/templar
-	name = "crusader armour"
-	desc = "God wills it!"
+	name = "Доспех крестоносца"
+	desc = "Такова воля божья!"
 	icon_state = "knight_templar"
 	item_state = "knight_templar"
 
 /obj/item/clothing/suit/armor/riot/knight/tabard
-	name = "tabard plate armor"
-	desc = "A set of plate armor with tabard for the user's high-visibility during combat."
+	name = "Доспех с накидкой"
+	desc = "Набор доспехов с накидкой для высокой видимости пользователя во время боя."
 	icon_state = "knight_tabard"
 	item_state = "knight_tabard"
 
 //exiles
 
 /obj/item/clothing/suit/armor/f13/exile
-	name = "base faction exile armor"
-	desc = "this is for testing."
+	name = "Базовая броня отступника"
+	desc = "Для тестов."
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("melee" = 40, "bullet" = 25, "laser" = 20, "energy" = 20, "bomb" = 40, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 20)
 	strip_delay = 30
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/exile/ncrexile
-	name = "modified NCR armor"
-	desc = "A modified detoriated armor kit consisting of NCR gear and scrap metal."
+	name = "Модифицированная броня НКР"
+	desc = "Изменённый, испортившийся комплект брони, состоящий из снаряжения НКР и кусков металлолома."
 	icon_state = "ncrexile"
 	item_state = "ncrexile"
 
@@ -231,8 +231,8 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/armor/f13/exile/legexile
-	name = "modified Legion armor"
-	desc = "A modified detoriated armor kit consisting of Legion gear and scrap metal."
+	name = "Модифицированная броня легионера"
+	desc = "Изменённый, испортившийся комплект брони, состоящий из снаряжения легиона и кусков металлолома."
 	icon_state = "legexile"
 	item_state = "legexile"
 
@@ -241,8 +241,8 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/armor/f13/exile/bosexile
-	name = "modified Brotherhood armor"
-	desc = "A modified detoriated armor kit consisting of brotherhood combat armor and scrap metal."
+	name = "Модифицированная броня братства"
+	desc = "Изменённый, испортившийся комплект брони, состоящий из боевой брони братства и кусков металлолома."
 	icon_state = "brotherhoodexile"
 	item_state = "brotherhoodexile"
 
@@ -252,25 +252,25 @@
 
 /*
 /obj/item/clothing/suit/armor/f13/exile/r
-	name = "reinforced base faction exile armor"
-	desc = "this is for testing"
+	name = "Улучшенная модифицированная броня отступника"
+	desc = "Для тестов"
 	armor = list("melee" = 55, "bullet" = 40, "laser" = 30, "energy" = 30, "bomb" = 50, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 20)
 	strip_delay = 30
 
 /obj/item/clothing/suit/armor/f13/exile/r/ncr
-	name = "reinforced modified NCR armor"
-	desc = "A modified detoriated armor kit consisting of NCR gear and scrap metal.This set has been add additional protective plates fused inside of the armor, granting additional protection."
+	name = "Улучшенная модифицированная броня НКР"
+	desc = "Изменённый, испортившийся комплект брони, состоящий из снаряжения НКР и кусков металлолома. Этот набор был дополнен дополнительными защитными пластинами, вшитыми внутрь брони, что обеспечивало дополнительную защиту."
 	icon_state = "ncrexile"
 	item_state = "ncrexile"
 
 /obj/item/clothing/suit/armor/f13/exile/r/legion
-	name = "reinforced modified Legion armor"
-	desc = "A modified detoriated armor kit consisting of Legion gear and scrap metal.This set has been add additional protective plates fused inside of the armor, granting additional protection."
+	name = "Улучшенная модифицированная броня легиона"
+	desc = "Изменённый, испортившийся комплект брони, состоящий из снаряжения легиона и кусков металлолома. Этот набор был дополнен дополнительными защитными пластинами, вшитыми внутрь брони, что обеспечивало дополнительную защиту."
 	icon_state = "legexile"
 	item_state = "legexile"
 
 /obj/item/clothing/suit/armor/f13/exile/r/bos
-	name = "reinforced modified Brotherhood armor"
-	desc = "A modified detoriated armor kit consisting of brotherhood combat armor and scrap metal. This set has been add additional protective plates fused inside of the armor, granting additional protection."
+	name = "Улучшенная модифицированная броня братства"
+	desc = "Изменённый, испортившийся комплект брони, состоящий из боевой брони братства и кусков металлолома. Этот набор был дополнен дополнительными защитными пластинами, вшитыми внутрь брони, что обеспечивало дополнительную защиту."
 	icon_state = "brotherhoodexile"
 	item_state = "brotherhoodexile" */

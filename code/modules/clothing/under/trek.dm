@@ -7,15 +7,15 @@
 
 //TOS
 /obj/item/clothing/under/trek/command
-	name = "command uniform"
-	desc = "The uniform worn by command officers."
+	name = "Униформа коммандования"
+	desc = "Такую форму носят коммандующие офицеры."
 	icon_state = "trek_command"
 	item_color = "trek_command"
 	item_state = "y_suit"
 
 /obj/item/clothing/under/trek/engsec
-	name = "engsec uniform"
-	desc = "The uniform worn by engineering/security officers."
+	name = "Униформа инженеров и охраны"
+	desc = "Униформа, которую носят офицеры инженерной службы или службы безопасности."
 	icon_state = "trek_engsec"
 	item_color = "trek_engsec"
 	item_state = "r_suit"
@@ -23,8 +23,8 @@
 	strip_delay = 50
 
 /obj/item/clothing/under/trek/medsci
-	name = "medsci uniform"
-	desc = "The uniform worn by medical/science officers."
+	name = "Униформа ученых и медиков"
+	desc = "Такую униформу носят медицинские и научные офицеры"
 	icon_state = "trek_medsci"
 	item_color = "trek_medsci"
 	item_state = "b_suit"
@@ -65,8 +65,8 @@
 
 //Q
 /obj/item/clothing/under/trek/Q
-	name = "french marshall's uniform"
-	desc = "Something about it feels off..."
+	name = "Французский мундир маршала"
+	desc = "Что-то в нем ощущается не так..."
 	icon_state = "trek_Q"
 	item_color = "trek_Q"
 	item_state = "r_suit"

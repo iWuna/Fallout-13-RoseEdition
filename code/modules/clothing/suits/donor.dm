@@ -6,8 +6,8 @@
  */
 
 /obj/item/clothing/suit/donor/soldier
-	name = "Soldier's Greatcoat"
-	desc = "A resistant, tan greatcoat, typically worn by pre-War Generals."
+	name = "Солдатская шинель"
+	desc = "Стойкая коричневая шинель, которую обычно носили довоенные генералы."
 	icon_state = "soldier"
 	item_state = "soldier"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS

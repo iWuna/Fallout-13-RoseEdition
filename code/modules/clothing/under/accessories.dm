@@ -1,6 +1,6 @@
 /obj/item/clothing/accessory //Ties moved to neck slot items, but as there are still things like medals and armbands, this accessory system is being kept as-is
-	name = "Accessory"
-	desc = "Something has gone wrong!"
+	name = "Аксессуар"
+	desc = "Что-то пошло не так!"
 	icon = 'icons/obj/clothing/accessories.dmi'
 	icon_state = "plasma"
 	item_state = ""	//no inhands
@@ -79,16 +79,16 @@
 		to_chat(user, "<span class='notice'>\The [src] can be worn above or below your suit. Alt-click to toggle.</span>")
 
 /obj/item/clothing/accessory/waistcoat
-	name = "waistcoat"
-	desc = "For some classy, murderous fun."
+	name = "Жилет"
+	desc = "Для какой-то классной, убийственной забавы."
 	icon_state = "waistcoat"
 	item_state = "waistcoat"
 	item_color = "waistcoat"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/maidapron
-	name = "maid apron"
-	desc = "The best part of a maid costume."
+	name = "Фартук горничной"
+	desc = "Лучшая часть костюма горничной."
 	icon_state = "maidapron"
 	item_state = "maidapron"
 	item_color = "maidapron"
@@ -98,72 +98,72 @@
 //Ranks
 
 /obj/item/clothing/accessory/ncr
-    name = "(O-6) Colonel rank pin"
-    desc = "An officer holding the rank of Colonel should wear these."
+    name = "(O-6) знаки отличия полковника"
+    desc = "Офицер в чине полковника должен носить их."
     icon_state = "colonelrank"
     item_color = "colonelrank"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/ncr/CPT
-    name = "(O-3) Captain rank pin"
-    desc = "An officer holding the rank of Captain should wear this."
+    name = "(O-3) знаки отличия капитана"
+    desc = "Офицер в чине капитана должен носить их."
     icon_state = "captainrank"
     item_color = "captainrank"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/ncr/LT
-    name = "(O-1) Lieutenant rank pin"
-    desc = "An officer holding the rank of Lieutenant should wear this."
+    name = "(O-1) знаки отличия лейтенанта"
+    desc = "Офицер в чине лейтинанта должен носить их."
     icon_state = "lieutenantrank"
     item_color = "lieutenantrank"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/armband/med/ncr
-	name = "medical armband (O-1 Medical Officer)"
-	desc = "An armband worn by NCR Medical Officers to diplay their rank and specialty. This one is white."
+	name = "Медицинская нарукавная повязка (O-1 Медицинский офицер)"
+	desc = "Нарукавная повязка, которую носият медицинские офицеры НКР, чтобы показать свое звание и специальность. Этот - белый."
 
 /obj/item/clothing/accessory/ncr/SSGT
-    name = "(E-6) Staff Sergeant rank pins"
-    desc = "A trooper holding the rank of Staff Sergeant should wear this."
+    name = "(E-6) знаки отличия старжего сержанта"
+    desc = "Офицер в чине старшего сержанта должен носить их."
     icon_state = "ncrenlisted"
     item_color = "ncrenlisted"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/ncr/SGT
-    name = "(E-5) Sergeant rank pins"
-    desc = "A trooper holding the rank of Sergeant should wear this."
+    name = "(E-5) знаки отличия сержанта"
+    desc = "Офицер в чине сержанта должен носить их."
     icon_state = "ncrenlisted"
     item_color = "ncrenlisted"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/armband/engine/ncr
-    name = "engineering armband (E-5 Engineer)"
-    desc = "An armband worn by NCR Engineers to display their rank and speciality. This one is orange with a reflective strip!"
+    name = "Инженерная нарукавная повязка (E-5 Инженер)"
+    desc = "Нарукавная повязка, которую носили инженеры НКР, чтобы показать их ранг и специальность. Этот оранжевый с отражающей полосой!"
 
 /obj/item/clothing/accessory/ncr/CPL
-    name = "(E-4) Corporal rank pins"
-    desc = "A Corporal should wear this."
+    name = "(E-4) знаки отличия капрала"
+    desc = "Капрал должен носить их."
     icon_state = "ncrenlisted"
     item_color = "ncrenlisted"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/ncr/SPC
-    name = "(E-3) Private First Class rank pins"
-    desc = "A Specialist should wear this."
+    name = "(E-3) знаки отличия рядовго первого класса"
+    desc = "Специалист должен носить их"
     icon_state = "ncrenlisted"
     item_color = "ncrenlisted"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/ncr/TPR
-    name = "(E-3) Private First Class rank pins"
-    desc = "A trooper should wear this."
+    name = "(E-3) знаки отличия рядовго первого класса"
+    desc = "Солдат должен носить их."
     icon_state = "ncrenlisted"
     item_color = "ncrenlisted"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/ncr/REC
-    name = "(E-2) Private rank pins"
-    desc = "A recruit should wear this."
+    name = "(E-2) знаки отличия рядовго"
+    desc = "Рекрут должен носить их."
     icon_state = "ncrenlisted"
     item_color = "ncrenlisted"
     minimize_when_attached = TRUE
@@ -171,114 +171,114 @@
 //BOSRanks
 
 /obj/item/clothing/accessory/bos/initiateK
-    name = "Knight-Aspirant pin"
-    desc = "A silver pin with blue cloth, worn by Initiates aspiring to be Knights."
+    name = "Знак рыцаря-искателя"
+    desc = "Серебряная булавка с голубой тканью, такие носят посвященные, стремящиеся стать рыцарями."
     icon_state = "initiateK"
     item_color = "initiateK"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/initiateS
-    name = "Scribe-Aspirant pin"
-    desc = "A silver pin with red cloth, worn by Initiates aspiring to be Scribes."
+    name = "Знак писца-претендента"
+    desc = "Серебряная булавка с красной тканью, такие носят посвященные, стремящиеся стать писцами."
     icon_state = "initiateS"
     item_color = "initiateS"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/knight
-    name = "Knight pins"
-    desc = "A silver pin with one device and blue coloring, worn by fully fledged Knights of the Brotherhood."
+    name = "Знак рыцаря"
+    desc = "Серебряная булавка с одним устройством и синей расцветкой, такие носят полноправные рыцари Братства."
     icon_state = "knight"
     item_color = "knight"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/scribe
-    name = "Scribe pins"
-    desc = "A silver pin with one device and red coloring, worn by fully fledged Scribes of the Brotherhood."
+    name = "Знак писца"
+    desc = "Серебряная булавка с одним устройством и красной окраской, такие носят полноправные писцы Братства."
     icon_state = "scribe"
     item_color = "scribe"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/juniorpaladin
-    name = "Junior Paladin pins"
-    desc = "A silver pin with one device, and purple coloring. Worn by the Paladin-in-Training of the Brotherhood."
+    name = "Знак начинающего паладина"
+    desc = "Серебряная булавка с одним устройством и фиолетовой окраской. Такие носят паладинамы Братства."
     icon_state = "juniorpaladin"
     item_color = "juniorpaladin"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/knightcaptain
-    name = "Knight-Captain pins"
-    desc = "A gold-plated, silver lined pin with one device and two outstretched wings on the side; a golden sword centered on blue-cloth. Worn by the Knight Captain."
+    name = "Знаки рыцаря-капитана"
+    desc = "Позолоченная, с серебряной подкладкой булавка с одним прибором и двумя распростертыми крыльями сбоку; золотой меч в центре на синей ткани. Такие носят рыцари-капитаны."
     icon_state = "knight-captain"
     item_color = "knight-captain"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/seniorscribe
-    name = "Senior Scribe pins"
-    desc = "A silver pin with one device gilded in gold, little notches at the top end, and a golden sword in the center of red cloth; worn by the high-ranking Senior Scribe."
+    name = "Знаки старшего писца"
+    desc = "Серебряная булавка с одним позолоченным прибором, маленькими зазубринами на верхнем конце и золотым мечом в центре красной ткани, такие носят высокопоставленные старшие писцы."
     icon_state = "seniorscribe"
     item_color = "seniorscribe"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/paladin
-    name = "Paladin pins"
-    desc = "A silver pin with one device, a silver sword centered on the purple coloring, and notches denoting the rank of the Paladin."
+    name = "Знаки паладина"
+    desc = "Серебряная булавка с одним прибором, серебряный меч в центре пурпурного цвета и зарубки, обозначающие ранг Паладина."
     icon_state = "paladin"
     item_color = "paladin"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/seniorpaladin
-    name = "Senior Paladin pins"
-    desc = "A silver pin with one device gilded in gold, little notches at the top end, and a golden sword in the center of purple cloth; worn by the high-ranking Senior Paladin."
+    name = "Знаки старшего паладина"
+    desc = "Серебряная булавка с одним позолоченным прибором, маленькими зазубринами на верхнем конце и золотым мечом в центре пурпурной ткани, такие носят высокопоставленные старшие Паладины."
     icon_state = "seniorpaladin"
     item_color = "seniorpaladin"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/seniorknight
-    name = "Senior Knight pins"
-    desc = "A silver pin with one device gilded in gold, little notches at the top end, and a golden sword in the center of purple cloth; worn by the high-ranking Senior Knight."
+    name = "Знаки старшего рыцаря"
+    desc = "Серебряная булавка с одним позолоченным прибором, маленькими зазубринами на верхнем конце и золотым мечом в центре пурпурной ткани, такие носят высокопоставленные старшие рыцари.."
     icon_state = "seniorknight"
     item_color = "seniorknight"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/juniorknight
-    name = "Junior Knight pins"
-    desc = "A silver pin with one device, and blue coloring. Worn by the Knight-in-Training of the Brotherhood."
+    name = "Знаки начинающего рыцаря"
+    desc = "Серебряная булавка с одним устройством и синей расцветкой. Такие носят обучающиеся рыцари Братства."
     icon_state = "juniorknight"
     item_color = "juniorknight"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/juniorscribe
-    name = "Junior Scribe pins"
-    desc = "A silver pin with one device, and red coloring. Worn by the Scribe-in-Training of the Brotherhood."
+    name = "Знаки начинающего писца"
+    desc = "Серебряная булавка с одним устройством и красной окраской. Такие носят обучающиеся писцы Братства."
     icon_state = "juniorscribe"
     item_color = "juniorscribe"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/headscribe
-    name = "Head-Scribe pins"
-    desc = "A gold-plated, silver lined pin with one device and two outstretched wings on the side; a golden sword centered on red-cloth. Worn by the Head Scribe."
+    name = "Знаки главного писаря"
+    desc = "Позолоченная серебряная булавка с одним прибором и двумя распростертыми крыльями сбоку, золотой меч в центре на красной ткани. Такие носят главные писцы."
     icon_state = "headscribe"
     item_color = "headscribe"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/sentinel
-    name = "Sentinel pins"
-    desc = "A gold-plated, silver lined pin with one device and two outstretched wings on the side; a golden sword centered on purple-cloth. Worn by the Sentinel."
+    name = "Знаки стража"
+    desc = "Позолоченная, с серебряной подкладкой булавка с одним устройством и двумя распростертыми крыльями сбоку, золотой меч в центре пурпурной ткани. Такие носят стражи."
     icon_state = "sentinel"
     item_color = "sentinel"
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/elder
-    name = "Elder pins"
-    desc = "A gold-plated, silver lined pin with one device and two outstretched wings on the side; a golden sword centered on green-cloth. It bears notches with gems on the top half, and denotes the rank of Elder."
+    name = "Знаки старшего"
+    desc = "Позолоченная, с серебряной подкладкой булавка с одним прибором и двумя распростертыми крыльями сбоку; золотой меч в центре на зеленой ткани. На его верхней половине имеются насечки с драгоценными камнями, обозначающие ранг старейшины."
     icon_state = "elder"
     item_color = "elder"
     minimize_when_attached = TRUE
 //Medals
 
 /obj/item/clothing/accessory/medal
-	name = "bronze medal"
-	desc = "A bronze medal."
+	name = "Бронзовая медаль"
+	desc = "Бронзовая медаль."
 	icon_state = "bronze"
 	item_color = "bronze"
 	materials = list(MAT_METAL=1000)
@@ -327,60 +327,60 @@
 		..()
 
 /obj/item/clothing/accessory/medal/conduct
-	name = "distinguished conduct medal"
-	desc = "A bronze medal awarded for distinguished conduct. Whilst a great honor, this is the most basic award given by Vault-Tec. It is often awarded by a captain to a member of his crew."
+	name = "Медаль за выдающееся поведения"
+	desc = "Бронзовая медаль За выдающееся поведение. Хотя это большая честь, это самая основная награда, присуждаемая Vault-Tec. Он часто вручается капитаном члену своей команды."
 
 /obj/item/clothing/accessory/medal/bronze_heart
-	name = "bronze heart medal"
-	desc = "A bronze heart-shaped medal awarded for sacrifice. It is often awarded posthumously or for severe injury in the line of duty."
+	name = "Бронзовая медаль в форме сердца"
+	desc = "Бронзовая медаль в форме сердца, вручаемая за самопожертвование. Её часто награждают посмертно или за тяжелое ранение при исполнении служебных обязанностей."
 	icon_state = "bronze_heart"
 
 /obj/item/clothing/accessory/medal/ribbon
-	name = "ribbon"
-	desc = "A ribbon"
+	name = "Лента"
+	desc = "Лента"
 	icon_state = "cargo"
 	item_color = "cargo"
 
 /obj/item/clothing/accessory/medal/ribbon/cargo
-	name = "\"cargo tech of the shift\" award"
-	desc = "An award bestowed only upon those cargotechs who have exhibited devotion to their duty in keeping with the highest traditions of Cargonia."
+	name = "Награда \"складской работник смены\""
+	desc = "Награда присуждается только тем грузовым техникам, которые проявили преданность своему долгу в соответствии с высочайшими традициями Каргонии."
 
 /obj/item/clothing/accessory/medal/silver
-	name = "silver medal"
-	desc = "A silver medal."
+	name = "Серебрянная медаль"
+	desc = "Серебрянная медаль."
 	icon_state = "silver"
 	item_color = "silver"
 	medaltype = "medal-silver"
 	materials = list(MAT_SILVER=1000)
 
 /obj/item/clothing/accessory/medal/silver/valor
-	name = "medal of valor"
-	desc = "A silver medal awarded for acts of exceptional valor."
+	name = "Медаль за доблесть"
+	desc = "Серебряная медаль, присуждаемая за исключительную доблесть."
 
 /obj/item/clothing/accessory/medal/silver/security
-	name = "robust security award"
-	desc = "An award for distinguished combat and sacrifice in defence of Vault-Tec's commercial interests. Often awarded to security staff."
+	name = "Медаль охранника"
+	desc = "Награда, выдающаяся за боевые заслуги и самопожертвование в защиту коммерческих интересов Vault-Tec. Часто присуждается сотрудникам Службы безопасности."
 
 /obj/item/clothing/accessory/medal/gold
-	name = "gold medal"
-	desc = "A prestigious golden medal."
+	name = "Золотая медаль"
+	desc = "Престижная золотая медаль"
 	icon_state = "gold"
 	item_color = "gold"
 	medaltype = "medal-gold"
 	materials = list(MAT_GOLD=1000)
 
 /obj/item/clothing/accessory/medal/gold/captain
-	name = "medal of captaincy"
-	desc = "A golden medal awarded exclusively to those promoted to the rank of captain. It signifies the codified responsibilities of a captain, and their undisputable authority over their crew."
+	name = "Медаль капитана"
+	desc = "Золотой медалью награждались исключительно те, кто был произведен в чин капитана. Это означает кодифицированные обязанности капитана и его неоспоримую власть над экипажем."
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/accessory/medal/gold/heroism
-	name = "medal of exceptional heroism"
-	desc = "An extremely rare golden medal awarded only by CentCom. To receive such a medal is the highest honor and as such, very few exist. This medal is almost never awarded to anybody but commanders."
+	name = "Медаль за выдающийся героизм"
+	desc = "Чрезвычайно редкая золотая медаль, присуждаемая только цетральным коммандованием. Получить такую медаль - высшая честь, и их существует крайне мало. Этой медалью почти никогда не награждают никого, кроме командиров."
 
 /obj/item/clothing/accessory/medal/plasma
-	name = "ultracite medal"
-	desc = "An eccentric medal made of ultracite."
+	name = "Медаль из ультрацита"
+	desc = "Эксцентричная медаль из ультрацита"
 	icon_state = "plasma"
 	item_color = "plasma"
 	medaltype = "medal-plasma"
@@ -394,8 +394,8 @@
 		qdel(src)
 
 /obj/item/clothing/accessory/medal/plasma/nobel_science
-	name = "nobel sciences award"
-	desc = "A plasma medal which represents significant contributions to the field of science or engineering."
+	name = "Нобелевская научная медаль"
+	desc = "Плазменная медаль, представляющая значительный вклад в область науки или техники."
 
 
 ////////////
@@ -403,66 +403,66 @@
 ////////////
 
 /obj/item/clothing/accessory/armband
-	name = "red armband"
-	desc = "A fancy red armband!"
+	name = "Красная нарукавная повязка"
+	desc = "Модная красная позвяка!"
 	icon_state = "redband"
 	item_color = "redband"
 
 /obj/item/clothing/accessory/armband/white
-	name = "armband"
-	desc = "A fancy armband!"
+	name = "Нарукавная повязка"
+	desc = "Модная повязка!"
 	icon_state = "whiteband"
 	item_color = "whiteband"
 
 /obj/item/clothing/accessory/armband/black
-	name = "MP's armband"
+	name = "Нарукавная повязка военной полиции"
 	desc = "An armband issued to NCR Military Police, signifying their alignment with NCROSI rather than the typical chain of command."
 	icon_state = "blackband"
 	item_color = "blackband"
 
 /obj/item/clothing/accessory/armband/deputy
-	name = "security deputy armband"
-	desc = "An armband, worn by personnel authorized to act as a deputy of station security."
+	name = "Нарукавная повязка заместителя ХОСа"
+	desc = "Нарукавная повязка, которую носят сотрудники, уполномоченные исполнять обязанности заместителя начальника Службы безопасности станции."
 
 /obj/item/clothing/accessory/armband/cargo
-	name = "cargo bay guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is brown."
+	name = "Нарукавная повязка охранника складского отсека"
+	desc = "Нарукавная повязка, которую носят сотрудники Службы безопасности станции, чтобы показать, к какому отделу они приписаны. Эта коричнеая."
 	icon_state = "cargoband"
 	item_color = "cargoband"
 
 /obj/item/clothing/accessory/armband/engine
-	name = "engineering guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is orange with a reflective strip!"
+	name = "Нарукавная повязка охранника инженерного отсека"
+	desc = "Нарукавная повязка, которую носят сотрудники Службы безопасности станции, чтобы показать, к какому отделу они приписаны. Эта оранжевая с отражающей полосой!"
 	icon_state = "engieband"
 	item_color = "engieband"
 
 /obj/item/clothing/accessory/armband/science
-	name = "science guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is purple."
+	name = "Нарукавная повязка охранника научного отдела"
+	desc = "Нарукавная повязка, которую носят сотрудники Службы безопасности станции, чтобы показать, к какому отделу они приписаны. Эта - фиолетовая."
 	icon_state = "rndband"
 	item_color = "rndband"
 
 /obj/item/clothing/accessory/armband/hydro
-	name = "hydroponics guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is green and blue."
+	name = "Нарукавная повязка охранника гидропонного отсека"
+	desc = "Нарукавная повязка, которую носят сотрудники Службы безопасности станции, чтобы показать, к какому отделу они приписаны. Эта - зеленая с синим."
 	icon_state = "hydroband"
 	item_color = "hydroband"
 
 /obj/item/clothing/accessory/armband/med
 	name = "medical guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is white."
+	desc = "Нарукавная повязка, которую носят сотрудники Службы безопасности станции, чтобы показать, к какому отделу они приписаны. Эта - белая."
 	icon_state = "medband"
 	item_color = "medband"
 
 /obj/item/clothing/accessory/armband/medblue
-	name = "first aid armband"
-	desc = "An armband, worn NCR troopers who are trained in and can perform first aid."
+	name = "Нарукавная повязка первой помощи"
+	desc = "Нарукавная повязка, которую носят солдаты НКР, которые обученные оказывать первую медицинскую помощь."
 	icon_state = "medblueband"
 	item_color = "medblueband"
 
 /obj/item/clothing/accessory/armband/remnant
-	name = "remnant armband"
-	desc = "An armband signifying allegiance to the Enclave, worn by all members."
+	name = "Нарукавная повязка анклава"
+	desc = "Нарукавная повязка, показывающая принадлежность к Акнлаву. Такие носят всего его члены."
 	icon_state = "remnant"
 	item_color = "remnant"
 
@@ -471,8 +471,8 @@
 //////////////
 
 /obj/item/clothing/accessory/lawyers_badge
-	name = "attorney's badge"
-	desc = "Fills you with the conviction of JUSTICE. Lawyers tend to want to show it to everyone they meet."
+	name = "Значок адвоката"
+	desc = "Наполняет вас убежденностью в СПРАВЕДЛИВОСТИ. Адвокаты, как правило, хотят показать его всем, с кем они встречаются."
 	icon_state = "lawyerbadge"
 	item_color = "lawyerbadge"
 
@@ -490,8 +490,8 @@
 //HA HA! NERD!//
 ////////////////
 /obj/item/clothing/accessory/pocketprotector
-	name = "pocket protector"
-	desc = "Can protect your clothing from ink stains, but you'll look like a nerd if you're using one."
+	name = "Карманный протектор"
+	desc = "Может защитить вашу одежду от чернильных пятен, но вы будете выглядеть как ботаник, если используете его."
 	icon_state = "pocketprotector"
 	item_color = "pocketprotector"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/pocketprotector
@@ -512,15 +512,15 @@
 ////////////////
 
 /obj/item/clothing/accessory/talisman
-	name = "bone talisman"
-	desc = "A hunter's talisman, some say the old gods smile on those who wear it."
+	name = "Костяной талисман"
+	desc = "Талисман охотника, говорят, старые боги улыбаются тем, кто его носит."
 	icon_state = "talisman"
 	item_color = "talisman"
 	armor = list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 25)
 
 /obj/item/clothing/accessory/skullcodpiece
-	name = "skull codpiece"
-	desc = "A skull shaped ornament, intended to protect the important things in life."
+	name = "Гульфики из черепа"
+	desc = "Украшение в форме черепа, предназначенное для защиты самого важного в жизни."
 	icon_state = "skull"
 	item_color = "skull"
 	above_suit = TRUE

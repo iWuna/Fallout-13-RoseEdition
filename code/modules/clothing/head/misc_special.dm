@@ -14,8 +14,8 @@
  * Welding mask
  */
 /obj/item/clothing/head/welding
-	name = "welding helmet"
-	desc = "A head-mounted face cover designed to protect the wearer completely from arc eye."
+	name = "Сварочный шлем"
+	desc = "Установленное на голове покрытие лица, предназначенное для полной защиты глаз владельца от сварочных искр."
 	icon_state = "welding"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	item_state = "welding"
@@ -45,8 +45,8 @@
  * Cakehat
  */
 /obj/item/clothing/head/hardhat/cakehat
-	name = "cakehat"
-	desc = "You put the cake on your head. Brilliant."
+	name = "Шляпа-торт"
+	desc = "Вы надели торт на голову. Прекрасно!"
 	icon_state = "hardhat0_cakehat"
 	item_state = "hardhat0_cakehat"
 	item_color = "cakehat"
@@ -89,8 +89,8 @@
  * Ushanka
  */
 /obj/item/clothing/head/ushanka
-	name = "ushanka"
-	desc = "Perfect for winter in Siberia, da?"
+	name = "Ушанка"
+	desc = "Прекрасно подходит для зимы в Сибири, da?"
 	icon_state = "ushankadown"
 	item_state = "ushankadown"
 	flags_inv = HIDEEARS|HIDEHAIR
@@ -116,8 +116,8 @@
  * Pumpkin head
  */
 /obj/item/clothing/head/hardhat/pumpkinhead
-	name = "carved pumpkin"
-	desc = "A jack o' lantern! Believed to ward off evil spirits."
+	name = "Резаная тыква"
+	desc = "Фонарь Джека! Считается, что он отгоняет злых духов."
 	icon_state = "hardhat0_pumpkin"
 	item_state = "hardhat0_pumpkin"
 	item_color = "pumpkin"
@@ -131,8 +131,8 @@
  */
 
 /obj/item/clothing/head/kitty
-	name = "kitty ears"
-	desc = "A pair of kitty ears. Meow!"
+	name = "Кошачьи ушка"
+	desc = "Пара кошачьих ушек. Мяу!"
 	icon_state = "kitty"
 	color = "#999999"
 	dynamic_hair_suffix = ""
@@ -150,13 +150,13 @@
 		add_atom_colour("#[user.hair_color]", FIXED_COLOUR_PRIORITY)
 
 /obj/item/clothing/head/kitty/genuine
-	desc = "A pair of kitty ears. A tag on the inside says \"Hand made from real cats.\""
+	desc = "Пара кошачьих ушей. Бирка на внутренней стороне гласит \"Сделано из реальных кошек.\""
 
 
 
 /obj/item/clothing/head/hardhat/reindeer
-	name = "novelty reindeer hat"
-	desc = "Some fake antlers and a very fake red nose."
+	name = "Оленья шляпа"
+	desc = "Несколько фальшивых рогов и очень фальшивый красный нос."
 	icon_state = "hardhat0_reindeer"
 	item_state = "hardhat0_reindeer"
 	item_color = "reindeer"
@@ -168,8 +168,8 @@
 	dog_fashion = /datum/dog_fashion/head/reindeer
 
 /obj/item/clothing/head/cardborg
-	name = "cardborg helmet"
-	desc = "A helmet made out of a box."
+	name = "Шлем из коробки"
+	desc = "Шлем, сделанный из короюки"
 	icon_state = "cardborg_h"
 	item_state = "cardborg_h"
 	flags_cover = HEADCOVERSEYES
@@ -192,8 +192,8 @@
 
 
 /obj/item/clothing/head/wig
-	name = "wig"
-	desc = "A bunch of hair without a head attached."
+	name = "Парик"
+	desc = "Пучок волос без головы"
 	icon_state = ""
 	item_state = "pwig"
 	flags_inv = HIDEHAIR
@@ -232,16 +232,16 @@
 	. = ..()
 
 /obj/item/clothing/head/bronze
-	name = "bronze hat"
-	desc = "A crude helmet made out of bronze plates. It offers very little in the way of protection."
+	name = "Бронзовая шляпа"
+	desc = "Грубый шлем из бронзовых пластин. Очень слабо защищает."
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_helmet_old"
 	flags_inv = HIDEEARS|HIDEHAIR
 	armor = list("melee" = 5, "bullet" = 0, "laser" = -5, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 20)
 
 /obj/item/clothing/head/foilhat
-	name = "tinfoil hat"
-	desc = "Thought control rays, psychotronic scanning. Don't mind that, I'm protected cause I made this hat."
+	name = "Шапочка из фольги"
+	desc = "Защищает от психотронного облучения."
 	icon_state = "foilhat"
 	item_state = "foilhat"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = -5,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = -5, "fire" = 0, "acid" = 0)
@@ -255,7 +255,7 @@
 			QDEL_NULL(paranoia)
 		paranoia = new()
 		user.gain_trauma(paranoia, TRAUMA_RESILIENCE_MAGIC, "conspiracies")
-		to_chat(user, "<span class='warning'>As you don the foiled hat, an entire world of conspiracy theories and seemingly insane ideas suddenly rush into your mind. What you once thought unbelievable suddenly seems.. undeniable. Everything is connected and nothing happens just by accident. You know too much and now they're out to get you. </span>")
+		to_chat(user, "<span class='warning'>Когда вы надеваете шляпу с фольгой, целый мир теорий заговора и, казалось бы, безумных идей внезапно врывается в ваш ум. То, что вы когда-то считали невероятным, вдруг кажется... очевидным. Все взаимосвязано, и ничто не происходит случайно. Ты слишком много знаешь, и теперь они охотятся за тобой. </span>")
 
 /obj/item/clothing/head/foilhat/dropped(mob/user)
 	..()
@@ -266,6 +266,6 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(src == C.head)
-			to_chat(user, "<span class='userdanger'>Why would you want to take this off? Do you want them to get into your mind?!</span>")
+			to_chat(user, "<span class='userdanger'>Зачем тебе это снимать? Ты хочешь, чтобы они проникли в твой разум?!</span>")
 			return
 	..()

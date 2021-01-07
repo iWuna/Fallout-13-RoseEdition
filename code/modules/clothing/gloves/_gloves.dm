@@ -1,5 +1,5 @@
 /obj/item/clothing/gloves
-	name = "gloves"
+	name = "перчатки"
 	gender = PLURAL
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'icons/obj/clothing/gloves.dmi'

@@ -1,6 +1,6 @@
 /obj/item/clothing/shoes/magboots
-	desc = "Magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle."
-	name = "magboots"
+	desc = "Магнитные ботинки, часто используемые во время внекорабельной деятельности, чтобы гарантировать, что пользователь остается надежно прикрепленным к транспортному средству."
+	name = "Магнтиные ботинки"
 	icon_state = "magboots0"
 	var/magboot_state = "magboots"
 	var/magpulse = 0
@@ -45,15 +45,15 @@
 
 
 /obj/item/clothing/shoes/magboots/advance
-	desc = "Advanced magnetic boots that have a lighter magnetic pull, placing less burden on the wearer."
-	name = "advanced magboots"
+	desc = "Усовершенствованные магнитные ботинки, которые имеют более легкую магнитную тягу, накладывая меньшую нагрузку на владельца."
+	name = "Улучшенные магнитные ботинки"
 	icon_state = "advmag0"
 	magboot_state = "advmag"
 	slowdown_active = SHOES_SLOWDOWN
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/shoes/magboots/syndie
-	desc = "Reverse-engineered magnetic boots that have a heavy magnetic pull. Property of Gorlex Marauders."
-	name = "blood-red magboots"
+	desc = "Реверсивные магнитные ботинки с сильным магнитным притяжением. Собственность мародеров Горлекс."
+	name = "Кроваво-красные магнитные ботинки"
 	icon_state = "syndiemag0"
 	magboot_state = "syndiemag"

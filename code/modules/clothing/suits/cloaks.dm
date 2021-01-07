@@ -1,8 +1,8 @@
 //Cloaks. No, not THAT kind of cloak.
 
 /obj/item/clothing/neck/cloak
-	name = "brown cloak"
-	desc = "It's a cape that can be worn around your neck."
+	name = "Коричневый плащ"
+	desc = "Это плащ, который можно носить на шее."
 	icon = 'icons/obj/clothing/cloaks.dmi'
 	icon_state = "cloak"
 	item_state = "cloak"
@@ -10,8 +10,8 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 
 /obj/item/clothing/neck/cloak/grey
-	name = "grey cloak"
-	desc = "It's a grey cape that can be worn around your neck."
+	name = "Серый плащ"
+	desc = "Это серый плащ, который можно носить на шее."
 	icon = 'icons/obj/clothing/cloaks.dmi'
 	icon_state = "cloakgrey"
 	item_state = "cloakgrey"
@@ -19,10 +19,10 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 
 /obj/item/clothing/head/cloakhood
-	name = "cloak hood"
+	name = "Капюшон плаща"
 	icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "golhood"
-	desc = "A hood for a cloak."
+	desc = "Капюшон для твоего плаща."
 	body_parts_covered = HEAD
 	item_flags = NODROP
 	flags_inv = HIDEHAIR|HIDEEARS
@@ -32,42 +32,42 @@
 	return(OXYLOSS)
 
 /obj/item/clothing/neck/cloak/overseer
-	name = "vault-tec overseer's cloak"
-	desc = "This is the overseers cloak.  Issued by the Vault-tec corporation to easily identify the overseer. This cloak has been passed down from overseer to overseer"
+	name = "Шлем смотрителя Vault-Tec"
+	desc = "Это плащ смотрителя. Выдан корпорацией Vault-tec, чтобы легко идентифицировать смотрителя. Он передаётся из поколения в поколение."
 	icon_state = "overseercloak"
 
 /obj/item/clothing/neck/cloak/hos
-	name = "head of security's cloak"
-	desc = "Worn by Securistan, ruling the station with an iron fist."
+	name = "Плащ Главы Безопасности"
+	desc = "Носит Секьюристан, правящими станцией железным кулаком."
 	icon_state = "hoscloak"
 
 /obj/item/clothing/neck/cloak/qm
-	name = "quartermaster's cloak"
-	desc = "Worn by Cargonia, supplying the station with the necessary tools for survival."
+	name = "Плащ Завхоза"
+	desc = "Носится Каргонией, снабжающей станцию необходимыми инструментами для выживания."
 
 /obj/item/clothing/neck/cloak/cmo
-	name = "chief medical officer's cloak"
-	desc = "Worn by Meditopia, the valiant men and women keeping pestilence at bay."
+	name = "Плащ Главного Врача"
+	desc = "Носятся Медитопией, доблестными мужчинами и женщинами, сдерживающими Мор."
 	icon_state = "cmocloak"
 
 /obj/item/clothing/neck/cloak/ce
-	name = "chief engineer's cloak"
-	desc = "Worn by Engitopia, wielders of an unlimited power."
+	name = "Плащ Старшего Инженера"
+	desc = "Носится Энгитопией, обладателями неограниченной власти."
 	icon_state = "cecloak"
 
 /obj/item/clothing/neck/cloak/rd
-	name = "research director's cloak"
-	desc = "Worn by Sciencia, thaumaturges and researchers of the universe."
+	name = "Плащ Научного Директора"
+	desc = "Носистся Саентистией, тауматургами и исследователями Вселенной."
 	icon_state = "rdcloak"
 
 /obj/item/clothing/neck/cloak/cap
-	name = "captain's cloak"
-	desc = "Worn by the commander of Space Station 13."
+	name = "Плащ Капитана"
+	desc = "Носится  коммандиром Космической Станции 13"
 	icon_state = "capcloak"
 
 /obj/item/clothing/neck/cloak/hop
-	name = "head of personnel's cloak"
-	desc = "Worn by the Head of Personnel. It smells faintly of bureaucracy."
+	name = "Плащ Главы Персонала"
+	desc = "Носится начальником отдела кадров. Слегка пахнет бюрократией."
 	icon_state = "hopcloak"
 
 /obj/item/clothing/neck/cloak/chiefcloak
@@ -76,14 +76,14 @@
 	icon_state = "chiefcloak"
 
 /obj/item/clothing/neck/cloak/amulet
-	name = "\improper hunter's amulet"
-	desc = "A hunter's talisman, some say the old gods smile on those who wear it."
+	name = "Амулет охотника"
+	desc = "Талисман охотник, говорят, что старые боги улыбаются тому, кто его носит."
 	icon_state = "talisman"
 	item_state = "talisman"
 	body_parts_covered = null
 
 /obj/item/clothing/neck/cloak/Hhuntercloak
-	name = "Razorclaw cloak"
-	desc = "A cloak decorated with bones of a deathclaw and small trinkets repersenting the machine spirit of fire."
+	name = "Плащ бритвенного когтя"
+	desc = "Плащ, украшенный костями Когтя Смерти и маленькими безделушками, отражающими дух огня машины."
 	icon_state = "chiefcloak"
 	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear)

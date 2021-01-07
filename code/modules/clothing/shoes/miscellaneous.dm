@@ -2,13 +2,13 @@
 	SEND_SIGNAL(src, COMSIG_SHOES_STEP_ACTION)
 
 /obj/item/clothing/shoes/sneakers/mime
-	name = "mime shoes"
+	name = "Ботинки мима"
 	icon_state = "mime"
 	item_color = "mime"
 
 /obj/item/clothing/shoes/sandal
-	desc = "A pair of rather plain, wooden sandals."
-	name = "sandals"
+	desc = "Пара довольно простых деревянных сандалий."
+	name = "Сандали"
 	icon_state = "wizard"
 	strip_delay = 50
 	equip_delay_other = 50
@@ -21,13 +21,13 @@
 	resistance_flags = FIRE_PROOF |  ACID_PROOF
 
 /obj/item/clothing/shoes/sandal/magic
-	name = "magical sandals"
-	desc = "A pair of sandals imbued with magic."
+	name = "Магические сандали"
+	desc = "Пара сандалий, наполненных магией."
 	resistance_flags = FIRE_PROOF |  ACID_PROOF
 
 /obj/item/clothing/shoes/galoshes
-	desc = "A pair of yellow rubber boots, designed to prevent slipping on wet surfaces."
-	name = "galoshes"
+	desc = "Пара желтых резиновых сапог, предназначенных для предотвращения скольжения по мокрой поверхности."
+	name = "Галоши"
 	icon_state = "galoshes"
 	permeability_coefficient = 0.01
 	clothing_flags = NOSLIP
@@ -38,8 +38,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 75)
 
 /obj/item/clothing/shoes/galoshes/dry
-	name = "absorbent galoshes"
-	desc = "A pair of orange rubber boots, designed to prevent slipping on wet surfaces while also drying them."
+	name = "Впитывающие калоши"
+	desc = "Пара оранжевых резиновых сапог, предназначенных для предотвращения скольжения на влажных поверхностях, а также для их сушки."
 	icon_state = "galoshes_dry"
 
 /obj/item/clothing/shoes/galoshes/dry/step_action()
@@ -47,8 +47,8 @@
 	SEND_SIGNAL(t_loc, COMSIG_TURF_MAKE_DRY, TURF_WET_WATER, TRUE, INFINITY)
 
 /obj/item/clothing/shoes/clown_shoes
-	desc = "The prankster's standard-issue clowning shoes. Damn, they're huge!"
-	name = "clown shoes"
+	desc = "Стандартная клоунская обувь проказника. Черт возьми, они же огромные!"
+	name = "Ботинки клоуна"
 	icon_state = "clown"
 	item_state = "clown_shoes"
 	slowdown = SHOES_SLOWDOWN+1
@@ -70,13 +70,13 @@
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "noshoes", /datum/mood_event/noshoes)
 
 /obj/item/clothing/shoes/clown_shoes/jester
-	name = "jester shoes"
-	desc = "A court jesters shoes, updated with modern squeaking technology."
+	name = "Ботинки шута"
+	desc = "Туфли придворных шутов, обновленные по современной скрипучей технологии."
 	icon_state = "jester_shoes"
 
 /obj/item/clothing/shoes/jackboots
-	name = "jackboots"
-	desc = "Standard Security combat boots for combat scenarios or combat situations. All combat, all the time."
+	name = "Сапоги"
+	desc = "Стандартные защитные боевые ботинки для боевых сценариев или боевых ситуаций. На все бои, на все времена."
 	icon_state = "jackboots"
 	item_state = "jackboots"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
@@ -92,8 +92,8 @@
 	slowdown = -1
 
 /obj/item/clothing/shoes/winterboots
-	name = "winter boots"
-	desc = "Boots lined with 'synthetic' animal fur."
+	name = "Зимние ботинки"
+	desc = "Сапоги на подкладке из \"синтетического\" животного меха."
 	icon_state = "winterboots"
 	item_state = "winterboots"
 	permeability_coefficient = 0.15
@@ -104,8 +104,8 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/workboots
-	name = "work boots"
-	desc = "Standard Engineering lace-up work boots for the especially blue-collar."
+	name = "Рабочие ботинки"
+	desc = "Стандартные инженерные рабочие ботинки на шнуровке для особо синих воротничков."
 	icon_state = "workboots"
 	item_state = "jackboots"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
@@ -116,8 +116,8 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/laced
-	name = "desert patrol boots"
-	desc = "A pair of laced, heavy-duty boots, adopted by NCR veteran rangers following the Ranger Unification Treaty."
+	name = "Ботинки пустынного рейнджера"
+	desc = "Пара зашнурованных тяжелых ботинок, принятых ветеранами-рейнджерами НКР после Договора об объединении рейнджеров."
 	icon_state = "laced"
 	item_state = "laced"
 	strip_delay = 50
@@ -127,14 +127,14 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/workboots/mining
-	name = "mining boots"
-	desc = "Steel-toed mining boots for mining in hazardous environments. Very good at keeping toes uncrushed."
+	name = "Шахтерские ботинки"
+	desc = "Шахтерские ботинки со стальным носком для добычи полезных ископаемых в опасных условиях. Очень хорошо умеет держать пальцы на ногах целыми."
 	icon_state = "explorer"
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/shoes/cult
-	name = "nar-sian invoker boots"
-	desc = "A pair of boots worn by the followers of Nar-Sie."
+	name = "Ботинки призывателя Нар-Си"
+	desc = "Пара сапог, которые носият последователи нар-Си."
 	icon_state = "cult"
 	item_state = "cult"
 	item_color = "cult"
@@ -144,32 +144,32 @@
 	max_heat_protection_temperature = SHOES_MAX_TEMP_PROTECT
 
 /obj/item/clothing/shoes/cult/alt
-	name = "cultist boots"
+	name = "Ботинки культиста"
 	icon_state = "cultalt"
 
 /obj/item/clothing/shoes/cult/alt/ghost
 	item_flags = NODROP | DROPDEL
 
 /obj/item/clothing/shoes/cyborg
-	name = "cyborg boots"
-	desc = "Shoes for a cyborg costume."
+	name = "Ботинки киборга"
+	desc = "Ботинки для костюма киборга."
 	icon_state = "boots"
 
 /obj/item/clothing/shoes/laceup
-	name = "laceup shoes"
-	desc = "The height of fashion, and they're pre-polished!"
+	name = "Зашнурованные ботинки"
+	desc = "Верх моды, они ещё и предварительно отполированы!"
 	icon_state = "laceups"
 	equip_delay_other = 50
 
 /obj/item/clothing/shoes/laceup/bos
-	name = "brotherhood dress shoes"
-	desc = "Polished dress shoes typically worn with the Brotherhood's formal attire."
+	name = "Ботинки братства"
+	desc = "Начищенные парадные туфли, как правило, носят с официальной одеждой Братства."
 	icon_state = "laceups"
 	equip_delay_other = 50
 
 /obj/item/clothing/shoes/roman
-	name = "roman sandals"
-	desc = "Sandals with buckled leather straps on it."
+	name = "Римские сандали"
+	desc = "Сандалии на кожаных ремешках с пряжками."
 	icon_state = "roman"
 	item_state = "roman"
 	strip_delay = 100
@@ -177,15 +177,15 @@
 	permeability_coefficient = 0.9
 
 /obj/item/clothing/shoes/griffin
-	name = "griffon boots"
-	desc = "A pair of costume boots fashioned after bird talons."
+	name = "Ботинки грифона"
+	desc = "Пара сапог от костюма, сделанных по образцу птичьих когтей."
 	icon_state = "griffinboots"
 	item_state = "griffinboots"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/bhop
-	name = "jump boots"
-	desc = "A specialized pair of combat boots with a built-in propulsion system for rapid foward movement."
+	name = "Прыжковые ботинки"
+	desc = "Специальная пара боевых ботинок со встроенной двигательной установкой для быстрого движения вперед."
 	icon_state = "jetboots"
 	item_state = "jetboots"
 	item_color = "hosred"
@@ -207,7 +207,7 @@
 		return
 
 	if(recharging_time > world.time)
-		to_chat(user, "<span class='warning'>The boot's internal propulsion needs to recharge still!</span>")
+		to_chat(user, "<span class='warning'>Внутренние двигатели ботинок всё ещё перезаряжаются!</span>")
 		return
 
 	var/atom/target = get_edge_target_turf(user, user.dir) //gets the user's direction
@@ -215,29 +215,29 @@
 	if (user.throw_at(target, jumpdistance, jumpspeed, spin = FALSE, diagonals_first = TRUE, callback = CALLBACK(src, .proc/hop_end)))
 		jumping = TRUE
 		playsound(src, 'sound/effects/stealthoff.ogg', 50, 1, 1)
-		user.visible_message("<span class='warning'>[usr] dashes forward into the air!</span>")
+		user.visible_message("<span class='warning'>[usr] быстро бежит вперёд!</span>")
 	else
-		to_chat(user, "<span class='warning'>Something prevents you from dashing forward!</span>")
+		to_chat(user, "<span class='warning'>Что-то не даёт вам бежать вперёд!</span>")
 
 /obj/item/clothing/shoes/bhop/proc/hop_end()
 	jumping = FALSE
 	recharging_time = world.time + recharging_rate
 
 /obj/item/clothing/shoes/singery
-	name = "yellow performer's boots"
-	desc = "These boots were made for dancing."
+	name = "Желтые ботинки артиста"
+	desc = "Эти ботинки просто созданы для танцев"
 	icon_state = "ysing"
 	equip_delay_other = 50
 
 /obj/item/clothing/shoes/singerb
-	name = "blue performer's boots"
-	desc = "These boots were made for dancing."
+	name = "Синие ботинки артиста"
+	desc = "Эти ботинки просто созданы для танцев."
 	icon_state = "bsing"
 	equip_delay_other = 50
 
 /obj/item/clothing/shoes/bronze
-	name = "bronze boots"
-	desc = "A giant, clunky pair of shoes crudely made out of bronze. Why would anyone wear these?"
+	name = "Бронзовые ботинки"
+	desc = "Гигантские неуклюжие башмаки, грубо сделанные из бронзы. Зачем кому-то носить это?"
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_treads"
 
@@ -246,8 +246,8 @@
 	AddComponent(/datum/component/squeak, list('sound/machines/clockcult/integration_cog_install.ogg' = 1, 'sound/magic/clockwork/fellowship_armory.ogg' = 1), 50)
 
 /obj/item/clothing/shoes/wheelys
-	name = "Wheely-Heels"
-	desc = "Uses patented retractable wheel technology. Never sacrifice speed for style - not that this provides much of either." //Thanks Fel
+	name = "У"
+	desc = "Использует запатентованную технологию выдвижного колеса. Никогда не жертвуют скоростью ради стиля - не то, чтобы это давало много." //Thanks Fel
 	icon_state = "wheelys"
 	item_state = "wheelys"
 	actions_types = list(/datum/action/item_action/wheelys)
@@ -262,7 +262,7 @@
 	if(!isliving(user))
 		return
 	if(!istype(user.get_item_by_slot(SLOT_SHOES), /obj/item/clothing/shoes/wheelys))
-		to_chat(user, "<span class='warning'>You must be wearing the wheely-heels to use them!</span>")
+		to_chat(user, "<span class='warning'>Вы должны надеть ролики, чтобы использовать их!</span>")
 		return
 	if(!(W.is_occupant(user)))
 		wheelToggle = FALSE
@@ -285,8 +285,8 @@
 	. = ..()
 
 /obj/item/clothing/shoes/kindleKicks
-	name = "Kindle Kicks"
-	desc = "They'll sure kindle something in you, and it's not childhood nostalgia..."
+	name = "Горящие ролики"
+	desc = "Они обязательно что-нибудь в тебе разожгут, и это не детская ностальгия..."
 	icon_state = "kindleKicks"
 	item_state = "kindleKicks"
 	actions_types = list(/datum/action/item_action/kindleKicks)
@@ -319,32 +319,32 @@
 //Fallout 13
 
 /obj/item/clothing/shoes/legionleather
-	name = "legion leather boots"
-	desc = "A pair of boots worn by the Legion recruits."
+	name = "Кожаные ботинки легиона"
+	desc = "Пара ботинок, которые носят рекруты легиона."
 	icon_state = "legionleather"
 	item_state = "legionleather"
 	item_color = "cult"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/legionmetal
-	name = "legion metal boots"
-	desc = "A pair of boots worn by the Legion veterans."
+	name = "Металлические ботинки легиона"
+	desc = "Пара ботинок, которые носят ветераны легиона."
 	icon_state = "legionmetal"
 	item_state = "legionmetal"
 	item_color = "cult"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/legionlegat
-	name = "legion legate boots"
-	desc = "A pair of boots worn by the Legion legates."
+	name = "Ботинки легата легиона"
+	desc = "Ботинки, которые носит Легат Легиона."
 	icon_state = "legionlegat"
 	item_state = "legionlegat"
 	item_color = "cult"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/combat //basic syndicate combat boots for nuke ops and mob corpses
-	name = "combat boots"
-	desc = "High speed, low drag combat boots."
+	name = "Боевые ботинки"
+	desc = "Высокоскоростные бовые ботинки."
 	icon_state = "combat"
 	item_state = "combat"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
@@ -356,13 +356,13 @@
 	slowdown = -0.05
 
 /obj/item/clothing/shoes/combat/swat //overpowered boots for death squads
-	name = "tactical boots"
-	desc = "High speed, no drag combat boots."
+	name = "Тактические ботинки"
+	desc = "Высокоскоростные бовые ботинки."
 	permeability_coefficient = 0.01
 
 /obj/item/clothing/shoes/combat/plate
-	name = "plated combat boots"
-	desc = "A pair of heavily worn leather boots with armored plates strapped around them, protecting the users feet from low flying shrapnel or projectiles."
+	name = "Бронированные боевые ботинки"
+	desc = "Пара сильно поношенных кожаных сапог с бронированными пластинами, привязанными вокруг них, защищая ноги пользователей от низко летящих осколков или снарядов."
 	icon_state = "legionmetal"
 	item_state = "legionmetal"
 	item_color = "cult"

@@ -2,8 +2,8 @@
  * Science
  */
 /obj/item/clothing/under/rank/research_director
-	desc = "It's a suit worn by those with the know-how to achieve the position of \"Research Director\". Its fabric provides minor protection from biological contaminants."
-	name = "research director's vest suit"
+	desc = "Это костюм, который носят те, у кого есть ноу-хау, чтобы достичь должности \"Научного директора\". Его ткань обеспечивает незначительную защиту от биологических загрязнений."
+	name = "Жилет научного директора"
 	icon_state = "director"
 	item_state = "lb_suit"
 	item_color = "director"
@@ -11,8 +11,8 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/research_director/alt
-	desc = "Maybe you'll engineer your own half-man, half-pig creature some day. Its fabric provides minor protection from biological contaminants."
-	name = "research director's tan suit"
+	desc = "Может быть, когда-нибудь ты создашь свое собственное существо, полу-человек, полу-свинью. Его ткань обеспечивает незначительную защиту от биологических загрязнений."
+	name = "Коричневый костюм научного директора"
 	icon_state = "rdwhimsy"
 	item_state = "rdwhimsy"
 	item_color = "rdwhimsy"
@@ -21,8 +21,8 @@
 	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/rank/research_director/turtleneck
-	desc = "A dark purple turtleneck and tan khakis, for a director with a superior sense of style."
-	name = "research director's turtleneck"
+	desc = "Темно-фиолетовая водолазка и коричневые брюки цвета хаки - для режиссера с превосходным чувством стиля."
+	name = "Водолазка научного директора"
 	icon_state = "rdturtle"
 	item_state = "p_suit"
 	item_color = "rdturtle"
@@ -31,8 +31,8 @@
 	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/rank/scientist
-	desc = "It's made of a special fiber that provides minor protection against explosives. It has markings that denote the wearer as a scientist."
-	name = "scientist's jumpsuit"
+	desc = "Он сделан из специального волокна, которое обеспечивает незначительную защиту от взрывчатых веществ. У него есть знаки, которые обозначают владельца как ученого."
+	name = "Комбинезон ученого"
 	icon_state = "toxins"
 	item_state = "w_suit"
 	item_color = "toxinswhite"
@@ -41,8 +41,8 @@
 
 
 /obj/item/clothing/under/rank/chemist
-	desc = "It's made of a special fiber that gives special protection against biohazards. It has a chemist rank stripe on it."
-	name = "chemist's jumpsuit"
+	desc = "Он сделан из специального волокна, которое обеспечивает особую защиту от биологических опасностей. На нем нашивка с званием химика."
+	name = "Комбинезон химика"
 	icon_state = "chemistry"
 	item_state = "w_suit"
 	item_color = "chemistrywhite"
@@ -53,8 +53,8 @@
  * Medical
  */
 /obj/item/clothing/under/rank/chief_medical_officer
-	desc = "It's a jumpsuit worn by those with the experience to be \"Chief Medical Officer\". It provides minor biological protection."
-	name = "chief medical officer's jumpsuit"
+	desc = "Это комбинезон, который носят те, у кого есть опыт работы \"главным врачом\". Он обеспечивает незначительную биологическую защиту."
+	name = "Комбинезон главного врача"
 	icon_state = "cmo"
 	item_state = "w_suit"
 	item_color = "cmo"
@@ -62,8 +62,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/under/rank/geneticist
-	desc = "It's made of a special fiber that gives special protection against biohazards. It has a genetics rank stripe on it."
-	name = "geneticist's jumpsuit"
+	desc = "Он сделан из специального волокна, которое обеспечивает особую защиту от биологических опасностей. На нем есть полоса, обозначающая звание генетика."
+	name = "Комбинезон генетика"
 	icon_state = "genetics"
 	item_state = "w_suit"
 	item_color = "geneticswhite"
@@ -71,8 +71,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/under/rank/virologist
-	desc = "It's made of a special fiber that gives special protection against biohazards. It has a virologist rank stripe on it."
-	name = "virologist's jumpsuit"
+	desc = "Он сделан из специального волокна, которое обеспечивает особую защиту от биологических опасностей. На нем нашивка вирусолога."
+	name = "Комбинезон вирусолога"
 	icon_state = "virology"
 	item_state = "w_suit"
 	item_color = "virologywhite"
@@ -80,8 +80,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/under/rank/nursesuit
-	desc = "It's a jumpsuit commonly worn by nursing staff in the medical department."
-	name = "nurse's suit"
+	desc = "Это комбинезон, который обычно носят медсестры в медицинском отсеке."
+	name = "Костюм медсестры"
 	icon_state = "nursesuit"
 	item_state = "w_suit"
 	item_color = "nursesuit"
@@ -91,8 +91,8 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/medical
-	desc = "It's made of a special fiber that provides minor protection against biohazards. It has a cross on the chest denoting that the wearer is trained medical personnel."
-	name = "medical doctor's jumpsuit"
+	desc = "Он сделан из специального волокна, которое обеспечивает незначительную защиту от биологических опасностей. На груди у него крест, означающий, что его владелец - обученный медик."
+	name = "Комбинезон доктора"
 	icon_state = "medical"
 	item_state = "w_suit"
 	item_color = "medical"
@@ -100,22 +100,22 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/under/rank/medical/blue
-	name = "medical scrubs"
-	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in baby blue."
+	name = "Медицинский халат"
+	desc = "Он сделан из специального волокна, которое обеспечивает незначительную защиту от биологических опасностей. Этот - нежно-голубой."
 	icon_state = "scrubsblue"
 	item_color = "scrubsblue"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/medical/green
-	name = "medical scrubs"
-	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in dark green."
+	name = "Медицинский халат"
+	desc = "Он сделан из специального волокна, которое обеспечивает незначительную защиту от биологических опасностей. Этот - темно-зеленый."
 	icon_state = "scrubsgreen"
 	item_color = "scrubsgreen"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/medical/purple
-	name = "medical scrubs"
-	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in deep purple."
+	name = "Медицинский халат"
+	desc = "Он сделан из специального волокна, которое обеспечивает незначительную защиту от биологических опасностей. Этот - темно-фиолетовый."
 	icon_state = "scrubspurple"
 	item_color = "scrubspurple"
 	can_adjust = FALSE

@@ -3,22 +3,22 @@
 /obj/item/clothing/suit/f13
 
 /obj/item/clothing/suit/f13/robe_liz
-	name = "tan robe"
-	desc = "Only a monk would find this robe nice and comfortable."
+	name = "Кожаная роба"
+	desc = "Только монах нашел бы эту рясу красивой и удобной."
 	icon_state = "robe_liz"
 	item_state = "brownjsuit"
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/melee,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/scalpel,/obj/item/surgical_drapes,/obj/item/cautery,/obj/item/hemostat,/obj/item/retractor,/obj/item/storage/pill_bottle/dice,/obj/item/dice)
 
 /obj/item/clothing/suit/f13/mantle_liz
-	name = "hide mantle"
-	desc = "A rather grisly selection of cured hides and skin, sewn together to form a ragged mantle."
+	name = "Мантия из шкур"
+	desc = "Довольно жуткий выбор выделанных шкур и кожи, сшитых вместе, чтобы сформировать рваную мантию."
 	icon_state = "mantle_liz"
 	item_state = "det_suit"
 	allowed = list(/obj/item/pen,/obj/item/gun,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/melee,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/scalpel,/obj/item/surgical_drapes,/obj/item/cautery,/obj/item/hemostat,/obj/item/retractor,/obj/item/storage/pill_bottle/dice,/obj/item/dice)
 
 /obj/item/clothing/suit/f13/vest
-	name = "tan vest"
-	desc = "A vest made of tanned leather."
+	name = "Кожаный нагрудник"
+	desc = "Нагрудник из выдубленной кожи"
 	icon_state = "tanleather"
 	item_state = "det_suit"
 	body_parts_covered = CHEST
@@ -26,8 +26,8 @@
 	allowed = list(/obj/item/pen,/obj/item/gun,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/melee,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/scalpel,/obj/item/surgical_drapes,/obj/item/cautery,/obj/item/hemostat,/obj/item/retractor,/obj/item/storage/pill_bottle/dice,/obj/item/dice)
 
 /obj/item/clothing/suit/f13/puffer
-	name = "puffer vest"
-	desc = "A thick, worn-down vest with a rubbery water-resistant shell."
+	name = "Жилет-фугу"
+	desc = "Толстый, изношенный жилет с резиновой водонепроницаемой оболочкой."
 	icon_state = "puffervest"
 	item_state = "det_suit"
 	body_parts_covered = CHEST
@@ -35,8 +35,8 @@
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/melee,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/scalpel,/obj/item/surgical_drapes,/obj/item/cautery,/obj/item/hemostat,/obj/item/retractor,/obj/item/storage/pill_bottle/dice,/obj/item/dice)
 
 /obj/item/clothing/suit/f13/battlecruiser //Do we have Star Craft here as well?!
-	name = "captain's coat"
-	desc = "Battlecruiser operational!"
+	name = "Куртка капитана"
+	desc = "Линейный крейсер в боевой готовности!"
 	icon_state = "battlecruiser"
 	item_state = "hostrench"
 	body_parts_covered = CHEST|ARMS
@@ -44,15 +44,15 @@
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/melee,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun/energy,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
 
 /obj/item/clothing/suit/f13/cowboybvest //Originally cowboy stuff by Nienhaus
-	name = "brown vest"
-	desc = "A brown vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
+	name = "Коричневый нагрудник"
+	desc = "Коричневый жилет, который обычно носят подражатели ковбоям и старателям. В нем есть несколько карманов для мелких предметов."
 	icon_state = "cowboybvest"
 	item_state = "lb_suit"
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/melee,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/scalpel,/obj/item/surgical_drapes,/obj/item/cautery,/obj/item/hemostat,/obj/item/retractor,/obj/item/storage/pill_bottle/dice,/obj/item/dice)
 
 /obj/item/clothing/suit/f13/cowboygvest
-	name = "grey vest"
-	desc = "A grey vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
+	name = "Серый нагрудник"
+	desc = "Коричневый жилет, который обычно носят подражатели ковбоям и старателям. В нем есть несколько карманов для мелких предметов."
 	icon_state = "cowboygvest"
 	item_state = "gy_suit"
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/melee,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/scalpel,/obj/item/surgical_drapes,/obj/item/cautery,/obj/item/hemostat,/obj/item/retractor,/obj/item/storage/pill_bottle/dice,/obj/item/dice)
@@ -67,13 +67,13 @@
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
 
 /obj/item/clothing/suit/f13/mfp/raider
-	name = "offbeat jacket"
-	desc = "A black leather jacket with a single metal shoulder pad on the right side.<br>The right sleeve was obviously ripped or cut away.<br>It looks like it was originally a piece of a Main Force Patrol uniform."
+	name = "Необычная куртка"
+	desc = "Черная кожаная куртка с единственным металлическим наплечником на правом боку.<br>Правый рукав был явно разорван или отрезан.<br>Похоже, что первоначально это была часть униформы патруля главных сил."
 	icon_state = "mfp_raider"
 
 /obj/item/clothing/suit/f13/lonesome
-	name = "lonesome duster"
-	desc = "A blue leather coat with the number 21 on the back.<br><i>If war doesn't change, men must change, and so must their symbols.</i><br><i>Even if there is nothing at all, know what you follow.</i>"
+	name = "Одинокий пыльник"
+	desc = "Синее кожаное пальто с номером 21 на спине.<br><i>Если война не изменится, то должны измениться и люди, и их символы.</i><br><i>Даже если ничего нет, знайте, за чем вы следуете.</i>"
 	icon_state = "courier"
 	item_state = "suit-command"
 	body_parts_covered = CHEST|GROIN
@@ -81,8 +81,8 @@
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/melee,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
 
 /obj/item/clothing/suit/f13/veteran
-	name = "merc veteran coat"
-	desc = "A blue leather coat adorned with war medals.<br>This type of outfit is common for professional mercenaries and bounty hunters."
+	name = "Куртка наемника-ветерана"
+	desc = "Синее кожаное пальто, украшенное военными медалями.<br>Это снаряжение характерен для профессиональных наемников и охотников за головами."
 	icon_state = "veteran"
 	item_state = "suit-command"
 	body_parts_covered = CHEST|GROIN
@@ -90,8 +90,8 @@
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
 
 /obj/item/clothing/suit/f13/duster
-	name = "duster"
-	desc = "A long brown leather overcoat.<br>A powerful accessory of fearsome bounty hunter."
+	name = "Пыльник"
+	desc = "Длинное коричневое кожаное пальто.<br>Мощный аксессуар Грозного охотника за головами."
 	icon_state = "duster"
 	item_state = "det_suit"
 	body_parts_covered = CHEST|LEGS|FEET|ARMS
@@ -100,8 +100,8 @@
 
 
 /obj/item/clothing/suit/f13/jamrock
-	name = "disco-ass blazer"
-	desc = "Looks like someone skinned this blazer off some long extinct disco-animal. It has an enigmatic white rectangle on the back and the right sleeve."
+	name = "Клубный пиджак диско"
+	desc = "Похоже, кто-то содрал этот пиджак с какого-то давно вымершего диско-животного. На спине и правом рукаве - загадочный белый прямоугольник."
 	icon_state = "jamrock_blazer"
 	item_state = "jamrock_blazer"
 	body_parts_covered = CHEST|LEGS|FEET|ARMS
@@ -110,8 +110,8 @@
 
 
 /obj/item/clothing/suit/f13/sheriff
-	name = "sheriff duster"
-	desc = "A long brown leather overcoat.<br>A powerful accessory of a respectful sheriff, bringer of justice."
+	name = "Пыльник шерифа"
+	desc = "Длинное коричневое кожаное пальто.<br>Могущественный аксессуар почтительного шерифа, вершителя правосудия."
 	icon_state = "sheriff"
 	item_state = "det_suit"
 	body_parts_covered = CHEST|LEGS|FEET|ARMS
@@ -119,8 +119,8 @@
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/weapon,/obj/item/ammo_box,/obj/item/ammo_casing)
 
 /obj/item/clothing/suit/f13/banker
-	name = "bankers tailcoat"
-	desc = "A long black jacket, finely crafted black leather and smooth finishings make this an extremely fancy piece of rich-mans apparel."
+	name = "Банкирский фрак"
+	desc = "Длинный черный пиджак, тонко выделанная черная кожа и гладкая отделка делают его чрезвычайно причудливым предметом одежды богачей."
 	icon_state = "banker"
 	item_state = "banker"
 	body_parts_covered = CHEST|LEGS|FEET|ARMS
@@ -128,8 +128,8 @@
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/weapon,/obj/item/ammo_box,/obj/item/ammo_casing)
 
 /obj/item/clothing/suit/f13/autumn //Based of Colonel Autumn's uniform.
-	name = "tan trenchcoat"
-	desc = "A heavy-duty tan trenchcoat typically worn by pre-War generals."
+	name = "Коричневый плащ"
+	desc = "Тяжелый коричневый плащ, который обычно носили довоенные генералы."
 	icon_state = "autumn"
 	item_state = "autumn"
 	body_parts_covered = CHEST|LEGS|FEET|ARMS
@@ -137,88 +137,88 @@
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
 
 /obj/item/clothing/suit/f13/hubologist
-	name = "hubologist robe"
-	desc = "A black robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	name = "Роба хаболога"
+	desc = "Черная мантия, которую носят адепты Хабологических исследований.<br>Берегитесь - духи мертвых повсюду вокруг нас!"
 	icon_state = "hubologist"
 	item_state = "wcoat"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/melee,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/weapon,/obj/item/storage/pill_bottle/dice,/obj/item/dice)
 
 /obj/item/clothing/suit/f13/hubologist/bro
-	name = "hubologist robe"
-	desc = "A brown robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	name = "Роба хаболога"
+	desc = "Коричневая мантия, которую носят адепты Хабологических исследований.<br>Берегитесь - духи мертвых повсюду вокруг нас!"
 	icon_state = "hubologist_bro"
 
 /obj/item/clothing/suit/f13/hubologist/gry
-	name = "hubologist robe"
-	desc = "A gray robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	name = "Роба хаболога"
+	desc = "Серая мантия, которую носят адепты Хабологических исследований.<br>Берегитесь - духи мертвых повсюду вокруг нас!"
 	icon_state = "hubologist_gry"
 
 /obj/item/clothing/suit/f13/hubologist/whi
-	name = "hubologist robe"
-	desc = "A white robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	name = "Роба хаболога"
+	desc = "Белая мантия, которую носят адепты Хабологических исследований.<br>Берегитесь - духи мертвых повсюду вокруг нас!"
 	icon_state = "hubologist_whi"
 
 /obj/item/clothing/suit/f13/hubologist/bbl
-	name = "hubologist robe"
-	desc = "A light-blue robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	name = "Роба хаболога"
+	desc = "Светло-синяя мантия, которую носят адепты Хабологических исследований.<br>Берегитесь - духи мертвых повсюду вокруг нас!"
 	icon_state = "hubologist_bbl"
 
 /obj/item/clothing/suit/f13/hubologist/blu
-	name = "hubologist robe"
-	desc = "A blue robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	name = "Роба хаболога"
+	desc = "Синяя мантия, которую носят адепты Хабологических исследований.<br>Берегитесь - духи мертвых повсюду вокруг нас!"
 	icon_state = "hubologist_blu"
 
 /obj/item/clothing/suit/f13/hubologist/red
-	name = "hubologist robe"
-	desc = "A red robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	name = "Роба хаболога"
+	desc = "Красная мантия, которую носят адепты Хабологических исследований.<br>Берегитесь - духи мертвых повсюду вокруг нас!"
 	icon_state = "hubologist_red"
 
 /obj/item/clothing/suit/f13/hubologist/ora
-	name = "hubologist robe"
-	desc = "An orange robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	name = "Роба хаболога"
+	desc = "Оранжевая мантия, которую носят адепты Хабологических исследований.<br>Берегитесь - духи мертвых повсюду вокруг нас!"
 	icon_state = "hubologist_ora"
 
 /obj/item/clothing/suit/f13/hubologist/yel
-	name = "hubologist robe"
-	desc = "An yellow robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	name = "Роба хаболога"
+	desc = "Желтая мантия, которую носят адепты Хабологических исследований.<br>Берегитесь - духи мертвых повсюду вокруг нас!"
 	icon_state = "hubologist_yel"
 
 /obj/item/clothing/suit/f13/hubologist/pur
-	name = "hubologist robe"
-	desc = "A purple robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	name = "Роба хаболога"
+	desc = "Фиолетовая мантия, которую носят адепты Хабологических исследований.<br>Берегитесь - духи мертвых повсюду вокруг нас!"
 	icon_state = "hubologist_pur"
 
 /obj/item/clothing/suit/f13/hubologist/pin
-	name = "hubologist robe"
-	desc = "A pink robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	name = "Роба хаболога"
+	desc = "Розовая мантия, которую носят адепты Хабологических исследований.<br>Берегитесь - духи мертвых повсюду вокруг нас!"
 	icon_state = "hubologist_pin"
 
 /obj/item/clothing/suit/f13/hubologist/grn
-	name = "hubologist robe"
-	desc = "A green robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	name = "Роба хабулогаиста"
+	desc = "Зеленая мантия, которую носят адепты Хабологических исследований.<br>Берегитесь - духи мертвых повсюду вокруг нас!"
 	icon_state = "hubologist_grn"
 
 /obj/item/clothing/suit/f13/hubologist/all
-	name = "hubologist robe"
-	desc = "A colorful robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	name = "Роба хабулогаиста"
+	desc = "Цветная мантия, которую носят адепты Хабологических исследований.<br>Берегитесь - духи мертвых повсюду вокруг нас!"
 	icon_state = "hubologist_all"
 
 /obj/item/clothing/suit/f13/hubologist/gay
-	name = "habulogayist robe"
-	desc = "A gayish erp robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	name = "Роба хабулогаиста"
+	desc = "Гейская ЕРП мантия, которую носят адепты Хабологических исследований.<br>Берегитесь - духи мертвых повсюду вокруг нас!"
 	icon_state = "hubologist_gay"
 
 /obj/item/clothing/suit/f13/sexymaid
-	name = "sexy maid outfit"
-	desc = "A maid outfit that shows just a little more skin than needed for cleaning duties."
+	name = "Сексуальный костюм горничной"
+	desc = "Наряд горничной, который показывает чуть больше кожи,чем нужно для уборки."
 	icon_state = "sexymaid_s"
 	item_state = "sexymaid_s"
 	body_parts_covered = CHEST
 
 /obj/item/clothing/suit/f13/blacksmith_apron
-	name = "blacksmith apron"
-	desc = "A heavy leather apron designed for protecting the user when metalforging."
+	name = "Фартук кузнеца"
+	desc = "Тяжелый кожаный фартук, предназначенный для защиты пользователя при ковке металла."
 	icon_state = "opifex_apron"
 	item_state = "opifex_apron"
 	body_parts_covered = CHEST|GROIN
@@ -244,30 +244,30 @@
 //Special Biosuit
 
 /obj/item/clothing/suit/bio_suit/f13/hazmat
-	name = "hazmat suit"
-	desc = "Yellow Level A , hazmat protective suit.<br>You can see some numbers on the tag: 35 56."
+	name = "Защитный костюм"
+	desc = "Защитный костюм жёлтого уровня А<br>Вы можете увидеть некоторые цифры на бирке: 35 56."
 	icon = 'icons/fallout/clothing/suits.dmi'
 	icon_state = "hazmat"
 	item_state = "hazmat_suit"
 
 /obj/item/clothing/head/bio_hood/f13/hazmat
-	name = "hazmat hood"
-	desc = "My star, my perfect silence."
+	name = "Защитный капюшон"
+	desc = "Моя звезда, моя совершенная тишина."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	icon_state = "hazmat"
 	item_state = "hazmat_helmet"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/suit/bio_suit/f13/hazmat_enclave
-	name = "hazmat suit"
-	desc = "Yellow Level A , hazmat protective suit.<br>You can see some numbers on the tag: 35 56."
+	name = "Защитный костюм"
+	desc = "Защитный костюм жёлтого уровня А<br>Вы можете увидеть некоторые цифры на бирке: 35 56"
 	icon = 'icons/fallout/clothing/suits.dmi'
 	icon_state = "hazmat_enclave"
 	item_state = "hazmat_suit"
 
 /obj/item/clothing/head/bio_hood/f13/hazmat_enclave
-	name = "hazmat hood"
-	desc = "My star, my perfect silence."
+	name = "Защитный капюшон"
+	desc = "Моя звезда, моя совершенная тишина."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	icon_state = "enclave_hazmat"
 	item_state = "hazmat_helmet"
@@ -278,22 +278,22 @@
 /obj/item/clothing/suit/toggle/labcoat/f13
 
 /obj/item/clothing/suit/toggle/labcoat/f13/emergency
-	name = "first responder jacket"
-	desc = "A high-visibility jacket worn by medical first responders."
+	name = "Куртка парамедика"
+	desc = "Куртка с высокой видимостью, которую носят медики первой помощи."
 	icon_state = "fr_jacket"
 	item_state = "fr_jacket"
 
 /obj/item/clothing/suit/toggle/labcoat/f13/warriors
-	name = "warriors jacket"
-	desc = "A red leather jacket, with the word \"Warriors\" sewn above the white wings on the back."
+	name = "Куртка воина"
+	desc = "Красная кожаная куртка с надписью \"Воины\", вышитой над белыми крыльями на спине."
 	icon_state = "warriors"
 	item_state = "owl"
 	body_parts_covered = CHEST
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 
 /obj/item/clothing/suit/toggle/labcoat/f13/wanderer
-	name = "wanderer jacket"
-	desc = "A zipped-up hoodie made of tanned leather."
+	name = "Куртка странника"
+	desc = "Толстовка на молнии из дубленой кожи."
 	icon_state = "wanderer"
 	item_state = "owl"
 	body_parts_covered = CHEST
@@ -301,8 +301,8 @@
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/weapon,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
 
 /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket
-	name = "Great Khan jacket"
-	desc = "A black leather jacket. <br>There is an illustration on the back - an aggressive, red-eyed skull wearing a fur hat with horns.<br>The skull has a mongoloid moustache - it's obviously a Great Khans emblem."
+	name = "Куртка Великого Хана"
+	desc = "Черная кожаная куртка.<br>На обороте есть иллюстрация - агрессивный Красноглазый череп в меховой шапке с рогами.<br>Череп имеет монголоидные усы - очевидно, это эмблема Великих Ханов."
 	icon_state = "khan_jacket"
 	item_state = "jensencoat"
 	body_parts_covered = CHEST
@@ -310,8 +310,8 @@
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/weapon,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
 
 /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket_armored
-	name = "Great Khan armored jacket"
-	desc = "A black leather jacket. <br>There is an illustration on the back - an aggressive, red-eyed skull wearing a fur hat with horns.<br>The skull has a mongoloid moustache - it's obviously a Great Khans emblem.<br>Protective plates have been sewn into the jacket."
+	name = "Бронированная куртка Великого Хана"
+	desc = "Черная кожаная куртка.<br>На обороте есть иллюстрация - агрессивный Красноглазый череп в меховой шапке с рогами.<br>Череп имеет монголоидные усы - очевидно, это эмблема Великих Ханов.<br>В куртку вшиты бронепластины."
 	icon_state = "khan_jacket"
 	item_state = "jensencoat"
 	body_parts_covered = CHEST
@@ -319,8 +319,8 @@
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/weapon,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
 
 /obj/item/clothing/suit/toggle/labcoat/f13/khan/battlecoat
-	name = "Great Khan battle coat"
-	desc = "A dark red leather coat lined with a patchwork of metal plates and padding on the inside. The back is dominated by a burning skull adorned with a horned helmet; the symbol of the Khans."
+	name = "Боевой плащ Великих Ханов"
+	desc = "Темно-красное кожаное пальто с подкладкой из металлических пластин и подкладкой изнутри. На спине преобладает горящий череп, украшенный рогатым шлемом, символ Великих Ханов."
 	icon_state = "khan_battlecoat"
 	item_state = "khan_battlecoat"
 	body_parts_covered = CHEST
@@ -328,8 +328,8 @@
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/weapon,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
 
 /obj/item/clothing/suit/toggle/labcoat/f13/followers
-	name = "followers lab coat"
-	desc = "A worn-down white labcoat with some wiring hanging from the right side.<br>Upon closer inspection, you can see an ancient bloodstains that could tell an entire story about thrilling adventures of a previous owner."
+	name = "Лабораторный халат последователей"
+	desc = "Поношенный белый лабораторный халат с какой-то проводкой, свисающей с правой стороны.<br>При ближайшем рассмотрении можно увидеть древние пятна крови, которые могли бы рассказать целую историю о захватывающих приключениях предыдущего владельца."
 	icon_state = "followers"
 	item_state = "labcoat"
 	body_parts_covered = CHEST
@@ -337,116 +337,116 @@
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/scalpel,/obj/item/surgical_drapes,/obj/item/cautery,/obj/item/hemostat,/obj/item/retractor,/obj/item/storage/pill_bottle/dice,/obj/item/dice)
 
 /obj/item/clothing/suit/armor/f13/generaluniform
-    name = "Yuma 1st Irregular General Uniform"
-    desc = "A uniform created by Kaleb alongside the laser muskets. On the breast is a patch of the Yuma 1st Irregulars, a sun over a wasteland desert, a cactus standing lonely in the middle. It denotes him as the Leader of the militia company."
+    name = "Генеральская форма 1-го нерегулярного полка Юма"
+    desc = "Униформа, созданная Калебом в то же время, что и лазерные мушкеты. На груди - нашивка 1-го нерегулярного полка Юма, солнце над пустынной пустошью, одиноко стоящий посередине кактус. Он обозначает командира роты ополчения."
     icon_state = "gen_uniform"
     item_state = "gen_uniform"
     body_parts_covered = CHEST|LEGS|FEET|ARMS
     armor = list(melee = 18, bullet = 20, laser = 10, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0) //change those values
 
 /obj/item/clothing/suit/hooded/cloak/desert
-	name = "desert cloak"
+	name = "Пустынный плащ"
 	icon_state = "desertcloak"
-	desc = "A practical cloak made out of animal hide."
+	desc = "Практичный плащ, сделанный из шкур животных."
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/twohanded/spear, /obj/item/twohanded/bonespear, /obj/item/gun)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/desert
 	body_parts_covered = CHEST|GROIN|ARMS
 	armor = list("melee" = 20, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/head/hooded/cloakhood/desert
-	name = "desert cloak hood"
+	name = "Капюшон пустынного плаща"
 	icon_state = "desertcloak"
-	desc = "A protective and concealing hood."
+	desc = "Защитный и скрывающий капюшон."
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	armor = list("melee" = 20, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/suit/hooded/cloak/desert/raven_cloak
-	name = "Raven cloak"
-	desc = "A huge cloak made out of hundreds of knife-like black bird feathers. It glitters in the light, ranging from blue to dark green and purple."
+	name = "Плащ ворона"
+	desc = "Огромный плащ из сотен черных птичьих перьев, похожих на ножи. Он блестит на свету, от синего до темно-зеленого и фиолетового."
 	icon_state = "raven_cloak"
 	item_state = "raven_cloak"
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/desert/raven_hood
 
 /obj/item/clothing/head/hooded/cloakhood/desert/raven_hood
-	name = "Raven cloak hood"
-	desc = "A hood fashioned out of patchwork and feathers"
+	name = "Капюшон плаща ворона"
+	desc = "Капюшон из лоскутков и перьев"
 	icon_state = "raven_hood"
 	item_state = "raven_hood"
 
 
 /obj/item/clothing/suit/hooded/cloak/desert/bridgekeeper
-	name = "tattered cloak"
-	desc = "An old ragged cloak that is covered in plasma burns and scorches."
+	name = "Рваный плащ"
+	desc = "Старый рваный плащ, покрытый плазменными ожогами и ожогами."
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/desert/bridgekeeper
 	armor = list("melee" = 40, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 
 /obj/item/clothing/head/hooded/cloakhood/desert/bridgekeeper
-	name = "tattered cloak hood"
+	name = "Рваный капюшон плаща"
 	armor = list("melee" = 45, "bullet" = 30, "laser" = 30, "energy" = 60, "bomb" = 25, "bio" = 60, "rad" = 60, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/suit/hooded/cloak/goliath
-	name = "deathclaw cloak"
+	name = "Пальто из когтя смерти"
 	icon_state = "goliath_cloak"
-	desc = "A staunch, practical cloak made out of sinew and skin from the fearsome deathclaw."
+	desc = "Надежный, практичный плащ, сделанный из сухожилий и кожи страшного Когтя смерти."
 	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear)
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
 	body_parts_covered = CHEST|GROIN|ARMS
 
 /obj/item/clothing/head/hooded/cloakhood/goliath
-	name = "deathclaw cloak hood"
+	name = "Капюшон пальто из когтя смерти"
 	icon_state = "golhood"
-	desc = "A protective & concealing hood."
+	desc = "Защитный и скрывающий капюшон."
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/suit/hooded/parka/medical
-	name = "armored medical parka"
+	name = "Бронированная медицинская парка"
 	icon_state = "armormedical"
-	desc = "A staunch, practical parka made out of a wind-breaking jacket, reinforced with metal plates."
+	desc = "Крепкая, практичная парка из ветрозащитной куртки, усиленная металлическими пластинами."
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/twohanded/spear, /obj/item/twohanded/bonespear, /obj/item/gun)
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 	hoodtype = /obj/item/clothing/head/hooded/parkahood/medical
 	body_parts_covered = CHEST|GROIN|ARMS
 
 /obj/item/clothing/head/hooded/parkahood/medical
-	name = "armored medical parka hood"
+	name = "Бронированный капюшон медицинской парки"
 	icon_state = "armorhoodmedical"
-	desc = "A protective & concealing parka hood."
+	desc = "Защитный и скрывающий капюшон парки."
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/suit/hooded/parka/grey
-	name = "grey armored parka"
+	name = "Серая бронированная парка"
 	icon_state = "armorgrey"
-	desc = "A staunch, practical parka made out of a wind-breaking jacket, reinforced with metal plates."
+	desc = "Крепкая, практичная парка из ветрозащитной куртки, усиленная металлическими пластинами."
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/twohanded/spear, /obj/item/twohanded/bonespear, /obj/item/gun)
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 	hoodtype = /obj/item/clothing/head/hooded/parkahood/grey
 	body_parts_covered = CHEST|GROIN|ARMS
 
 /obj/item/clothing/head/hooded/parkahood/grey
-	name = "armored grey parka hood"
+	name = "Бронированный серый капюшон парки"
 	icon_state = "armorhoodgrey"
-	desc = "A protective & concealing parka hood."
+	desc = "Защитный и скрывающий капюшон парки."
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/suit/hooded/cloak/goliath/tatteredred
-	name = "tattered red cloak"
-	desc = "An old ragged, tattered red cloak that is covered in burns and bullet holes."
+	name = "Потрепанный красный плащ"
+	desc = "Старый рваный красный плащ, покрытый ожогами и пулевыми отверстиями."
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/tattered
 
 /obj/item/clothing/head/hooded/cloakhood/goliath/tattered
-	name = "tattered red cloak hood"
-	desc = "A tattered hood, better than nothing in the waste."
+	name = "Потрепаный красный плащ с капюшоном"
+	desc = "Потрепанный плащ, лучше, чем ничего."
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 
 /obj/item/clothing/suit/hooded/cloak/drake
-	name = "drake armour"
+	name = "Драконья броня"
 	icon_state = "dragon"
-	desc = "A suit of armour fashioned from the remains of an ash drake."
+	desc = "Доспехи, сделанные из останков пепельного дракона."
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe, /obj/item/twohanded/spear)
 	armor = list("melee" = 70, "bullet" = 30, "laser" = 50, "energy" = 40, "bomb" = 70, "bio" = 60, "rad" = 50, "fire" = 100, "acid" = 100)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/drake
@@ -456,18 +456,18 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/head/hooded/cloakhood/drake
-	name = "drake helm"
+	name = "Драконий шлем"
 	icon_state = "dragon"
-	desc = "The skull of a dragon."
+	desc = "Череп дракона."
 	armor = list("melee" = 70, "bullet" = 30, "laser" = 50, "energy" = 40, "bomb" = 70, "bio" = 60, "rad" = 50, "fire" = 100, "acid" = 100)
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_IMMUNITY_HELM_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/suit/hooded/cloak/hhunter
-	name = "Razorclaw armour"
+	name = "Броня бритвенного когтя"
 	icon_state = "rcarmour"
-	desc = "A suit of armour fashioned out of the remains of a legendary deathclaw."
+	desc = "Доспехи, сделанные из останков легендарного когтя смерти."
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe, /obj/item/twohanded/spear)
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/hhunter
@@ -476,56 +476,56 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/head/hooded/cloakhood/hhunter
-	name = "Razorclaw helm"
+	name = "Шлем бритвенного когтя"
 	icon_state = "rchelmet"
-	desc = "The skull of a legendary deathclaw."
+	desc = "Череп легендарного когтя смерти."
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/suit/f13/nwcoat
-	name = "Red winter coat"
-	desc = "Warm and cool winter coat."
+	name = "Красное зимнее пальто"
+	desc = "Теплое и комфортное зимнее пальто."
 	icon = 'icons/fallout/clothing/suits.dmi'
 	icon_state = "nw_coat_red"
 	body_parts_covered = FULL_BODY
 	armor = list(melee = 20, bullet = 20, laser = 20, energy = 20, bomb = 20, bio = 20, rad = 20, fire = 60, acid = 20)
 
 /obj/item/clothing/suit/f13/nwcoat/blue
-	name = "Blue winter coat"
+	name = "Синее зимнее пальто"
 	icon_state = "nw_coat_blue"
 
 /obj/item/clothing/suit/f13/nwcoat/green
-	name = "Green winter coat"
+	name = "Зелёное зимнее пальто"
 	icon_state = "nw_coat_green"
 
 /obj/item/clothing/suit/f13/nwcoat/gay
-	name = "Gayish winter coat"
-	desc = "Warm and comfort from ERP"
+	name = "Гейское зимнее пальто"
+	desc = "Теплое и комфортное ЕРП"
 	icon_state = "nw_coat_gay"
 
 /obj/item/clothing/suit/f13/nwcoat_old
-	name = "Old red winter coat"
-	desc = "Old and dirty winter coat."
+	name = "Старое красное зимнее пальто"
+	desc = "Старое и грязное зимнее пальто."
 	icon = 'icons/fallout/clothing/suits.dmi'
 	icon_state = "nw_coat_red_old"
 	body_parts_covered = FULL_BODY
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 10, rad = 10, fire = 30, acid = 10)
 
 /obj/item/clothing/suit/f13/nwcoat_old/blue
-	name = "Old blue winter coat"
+	name = "Старое синее зимнее пальто"
 	icon_state = "nw_coat_blue_old"
 
 /obj/item/clothing/suit/f13/nwcoat_old/green
-	name = "Old green winter coat"
+	name = "Старое зеленое зимнее пальто"
 	icon_state = "nw_coat_green_old"
 
 /obj/item/clothing/suit/f13/nwcoat_old/gay
-	name = "Old gayish winter coat"
+	name = "Старое гейское зимнее пальто"
 	icon_state = "nw_coat_gay_old"
 
 /obj/item/clothing/suit/f13/nwcoat_old/bomj
-	name = "Old bomj's winter coat"
+	name = "Старое бомжатское зимнее пальто"
 	icon_state = "nw_coat_bomj"
 
 /obj/item/clothing/suit/f13/nwcoat_arm
@@ -537,48 +537,48 @@
 	armor = list(melee = 30, bullet = 30, laser = 30, energy = 30, bomb = 30, bio = 30, rad = 30, fire = 60, acid = 30)
 
 /obj/item/clothing/suit/f13/nwcoat_arm/blue
-	name = "Armored blue winter coat"
+	name = "Бронированное синее зимнее пальто"
 	icon_state = "nw_coat_blue_arm"
 
 /obj/item/clothing/suit/f13/nwcoat_arm/green
-	name = "Armored green winter coat"
+	name = "Бронированное зелёное зимнее пальто"
 	icon_state = "nw_coat_green_arm"
 
 /obj/item/clothing/suit/f13/nwcoat_arm/gay
-	name = "Armored gay winter coat"
+	name = "Бронированное гейское зимнее пальто"
 	icon_state = "nw_coat_gay_arm"
 
 /obj/item/clothing/suit/f13/nwcoat_arm/bomj
-	name = "Armored bomj's winter coat"
+	name = "Бронированное зимнее пальто бомжа"
 	icon_state = "nw_coat_bomj_arm"
 
 /obj/item/clothing/suit/f13/nw_anarchist
-	name = "Anarchist coat"
-	desc = "Anarchy - mother of discipline!"
+	name = "Пальто анархиста"
+	desc = "Анархия - мать порядка!"
 	icon = 'icons/fallout/clothing/suits.dmi'
 	icon_state = "nw_anarchist"
 	body_parts_covered = FULL_BODY
 	armor = list(melee = 20, bullet = 20, laser = 20, energy = 20, bomb = 20, bio = 20, rad = 20, fire = 30, acid = 20)
 
 /obj/item/clothing/suit/f13/nw_anarchist_thirty
-	name = "Armored anarchist coat"
-	desc = "Anarchy, but better!"
+	name = "Бронированное пальто анархиста"
+	desc = "Как анархия, только круче!"
 	icon = 'icons/fallout/clothing/suits.dmi'
 	icon_state = "nw_anarchist13"
 	body_parts_covered = FULL_BODY
 	armor = list(melee = 30, bullet = 30, laser = 30, energy = 30, bomb = 30, bio = 30, rad = 30, fire = 30, acid = 30)
 
 /obj/item/clothing/suit/f13/stas
-	name = "Stas jacket"
-	desc = "Wide original."
+	name = "Жакет Стаса"
+	desc = "Широкий."
 	icon = 'icons/fallout/clothing/suits.dmi'
 	icon_state = "stas"
 	body_parts_covered = FULL_BODY
 	armor = list(melee = 50, bullet = 50, laser = 50, energy = 50, bomb = 50, bio = 50, rad = 50, fire = 50, acid = 50)
 
 /obj/item/clothing/suit/f13/snow_coat
-	name = "Snow Cowboy Coat"
-	desc = "Full of luck"
+	name = "Снежное пальто ковбоя"
+	desc = "Заряжено на удачу"
 	icon_state = "snow_coat"
 	body_parts_covered = FULL_BODY
 	armor = list(melee = 30, bullet = 30, laser = 30, energy = 30, bomb = 30, bio = 30, rad = 30, fire = 60, acid = 30)

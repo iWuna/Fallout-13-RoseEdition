@@ -10,8 +10,8 @@
  */
 
 /obj/item/clothing/suit/fire
-	name = "emergency firesuit"
-	desc = "A suit that helps protect against fire and heat."
+	name = "Аварийный костюм пожарного"
+	desc = "Этот костюм защитит вас от огня и жары."
 	icon_state = "fire"
 	item_state = "ro_suit"
 	w_class = WEIGHT_CLASS_BULKY
@@ -36,15 +36,15 @@
 
 
 /obj/item/clothing/suit/fire/heavy
-	name = "heavy firesuit"
-	desc = "An old, bulky thermal protection suit."
+	name = "Тяжелый костюм пожарного"
+	desc = "Старый, громоздкий костюм термальной защиты."
 	icon_state = "thermal"
 	item_state = "ro_suit"
 	slowdown = 1.5
 
 /obj/item/clothing/suit/fire/atmos
-	name = "firesuit"
-	desc = "An expensive firesuit that protects against even the most deadly of station fires. Designed to protect even if the wearer is set aflame."
+	name = "Костюм пожарного"
+	desc = "Дорогой пожарный костюм, который защищает даже от самых смертоносных пожаров на станции. Предназначен для защиты, даже если его владелец подожжен."
 	icon_state = "atmos_firesuit"
 	item_state = "firesuit_atmos"
 	max_heat_protection_temperature = FIRE_IMMUNITY_SUIT_MAX_TEMP_PROTECT
@@ -53,8 +53,8 @@
  * Bomb protection
  */
 /obj/item/clothing/head/bomb_hood
-	name = "bomb hood"
-	desc = "Use in case of bomb."
+	name = "Противовзрывной капюшон"
+	desc = "Надевайте при взаимодействии с бомбой."
 	icon_state = "bombsuit"
 	clothing_flags = THICKMATERIAL
 	armor = list("melee" = 50, "bullet" = 16, "laser" = 16,"energy" = 16, "bomb" = 100, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 50)
@@ -72,8 +72,8 @@
 
 
 /obj/item/clothing/suit/bomb_suit
-	name = "bomb suit"
-	desc = "A suit designed for safety when handling explosives."
+	name = "Противовзрывной костюм"
+	desc = "Костюм, предназначенный для обеспечения безопасности при обращении со взрывчатыми веществами."
 	icon_state = "bombsuit"
 	item_state = "bombsuit"
 	w_class = WEIGHT_CLASS_BULKY
@@ -116,9 +116,9 @@
 */
 
 /obj/item/clothing/head/radiation
-	name = "radiation hood"
+	name = "Антирадиационный капюшон"
 	icon_state = "rad"
-	desc = "A hood with radiation protective properties. The label reads, 'Made with lead. Please do not consume insulation.'"
+	desc = "Капюшон с антирадиационными свойствами. На этикетке написано: \"Сделано из свинца. Пожалуйста, не нарушайте изоляцию\"."
 	clothing_flags = THICKMATERIAL
 	flags_inv = HIDEMASK|HIDEEARS|HIDEFACE|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 60, "rad" = 100, "fire" = 30, "acid" = 30)
@@ -132,8 +132,8 @@
 	AddComponent(/datum/component/rad_insulation, RAD_NO_INSULATION, TRUE, FALSE)
 
 /obj/item/clothing/suit/radiation
-	name = "radiation suit"
-	desc = "A suit that protects against radiation. The label reads, 'Made with lead. Please do not consume insulation.'"
+	name = "Антирадиационный костюм"
+	desc = "Костюм с антирадиационными свойствами. На этикетке написано: \"Сделано из свинца. Пожалуйста, не нарушайте изоляцию\"."
 	icon_state = "rad"
 	item_state = "rad_suit"
 	w_class = WEIGHT_CLASS_BULKY

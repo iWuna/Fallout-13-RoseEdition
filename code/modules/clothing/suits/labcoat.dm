@@ -1,6 +1,6 @@
 /obj/item/clothing/suit/toggle/labcoat
-	name = "labcoat"
-	desc = "A suit that protects against minor chemical spills."
+	name = "Лабораторный халат"
+	desc = "Костюм, защищающий от мелких разливов химикатов."
 	icon_state = "labcoat"
 	item_state = "labcoat"
 	blood_overlay_type = "coat"
@@ -11,8 +11,8 @@
 	species_exception = list(/datum/species/golem)
 
 /obj/item/clothing/suit/toggle/labcoat/cmo
-	name = "chief medical officer's labcoat"
-	desc = "Bluer than the standard model."
+	name = "Лабораторный халат Глав Врача"
+	desc = "Более синий, чем стандартная модель."
 	icon_state = "labcoat_cmo"
 	item_state = "labcoat_cmo"
 
@@ -23,34 +23,34 @@
 	item_state = "labcoat_cmo"
 
 /obj/item/clothing/suit/toggle/labcoat/mad
-	name = "\improper The Mad's labcoat"
-	desc = "It makes you look capable of konking someone on the noggin and shooting them into space."
+	name = "Лабораторный халат сумасшедшего"
+	desc = "Заставляет вас выглядеть способным ударить кого-то по голове и выстрелить в космос."
 	icon_state = "labgreen"
 	item_state = "labgreen"
 
 /obj/item/clothing/suit/toggle/labcoat/genetics
-	name = "geneticist labcoat"
-	desc = "A suit that protects against minor chemical spills. Has a blue stripe on the shoulder."
+	name = "Лабораторный халат генетика"
+	desc = "Костюм, защищающий от мелких химических разливов. Имеет синюю полоску на плече."
 	icon_state = "labcoat_gen"
 
 /obj/item/clothing/suit/toggle/labcoat/chemist
-	name = "chemist labcoat"
-	desc = "A suit that protects against minor chemical spills. Has an orange stripe on the shoulder."
+	name = "Лабораторный халат химика"
+	desc = "Костюм, защищающий от мелких химических разливов. Имеет оранжевую полоску на плече."
 	icon_state = "labcoat_chem"
 
 /obj/item/clothing/suit/toggle/labcoat/virologist
-	name = "virologist labcoat"
-	desc = "A suit that protects against minor chemical spills. Offers slightly more protection against biohazards than the standard model. Has a green stripe on the shoulder."
+	name = "Лабораторный халат ученого"
+	desc = "Костюм, защищающий от мелких химических разливов. Обеспечивает несколько большую защиту от биологических опасностей, чем стандартная модель. Имеет зеленую полоску на плече."
 	icon_state = "labcoat_vir"
 
 /obj/item/clothing/suit/toggle/labcoat/science
-	name = "scientist labcoat"
-	desc = "A suit that protects against minor chemical spills. Has a purple stripe on the shoulder."
+	name = "Лабораторный халат ученого"
+	desc = "Костюм, защищающий от мелких химических разливов. Имеет фиолетовую полоску на плече."
 	icon_state = "labcoat_tox"
 
 /obj/item/clothing/suit/toggle/labcoat/fieldscribe
-	name = "fieldscribe suit"
-	desc = "A suit that protects against the weather, and looks stylish, but not much else."
+	name = "Полевой костюм писца"
+	desc = "Костюм, который защищает от непогоды и выглядит стильно, но не более того."
 	icon_state = "fieldscribe"
 	body_parts_covered = CHEST|ARMS
 	allowed = list(/obj/item/gun)

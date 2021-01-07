@@ -4,8 +4,8 @@
 
 //Botanist
 /obj/item/clothing/suit/apron
-	name = "apron"
-	desc = "A basic blue apron."
+	name = "Фартук"
+	desc = "Обычный синий фартук"
 	icon_state = "apron"
 	item_state = "apron"
 	blood_overlay_type = "armor"
@@ -14,8 +14,8 @@
 
 //Captain
 /obj/item/clothing/suit/captunic
-	name = "captain's parade tunic"
-	desc = "Worn by a Captain to show their class."
+	name = "Парадный мундир капитана"
+	desc = "Его носит капитан, чтобы показать свой класс."
 	icon_state = "captunic"
 	item_state = "bio_suit"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
@@ -24,8 +24,8 @@
 
 //Chaplain
 /obj/item/clothing/suit/nun
-	name = "nun robe"
-	desc = "Maximum piety."
+	name = "Роба монашки"
+	desc = "Максимальная чистота."
 	icon_state = "nun"
 	item_state = "nun"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
@@ -33,16 +33,16 @@
 	allowed = list(/obj/item/storage/book/bible, /obj/item/nullrod, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 
 /obj/item/clothing/suit/studentuni
-	name = "student robe"
-	desc = "The uniform of a bygone institute of learning."
+	name = "Роба студента"
+	desc = "Униформа давно ушедшего института обучения."
 	icon_state = "studentuni"
 	item_state = "studentuni"
 	body_parts_covered = ARMS|CHEST
 	allowed = list(/obj/item/storage/book/bible, /obj/item/nullrod, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 
 /obj/item/clothing/suit/witchhunter
-	name = "witchunter garb"
-	desc = "This worn outfit saw much use back in the day."
+	name = "Одежда охотника на ведьм"
+	desc = "Этот изношенный наряд был очень полезен в свое время."
 	icon_state = "witchhunter"
 	item_state = "witchhunter"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
@@ -50,8 +50,8 @@
 
 //Chef
 /obj/item/clothing/suit/toggle/chef
-	name = "chef's apron"
-	desc = "An apron-jacket used by a high class chef."
+	name = "Фартук Шефа"
+	desc = "Фартук высококлассного шефа."
 	icon_state = "chef"
 	item_state = "chef"
 	gas_transfer_coefficient = 0.9
@@ -62,8 +62,8 @@
 
 //Cook
 /obj/item/clothing/suit/apron/chef
-	name = "cook's apron"
-	desc = "A basic, dull, white chef's apron."
+	name = "Фартук повара"
+	desc = "Простой, тусклый белый фартук шеф-повара."
 	icon_state = "apronchef"
 	item_state = "apronchef"
 	blood_overlay_type = "armor"
@@ -72,8 +72,8 @@
 
 //Detective
 /obj/item/clothing/suit/det_suit
-	name = "trenchcoat"
-	desc = "An 18th-y multi-purpose trenchcoat. Someone who wears this means serious business."
+	name = "Плащ"
+	desc = "18-й многоцелевой плащ. Тот, кто носит его, занимается серьезным делом."
 	icon_state = "detective"
 	item_state = "det_suit"
 	blood_overlay_type = "coat"
@@ -87,15 +87,15 @@
 	allowed = GLOB.detective_vest_allowed
 
 /obj/item/clothing/suit/det_suit/grey
-	name = "noir trenchcoat"
-	desc = "A hard-boiled private investigator's grey trenchcoat."
+	name = "Нуарный плащ"
+	desc = "Серый плащ крутого частного детектива."
 	icon_state = "greydet"
 	item_state = "greydet"
 
 //Engineering
 /obj/item/clothing/suit/hazardvest
-	name = "hazard vest"
-	desc = "A high-visibility vest used in work zones."
+	name = "Жилет опасности"
+	desc = "Жилет высокой видимости, используемый в рабочих зонах."
 	icon_state = "hazard"
 	item_state = "hazard"
 	blood_overlay_type = "armor"
@@ -104,8 +104,8 @@
 
 //Lawyer
 /obj/item/clothing/suit/toggle/lawyer
-	name = "blue suit jacket"
-	desc = "A snappy dress jacket."
+	name = "Синий пиджак"
+	desc = "Остроумный пиджак."
 	icon_state = "suitjacket_blue"
 	item_state = "suitjacket_blue"
 	blood_overlay_type = "coat"
@@ -113,59 +113,59 @@
 	togglename = "buttons"
 
 /obj/item/clothing/suit/toggle/lawyer/purple
-	name = "purple suit jacket"
-	desc = "A foppish dress jacket."
+	name = "Финий пиджак"
+	desc = "Щегольский пиджак."
 	icon_state = "suitjacket_purp"
 	item_state = "suitjacket_purp"
 
 /obj/item/clothing/suit/toggle/lawyer/black
-	name = "black suit jacket"
-	desc = "A professional suit jacket."
+	name = "Черный пиджак"
+	desc = "Профессиональный пиджак."
 	icon_state = "suitjacket_black"
 	item_state = "ro_suit"
 
 
 //Mime
 /obj/item/clothing/suit/suspenders
-	name = "suspenders"
-	desc = "They suspend the illusion of the mime's play."
+	name = "Подтяжки"
+	desc = "Подтягивают иллюзию игры мима."
 	icon = 'icons/obj/clothing/belts.dmi'
 	icon_state = "suspenders"
 	blood_overlay_type = "armor" //it's the less thing that I can put here
 
 //Security
 /obj/item/clothing/suit/security/officer
-	name = "security officer's jacket"
-	desc = "This jacket is for those special occasions when a security officer isn't required to wear their armor."
+	name = "Жилет офицера СБ"
+	desc = "Эта куртка предназначена для тех особых случаев, когда офицер Службы безопасности не обязан носить свою броню."
 	icon_state = "officerbluejacket"
 	item_state = "officerbluejacket"
 	body_parts_covered = CHEST|ARMS
 
 /obj/item/clothing/suit/security/warden
-	name = "warden's jacket"
-	desc = "Perfectly suited for the warden that wants to leave an impression of style on those who visit the brig."
+	name = "Жилет надзирателя"
+	desc = "Идеально подходит для смотрителя, который хочет оставить впечатление стиля на тех, кто посещает бриг."
 	icon_state = "wardenbluejacket"
 	item_state = "wardenbluejacket"
 	body_parts_covered = CHEST|ARMS
 
 /obj/item/clothing/suit/security/hos
-	name = "head of security's jacket"
-	desc = "This piece of clothing was specifically designed for asserting superior authority."
+	name = "Жилет главы безопасности"
+	desc = "Этот предмет одежды был специально разработан для утверждения высшей власти."
 	icon_state = "hosbluejacket"
 	item_state = "hosbluejacket"
 	body_parts_covered = CHEST|ARMS
 
 //Surgeon
 /obj/item/clothing/suit/apron/surgical
-	name = "surgical apron"
-	desc = "A sterile blue surgical apron."
+	name = "Фартук хирурга"
+	desc = "Стерильный синий фартук хирурга."
 	icon_state = "surgical"
 	allowed = list(/obj/item/scalpel, /obj/item/surgical_drapes, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor)
 
 //Curator
 /obj/item/clothing/suit/curator
-	name = "treasure hunter's coat"
-	desc = "Both fashionable and lightly armoured, this jacket is favoured by treasure hunters east of the colorado river."
+	name = "Пальто охотника за сокровищами"
+	desc = "Модная и легко бронированная, эта куртка пользуется популярностью у охотников за сокровищами к востоку от реки Колорадо."
 	icon_state = "curator"
 	item_state = "curator"
 	blood_overlay_type = "coat"

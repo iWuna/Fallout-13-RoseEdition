@@ -1,6 +1,6 @@
 /obj/item/clothing/mask/gas
-	name = "gas mask"
-	desc = "A face-covering mask that can be connected to an air supply. While good for concealing your identity, it isn't good for blocking gas flow." //More accurate
+	name = "Противогаз"
+	desc = "Маска, закрывающая лицо, которая может быть подключена к системе подачи воздуха. И хоть она хорошо подходит для сокрытия личности, фильтрует газы она не очень." //More accurate
 	icon_state = "gas_alt"
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | MASKINTERNALS
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
@@ -14,8 +14,8 @@
 // **** Welding gas mask ****
 
 /obj/item/clothing/mask/gas/welding
-	name = "welding mask"
-	desc = "A gas mask with built-in welding goggles and a face shield. Looks like a skull - clearly designed by a nerd."
+	name = "Сварочная маска"
+	desc = "Противогаз со встроенными сварочными очками и защитной маской. Похоже на череп - явно сконструированно ботаном."
 	icon_state = "weldingmask"
 	materials = list(MAT_METAL=4000, MAT_GLASS=2000)
 	flash_protect = 2
@@ -36,21 +36,21 @@
 
 //Plague Dr suit can be found in clothing/suits/bio.dm
 /obj/item/clothing/mask/gas/plaguedoctor
-	name = "plague doctor mask"
-	desc = "A modernised version of the classic design, this mask will not only filter out toxins but it can also be connected to an air supply."
+	name = "Маска чумного доктора"
+	desc = "Модернизированная версия классического дизайна, эта маска не только отфильтровывает токсины, но и может быть подключена к системе подачи воздуха."
 	icon_state = "plaguedoctor"
 	item_state = "gas_mask"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 2,"energy" = 2, "bomb" = 0, "bio" = 75, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/mask/gas/syndicate
-	name = "advanced gas mask"
-	desc = "A close-fitting tactical mask that can be connected to an air supply."
+	name = "Улучшенный противогаз"
+	desc = "Плотно прилегающая тактическая маска, которая может быть подключена к системе подачи воздуха."
 	icon_state = "syndicate"
 	strip_delay = 60
 
 /obj/item/clothing/mask/gas/clown_hat
-	name = "clown wig and mask"
-	desc = "A true prankster's facial attire. A clown is incomplete without his wig and mask."
+	name = "Клоунские маска и парик"
+	desc = "Лицо настоящего проказника. Без парика и маски клоун неполноценен."
 	clothing_flags = MASKINTERNALS
 	icon_state = "clown"
 	item_state = "clown_hat"
@@ -81,8 +81,8 @@
 		return 1
 
 /obj/item/clothing/mask/gas/sexyclown
-	name = "sexy-clown wig and mask"
-	desc = "A feminine clown mask for the dabbling crossdressers or female entertainers."
+	name = "Сексуальные клоунские маска и парик"
+	desc = "Женская клоунская маска для балующихся трансвеститов или женщин-артисток"
 	clothing_flags = MASKINTERNALS
 	icon_state = "sexyclown"
 	item_state = "sexyclown"
@@ -90,8 +90,8 @@
 	resistance_flags = FLAMMABLE
 
 /obj/item/clothing/mask/gas/mime
-	name = "mime mask"
-	desc = "The traditional mime's mask. It has an eerie facial posture."
+	name = "Маска мима"
+	desc = "Традиционная маска мима. У него жуткое выражение лица."
 	clothing_flags = MASKINTERNALS
 	icon_state = "mime"
 	item_state = "mime"
@@ -122,8 +122,8 @@
 		return 1
 
 /obj/item/clothing/mask/gas/monkeymask
-	name = "monkey mask"
-	desc = "A mask used when acting as a monkey."
+	name = "Маска обезьяны"
+	desc = "Маска, используемая в роли обезьяны."
 	clothing_flags = MASKINTERNALS
 	icon_state = "monkeymask"
 	item_state = "monkeymask"
@@ -131,8 +131,8 @@
 	resistance_flags = FLAMMABLE
 
 /obj/item/clothing/mask/gas/sexymime
-	name = "sexy mime mask"
-	desc = "A traditional female mime's mask."
+	name = "Сексуальная маска мима"
+	desc = "Традиционная женская маска мима."
 	clothing_flags = MASKINTERNALS
 	icon_state = "sexymime"
 	item_state = "sexymime"
@@ -140,32 +140,32 @@
 	resistance_flags = FLAMMABLE
 
 /obj/item/clothing/mask/gas/death_commando
-	name = "death commando mask"
+	name = "Маска коммандо смерти"
 	icon_state = "death_commando_mask"
 	item_state = "death_commando_mask"
 
 /obj/item/clothing/mask/gas/cyborg
-	name = "cyborg visor"
-	desc = "Beep boop."
+	name = "Визор киборга"
+	desc = "Бип боб."
 	icon_state = "death"
 	resistance_flags = FLAMMABLE
 
 /obj/item/clothing/mask/gas/owl_mask
-	name = "owl mask"
-	desc = "Twoooo!"
+	name = "Маска совы"
+	desc = "Вуууу!"
 	icon_state = "owl"
 	clothing_flags = MASKINTERNALS
 	flags_cover = MASKCOVERSEYES
 	resistance_flags = FLAMMABLE
 
 /obj/item/clothing/mask/gas/carp
-	name = "carp mask"
-	desc = "Gnash gnash."
+	name = "Маска карпа"
+	desc = "Гррр рррр."
 	icon_state = "carp_mask"
 
 /obj/item/clothing/mask/gas/tiki_mask
-	name = "tiki mask"
-	desc = "A creepy wooden mask. Surprisingly expressive for a poorly carved bit of wood."
+	name = "Маска Тики"
+	desc = "Жуткая деревянная маска. Вырезана из удивительно плохого куска дерева."
 	icon_state = "tiki_eyebrow"
 	item_state = "tiki_eyebrow"
 	resistance_flags = FLAMMABLE

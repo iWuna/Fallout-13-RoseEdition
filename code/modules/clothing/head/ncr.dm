@@ -1,26 +1,26 @@
 /obj/item/clothing/head/f13/ncr
-	name = "NCR patrol helmet"
-	desc = "A standard issue NCR Infantry helmet."
+	name = "Патрульный шлем НКР"
+	desc = "Стандартный шлем пехоты НКР"
 	icon_state = "ncr_infantry_helmet"
 	item_state = "ncr_infantry_helmet"
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	strip_delay = 50
 
 /obj/item/clothing/head/f13/ncr/medic
-	name = "NCR medical helmet"
-	desc = "A standard issue NCR Infantry helmet, colored to suit a medical officer."
+	name = "Шлем медика НКР"
+	desc = "Стандартный шлем пехоты НКР, покрашен в цвет костюма медицинского офицера."
 	icon_state = "ncr_medical_helmet"
 	item_state = "ncr_medical_helmet"
 
 /obj/item/clothing/head/f13/ncr/mp
-	name = "NCR military police helmet"
-	desc = "A standard issue NCR helmet, with the letters \"MP\" scrawled on the front."
+	name = "Шлем военной полиции НКР"
+	desc = "Стандартный шлем НКР с надписью \"ВП\" на задней части."
 	icon_state = "ncr_MP"
 	item_state = "ncr_MP"
 
 /obj/item/clothing/head/f13/ncr/goggles
-	name = "NCR storm helmet"
-	desc = "A standard issue NCR Infantry helmet, with a pair of goggles attached to it."
+	name = "Штормой шлем НКР"
+	desc = "Стандартный шлем пехоты НКР, к нему присоединены очки."
 	icon_state = "ncr_goggles_helmet"
 	item_state = "ncr_goggles_helmet"
 	toggle_message = "You pull the goggles down under "
@@ -34,8 +34,8 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/hardhat/ncr
-	name = "NCR engineer helmet"
-	desc = "A standard issue NCR Infantry helmet, modified with a head lamp for engineers."
+	name = "Шлем инженера НКР"
+	desc = "Стандартный шлем пехоты НКР, к этому прикреплён фонарь для инженеров."
 	icon_state = "hardhat_ncr"
 	item_state = "hardhat_ncr"
 	item_color = "ncr"
@@ -45,8 +45,8 @@
 	strip_delay = 50
 
 /obj/item/clothing/head/hardhat/ncr
-	name = "NCR engineer helmet"
-	desc = "A standard issue NCR Infantry helmet, modified with a head lamp for engineers."
+	name = "Шлем инженера НКР"
+	desc = "Стандартный шлем пехоты НКР, к этому прикреплён фонарь для инженеров."
 	icon_state = "hardhat0_ncr"
 	item_state = "hardhat0_ncr"
 	item_color = "ncr"
@@ -77,50 +77,50 @@
 					sleep(15)
 
 /obj/item/clothing/head/beret/ncr
-	name = "NCR officer beret"
-	desc = "A green beret, standard issue for all commissioned NCR Officers."
+	name = "Берет офицера НКР"
+	desc = "Зеленый берет, такие носят все офицеры НКР."
 	icon_state = "ncr_officer_beret"
 	item_state = "ncr_officer_beret"
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_recon
-	name = "NCR First Recon beret"
-	desc = "A red beret, issued to members of NCR First Recon."
+	name = "Берет первого разведывательного батальона"
+	desc = "Красный берет, выданный членам первого разведывательного батальона НКР."
 	icon_state = "ncr_recon_beret"
 	item_state = "ncr_recon_beret"
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_scout
-	name = "NCR Third Scout beret"
-	desc = "A brown beret, issued to members of the NCR Third Scout Battallion."
+	name = "Берет третьего разведывательного батальона"
+	desc = "Коричневый берет, выданный членам третьего разведывательного батальона НКР."
 	icon_state = "scoutberet"
 	item_state = "scoutberet"
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_recon_ranger
-	name = "NCR Ranger scout beret"
-	desc = "A brown beret, issued to members of the NCR Recon Rangers."
+	name = "Берет рейнджера-разведчика НКР"
+	desc = "Коричневый берет, выданный членам разведывательного батальона НКР."
 	icon_state = "scoutberet"
 	item_state = "scoutberet"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_scout_lt
-	name = "NCR Third Scout officer beret"
-	desc = "A brown beret, issued to officers of the NCR Third Scout Battallion."
+	name = "Берет офицера третьего разведывательного батальона"
+	desc = "Коричневый берет, выданный офицерам третьего разведывательного батальона НКР."
 	icon_state = "scoutberet"
 	item_state = "scoutberet"
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/f13/ranger
-	name = "NCR ranger campaign hat"
-	desc = "An NCR ranger hat, standard issue amongst all but the most elite rangers."
+	name = "Шляпа рейнджера НКР"
+	desc = "Шляпа рейнджера НКР, носимая всеми, кроме самых элитных рейнджеров."
 	icon_state = "drill_hat"
 	item_state = "drillhat"
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/head/f13/trailranger
-	name = "NCR trail ranger hat"
-	desc = "A rustic, homely style cowboy hat worn by NCR trail rangers. Yeehaw!"
+	name = "Шляпа рейнджера-следопыты"
+	desc = "Деревенская, домашняя ковбойская шляпа, которую носят рейнджеры-следопыты НКР. Вуху!"
 	icon_state = "cowboyrang"
 	item_state = "cowboyrang"
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 20, "energy" = 30, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)

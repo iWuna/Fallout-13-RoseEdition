@@ -1,6 +1,6 @@
 /obj/item/clothing/mask/balaclava
-	name = "balaclava"
-	desc = "Worn by bankrobbers and those that hunt bankrobbers"
+	name = "Балаклава"
+	desc = "Такие носят грабители банков или те кто на них охотятся."
 	icon_state = "balaclava"
 	item_state = "balaclava"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
@@ -12,8 +12,8 @@
 	adjustmask(user)
 
 /obj/item/clothing/mask/luchador
-	name = "Luchador Mask"
-	desc = "Worn by robust fighters, flying high to defeat their foes!"
+	name = "Маска Лукадора"
+	desc = "Такие маски носят крепкие бойцы, летящиме высоко, чтобы победить своих врагов!"
 	icon_state = "luchag"
 	item_state = "luchag"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
@@ -43,13 +43,13 @@
 	return message
 
 /obj/item/clothing/mask/luchador/tecnicos
-	name = "Tecnicos Mask"
-	desc = "Worn by robust fighters who uphold justice and fight honorably."
+	name = "Маска Техникоса"
+	desc = "Такие маски носят сильные бойцы, которые отстаивают справедливость и сражаются с честью."
 	icon_state = "luchador"
 	item_state = "luchador"
 
 /obj/item/clothing/mask/luchador/rudos
-	name = "Rudos Mask"
-	desc = "Worn by robust fighters who are willing to do anything to win."
+	name = "Маска Рудо"
+	desc = "Такие маски носият крепкие бойцы, готовые на все ради победы."
 	icon_state = "luchar"
 	item_state = "luchar"

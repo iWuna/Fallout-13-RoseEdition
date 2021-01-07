@@ -7,8 +7,8 @@
 #define MODE_SHUTTLE "shuttle"
 
 /obj/item/clothing/glasses/meson/engine
-	name = "engineering scanner goggles"
-	desc = "Goggles used by engineers. The Meson Scanner mode lets you see basic structural and terrain layouts through walls, the T-ray Scanner mode lets you see underfloor objects such as cables and pipes, and the Radiation Scanner mode let's you see objects contaminated by radiation."
+	name = "Инженерные очки-сканеры"
+	desc = "Очки, используемые инженерами. Режим мезонного сканера позволяет видеть основные конструкции и рельеф местности через стены, режим T-ray сканера позволяет видеть объекты под полом, такие как кабели и трубы, а режим радиационного сканера позволяет видеть объекты, загрязненные радиацией."
 	icon_state = "trayson-meson"
 	item_state = "trayson-meson"
 	actions_types = list(/datum/action/item_action/toggle_mode)
@@ -129,19 +129,19 @@
 			user.update_inv_hands()
 
 /obj/item/clothing/glasses/meson/engine/tray //atmos techs have lived far too long without tray goggles while those damned engineers get their dual-purpose gogles all to themselves
-	name = "optical t-ray scanner"
+	name = "Оптический t-ray сканер"
 	icon_state = "trayson-t-ray"
 	item_state = "trayson-t-ray"
-	desc = "Used by engineering staff to see underfloor objects such as cables and pipes."
+	desc = "Используется инженерным персоналом для просмотра объектов под полом, таких как кабели и трубы."
 	range = 2
 
 	modes = list(MODE_NONE = MODE_TRAY, MODE_TRAY = MODE_NONE)
 
 /obj/item/clothing/glasses/meson/engine/shuttle
-	name = "shuttle region scanner"
+	name = "Сканер местоположения шаттла"
 	icon_state = "trayson-shuttle"
 	item_state = "trayson-shuttle"
-	desc = "Used to see the boundaries of shuttle regions."
+	desc = "Позволяют увидеть границы шаттла."
 
 	modes = list(MODE_NONE = MODE_SHUTTLE, MODE_SHUTTLE = MODE_NONE)
 

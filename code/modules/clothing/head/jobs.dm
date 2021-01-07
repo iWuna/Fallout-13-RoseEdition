@@ -1,10 +1,10 @@
 
 //Chef
 /obj/item/clothing/head/chefhat
-	name = "chef's hat"
+	name = "Шляпа шеф-повара"
 	item_state = "chef"
 	icon_state = "chef"
-	desc = "The commander in chef's head wear."
+	desc = "Командир в головном уборе шеф-повара."
 	strip_delay = 10
 	equip_delay_other = 10
 	dynamic_hair_suffix = ""
@@ -20,8 +20,8 @@
 	return(FIRELOSS)
 
 /obj/item/clothing/head/caphat
-	name = "captain's hat"
-	desc = "It's good being the king."
+	name = "Шляпа капитана"
+	desc = "Хорошо быть королём."
 	icon_state = "captain"
 	item_state = "that"
 	flags_inv = 0
@@ -30,30 +30,30 @@
 	dog_fashion = /datum/dog_fashion/head/captain
 
 /obj/item/clothing/head/caphat/parade
-	name = "captain's parade cap"
-	desc = "Worn only by Captains with an abundance of class."
+	name = "Парадная фуражка капитана"
+	desc = "Такие носят только капитаны высшего глаза."
 	icon_state = "capcap"
 
 	dog_fashion = null
 
 
 /obj/item/clothing/head/hopcap
-	name = "head of personnel's cap"
+	name = "Фуражка главы персонала"
 	icon_state = "hopcap"
-	desc = "The symbol of true bureaucratic micromanagement."
+	desc = "Символ истинного бюрократического микроменеджмента."
 	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	dog_fashion = /datum/dog_fashion/head/hop
 
 /obj/item/clothing/head/nun_hood
-	name = "nun hood"
-	desc = "Maximum piety in this star system."
+	name = "Капюшон монашки"
+	desc = "Максимальное благочестие в этой звездной системе."
 	icon_state = "nun_hood"
 	flags_inv = HIDEHAIR
 	flags_cover = HEADCOVERSEYES
 
 /obj/item/clothing/head/fedora/det_hat
-	name = "detective's fedora"
-	desc = "There's only one man who can sniff out the dirty stench of crime, and he's likely wearing this hat."
+	name = "Фетровая шляпа детектива"
+	desc = "Есть только один человек, который может вынюхать грязную вонь преступления, и он, вероятно, носит эту шляпу."
 	icon_state = "detective"
 	var/candy_cooldown = 0
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/detective
@@ -80,22 +80,22 @@
 				to_chat(user, "You just took a candy corn! You should wait a couple minutes, lest you burn through your stash.")
 
 /obj/item/clothing/head/beret
-	name = "beret"
-	desc = "A beret, a mime's favorite headwear."
+	name = "Берет"
+	desc = "Берет, любимый головной убор мима."
 	icon_state = "beret"
 	dog_fashion = /datum/dog_fashion/head/beret
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/beret/remnant
-	name = "remnant beret"
-	desc = "A beret commonly worn by the officers of the enclave. It has their symbol on a silver medal at the front."
+	name = "Берет Анклава"
+	desc = "Берет, который обычно носят офицеры анклава. У него есть их символ на серебряной медали на фронте."
 	icon_state = "remnant"
 	item_state = "remnant"
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/beret/militia
-	name = "ODF beret"
-	desc = "A green beret issued to members of the Oasis Defense Force."
+	name = "Берет СОА"
+	desc = "Зеленый берет, выданный членам Сил обороны оазиса."
 	icon_state = "ncr_officer_beret"
 	item_state = "ncr_officer_beret"
 	dynamic_hair_suffix = ""
@@ -106,30 +106,30 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/beret/black
-	name = "black beret"
-	desc = "A black beret, perfect for war veterans and dark, brooding, anti-hero mimes."
+	name = "Чёрный берет"
+	desc = "Черный берет, идеально подходящий для ветеранов войны и мрачных, задумчивых, мимов-антигероев."
 	icon_state = "beretblack"
 
 /obj/item/clothing/head/beret/highlander
-	desc = "That was white fabric. <i>Was.</i>"
+	desc = "Это была белая ткань. <i>Была.</i>"
 	item_flags = NODROP
 	dog_fashion = null
 
 /obj/item/clothing/head/HoS
-	name = "head of security cap"
-	desc = "The robust standard-issue cap of the Head of Security. For showing the officers who's in charge."
+	name = "Фуражка главы службы безопасности"
+	desc = "Прочная стандартная фуражка начальника Службы безопасности. Для того, чтобы показал офицерам, кто здесь главный."
 	icon_state = "hoscap"
 	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 80
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/HoS/syndicate
-	name = "syndicate cap"
-	desc = "A black cap fit for a high ranking syndicate officer."
+	name = "Фуражка синдиката"
+	desc = "Черная фуражка, подходящая для высокопоставленного офицера синдиката."
 
 /obj/item/clothing/head/HoS/beret
-	name = "head of security beret"
-	desc = "A robust beret for the Head of Security, for looking stylish while not sacrificing protection."
+	name = "Берет главы службы безопасности"
+	desc = "Прочный берет для начальника Службы безопасности, чтобы выглядеть стильно, не жертвуя при этом защитой."
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 30, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
 	icon_state = "hosberetblack"
 
@@ -138,12 +138,12 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/HoS/beret/syndicate
-	name = "black beret"
-	desc = "A black beret with thin armor padding inside. Stylish and robust."
+	name = "Чёрный берет"
+	desc = "Черный берет с тонкой броневой подкладкой внутри. Стильный и надежный."
 
 /obj/item/clothing/head/warden
-	name = "warden's police hat"
-	desc = "It's a special armored hat issued to the Warden of a security force. Protects the head from impacts."
+	name = "Полицейская шляпа надзирателя"
+	desc = "Это специальная бронированная шляпа, выданная начальнику Службы безопасности. Защищает голову от ударов."
 	icon_state = "policehelm"
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 30, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
 	strip_delay = 60
@@ -154,30 +154,30 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/beret/sec
-	name = "security beret"
-	desc = "A robust beret with the security insignia emblazoned on it. Uses reinforced fabric to offer sufficent protection."
+	name = "Берет охраны"
+	desc = "Крепкий берет с эмблемой службы безопасности. Использует усиленную ткань, чтобы обеспечить достаточную защиту."
 	icon_state = "beret_badge"
 	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 60
 	dog_fashion = null
 
 /obj/item/clothing/head/beret/sec/navyhos
-	name = "head of security's beret"
-	desc = "A special beret with the Head of Security's insignia emblazoned on it. A symbol of excellence, a badge of courage, a mark of distinction."
+	name = "Берет главы безопасности"
+	desc = "Специальный берет с эмблемой начальника Службы безопасности. Символ превосходства, знак мужества, знак отличия."
 	icon_state = "hosberet"
 
 /obj/item/clothing/head/beret/sec/navywarden
-	name = "warden's beret"
-	desc = "A special beret with the Warden's insignia emblazoned on it. For wardens with class."
+	name = "Берет надзирателя"
+	desc = "Специальный берет с эмблемой начальника тюрьмы. Для надзирателя."
 	icon_state = "wardenberet"
 	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 60
 
 /obj/item/clothing/head/beret/sec/navyofficer
-	desc = "A special beret with the security insignia emblazoned on it. For officers with class."
+	desc = "Специальный берет с эмблемой службы безопасности. Для офицеров высшего класса."
 	icon_state = "officerberet"
 
 /obj/item/clothing/head/fedora/curator
-	name = "treasure hunter's fedora"
-	desc = "You got red text today kid, but it doesn't mean you have to like it."
+	name = "Фетровая шляпа охотника за сокровищами"
+	desc = "Сегодня ты получил красное сообщение, малыш, но это не значит, что оно тебе должно нравиться."
 	icon_state = "curator"

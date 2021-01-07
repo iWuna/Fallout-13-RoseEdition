@@ -2,8 +2,8 @@
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 10, rad = 10, fire = 10, acid = 10)
 
 /obj/item/clothing/gloves/f13/baseball
-	name = "baseball glove"
-	desc = "A large leather glove worn by baseball players of the defending team which assists them in catching and fielding balls hit by a batter or thrown by a teammate."
+	name = "Бейсбольная перчатка"
+	desc = "Большая кожаная перчатка, которую носят бейсболисты защищающейся команды. Она помогает им ловить и выставлять мячи, отбитые бьющим или брошенные товарищем по команде."
 	icon_state = "baseball"
 	item_state = "b_shoes"
 	item_color = null
@@ -13,8 +13,8 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 
 /obj/item/clothing/gloves/f13/leather
-	name = "leather gloves"
-	desc = "Gloves made of wasteland animals hides, that were tanned and carefully stiched together."
+	name = "Кожаные перчатки"
+	desc = "Перчатки, сделанные из шкур животных пустоши, которые были выдублены и тщательно сшиты вместе."
 	icon_state = "leather"
 	item_state = "leather"
 	item_color = null
@@ -26,12 +26,12 @@
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 
 /obj/item/clothing/gloves/f13/leather/ncr_officer
-	name = "NCR officer gloves"
-	desc = "Strong leather gloves issued to NCR officers."
+	name = "Перчатки офицера НКР"
+	desc = "Прочные кожаные перчатки, используемые офицерами НКР."
 
 /obj/item/clothing/gloves/f13/military
-	name = "military gloves"
-	desc = "Tight fitting black leather gloves with mesh along the finger tips and padding along the palm. The craftsmanship indicates it was made for a officer."
+	name = "Военные перчатки"
+	desc = "Плотно облегающие черные кожаные перчатки с сеткой вдоль кончиков пальцев и подкладкой вдоль ладони. Мастерство изготовления указывает на то, что они были сделаны для офицера."
 	icon_state = "military"
 	item_state = "military"
 	item_color = null
@@ -43,8 +43,8 @@
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 
 /obj/item/clothing/gloves/f13/ncr
-	name = "NCR patrol gloves"
-	desc = "Large leather gloves commonly worn by NCR personnel."
+	name = "Патрульные перчатки НКР"
+	desc = "Большие кожаные перчатки, которые обычно носят сотрудники НКР."
 	icon_state = "ncr_gloves"
 	item_state = "ncr_gloves"
 	item_color = null
@@ -56,8 +56,8 @@
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 
 /obj/item/clothing/gloves/f13/doom
-	name = "strange gloves"
-	desc = "These gloves look like a part of some sort of space suit, or maybe exquisite armor, but you can't tell for sure."
+	name = "Странные перчатки"
+	desc = "Эти перчатки выглядят как часть какого-то космического скафандра или, может быть, изысканной брони, но вы не можете сказать наверняка."
 	icon_state = "doom"
 	item_state = "doom"
 	item_color = null
@@ -70,8 +70,8 @@
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 80, rad = 80, fire = 80, acid = 50)
 
 /obj/item/clothing/gloves/f13/handwraps
-	name = "handwraps"
-	desc = "A roll of cloth to roll around one's palms, provides only minimal effectiveness."
+	name = "Повязки"
+	desc = "Рулон ткани, который нужно обмотать вокруг ладоней, обеспечивает лишь минимальную эффективность."
 	icon_state = "handwraps"
 	item_state = "handwraps"
 	item_color = null
@@ -83,8 +83,8 @@
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 
 /obj/item/clothing/gloves/f13/lace
-	name = "lace gloves"
-	desc = "A tight, seethrough pair of black gloves, designed to be worn with something fancy."
+	name = "Кружевные перчатки"
+	desc = "Плотно облегающие черные перчатки, предназначенные для ношения с чем-то необычным."
 	icon_state = "lacegloves"
 	item_state = "lacegloves"
 	item_color = null
@@ -96,8 +96,8 @@
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 
 /obj/item/clothing/gloves/f13/blacksmith
-	name = "blacksmith gloves"
-	desc = "A pair of heavy duty leather gloves designed to protect the wearer when metalforging."
+	name = "Перчатки кузнеца"
+	desc = "Пара тяжелых кожаных перчаток, предназначенных для защиты владельца при ковке металла."
 	icon_state = "opifex_gloves"
 	item_state = "opifex_gloves"
 	item_color = null

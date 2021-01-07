@@ -1,6 +1,6 @@
 /obj/item/clothing/head/helmet/space/chronos
-	name = "Chronosuit Helmet"
-	desc = "A white helmet with an opaque blue visor."
+	name = "Шлем хроностюма"
+	desc = "Белый шлем с непрозрачным голубым забралом."
 	icon_state = "chronohelmet"
 	item_state = "chronohelmet"
 	slowdown = 1
@@ -19,8 +19,8 @@
 
 
 /obj/item/clothing/suit/space/chronos
-	name = "Chronosuit"
-	desc = "An advanced spacesuit equipped with time-bluespace teleportation and anti-compression technology."
+	name = "Хронокостюм"
+	desc = "Усовершенствованный скафандр, оснащенный технологией телепортации во времени в блюспейс пространстве и антикомпрессионной технологией."
 	icon_state = "chronosuit"
 	item_state = "chronosuit"
 	actions_types = list(/datum/action/item_action/toggle)

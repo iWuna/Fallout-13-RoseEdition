@@ -1,6 +1,6 @@
 /obj/item/clothing/head/soft
-	name = "cargo cap"
-	desc = "It's a baseball hat in a tasteless yellow colour."
+	name = "Складская кепка"
+	desc = "Это бейсболка безвкусного желтого цвета."
 	icon_state = "cargosoft"
 	item_state = "helmet"
 	item_color = "cargo"
@@ -16,7 +16,7 @@
 
 /obj/item/clothing/head/soft/verb/flipcap()
 	set category = "Object"
-	set name = "Flip cap"
+	set name = "Кепка"
 
 	flip(usr)
 
@@ -45,78 +45,78 @@
 	to_chat(user, "<span class='notice'>Alt-click the cap to flip it [flipped ? "forwards" : "backwards"].</span>")
 
 /obj/item/clothing/head/soft/red
-	name = "red cap"
-	desc = "It's a baseball hat in a tasteless red colour."
+	name = "Красная кепка"
+	desc = "Это бейсболка безвкусного красного цвета."
 	icon_state = "redsoft"
 	item_color = "red"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/blue
-	name = "blue cap"
-	desc = "It's a baseball hat in a tasteless blue colour."
+	name = "Синяя кепка"
+	desc = "Это бейсболка безвкусного синего цвета."
 	icon_state = "bluesoft"
 	item_color = "blue"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/green
-	name = "green cap"
-	desc = "It's a baseball hat in a tasteless green colour."
+	name = "Зелёная кепка"
+	desc = "Это бейсболка безвкусного зелёного цвета."
 	icon_state = "greensoft"
 	item_color = "green"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/yellow
-	name = "yellow cap"
-	desc = "It's a baseball hat in a tasteless yellow colour."
+	name = "Желтая кепка"
+	desc = "Это бейсболка безвкусного жёлтого цвета."
 	icon_state = "yellowsoft"
 	item_color = "yellow"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/grey
-	name = "grey cap"
-	desc = "It's a baseball hat in a tasteful grey colour."
+	name = "Серая кепка"
+	desc = "Это бейсболка безвкусного серого цвета."
 	icon_state = "greysoft"
 	item_color = "grey"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/orange
-	name = "orange cap"
-	desc = "It's a baseball hat in a tasteless orange colour."
+	name = "Оранжевая кепка"
+	desc = "Это бейсболка безвкусного оранжевого цвета."
 	icon_state = "orangesoft"
 	item_color = "orange"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/mime
-	name = "cap"
-	desc = "It's a baseball hat in a tasteless colour."
+	name = "Кепка"
+	desc = "Это бейсболка безвкусного цвета."
 	icon_state = "mimesoft"
 	item_color = "mime"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/purple
-	name = "purple cap"
-	desc = "It's a baseball hat in a tasteless purple colour."
+	name = "Фиолетовая кепка"
+	desc = "Это бейсболка безвкусного фиолетового цвета."
 	icon_state = "purplesoft"
 	item_color = "purple"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/black
-	name = "black cap"
-	desc = "It's a baseball hat in a tasteless black colour."
+	name = "Чёрная кепка"
+	desc = "Это бейсболка безвкусного черного цвета."
 	icon_state = "blacksoft"
 	item_color = "black"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/rainbow
-	name = "rainbow cap"
-	desc = "It's a baseball hat in a bright rainbow of colors."
+	name = "Радужная кепка"
+	desc = "Это бейсболка в яркой радуге цветов."
 	icon_state = "rainbowsoft"
 	item_color = "rainbow"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/sec
-	name = "security cap"
-	desc = "It's a robust baseball hat in tasteful red colour."
+	name = "Кепка охраны"
+	desc = "Это прочная бейсболка со вкусом подобранного красного цвета."
 	icon_state = "secsoft"
 	item_color = "sec"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 50)
@@ -124,8 +124,8 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/emt
-	name = "EMT cap"
-	desc = "It's a baseball hat with a dark turquoise color and a reflective cross on the top."
+	name = "Кепка ОБР"
+	desc = "Это бейсболка темно-бирюзового цвета с отражающим крестом на макушке."
 	icon_state = "emtsoft"
 	item_color = "emt"
 	dog_fashion = null

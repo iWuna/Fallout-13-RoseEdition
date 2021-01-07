@@ -1,6 +1,6 @@
 /obj/item/clothing/head/hardhat
-	name = "hard hat"
-	desc = "A piece of headgear used in dangerous working conditions to protect the head. Comes with a built-in flashlight."
+	name = "Каска"
+	desc = "Часть головного убора, используемая в опасных условиях труда для защиты головы. Поставляется со встроенным фонариком."
 	icon_state = "hardhat0_yellow"
 	item_state = "hardhat0_yellow"
 	item_color = "yellow" //Determines used sprites: hardhat[on]_[item_color] and hardhat[on]_[item_color]2 (lying down sprite)
@@ -49,7 +49,7 @@
 	item_state = "hardhat0_red"
 	item_color = "red"
 	dog_fashion = null
-	name = "firefighter helmet"
+	name = "Шлем пожарного"
 	clothing_flags = STOPSPRESSUREDAMAGE
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_HELM_MAX_TEMP_PROTECT
@@ -78,8 +78,8 @@
 	item_state = "hardhat0_atmos"
 	item_color = "atmos"
 	dog_fashion = null
-	name = "atmospheric technician's firefighting helmet"
-	desc = "A firefighter's helmet, able to keep the user cool in any situation."
+	name = "Противопожарный шлем амтосферного техника"
+	desc = "Шлем пожарного, позволяющий сохранять хладнокровие пользователя в любой ситуации."
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | BLOCK_GAS_SMOKE_EFFECT
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	heat_protection = HEAD

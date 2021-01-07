@@ -6,8 +6,8 @@
 	resistance_flags = NONE
 
 /obj/item/clothing/ears/earmuffs
-	name = "earmuffs"
-	desc = "Protects your hearing from loud noises, and quiet ones as well."
+	name = "Наушники"
+	desc = "Защищают ваш слух от громких шумов, а также от тихих."
 	icon_state = "earmuffs"
 	item_state = "earmuffs"
 	strip_delay = 15
