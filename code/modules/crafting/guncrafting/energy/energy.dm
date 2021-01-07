@@ -236,15 +236,19 @@
 		if(quality == "masterwork")
 			quality = "enhanced"
 
+	src.forceMove(G) //Entire assembly gets thrown in the gun
+	var/custom_name = input(user, "Select a name for this gun", "Custom name", G.name)
+	if(!custom_name)
+		G.name = "[G.name] ([capitalize(quality)])"
+	else
+		G.name = "[custom_name] ([capitalize(quality)])"
 	G.desc = "[prefix] [burst.name] [barrel.name] ([quality])"
-	G.name = "[G.name] ([capitalize(quality)])"
 	
 	var/obj/item/gun/energy/B = G
 	B.cell = new B.cell_type(B)
 
 	B.Initialize()
 
-	src.forceMove(G) //Entire assembly gets thrown in the gun
 
 /obj/item/prefabs/complex/eWeaponFrame/examine(mob/user)
 	..()
