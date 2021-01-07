@@ -19,8 +19,8 @@
 /obj/item/gun/energy/tesla_rifle
 	name = "tesla rifle"
 	desc = "An experimental gun based on an experimental engine, it's about as likely to kill its operator as it is the target."
-	icon_state = "teslacannon"
-	item_state = "teslacannon"
+	icon_state = "teslarifle"
+	item_state = "teslarifle"
 	can_attachments = FALSE
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
@@ -33,8 +33,8 @@
 /obj/item/gun/energy/tesla_cannon
 	name = "tesla cannon"
 	desc = "An experimental gun based on an experimental engine, it's about as likely to kill its operator as it is the target."
-	icon_state = "teslarifle"
-	item_state = "teslarifle"
+	icon_state = "teslacannon"
+	item_state = "teslacannon"
 	can_attachments = FALSE
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_HUGE
