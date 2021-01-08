@@ -136,9 +136,6 @@
 						to_chat(usr,"<span class='warning'>[I] cannot fit on that frame! It's incompatible with \the [P].</span>")
 						return
 
-		if(!do_after(user,20,target = src))
-			return
-
 		complexity += I.complexity
 		if(I.enables_automatic)
 			enables_automatic = TRUE
@@ -235,7 +232,10 @@
 				if("10mm")
 					gun_path = /obj/item/gun/ballistic/automatic/pistol/n99
 				if("9mm")
-					gun_path = /obj/item/gun/ballistic/automatic/pistol/ninemil
+					if(complexity > 100)
+						gun_path = /obj/item/gun/ballistic/automatic/pistol/beretta
+					else
+						gun_path = /obj/item/gun/ballistic/automatic/pistol/ninemil
 				if("5.56")
 					gun_path = /obj/item/gun/ballistic/revolver/thatgun
 				if("7.62")
@@ -491,25 +491,26 @@
 	if(!selection)
 		return
 
-	to_chat(user,"<span class='notice'>You begin shaping the metal into a gun frame... Sit tight! This cannot be undone!")
-	if(do_after(user,80,target = src))
-		var/obj/item/prefabs/complex/gunframe/G = new(get_turf(src))
-		if(selection == "pistol" || selection == "revolver")
-			G.icon_state = "pistolframe" //lil pistol icon hackiness
-		G.frame_type = selection
-		G.gun_type = selection
-		G.tags = list(selection)
-		for(var/F in frame_types)
-			if(F == selection)
-				continue
-			LAZYADD(G.incompatible_tags,F) //Add our opposing ones, rifle shit cannot go in a pistol frame, etc
+	to_chat(user,"<span class='notice'>You shape the metal into a gun frame!")
+	// to_chat(user,"<span class='notice'>You begin shaping the metal into a gun frame... Sit tight! This cannot be undone!")
+	// if(do_after(user,80,target = src))
+	var/obj/item/prefabs/complex/gunframe/G = new(get_turf(src))
+	if(selection == "pistol" || selection == "revolver")
+		G.icon_state = "pistolframe" //lil pistol icon hackiness
+	G.frame_type = selection
+	G.gun_type = selection
+	G.tags = list(selection)
+	for(var/F in frame_types)
+		if(F == selection)
+			continue
+		LAZYADD(G.incompatible_tags,F) //Add our opposing ones, rifle shit cannot go in a pistol frame, etc
 
-		G.gun_weight_class = frame_types[selection]
-		G.name = "[selection] [initial(G.name)]" //ie. pistol frame
-		to_chat(user,"<span class='notice'>You finish shaping the metal and end up with \the [G]!")
-		user.dropItemToGround(src) //Clear it the UI/inventory
-		if(selection == "pistol" || selection == "smg" || selection == "revolver")
-			G.needs_stock = FALSE //negates the need to add a stock
-		else
-			G.needs_stock = TRUE
-		qdel(src)
+	G.gun_weight_class = frame_types[selection]
+	G.name = "[selection] [initial(G.name)]" //ie. pistol frame
+	to_chat(user,"<span class='notice'>You finish shaping the metal and end up with \the [G]!")
+	user.dropItemToGround(src) //Clear it the UI/inventory
+	if(selection == "pistol" || selection == "smg" || selection == "revolver")
+		G.needs_stock = FALSE //negates the need to add a stock
+	else
+		G.needs_stock = TRUE
+	qdel(src)

@@ -13,8 +13,8 @@
 	pixel_x = -128
 	pixel_y = -64
 	layer = 4
-	obj_integrity = 20000
-	max_integrity = 20000
+	obj_integrity = 10000
+	max_integrity = 10000
 	var/engine = FALSE
 	var/locked = TRUE
 	var/inFly = FALSE
