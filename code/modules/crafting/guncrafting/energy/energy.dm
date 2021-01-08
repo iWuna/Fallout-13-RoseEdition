@@ -190,25 +190,26 @@
 		if(prob(25))
 			G.extra_penetration += 5
 
-	for(var/obj/item/prefabs/C in src.contents && lethal)
-		G.extra_damage += C.dam_mod//0
-		G.burst_size += C.burst_mod//1
-		G.customburst += C.burst_mod//1
-		G.burst_delay += C.burst_delay_mod//2
-		G.extra_penetration += C.armorpen_mod//0
-		G.recoil += C.recoil_mod//0
-		G.spread += C.spread_mod//0
-		G.projectile_speed += C.bullet_speed_mod //Should be tiny increments, normally is 0.8
-		G.fire_delay += C.fire_delay_mod
-		if(G.w_class < C.gun_weight_class)
-			G.w_class = C.gun_weight_class
-		if(C.energyAmmoType)
-			var/obj/item/gun/energy/E = G
-			E.cell_type = C.energyAmmoType
-		if (C.energyProjType)
-			var/obj/item/gun/energy/E = G
-			E.ammo_type = C.energyProjType
-		G.force += C.force_mod
+	if(lethal)
+		for(var/obj/item/prefabs/C in src.contents)
+			G.extra_damage += C.dam_mod//0
+			G.burst_size += C.burst_mod//1
+			G.customburst += C.burst_mod//1
+			G.burst_delay += C.burst_delay_mod//2
+			G.extra_penetration += C.armorpen_mod//0
+			G.recoil += C.recoil_mod//0
+			G.spread += C.spread_mod//0
+			G.projectile_speed += C.bullet_speed_mod //Should be tiny increments, normally is 0.8
+			G.fire_delay += C.fire_delay_mod
+			if(G.w_class < C.gun_weight_class)
+				G.w_class = C.gun_weight_class
+			if(C.energyAmmoType)
+				var/obj/item/gun/energy/E = G
+				E.cell_type = C.energyAmmoType
+			if (C.energyProjType)
+				var/obj/item/gun/energy/E = G
+				E.ammo_type = C.energyProjType
+			G.force += C.force_mod
 
 	if(complexity < 50)
 		quality = "crude" //It shouldn't even be possible to get this low, maybe VERY basic shotguns
