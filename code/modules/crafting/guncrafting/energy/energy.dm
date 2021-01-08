@@ -195,7 +195,7 @@
 	G.extra_damage = 0
 	G.burst_size = 1
 	G.customburst = 1
-	G.burst_delay = 2
+	G.burst_delay = 4
 	G.extra_penetration = 0
 	G.recoil = 0
 	G.spread = 0
