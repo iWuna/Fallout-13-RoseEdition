@@ -178,6 +178,8 @@
 	G.item_state = gun_icon
 	G.desc = ""
 
+	G.chambered = null
+
 	if(conductors && lethal)
 		to_chat(user,"You use the conductors to improve the weapon.")
 		G.extra_damage += pick(6,4,2)
@@ -189,6 +191,16 @@
 			G.extra_damage += 5
 		if(prob(25))
 			G.extra_penetration += 5
+
+	G.extra_damage = 0
+	G.burst_size = 1
+	G.customburst = 1
+	G.burst_delay = 2
+	G.extra_penetration = 0
+	G.recoil = 0
+	G.spread = 0
+	G.projectile_speed = 0.8
+	G.fire_delay = 6
 
 	if(lethal)
 		for(var/obj/item/prefabs/C in src.contents)
