@@ -1206,7 +1206,7 @@
 /obj/item/clothing/under/f13/gorshok
 	name = "Chief Punk Suit"
 	desc = "Not reference to КиШ."
-	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+	flags_inv = HIDEEARS|HIDEHAIR
 	icon_state = "gorshok"
 	item_state = "gorshok"
 
