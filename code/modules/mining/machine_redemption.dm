@@ -32,24 +32,29 @@
 	QDEL_NULL(stored_research)
 	return ..()
 
+/obj/machinery/mineral/ore_redemption/proc/convert_r(rating)
+	switch(rating)
+		if(4)
+			return 2.75
+		if(3)
+			return 2.25
+		if(2)
+			return 1.75
+		else
+			return 1
+
 /obj/machinery/mineral/ore_redemption/RefreshParts()
 	var/ore_pickup_rate_temp = 15
 	var/point_upgrade_temp = 1
 	var/sheet_per_ore_temp = 1
-	// for(var/obj/item/stock_parts/matter_bin/B in component_parts)
-	// 	var/rating = B.rating
-	// 	if(rating > 1)
-	// 		rating /= 2
-	// 	sheet_per_ore_temp = 0.65 + (1 * rating)
-	// for(var/obj/item/stock_parts/manipulator/M in component_parts)
-	// 	var/rating = M.rating
-	// 	if(rating > 1)
-	// 		rating /= 2
-	// 	ore_pickup_rate_temp = 15 * rating
+	for(var/obj/item/stock_parts/matter_bin/B in component_parts)
+		var/rating = convert_r(B.rating)
+		sheet_per_ore_temp = 0.65 + (1 * rating)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+		var/rating = convert_r(M.rating)
+		ore_pickup_rate_temp = 15 * rating
 	for(var/obj/item/stock_parts/micro_laser/L in component_parts)
 		var/rating = L.rating
-		if(rating > 1)
-			rating /= 2
 		point_upgrade_temp = 0.65 + (0.35 * rating)
 	ore_pickup_rate = ore_pickup_rate_temp
 	point_upgrade = point_upgrade_temp

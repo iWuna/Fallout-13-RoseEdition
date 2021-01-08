@@ -678,7 +678,12 @@
 		/obj/item/gun/energy/laser/wattz,
 		/obj/item/gun/energy/laser/wattz/magneto,
 		/obj/item/gun/energy/laser/plasma/alien,
-		/obj/item/stock_parts/cell/ammo/ec
+		/obj/item/stock_parts/cell/ammo/ec,
+		/obj/item/stock_parts/cell/ammo/ecp,
+		/obj/item/stock_parts/cell/ammo/mfc,
+		/obj/item/gun/energy/ionrifle/carbine,
+		/obj/item/gun/energy/decloner,
+		/obj/item/gun/energy/floragun
 		))
 
 /obj/item/storage/belt/holster/full/PopulateContents()

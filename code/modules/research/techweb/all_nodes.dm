@@ -493,7 +493,7 @@
 	display_name = "Energy Weapons"
 	description = "Weapons using electric technology"
 	prereq_ids = list("weaponry", "adv_power", "emp_basic")
-	design_ids = list("stunrevolver", "ew_frame", "ew_frame_pistol", "EC_ew_adapter", "ew_weak_emitter", "ew_emitter", "ew_stream", "ew_stream_dual")
+	design_ids = list("stunrevolver", "stunrifle", "ew_frame", "ew_frame_pistol", "EC_ew_adapter", "ew_weak_emitter", "ew_emitter", "ew_stream", "ew_stream_dual")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 22500)
 	export_price = 10000
 

@@ -1535,6 +1535,7 @@
 #include "code\modules\crafting\recipes.dm"
 #include "code\modules\crafting\supermutant.dm"
 #include "code\modules\crafting\tailoring.dm"
+#include "code\modules\crafting\guncrafting\_misc.dm"
 #include "code\modules\crafting\guncrafting\attachments.dm"
 #include "code\modules\crafting\guncrafting\energy\components.dm"
 #include "code\modules\crafting\guncrafting\energy\energy.dm"

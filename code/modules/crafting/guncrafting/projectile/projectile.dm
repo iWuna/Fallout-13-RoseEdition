@@ -455,8 +455,13 @@
 		if(quality == "masterwork")
 			quality = "enhanced"
 
+	src.forceMove(G) //Entire assembly gets thrown in the gun
+	var/custom_name = input(user, "Select a name for this gun", "Custom name", G.name)
+	if(!custom_name)
+		G.name = "[G.name] ([capitalize(quality)])"
+	else
+		G.name = "[custom_name] ([capitalize(quality)])"
 	G.desc = "[prefix][ammo_loader.caliber_name] [assembly.frame_type] ([quality])"
-	G.name = "[G.name] ([capitalize(quality)])"
 	
 	if(scope)
 		G.zoomable = TRUE
@@ -466,7 +471,6 @@
 
 	var/obj/item/gun/ballistic/B = G
 	B.magazine = new B.mag_type(B)
-	src.forceMove(G) //Entire assembly gets thrown in the gun
 
 /obj/item/advanced_crafting_components/assembly
 	name = "weapon assembly"

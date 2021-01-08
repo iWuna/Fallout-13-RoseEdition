@@ -365,6 +365,27 @@
 	build_path = /obj/item/gun/energy/tesla_revolver
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/stunrifle
+	name = "Tesla Rifle"
+	desc = "A high-tech revolver that fires internal, reusable shock cartridges in a revolving cylinder. The cartridges can be recharged using conventional rechargers."
+	id = "stunrifle"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 20000, MAT_GLASS = 20000, MAT_SILVER = 15000, MAT_URANIUM = 15000, MAT_DIAMOND=7000)
+	build_path = /obj/item/gun/energy/tesla_rifle
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+// /datum/design/stuncannon
+// 	name = "Tesla Cannon"
+// 	desc = "A high-tech revolver that fires internal, reusable shock cartridges in a revolving cylinder. The cartridges can be recharged using conventional rechargers."
+// 	id = "stuncannon"
+// 	build_type = PROTOLATHE
+// 	materials = list(MAT_METAL = 30000, MAT_GLASS = 30000, MAT_SILVER = 25000, MAT_URANIUM = 15000, MAT_DIAMOND=15000)
+// 	build_path = /obj/item/gun/energy/tesla_cannon
+// 	category = list("Weapons")
+// 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 /*
 /datum/design/nuclear_gun
 	name = "Advanced Energy Gun"
