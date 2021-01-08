@@ -39,9 +39,9 @@ GLOBAL_LIST_INIT(donations_list, list(
 	"Shoes" = list(
 		new /datum/donate_info("Brown Shoes",				/obj/item/clothing/shoes/sneakers/brown,		100),
 		new /datum/donate_info("Jackboots",					/obj/item/clothing/shoes/jackboots,				100),
-		new /datum/donate_info("Kindle Kicks",				/obj/item/clothing/shoes/kindleKicks,			250),
-		new /datum/donate_info("Wheely-Heels",				/obj/item/clothing/shoes/wheelys,				300),
-		new /datum/donate_info("Miners Boots",				/obj/item/clothing/shoes/bhop,					250),
+		new /datum/donate_info("Kindle Kicks",				/obj/item/clothing/shoes/kindleKicks,			150),
+		new /datum/donate_info("Wheely-Heels",				/obj/item/clothing/shoes/wheelys,				200),
+		new /datum/donate_info("Miners Boots",				/obj/item/clothing/shoes/bhop,					200),
 	),
 	"Coats" = list(
 		new /datum/donate_info("Leather Coat",				/obj/item/clothing/suit/jacket/leather/overcoat,150),
