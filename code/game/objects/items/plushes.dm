@@ -6,6 +6,7 @@
 	attack_verb = list("thumped", "whomped", "bumped")
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
+	var/toysound = 'sound/machines/click.ogg'
 	var/list/squeak_override //Weighted list; If you want your plush to have different squeak sounds use this
 	var/stuffed = TRUE //If the plushie has stuffing in it
 	var/obj/item/grenade/grenade //You can remove the stuffing from a plushie and add a grenade to it for *nefarious uses*
@@ -105,6 +106,7 @@
 	. = ..()
 	if(stuffed || grenade)
 		to_chat(user, "<span class='notice'>You pet [src]. D'awww.</span>")
+		playsound(user, toysound, 20, 1)
 		if(grenade && !grenade.active)
 			if(istype(grenade, /obj/item/grenade/chem_grenade))
 				var/obj/item/grenade/chem_grenade/G = grenade
@@ -114,6 +116,7 @@
 			grenade.preprime(user, msg = FALSE, volume = 10)
 	else
 		to_chat(user, "<span class='notice'>You try to pet [src], but it has no stuffing. Aww...</span>")
+		playsound(user, toysound, 20, 1)
 
 /obj/item/toy/plush/attackby(obj/item/I, mob/living/user, params)
 	if(I.is_sharp())
@@ -520,3 +523,105 @@
 /obj/item/toy/plush/awakenedplushie/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/edit_complainer)
+
+/obj/item/toy/plush/plush_urist
+	name = "Urist McPlushie"
+	desc = "Erotic observer."
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-urist"
+	toysound = list('sound/effects/scream.ogg' = 1)
+
+/obj/item/toy/plush/plush_idiot
+	name = "Plush Enclave Soldier"
+	desc = "IDIOT!!!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-idiot"
+	toysound = list('sound/effects/idiot.ogg' = 1)
+
+/obj/item/toy/plush/plush_vladick
+	name = "Vladick's plush"
+	desc = "Ahh"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-vladick"
+	toysound = list('sound/effects/vladikmoan.ogg' = 1)
+
+/obj/item/toy/plush/plush_deathclaw
+	name = "Plushie non-death claw"
+	desc = "Cute and dangerous"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-furry"
+	toysound = list('sound/f13npc/deathclaw/aggro1.ogg' = 1)
+
+/obj/item/toy/plush/plush_legion
+	name = "Plush Legioner"
+	desc = "AVE CAESAR!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-furry2"
+	toysound = list('sound/effects/retribution.ogg' = 1)
+
+/obj/item/toy/plush/plush_ncr
+	name = "Plush Ranger"
+	desc = "ЭН-СИ-АР!!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-kisstheflag"
+
+/obj/item/toy/plush/plush_bos
+	name = "Plush Paladin"
+	desc = "Technology!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-banka"
+
+/obj/item/toy/plush/plush_foa
+	name = "Plush Volunteer"
+	desc = "DON'T SHOOT IN HOSPITAL!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-arkasha"
+
+/obj/item/toy/plush/plush_vault
+	name = "Plush Vaulty"
+	desc = "Canned!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-dweller"
+
+/obj/item/toy/plush/plush_punk
+	name = "Plush Punk"
+	desc = "РЭП ГОВНО, ПОПСА ДЕРЬМО, РОК - КЛАСС!!!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-punk"
+
+/obj/item/toy/plush/plush_hubologist
+	name = "Plush Hubologist"
+	desc = "SPAAAACE!!!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-shitspawn"
+
+/obj/item/toy/plush/plush_super
+	name = "Plush Super Mutant"
+	desc = "Myaso."
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-super"
+	toysound = list('sound/f13npc/supermutant/attack2.ogg' = 1)
+
+/obj/item/toy/plush/plush_ghoul
+	name = "Plush Ghoul"
+	desc = "Ghghghghggh..."
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-ghoul"
+	toysound = list('sound/f13npc/ghoul/aggro1.ogg' = 1)
+
+/obj/item/toy/plush/plush_ded
+	name = "Plush Ded"
+	desc = "not dead"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-ded"
+
+/obj/item/toy/plush/plush_pedik
+	name = "Plush Pedik"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-pedik"
+
+/obj/item/toy/plush/plush_bearnbull
+	name = "Plush Ulysses"
+	desc = "Mask included."
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plush-bearnbull"
