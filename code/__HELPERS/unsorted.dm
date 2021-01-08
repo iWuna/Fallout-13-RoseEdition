@@ -1641,9 +1641,18 @@ proc/newchildtypesof()
 
 proc/scale_agility(time, mob/user)
 	var/agility = user.special_a
-	if(agility >= 5)
-		return time *(1 - (agility - 5)/5)
-	else if(agility <= 5)
-		return time *(1 + (5 - agility)/5)
+	return scale_special(time, agility)
+
+proc/scale_a_i(time, mob/user) // agility, intellect
+	var/t = scale_special(time, user.special_a, 10)
+	t = scale_special(t, user.special_i)
+	return t
+	
+
+proc/scale_special(time, value, coeff=5)
+	if(value >= 5)
+		return time *(1 - (value - 5)/coeff)
+	else if(value <= 5)
+		return time *(1 + (5 - value)/coeff)
 	else
 		return time

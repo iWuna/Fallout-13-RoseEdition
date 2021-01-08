@@ -38,7 +38,7 @@ Commander
 	name = "US Commander"
 	jobtype = /datum/job/enclave/f13uscommander
 
-	id = /obj/item/card/id/dogtag
+	id = /obj/item/card/id/dogtag/enclave
 	uniform =  /obj/item/clothing/under/f13/enclave_officer
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
@@ -80,7 +80,7 @@ Medic
 /datum/outfit/job/enclave/f13usmedic
 	name = "US Medic"
 	jobtype = /datum/job/enclave/f13usmedic
-	id = /obj/item/card/id/dogtag
+	id = /obj/item/card/id/dogtag/enclave
 	uniform =  /obj/item/clothing/under/f13/enclave_officer
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
@@ -172,7 +172,7 @@ HEAVY!
 /datum/outfit/job/enclave/f13usheavy
 	name = "US Heavy"
 	jobtype = /datum/job/enclave/f13usheavy
-	id = /obj/item/card/id/dogtag
+	id = /obj/item/card/id/dogtag/enclave
 	uniform =  /obj/item/clothing/under/f13/bdu
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
@@ -234,7 +234,7 @@ Private
 /datum/outfit/job/enclave/f13usprivate
 	name = "US Private"
 	jobtype = /datum/job/enclave/f13usprivate
-	id = /obj/item/card/id/dogtag
+	id = /obj/item/card/id/dogtag/enclave
 	uniform =  /obj/item/clothing/under/f13/dbdu
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
@@ -271,7 +271,7 @@ Scientist
 
 	chemwhiz = TRUE
 
-	id = /obj/item/card/id/dogtag
+	id = /obj/item/card/id/dogtag/enclave
 	uniform =  /obj/item/clothing/under/f13/dbdu
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
@@ -311,7 +311,7 @@ Engineer
 	name = "US Engineer"
 	jobtype = /datum/job/enclave/f13usengineer
 
-	id = /obj/item/card/id/dogtag
+	id = /obj/item/card/id/dogtag/enclave
 	uniform =  /obj/item/clothing/under/f13/petrochico
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat

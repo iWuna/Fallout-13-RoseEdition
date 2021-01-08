@@ -178,6 +178,26 @@
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+/datum/design/ion_beam
+	name = "Ion Emitter"
+	desc = "Ion particles emitter"
+	id = "ion_beam"
+	build_type = PROTOLATHE
+	materials = list(MAT_SILVER = 25000, MAT_GOLD = 25000, MAT_DIAMOND = 10000, MAT_URANIUM = 45000)
+	build_path = /obj/item/prefabs/complex/ebarrel/ion
+	category = list("Weapon Parts")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/ion_beam_mk2
+	name = "Advanced Ion Emitter"
+	desc = "More advanced and efficient ion particles emitter"
+	id = "ion_beam_mk2"
+	build_type = PROTOLATHE
+	materials = list(MAT_SILVER = 30000, MAT_GOLD = 40000, MAT_DIAMOND = 18000, MAT_URANIUM = 60500)
+	build_path = /obj/item/prefabs/complex/ebarrel/ion/strong
+	category = list("Weapon Parts")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 /datum/design/ew_stream
 	name = "Single Stream"
 	desc = "Energy Stream Adapter"
@@ -223,7 +243,7 @@
 /datum/design/ew_adapter_EC
 	name = "EC Adapter"
 	desc = "Power Source Adapater"
-	id = "ew_adapter_EC"
+	id = "EC_ew_adapter"
 	build_type = PROTOLATHE
 	materials = list(MAT_GLASS = 4500, MAT_GOLD = 5500, MAT_DIAMOND = 6000, MAT_URANIUM = 8000)
 	build_path = /obj/item/prefabs/complex/ecell/ec
@@ -233,7 +253,7 @@
 /datum/design/ew_adapter_MFC
 	name = "MFC Adapter"
 	desc = "Power Source Adapater"
-	id = "ew_adapter_MFC"
+	id = "MFC_ew_adapter"
 	build_type = PROTOLATHE
 	materials = list(MAT_GLASS = 6500, MAT_GOLD = 3500, MAT_DIAMOND = 3500, MAT_URANIUM = 3000)
 	build_path =/obj/item/prefabs/complex/ecell/mfc
@@ -243,7 +263,7 @@
 /datum/design/ew_adapter_ECP
 	name = "ECP Adapter"
 	desc = "Power Source Adapater"
-	id = "ew_adapter_ECP"
+	id = "ECP_ew_adapter"
 	build_type = PROTOLATHE
 	materials = list(MAT_GLASS = 6500, MAT_GOLD = 4500, MAT_DIAMOND = 4000, MAT_URANIUM = 4000)
 	build_path = /obj/item/prefabs/complex/ecell/ecp
@@ -345,6 +365,27 @@
 	build_path = /obj/item/gun/energy/tesla_revolver
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/stunrifle
+	name = "Tesla Rifle"
+	desc = "A high-tech revolver that fires internal, reusable shock cartridges in a revolving cylinder. The cartridges can be recharged using conventional rechargers."
+	id = "stunrifle"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 20000, MAT_GLASS = 20000, MAT_SILVER = 15000, MAT_URANIUM = 15000, MAT_DIAMOND=7000)
+	build_path = /obj/item/gun/energy/tesla_rifle
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+// /datum/design/stuncannon
+// 	name = "Tesla Cannon"
+// 	desc = "A high-tech revolver that fires internal, reusable shock cartridges in a revolving cylinder. The cartridges can be recharged using conventional rechargers."
+// 	id = "stuncannon"
+// 	build_type = PROTOLATHE
+// 	materials = list(MAT_METAL = 30000, MAT_GLASS = 30000, MAT_SILVER = 25000, MAT_URANIUM = 15000, MAT_DIAMOND=15000)
+// 	build_path = /obj/item/gun/energy/tesla_cannon
+// 	category = list("Weapons")
+// 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 /*
 /datum/design/nuclear_gun
 	name = "Advanced Energy Gun"

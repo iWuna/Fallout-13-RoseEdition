@@ -134,7 +134,7 @@
 		return
 	else if(istype(W, /obj/item/screwdriver) && mould)
 		playsound(src, 'sound/items/screwdriver2.ogg', 50, 0)
-		if(do_after(user,work_time,target = src))
+		if(do_after(user, scale_a_i(work_time, user), target = src))
 			playsound(src, 'sound/items/screwdriver.ogg', 50, 0)
 			mould.forceMove(get_turf(src))
 			mould = null
@@ -142,7 +142,7 @@
 		return 1
 	else if(istype(W, /obj/item/prefabs/mould))
 		playsound(src, 'sound/items/screwdriver2.ogg', 50, 0)
-		if(do_after(user,work_time,target = src))
+		if(do_after(user, scale_a_i(work_time, user),target = src))
 			playsound(src, 'sound/items/screwdriver.ogg', 50, 0)
 			if(mould)
 				to_chat(user,"You remove the old mould.")
@@ -156,134 +156,13 @@
 		if(S.amount < mould.sheet_amount)
 			to_chat(user,"<span class='warning'>There's not enough material in [W]!</span>")
 			return 0
-		if(do_after(user,work_time,target = src))	 //success
+		if(do_after(user, scale_a_i(work_time, user), target = src))	 //success
 			S.use(mould.sheet_amount) //This also deletes the stack if empty
 			var/O = new mould.item_path(get_turf(src))
 			to_chat(user,"<span class='notice'>You carefully melt down [W] into [O]!</span>")
 		return 1
 	else if(user.transferItemToLoc(W, drop_location()))
 		return TRUE
-/*
-/obj/machinery/workbench/fbench/Crossed(atom/movable/AM)
-	for(var/A in src.loc)
-		if(A == src)
-			continue
-		if(isobj(A))
-			var/obj/O = A
-			if(istype(O,/obj/item/stack/sheet/metal))
-				var/obj/item/stack/sheet/Q = O
-				if(Q.amount < 1)
-					qdel(Q)
-				else
-					if(src.contents.len>0)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/barrel/m556))//556
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/barrel/m556/C = new /obj/item/prefabs/complex/barrel/m556
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/barrel/mm9))//9mm
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/barrel/mm9/C = new /obj/item/prefabs/complex/barrel/mm9
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/barrel/mm10))//10mm
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/barrel/mm10/C = new /obj/item/prefabs/complex/barrel/mm10
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/barrel/m357))//357
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/barrel/m357/C = new /obj/item/prefabs/complex/barrel/m357
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/barrel/m44))//44
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/barrel/m44/C = new /obj/item/prefabs/complex/barrel/m44
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/barrel/m45))//45
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/barrel/m45/C = new /obj/item/prefabs/complex/barrel/m45
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/barrel/m762))//762
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/barrel/m762/C = new /obj/item/prefabs/complex/barrel/m762
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/barrel/m4570))//4570
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/barrel/m4570/C = new /obj/item/prefabs/complex/barrel/m4570
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/barrel/shotgun))//4570
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/barrel/shotgun/C = new /obj/item/prefabs/complex/barrel/shotgun
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/action/simple))
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/action/simple/C = new /obj/item/prefabs/complex/action/simple
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/action/auto))
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/action/auto/C = new /obj/item/prefabs/complex/action/auto
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/bolt/simple))
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/bolt/simple/C = new /obj/item/prefabs/complex/bolt/simple
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/bolt/high))
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/bolt/high/C = new /obj/item/prefabs/complex/bolt/high
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/screw))
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/screw/C = new /obj/item/prefabs/complex/screw
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/simpleWeaponFrame))
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/simpleWeaponFrame/low/C = new /obj/item/prefabs/complex/simpleWeaponFrame/low
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/complexWeaponFrame))
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/complexWeaponFrame/low/C = new /obj/item/prefabs/complex/complexWeaponFrame/low
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/trigger))
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/trigger/C = new /obj/item/prefabs/complex/trigger
-							C.forceMove(src.loc)
-			if(istype(O,/obj/item/stack/sheet/plastic))
-				var/obj/item/stack/sheet/Q = O
-				if(Q.amount < 1)
-					qdel(Q)
-				else
-					if(src.contents.len>0)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/stock))
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/stock/mid/C = new /obj/item/prefabs/complex/stock/mid
-							C.forceMove(src.loc)
-			if(istype(O,/obj/item/stack/sheet/plasteel))
-				var/obj/item/stack/sheet/Q = O
-				if(Q.amount < 1)
-					qdel(Q)
-				else
-					if(src.contents.len>0)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/simpleWeaponFrame))
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/simpleWeaponFrame/mid/C = new /obj/item/prefabs/complex/simpleWeaponFrame/mid
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/complexWeaponFrame))
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/complexWeaponFrame/mid/C = new /obj/item/prefabs/complex/complexWeaponFrame/mid
-							C.forceMove(src.loc)
-			if(istype(O,/obj/item/stack/sheet/prewar))
-				var/obj/item/stack/sheet/Q = O
-				if(Q.amount < 1)
-					qdel(Q)
-				else
-					if(src.contents.len>0)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/simpleWeaponFrame))
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/simpleWeaponFrame/high/C = new /obj/item/prefabs/complex/simpleWeaponFrame/high
-							C.forceMove(src.loc)
-						if(istype(src.contents[1],/obj/item/prefabs/mould/complexWeaponFrame))
-							Q.amount -= 1
-							var/obj/item/prefabs/complex/complexWeaponFrame/high/C = new /obj/item/prefabs/complex/complexWeaponFrame/high
-							C.forceMove(src.loc)
-*/
-
 
 /obj/machinery/workbench/bottler
 	name = "bottle press"

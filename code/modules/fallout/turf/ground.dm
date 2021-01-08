@@ -70,25 +70,43 @@
 	desc = "Dont eat the yellow snow"
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "snow_1"
+	var/list/pre_init_sound
+
+/obj/structure/snow/pile/Initialize()
+	. = ..()
+	var/turf/T = get_turf(src)
+	pre_init_sound = T.step_sounds
+	T.step_sounds = list("human" = "snowfootsteps")
+
+/obj/structure/snow/pile/Destroy()
+	var/turf/T = get_turf(src)
+	T.step_sounds = pre_init_sound
+	. = ..()
+
 
 /obj/structure/snow/pile/attack_hand(mob/user)
 	to_chat(user, "<span class='notice'>You begin digging the [src] with your hands.</span>")
-	if(do_after(user, 40, target = loc))
-		new/obj/item/stack/sheet/mineral/snow(user.loc, rand(1,4))
+	playsound(src, get_sfx("snowfootsteps"), 50)
+	if(do_after(user, scale_agility(60, user), target = src))
+		new/obj/item/stack/sheet/mineral/snow(user.loc, rand(0, 2))
 		to_chat(user, "<span class='notice'>You dig some snow.</span>")
 		max_digs -= 1
-		if(!max_digs)
-			qdel(src)
+		if(max_digs <= 0)
+			Destroy()
+	else
+		..()
 
 /obj/structure/snow/pile/attackby(obj/item/shovel/I, mob/living/user)
 	to_chat(user, "<span class='notice'>You begin digging the [src] with [I].</span>")
 	playsound(src, 'sound/effects/shovel_dig.ogg', 50, 1)
-	if(do_after(user, 20, target = loc))
-		new/obj/item/stack/sheet/mineral/snow(user.loc, rand(6, 12))
+	if(do_after(user, scale_agility(30, user), target = loc))
+		new/obj/item/stack/sheet/mineral/snow(user.loc, rand(0, 3))
 		to_chat(user, "<span class='notice'>You dig some snow.</span>")
 		max_digs -= 2
-		if(!max_digs)
-			qdel(src)
+		if(max_digs <= 0)
+			Destroy()
+	else
+		..()
 
 /obj/structure/snow/pile/Initialize()
 	. = ..()
@@ -110,6 +128,7 @@
 	var/pitcontents = list()
 	var/obj/dugpit/mypit
 	var/unburylevel = 0
+	var/list/sides = list()
 
 /turf/open/indestructible/ground/outside/snow_act()
 	snow = TRUE
@@ -121,7 +140,7 @@
 	snow = FALSE
 	icon_state = pre_snow_state
 	icon = initial(icon)
-	step_sounds = initial(step_sounds)
+	step_sounds = list("human" = "dirtfootsteps")
 
 /turf/open/indestructible/ground/outside/desert/Initialize()
 	. = ..()
@@ -132,6 +151,7 @@
 		var/turf/turf_to_check = get_step(src, direction)
 		if(istype(turf_to_check, /turf/open/water))
 			var/obj/effect/overlay/desert_side/DS = new /obj/effect/overlay/desert_side(src)
+			sides += DS
 			switch(direction)
 				if(NORTH)
 					DS.pixel_y = 32
@@ -144,6 +164,7 @@
 			DS.dir = turn(direction, 180)
 		if(istype(turf_to_check, /turf/open/indestructible/ground/outside/water))
 			var/obj/effect/overlay/desert_side/DS = new /obj/effect/overlay/desert_side(src)
+			sides += DS
 			switch(direction)
 				if(NORTH)
 					DS.pixel_y = 32
@@ -154,6 +175,13 @@
 				if(WEST)
 					DS.pixel_x = -32
 			DS.dir = turn(direction, 180)
+
+
+/turf/open/indestructible/ground/outside/desert/Destroy()
+	for(var/obj/effect/overlay/DS in sides)
+		sides -= DS
+		DS.Destroy()
+	. = ..()
 
 /obj/effect/overlay/desert_side
 	name = "desert"
@@ -339,6 +367,7 @@
 	icon = 'icons/fallout/turfs/mining.dmi'
 //	allowed_plants = list(/obj/item/seeds/glow)
 	step_sounds = list("human" = "erikafootsteps")
+	var/list/sides = list()
 
 /turf/open/indestructible/ground/inside/mountain/Initialize()
 	. = ..()
@@ -351,6 +380,7 @@
 		var/turf/turf_to_check = get_step(src, direction)
 		if(istype(turf_to_check, /turf/open))
 			var/obj/effect/overlay/rockfloor_side/DS = new /obj/effect/overlay/rockfloor_side(src)
+			sides += DS
 			switch(direction)
 				if(NORTH)
 					DS.pixel_y = 32
@@ -361,6 +391,12 @@
 				if(WEST)
 					DS.pixel_x = -32
 			DS.dir = turn(direction, 180)
+
+/turf/open/indestructible/ground/inside/mountain/Destroy()
+	for(var/obj/effect/overlay/DS in sides)
+		sides -= DS
+		DS.Destroy()
+	. = ..()
 
 /obj/effect/overlay/rockfloor_side
 	name = "cave"
@@ -396,6 +432,7 @@
 	name = "subway tunnel"
 	icon = 'icons/fallout/turfs/ground.dmi'
 	icon_state = "railsnone"
+	var/list/sides = list()
 
 /turf/open/indestructible/ground/inside/subway/Initialize()
 	. = ..()
@@ -403,6 +440,7 @@
 		var/turf/turf_to_check = get_step(src, direction)
 		if(istype(turf_to_check, /turf/open))
 			var/obj/effect/overlay/railsnone_side/DS = new /obj/effect/overlay/railsnone_side(src)
+			sides += DS
 			switch(direction)
 				if(NORTH)
 					DS.pixel_y = 32
@@ -413,6 +451,12 @@
 				if(WEST)
 					DS.pixel_x = -32
 			DS.dir = turn(direction, 180)
+
+/turf/open/indestructible/ground/inside/subway/Destroy()
+	for(var/obj/effect/overlay/DS in sides)
+		sides -= DS
+		DS.Destroy()
+	. = ..()
 
 /obj/effect/overlay/railsnone_side
 	name = "cave"

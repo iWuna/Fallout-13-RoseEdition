@@ -24,6 +24,9 @@
 			return
 		playsound(user, get_sfx("rustle"), 50)
 		if(do_after(user, scale_agility(40, user), target = loc))
+			if(user in loot_players)
+				to_chat(user, "<span class='notice'>You already have looted [src].</span>")
+				return
 			for(var/i=0, i < rand(1, 1 + user.special_l), i++)
 				var/itemtype = pickweight(GLOB.trash_list)
 				if(itemtype)
@@ -36,14 +39,18 @@
 		return ..()
 
 
-/obj/item/storage/trash_stack/attackby(obj/item/shovel/S, mob/user)
-	var/turf/ST = get_turf(src)
-	if(user?.a_intent != INTENT_HARM)
+/obj/item/storage/trash_stack/attackby(obj/item/I, mob/user)
+	if(user?.a_intent != INTENT_HARM && istype(I, /obj/item/shovel))
+		var/obj/item/shovel/S = I
+		var/turf/ST = get_turf(src)
 		if(user in loot_players)
 			to_chat(user, "<span class='notice'>You already have looted [src].</span>")
 			return
 		playsound(user, 'sound/effects/shovel_dig.ogg', 50)
 		if(do_after(user, scale_agility(20, user), target = loc))
+			if(user in loot_players)
+				to_chat(user, "<span class='notice'>You already have looted [src].</span>")
+				return
 			for(var/i=0, i < rand(3, 3 + user.special_l), i++)
 				var/itemtype = pickweight(GLOB.trash_list)
 				if(itemtype)

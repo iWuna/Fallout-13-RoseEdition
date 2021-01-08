@@ -44,6 +44,8 @@
 	to_chat(victim, "<span class='danger'>*click*</span>")
 
 /obj/item/grenade/bettermine/Crossed(AM as mob|obj)
+	if(istype(AM, /obj/effect))
+		return
 	if(active)
 		if(isturf(loc))
 			if(ismob(AM))

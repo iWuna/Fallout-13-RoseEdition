@@ -574,4 +574,11 @@
 	icon = 'icons/fallout/clothing/suits.dmi'
 	icon_state = "stas"
 	body_parts_covered = FULL_BODY
-	armor = list(melee = 30, bullet = 30, laser = 30, energy = 30, bomb = 30, bio = 30, rad = 30, fire = 30, acid = 30)
+	armor = list(melee = 50, bullet = 50, laser = 50, energy = 50, bomb = 50, bio = 50, rad = 50, fire = 50, acid = 50)
+
+/obj/item/clothing/suit/f13/snow_coat
+	name = "Snow Cowboy Coat"
+	desc = "Full of luck"
+	icon_state = "snow_coat"
+	body_parts_covered = FULL_BODY
+	armor = list(melee = 30, bullet = 30, laser = 30, energy = 30, bomb = 30, bio = 30, rad = 30, fire = 60, acid = 30)
