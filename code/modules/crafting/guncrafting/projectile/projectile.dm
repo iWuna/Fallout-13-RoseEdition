@@ -232,7 +232,10 @@
 				if("10mm")
 					gun_path = /obj/item/gun/ballistic/automatic/pistol/n99
 				if("9mm")
-					gun_path = /obj/item/gun/ballistic/automatic/pistol/ninemil
+					if(complexity > 100)
+						gun_path = /obj/item/gun/ballistic/automatic/pistol/beretta
+					else
+						gun_path = /obj/item/gun/ballistic/automatic/pistol/ninemil
 				if("5.56")
 					gun_path = /obj/item/gun/ballistic/revolver/thatgun
 				if("7.62")
@@ -501,7 +504,7 @@
 		if(F == selection)
 			continue
 		LAZYADD(G.incompatible_tags,F) //Add our opposing ones, rifle shit cannot go in a pistol frame, etc
-		
+
 	G.gun_weight_class = frame_types[selection]
 	G.name = "[selection] [initial(G.name)]" //ie. pistol frame
 	to_chat(user,"<span class='notice'>You finish shaping the metal and end up with \the [G]!")
