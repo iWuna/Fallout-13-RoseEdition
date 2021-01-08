@@ -42,6 +42,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Heat goggles",				/obj/item/clothing/glasses/heat,				150),
 		new /datum/donate_info("Red glasses",				/obj/item/clothing/glasses/red,					150),
 		new /datum/donate_info("Cold goggles",				/obj/item/clothing/glasses/cold,				150),
+		new /datum/donate_info("Monocle",					/obj/item/clothing/glasses/monocle,				100),
 		new /datum/donate_info("Zippo",						/obj/item/lighter,								100),
 		new /datum/donate_info("Cigarette packet",			/obj/item/storage/fancy/cigarettes,				75),
 		new /datum/donate_info("DromedaryCo packet",		/obj/item/storage/fancy/cigarettes/dromedaryco,	125),
@@ -50,7 +51,9 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("E-Cigarette",				/obj/item/clothing/mask/vape,					250),
 		new /datum/donate_info("Donut Box",					/obj/item/storage/fancy/donut_box,				300),
 		new /datum/donate_info("Silver Ring",				/obj/item/storage/fancy/ringbox/silver,			100),
-		new /datum/donate_info("Diamond Ring",				/obj/item/storage/fancy/ringbox/diamond ,		150),
+		new /datum/donate_info("Diamond Ring",				/obj/item/storage/fancy/ringbox/diamond,		150),
+		new /datum/donate_info("Synthesizer",				/obj/item/instrument/piano_synth,				200),
+		new /datum/donate_info("Accordon",					/obj/item/instrument/accordion,					150),
 	),
 	"Shoes" = list(
 		new /datum/donate_info("Brown Shoes",				/obj/item/clothing/shoes/sneakers/brown,		100),
@@ -155,6 +158,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Rainbow crayon",			/obj/item/toy/crayon/rainbow,	 				250),
 		new /datum/donate_info("Circled Hand",				/obj/item/circlegame,	 						250),
 		new /datum/donate_info("Clown Megaphone",			/obj/item/megaphone/clown,	 					400),
+		new /datum/donate_info("Card Deck",					/obj/item/toy/cards/deck,	 					100),
 	),
 	"Special Stuff" = list(
 		new /datum/donate_info("Bible",						/obj/item/storage/book/bible,					100),
@@ -162,5 +166,9 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("That Ring",					/obj/item/ring,									1500),
 		new /datum/donate_info("The Over Power Gun",		/obj/item/gun/energy/laser/practice,			500),
 		new /datum/donate_info("Beer Keg",					/obj/structure/reagent_dispensers/beerkeg,		500),
+		new /datum/donate_info("Pre-War Cash",				/obj/item/stack/spacecash/c1000					100),
+		new /datum/donate_info("Super-Delux Tent",			/obj/item/survivalcapsule/super_deluxe			1000),
+		new /datum/donate_info("Laser Pointer",				/obj/item/laser_pointer							250),
+		new /datum/donate_info("Useless Crystal",			/obj/item/rupee									400),
 	)
 ))
