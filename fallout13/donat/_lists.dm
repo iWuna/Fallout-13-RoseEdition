@@ -21,7 +21,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Crown",						/obj/item/clothing/head/crown/fancy,			500),
 		new /datum/donate_info("Bunny Hat",					/obj/item/clothing/head/bunnyhead,				100),
 		new /datum/donate_info("Dominatrix Cap",			/obj/item/clothing/head/dominatrixcap,			125),
-		new /datum/donate_info("Gladiator Helmet",			/obj/item/clothing/head/helmet/gladiator,	150),
+		new /datum/donate_info("Gladiator Helmet",			/obj/item/clothing/head/helmet/gladiator,		150),
 	),
 	"Masks" = list(
 		new /datum/donate_info("Fake Moustache",			/obj/item/clothing/mask/fakemoustache,			100),
@@ -34,6 +34,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Toy Facehugger",			/obj/item/clothing/mask/facehugger/toy,			250),
 		new /datum/donate_info("Medical Masks Box",			/obj/item/storage/box/masks,					300),
 		new /datum/donate_info("Plague Doctor Mask",		/obj/item/clothing/mask/gas/plaguedoctor,		175),
+		new /datum/donate_info("Clown Mask",				/obj/item/clothing/mask/gas/clown_hat,			150),
 	),
 	"Personal Stuff" = list(
 		new /datum/donate_info("Eye patch",					/obj/item/clothing/glasses/eyepatch,			100),
@@ -153,6 +154,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Beach Ball",				/obj/item/toy/beach_ball,	 					150),
 		new /datum/donate_info("Rainbow crayon",			/obj/item/toy/crayon/rainbow,	 				250),
 		new /datum/donate_info("Circled Hand",				/obj/item/circlegame,	 						250),
+		new /datum/donate_info("Clown Megaphone",			/obj/item/megaphone/clown,	 					400),
 	),
 	"Special Stuff" = list(
 		new /datum/donate_info("Bible",						/obj/item/storage/book/bible,					100),
