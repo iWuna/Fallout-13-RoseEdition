@@ -26,34 +26,3 @@
 	tags = list("masterwork_quality")
 	incompatible_tags = "makeshift_quality"
 	quality = "masterwork"
-
-
-/obj/item/prefabs/complex/simpleWeaponFrame/low
-	name = "Simple Weapon Frame (standard)"
-	desc = ""
-	icon_state = "gunframe"
-
-/obj/item/prefabs/complex/complexWeaponFrame/low
-	name = "Complex Weapon Frame (standard)"
-	desc = ""
-	icon_state = "gunframe"
-
-/obj/item/prefabs/complex/simpleWeaponFrame/mid
-	name = "Simple Weapon Frame (improved)"
-	desc = ""
-	//icon_state = ""
-
-/obj/item/prefabs/complex/complexWeaponFrame/mid
-	name = "Complex Weapon Frame (improved)"
-	desc = ""
-	//icon_state = ""
-
-/obj/item/prefabs/complex/simpleWeaponFrame/high
-	name = "Simple Weapon Frame (masterwork)"
-	desc = ""
-	//icon_state = ""
-
-/obj/item/prefabs/complex/complexWeaponFrame/high
-	name = "Complex Weapon Frame (masterwork)"
-	desc = ""
-	//icon_state = ""
