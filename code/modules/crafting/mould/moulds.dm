@@ -159,7 +159,7 @@
 	sheet_amount = 2
 
 /obj/item/prefabs/mould/m45mmdouble
-	name = ".45 Simple Magazine Loader Mould"
+	name = ".45 Double Magazine Loader Mould"
 	item_path = /obj/item/prefabs/complex/ammo_loader/m45mmdouble
 	sheet_amount = 4
 
