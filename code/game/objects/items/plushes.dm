@@ -585,7 +585,7 @@
 
 /obj/item/toy/plush/plush_punk
 	name = "Plush Khan"
-	desc = "Sit on a Bottle and say -"Great Knah Awesome." "
+	desc = "Sit on a Bottle and say -\"Great Knah Awesome.\" "
 	icon = 'icons/obj/plushes.dmi'
 	icon_state = "plush-punk"
 
