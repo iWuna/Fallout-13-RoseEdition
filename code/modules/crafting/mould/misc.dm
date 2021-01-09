@@ -100,7 +100,7 @@
 
 
 /datum/crafting_recipe/mould/alloy
-	result = /obj/item/prefabs/mould/receiver
+	result = /obj/item/prefabs/mould/alloy
 	name = "Alloy Mould"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER4)
 	traits = list(TRAIT_GUNSMITH_FOUR, TRAIT_MASTER_GUNSMITH)
