@@ -26,7 +26,7 @@
 	desc = ""
 	icon_state = "barrel"
 	complexity = 40
-	bullet_speed_mod = -0.4
+	bullet_speed_mod = -0.3
 
 /obj/item/prefabs/complex/barrel/dual
 	name = "Multiple barrels"
