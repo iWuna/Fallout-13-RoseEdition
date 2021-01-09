@@ -75,6 +75,11 @@
 	item_path = /obj/item/prefabs/complex/barrel/long
 	sheet_amount = 3
 
+/obj/item/prefabs/mould/barrel/extended
+	name = "Long Barrel Mould"
+	item_path = /obj/item/prefabs/complex/barrel/extended
+	sheet_amount = 6
+
 /obj/item/prefabs/mould/barrel/dual
 	name = "Multiple barrels Mould"
 	item_path = /obj/item/prefabs/complex/barrel/dual

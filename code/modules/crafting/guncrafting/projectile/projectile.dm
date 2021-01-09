@@ -403,8 +403,9 @@
 			G.burst_size += 1
 		if(prob(7))
 			G.spread += -15
-		if(prob(7))
-			G.projectile_speed += -0.2
+		// Too much hitscan guns
+		// if(prob(7))
+		//	G.projectile_speed += -0.2
 		if(prob(7))
 			G.fire_delay += -0.5
 
