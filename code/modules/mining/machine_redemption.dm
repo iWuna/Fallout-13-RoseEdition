@@ -35,9 +35,9 @@
 /obj/machinery/mineral/ore_redemption/proc/convert_r(rating)
 	switch(rating)
 		if(4)
-			return 2.75
-		if(3)
 			return 2.25
+		if(3)
+			return 2
 		if(2)
 			return 1.75
 		else
