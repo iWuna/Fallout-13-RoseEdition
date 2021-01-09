@@ -167,9 +167,8 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("The Over Power Gun",		/obj/item/gun/energy/laser/practice,			500),
 		new /datum/donate_info("Beer Keg",					/obj/structure/reagent_dispensers/beerkeg,		500),
 		new /datum/donate_info("Pimp-Boy 3000",				/obj/item/pda/pimp_boy_3000,					500),
-		new /datum/donate_info("Pre-War Cash",				/obj/item/stack/spacecash/c1000					100),
-		new /datum/donate_info("Super-Delux Tent",			/obj/item/survivalcapsule/super_deluxe			1000),
-		new /datum/donate_info("Laser Pointer",				/obj/item/laser_pointer							250),
-		new /datum/donate_info("Useless Crystal",			/obj/item/rupee									400),
-	)
+		new /datum/donate_info("Pre-War Cash",				/obj/item/stack/spacecash/c1000,					100),
+		new /datum/donate_info("Super-Delux Tent",			/obj/item/survivalcapsule/super_deluxe,			1000),
+		new /datum/donate_info("Laser Pointer",				/obj/item/laser_pointer,							250),
+		new /datum/donate_info("Useless Crystal",			/obj/item/rupee	,								400))
 ))
