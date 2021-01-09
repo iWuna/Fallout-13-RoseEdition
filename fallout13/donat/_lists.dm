@@ -181,6 +181,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Barman Guide",				/obj/item/book/manual/partyboy,					75),
 		new /datum/donate_info("That Ring",					/obj/item/ring,									1500),
 		new /datum/donate_info("The Over Power Gun",		/obj/item/gun/energy/laser/practice,			500),
+		new /datum/donate_info("Legendary Sord!",			/obj/item/sord,									300),
 		new /datum/donate_info("Beer Keg",					/obj/structure/reagent_dispensers/beerkeg,		500),
 		new /datum/donate_info("Pimp-Boy 3000",				/obj/item/pda/pimp_boy_3000,					500),
 		new /datum/donate_info("Pre-War Cash",				/obj/item/stack/spacecash/c1000,					100),
