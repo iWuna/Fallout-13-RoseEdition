@@ -472,7 +472,7 @@
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/head/f13/snow_cowboy_hat
-	name = "White Cowboy Hay"
+	name = "Lucky Cowboy Hat"
 	desc = "With four-leaf clover"
 	icon_state = "snow_cowboy_hat"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
