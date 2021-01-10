@@ -19,14 +19,22 @@
 	desc = ""
 	icon_state = "barrel"
 	complexity = 20
-	bullet_speed_mod = -0.2
+	bullet_speed_mod = -0.1
 
 /obj/item/prefabs/complex/barrel/long
 	name = "Long Barrel"
 	desc = ""
 	icon_state = "barrel"
 	complexity = 40
+	bullet_speed_mod = -0.2
+
+/obj/item/prefabs/complex/barrel/extended
+	name = "Extended Rifle Barrel"
+	desc = ""
+	icon_state = "barrel"
+	complexity = 50
 	bullet_speed_mod = -0.4
+	incompatible_tags = list("rifle", "smg", "lmg", "shotgun", "revolver")
 
 /obj/item/prefabs/complex/barrel/dual
 	name = "Multiple barrels"
