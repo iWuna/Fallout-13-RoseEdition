@@ -134,7 +134,8 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Alcoholic Wear",			/obj/item/clothing/under/sailor,				100),
 		new /datum/donate_info("Cheon Suit",				/obj/item/clothing/under/cheon/black,			125),
 		new /datum/donate_info("Icy Scientist Suit",		/obj/item/clothing/under/drfreeze,				150),
-		new /datum/donate_info("Grandma Sweater",			/obj/item/clothing/under/f13/nw_sweater,		100),
+		new /datum/donate_info("Grandma Sweater",			/obj/item/clothing/under/f13/nw_sweater,		125),
+		new /datum/donate_info("Old Brat Sweater",			/obj/item/clothing/under/f13/brat,				125),
 	),
 	"Belts" = list(
 		new /datum/donate_info("Belt",						/obj/item/storage/belt,							100),
