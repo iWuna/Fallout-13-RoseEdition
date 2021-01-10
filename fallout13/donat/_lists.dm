@@ -56,6 +56,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Cold goggles",				/obj/item/clothing/glasses/cold,						150),
 		new /datum/donate_info("Monocle",					/obj/item/clothing/glasses/monocle,						100),
 		new /datum/donate_info("Zippo",						/obj/item/lighter,										100),
+		new /datum/donate_info("Gooey Blue Fire Zippo",		/obj/item/lighter/slime,								150),
 		new /datum/donate_info("Cigarette packet",			/obj/item/storage/fancy/cigarettes,						75),
 		new /datum/donate_info("DromedaryCo packet",		/obj/item/storage/fancy/cigarettes/dromedaryco,			125),
 		new /datum/donate_info("Paper for Cigaretts",		/obj/item/storage/fancy/rollingpapers,					150),
