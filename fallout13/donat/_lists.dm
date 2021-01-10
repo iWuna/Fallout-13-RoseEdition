@@ -76,6 +76,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Kindle Kicks",				/obj/item/clothing/shoes/kindleKicks,					150),
 		new /datum/donate_info("Wheely-Heels",				/obj/item/clothing/shoes/wheelys,						200),
 		new /datum/donate_info("Miners Boots",				/obj/item/clothing/shoes/bhop,							200),
+		new /datum/donate_info("Combat Boots",				/obj/item/clothing/shoes/combat,						150),
 
 	),
 
@@ -122,6 +123,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Raven Cloak",				/obj/item/clothing/suit/hooded/cloak/desert/raven_cloak,	225),
 		new /datum/donate_info("ODF Armor",					/obj/item/clothing/suit/armor/f13/metalarmor/militia,		300),
 		new /datum/donate_info("Worn Ranger Coat",			/obj/item/clothing/suit/armor/f13/rangercombat/old,			275),
+		new /datum/donate_info("Shadow Squad Armor",		/obj/item/clothing/suit/armor/f13/combat/remnant,			300),
 
 	),
 
@@ -153,6 +155,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Icy Scientist Suit",		/obj/item/clothing/under/drfreeze,					150),
 		new /datum/donate_info("Grandma Sweater",			/obj/item/clothing/under/f13/nw_sweater,			125),
 		new /datum/donate_info("Old Brat Sweater",			/obj/item/clothing/under/f13/brat,					125),
+		new /datum/donate_info("Black Combat Uniform",		/obj/item/clothing/under/syndicate/combat,			150),
 		
 	),
 
