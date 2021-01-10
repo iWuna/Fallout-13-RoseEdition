@@ -124,6 +124,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("ODF Armor",					/obj/item/clothing/suit/armor/f13/metalarmor/militia,		300),
 		new /datum/donate_info("Worn Ranger Coat",			/obj/item/clothing/suit/armor/f13/rangercombat/old,			275),
 		new /datum/donate_info("Shadow Squad Armor",		/obj/item/clothing/suit/armor/f13/combat/remnant,			300),
+		new /datum/donate_info("Boneyard Carpace",			/obj/item/clothing/suit/armor/f13/combatrusted/boneyard,	500),
 
 	),
 
