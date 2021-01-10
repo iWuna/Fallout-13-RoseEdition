@@ -22,6 +22,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Bunny Hat",					/obj/item/clothing/head/bunnyhead,				100),
 		new /datum/donate_info("Dominatrix Cap",			/obj/item/clothing/head/dominatrixcap,			125),
 		new /datum/donate_info("Gladiator Helmet",			/obj/item/clothing/head/helmet/gladiator,		150),
+
 	),
 	"Masks" = list(
 		new /datum/donate_info("Fake Moustache",			/obj/item/clothing/mask/fakemoustache,			100),
@@ -32,9 +33,13 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("White Glove Society",		/obj/item/clothing/mask/society,				150),
 		new /datum/donate_info("Advanced Mask",				/obj/item/clothing/mask/gas/syndicate,			150),
 		new /datum/donate_info("Toy Facehugger",			/obj/item/clothing/mask/facehugger/toy,			250),
-		new /datum/donate_info("Medical Masks Box",			/obj/item/storage/box/masks,					300),
+		new /datum/donate_info("Medical Mask",				/obj/item/clothing/mask/surgical,				50),
 		new /datum/donate_info("Plague Doctor Mask",		/obj/item/clothing/mask/gas/plaguedoctor,		175),
 		new /datum/donate_info("Clown Mask",				/obj/item/clothing/mask/gas/clown_hat,			150),
+		new /datum/donate_info("Skull Bandana",				/obj/item/clothing/mask/bandana/skull,			100),
+		new /datum/donate_info("Raven Mask",				/obj/item/clothing/mask/rat/raven,				100),
+		new /datum/donate_info("Jackal Mask",				/obj/item/clothing/mask/rat/jackal,				100),
+		new /datum/donate_info("Ninja Mask",				/obj/item/clothing/mask/gas/space_ninja,		200),
 	),
 	"Personal Stuff" = list(
 		new /datum/donate_info("Eye patch",					/obj/item/clothing/glasses/eyepatch,			100),
@@ -99,6 +104,12 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Imperium Dress",			/obj/item/clothing/suit/imperium_monk,			150),
 		new /datum/donate_info("Dracula Coat",				/obj/item/clothing/suit/dracula,				125),
 		new /datum/donate_info("Emo Coat",					/obj/item/clothing/suit/gothcoat,				100),
+		new /datum/donate_info("Desert Cloak",				/obj/item/clothing/suit/hooded/cloak/desert,	175),
+		new /datum/donate_info("Armored Desert Cloak",		/obj/item/clothing/suit/hooded/cloak/desert/bridgekeeper, 275),
+		new /datum/donate_info("Raven Cloak",				/obj/item/clothing/suit/hooded/cloak/desert/raven_cloak, 225),
+		new /datum/donate_info("ODF Armor",					/obj/item/clothing/suit/armor/f13/metalarmor/militia, 300,
+		new /datum/donate_info("Worn Ranger Coat",			/obj/item/clothing/suit/armor/f13/rangercombat/old ,275),
+
 	),
 	"Jumpsuits" = list(
 		new /datum/donate_info("Jeans",						/obj/item/clothing/under/pants/jeans,			75),
@@ -143,9 +154,6 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Cosmos Bedsheet",			/obj/item/bedsheet/cosmos,						150),
 		new /datum/donate_info("Cloak",						/obj/item/clothing/neck/cloak,					150),
 		new /datum/donate_info("Grey Cloak",				/obj/item/clothing/neck/cloak/grey,				150),
-		new /datum/donate_info("Desert Cloak",				/obj/item/clothing/suit/hooded/cloak/desert,	175),
-		new /datum/donate_info("Armored Desert Cloak",		/obj/item/clothing/suit/hooded/cloak/desert/bridgekeeper,275),
-		new /datum/donate_info("Raven Cloak",				/obj/item/clothing/suit/hooded/cloak/desert/raven_cloak,225),
 		new /datum/donate_info("Cultist Bedsheet",			/obj/item/bedsheet/cult,						175),
 		new /datum/donate_info("Wizard Bedsheet",			/obj/item/bedsheet/wiz,							175),
 		new /datum/donate_info("Medical Bedsheet",			/obj/item/bedsheet/medical,						100),
@@ -155,6 +163,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Dice Bag",					/obj/item/storage/pill_bottle/dice,				150),
 		new /datum/donate_info("Toy katana",				/obj/item/toy/katana,							200),
 		new /datum/donate_info("Beach Ball",				/obj/item/toy/beach_ball,	 					150),
+		new /datum/donate_info("Basketball",				/obj/item/toy/beach_ball/holoball,				150),
 		new /datum/donate_info("Rainbow crayon",			/obj/item/toy/crayon/rainbow,	 				250),
 		new /datum/donate_info("Circled Hand",				/obj/item/circlegame,	 						250),
 		new /datum/donate_info("Clown Megaphone",			/obj/item/megaphone/clown,	 					400),
