@@ -207,5 +207,6 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Pre-War Cash",				/obj/item/stack/spacecash/c1000,					100),
 		new /datum/donate_info("Super-Delux Tent",			/obj/item/survivalcapsule/super_deluxe,			1000),
 		new /datum/donate_info("Laser Pointer",				/obj/item/laser_pointer,							250),
-		new /datum/donate_info("Useless Crystal",			/obj/item/rupee	,								400))
+		new /datum/donate_info("Useless Crystal",			/obj/item/rupee,								400))
+	)
 ))
