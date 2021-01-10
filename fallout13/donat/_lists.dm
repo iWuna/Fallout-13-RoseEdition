@@ -106,7 +106,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Desert Cloak",				/obj/item/clothing/suit/hooded/cloak/desert,	175),
 		new /datum/donate_info("Armored Desert Cloak",		/obj/item/clothing/suit/hooded/cloak/desert/bridgekeeper,	275),
 		new /datum/donate_info("Raven Cloak",				/obj/item/clothing/suit/hooded/cloak/desert/raven_cloak,	225),
-		new /datum/donate_info("ODF Armor",					/obj/item/clothing/suit/armor/f13/metalarmor/militia,	300,
+		new /datum/donate_info("ODF Armor",					/obj/item/clothing/suit/armor/f13/metalarmor/militia,	300,)
 		new /datum/donate_info("Worn Ranger Coat",			/obj/item/clothing/suit/armor/f13/rangercombat/old,	275),
 	),
 	"Jumpsuits" = list(
