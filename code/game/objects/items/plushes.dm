@@ -10,6 +10,7 @@
 	var/list/squeak_override //Weighted list; If you want your plush to have different squeak sounds use this
 	var/stuffed = TRUE //If the plushie has stuffing in it
 	var/obj/item/grenade/grenade //You can remove the stuffing from a plushie and add a grenade to it for *nefarious uses*
+	var/sound_cd = 0
 	//--love ~<3--
 	gender = NEUTER
 	var/obj/item/toy/plush/lover
@@ -106,7 +107,7 @@
 	. = ..()
 	if(stuffed || grenade)
 		to_chat(user, "<span class='notice'>You pet [src]. D'awww.</span>")
-		playsound(user, toysound, 20, 1)
+		play_toysound(user)
 		if(grenade && !grenade.active)
 			if(istype(grenade, /obj/item/grenade/chem_grenade))
 				var/obj/item/grenade/chem_grenade/G = grenade
@@ -115,8 +116,13 @@
 			log_game("[key_name(user)] activated a hidden grenade in [src].")
 			grenade.preprime(user, msg = FALSE, volume = 10)
 	else
-		playsound(user, toysound, 20, 1)
+		play_toysound(user)
 		to_chat(user, "<span class='notice'>You try to pet [src], but it has no stuffing. Aww...</span>")
+
+/obj/item/toy/plush/proc/play_toysound(mob/user)
+	if (sound_cd < world.time)
+		sound_cd = world.time + 20 // 3 seconds
+		playsound(user, toysound, 20, 1)
 
 /obj/item/toy/plush/attackby(obj/item/I, mob/living/user, params)
 	if(I.is_sharp())
