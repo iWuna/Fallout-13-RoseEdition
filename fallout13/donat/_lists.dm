@@ -22,7 +22,6 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Bunny Hat",					/obj/item/clothing/head/bunnyhead,				100),
 		new /datum/donate_info("Dominatrix Cap",			/obj/item/clothing/head/dominatrixcap,			125),
 		new /datum/donate_info("Gladiator Helmet",			/obj/item/clothing/head/helmet/gladiator,		150),
-
 	),
 	"Masks" = list(
 		new /datum/donate_info("Fake Moustache",			/obj/item/clothing/mask/fakemoustache,			100),
