@@ -75,6 +75,11 @@
 	item_path = /obj/item/prefabs/complex/barrel/long
 	sheet_amount = 3
 
+/obj/item/prefabs/mould/barrel/extended
+	name = "Long Barrel Mould"
+	item_path = /obj/item/prefabs/complex/barrel/extended
+	sheet_amount = 6
+
 /obj/item/prefabs/mould/barrel/dual
 	name = "Multiple barrels Mould"
 	item_path = /obj/item/prefabs/complex/barrel/dual
@@ -154,7 +159,7 @@
 	sheet_amount = 2
 
 /obj/item/prefabs/mould/m45mmdouble
-	name = ".45 Simple Magazine Loader Mould"
+	name = ".45 Double Magazine Loader Mould"
 	item_path = /obj/item/prefabs/complex/ammo_loader/m45mmdouble
 	sheet_amount = 4
 
