@@ -84,7 +84,7 @@
 	id = "advw_flux"
 	build_type = PROTOLATHE
 	materials = list(MAT_GOLD = 6000, MAT_DIAMOND = 3600, MAT_URANIUM = 4000)
-	build_path = /obj/item/advanced_crafting_components/flux
+	build_path = /obj/item/advanced_crafting_components/capacitor/flux
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -94,7 +94,7 @@
 	id = "advw_capacitor"
 	build_type = PROTOLATHE
 	materials = list(MAT_SILVER = 6000, MAT_DIAMOND = 4600, MAT_SILVER = 6200)
-	build_path = /obj/item/advanced_crafting_components/conductors
+	build_path = /obj/item/advanced_crafting_components/conductors/super
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -109,7 +109,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/advw_alloys
-	name = "Superlight alloys"
+	name = "Light alloys"
 	desc = "A general crafting part, a craftsman might want to have this."
 	id = "advw_alloys"
 	build_type = PROTOLATHE
@@ -277,7 +277,7 @@
 	id = "ew_frame"
 	build_type = PROTOLATHE
 	materials = list(MAT_SILVER = 7500, MAT_METAL = 7500)
-	build_path = /obj/item/prefabs/complex/eWeaponFrame
+	build_path = /obj/item/prefabs/complex/energy/frame
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -288,7 +288,7 @@
 	id = "ew_frame_pistol"
 	build_type = PROTOLATHE
 	materials = list(MAT_SILVER = 9500, MAT_METAL = 8500, MAT_TITANIUM=5000)
-	build_path = /obj/item/prefabs/complex/eWeaponFrame/pistol
+	build_path = /obj/item/prefabs/complex/energy/frame/pistol
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 	
@@ -298,7 +298,7 @@
 	id = "ew_frame_rifle"
 	build_type = PROTOLATHE
 	materials = list(MAT_SILVER = 8500, MAT_METAL = 14500, MAT_TITANIUM=12000)
-	build_path = /obj/item/prefabs/complex/eWeaponFrame/rifle
+	build_path = /obj/item/prefabs/complex/energy/frame/rifle
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -309,7 +309,7 @@
 	id = "ew_frame_hqrifle"
 	build_type = PROTOLATHE
 	materials = list(MAT_SILVER = 12500, MAT_GOLD=12500, MAT_DIAMOND=3000, MAT_METAL = 6500, MAT_TITANIUM=14000)
-	build_path = /obj/item/prefabs/complex/eWeaponFrame/hqrifle
+	build_path = /obj/item/prefabs/complex/energy/frame/hqrifle
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 

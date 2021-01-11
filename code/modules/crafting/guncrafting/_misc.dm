@@ -49,26 +49,18 @@
 		new PR(src)
 
 /obj/item/storage/box/projectile_components/advanced/PopulateContents()
-	for(var/P in subtypesof(/obj/item/advanced_crafting_components))
+	for(var/P in subtypesof(/obj/item/advanced_crafting_components) - /obj/item/advanced_crafting_components/capacitor)
 		for(var/i in 1 to 10)
 			var/obj/item/prefabs/complex/PR = P
 			new PR(src)
 
 
 /obj/item/storage/box/projectile_components/energy/PopulateContents() 
-	for(var/P in subtypesof(/obj/item/prefabs/complex/eWeaponFrame) - /obj/item/prefabs/complex/eWeaponFrame)
+	for(var/P in subtypesof(/obj/item/prefabs/complex/energy/frame) - /obj/item/prefabs/complex/energy/frame)
 		for(var/i in 1 to 10)
 			var/obj/item/prefabs/complex/PR = P
 			new PR(src)
-	for(var/P in subtypesof(/obj/item/prefabs/complex/ebarrel/laser))
-		for(var/i in 1 to 10)
-			var/obj/item/prefabs/complex/PR = P
-			new PR(src)
-	for(var/P in subtypesof(/obj/item/prefabs/complex/ebarrel/plasma))
-		for(var/i in 1 to 10)
-			var/obj/item/prefabs/complex/PR = P
-			new PR(src)
-	for(var/P in subtypesof(/obj/item/prefabs/complex/ebarrel/ion))
+	for(var/P in subtypesof(/obj/item/prefabs/complex/ebarrel) - /obj/item/prefabs/complex/ebarrel/)
 		for(var/i in 1 to 10)
 			var/obj/item/prefabs/complex/PR = P
 			new PR(src)

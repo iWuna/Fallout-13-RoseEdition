@@ -24,3 +24,7 @@
 	e_cost = 50
 	fire_sound = 'sound/weapons/taser2.ogg'
 	harmful = FALSE
+
+/obj/item/ammo_casing/energy/disabler/old
+	projectile_type = /obj/item/projectile/beam/disabler
+	e_cost = 150
