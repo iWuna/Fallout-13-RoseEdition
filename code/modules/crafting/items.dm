@@ -239,7 +239,7 @@
 /obj/item/advanced_crafting_components/examine(mob/user)
 	. = ..()
 	if(complexity)
-		to_chat(user, "<span>Part complexity: [complexity].DESTROY_MODE</span>")
+		to_chat(user, "<span>Part complexity: [complexity]</span>")
 	else
 		to_chat(user, "<span>This is a basic part.</span>")
 
