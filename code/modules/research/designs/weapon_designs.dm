@@ -251,7 +251,7 @@
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/ew_scatter_emitter_disabler
+/datum/design/ew_scatter_emitter_plasma
 	name = "Scatter Plasma Emitter"
 	desc = "Energy Emitter"
 	id = "ew_scatter_plasma_emitter"
