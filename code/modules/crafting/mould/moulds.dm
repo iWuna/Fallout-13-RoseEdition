@@ -265,3 +265,9 @@
 	item_path = /obj/item/advanced_crafting_components/alloys
 	mould_sheet_type = /obj/item/stack/crafting/metalparts
 	sheet_amount = 2
+
+/obj/item/prefabs/mould/alloy/advanced
+	name = "Superlight Alloy Mould"
+	item_path = /obj/item/advanced_crafting_components/alloys/advanced
+	mould_sheet_type = /obj/item/stack/crafting/metalparts
+	sheet_amount = 6
