@@ -236,3 +236,9 @@
 	icon_state = "conductor"
 	complexity = 20
 	spread_mod = -20
+
+/obj/item/advanced_crafting_components/firing_pin
+    name = "Firing pin adapter"
+    icon =  'icons/fallout/objects/items.dmi'
+    icon_state = "sheet-electronicparts"
+    complexity = 25

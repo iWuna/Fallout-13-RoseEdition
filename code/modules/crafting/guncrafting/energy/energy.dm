@@ -13,12 +13,12 @@
 	var/obj/item/prefabs/barrel = null 			//plasma/laser/etc
 	var/obj/item/prefabs/cell = null 			//type of ammo
 	var/obj/item/prefabs/burst = null
-	var/obj/item/prefabs/firing_pin = null		//optional
 
 	var/obj/item/advanced_crafting_components/conductors/conductors = null //optional
 	var/obj/item/advanced_crafting_components/capacitor/capacitor = null //required (energy cost multiplier)
 	var/obj/item/advanced_crafting_components/alloys/alloys = null //optional (slowdown decrease)
 	var/obj/item/advanced_crafting_components/lenses/lens = null  //required (bullet speed mod)	
+	var/obj/item/advanced_crafting_components/firing_pin/firing_pin = null		//optional
 
 
 /obj/item/prefabs/complex/energy/frame/attackby(obj/item/W, mob/user, params)
@@ -44,6 +44,7 @@
 		capacitor = null
 		conductors = null
 		alloys = null
+		firing_pin = null
 
 		for(var/obj/item/prefabs/P in src.contents)
 			barrel = null
@@ -142,6 +143,14 @@
 			alloys = null
 		alloys = W
 		complexity += I.complexity
+	else if(istype(W,/obj/item/advanced_crafting_components/firing_pin)) //allows firing pins to be installed 
+		var/obj/item/advanced_crafting_components/firing_pin/I = W
+		dropitem = firing_pin
+		if(firing_pin)
+			to_chat(usr,"<span_class='notice'>You swap out \the [alloys].</span>")
+			firing_pin = null
+		firing_pin = W
+		complexity += I.complexity
 	else
 		return ..()
 
@@ -183,7 +192,7 @@
 
 	if(istype(barrel, /obj/item/prefabs/complex/ebarrel/ion))
 		lethal = FALSE
-		if(istype(src,/obj/item/prefabs/complex/energy/frame/pistol))
+		if(istype(src,/obj/item/prefabs/complex/energy/frame/pistol) || istype(src,/obj/item/prefabs/complex/energy/frame/hqpistol))
 			gun_path = /obj/item/gun/energy/ionrifle/carbine
 			gun_icon = "ioncarbine"
 			prefix = "Portable Ion"
@@ -194,16 +203,16 @@
 	if(istype(barrel, /obj/item/prefabs/complex/ebarrel/stun/disabler))
 		prefix = "Energy"
 		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/stun/disabler/scatter))
-			gun_path = /obj/item/gun/energy/laser/scatter/shotty
-			gun_icon = "shotgun"
+			gun_path = /obj/item/gun/energy/laser/scatter/shotty 
 
 	if(!ispath(gun_path)) //Something went fucky
 		return 0
 
 	G = new gun_path(get_turf(src))
-	G.icon_state = gun_icon
-	G.gun_icon_state = gun_icon
-	G.item_state = gun_icon
+	if(gun_icon)
+		G.icon_state = gun_icon
+		G.gun_icon_state = gun_icon
+		G.item_state = gun_icon
 	G.desc = ""
 
 	G.chambered = null
@@ -299,12 +308,7 @@
 	
 	var/obj/item/gun/energy/B = G
 
-	// No pre loaded cells
-	// B.cell = new B.cell_type(B) 
-	if(B.cell)
-		var/obj/item/stock_parts/cell = B.cell
-		B.cell = null
-		cell.Destroy()
+	B.cell = new B.cell_type(B) 
 
 	B.Initialize()
 
@@ -339,5 +343,9 @@
 		to_chat(user,"<span class='notice'>It's got [alloys] installed.</span>")
 	else
 		to_chat(user,"<span class='notice'>There is no lightweight alloys installed!</span>")
+	if(firing_pin)
+		to_chat(user,"<span class='notice'>It's got [firing_pin] installed.</span>")
+	else
+		to_chat(user,"<span class='notice'>There is a basic firing pin installed!</span>")
 
 	to_chat(user,"<span class='notice'>The frame's complexity is [complexity]/[max_complexity].</span>")

@@ -42,7 +42,10 @@
 
 /obj/item/prefabs/examine(mob/user)
 	. = ..()
-	to_chat(user, "<span>Part complexity: [complexity]</span>")
+	if(!complexity)
+		to_chat(user, "<span>This is a basic part.</span>")
+	else
+		to_chat(user, "<span>Part complexity: [complexity].</span>")
 
 /obj/item/stack/prefabs
     name = "crafting prefabs"
@@ -236,7 +239,9 @@
 /obj/item/advanced_crafting_components/examine(mob/user)
 	. = ..()
 	if(complexity)
-		to_chat(user, "<span>Part complexity: [complexity]</span>")
+		to_chat(user, "<span>Part complexity: [complexity].DESTROY_MODE</span>")
+	else
+		to_chat(user, "<span>This is a basic part.</span>")
 
 /obj/item/prefabs/complex/screw
 	name = "Screw"
