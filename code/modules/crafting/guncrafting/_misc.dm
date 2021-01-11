@@ -60,7 +60,7 @@
 		for(var/i in 1 to 10)
 			var/obj/item/prefabs/complex/PR = P
 			new PR(src)
-	for(var/P in subtypesof(/obj/item/prefabs/complex/ebarrel) - /obj/item/prefabs/complex/ebarrel/stun  - /obj/item/prefabs/complex/ebarrel - /obj/item/prefabs/complex/ebarrel/plasma)
+	for(var/P in subtypesof(/obj/item/prefabs/complex/ebarrel) - /obj/item/prefabs/complex/ebarrel/laser - /obj/item/prefabs/complex/ebarrel/stun  - /obj/item/prefabs/complex/ebarrel - /obj/item/prefabs/complex/ebarrel/plasma)
 		for(var/i in 1 to 10)
 			var/obj/item/prefabs/complex/PR = P
 			new PR(src)

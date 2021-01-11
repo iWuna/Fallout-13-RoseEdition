@@ -189,15 +189,13 @@
 	armorpen_mod = 3
 
 
-/obj/item/advanced_crafting_components/capacitor/quantum
+/obj/item/advanced_crafting_components/capacitor/reflex
 	name = "Reflex capacitor"
 	desc = "An energy weapon part, a craftsman might want to have this. It has the highest efficiecy among other models."
 	icon_state = "flux"
 	complexity = 75
 	armorpen_mod = 6
 
-/obj/item/advanced_crafting_components/capacitor/quantum/prewar
-	complexity = 0
 
 /obj/item/advanced_crafting_components/lenses
 	name = "Focused crystal lenses"

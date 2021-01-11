@@ -238,7 +238,10 @@
 	G.spread = 0
 	G.projectile_speed = 0.8
 	G.fire_delay = 6
-	G.pin = null
+	if(firing_pin)
+		G.pin = null
+	else
+		G.pin = /obj/item/firing_pin
 
 	if(lethal)
 		for(var/obj/item/prefabs/C in src.contents)
