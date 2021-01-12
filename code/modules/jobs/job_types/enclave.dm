@@ -348,7 +348,10 @@ Engineer
 	head = /obj/item/clothing/head/soft/f13/enclave
 	suit_store = /obj/item/gun/energy/laser/plasma/pistol
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/ec = 2, /obj/item/key/vertibird = 1)
+		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/key/vertibird = 1,
+		/obj/item/flashlight/flare/emergency = 3
+		)
 
 /*
 /*
