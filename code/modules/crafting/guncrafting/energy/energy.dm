@@ -87,9 +87,6 @@
 						to_chat(usr,"<span class='warning'>[I] cannot fit on that frame! It's incompatible with \the [P].</span>")
 						return
 
-		if(!do_after(user,20,target = src))
-			return
-
 		complexity += I.complexity
 		if(I.enables_automatic)
 			enables_automatic = TRUE
@@ -147,7 +144,7 @@
 		var/obj/item/advanced_crafting_components/firing_pin/I = W
 		dropitem = firing_pin
 		if(firing_pin)
-			to_chat(usr,"<span_class='notice'>You swap out \the [alloys].</span>")
+			to_chat(usr,"<span_class='notice'>You swap out \the [firing_pin].</span>")
 			firing_pin = null
 		firing_pin = W
 		complexity += I.complexity
@@ -177,7 +174,7 @@
 	var/obj/item/gun/G
 	var/lethal = TRUE
 
-	if(istype(src,/obj/item/prefabs/complex/energy/frame/pistol))
+	if(istype(src,/obj/item/prefabs/complex/energy/frame/pistol) || istype(src,/obj/item/prefabs/complex/energy/frame/hqpistol))
 		gun_path = /obj/item/gun/energy/laser/pistol
 		gun_icon = "AEP7"//Garbage default pistol
 		prefix = "Portable"
