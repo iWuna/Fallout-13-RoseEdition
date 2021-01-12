@@ -6,7 +6,7 @@
 	w_class = 1
 
 /obj/item/flashlight/flare/emergency
-	name = "landing flare"
+	name = "emergency flare"
 	desc = "A special flare used to mark the landing zones. There are instructions on the side, it reads 'pull cord, make light'. This one has burns triple as long as normal."
 	light_range = 12 // Extra bright.
 	grind_results = list("sulfur" = 45)
