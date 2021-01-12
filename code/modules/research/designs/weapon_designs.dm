@@ -120,7 +120,7 @@
 	
 
 /datum/design/advw_capacitor
-	name = "Superconductor coil"
+	name = "Conductor coil"
 	desc = "An energy weapon part, a craftsman might want to have this."
 	id = "advw_coil"
 	build_type = PROTOLATHE
@@ -247,7 +247,7 @@
 	id = "ew_scatter_disabler_emitter"
 	build_type = PROTOLATHE
 	materials = list(MAT_SILVER = 18000, MAT_GOLD = 18000, MAT_DIAMOND = 8600, MAT_URANIUM = 15000)
-	build_path = /obj/item/prefabs/complex/ebarrel/stun/disabler
+	build_path = /obj/item/prefabs/complex/ebarrel/stun/disabler/scatter
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -257,7 +257,7 @@
 	id = "ew_scatter_plasma_emitter"
 	build_type = PROTOLATHE
 	materials = list(MAT_SILVER = 38000, MAT_GOLD = 38000, MAT_DIAMOND = 17200, MAT_URANIUM = 30000)
-	build_path = /obj/item/prefabs/complex/ebarrel/stun/disabler
+	build_path = /obj/item/prefabs/complex/ebarrel/plasma/scatter
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 

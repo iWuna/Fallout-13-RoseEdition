@@ -26,6 +26,9 @@
 	variance = 15
 	harmful = FALSE
 
+/obj/item/ammo_casing/energy/laser/scatter/disabler/expensive
+	e_cost = 300
+
 /obj/item/ammo_casing/energy/laser/heavy
 	projectile_type = /obj/item/projectile/beam/laser/heavylaser
 	select_name = "anti-vehicle"

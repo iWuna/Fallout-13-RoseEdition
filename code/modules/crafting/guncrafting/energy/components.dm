@@ -19,13 +19,13 @@
 
 /obj/item/prefabs/complex/ebarrel/stun/disabler
 	name = "Disabler Emitter"
-	energyProjType = list(/obj/item/ammo_casing/energy/disabler)
+	energyProjType = list(/obj/item/ammo_casing/energy/disabler/expensive)
 	complexity = 25
 
 
 /obj/item/prefabs/complex/ebarrel/stun/disabler/scatter
 	name = "Scatter Disabler Emitter"
-	energyProjType = list(/obj/item/ammo_casing/energy/laser/scatter/disabler)
+	energyProjType = list(/obj/item/ammo_casing/energy/laser/scatter/disabler/expensive)
 	complexity = 125
 
 
