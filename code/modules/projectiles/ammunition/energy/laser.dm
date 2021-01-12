@@ -27,6 +27,7 @@
 	harmful = FALSE
 
 /obj/item/ammo_casing/energy/laser/scatter/disabler/expensive
+	projectile_type = /obj/item/projectile/beam/disabler/expensive
 	e_cost = 300
 
 /obj/item/ammo_casing/energy/laser/heavy

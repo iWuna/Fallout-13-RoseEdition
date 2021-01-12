@@ -31,4 +31,5 @@
 
 
 /obj/item/ammo_casing/energy/disabler/expensive
+	projectile_type = /obj/item/projectile/beam/disabler/expensive
 	e_cost = 150
