@@ -42,7 +42,10 @@
 
 /obj/item/prefabs/examine(mob/user)
 	. = ..()
-	to_chat(user, "<span>Part complexity: [complexity]</span>")
+	if(!complexity)
+		to_chat(user, "<span>This is a basic part.</span>")
+	else
+		to_chat(user, "<span>Part complexity: [complexity].</span>")
 
 /obj/item/stack/prefabs
     name = "crafting prefabs"
@@ -231,6 +234,14 @@
     icon = 'icons/fallout/objects/crafting.dmi'
     icon_state = "blueprint_empty"
     w_class = WEIGHT_CLASS_TINY
+    var/complexity = 0
+
+/obj/item/advanced_crafting_components/examine(mob/user)
+	. = ..()
+	if(complexity)
+		to_chat(user, "<span>Part complexity: [complexity]</span>")
+	else
+		to_chat(user, "<span>This is a basic part.</span>")
 
 /obj/item/prefabs/complex/screw
 	name = "Screw"
@@ -262,6 +273,14 @@
 
 //general
 /obj/item/advanced_crafting_components/alloys
-	name = "Superlight alloys"
+	name = "Light alloys"
 	desc = "A general crafting part, a craftsman might want to have this."
 	icon_state = "alloys"
+	complexity = 30
+	var/slowdown_multiply = 0.5
+
+
+/obj/item/advanced_crafting_components/alloys/advanced
+	name = "Superlight alloys"
+	complexity = 40
+	slowdown_multiply = 0.2

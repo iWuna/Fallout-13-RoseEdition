@@ -235,7 +235,9 @@ GLOBAL_LIST_INIT(donations_list, list(
 	"Special Stuff" = list(
 
 		new /datum/donate_info("Bible",						/obj/item/storage/book/bible,						100),
+		new /datum/donate_info("Full Clown Kit",			/obj/item/storage/backpack/duffelbag/clown/syndie,	1000),
 		new /datum/donate_info("Barman Guide",				/obj/item/book/manual/partyboy,						75),
+		new /datum/donate_info("Minecraft Pickaxe",			/obj/item/pickaxe/minecraft,						1250),
 		new /datum/donate_info("That Ring",					/obj/item/ring,										1500),
 		new /datum/donate_info("The Over Power Gun",		/obj/item/gun/energy/laser/practice,				500),
 		new /datum/donate_info("Legendary Sord!",			/obj/item/sord,										300),
