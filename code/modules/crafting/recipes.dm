@@ -3271,7 +3271,7 @@
 	name = "Maschinengewehr 34"
 	result = /obj/item/gun/ballistic/automatic/mg34
 	reqs = list(/obj/item/stack/sheet/metal = 5,
-				/obj/item/advanced_crafting_components/flux = 1,
+				/obj/item/advanced_crafting_components/capacitor/flux = 1,
 				/obj/item/stack/crafting/metalparts = 3,
 				/datum/reagent/blackpowder = 60
 				)
@@ -3329,7 +3329,7 @@
 	name = "Plasma Pistol"
 	result = /obj/item/gun/energy/laser/plasma/pistol
 	reqs = list(/obj/item/stack/sheet/metal = 5,
-				/obj/item/advanced_crafting_components/flux = 1,
+				/obj/item/advanced_crafting_components/capacitor/flux = 1,
 				/obj/item/stack/crafting/metalparts = 3,
 				/obj/item/stack/crafting/electronicparts = 3
 				)
@@ -3342,7 +3342,7 @@
 	name = "Plasma Pistol"
 	result = /obj/item/gun/energy/laser/plasma/pistol
 	reqs = list(/obj/item/stack/sheet/metal = 5,
-				/obj/item/advanced_crafting_components/flux = 1,
+				/obj/item/advanced_crafting_components/capacitor/flux = 1,
 				/obj/item/stack/crafting/metalparts = 3,
 				/obj/item/stack/crafting/electronicparts = 3,
 				/obj/item/blueprint/weapon/plasmapistol/limited = 1
@@ -3737,7 +3737,7 @@
 	name = "Plasma Rifle"
 	result = /obj/item/gun/energy/laser/plasma
 	reqs = list(/obj/item/stack/sheet/metal = 15,
-				/obj/item/advanced_crafting_components/flux = 1,
+				/obj/item/advanced_crafting_components/capacitor/flux = 1,
 				/obj/item/advanced_crafting_components/conductors = 2,
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/stack/crafting/metalparts = 3,
@@ -3752,7 +3752,7 @@
 	name = "Plasma Rifle"
 	result = /obj/item/gun/energy/laser/plasma
 	reqs = list(/obj/item/stack/sheet/metal = 15,
-				/obj/item/advanced_crafting_components/flux = 1,
+				/obj/item/advanced_crafting_components/capacitor/flux = 1,
 				/obj/item/advanced_crafting_components/conductors = 2,
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/stack/crafting/metalparts = 3,
