@@ -119,6 +119,7 @@
 /obj/item/book/granter/trait/chemistry
 	name = "Chemistry for Wastelanders"
 	desc = "A useful book on chemistry."
+	icon_state = "chem"
 	oneuse = TRUE
 	granted_trait = TRAIT_CHEMWHIZ
 	traitname = "chemistry"
@@ -127,7 +128,7 @@
 /obj/item/book/granter/trait/spirit_teachings
 	name = "Teachings of the Machine Spirits"
 	desc = "A book all about tribal life among the Machine Spirits."
-	icon_state = "ms_teachings"
+	icon_state = "spirit"
 	oneuse = TRUE
 	granted_trait = TRAIT_MACHINE_SPIRITS
 	traitname = "The Machine Spirits"
@@ -137,6 +138,7 @@
 /obj/item/book/granter/trait/gunsmith
 	name = "Gunsmithing for dummies"
 	desc = "A book on how to use smith deadly weapons. It's pretty complicated."
+	icon_state = "gc"
 	oneuse = TRUE
 	granted_trait = TRAIT_MASTER_GUNSMITH
 	traitname = "Master Gunsmith"
@@ -146,6 +148,7 @@
 /obj/item/book/granter/trait/techno
 	name = "Craftsmanship Monthly"
 	desc = "A book on how to use advanced tools and production machinery. It's pretty complicated."
+	icon_state = "work"
 	oneuse = TRUE
 	granted_trait = TRAIT_TECHNOPHREAK
 	traitname = "craftsmanship"
@@ -154,6 +157,7 @@
 /obj/item/book/granter/trait/pa_wear
 	name = "Advanced Armor and You"
 	desc = "An indepth look into how power armor functions."
+	icon_state = "apa"
 	oneuse = TRUE
 	granted_trait = TRAIT_PA_WEAR
 	traitname = "Power Armor"
@@ -162,6 +166,7 @@
 /obj/item/book/granter/trait/trekking
 	name = "Ranger's Guide to the Wasteland"
 	desc = "An extensive guide about trekking through the wastes. Written by Allesandra Hall, former NCR Ranger."
+	icon_state = "wstlnd"
 	oneuse = TRUE
 	granted_trait = TRAIT_HARD_YARDS
 	traitname = "trekking"
@@ -171,6 +176,7 @@
 /obj/item/book/granter/trait/field_surgery
 	name = "Field Surgery Handbook"
 	desc = "Most trusted and up-to-date manual offered by the Department of Defense for military medical personnel in the field"
+	icon_state = "surg"
 	oneuse = TRUE
 	granted_trait = TRAIT_MEDICALEXPERT
 	traitname = "Field Surgery"
@@ -180,6 +186,7 @@
 /obj/item/book/granter/trait/brain_surgery
 	name = "Brain Surgery Manual"
 	desc = "Handbook of advanced brain surgery techniques. Approved by 9 experts out of 10."
+	icon_state = "bruin"
 	oneuse = TRUE
 	granted_trait = TRAIT_ADVANCED_SURGEON
 	traitname = "Brain Surgery"
