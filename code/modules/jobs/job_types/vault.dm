@@ -53,7 +53,7 @@ Overseer
 /datum/outfit/job/vault/f13overseer
 	name = "Overseer"
 	jobtype = /datum/job/vault/f13overseer
-	chemwhiz = TRUE
+	// chemwhiz = TRUE
 
 	implants = list(/obj/item/implant/mindshield)
 
