@@ -97,7 +97,7 @@
 	impact_type = /obj/effect/projectile/impact/disabler
 
 /obj/item/projectile/beam/disabler/expensive
-	damage = 20
+	damage = 30
 
 /obj/item/projectile/beam/pulse
 	name = "pulse"
