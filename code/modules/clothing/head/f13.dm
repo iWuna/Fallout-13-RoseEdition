@@ -477,3 +477,8 @@
 	icon_state = "snow_cowboy_hat"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
+/obj/item/clothing/head/f13/general
+	name = "White General Cap"
+	desc = "A cross is depicted above the cap."
+	icon_state = "white_cap"
+	item_state = "white_cap"
