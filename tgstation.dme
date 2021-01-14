@@ -2908,6 +2908,7 @@
 #include "desertrose\obj\kinkyclothes.dm"
 #include "desertrose\obj\milking machine.dm"
 #include "desertrose\obj\pregnancytester.dm"
+#include "fallout13\datums\perks.dm"
 #include "fallout13\donat\_donations.dm"
 #include "fallout13\donat\_lists.dm"
 #include "interface\interface.dm"
