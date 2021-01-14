@@ -158,14 +158,14 @@
 /obj/item/prefabs/complex/energy/frame/pistol
 	name = "Energy Pistol Frame"
 	desc = "An unfinished energy gun."
-	icon_state = "gunframe"
+	icon_state = "pistolframe"
 	max_complexity = 125
 
 
 /obj/item/prefabs/complex/energy/frame/hqpistol
 	name = "Advanced Energy Pistol Frame"
 	desc = "An unfinished energy gun."
-	icon_state = "gunframe"
+	icon_state = "pistolframe"
 	max_complexity = 175
 
 
