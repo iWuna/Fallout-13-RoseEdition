@@ -352,38 +352,41 @@
 
 
 /obj/item/prefabs/complex/energy/frame/examine(mob/user)
+	var/c = complexity
+	complexity = 0
 	..()
+	complexity = c
 	if(barrel)
-		to_chat(user,"<span class='notice'>It's got [barrel] installed.</span>")
+		to_chat(user,"<span class='notice'>Barrel: <i>[barrel]</i></span>")
 	else
-		to_chat(user,"<span class='warning'>There is no barrel installed!</span>")
+		to_chat(user,"<span class='notice'>Barrel: </span><span class='warning'>Not installed!</span>")
 	if(cell)
-		to_chat(user,"<span class='notice'>It's got [cell] installed.</span>")
+		to_chat(user,"<span class='notice'>Power cell: <i>[cell]</i></span>")
 	else
-		to_chat(user,"<span class='warning'>There is no cell assembly installed!</span>")
+		to_chat(user,"<span class='notice'>Power cell: </span><span class='warning'>Not installed!</span>")
 	if(burst)
-		to_chat(user,"<span class='notice'>It's got [burst] installed.</span>")
+		to_chat(user,"<span class='notice'>Stream adapter: <i>[burst]</i></span>")
 	else
-		to_chat(user,"<span class='warning'>There is no stream adapter assembly installed!</span>")
+		to_chat(user,"<span class='notice'>Stream adapter: </span><span class='warning'>Not installed!</span>")
 	if(lens)
-		to_chat(user,"<span class='notice'>It's got [lens] installed.</span>")
+		to_chat(user,"<span class='notice'>Lense assembly: <i>[lens]</i></span>")
 	else
-		to_chat(user,"<span class='warning'>There is no lens assembly installed!</span>")
-	if(conductors)
-		to_chat(user,"<span class='notice'>It's got [conductors] installed.</span>")
-	else
-		to_chat(user,"<span class='notice'>There is no superconductors installed!</span>")
+		to_chat(user,"<span class='notice'>Lense assembly: </span><span class='warning'>Not installed!</span>")
 	if(capacitor)
-		to_chat(user,"<span class='notice'>It's got [capacitor] installed.</span>")
+		to_chat(user,"<span class='notice'>Capacitor: <i>[capacitor]</i></span>")
 	else
-		to_chat(user,"<span class='warning'>There is no capacitator installed!</span>")
+		to_chat(user,"<span class='notice'>Capacitor: </span><span class='warning'>Not installed!</span>")
+	if(conductors)
+		to_chat(user,"<span class='notice'>Conductor: <i>[conductors]</i></span>")
+	else
+		to_chat(user,"<span class='notice'>Conductor: </span><span class='notice'>Not installed!</span>")
 	if(alloys)
-		to_chat(user,"<span class='notice'>It's got [alloys] installed.</span>")
+		to_chat(user,"<span class='notice'>Additional alloys: <i>[alloys]</i></span>")
 	else
-		to_chat(user,"<span class='notice'>There is no lightweight alloys installed!</span>")
+		to_chat(user,"<span class='notice'>Additional alloys: </span><span class='notice'>Not installed!</span>")
 	if(firing_pin)
-		to_chat(user,"<span class='notice'>It's got [firing_pin] installed.</span>")
+		to_chat(user,"<span class='notice'>Firing pin: <i>[firing_pin]</i></span>")
 	else
-		to_chat(user,"<span class='notice'>There is a basic firing pin installed!</span>")
+		to_chat(user,"<span class='notice'>Firing pin: </span><span class='notice'>basic pin</span>")
 
-	to_chat(user,"<span class='notice'>The frame's complexity is [complexity]/[max_complexity].</span>")
+	to_chat(user,"<span class='notice'>The frame's complexity is <b>[complexity]/[max_complexity]</b>.</span>")
