@@ -168,48 +168,86 @@
 		return 0
 
 	var/gun_path
-	var/gun_icon
 	var/prefix = ""
 	var/quality = ""
 	var/obj/item/gun/G
 	var/lethal = TRUE
 
-	if(istype(src,/obj/item/prefabs/complex/energy/frame/pistol) || istype(src,/obj/item/prefabs/complex/energy/frame/hqpistol))
+	if(istype(src,/obj/item/prefabs/complex/energy/frame/pistol))
 		gun_path = /obj/item/gun/energy/laser/pistol
-		gun_icon = "AEP7"//Garbage default pistol
 		prefix = "Portable"
-	else if(istype(src,/obj/item/prefabs/complex/energy/frame/rifle))
-		gun_path = /obj/item/gun/energy/laser/aer9
-		gun_icon = "laser"
-		prefix = "Full Length"
-	else if(istype(src,/obj/item/prefabs/complex/energy/frame/hqrifle))
-		gun_path = /obj/item/gun/energy/laser/rcw
-		gun_icon = "lasercw"
-		prefix = "Advanced"
-
-	if(istype(barrel, /obj/item/prefabs/complex/ebarrel/ion))
-		lethal = FALSE
-		if(istype(src,/obj/item/prefabs/complex/energy/frame/pistol) || istype(src,/obj/item/prefabs/complex/energy/frame/hqpistol))
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/laser/weak))
+			gun_path = /obj/item/gun/energy/laser/wattz
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma))
+			gun_path = /obj/item/gun/energy/laser/plasma/pistol
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/ion))
 			gun_path = /obj/item/gun/energy/ionrifle/carbine
-			gun_icon = "ioncarbine"
-			prefix = "Portable Ion"
-		else
+			lethal = FALSE
+
+	else if(istype(src, /obj/item/prefabs/complex/energy/frame/hqpistol))
+		gun_path = /obj/item/gun/energy/laser/pistol
+		prefix = "Portable"
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/laser/weak))
+			gun_path = /obj/item/gun/energy/laser/wattz/magneto
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma))
+			gun_path = /obj/item/gun/energy/laser/plasma/glock/extended
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/ion))
+			gun_path = /obj/item/gun/energy/ionrifle/carbine
+			lethal = FALSE
+
+	else if(istype(src, /obj/item/prefabs/complex/energy/frame/rifle))
+		gun_path = /obj/item/gun/energy/laser/aer9
+		prefix = "Full Length"
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma/weak))
+			gun_path = /obj/item/gun/energy/laser/plasma
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma/scatter))
+			gun_path = /obj/item/gun/energy/laser/plasma/scatter
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma/avg))
+			gun_path = /obj/item/gun/energy/laser/plasma/carbine
+
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/laser/strong))
+			gun_path = /obj/item/gun/energy/laser/aer9
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/laser/scatter))
+			gun_path = /obj/item/gun/energy/laser/scatter
+
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/ion))
 			gun_path = /obj/item/gun/energy/ionrifle
-			gun_icon = "ionrifle"
-			prefix = "Ion"
+			lethal = FALSE
+
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/stun/disabler/scatter))
+			gun_path = /obj/item/gun/energy/laser/scatter/shotty
+
+	else if(istype(src, /obj/item/prefabs/complex/energy/frame/hqrifle))
+		gun_path = /obj/item/gun/energy/laser/rcw
+		prefix = "Advanced"
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma/weak))
+			gun_path = /obj/item/gun/energy/laser/plasma
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma/scatter))
+			gun_path = /obj/item/gun/energy/laser/plasma/scatter
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma/avg))
+			gun_path = /obj/item/gun/energy/laser/plasma/carbine
+
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/laser/strong))
+			gun_path = /obj/item/gun/energy/laser/aer9
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/laser/scatter))
+			gun_path = /obj/item/gun/energy/laser/scatter
+
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/ion))
+			gun_path = /obj/item/gun/energy/ionrifle
+			lethal = FALSE
+
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/stun/disabler/scatter))
+			gun_path = /obj/item/gun/energy/laser/scatter/shotty
+
+	
 	if(istype(barrel, /obj/item/prefabs/complex/ebarrel/stun/disabler))
 		prefix = "Energy"
-		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/stun/disabler/scatter))
-			gun_path = /obj/item/gun/energy/laser/scatter/shotty 
+		
 
 	if(!ispath(gun_path)) //Something went fucky
 		return 0
 
 	G = new gun_path(get_turf(src))
-	if(gun_icon)
-		G.icon_state = gun_icon
-		G.gun_icon_state = gun_icon
-		G.item_state = gun_icon
 	G.desc = ""
 
 	G.chambered = null
