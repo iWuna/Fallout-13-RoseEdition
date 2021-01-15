@@ -676,18 +676,35 @@
 	icon_state = "defibpaddles0_ghetto"
 	item_state = "defibpaddles0_ghetto"
 
-/obj/item/twohanded/shockpaddles/ghettto/do_disarm(mob/living/M, mob/living/user)
+/obj/item/twohanded/shockpaddles/ghetto/update_icon()
+	icon_state = "defibpaddles[wielded]_ghetto"
+	item_state = "defibpaddles[wielded]_ghetto"
+	if(cooldown)
+		icon_state = "defibpaddles[wielded]_ghetto_cooldown"
+	if(iscarbon(loc))
+		var/mob/living/carbon/C = loc
+		C.update_inv_hands()
+
+/obj/item/twohanded/shockpaddles/ghetto/do_disarm(mob/living/M, mob/living/user)
 	if(req_defib && defib.safety)
 		return
 	if(!req_defib && !combat)
 		return
 	busy = TRUE
-	if(do_after(src, 5, TRUE, target=M))
-
+	var/mob/living/carbon/human/C = M
+	var/is_pa_user = FALSE
+	if(istype(C))
+		if(istype(C.wear_suit, /obj/item/clothing/suit/armor/f13/power_armor))
+			is_pa_user = TRUE
+	if(is_pa_user || do_after(user, 3, target=M))
+		if(is_pa_user)
+			C.adjustFireLoss(rand(15, 25))
+			do_sparks(3, FALSE, C)
+			
 		M.visible_message("<span class='danger'>[user] has touched [M] with [src]!</span>", \
 				"<span class='userdanger'>[user] has touched [M] with [src]!</span>")
-		M.adjustStaminaLoss(50)
-		M.Knockdown(100)
+		M.adjustStaminaLoss(75)
+		M.Knockdown(75)
 		M.updatehealth() //forces health update before next life tick
 		playsound(src,  'sound/machines/defib_zap.ogg', 50, 1, -1)
 		M.emote("gasp")
@@ -702,13 +719,5 @@
 		else
 			recharge(60)
 
-/obj/item/twohanded/shockpaddles/ghetto/update_icon()
-	icon_state = "defibpaddles[wielded]_ghetto"
-	item_state = "defibpaddles[wielded]_ghetto"
-	if(cooldown)
-		icon_state = "defibpaddles[wielded]_ghetto_cooldown"
-	if(iscarbon(loc))
-		var/mob/living/carbon/C = loc
-		C.update_inv_hands()
 
 #undef HALFWAYCRITDEATH
