@@ -22,6 +22,7 @@
 	var/obj/machinery/camera/all/builtInCamera
 
 /obj/vertibird/New()
+	..()
 	var/obj/item/start = new /obj/landmark/vertibird()
 	start.name = "Camp Navarro"
 	start.loc = loc
@@ -57,6 +58,8 @@
 /obj/vertibird/attackby(obj/item/weapon/W, mob/user, params)
 	if(istype(W, /obj/item/key/vertibird))
 		toggleLock(user)
+	else
+		return ..()
 
 /obj/vertibird/MouseDrop_T(obj/O, mob/user)
 	if(locked)
@@ -117,7 +120,7 @@ obj/vertibird/proc/fly(targetX, targetY, targetZ, name="")
 	playsound(vertibirdEnterZone, "sound/f13machines/vertibird_takeoff.ogg", 50)
 	inFly = TRUE
 	icon_state = "vb-fast"
-	for(var/obj/machinery/computer/vertibird_console/C in world)
+	for(var/obj/machinery/computer/vertibird_console/C in vertibird_console)
 		var/message = "Now departing."
 		if(name)
 			message += " Destination: [name]."
@@ -133,7 +136,7 @@ obj/vertibird/proc/fly(targetX, targetY, targetZ, name="")
 
 		spawn(100)
 			flew(targetX, targetY, targetZ)
-			for(var/obj/machinery/computer/vertibird_console/C in world)
+			for(var/obj/machinery/computer/vertibird_console/C in vertibird_console)
 				C.say("Destination point reached. Doors safeties disabled")
 
 /obj/vertibird/Topic(href, href_list)
