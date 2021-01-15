@@ -121,7 +121,7 @@
 
 /obj/item/toy/plush/proc/play_toysound(mob/user)
 	if (sound_cd < world.time)
-		sound_cd = world.time + 20 // 3 seconds
+		sound_cd = world.time + 10 // 3 seconds
 		playsound(user, toysound, 20, 1)
 
 /obj/item/toy/plush/attackby(obj/item/I, mob/living/user, params)
