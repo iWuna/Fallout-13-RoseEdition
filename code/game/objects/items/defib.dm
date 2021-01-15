@@ -676,6 +676,32 @@
 	icon_state = "defibpaddles0_ghetto"
 	item_state = "defibpaddles0_ghetto"
 
+/obj/item/twohanded/shockpaddles/ghettto/do_disarm(mob/living/M, mob/living/user)
+	if(req_defib && defib.safety)
+		return
+	if(!req_defib && !combat)
+		return
+	busy = TRUE
+	if(do_after(src, 5, TRUE, target=M))
+
+		M.visible_message("<span class='danger'>[user] has touched [M] with [src]!</span>", \
+				"<span class='userdanger'>[user] has touched [M] with [src]!</span>")
+		M.adjustStaminaLoss(50)
+		M.Knockdown(100)
+		M.updatehealth() //forces health update before next life tick
+		playsound(src,  'sound/machines/defib_zap.ogg', 50, 1, -1)
+		M.emote("gasp")
+		add_logs(user, M, "stunned", src)
+		if(req_defib)
+			defib.deductcharge(revivecost)
+			cooldown = TRUE
+		busy = FALSE
+		update_icon()
+		if(req_defib)
+			defib.cooldowncheck(user)
+		else
+			recharge(60)
+
 /obj/item/twohanded/shockpaddles/ghetto/update_icon()
 	icon_state = "defibpaddles[wielded]_ghetto"
 	item_state = "defibpaddles[wielded]_ghetto"
