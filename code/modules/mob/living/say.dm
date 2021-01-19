@@ -278,6 +278,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(findtext_char(message, memes))
 		//to_chat(src, "<B>Nice meme...</B>") //Не работает
 		src.adjustBrainLoss(50) //Работает по схеме: 4 мема = смерть.
+		SEND_SOUND(src, sound('sound/effects/mgsalarm.ogg'))
 		/*if(key_name(client)=="Вписать сюда сикей") //Всё равно не работает, оставляю на случай если придёт кодер который может починить.
 			gib()
 		else
