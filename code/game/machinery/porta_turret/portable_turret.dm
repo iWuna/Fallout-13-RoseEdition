@@ -673,6 +673,11 @@
 	scan_range = 8
 	req_access = list(ACCESS_ENCLAVE)
 
+/obj/machinery/porta_turret/enclave/Initialize()
+	. = ..()
+	locked = TRUE
+	on = TRUE
+
 /obj/machinery/porta_turret/enclave/setup()
 	return
 
