@@ -274,11 +274,16 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		if(!ignore_spam && client.handle_spam_prevention(message,MUTE_IC))
 			return 0
 	var/static/regex/slurs = regex("раиссея|метагей|тритор|павергейм|повергейм|генокрад|нюка|порошенко|брейнрот|лол|кек|азаза|ванотян|вуна|лолечка|лоли|фоллач|фолач|хостинг", "i")
-	var/static/regex/memes = regex("кек|лол|грифер|хентай|трап|тян|тяночка|лоли|лоля|вайфу|лукашенко|путин|lmao|ayy|lol|kek|cheburek|ежжи|спанчбоб|рофл|uwu|owo|0w0|@w@|>w<|обэма|>w>|blacklivesmatters|BLM|вуася|алейкум|украина|зеленский", "i")
+	var/static/regex/memes = regex("сорри|коксакингом|коксакинг|коксак|коксакер|сорян|соряныч|сорямба|ауе|ролевой плей|ролевой рп|жигуль|жигули|жигулик|пог|pog|поггерс|ролеплеер|ральплеер|кек|лол|грифер|хентай|трап|тян|тяночка|лоли|лоля|вайфу|лукашенко|путин|lmao|ayy|lol|kek|cheburek|ежжи|спанчбоб|рофл|uwu|owo|0w0|@w@|>w<|обэма|>w>|blacklivesmatters|BLM|вуася|алейкум|украина|зеленский", "i")
 	if(findtext_char(message, memes))
 		//to_chat(src, "<B>Nice meme...</B>") //Не работает
 		src.adjustBrainLoss(50) //Работает по схеме: 4 мема = смерть.
+		/*if(key_name(client)=="Вписать сюда сикей") //Всё равно не работает, оставляю на случай если придёт кодер который может починить.
+			gib()
+		else
+			src.adjustBrainLoss(50) //Работает по схеме: 4 мема = смерть.
 		//src.gib()
+		*/
 		message_admins("[key_name_admin(client)] мемы в ИЦ:   [message]")
 		//return 0
 	//if(findtext_char(message, slurs))
