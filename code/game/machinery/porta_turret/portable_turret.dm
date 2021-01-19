@@ -656,7 +656,7 @@
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES)
 
 #define ROLE_ENCLAVE			"Enclave"
-#define ACCESS_ENCLAVE		131
+
 
 /obj/machinery/porta_turret/enclave
 	stun_projectile = /obj/item/projectile/bullet/syndicate_turret
@@ -672,6 +672,11 @@
 	has_cover = 0
 	scan_range = 8
 	req_access = list(ACCESS_ENCLAVE)
+
+/obj/machinery/porta_turret/enclave/Initialize()
+	. = ..()
+	locked = TRUE
+	on = TRUE
 
 /obj/machinery/porta_turret/enclave/setup()
 	return

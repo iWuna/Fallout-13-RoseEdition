@@ -27,7 +27,7 @@ Mayor
 	selection_color = "#d7b088"
 
 	outfit = /datum/outfit/job/den/f13mayor
-	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
+	access = list(ACCESS_TOWN_COMMAND, ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 
 /datum/outfit/job/den/f13mayor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -71,9 +71,10 @@ Mayor
 	description = "As the chief law enforcer of the Town, your job is to keep the peace, settle local disputes, and keep your townsfolk safe and alive. Unfortunately, with the NCR and Legion closing in on the region, the Town is caught between a rock and a hard place, as with the war brings with it unsavory elements like the Khans and Outlaws. Sometimes the people you handle inside the town will be alive in cuffs, or dead on the street. Other times, they'll escape the limits of the town, to which you can put a bounty on their head for their capture, or have your deputies capture them. However, you must remember these three critical things: never leave the town undefended, keep the townsfolk alive and safe, and most importantly - keep your hand on your gun and don't you trust anyone."
 	selection_color = "#d7b088"
 
+	department_head = list("Mayor")
 	outfit = /datum/outfit/job/den/f13sheriff
 
-	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
+	access = list(ACCESS_TOWN_COMMAND, ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 
 /datum/outfit/job/den/f13sheriff
@@ -124,6 +125,7 @@ Mayor
 	exp_requirements = 12
 	exp_type = EXP_TYPE_DEN
 
+	department_head = list("Mayor")
 	outfit = /datum/outfit/job/den/f13deputy
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
 	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY)
@@ -166,7 +168,7 @@ Mayor
 	exp_type = EXP_TYPE_CREW
 
 	outfit = /datum/outfit/job/den/f13farmer
-
+	department_head = list("Mayor")
 	access = list(ACCESS_BAR,  ACCESS_KITCHEN)
 	minimal_access = list(ACCESS_BAR,  ACCESS_KITCHEN)
 
@@ -213,7 +215,7 @@ Mayor
 
 	exp_requirements = 12
 	exp_type = EXP_TYPE_CREW
-
+	department_head = list("Mayor")
 	outfit = /datum/outfit/job/den/f13prospector
 
 	access = list(ACCESS_BAR, ACCESS_MINING)
@@ -268,7 +270,7 @@ Mayor
 
 	exp_requirements = 12
 	exp_type = EXP_TYPE_CREW
-
+	department_head = list("Mayor")
 	outfit = /datum/outfit/job/den/f13dendoc
 	access = list(ACCESS_BAR, ACCESS_CLONING)
 	minimal_access = list(ACCESS_BAR, ACCESS_CLONING)
@@ -311,7 +313,7 @@ Mayor
 
 	exp_requirements = 12
 	exp_type = EXP_TYPE_CREW
-
+	department_head = list("Mayor")
 	outfit = /datum/outfit/job/den/f13preacher
 
 	loadout_options = list(
@@ -432,7 +434,8 @@ Mayor
 	selection_color = "#dcba97"
 	exp_requirements = 12
 	exp_type = EXP_TYPE_CREW
-
+	
+	department_head = list("Mayor")
 	outfit = /datum/outfit/job/den/f13barkeep
 
 	loadout_options = list(
@@ -510,6 +513,7 @@ Mayor
 	exp_requirements = 2
 	exp_type = EXP_TYPE_CREW
 
+	department_head = list("Mayor")
 	outfit = /datum/outfit/job/den/f13settler
 
 	loadout_options = list(
@@ -582,7 +586,7 @@ Mayor
 			/obj/item/gun/ballistic/automatic/pistol/n99, \
 			/obj/item/ammo_box/magazine/m10mm_adv=2)
 /*--------------------------------------------------------------*/
-Detective
+//Detective
 
 /datum/job/wasteland/f13detective
 	title = "Detective"
@@ -594,7 +598,7 @@ Detective
 	supervisors = "law and order"
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/wasteland/f13detective
-
+	department_head = list("Mayor")
 	access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS)
 	minimal_access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS)
 
