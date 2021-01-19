@@ -839,7 +839,8 @@ Veteran Ranger
 	loadout_options = list(
 	/datum/outfit/loadout/vrclassic, //AMR and Sequoia,
 	/datum/outfit/loadout/vrlite, //Rangemaster and Sequoia,
-	/datum/outfit/loadout/vrbrush //Scoped Brushgun and Sequoia
+	/datum/outfit/loadout/vrbrush, //Scoped Brushgun and Sequoia
+
 	//whitelist
 	/datum/outfit/loadout/vrelite
 	)
@@ -860,9 +861,7 @@ Veteran Ranger
 	jobtype = /datum/job/ncr/f13vetranger
 	id = 			/obj/item/card/id/dogtag/ncrranger
 	uniform =  		/obj/item/clothing/under/f13/vetranger
-	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
 	belt =			/obj/item/storage/belt/military/assault/ncr
-	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
 	gloves =		/obj/item/clothing/gloves/rifleman
 	shoes =			/obj/item/clothing/shoes/laced
 	glasses = 		/obj/item/clothing/glasses/orange
@@ -877,21 +876,38 @@ Veteran Ranger
 
 /datum/outfit/loadout/vrclassic
 	name = "Classic Veteran Ranger"
+	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat
+	suit = /obj/item/clothing/suit/armor/f13/rangercombat
 	suit_store = /obj/item/gun/ballistic/shotgun/antimateriel
 	backpack_contents = list(
 		/obj/item/ammo_box/a50MG=3)
 
 /datum/outfit/loadout/vrlite
 	name = "Light Veteran Ranger"
+	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat
+	suit = /obj/item/clothing/suit/armor/f13/rangercombat
 	suit_store = /obj/item/gun/ballistic/automatic/rangemaster
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m762/ext=2)
 
 /datum/outfit/loadout/vrbrush
 	name = "Brush Veteran Ranger"
+	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat
+	suit = /obj/item/clothing/suit/armor/f13/rangercombat
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/c4570=3)
+
+
+/datum/outfit/loadout/vrelite
+	name = "Elite Veteran Ranger"
+	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat/eliteriot
+	suit = /obj/item/clothing/suit/armor/f13/rangercombat/eliteriot
+	suit_store = /obj/item/gun/ballistic/shotgun/antimateriel
+	backpack_contents = list(
+		/obj/item/ammo_box/a50MG=3,
+		)
+	whitelist = list("hellpony")
 
 /*
 Ranger -- Split into Patrol and Scout
