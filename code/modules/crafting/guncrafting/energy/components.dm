@@ -31,6 +31,8 @@
 	icon_state = "emitter_d2"
 	energyProjType = list(/obj/item/ammo_casing/energy/laser/scatter/disabler/expensive)
 	complexity = 125
+	incompatible_tags = list("fdual", "triple")
+	tags = list("scatter")
 
 
 /obj/item/prefabs/complex/ebarrel/laser/strong
@@ -45,6 +47,8 @@
 	icon_state = "emitter_l3"
 	energyProjType = list(/obj/item/ammo_casing/energy/laser/scatter)
 	complexity = 100
+	incompatible_tags = list("fdual", "triple")
+	tags = list("scatter")
 
 
 /obj/item/prefabs/complex/ebarrel/plasma/weak
@@ -66,6 +70,8 @@
 	icon_state = "emitter_p3"
 	energyProjType = list(/obj/item/ammo_casing/energy/plasma/scatter)
 	complexity = 175
+	incompatible_tags = list("fdual", "triple")
+	tags = list("scatter")
 
 
 /obj/item/prefabs/complex/ebarrel/ion
@@ -109,6 +115,8 @@
 	dam_mod = -3
 	armorpen_mod = -3
 	complexity = 100
+	tags = list("fdual")
+	incompatible_tags = list("scatter")
 
 
 /obj/item/prefabs/complex/eburst/triple
@@ -118,6 +126,8 @@
 	dam_mod = -5
 	armorpen_mod = -5
 	complexity = 150
+	tags = list("triple")
+	incompatible_tags = list("scatter")
 
 
 /obj/item/prefabs/complex/ecell
