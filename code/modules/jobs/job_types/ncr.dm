@@ -25,6 +25,8 @@ Colonel
 	title = "NCR Colonel"
 	flag = F13COLONEL
 	faction = "NCR"
+	minimal_access = list(ACCESS_NCR_COMMAND, ACCESS_NCR, ACCESS_NCROFFDUTY)
+	access = list(ACCESS_NCR_COMMAND, ACCESS_NCR, ACCESS_NCROFFDUTY)
 	head_announce = list("Security")
 	supervisors = "Генерал"
 	req_admin_notify = 1
@@ -71,6 +73,9 @@ Captain
 	title = "NCR Captain"
 	flag = F13CAPTAIN
 	head_announce = list("Security")
+	department_head = list("NCR Colonel")
+	minimal_access = list(ACCESS_NCR_COMMAND, ACCESS_NCR, ACCESS_NCROFFDUTY)
+	access = list(ACCESS_NCR_COMMAND, ACCESS_NCR, ACCESS_NCROFFDUTY)
 	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
@@ -145,6 +150,7 @@ Ambassador
 
 /datum/job/ncr/f13ambassador
 	title = "NCR Ambassador"
+	department_head = list("NCR Colonel")
 	flag = F13AMBASSADOR
 	head_announce = list("Security")
 	faction = "NCR"
@@ -182,6 +188,9 @@ Lieutenant
 
 /datum/job/ncr/f13lieutenant
 	title = "NCR Lieutenant"
+	department_head = list("NCR Captain")
+	minimal_access = list(ACCESS_NCR_COMMAND, ACCESS_NCR, ACCESS_NCROFFDUTY)
+	access = list(ACCESS_NCR_COMMAND, ACCESS_NCR, ACCESS_NCROFFDUTY)
 	flag = F13LIEUTENANT
 	total_positions = 1
 	spawn_positions = 1
@@ -289,6 +298,7 @@ Sergeant
 
 /datum/job/ncr/f13sergeant
 	title = "NCR Sergeant"
+	department_head = list("NCR Captain")
 	flag = F13SERGEANT
 	total_positions = 2
 	spawn_positions = 2
@@ -381,6 +391,7 @@ Corporal
 
 /datum/job/ncr/f13specialist
 	title = "NCR Corporal"
+	department_head = list("NCR Captain")
 	flag = F13SPECIALIST
 	faction = "NCR"
 	total_positions = 4
@@ -600,6 +611,7 @@ Trooper
 
 /datum/job/ncr/f13trooper
 	title = "NCR Trooper"
+	department_head = list("NCR Captain")
 	flag = F13TROOPER
 	faction = "NCR"
 	total_positions = 5
@@ -659,6 +671,7 @@ Recruit
 
 /datum/job/ncr/f13recruit
 	title = "NCR Recruit"
+	department_head = list("NCR Captain")
 	flag = F13RECRUIT
 	faction = "NCR"
 	total_positions = 10
@@ -690,6 +703,7 @@ Recruit
 //NCR Administrator
 /datum/job/ncr/f13ncradmin
 	title = "NCR Administrator"
+	department_head = list("NCR Captain")
 	flag = F13NCRADMIN
 	faction = "NCR"
 	total_positions = 1
@@ -721,6 +735,7 @@ Recruit
 //NCR Citizen
 /datum/job/ncr/f13ncrcitizen
 	title = "NCR Citizen"
+	department_head = list("NCR Captain")
 	flag = F13NCRCITIZEN
 	faction = "NCR"
 	total_positions = 8
@@ -807,6 +822,7 @@ Veteran Ranger
 
 /datum/job/ncr/f13vetranger
 	title = "NCR Veteran Ranger"
+	department_head = list("NCR Captain")
 	flag = F13VETRANGER
 	faction = "NCR"
 	total_positions = 1
@@ -824,6 +840,8 @@ Veteran Ranger
 	/datum/outfit/loadout/vrclassic, //AMR and Sequoia,
 	/datum/outfit/loadout/vrlite, //Rangemaster and Sequoia,
 	/datum/outfit/loadout/vrbrush //Scoped Brushgun and Sequoia
+	//whitelist
+	/datum/outfit/loadout/vrelite
 	)
 
 /datum/job/ncr/f13vetranger/after_spawn(mob/living/carbon/human/H, mob/M)
@@ -955,6 +973,7 @@ Ranger -- Split into Patrol and Scout
 //Patrol Ranger
 /datum/job/ncr/f13rangerpatrol
 	title = "NCR Patrol Ranger"
+	department_head = list("NCR Captain")
 	flag = F13RANGERPATROL
 	faction = "NCR"
 	total_positions = 2
@@ -1004,6 +1023,7 @@ Ranger -- Split into Patrol and Scout
 //Scout Ranger
 /datum/job/ncr/f13rangerscout
 	title = "NCR Scout Ranger"
+	department_head = list("NCR Captain")
 	flag = F13RANGERSCOUT
 	faction = "NCR"
 	total_positions = 2
