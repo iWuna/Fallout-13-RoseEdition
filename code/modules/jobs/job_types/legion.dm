@@ -984,6 +984,7 @@ Auxilia
 		/obj/item/stack/sheet/mineral/wood/twentyfive=1,
 		/obj/item/stack/sheet/leather/twenty,
 		/obj/item/stack/sheet/cloth/twenty=1,
+		/obj/item/stack/sheet/plasteel/ten=1,
 		/obj/item/stack/sheet/prewar=1
 	)
 
