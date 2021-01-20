@@ -554,7 +554,7 @@
 	clothing_flags = THICKMATERIAL
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 50, "bio" = 60, "rad" = 30, "fire" = 95, "acid" = 100)
  //заготовка под звуки надевания
-/obj/item/clothing/suit/armor/f13/combat/stealthequipped(mob/user, slot)
+/obj/item/clothing/suit/armor/f13/combat/stealth/equipped(mob/user, slot)
 	. = ..()
 	if (slot == SLOT_WEAR_SUIT)
 		playsound(src, 'sound/f13effects/StealthSuitMk2.ogg', 50, 1)
