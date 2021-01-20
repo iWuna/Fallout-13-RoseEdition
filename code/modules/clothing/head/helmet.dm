@@ -1126,8 +1126,8 @@
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/medical
 	name = "MP-47/A power helmet"
 	desc = "Prototype of a medical power helmet. It's pretty fresh inside and pleasant to breathe."
-	icon_state = "t45dhelmet"
-	item_state = "t45dhelmet"
+	icon_state = "t45dhelmet_med"
+	item_state = "t45dhelmet_med"
 	armor = list("melee" = 65, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 65, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 100)
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/gunslinger
