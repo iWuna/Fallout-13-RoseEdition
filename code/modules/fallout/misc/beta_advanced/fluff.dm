@@ -43,7 +43,10 @@
 	new /obj/item/clothing/shoes/hulk_boots(src)
 	new /obj/item/storage/backpack/hulk(src)
 	new /obj/item/radio/headset/hulk(src)
-	
+	new /obj/item/twohanded/sledgehammer(src)
+	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
+	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
+
 /obj/item/storage/briefcase/supermutant
 	name = "box of clothes"
 	desc = "old rusted box, oddly big"
@@ -57,3 +60,5 @@
 	new /obj/item/clothing/shoes/hulk_boots(src)
 	new /obj/item/storage/backpack/hulk(src)
 	new /obj/item/radio/headset/hulk(src)
+	new /obj/item/stealthboy/makeshift(src)
+	new /obj/item/claymore/machete(src)
