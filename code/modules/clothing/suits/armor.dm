@@ -787,7 +787,7 @@
 	icon_state = "ranger"
 	item_state = "ranger"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	flags_inv = HIDEJUMPSUIT|HIDENECK
+	flags_inv = HIDENECK
 	armor = list("melee" = 55, "bullet" = 55, "laser" = 55, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 20)
 
 /obj/item/clothing/suit/armor/f13/rangercombat/rigscustom
@@ -909,7 +909,6 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
-	//flags_inv = HIDEJUMPSUIT
 	item_flags = SLOWS_WHILE_IN_HAND
 	clothing_flags = THICKMATERIAL
 	equip_delay_self = 50
@@ -1050,6 +1049,39 @@
 	item_state = "t45dpowerarmor"
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/medical
+	name = "MP-47/A power armor"
+	desc = "The MP-47/A prototype medic power armor is a U.S. Army variant of T-45d power armor. It was designed to administer medical attention to the user as necessary during combat."
+	icon_state = "t45dpowerarmor"
+	item_state = "t45dpowerarmor"
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
+	armor = list("melee" = 65, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 65, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 100)
+	slowdown = 0.25
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/New() //Начало кода для хила от мед.брони
+	..()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/Destroy()
+	STOP_PROCESSING(SSobj,src)
+	. = ..()
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/equipped(mob/user, slot)
+	. = ..()
+	if (slot == SLOT_WEAR_SUIT)
+		playsound(src, 'sound/f13effects/MedPA.ogg', 50, 1)
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/process()
+	if(iscarbon(loc))
+		var/mob/living/carbon/M = loc
+		if(M.health < M.maxHealth)
+			M.adjustBruteLoss(-2.5) //Heal that poor bastard
+			M.adjustFireLoss(-2.5)
+			M.adjustToxLoss(-2.5)
+			M.adjustOxyLoss(-2.5)
+
+//Конец кода для хила от мед.брони.
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/gunslinger
 	name = "Gunslinger T-51b"

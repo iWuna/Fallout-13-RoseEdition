@@ -168,48 +168,86 @@
 		return 0
 
 	var/gun_path
-	var/gun_icon
 	var/prefix = ""
 	var/quality = ""
 	var/obj/item/gun/G
 	var/lethal = TRUE
 
-	if(istype(src,/obj/item/prefabs/complex/energy/frame/pistol) || istype(src,/obj/item/prefabs/complex/energy/frame/hqpistol))
+	if(istype(src,/obj/item/prefabs/complex/energy/frame/pistol))
 		gun_path = /obj/item/gun/energy/laser/pistol
-		gun_icon = "AEP7"//Garbage default pistol
 		prefix = "Portable"
-	else if(istype(src,/obj/item/prefabs/complex/energy/frame/rifle))
-		gun_path = /obj/item/gun/energy/laser/aer9
-		gun_icon = "laser"
-		prefix = "Full Length"
-	else if(istype(src,/obj/item/prefabs/complex/energy/frame/hqrifle))
-		gun_path = /obj/item/gun/energy/laser/rcw
-		gun_icon = "lasercw"
-		prefix = "Advanced"
-
-	if(istype(barrel, /obj/item/prefabs/complex/ebarrel/ion))
-		lethal = FALSE
-		if(istype(src,/obj/item/prefabs/complex/energy/frame/pistol) || istype(src,/obj/item/prefabs/complex/energy/frame/hqpistol))
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/laser/weak))
+			gun_path = /obj/item/gun/energy/laser/wattz
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma))
+			gun_path = /obj/item/gun/energy/laser/plasma/pistol
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/ion))
 			gun_path = /obj/item/gun/energy/ionrifle/carbine
-			gun_icon = "ioncarbine"
-			prefix = "Portable Ion"
-		else
+			lethal = FALSE
+
+	else if(istype(src, /obj/item/prefabs/complex/energy/frame/hqpistol))
+		gun_path = /obj/item/gun/energy/laser/pistol
+		prefix = "Portable"
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/laser/weak))
+			gun_path = /obj/item/gun/energy/laser/wattz/magneto
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma))
+			gun_path = /obj/item/gun/energy/laser/plasma/glock/extended
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/ion))
+			gun_path = /obj/item/gun/energy/ionrifle/carbine
+			lethal = FALSE
+
+	else if(istype(src, /obj/item/prefabs/complex/energy/frame/rifle))
+		gun_path = /obj/item/gun/energy/laser/aer9
+		prefix = "Full Length"
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma/weak))
+			gun_path = /obj/item/gun/energy/laser/plasma
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma/scatter))
+			gun_path = /obj/item/gun/energy/laser/plasma/scatter
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma/avg))
+			gun_path = /obj/item/gun/energy/laser/plasma/carbine
+
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/laser/strong))
+			gun_path = /obj/item/gun/energy/laser/aer9
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/laser/scatter))
+			gun_path = /obj/item/gun/energy/laser/scatter
+
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/ion))
 			gun_path = /obj/item/gun/energy/ionrifle
-			gun_icon = "ionrifle"
-			prefix = "Ion"
+			lethal = FALSE
+
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/stun/disabler/scatter))
+			gun_path = /obj/item/gun/energy/laser/scatter/shotty
+
+	else if(istype(src, /obj/item/prefabs/complex/energy/frame/hqrifle))
+		gun_path = /obj/item/gun/energy/laser/rcw
+		prefix = "Advanced"
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma/weak))
+			gun_path = /obj/item/gun/energy/laser/plasma
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma/scatter))
+			gun_path = /obj/item/gun/energy/laser/plasma/scatter
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/plasma/avg))
+			gun_path = /obj/item/gun/energy/laser/plasma/carbine
+
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/laser/strong))
+			gun_path = /obj/item/gun/energy/laser/aer9
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/laser/scatter))
+			gun_path = /obj/item/gun/energy/laser/scatter
+
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/ion))
+			gun_path = /obj/item/gun/energy/ionrifle
+			lethal = FALSE
+
+		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/stun/disabler/scatter))
+			gun_path = /obj/item/gun/energy/laser/scatter/shotty
+
+	
 	if(istype(barrel, /obj/item/prefabs/complex/ebarrel/stun/disabler))
 		prefix = "Energy"
-		if(istype(barrel, /obj/item/prefabs/complex/ebarrel/stun/disabler/scatter))
-			gun_path = /obj/item/gun/energy/laser/scatter/shotty 
+		
 
 	if(!ispath(gun_path)) //Something went fucky
 		return 0
 
 	G = new gun_path(get_turf(src))
-	if(gun_icon)
-		G.icon_state = gun_icon
-		G.gun_icon_state = gun_icon
-		G.item_state = gun_icon
 	G.desc = ""
 
 	G.chambered = null
@@ -264,6 +302,7 @@
 			G.spread += conductors.spread_mod
 		if(lens)
 			G.projectile_speed += lens.bullet_speed_mod
+			G.burst_delay += lens.burst_delay_mod
 		if(capacitor)
 			G.extra_penetration += capacitor.armorpen_mod
 		if(alloys)
@@ -314,38 +353,41 @@
 
 
 /obj/item/prefabs/complex/energy/frame/examine(mob/user)
+	var/c = complexity
+	complexity = 0
 	..()
+	complexity = c
 	if(barrel)
-		to_chat(user,"<span class='notice'>It's got [barrel] installed.</span>")
+		to_chat(user,"<span class='notice'>Barrel: <i>[barrel]</i></span>")
 	else
-		to_chat(user,"<span class='warning'>There is no barrel installed!</span>")
+		to_chat(user,"<span class='notice'>Barrel: </span><span class='warning'>Not installed!</span>")
 	if(cell)
-		to_chat(user,"<span class='notice'>It's got [cell] installed.</span>")
+		to_chat(user,"<span class='notice'>Power cell: <i>[cell]</i></span>")
 	else
-		to_chat(user,"<span class='warning'>There is no cell assembly installed!</span>")
+		to_chat(user,"<span class='notice'>Power cell: </span><span class='warning'>Not installed!</span>")
 	if(burst)
-		to_chat(user,"<span class='notice'>It's got [burst] installed.</span>")
+		to_chat(user,"<span class='notice'>Stream adapter: <i>[burst]</i></span>")
 	else
-		to_chat(user,"<span class='warning'>There is no stream adapter assembly installed!</span>")
+		to_chat(user,"<span class='notice'>Stream adapter: </span><span class='warning'>Not installed!</span>")
 	if(lens)
-		to_chat(user,"<span class='notice'>It's got [lens] installed.</span>")
+		to_chat(user,"<span class='notice'>Lense assembly: <i>[lens]</i></span>")
 	else
-		to_chat(user,"<span class='warning'>There is no lens assembly installed!</span>")
-	if(conductors)
-		to_chat(user,"<span class='notice'>It's got [conductors] installed.</span>")
-	else
-		to_chat(user,"<span class='notice'>There is no superconductors installed!</span>")
+		to_chat(user,"<span class='notice'>Lense assembly: </span><span class='warning'>Not installed!</span>")
 	if(capacitor)
-		to_chat(user,"<span class='notice'>It's got [capacitor] installed.</span>")
+		to_chat(user,"<span class='notice'>Capacitor: <i>[capacitor]</i></span>")
 	else
-		to_chat(user,"<span class='warning'>There is no capacitator installed!</span>")
+		to_chat(user,"<span class='notice'>Capacitor: </span><span class='warning'>Not installed!</span>")
+	if(conductors)
+		to_chat(user,"<span class='notice'>Conductor: <i>[conductors]</i></span>")
+	else
+		to_chat(user,"<span class='notice'>Conductor: </span><span class='notice'>Not installed!</span>")
 	if(alloys)
-		to_chat(user,"<span class='notice'>It's got [alloys] installed.</span>")
+		to_chat(user,"<span class='notice'>Additional alloys: <i>[alloys]</i></span>")
 	else
-		to_chat(user,"<span class='notice'>There is no lightweight alloys installed!</span>")
+		to_chat(user,"<span class='notice'>Additional alloys: </span><span class='notice'>Not installed!</span>")
 	if(firing_pin)
-		to_chat(user,"<span class='notice'>It's got [firing_pin] installed.</span>")
+		to_chat(user,"<span class='notice'>Firing pin: <i>[firing_pin]</i></span>")
 	else
-		to_chat(user,"<span class='notice'>There is a basic firing pin installed!</span>")
+		to_chat(user,"<span class='notice'>Firing pin: </span><span class='notice'>basic pin</span>")
 
-	to_chat(user,"<span class='notice'>The frame's complexity is [complexity]/[max_complexity].</span>")
+	to_chat(user,"<span class='notice'>The frame's complexity is <b>[complexity]/[max_complexity]</b>.</span>")

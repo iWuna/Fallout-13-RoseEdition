@@ -87,7 +87,7 @@ GLOBAL_LIST_EMPTY(donators)
 		return 0
 
 	if((world.time-SSticker.round_start_time)>DONATIONS_SPAWN_WINDOW && !istype(get_area(user), /area/f13/bar))
-		to_chat(user,"<span class='warning'>Вам нужно быть баре.</span>")
+		to_chat(user,"<span class='warning'>Вам нужно быть в баре.</span>")
 		return 0
 
 	if(prize.cost > money)

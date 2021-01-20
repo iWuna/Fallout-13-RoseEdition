@@ -282,5 +282,6 @@
 
 /obj/item/advanced_crafting_components/alloys/advanced
 	name = "Superlight alloys"
+	icon_state = "alloys_super"
 	complexity = 40
 	slowdown_multiply = 0.2

@@ -28,8 +28,8 @@ Commander
 
 	outfit = /datum/outfit/job/enclave/f13uscommander
 
-	access = list(ACCESS_ENCLAVE)
-	minimal_access = list(ACCESS_ENCLAVE)
+	access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND)
+	minimal_access = list(ACCESS_ENCLAVE, ACCESS_ENCLAVE_COMMAND)
 
 	exp_requirements = 5500
 	exp_type = EXP_TYPE_NCR
@@ -65,6 +65,7 @@ Medic
 
 	outfit = /datum/outfit/job/enclave/f13usmedic
 
+	department_head = list("US Commander")
 	access = list(ACCESS_ENCLAVE)
 	minimal_access = list(ACCESS_ENCLAVE)
 
@@ -158,6 +159,7 @@ HEAVY!
 
 	outfit = /datum/outfit/job/enclave/f13usheavy
 
+	department_head = list("US Commander")
 	access = list(ACCESS_ENCLAVE)
 	minimal_access = list(ACCESS_ENCLAVE)
 
@@ -195,6 +197,7 @@ Private
 
 	outfit = /datum/outfit/job/enclave/f13usprivate
 
+	department_head = list("US Commander")
 	access = list(ACCESS_ENCLAVE)
 	minimal_access = list(ACCESS_ENCLAVE)
 
@@ -259,6 +262,7 @@ Scientist
 
 	outfit = /datum/outfit/job/enclave/f13usscientist
 
+	department_head = list("US Commander")
 	access = list(ACCESS_ENCLAVE)
 	minimal_access = list(ACCESS_ENCLAVE)
 
@@ -295,6 +299,7 @@ Engineer
 
 	outfit = /datum/outfit/job/enclave/f13usengineer
 
+	department_head = list("US Commander")
 	access = list(ACCESS_ENCLAVE)
 	minimal_access = list(ACCESS_ENCLAVE)
 

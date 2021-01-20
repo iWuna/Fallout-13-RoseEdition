@@ -106,7 +106,7 @@ Sentinel
 
 	outfit = /datum/outfit/job/bos/f13sentinel
 
-	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
+	access = list(ACCESS_BOS_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
 	minimal_access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
 
 /datum/outfit/job/bos/f13sentinel/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -176,6 +176,7 @@ Head Scribe
 	supervisors = "the elder"
 	selection_color = "#7f8c8d"
 
+	department_head = list("Sentiel")
 	exp_requirements = 250
 	exp_type = EXP_TYPE_BROTHERHOOD
 
@@ -247,6 +248,7 @@ Knight-Captain
 
 	exp_requirements = 150
 	exp_type = EXP_TYPE_BROTHERHOOD
+	department_head = list("Sentiel")
 
 	loadout_options = list(
 	/datum/outfit/loadout/capstand, //AER9 and 10mm pistol
@@ -339,6 +341,7 @@ Senior Paladin
 
 	exp_requirements = 100
 	exp_type = EXP_TYPE_BROTHERHOOD
+	department_head = list("Sentiel")
 
 	loadout_options = list(
 		/datum/outfit/loadout/spaladina, //M72 Gauss rifle and Glock
@@ -403,6 +406,7 @@ Paladin
 
 	exp_requirements = 90
 	exp_type = EXP_TYPE_BROTHERHOOD
+	department_head = list("Sentiel")
 
 	loadout_options = list(
 	/datum/outfit/loadout/paladina, //Carbine and aep7
@@ -490,6 +494,7 @@ Senior Scribe
 
 	exp_requirements = 60
 	exp_type = EXP_TYPE_BROTHERHOOD
+	department_head = list("Sentiel")
 
 	outfit = /datum/outfit/job/bos/f13seniorscribe
 
@@ -545,6 +550,7 @@ Scribe
 	)
 
 	outfit = /datum/outfit/job/bos/f13scribe
+	department_head = list("Sentiel")
 
 	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
 	minimal_access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
@@ -606,6 +612,7 @@ datum/job/bos/f13seniorknight
 
 	exp_requirements = 20
 	exp_type = EXP_TYPE_BROTHERHOOD
+	department_head = list("Sentiel")
 
 	outfit = /datum/outfit/job/bos/f13seniorknight
 
@@ -670,6 +677,7 @@ Knight
 
 	exp_requirements = 20
 	exp_type = EXP_TYPE_BROTHERHOOD
+	department_head = list("Sentiel")
 
 	loadout_options = list(
 	/datum/outfit/loadout/knighta, //AER9
@@ -756,6 +764,7 @@ Initiate
 	)
 
 	outfit = /datum/outfit/job/bos/f13initiate
+	department_head = list("Sentiel")
 
 	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
 	minimal_access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
@@ -831,6 +840,7 @@ Off-Duty
 	exp_type = EXP_TYPE_CREW
 
 	outfit = /datum/outfit/job/bos/f13offdutybos
+	department_head = list("Sentiel")
 
 	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
 	minimal_access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)

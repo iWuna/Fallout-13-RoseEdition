@@ -24,6 +24,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Bunny Hat",					/obj/item/clothing/head/bunnyhead,						100),
 		new /datum/donate_info("Dominatrix Cap",			/obj/item/clothing/head/dominatrixcap,					125),
 		new /datum/donate_info("Gladiator Helmet",			/obj/item/clothing/head/helmet/gladiator,				150),
+		new /datum/donate_info("White General Cap",			/obj/item/clothing/head/f13/general,					150),
 
 	),
 
@@ -74,6 +75,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 
 		new /datum/donate_info("Brown Shoes",				/obj/item/clothing/shoes/sneakers/brown,				100),
 		new /datum/donate_info("Jackboots",					/obj/item/clothing/shoes/jackboots,						100),
+		new /datum/donate_info("White long boots",			/obj/item/clothing/shoes/f13/whitelongboots,			100),
 		new /datum/donate_info("Kindle Kicks",				/obj/item/clothing/shoes/kindleKicks,					150),
 		new /datum/donate_info("Wheely-Heels",				/obj/item/clothing/shoes/wheelys,						200),
 		new /datum/donate_info("Miners Boots",				/obj/item/clothing/shoes/bhop,							200),
@@ -158,6 +160,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Grandma Sweater",			/obj/item/clothing/under/f13/nw_sweater,			125),
 		new /datum/donate_info("Old Brat Sweater",			/obj/item/clothing/under/f13/brat,					125),
 		new /datum/donate_info("Black Combat Uniform",		/obj/item/clothing/under/syndicate/combat,			150),
+		new /datum/donate_info("General's apparel",			/obj/item/clothing/under/f13/white_shortdress,		150),
 		
 	),
 

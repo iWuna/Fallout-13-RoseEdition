@@ -12,6 +12,13 @@
 /obj/machinery/computer/vertibird_console/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
 	radio = new(src)
+	vertibird_console += src
+
 
 /obj/machinery/computer/vertibird_console/attack_hand(mob/user)
 	vertibird:beginFly()
+
+
+/obj/machinery/computer/vertibird_console/Destroy()
+	vertibird_console -= src
+	. = ..()

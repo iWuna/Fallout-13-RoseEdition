@@ -10,7 +10,7 @@
 
 /obj/item/projectile/bullet/incendiary/shotgun
 	name = "incendiary slug"
-	damage = 25
+	damage = 15
 
 /obj/item/projectile/bullet/incendiary/shotgun/dragonsbreath
 	name = "dragonsbreath pellet"
@@ -47,12 +47,12 @@
 
 /obj/item/projectile/bullet/shotgun_frag12
 	name ="frag12 slug"
-	damage = 25
-	knockdown = 50
+	damage = 35
+	knockdown = 10
 
 /obj/item/projectile/bullet/shotgun_frag12/on_hit(atom/target, blocked = FALSE)
 	..()
-	explosion(target, -1, 0, 1)
+	explosion(target, 0, 0, 0, 0, -1, flame_range=2)
 	return TRUE
 
 /obj/item/projectile/bullet/pellet

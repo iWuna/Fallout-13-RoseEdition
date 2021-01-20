@@ -402,7 +402,7 @@
 	id = "ew_frame_pistol_hq"
 	build_type = PROTOLATHE
 	materials = list(MAT_SILVER = 18500, MAT_METAL = 16500, MAT_TITANIUM=10000)
-	build_path = /obj/item/prefabs/complex/energy/frame/pistol
+	build_path = /obj/item/prefabs/complex/energy/frame/hqpistol
 	category = list("Weapon Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 	

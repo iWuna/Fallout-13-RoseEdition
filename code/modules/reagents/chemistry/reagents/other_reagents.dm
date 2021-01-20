@@ -439,6 +439,22 @@
 	race = /datum/species/strigoi
 	mutationtext = "<span class='danger'>The pain subsides. You feel... thirsty for blood.</span>"
 
+/datum/reagent/mutationtoxin/supermutant
+	name = "Forced Evolutionary Virus"
+	id = "supermutantmutationtoxin"
+	description = "A supermutant toxin."
+	color = "#5EFF3B" //RGB: 94, 255, 59
+	race = /datum/species/supermutant
+	mutationtext = "<span class='danger'>The pain subsides. You feel... STRONG!!.</span>"
+
+/datum/reagent/mutationtoxin/nightking
+	name = "Enhanced Forced Evolutionary Virus"
+	id = "nightkinmutationtoxin"
+	description = "A nightkin toxin."
+	color = "#5EFF3B" //RGB: 94, 255, 59
+	race = /datum/species/supermutant/nightkin
+	mutationtext = "<span class='danger'>The pain subsides. You feel... STRONG and afraid to be seen!!.</span>"
+
 //BLACKLISTED RACES
 /datum/reagent/mutationtoxin/skeleton
 	name = "Skeleton Mutation Toxin"

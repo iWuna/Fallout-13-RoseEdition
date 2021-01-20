@@ -187,3 +187,15 @@
 	desc = "Таблетка содержащая токсин, инициирующий процесс мутации."
 	icon_state = "pill18"
 	list_reagents = list("strigoimutationtoxin" = 5)
+
+/obj/item/reagent_containers/pill/supermutant
+	name = "Mutation pill"
+	desc = "Таблетка содержащая токсин, инициирующий процесс мутации."
+	icon_state = "pill18"
+	list_reagents = list("supermutantmutationtoxin" = 5)
+
+/obj/item/reagent_containers/pill/nightkin
+	name = "Mutation pill"
+	desc = "Таблетка содержащая токсин, инициирующий процесс мутации."
+	icon_state = "pill18"
+	list_reagents = list("nightkinmutationtoxin" = 5)
