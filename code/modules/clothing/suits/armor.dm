@@ -909,7 +909,6 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
-	//flags_inv = HIDEJUMPSUIT
 	item_flags = SLOWS_WHILE_IN_HAND
 	clothing_flags = THICKMATERIAL
 	equip_delay_self = 50
@@ -1067,6 +1066,11 @@
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/Destroy()
 	STOP_PROCESSING(SSobj,src)
 	. = ..()
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/equipped(mob/user, slot)
+	. = ..()
+	if (slot == SLOT_WEAR_SUIT)
+		playsound(src, 'sound/f13effects/MedPA.ogg', 50, 1)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/process()
 	if(iscarbon(loc))
