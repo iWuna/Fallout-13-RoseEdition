@@ -118,6 +118,7 @@
 	armour_penetration = 45
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
+	ignore_stealth = TRUE
 
 /mob/living/simple_animal/hostile/deathclaw/legendary
 	name = "legendary deathclaw"
