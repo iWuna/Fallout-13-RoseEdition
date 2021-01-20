@@ -54,7 +54,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/stealth_boy_mk2
-	name = "Stealthboy"
+	name = "Stealthboy MK2"
 	desc = "Advanced Pre-war device that generates a modulating field that transmits the reflected light from one side of an object to another"
 	id = "stealth_boy_mk2"
 	build_type = PROTOLATHE
