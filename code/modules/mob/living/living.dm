@@ -11,6 +11,7 @@
 	var/lust = 0
 	var/multiorgasms = 0
 	var/refactory_period = 0
+	var/memcount = 0
 //end of lewd
 
 /mob/living/Initialize()

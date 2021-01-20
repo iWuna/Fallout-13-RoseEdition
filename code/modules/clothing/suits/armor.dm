@@ -1051,6 +1051,34 @@
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
 
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/medical
+	name = "MP-47/A"
+	desc = "The MP-47/A prototype medic power armor is a U.S. Army variant of T-45d power armor. It was designed to administer medical attention to the user as necessary during combat."
+	icon_state = "t45dpowerarmor"
+	item_state = "t45dpowerarmor"
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
+	armor = list("melee" = 65, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 65, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 100)
+	slowdown = 0.25
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/New() //Начало кода для хила от мед.брони
+	..()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/Destroy()
+	STOP_PROCESSING(SSobj,src)
+	. = ..()
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/process()
+	if(iscarbon(loc))
+		var/mob/living/carbon/M = loc
+		if(M.health < M.maxHealth)
+			M.adjustBruteLoss(-2.5) //Heal that poor bastard
+			M.adjustFireLoss(-2.5)
+			M.adjustToxLoss(-2.5)
+			M.adjustOxyLoss(-2.5)
+
+//Конец кода для хила от мед.брони.
+
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/gunslinger
 	name = "Gunslinger T-51b"
 	desc = "What was once a suit of T-51 Power Armor is now an almost unrecognizable piece of art or garbage, depending on who you ask. Almost all of the external plating has either been removed or stripped to allow for maximum mobility, and overlapping underplates protect the user from small arms fire. Whoever designed this had a very specific purpose in mind: mobility and aesthetics over defense."
