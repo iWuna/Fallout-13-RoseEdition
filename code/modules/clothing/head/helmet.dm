@@ -1128,19 +1128,19 @@
 	item_state = "t45dhelmet"
 	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
 
-/obj/item/clothing/head/helmet/f13/power_armor/t45d/medical
-	name = "MP-47/A power helmet"
-	desc = "Prototype of a medical power helmet. It's pretty fresh inside and pleasant to breathe."
-	icon_state = "t45dhelmet_med"
-	item_state = "t45dhelmet_med"
-	armor = list("melee" = 65, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 65, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 100)
-
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/gunslinger
 	name = "Gunslinger T-51b Helm"
 	desc = "With most of the external plating stripped to allow for internal thermal and night vision scanners, as well as aided targeting assist via onboard systems, this helm provides much more utility then protection. To support these systems, secondary power cells were installed into the helm, and covered with a stylish hat."
 	icon_state = "t51bgs"
 	item_state = "t51bgs"
 	slowdown = 0
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
+
+/obj/item/clothing/head/helmet/f13/power_armor/t45d/outcast
+	name = "Outcast T-45d power helmet"
+	desc = "It's an outcast power armor helmet."
+	icon_state = "t45dhelmet_outcast"
+	item_state = "t45dhelmet_outcast"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
 
 /obj/item/clothing/head/helmet/f13/power_armor/midwest
