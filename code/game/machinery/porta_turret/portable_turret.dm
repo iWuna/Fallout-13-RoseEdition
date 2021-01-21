@@ -165,6 +165,16 @@
 	var/dat
 	dat += "Status: <a href='?src=[REF(src)];power=1'>[on ? "On" : "Off"]</a><br>"
 	dat += "Behaviour controls are [locked ? "locked" : "unlocked"]<br>"
+	var/factions_str = ""
+	for(var/f in faction)
+		if(f == "turret")
+			continue
+		if(factions_str)
+			factions_str += ", [f]"
+		else
+			factions_str += f
+	if(!factions_str)
+		factions_str = "Empty"
 
 	if(!locked)
 		dat += "Check for Weapon Authorization: <A href='?src=[REF(src)];operation=authweapon'>[auth_weapons ? "Yes" : "No"]</A><BR>"
@@ -173,6 +183,10 @@
 		dat += "Neutralize All Non-Security and Non-Command Personnel: <A href='?src=[REF(src)];operation=shootall'>[stun_all ? "Yes" : "No"]</A><BR>"
 		dat += "Neutralize All Unidentified Life Signs: <A href='?src=[REF(src)];operation=checkxenos'>[check_anomalies ? "Yes" : "No"]</A><BR>"
 		dat += "Neutralize All Non-Loyalty Implanted Personnel: <A href='?src=[REF(src)];operation=checkloyal'>[shoot_unloyal ? "Yes" : "No"]</A><BR>"
+		dat += "Neutralize All Unregistered Factions: <A href='?src=[REF(src)];operation=shootnonfaction'>[shootnonfaction ? "Yes" : "No"]</A><BR>"
+		dat += "Registered Factions: [factions_str]<BR>"
+		dat += "<A href='?src=[REF(src)];operation=addfaction'>Add Faction</A><BR>"
+		dat += "<A href='?src=[REF(src)];operation=purgefaction'>Purge Factions</A><BR>"
 	if(issilicon(user))
 		if(!manual_control)
 			var/mob/living/silicon/S = user
@@ -214,6 +228,16 @@
 				check_anomalies = !check_anomalies
 			if("checkloyal")
 				shoot_unloyal = !shoot_unloyal
+			if("shootnonfaction")
+				shootnonfaction = !shootnonfaction
+			if("addfaction")
+				var/factiontoadd = stripped_input(usr, "What faction would you like to add? Valid faction tags are: Vault, BOS, Den, NCR, Legion, Wastelander, capitalization matters and must be put in exactly that and separately.", "Turret Faction Control" , null , 10)
+				if(faction)
+					faction += factiontoadd
+					usr << "You add the [factiontoadd] to the list of factions."
+			if("purgefaction")
+				faction = list("turret")
+				usr << "You hard reset turret faction settings."
 			if("manual")
 				if(issilicon(usr) && !manual_control)
 					give_control(usr)
@@ -1098,5 +1122,6 @@
 			user << "You disable the shooting of non faction members. Now only normal settings may apply."
 		if(safety2 == "Add A Faction")
 			var/factiontoadd = stripped_input(user, "What faction would you like to add? Valid faction tags are: Vault, BOS, Den, NCR, Legion, Wastelander, capitalization matters and must be put in exactly that and separately.", "Turret Faction Control" , null , 10)
-			faction += factiontoadd
-			user << "You add the [factiontoadd] to the list of factions."
+			if(faction)
+				faction += factiontoadd
+				user << "You add the [factiontoadd] to the list of factions."
