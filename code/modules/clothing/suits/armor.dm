@@ -998,6 +998,11 @@
 	var/traits = list(TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	var/hit_reflect_chance = 5 //Делаем рефлекты к ПА, по умолчанию 5 процентов.
 
+/obj/item/clothing/suit/armor/f13/power_armor/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)
+
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
     var/mob/living/carbon/human/H = user
     if(src == H.wear_suit) //Suit is already equipped

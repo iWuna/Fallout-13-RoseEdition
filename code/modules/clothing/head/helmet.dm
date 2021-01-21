@@ -988,6 +988,11 @@
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
 	actions_types = list(/datum/action/item_action/toggle_light)
 
+/obj/item/clothing/head/helmet/f13/power_armor/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)
+
 /obj/item/clothing/head/helmet/f13/power_armor/attack_self(mob/user)
 	on = !on
 //	icon_state = "[initial(icon_state)][on]"
