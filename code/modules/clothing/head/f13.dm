@@ -105,6 +105,10 @@
 	desc = "An old sombrero worn by Vaqueros to keep off the harsh sun."
 	icon_state = "vaquerohat"
 	item_state = "vaquerohat"
+	flags_inv = 0
+	visor_flags_inv = HIDEEARS|HIDEHAIR
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
 	armor = list("melee" = 10, "bullet" = 15, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/khan
@@ -425,7 +429,9 @@
 	desc = "Why are there tricorns in the desert again?"
 	icon_state = "tricorn"
 	item_state = "dethat"
-	flags_inv = HIDEHAIR
+	flags_inv = 0
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 20, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 30, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/head/f13/town/mayor
