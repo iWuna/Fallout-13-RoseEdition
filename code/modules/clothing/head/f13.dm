@@ -235,6 +235,21 @@
 
 /obj/item/clothing/head/soft/f13
 
+/obj/item/clothing/head/soft/f13/dropped()
+	..()
+	icon_state = initial(icon_state)
+
+/obj/item/clothing/head/soft/f13/flip(mob/user)
+	if(!user.incapacitated())
+		src.flipped = !src.flipped
+		if(src.flipped)
+			icon_state = "[item_color]_flipped"
+			to_chat(user, "<span class='notice'>You flip the hat backwards.</span>")
+		else
+			icon_state = "[item_color]"
+			to_chat(user, "<span class='notice'>You flip the hat back in normal position.</span>")
+		usr.update_inv_head()	//so our mob-overlays update
+
 /obj/item/clothing/head/soft/f13/baseball
 	name = "baseball cap"
 	desc = "A type of soft cap with a rounded crown and a stiff peak projecting out the front."
