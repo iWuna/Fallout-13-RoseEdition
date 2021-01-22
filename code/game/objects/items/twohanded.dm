@@ -601,6 +601,7 @@
 	throwforce = 20
 	throw_speed = 2
 	throw_range = 4
+	armour_penetration = 50
 	materials = list(MAT_METAL=13000)
 	attack_verb = list("burned", "welded", "cauterized", "melted", "charred")
 	hitsound = "swing_hit"
