@@ -68,6 +68,7 @@ Administrator
 	jobtype = /datum/job/followers/f13leadpractitioner
 	id = 		/obj/item/card/id/silver
 	chemwhiz = TRUE
+	gloves = 	/obj/item/pda/heads/cmo/fa
 	uniform = 	/obj/item/clothing/under/f13/followers
 	suit= 		/obj/item/clothing/suit/toggle/labcoat/cmo
 	shoes = 	/obj/item/clothing/shoes/f13/brownie

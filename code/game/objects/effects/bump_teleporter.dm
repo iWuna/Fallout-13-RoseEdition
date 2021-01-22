@@ -35,6 +35,3 @@
 	for(var/obj/effect/bump_teleporter/BT in AllTeleporters)
 		if(BT.id == src.id_target)
 			AM.forceMove(BT.loc) //Teleport to location with correct id.
-		if(usr.pulling)
-			usr.pulling.forceMove(BT.loc)
-		return
