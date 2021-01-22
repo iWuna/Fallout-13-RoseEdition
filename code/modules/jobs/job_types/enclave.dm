@@ -50,6 +50,9 @@ Commander
 	suit = /obj/item/clothing/suit/f13/autumn
 	back = /obj/item/storage/backpack/trekker
 	pa_wear = TRUE
+	backpack_contents = list(
+		/obj/item/flashlight/flare/emergency = 3
+	)
 /*
 Medic
 */

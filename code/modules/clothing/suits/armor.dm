@@ -814,7 +814,7 @@
 	desc = "A heavily reinforced set of military grade armor, commonly seen in the Divide now repurposed and reissued to Chief Rangers."
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
-	armor = list("melee" = 65, "bullet" = 60, "laser" = 60, "energy" = 60, "bomb" = 70, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 50)
+	// armor = list("melee" = 65, "bullet" = 60, "laser" = 60, "energy" = 60, "bomb" = 70, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 50)
 	icon = 'icons/fallout/clothing_w/suit.dmi'
 
 
@@ -823,7 +823,7 @@
 	desc = "A refurbished and personalized set of pre-unification desert ranger gear."
 	icon_state = "reclaimed_desert_ranger"
 	item_state = "reclaimed_desert_ranger"
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+	// armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
 	icon = 'icons/fallout/clothing_w/suit.dmi'
 
 /obj/item/clothing/suit/armor/f13/chitinarmor
@@ -922,6 +922,11 @@
 	var/traits = list(TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	var/hit_reflect_chance = 5 //Делаем рефлекты к ПА, по умолчанию 5 процентов.
 	block_chance = 10 //Делаем блок шансы, за неименим Порога Урона, по умолчанию 10% шанса.
+
+/obj/item/clothing/suit/armor/f13/power_armor/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)
 
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
     var/mob/living/carbon/human/H = user
