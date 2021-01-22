@@ -189,6 +189,15 @@
 	name = "Toggle Stealth Boy"
 
 
+/datum/action/item_action/horn
+	name = "Horn!"
+
+/datum/action/item_action/horn/Trigger()
+	if(target)
+		var/obj/item/megaphone/cornu/C = target
+		C.horn(usr)
+
+
 /datum/action/item_action/chainsword/swing
 	name = "Swing!"
 
