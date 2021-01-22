@@ -1150,6 +1150,13 @@
 	item_state = "t45dhelmet_outcast"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
 
+/obj/item/clothing/head/helmet/f13/power_armor/t45d/military
+	name = "Military T-45d power helmet"
+	desc = "A military power armor helmet, that was popular in militia and army. MRE not included."
+	icon_state = "t45dhelmet_military"
+	item_state = "t45dhelmet_military"
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
+
 /obj/item/clothing/head/helmet/f13/power_armor/midwest
 	name = "midwestern power helmet"
 	desc = "This helmet once belonged to the Mid Western branch of the Brotherhood of Steel now residing wherever it's user currently is situated."

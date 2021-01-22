@@ -1146,6 +1146,13 @@
 	item_state = "t45dpowerarmor_outcast"
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/military
+	name = "Military T-45d"
+	desc = "A military power armor, that was popular in militia and army."
+	icon_state = "t45dpowerarmor_military"
+	item_state = "t45dpowerarmor_military"
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
+
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
 	name = "sierra power armor"
 	desc = "A captured set of T-45d power armor put into use by the NCR, it's been heavily modified and decorated with the head of a bear and intricate gold trimming. A two headed bear is scorched into the breastplate."
