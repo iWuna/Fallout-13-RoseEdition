@@ -76,7 +76,7 @@
 	sheet_amount = 3
 
 /obj/item/prefabs/mould/barrel/extended
-	name = "Long Barrel Mould"
+	name = "Sniper Barrel Mould"
 	item_path = /obj/item/prefabs/complex/barrel/extended
 	sheet_amount = 6
 
