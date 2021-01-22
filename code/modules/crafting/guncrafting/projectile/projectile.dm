@@ -470,7 +470,10 @@
 		G.zoom_out_amt = 13
 		G.build_zooming()
 	else
-		G.zoomable = FALSE
+		if(G.zoomable)
+			G.zoomable = FALSE
+			G.azoom.Remove(user)
+			G.azoom = null
 
 	var/obj/item/gun/ballistic/B = G
 	B.magazine = new B.mag_type(B)
