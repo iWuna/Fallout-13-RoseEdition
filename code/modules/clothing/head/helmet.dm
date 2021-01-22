@@ -13,6 +13,7 @@
 	resistance_flags = NONE
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEHAIR
+	var/hud_type = null
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
@@ -1047,6 +1048,27 @@
 	lighting_alpha = null
 	requires_training = FALSE
 
+
+/obj/item/clothing/head/helmet/f13/power_armor/t45d/medical/equipped(mob/living/carbon/human/user, slot)
+	..()
+	if(hud_type && slot == SLOT_HEAD)
+		var/datum/atom_hud/H = GLOB.huds[hud_type]
+		H.add_hud_to(user)
+
+/obj/item/clothing/head/helmet/f13/power_armor/t45d/medical/dropped(mob/living/carbon/human/user)
+	..()
+	if(hud_type && istype(user) && user.head == src)
+		var/datum/atom_hud/H = GLOB.huds[hud_type]
+		H.remove_hud_from(user)
+
+/obj/item/clothing/head/helmet/f13/power_armor/t45d/medical /* Пока я писал код заново, проклял Феню несколько раз*/
+	name = "MP-47/A power helmet"
+	desc = "Prototype of a medical power helmet. It's pretty fresh inside and pleasant to breathe."
+	icon_state = "t45dhelmet"
+	item_state = "t45dhelmet"
+	armor = list("melee" = 65, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 65, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 100)
+	hud_type = DATA_HUD_MEDICAL_ADVANCED
+/*---------------------------------------------------------------КОНЕЦ КОДА МЕД ШЛЕМА, ДА Я БЫДЛО--------------------------------------------------------------------*/
 /obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm
 	name = "raider T-45b power helmet"
 	desc = "This power armor helmet is so decrepit and battle-worn that it have lost most of its capability to protect the wearer from harm. This helmet seems to be heavily modified, heavy metal banding fused to the helmet"

@@ -189,6 +189,11 @@
 	name = "Toggle Stealth Boy"
 
 
+/datum/action/item_action/toggle_stealth
+	name = "Toggle Stealth Suit Mk2"
+
+
+
 /datum/action/item_action/chainsword/swing
 	name = "Swing!"
 
