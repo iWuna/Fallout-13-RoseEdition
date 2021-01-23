@@ -1139,6 +1139,14 @@
 	slowdown = 0
 	light_color = COLOR_DARK_CYAN
 
+/obj/item/clothing/head/helmet/f13/power_armor/x03
+	name = "Hellfire power helmet"
+	desc = "It's a X-03 power helmet with very light and fiery gaze, that scares anyone."
+	icon_state = "x03helmet"
+	item_state = "x03helmet"
+	darkness_view = 135 // Advanced NV
+	armor = list("melee" = 70, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 100, "acid" = 0)
+
 /obj/item/clothing/head/helmet/f13/power_armor/t60
 	name = "T-60a power helmet"
 	desc = "The T-60 powered helmet, equipped with targetting software suite, Friend-or-Foe identifiers, dynamic HuD, and an internal music player."
@@ -1153,6 +1161,7 @@
 	icon_state = "t45dhelmet"
 	item_state = "t45dhelmet"
 	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/medical
 	name = "MP-47/A power helmet"
@@ -1160,6 +1169,7 @@
 	icon_state = "t45dhelmet_med"
 	item_state = "t45dhelmet_med"
 	armor = list("melee" = 65, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 65, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 100)
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/gunslinger
 	name = "Gunslinger T-51b Helm"
@@ -1167,21 +1177,29 @@
 	icon_state = "t51bgs"
 	item_state = "t51bgs"
 	slowdown = 0
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/outcast
 	name = "Outcast T-45d power helmet"
 	desc = "It's an outcast power armor helmet."
 	icon_state = "t45dhelmet_outcast"
 	item_state = "t45dhelmet_outcast"
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/military
 	name = "Military T-45d power helmet"
 	desc = "A military power armor helmet, that was popular in militia and army. MRE not included."
 	icon_state = "t45dhelmet_military"
 	item_state = "t45dhelmet_military"
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
+
+/obj/item/clothing/head/helmet/f13/power_armor/t45d/foil
+	name = "Foil T-45d power helmet"
+	desc = "Very effective against aliens."
+	icon_state = "t45dhelmet_foil"
+	item_state = "t45dhelmet_foil"
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
+	armor = list("melee" = 10, "bullet" = 10, "laser" = 15, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
 
 /obj/item/clothing/head/helmet/f13/power_armor/midwest
 	name = "midwestern power helmet"
