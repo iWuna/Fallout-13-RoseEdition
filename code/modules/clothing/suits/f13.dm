@@ -63,7 +63,7 @@
 	icon_state = "mfp"
 	item_state = "hostrench"
 	body_parts_covered = CHEST|ARMS
-	armor = list(melee = 20, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 20, acid = 0)
+	armor = list(melee = 30, bullet = 25, laser = 20, energy = 20, bomb = 20, bio = 10, rad = 0, fire = 20, acid = 0)
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
 
 /obj/item/clothing/suit/f13/mfp/raider
@@ -572,7 +572,7 @@
 	icon = 'icons/fallout/clothing/suits.dmi'
 	icon_state = "nw_anarchist13"
 	body_parts_covered = FULL_BODY
-	armor = list(melee = 30, bullet = 30, laser = 30, energy = 30, bomb = 30, bio = 30, rad = 30, fire = 30, acid = 30)
+	armor = list(melee = 35, bullet = 30, laser = 25, energy = 20, bomb = 30, bio = 30, rad = 30, fire = 30, acid = 30)
 
 /obj/item/clothing/suit/f13/stas
 	name = "Stas jacket"
@@ -580,11 +580,11 @@
 	icon = 'icons/fallout/clothing/suits.dmi'
 	icon_state = "stas"
 	body_parts_covered = FULL_BODY
-	armor = list(melee = 50, bullet = 50, laser = 50, energy = 50, bomb = 50, bio = 50, rad = 50, fire = 50, acid = 50)
+	armor = list(melee = 45, bullet = 45, laser = 45, energy = 40, bomb = 45, bio = 30, rad = 30, fire = 30, acid = 30)
 
 /obj/item/clothing/suit/f13/snow_coat
 	name = "Lucky Cowboy Coat"
 	desc = "Full of luck"
 	icon_state = "snow_coat"
 	body_parts_covered = FULL_BODY
-	armor = list("melee" = 10, "bullet" = 15, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 10, "fire" = 20, "acid" = 0)
+	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 30, "fire" = 20, "acid" = 10)
