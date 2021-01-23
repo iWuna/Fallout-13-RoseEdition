@@ -198,6 +198,11 @@
 	item_path = /obj/item/prefabs/complex/ammo_loader/m50MG
 	sheet_amount = 20
 
+/obj/item/prefabs/mould/antimateriel/double
+	name = ".50MG Double Internal Magazine Loader Mould"
+	item_path = /obj/item/prefabs/complex/ammo_loader/m50MG/double
+	sheet_amount = 30
+
 // Bolt
 
 /obj/item/prefabs/mould/bolt/simple
