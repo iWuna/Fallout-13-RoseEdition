@@ -587,4 +587,4 @@
 	desc = "Full of luck"
 	icon_state = "snow_coat"
 	body_parts_covered = FULL_BODY
-	armor = list(melee = 30, bullet = 30, laser = 30, energy = 30, bomb = 30, bio = 30, rad = 30, fire = 60, acid = 30)
+	armor = list("melee" = 10, "bullet" = 15, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 10, "fire" = 20, "acid" = 0)
