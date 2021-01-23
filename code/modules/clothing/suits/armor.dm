@@ -1189,6 +1189,14 @@
 	item_state = "t45dpowerarmor_military"
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/foil
+	name = "Foil T-45d"
+	desc = "Very effective against aliens."
+	icon_state = "t45dpowerarmor_foil"
+	item_state = "t45dpowerarmor_foil"
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
+	armor = list("melee" = 10, "bullet" = 10, "laser" = 15, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
+
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
 	name = "sierra power armor"
 	desc = "A captured set of T-45d power armor put into use by the NCR, it's been heavily modified and decorated with the head of a bear and intricate gold trimming. A two headed bear is scorched into the breastplate."
@@ -1233,6 +1241,15 @@
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	slowdown = 0
 	hit_reflect_chance = 10
+
+/obj/item/clothing/suit/armor/f13/power_armor/x03
+	name = "Hellfire power armor"
+	desc = "A BRUTAL set of X-03 Power Armor only for hotty boys."
+	icon_state = "x03powerarmor"
+	item_state = "x03powerarmor"
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
+	armor = list("melee" = 70, "bullet" = 75, "laser" = 55, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 100, "acid" = 0)
+	hit_reflect_chance = 15
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced
 	name = "advanced power armor"
