@@ -196,6 +196,9 @@
 	if(target)
 		var/obj/item/megaphone/cornu/C = target
 		C.horn(usr)
+/datum/action/item_action/toggle_stealth
+	name = "Toggle Stealth Suit Mk2"
+
 
 
 /datum/action/item_action/chainsword/swing
