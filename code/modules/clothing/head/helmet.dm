@@ -13,6 +13,7 @@
 	resistance_flags = NONE
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEHAIR
+	var/hud_type = null
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
@@ -816,10 +817,14 @@
 	desc = "A custom forged steel full helmet complete with abstract points and arches. The face is extremely intimidating, as it was meant to be. This particular one was ordered to be forged by Caesar, given to his second legate in exchange for his undying loyalty to Caesar."
 	icon_state = "leglegat"
 	item_state = "leglegat"
-	armor = list("melee" = 85, "bullet" = 60, "laser" = 40, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 60, "fire" = 80, "acid" = 0)
+	armor = list("melee" = 75, "bullet" = 60, "laser" = 55, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 60, "fire" = 80, "acid" = 0)
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
+
+/obj/item/clothing/head/helmet/f13/legion/legate/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/helmet/f13/legion/marsheaddress
 	name = "priestess' headdress"
@@ -1047,6 +1052,27 @@
 	lighting_alpha = null
 	requires_training = FALSE
 
+
+/obj/item/clothing/head/helmet/f13/power_armor/t45d/medical/equipped(mob/living/carbon/human/user, slot)
+	..()
+	if(hud_type && slot == SLOT_HEAD)
+		var/datum/atom_hud/H = GLOB.huds[hud_type]
+		H.add_hud_to(user)
+
+/obj/item/clothing/head/helmet/f13/power_armor/t45d/medical/dropped(mob/living/carbon/human/user)
+	..()
+	if(hud_type && istype(user) && user.head == src)
+		var/datum/atom_hud/H = GLOB.huds[hud_type]
+		H.remove_hud_from(user)
+
+/obj/item/clothing/head/helmet/f13/power_armor/t45d/medical /* Пока я писал код заново, проклял Феню несколько раз*/
+	name = "MP-47/A power helmet"
+	desc = "Prototype of a medical power helmet. It's pretty fresh inside and pleasant to breathe."
+	icon_state = "t45dhelmet"
+	item_state = "t45dhelmet"
+	armor = list("melee" = 65, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 65, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 100)
+	hud_type = DATA_HUD_MEDICAL_ADVANCED
+/*---------------------------------------------------------------КОНЕЦ КОДА МЕД ШЛЕМА, ДА Я БЫДЛО--------------------------------------------------------------------*/
 /obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm
 	name = "raider T-45b power helmet"
 	desc = "This power armor helmet is so decrepit and battle-worn that it have lost most of its capability to protect the wearer from harm. This helmet seems to be heavily modified, heavy metal banding fused to the helmet"
@@ -1148,6 +1174,13 @@
 	desc = "It's an outcast power armor helmet."
 	icon_state = "t45dhelmet_outcast"
 	item_state = "t45dhelmet_outcast"
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
+
+/obj/item/clothing/head/helmet/f13/power_armor/t45d/military
+	name = "Military T-45d power helmet"
+	desc = "A military power armor helmet, that was popular in militia and army. MRE not included."
+	icon_state = "t45dhelmet_military"
+	item_state = "t45dhelmet_military"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
 
 /obj/item/clothing/head/helmet/f13/power_armor/midwest

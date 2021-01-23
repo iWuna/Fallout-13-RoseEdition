@@ -319,6 +319,7 @@ Mayor
 	loadout_options = list(
 	/datum/outfit/loadout/standardpreacher, //Robes, Book
 	/datum/outfit/loadout/atompreacher, //Atoms Judgement, Followers Robes
+	/datum/outfit/loadout/hubologist,
 	)
 
 	access = list(ACCESS_BAR)
@@ -338,6 +339,15 @@ Mayor
 	l_hand = /obj/item/nullrod
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2
+		)
+
+/datum/outfit/loadout/hubologist
+	name = "Hubologist"
+	suit = /obj/item/clothing/suit/f13/hubologist
+	l_hand = /obj/item/nullrod
+	r_hand = /obj/item/gun/energy/laser/plasma/pistol
+	backpack_contents = list(
+		/obj/item/stock_parts/cell/ammo/ec = 3,	
 		)
 
 /datum/job/den/f13preacher/after_spawn(mob/living/H, mob/M)

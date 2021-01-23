@@ -496,7 +496,7 @@
 	name = "Lucky Cowboy Hat"
 	desc = "With four-leaf clover"
 	icon_state = "snow_cowboy_hat"
-	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/head/f13/general
 	name = "White General Cap"

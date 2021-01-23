@@ -140,74 +140,104 @@
 	name = "hubologist robe"
 	desc = "A black robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist"
-	item_state = "wcoat"
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+	item_state = "hubologist"
+	actions_types = list(/datum/action/item_action/hubo/toggle_hood)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	var/hood = FALSE
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/melee,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/weapon,/obj/item/storage/pill_bottle/dice,/obj/item/dice)
+
+
+/obj/item/clothing/suit/f13/hubologist/proc/toggle_hood()
+	if(hood)
+		icon_state = initial(icon_state)
+		item_state = initial(item_state)
+	else
+		icon_state = "[icon_state]_0"
+		item_state = "[item_state]_0"
+	hood = !hood
+	if(ishuman(src.loc))
+		var/mob/living/carbon/human/H = src.loc
+		H.update_inv_wear_suit()
+	update_icon()
+
 
 /obj/item/clothing/suit/f13/hubologist/bro
 	name = "hubologist robe"
 	desc = "A brown robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist_bro"
+	item_state = "hubologist_bro"
 
 /obj/item/clothing/suit/f13/hubologist/gry
 	name = "hubologist robe"
 	desc = "A gray robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist_gry"
+	item_state = "hubologist_gry"
 
 /obj/item/clothing/suit/f13/hubologist/whi
 	name = "hubologist robe"
 	desc = "A white robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist_whi"
+	item_state = "hubologist_whi"
 
 /obj/item/clothing/suit/f13/hubologist/bbl
 	name = "hubologist robe"
 	desc = "A light-blue robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist_bbl"
+	item_state = "hubologist_bbl"
 
 /obj/item/clothing/suit/f13/hubologist/blu
 	name = "hubologist robe"
 	desc = "A blue robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist_blu"
+	item_state = "hubologist_blu"
 
 /obj/item/clothing/suit/f13/hubologist/red
 	name = "hubologist robe"
 	desc = "A red robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist_red"
+	item_state = "hubologist_red"
 
 /obj/item/clothing/suit/f13/hubologist/ora
 	name = "hubologist robe"
 	desc = "An orange robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist_ora"
+	item_state = "hubologist_ora"
 
 /obj/item/clothing/suit/f13/hubologist/yel
 	name = "hubologist robe"
 	desc = "An yellow robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist_yel"
+	item_state = "hubologist_yel"
 
 /obj/item/clothing/suit/f13/hubologist/pur
 	name = "hubologist robe"
 	desc = "A purple robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist_pur"
+	item_state = "hubologist_pur"
 
 /obj/item/clothing/suit/f13/hubologist/pin
 	name = "hubologist robe"
 	desc = "A pink robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist_pin"
+	item_state = "hubologist_pin"
 
 /obj/item/clothing/suit/f13/hubologist/grn
 	name = "hubologist robe"
 	desc = "A green robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist_grn"
+	item_state = "hubologist_grn"
 
 /obj/item/clothing/suit/f13/hubologist/all
 	name = "hubologist robe"
 	desc = "A colorful robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist_all"
+	item_state = "hubologist_all"
 
 /obj/item/clothing/suit/f13/hubologist/gay
 	name = "habulogayist robe"
 	desc = "A gayish erp robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist_gay"
+	item_state = "hubologist_gay"
 
 /obj/item/clothing/suit/f13/sexymaid
 	name = "sexy maid outfit"
@@ -587,4 +617,4 @@
 	desc = "Full of luck"
 	icon_state = "snow_coat"
 	body_parts_covered = FULL_BODY
-	armor = list(melee = 30, bullet = 30, laser = 30, energy = 30, bomb = 30, bio = 30, rad = 30, fire = 60, acid = 30)
+	armor = list("melee" = 10, "bullet" = 15, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 10, "fire" = 20, "acid" = 0)
