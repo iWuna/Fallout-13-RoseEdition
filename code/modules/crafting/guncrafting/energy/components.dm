@@ -104,8 +104,11 @@
 /obj/item/prefabs/complex/eburst/dual
 	name = "Dual Stream"
 	burst_mod = 1
-	burst_delay_mod = -0.5
+	burst_delay_mod = 1.5
 	complexity = 75
+	bullet_speed_mod = 0.1
+	// tags = list("dual")
+	// incompatible_tags = list("scatter")
 
 
 /obj/item/prefabs/complex/eburst/fast

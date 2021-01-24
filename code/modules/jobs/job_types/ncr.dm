@@ -907,7 +907,7 @@ Veteran Ranger
 	backpack_contents = list(
 		/obj/item/ammo_box/a50MG=3,
 		)
-	whitelist = list("hellpony")
+	whitelist = list("hellpony", "fiaskin")
 
 /*
 Ranger -- Split into Patrol and Scout

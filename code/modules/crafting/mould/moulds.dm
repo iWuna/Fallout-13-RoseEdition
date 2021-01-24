@@ -2,6 +2,7 @@
 	name = "Mould"
 	desc = ""
 	icon_state = "mould"
+	complexity = 0
 
 	var/item_path
 	var/obj/item/stack/mould_sheet_type = /obj/item/stack/sheet/metal
