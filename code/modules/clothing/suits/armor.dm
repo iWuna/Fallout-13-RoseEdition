@@ -1196,6 +1196,10 @@
 	item_state = "t45dpowerarmor_foil"
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 15, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
+	requires_training = FALSE
+	slowdown = 1.35
+	traits = list()
+	hit_reflect_chance = 0 // хуета, а не ПА - не рефлектит
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
 	name = "sierra power armor"
