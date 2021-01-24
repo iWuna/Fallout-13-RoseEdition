@@ -1158,6 +1158,7 @@
 	if(iscarbon(loc))
 		var/mob/living/carbon/M = loc
 		if(M.health < M.maxHealth)
+			new /obj/effect/temp_visual/heal(get_turf(M), "#80F5FF")
 			M.adjustBruteLoss(-3.5) //Heal that poor bastard
 			M.adjustFireLoss(-3.5)
 			M.adjustToxLoss(-3.5)
