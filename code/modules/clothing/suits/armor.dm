@@ -552,27 +552,39 @@
 	flags_inv = HIDEJUMPSUIT|HIDENECK|HIDEEYES|HIDEEARS|HIDEFACE|HIDEMASK|HIDEGLOVES|HIDESHOES
 	clothing_flags = THICKMATERIAL
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 50, "bio" = 60, "rad" = 30, "fire" = 95, "acid" = 100)
+	var/active = FALSE
+	var/mob/living/target
+	actions_types = list(/datum/action/item_action/toggle_stealth)
+	//var/charge = 1000000
+	//var/charge_use = 1
+	//var/brain_loss = 1
+	//var/cooldown = 0
  //заготовка под звуки надевания
 /obj/item/clothing/suit/armor/f13/combat/stealth/equipped(mob/user, slot)
 	. = ..()
 	if (slot == SLOT_WEAR_SUIT)
 		playsound(src, 'sound/f13effects/StealthSuitMk2.ogg', 50, 1)
-/* ---------------------------------------------------------------------------------------------------------------
-	var/active = FALSE
-	var/mob/living/target
-	//var/charge = 1000000
-	//var/charge_use = 1
-	//var/brain_loss = 1
-	//var/cooldown = 0
-	actions_types = list(/datum/action/item_action/toggle_stealthboy)
+/*------------------------------------------------------------------------Е*ЛЯ С КОДОМ-----------------------------------------------------*/
+
 /obj/item/clothing/suit/armor/f13/combat/stealth/Destroy()
 	if(active)
 		STOP_PROCESSING(SSobj,src)
 	return ..()
+
+/obj/item/clothing/suit/armor/f13/combat/stealth/attack_self(mob/user)
+	if(!active)
+		Activate()
+	else
+		Deactivate()
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.UpdateButtonIcon()
+
+
 /obj/item/clothing/suit/armor/f13/combat/stealth/proc/Activate()
 	active = TRUE
 	new /obj/effect/temp_visual/dir_setting/ninja/cloak(get_turf(target), target.dir)
-	target.alpha = 30 - target.special_a * 5
+	target.alpha = 200 - target.special_a * 16
 	do_sparks(2, FALSE, target)
 	//charge -= 10 * charge_use
 	playsound(target, 'sound/effects/sparks4.ogg', 20, 1)
@@ -604,7 +616,7 @@
 			Deactivate()
 			icon_state = initial(icon_state)// + "0"
 			STOP_PROCESSING(SSobj,src)
-----------------------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
 
 
 
@@ -1127,7 +1139,31 @@
 	item_state = "t45dpowerarmor_med"
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 65, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 65, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 100)
-	slowdown = 0.25
+	slowdown = 0.11
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/equipped(mob/user, slot)
+	. = ..()
+	if (slot == SLOT_WEAR_SUIT)
+		playsound(src, 'sound/f13effects/MedPA.ogg', 50, 1)
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/New() //Начало кода для хила от мед.брони
+	..()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/Destroy()
+	STOP_PROCESSING(SSobj,src)
+	. = ..()
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/process()
+	if(iscarbon(loc))
+		var/mob/living/carbon/M = loc
+		if(M.health < M.maxHealth)
+			M.adjustBruteLoss(-3.5) //Heal that poor bastard
+			M.adjustFireLoss(-3.5)
+			M.adjustToxLoss(-3.5)
+			M.adjustOxyLoss(-3.5)
+
+//Конец кода для хила от мед.брони.
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/gunslinger
 	name = "Gunslinger T-51b"
@@ -1152,6 +1188,14 @@
 	icon_state = "t45dpowerarmor_military"
 	item_state = "t45dpowerarmor_military"
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/foil
+	name = "Foil T-45d"
+	desc = "Very effective against aliens."
+	icon_state = "t45dpowerarmor_foil"
+	item_state = "t45dpowerarmor_foil"
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
+	armor = list("melee" = 10, "bullet" = 10, "laser" = 15, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
 	name = "sierra power armor"
@@ -1197,6 +1241,15 @@
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	slowdown = 0
 	hit_reflect_chance = 10
+
+/obj/item/clothing/suit/armor/f13/power_armor/x03
+	name = "Hellfire power armor"
+	desc = "A BRUTAL set of X-03 Power Armor only for hotty boys."
+	icon_state = "x03powerarmor"
+	item_state = "x03powerarmor"
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
+	armor = list("melee" = 70, "bullet" = 75, "laser" = 55, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 100, "acid" = 0)
+	hit_reflect_chance = 15
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced
 	name = "advanced power armor"
@@ -1348,7 +1401,12 @@
 	desc = "The armor appears to be a full suit of heavy gauge steel and offers full body protection. It also has a cloak in excellent condition, but the armor itself bears numerous battle scars and the helmet is missing half of the left horn. The Legate's suit appears originally crafted, in contrast to other Legion armor which consists of repurposed pre-War sports equipment."
 	icon_state = "leglegat"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list("melee" = 85, "bullet" = 60, "laser" = 40, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+	armor = list("melee" = 75, "bullet" = 60, "laser" = 55, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 60, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/legion/legate/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 
 /obj/item/clothing/suit/armor/f13/roma
 	name = "roma legion armor"
