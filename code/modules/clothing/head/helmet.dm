@@ -1201,6 +1201,10 @@
 	item_state = "t45dhelmet_foil"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 15, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
+	darkness_view = 0 //No NV
+	slowdown = 0.2 //No servo
+	lighting_alpha = null
+	requires_training = FALSE
 
 /obj/item/clothing/head/helmet/f13/power_armor/midwest
 	name = "midwestern power helmet"
