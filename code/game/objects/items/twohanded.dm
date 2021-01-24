@@ -1002,7 +1002,23 @@
 
 /obj/item/twohanded/sledgehammer/update_icon()
 	icon_state = "sledgehammer[wielded]"
-
+/*
+/obj/item/twohanded/sledgehammer/supermutant
+	name = "sledgehammer"
+	desc = "A heavy sledgehammer that lost most of its use besides caving in heads."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "sledgehammer0"
+	force = 40
+	force_unwielded = 20
+	force_wielded = 50
+	throwforce = 35
+	species_exception = list(/datum/species/supermutant)
+	species_exclusively = list(/datum/species/supermutant)
+/obj/item/twohanded/sledgehammer/supermutant/proc/mob_can_use(mob/living/carbon/human/H)
+	//var/mob/living/carbon/human/H = user
+	if (!H.dna.species.id == "supermutant" || !H.dna.species.id == "nightkin")
+		H.dropItemToGround(/obj/item/twohanded/sledgehammer/supermutant)
+*/
 /obj/item/twohanded/fireaxe/bmprsword  // DEM AXES MAN, marker -Agouri
 	name = "bumper sword"
 	icon_state = "bmprsword0"
