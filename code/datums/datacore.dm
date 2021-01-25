@@ -102,6 +102,7 @@
 	var/list/was = list()
 	var/list/encl = list()
 	var/list/misc = list()
+	var/list/enc = list()
 	var/dat = {"<meta charset=UTF-8>
 	<head><style>
 		.manifest {border-collapse:collapse;}
@@ -150,7 +151,10 @@
 		if(rank in GLOB.vault_positions)
 			vault[name] = rank
 			department = 1
-		if(rank in GLOB.wasteland_positions)
+		if(rank in GLOB.ankap_positions)
+			enc[name] = rank
+			department = 1
+		if(rank in GLOB.ankap_positions)
 			was[name] = rank
 			department = 1
 		if(!department && !(name in command))
@@ -166,6 +170,11 @@
 	if(bos.len > 0)
 		dat += "<tr><th colspan=3>Brotherhood of Steel</th></tr>"
 		for(var/name in bos)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[bos[name]]</td></tr>"
+			even = !even
+	if(bos.len > 0)
+		dat += "<tr><th colspan=3>Enclave</th></tr>"
+		for(var/name in enc)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[bos[name]]</td></tr>"
 			even = !even
 	if(den.len > 0)
