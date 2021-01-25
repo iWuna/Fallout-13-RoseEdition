@@ -1241,6 +1241,10 @@
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 75, "energy" = 75, "bomb" = 85, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 100)
 	hit_reflect_chance = 30
 
+/obj/item/clothing/suit/armor/f13/power_armor/t60/tesla/Initialize()
+	. = ..()
+	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES | EMP_PROTECT_CONTENTS)
+
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
 	name = "T-51b power armor"
 	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
@@ -1301,6 +1305,10 @@
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 95, "energy" = 95, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 	hit_reflect_chance = 50 //Что не зарефлектит, то зарезистит
+
+/obj/item/clothing/suit/armor/f13/power_armor/tesla/Initialize()
+	. = ..()
+	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES | EMP_PROTECT_CONTENTS)
 
 /obj/item/clothing/suit/armor/f13/power_armor/midwest
 	name = "midwestern power armor"
