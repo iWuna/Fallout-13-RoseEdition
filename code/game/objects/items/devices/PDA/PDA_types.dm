@@ -140,7 +140,7 @@
 	icon_state = "pda-miner"
 
 /obj/item/pda/syndicate
-	default_cartridge = /obj/item/cartridge/virus/syndicate
+	default_cartridge = /obj/item/cartridge/virus/clown
 	icon_state = "pda-syndi"
 	name = "military Pip-Boy 3000"
 	owner = "John Doe"
