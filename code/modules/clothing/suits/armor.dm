@@ -993,7 +993,7 @@
 	heat_protection = 1046
 	//flags_inv = HIDEJUMPSUIT
 	item_flags = SLOWS_WHILE_IN_HAND
-	clothing_flags = THICKMATERIAL
+	clothing_flags = THICKMATERIALPORT
 	equip_delay_self = 50
 	equip_delay_other = 60
 	strip_delay = 200

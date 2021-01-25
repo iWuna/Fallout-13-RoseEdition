@@ -516,6 +516,7 @@
 		target_zone = user.zone_selected
 	if(has_trait(TRAIT_PIERCEIMMUNE))
 		. = 0
+	var/no_skill = FALSE
 	// If targeting the head, see if the head item is thin enough.
 	// If targeting anything else, see if the wear suit is thin enough.
 	if (!penetrate_thick)
@@ -524,14 +525,29 @@
 				var/obj/item/clothing/CH = head
 				if (CH.clothing_flags & THICKMATERIAL)
 					. = 0
+				if(CH.clothing_flags & THICKMATERIALPORT)
+					if(isliving(user))
+						var/mob/living/L = user
+						if(!L.has_trait(TRAIT_PA_WEAR))
+							. = 0
+							no_skill = TRUE
 		else
 			if(wear_suit && istype(wear_suit, /obj/item/clothing))
 				var/obj/item/clothing/CS = wear_suit
 				if (CS.clothing_flags & THICKMATERIAL)
 					. = 0
+				if(CS.clothing_flags & THICKMATERIALPORT)
+					if(isliving(user))
+						var/mob/living/L = user
+						if(!L.has_trait(TRAIT_PA_WEAR))
+							. = 0
+							no_skill = TRUE
 	if(!. && error_msg && user)
 		// Might need re-wording.
-		to_chat(user, "<span class='alert'>There is no exposed flesh or thin material [above_neck(target_zone) ? "on [p_their()] head" : "on [p_their()] body"].</span>")
+		if(no_skill)
+			to_chat(user, "<span class='alert'>You don't have a proper knowledge to find the injection.</span>")
+		else
+			to_chat(user, "<span class='alert'>There is no exposed flesh or thin material [above_neck(target_zone) ? "on [p_their()] head" : "on [p_their()] body"].</span>")
 
 /mob/living/carbon/human/proc/check_obscured_slots()
 	var/list/obscured = list()
