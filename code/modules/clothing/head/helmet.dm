@@ -1148,6 +1148,10 @@
 	armor = list("melee" = 70, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 100, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
 
+/obj/item/clothing/head/helmet/f13/power_armor/x03/alt
+	icon_state = "x03helmet_alt"
+	item_state = "x03helmet_alt"
+
 /obj/item/clothing/head/helmet/f13/power_armor/t60
 	name = "T-60a power helmet"
 	desc = "The T-60 powered helmet, equipped with targetting software suite, Friend-or-Foe identifiers, dynamic HuD, and an internal music player."
@@ -1155,6 +1159,14 @@
 	item_state = "t60helmet"
 	darkness_view = 145 // Advanced NV
 	armor = list("melee" = 75, "bullet" = 70, "laser" = 60, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/power_armor/t60/tesla
+	name = "T-60a power helmet"
+	desc = "The T-60 powered helmet, equipped with targetting software suite, Friend-or-Foe identifiers, dynamic HuD, and an internal music player. <br>There are three orange energy capacitors on the side."
+	icon_state = "t60helmet_tesla"
+	item_state = "t60helmet_tesla"
+	darkness_view = 145 // Advanced NV
+	armor = list("melee" = 60, "bullet" = 55, "laser" = 75, "energy" = 75, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d
 	name = "T-45d power helmet"

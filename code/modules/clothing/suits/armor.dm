@@ -1231,6 +1231,16 @@
 	armor = list("melee" = 75, "bullet" = 70, "laser" = 60, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
 	hit_reflect_chance = 20
 
+/obj/item/clothing/suit/armor/f13/power_armor/t60/tesla
+	name = "T-60a tesla power armor"
+	desc = "The T-60 series of power armor was designed to eventually replace the T-51b as the pinnacle of powered armor technology in the U.S. military arsenal, jury-rigged with a Tesla device that is capable of dispersing a large percentage of the damage done by directed-energy attacks."
+	icon_state = "t60powerarmor_tesla"
+	item_state = "t60powerarmor_tesla"
+	slowdown = 0.16
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
+	armor = list("melee" = 60, "bullet" = 55, "laser" = 75, "energy" = 75, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
+	hit_reflect_chance = 20
+
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
 	name = "T-51b power armor"
 	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
@@ -1260,6 +1270,10 @@
 	hit_reflect_chance = 15
 	heat_protection = 30000
 	cold_protection = 30000
+
+/obj/item/clothing/suit/armor/f13/power_armor/x03/alt
+	icon_state = "x03powerarmor_alt"
+	item_state = "x03powerarmor_alt"
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced
 	name = "advanced power armor"
