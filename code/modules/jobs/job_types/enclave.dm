@@ -92,6 +92,7 @@ Medic
 	ears = /obj/item/radio/headset/headset_enclave
 	back = /obj/item/storage/backpack/trekker
 	pa_wear = FALSE
+	l_pocket = /obj/item/healthanalyzer/advanced
 	suit = /obj/item/clothing/suit/toggle/labcoat/f13/followers
 
 /datum/outfit/loadout/enclave_medic_1
