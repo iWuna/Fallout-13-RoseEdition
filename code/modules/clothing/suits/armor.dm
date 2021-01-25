@@ -1003,6 +1003,7 @@
 	flags_inv = HIDEJUMPSUIT|HIDENECK|HIDEEYES|HIDEEARS|HIDEFACE|HIDEMASK|HIDEGLOVES|HIDESHOES
 	var/traits = list(TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	var/hit_reflect_chance = 5 //Делаем рефлекты к ПА, по умолчанию 5 процентов.
+	var/emp_proof = FALSE
 
 /obj/item/clothing/suit/armor/f13/power_armor/Initialize()
 	. = ..()
@@ -1033,31 +1034,9 @@
 	if (prob(hit_reflect_chance))
 		return 1
 
-/*/obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
-    var/mob/living/carbon/human/H = user
-    if(src == H.wear_suit) //Suit is already equipped
-        return TRUE
-    if (!H.has_trait(TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
-        to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
-        return 0
-    if(slot == SLOT_WEAR_SUIT)
-        H.add_trait(TRAIT_STUNIMMUNE)
-        H.add_trait(TRAIT_PUSHIMMUNE)
-        H.add_trait(TRAIT_IRONFIST)
-        return ..()
-
-/obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
-	var/mob/living/carbon/human/H = user
-	H.remove_trait(TRAIT_STUNIMMUNE)
-	H.remove_trait(TRAIT_PUSHIMMUNE)
-	H.remove_trait(TRAIT_IRONFIST)
-
-	return ..()
-	*/ //Вернуть после теста
-
 /obj/item/clothing/suit/armor/f13/power_armor/emp_act(mob/living/carbon/human/owner, severity)
 	. = ..()
-	if(. & EMP_PROTECT_SELF)
+	if(. & EMP_PROTECT_SELF & emp_proof)
 		return
 	if(emped == 0)
 		if(ismob(loc))
@@ -1240,6 +1219,7 @@
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 75, "energy" = 75, "bomb" = 85, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 100)
 	hit_reflect_chance = 30
+	emp_proof = TRUE
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
 	name = "T-51b power armor"
@@ -1301,6 +1281,7 @@
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 95, "energy" = 95, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 	hit_reflect_chance = 50 //Что не зарефлектит, то зарезистит
+	emp_proof = TRUE
 
 /obj/item/clothing/suit/armor/f13/power_armor/midwest
 	name = "midwestern power armor"
