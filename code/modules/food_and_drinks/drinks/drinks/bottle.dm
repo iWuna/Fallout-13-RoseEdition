@@ -442,7 +442,7 @@
 	..()
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/proc/explode()
-	explosion(src, 0, 0, 0, 0, 0, flame_range=rand(4,6))
+	explosion(src, 0, 0, 0, 0, 0, flame_range=rand(3,4))
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/attackby(obj/item/I, mob/user, params)
 	if(I.is_hot() && !active)

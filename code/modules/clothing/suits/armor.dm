@@ -563,7 +563,7 @@
 /obj/item/clothing/suit/armor/f13/combat/stealth/equipped(mob/user, slot)
 	. = ..()
 	if (slot == SLOT_WEAR_SUIT)
-		playsound(src, 'sound/f13effects/StealthSuitMk2.ogg', 50, 1)
+		playsound(src, 'sound/f13effects/StealthSuitMk2.ogg', 50, 0)
 /*------------------------------------------------------------------------Е*ЛЯ С КОДОМ-----------------------------------------------------*/
 
 /obj/item/clothing/suit/armor/f13/combat/stealth/Destroy()
@@ -993,7 +993,7 @@
 	heat_protection = 1046
 	//flags_inv = HIDEJUMPSUIT
 	item_flags = SLOWS_WHILE_IN_HAND
-	clothing_flags = THICKMATERIAL
+	clothing_flags = THICKMATERIALPORT
 	equip_delay_self = 50
 	equip_delay_other = 60
 	strip_delay = 200
