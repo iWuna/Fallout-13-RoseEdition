@@ -563,7 +563,7 @@
 /obj/item/clothing/suit/armor/f13/combat/stealth/equipped(mob/user, slot)
 	. = ..()
 	if (slot == SLOT_WEAR_SUIT)
-		playsound(src, 'sound/f13effects/StealthSuitMk2.ogg', 50, 1)
+		playsound(src, 'sound/f13effects/StealthSuitMk2.ogg', 50, 0)
 /*------------------------------------------------------------------------Е*ЛЯ С КОДОМ-----------------------------------------------------*/
 
 /obj/item/clothing/suit/armor/f13/combat/stealth/Destroy()
