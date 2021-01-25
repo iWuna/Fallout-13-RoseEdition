@@ -72,10 +72,11 @@ Administrator
 	uniform = 	/obj/item/clothing/under/f13/followers
 	suit= 		/obj/item/clothing/suit/toggle/labcoat/cmo
 	shoes = 	/obj/item/clothing/shoes/f13/brownie
-	belt = 		/obj/item/healthanalyzer/advanced
+	belt = 		/obj/item/storage/belt/medical
 	backpack = 	/obj/item/storage/backpack/medic
 	satchel = 	/obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
+	l_pocket = 	/obj/item/healthanalyzer/advanced
 	backpack_contents = list(
 		/obj/item/reagent_containers/glass/beaker/bluespace=1,
 		/obj/item/storage/firstaid/ancient=1,
