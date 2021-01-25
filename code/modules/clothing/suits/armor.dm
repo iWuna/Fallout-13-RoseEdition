@@ -1219,7 +1219,7 @@
 	item_state = "t45dkc"
 	slowdown = 0.16
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
-	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 95, "fire" = 90, "acid" = 0)
+	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 95, "fire" = 90, "acid" = 100)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t60
 	name = "T-60a power armor"
@@ -1228,7 +1228,7 @@
 	item_state = "t60powerarmor"
 	slowdown = 0.16
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
-	armor = list("melee" = 75, "bullet" = 70, "laser" = 60, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
+	armor = list("melee" = 75, "bullet" = 70, "laser" = 60, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 100)
 	hit_reflect_chance = 20
 
 /obj/item/clothing/suit/armor/f13/power_armor/t60/tesla
@@ -1238,8 +1238,8 @@
 	item_state = "t60powerarmor_tesla"
 	slowdown = 0.16
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
-	armor = list("melee" = 60, "bullet" = 55, "laser" = 75, "energy" = 75, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
-	hit_reflect_chance = 20
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 75, "energy" = 75, "bomb" = 85, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 100)
+	hit_reflect_chance = 30
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
 	name = "T-51b power armor"
@@ -1268,8 +1268,7 @@
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 70, "bullet" = 75, "laser" = 55, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 100, "acid" = 100)
 	hit_reflect_chance = 15
-	heat_protection = 30000
-	cold_protection = 30000
+	max_heat_protection_temperature = FIRE_IMMUNITY_SUIT_MAX_TEMP_PROTECT
 
 /obj/item/clothing/suit/armor/f13/power_armor/x03/alt
 	icon_state = "x03powerarmor_alt"
