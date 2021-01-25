@@ -150,6 +150,15 @@ HEAVY!
 	head = /obj/item/clothing/head/helmet/f13/power_armor/advanced
 	back = /obj/item/minigunpackbal
 
+/datum/outfit/loadout/enclave_heavy_3
+	name = "Pyro Heavy"
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/x03
+	head = /obj/item/clothing/head/helmet/f13/power_armor/x03
+	suit_store = /obj/item/gun/ballistic/automatic/shotgun/bulldog
+	backpack_contents = list(
+			/obj/item/ammo_box/magazine/m12g/dragon = 2
+		)
+	whitelist = list("dosiozborn", "vanotyan", "fiaskin")
 
 /datum/job/enclave/f13usheavy
 	title = "US Heavy Soldier"
@@ -172,7 +181,8 @@ HEAVY!
 
 	loadout_options = list(
 		/datum/outfit/loadout/enclave_heavy_1,
-		/datum/outfit/loadout/enclave_heavy_2
+		/datum/outfit/loadout/enclave_heavy_2,
+		/datum/outfit/loadout/enclave_heavy_3
 	)
 
 /datum/outfit/job/enclave/f13usheavy
