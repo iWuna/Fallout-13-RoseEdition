@@ -1147,6 +1147,7 @@
 	darkness_view = 135 // Advanced NV
 	armor = list("melee" = 70, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 100, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
+	max_heat_protection_temperature = FIRE_IMMUNITY_SUIT_MAX_TEMP_PROTECT
 
 /obj/item/clothing/head/helmet/f13/power_armor/x03/alt
 	icon_state = "x03helmet_alt"
