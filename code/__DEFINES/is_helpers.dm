@@ -47,6 +47,8 @@
 
 #define ishuman(A) (istype(A, /mob/living/carbon/human))
 
+#define isdeathclaw(A) (istype(A, /mob/living/simple_animal/hostile/deathclaw))
+
 //Human sub-species
 #define isabductor(A) (is_species(A, /datum/species/abductor))
 #define isgolem(A) (is_species(A, /datum/species/golem))
