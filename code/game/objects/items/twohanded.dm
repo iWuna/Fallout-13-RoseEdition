@@ -1014,10 +1014,18 @@
 	throwforce = 35
 	species_exception = list(/datum/species/supermutant)
 	species_exclusively = list(/datum/species/supermutant)
-/obj/item/twohanded/sledgehammer/supermutant/proc/mob_can_use(mob/living/carbon/human/H)
-	//var/mob/living/carbon/human/H = user
-	if (!H.dna.species.id == "supermutant" || !H.dna.species.id == "nightkin")
-		H.dropItemToGround(/obj/item/twohanded/sledgehammer/supermutant)
+
+/obj/item/twohanded/sledgehammer/supermutant/equipped(mob/M, slot)
+	if(!issupermutant(M))
+		M.dropItemToGround(src, TRUE)
+		M.visible_message("<span class='warning'>[src] is too heavy for you</span>")
+		return
+	return ..()
+
+/obj/item/twohanded/sledgehammer/supermutant/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning, bypass_equip_delay_self)
+	if(!issupermutant(M))
+		return FALSE
+	return ..()
 */
 /obj/item/twohanded/fireaxe/bmprsword  // DEM AXES MAN, marker -Agouri
 	name = "bumper sword"
