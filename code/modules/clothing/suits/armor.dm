@@ -1056,7 +1056,7 @@
 	if(!istype(H) || H.wear_suit != src)
 		return
 	if(footstep > 1)
-		playsound(src, 'sound/effects/servostep.ogg', 100, 1)
+		playsound(src, 'sound/effects/servostep.ogg', 50, 1)
 		footstep = 0//Если закоментить строчку, на каждый шаг будет звук, а пока через шаг или два.
 	else
 		footstep++
