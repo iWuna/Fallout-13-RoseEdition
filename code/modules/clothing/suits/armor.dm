@@ -1003,13 +1003,15 @@
 	flags_inv = HIDEJUMPSUIT|HIDENECK|HIDEEYES|HIDEEARS|HIDEFACE|HIDEMASK|HIDEGLOVES|HIDESHOES
 	var/traits = list(TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	var/hit_reflect_chance = 5 //Делаем рефлекты к ПА, по умолчанию 5 процентов.
+	var/footstep = 1 //Нужно для звука шагов
+	var/datum/component/mobhook //Тоже нужно для звука шагов
 
 /obj/item/clothing/suit/armor/f13/power_armor/Initialize()
 	. = ..()
 	AddComponent(/datum/component/spraycan_paintable)
 	START_PROCESSING(SSobj, src)
 
-/obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
+/obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1) //Проверка на навык ношения ПА
     var/mob/living/carbon/human/H = user
     if(src == H.wear_suit) //Suit is already equipped
         return TRUE
@@ -1027,13 +1029,13 @@
         H.remove_trait(trait)
     return ..()
 
-/obj/item/clothing/suit/armor/f13/power_armor/IsReflect(def_zone)
+/obj/item/clothing/suit/armor/f13/power_armor/IsReflect(def_zone) //Код рефлекта для ПА
 	if(!(def_zone in list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG))) //If not shot where ablative is covering you, you don't get the reflection bonus!
 		return 0
 	if (prob(hit_reflect_chance))
 		return 1
 
-/obj/item/clothing/suit/armor/f13/power_armor/emp_act(mob/living/carbon/human/owner, severity)
+/obj/item/clothing/suit/armor/f13/power_armor/emp_act(mob/living/carbon/human/owner, severity) //Код применения ЕМП на ПА
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
@@ -1048,6 +1050,33 @@
 				slowdown -= 15
 				armor = armor.modifyRating(melee = 20, bullet = 20, laser = 20)
 				emped = 0
+
+/obj/item/clothing/suit/armor/f13/power_armor/proc/on_mob_move() //Звук движения сервоприводов при ходьбе в ПА
+	var/mob/living/carbon/human/H = loc
+	if(!istype(H) || H.wear_suit != src)
+		return
+	if(footstep > 1)
+		playsound(src, 'sound/effects/servostep.ogg', 100, 1)
+		footstep = 0//Если закоментить строчку, на каждый шаг будет звук, а пока через шаг или два.
+	else
+		footstep++
+/obj/item/clothing/suit/armor/f13/power_armor/equipped(mob/user, slot)
+	. = ..()
+	if (slot == SLOT_WEAR_SUIT)
+		if (mobhook && mobhook.parent != user)
+			QDEL_NULL(mobhook)
+		if (!mobhook)
+			mobhook = user.AddComponent(/datum/component/redirect, list(COMSIG_MOVABLE_MOVED), CALLBACK(src, .proc/on_mob_move))
+	else
+		QDEL_NULL(mobhook)
+
+/obj/item/clothing/suit/armor/f13/power_armor/dropped()
+	. = ..()
+	QDEL_NULL(mobhook)
+
+/obj/item/clothing/suit/armor/f13/power_armor/Destroy()
+	QDEL_NULL(mobhook) // mobhook is not our component
+	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45b
 	name = "salvaged T-45b power armor"
