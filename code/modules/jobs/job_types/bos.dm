@@ -278,8 +278,6 @@ Knight-Captain
 	H.add_trait(TRAIT_CHEMWHIZ)
 
 
-
-
 /datum/outfit/job/bos/f13knightcap
 	name = "Knight-Captain"
 	jobtype = /datum/job/bos/f13knightcap
@@ -533,7 +531,7 @@ Senior Scribe
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_CHEMWHIZ)
+	H.add_trait(TRAIT_CHEMWHIZ, TRAIT_MEDICALEXPERT)
 
 /datum/outfit/job/bos/f13seniorscribe
 	name = "Senior Scribe"
@@ -587,7 +585,7 @@ Scribe
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_CHEMWHIZ)
+	H.add_trait(TRAIT_CHEMWHIZ, TRAIT_MEDICALEXPERT)
 
 /datum/outfit/job/bos/f13scribe
 	name = "Scribe"
