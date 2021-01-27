@@ -1038,10 +1038,12 @@
 /obj/item/clothing/suit/armor/f13/power_armor/emp_act(mob/living/carbon/human/owner, severity) //Код применения ЕМП на ПА
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
+		to_chat(loc, "<span class='warning'>Warning: an electromagnetic pulse detected, but was absorbed by the TESLA system.</span>")
 		return
 	if(emped == 0)
 		if(ismob(loc))
 			to_chat(loc, "<span class='warning'>Warning: electromagnetic surge detected in armor. Rerouting power to emergency systems.</span>")
+			playsound(src, 'sound/f13effects/emp_PA.ogg', 80, 1)
 			slowdown += 15
 			armor = armor.modifyRating(melee = -20, bullet = -20, laser = -20)
 			emped = 1
@@ -1050,13 +1052,13 @@
 				slowdown -= 15
 				armor = armor.modifyRating(melee = 20, bullet = 20, laser = 20)
 				emped = 0
-
+/* Звуки сервоприводов закоменчены, ибо режут слух, ну их нахуй.
 /obj/item/clothing/suit/armor/f13/power_armor/proc/on_mob_move() //Звук движения сервоприводов при ходьбе в ПА
 	var/mob/living/carbon/human/H = loc
 	if(!istype(H) || H.wear_suit != src)
 		return
 	if(footstep > 1)
-		playsound(src, 'sound/effects/servostep.ogg', 50, 1)
+		playsound(src, 'sound/effects/servostep.ogg', 25, 1)
 		footstep = 0//Если закоментить строчку, на каждый шаг будет звук, а пока через шаг или два.
 	else
 		footstep++
@@ -1077,7 +1079,7 @@
 /obj/item/clothing/suit/armor/f13/power_armor/Destroy()
 	QDEL_NULL(mobhook) // mobhook is not our component
 	return ..()
-
+*/
 /obj/item/clothing/suit/armor/f13/power_armor/t45b
 	name = "salvaged T-45b power armor"
 	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and stripped out servomotors. Bulky and slow, but almost as good as the real thing."
