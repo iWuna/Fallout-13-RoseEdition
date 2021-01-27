@@ -1022,6 +1022,7 @@
 /obj/item/clothing/head/helmet/f13/power_armor/emp_act(mob/living/carbon/human/owner, severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
+		to_chat(loc, "<span class='warning'>Warning: an electromagnetic pulse detected, but was absorbed by the TESLA system.</span>")
 		return
 	if(emped == 0)
 		if(ismob(loc))
@@ -1122,6 +1123,7 @@
 	item_state = "tesla"
 	armor = list("melee" = 90, "bullet" = 50, "laser" = 95, "energy" = 95, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 	light_color = COLOR_DARK_CYAN
+	
 
 /obj/item/clothing/head/helmet/f13/power_armor/tesla/Initialize()
 	. = ..()
@@ -1172,6 +1174,10 @@
 	item_state = "t60helmet_tesla"
 	darkness_view = 145 // Advanced NV
 	armor = list("melee" = 60, "bullet" = 55, "laser" = 75, "energy" = 75, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/power_armor/t60/tesla/Initialize()
+	. = ..()
+	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES | EMP_PROTECT_CONTENTS)
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d
 	name = "T-45d power helmet"
