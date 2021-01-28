@@ -278,8 +278,6 @@ Knight-Captain
 	H.add_trait(TRAIT_CHEMWHIZ)
 
 
-
-
 /datum/outfit/job/bos/f13knightcap
 	name = "Knight-Captain"
 	jobtype = /datum/job/bos/f13knightcap
@@ -533,7 +531,7 @@ Senior Scribe
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_CHEMWHIZ)
+	H.add_trait(TRAIT_CHEMWHIZ, TRAIT_MEDICALEXPERT)
 
 /datum/outfit/job/bos/f13seniorscribe
 	name = "Senior Scribe"
@@ -587,7 +585,7 @@ Scribe
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_CHEMWHIZ)
+	H.add_trait(TRAIT_CHEMWHIZ, TRAIT_MEDICALEXPERT)
 
 /datum/outfit/job/bos/f13scribe
 	name = "Scribe"
@@ -827,7 +825,7 @@ Initiate
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/book/granter/trait/chemistry=1,
-		/obj/item/book/granter/trait/field_surgery,
+		/obj/item/book/granter/trait/field_surgery=1,
 		/obj/item/clothing/accessory/bos/initiateS=1
 		)
 
