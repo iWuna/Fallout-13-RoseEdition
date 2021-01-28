@@ -256,7 +256,7 @@
 	name = "Stimpak Fluid"
 	id = "stimpak"
 	results = list("stimpak" = 2)
-	required_reagents = list("blood" = 1, "spaceacillin" = 1)
+	required_reagents = list("blood" = 8, "spaceacillin" = 4)
 	required_temp = 300
 
 /datum/chemical_reaction/medx
