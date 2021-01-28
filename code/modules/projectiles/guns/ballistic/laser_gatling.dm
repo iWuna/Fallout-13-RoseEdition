@@ -103,7 +103,7 @@
 	slot_flags = null
 	w_class = WEIGHT_CLASS_HUGE
 	materials = list()
-	burst_size = 0.60
+	burst_size = 2
 	automatic = 1
 	fire_delay = 0.60
 	spread = 40
