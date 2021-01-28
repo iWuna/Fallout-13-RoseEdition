@@ -99,11 +99,11 @@
 	icon_state = "minigun_spin"
 	item_state = "minigun"
 	flags_1 = CONDUCT_1
-	slowdown = 3.0
+	slowdown = 2.0
 	slot_flags = null
 	w_class = WEIGHT_CLASS_HUGE
 	materials = list()
-	burst_size = 1
+	burst_size = 2
 	automatic = 1
 	fire_delay = 0.60
 	spread = 40
@@ -114,6 +114,7 @@
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
 	spawnwithmagazine = TRUE
 	var/obj/item/minigunpack/ammo_pack
+	projectile_speed = 0.30
 
 /obj/item/gun/ballistic/minigun/Initialize()
 	if(istype(loc, /obj/item/minigunpack)) //We should spawn inside an ammo pack so let's use that one.
