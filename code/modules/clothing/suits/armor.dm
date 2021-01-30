@@ -563,7 +563,7 @@
 /obj/item/clothing/suit/armor/f13/combat/stealth/equipped(mob/user, slot)
 	. = ..()
 	if (slot == SLOT_WEAR_SUIT)
-		playsound(src, 'sound/f13effects/StealthSuitMk2.ogg', 50, 1)
+		playsound(src, 'sound/f13effects/StealthSuitMk2.ogg', 50, 0)
 /*------------------------------------------------------------------------Е*ЛЯ С КОДОМ-----------------------------------------------------*/
 
 /obj/item/clothing/suit/armor/f13/combat/stealth/Destroy()
@@ -993,7 +993,7 @@
 	heat_protection = 1046
 	//flags_inv = HIDEJUMPSUIT
 	item_flags = SLOWS_WHILE_IN_HAND
-	clothing_flags = THICKMATERIAL
+	clothing_flags = THICKMATERIALPORT
 	equip_delay_self = 50
 	equip_delay_other = 60
 	strip_delay = 200
@@ -1003,13 +1003,15 @@
 	flags_inv = HIDEJUMPSUIT|HIDENECK|HIDEEYES|HIDEEARS|HIDEFACE|HIDEMASK|HIDEGLOVES|HIDESHOES
 	var/traits = list(TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	var/hit_reflect_chance = 5 //Делаем рефлекты к ПА, по умолчанию 5 процентов.
+	var/footstep = 1 //Нужно для звука шагов
+	var/datum/component/mobhook //Тоже нужно для звука шагов
 
 /obj/item/clothing/suit/armor/f13/power_armor/Initialize()
 	. = ..()
 	AddComponent(/datum/component/spraycan_paintable)
 	START_PROCESSING(SSobj, src)
 
-/obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
+/obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1) //Проверка на навык ношения ПА
     var/mob/living/carbon/human/H = user
     if(src == H.wear_suit) //Suit is already equipped
         return TRUE
@@ -1027,41 +1029,21 @@
         H.remove_trait(trait)
     return ..()
 
-/obj/item/clothing/suit/armor/f13/power_armor/IsReflect(def_zone)
+/obj/item/clothing/suit/armor/f13/power_armor/IsReflect(def_zone) //Код рефлекта для ПА
 	if(!(def_zone in list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG))) //If not shot where ablative is covering you, you don't get the reflection bonus!
 		return 0
 	if (prob(hit_reflect_chance))
 		return 1
 
-/*/obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
-    var/mob/living/carbon/human/H = user
-    if(src == H.wear_suit) //Suit is already equipped
-        return TRUE
-    if (!H.has_trait(TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
-        to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
-        return 0
-    if(slot == SLOT_WEAR_SUIT)
-        H.add_trait(TRAIT_STUNIMMUNE)
-        H.add_trait(TRAIT_PUSHIMMUNE)
-        H.add_trait(TRAIT_IRONFIST)
-        return ..()
-
-/obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
-	var/mob/living/carbon/human/H = user
-	H.remove_trait(TRAIT_STUNIMMUNE)
-	H.remove_trait(TRAIT_PUSHIMMUNE)
-	H.remove_trait(TRAIT_IRONFIST)
-
-	return ..()
-	*/ //Вернуть после теста
-
-/obj/item/clothing/suit/armor/f13/power_armor/emp_act(mob/living/carbon/human/owner, severity)
+/obj/item/clothing/suit/armor/f13/power_armor/emp_act(mob/living/carbon/human/owner, severity) //Код применения ЕМП на ПА
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
+		to_chat(loc, "<span class='warning'>Warning: an electromagnetic pulse detected, but was absorbed by the TESLA system.</span>")
 		return
 	if(emped == 0)
 		if(ismob(loc))
 			to_chat(loc, "<span class='warning'>Warning: electromagnetic surge detected in armor. Rerouting power to emergency systems.</span>")
+			playsound(src, 'sound/f13effects/emp_PA.ogg', 80, 1)
 			slowdown += 15
 			armor = armor.modifyRating(melee = -20, bullet = -20, laser = -20)
 			emped = 1
@@ -1070,7 +1052,34 @@
 				slowdown -= 15
 				armor = armor.modifyRating(melee = 20, bullet = 20, laser = 20)
 				emped = 0
+/* Звуки сервоприводов закоменчены, ибо режут слух, ну их нахуй.
+/obj/item/clothing/suit/armor/f13/power_armor/proc/on_mob_move() //Звук движения сервоприводов при ходьбе в ПА
+	var/mob/living/carbon/human/H = loc
+	if(!istype(H) || H.wear_suit != src)
+		return
+	if(footstep > 1)
+		playsound(src, 'sound/effects/servostep.ogg', 25, 1)
+		footstep = 0//Если закоментить строчку, на каждый шаг будет звук, а пока через шаг или два.
+	else
+		footstep++
+/obj/item/clothing/suit/armor/f13/power_armor/equipped(mob/user, slot)
+	. = ..()
+	if (slot == SLOT_WEAR_SUIT)
+		if (mobhook && mobhook.parent != user)
+			QDEL_NULL(mobhook)
+		if (!mobhook)
+			mobhook = user.AddComponent(/datum/component/redirect, list(COMSIG_MOVABLE_MOVED), CALLBACK(src, .proc/on_mob_move))
+	else
+		QDEL_NULL(mobhook)
 
+/obj/item/clothing/suit/armor/f13/power_armor/dropped()
+	. = ..()
+	QDEL_NULL(mobhook)
+
+/obj/item/clothing/suit/armor/f13/power_armor/Destroy()
+	QDEL_NULL(mobhook) // mobhook is not our component
+	return ..()
+*/
 /obj/item/clothing/suit/armor/f13/power_armor/t45b
 	name = "salvaged T-45b power armor"
 	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and stripped out servomotors. Bulky and slow, but almost as good as the real thing."
@@ -1219,7 +1228,7 @@
 	item_state = "t45dkc"
 	slowdown = 0.16
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
-	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 95, "fire" = 90, "acid" = 0)
+	armor = list("melee" = 65, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 95, "fire" = 90, "acid" = 100)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t60
 	name = "T-60a power armor"
@@ -1228,8 +1237,22 @@
 	item_state = "t60powerarmor"
 	slowdown = 0.16
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
-	armor = list("melee" = 75, "bullet" = 70, "laser" = 60, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
+	armor = list("melee" = 75, "bullet" = 70, "laser" = 60, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 100)
 	hit_reflect_chance = 20
+
+/obj/item/clothing/suit/armor/f13/power_armor/t60/tesla
+	name = "T-60a tesla power armor"
+	desc = "The T-60 series of power armor was designed to eventually replace the T-51b as the pinnacle of powered armor technology in the U.S. military arsenal, jury-rigged with a Tesla device that is capable of dispersing a large percentage of the damage done by directed-energy attacks."
+	icon_state = "t60powerarmor_tesla"
+	item_state = "t60powerarmor_tesla"
+	slowdown = 0.16
+	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 75, "energy" = 75, "bomb" = 85, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 100)
+	hit_reflect_chance = 30
+
+/obj/item/clothing/suit/armor/f13/power_armor/t60/tesla/Initialize()
+	. = ..()
+	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES | EMP_PROTECT_CONTENTS)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
 	name = "T-51b power armor"
@@ -1258,8 +1281,11 @@
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 70, "bullet" = 75, "laser" = 55, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 100, "acid" = 100)
 	hit_reflect_chance = 15
-	heat_protection = 30000
-	cold_protection = 30000
+	max_heat_protection_temperature = FIRE_IMMUNITY_SUIT_MAX_TEMP_PROTECT
+
+/obj/item/clothing/suit/armor/f13/power_armor/x03/alt
+	icon_state = "x03powerarmor_alt"
+	item_state = "x03powerarmor_alt"
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced
 	name = "advanced power armor"
@@ -1288,6 +1314,10 @@
 	traits = list(TRAIT_IRONFIST, TRAIT_STUNIMMUNE, TRAIT_PUSHIMMUNE)
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 95, "energy" = 95, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 	hit_reflect_chance = 50 //Что не зарефлектит, то зарезистит
+
+/obj/item/clothing/suit/armor/f13/power_armor/tesla/Initialize()
+	. = ..()
+	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES | EMP_PROTECT_CONTENTS)
 
 /obj/item/clothing/suit/armor/f13/power_armor/midwest
 	name = "midwestern power armor"

@@ -1471,7 +1471,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 		M.physiology.armor.laser -= 25
 		M.physiology.armor.energy -= 20
 	switch(current_cycle)
-		if(1 to 25)
+		if(6 to 25)
 			M.confused += 20
 			M.blur_eyes(20)
 			to_chat(M, "<span class='notice'>Your head is pounding. Med-X is hard on the body. </span>")

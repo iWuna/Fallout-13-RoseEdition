@@ -975,7 +975,7 @@
 	slowdown = 0.1
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEMASK|HIDEJUMPSUIT
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	clothing_flags = THICKMATERIAL
+	clothing_flags = THICKMATERIALPORT
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	item_flags = SLOWS_WHILE_IN_HAND
 	flash_protect = 2
@@ -1022,6 +1022,7 @@
 /obj/item/clothing/head/helmet/f13/power_armor/emp_act(mob/living/carbon/human/owner, severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
+		to_chat(loc, "<span class='warning'>Warning: an electromagnetic pulse detected, but was absorbed by the TESLA system.</span>")
 		return
 	if(emped == 0)
 		if(ismob(loc))
@@ -1122,6 +1123,11 @@
 	item_state = "tesla"
 	armor = list("melee" = 90, "bullet" = 50, "laser" = 95, "energy" = 95, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 	light_color = COLOR_DARK_CYAN
+	
+
+/obj/item/clothing/head/helmet/f13/power_armor/tesla/Initialize()
+	. = ..()
+	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES | EMP_PROTECT_CONTENTS)
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b
 	name = "T-51b power helmet"
@@ -1147,6 +1153,11 @@
 	darkness_view = 135 // Advanced NV
 	armor = list("melee" = 70, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 100, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
+	max_heat_protection_temperature = FIRE_IMMUNITY_SUIT_MAX_TEMP_PROTECT
+
+/obj/item/clothing/head/helmet/f13/power_armor/x03/alt
+	icon_state = "x03helmet_alt"
+	item_state = "x03helmet_alt"
 
 /obj/item/clothing/head/helmet/f13/power_armor/t60
 	name = "T-60a power helmet"
@@ -1155,6 +1166,18 @@
 	item_state = "t60helmet"
 	darkness_view = 145 // Advanced NV
 	armor = list("melee" = 75, "bullet" = 70, "laser" = 60, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/power_armor/t60/tesla
+	name = "T-60a power helmet"
+	desc = "The T-60 powered helmet, equipped with targetting software suite, Friend-or-Foe identifiers, dynamic HuD, and an internal music player. <br>There are three orange energy capacitors on the side."
+	icon_state = "t60helmet_tesla"
+	item_state = "t60helmet_tesla"
+	darkness_view = 145 // Advanced NV
+	armor = list("melee" = 60, "bullet" = 55, "laser" = 75, "energy" = 75, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/power_armor/t60/tesla/Initialize()
+	. = ..()
+	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES | EMP_PROTECT_CONTENTS)
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d
 	name = "T-45d power helmet"
