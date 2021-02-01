@@ -255,9 +255,9 @@
 /datum/chemical_reaction/stimpak
 	name = "Stimpak Fluid"
 	id = "stimpak"
-	results = list("stimpak" = 2)
-	required_reagents = list("blood" = 4, "spaceacillin" = 2) //Единственный юзатель не стерпел таких нерфов.
-	required_temp = 300
+	results = list("stimpak" = 1)
+	required_reagents = list("blood" = 2, "spaceacillin" = 4) //Единственный юзатель не стерпел таких нерфов.
+	required_temp = 300										  // О, вы химик? Назовите каждый нерф стимфлюида
 
 /datum/chemical_reaction/medx
 	name = "Med-X Fluid"
