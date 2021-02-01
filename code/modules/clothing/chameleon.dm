@@ -81,11 +81,12 @@
 	var/static/list/standard_outfit_options
 	if(!standard_outfit_options)
 		standard_outfit_options = list()
-		for(var/path in subtypesof(/datum/outfit/job))
+		var/outfits = subtypesof(/datum/outfit/job/bos) + subtypesof(/datum/outfit/job/den) + subtypesof(/datum/outfit/job/enclave) + subtypesof(/datum/outfit/job/followers) + subtypesof(/datum/outfit/job/CaesarsLegion) + subtypesof(/datum/outfit/job/ncr) + subtypesof(/datum/outfit/job/tribal) + subtypesof(/datum/outfit/job/vault) + subtypesof(/datum/outfit/job/wasteland)
+		for(var/path in outfits)
 			var/datum/outfit/O = path
 			if(initial(O.can_be_admin_equipped))
 				standard_outfit_options[initial(O.name)] = path
-		sortTim(standard_outfit_options, /proc/cmp_text_asc)
+		// sortTim(standard_outfit_options, /proc/cmp_text_asc)
 	outfit_options = standard_outfit_options
 
 /datum/action/chameleon_outfit/Trigger()
