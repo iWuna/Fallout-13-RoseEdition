@@ -256,7 +256,7 @@
 	name = "Stimpak Fluid"
 	id = "stimpak"
 	results = list("stimpak" = 2)
-	required_reagents = list("blood" = 4, "spaceacillin" = 2) //Единственный юзатель не стерпел таких нерфов.
+	required_reagents = list("blood" = 1, "spaceacillin" = 1) //Единственный юзатель не стерпел таких нерфов. 02.02.21 Феня вернул справедливость и ревертнул и так бесполезные по эффективности для боевиков стимфлуйды
 	required_temp = 300
 
 /datum/chemical_reaction/medx
