@@ -264,7 +264,7 @@ GLOBAL_LIST_INIT(pipboy_static, list(
 				dat += text("<br><a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update PDA Info" : ""]</A><br><br>")
 
 				dat += "[station_time_timestamp()]<br>" //:[world.time / 100 % 6][world.time / 100 % 10]"
-				dat += "[time2text(world.realtime, "MMM DD")] [GLOB.year_integer+262]"
+				dat += "[time2text(world.realtime, "MMM DD")] 2277"
 
 				dat += "<br><br>"
 
