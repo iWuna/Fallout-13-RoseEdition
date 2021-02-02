@@ -182,6 +182,12 @@
 	icon_state = "pill18"
 	list_reagents = list("radx" = 20)
 
+/obj/item/reagent_containers/pill/cateye
+	name = "Cateye pill"
+	desc = "A pill that enhance user vision via a yellow tint in dark places."
+	icon_state = "cateye_pill"
+	list_reagents = list("cateye" = 10)
+
 /obj/item/reagent_containers/pill/strigoi_donate
 	name = "Mutation pill"
 	desc = "Таблетка содержащая токсин, инициирующий процесс мутации."
