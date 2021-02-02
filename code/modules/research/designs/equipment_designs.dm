@@ -48,7 +48,7 @@
 	id = "stealth_boy"
 	build_type = PROTOLATHE
 	build_path = /obj/item/stealthboy
-	materials = list(MAT_METAL = 36000, MAT_GLASS = 15000, MAT_GOLD = 36000, MAT_SILVER = 32000, MAT_BLUESPACE=60000)
+	materials = list(MAT_METAL = 36000, MAT_GLASS = 15000, MAT_GOLD = 36000, MAT_SILVER = 32000, MAT_BLUESPACE=100000)
 	construction_time = 100
 	category = list("Misc")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
