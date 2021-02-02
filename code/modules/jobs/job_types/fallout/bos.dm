@@ -498,7 +498,7 @@ Paladin
 		/obj/item/clothing/accessory/bos/paladin=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/storage/box/slugshot=1,
-		/obj/item/reagent_containers/hypospray/combat/nanites=1,
+		/obj/item/reagent_containers/hypospray/combat=1,
 		/obj/item/gun/medbeam=1
 		)
 
