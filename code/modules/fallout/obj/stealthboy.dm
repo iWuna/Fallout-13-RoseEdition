@@ -13,15 +13,29 @@
 	var/cooldown = 0
 	actions_types = list(/datum/action/item_action/toggle_stealthboy)
 
+
+/obj/item/stealthboy/makeshift
+	name = "Makeshift Stealth Boy"
+	icon_state = "makeshift_stealth"
+	charge = 80
+	brain_loss = 2
+
+/obj/item/stealthboy/mk2
+	name = "Stealth Boy MK2"
+	icon_state = "stealth_woona"
+	charge = 250
+	brain_loss = 0.6
+
+
 /obj/item/stealthboy/examine(mob/user)
 	..()
 	to_chat(user, "The charge meter reads: [charge].")
+
 
 /obj/item/stealthboy/Destroy()
 	if(active)
 		STOP_PROCESSING(SSobj,src)
 	return ..()
-
 
 /obj/item/stealthboy/attack_self(mob/user)
 	target = user
@@ -76,15 +90,3 @@
 			Deactivate()
 			icon_state = initial(icon_state) + "0"
 			STOP_PROCESSING(SSobj,src)
-
-/obj/item/stealthboy/makeshift
-	name = "Makeshift Stealth Boy"
-	icon_state = "makeshift_stealth"
-	charge = 80
-	brain_loss = 2
-
-/obj/item/stealthboy/mk2
-	name = "Stealth Boy MK2"
-	icon_state = "stealth_woona"
-	charge = 250
-	brain_loss = 0.6
