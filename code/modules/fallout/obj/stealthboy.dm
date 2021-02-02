@@ -52,6 +52,17 @@
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
 
+/obj/item/stealthboy/emp_act(severity)
+	if (!(. & EMP_PROTECT_SELF))
+		if(active)
+			Deactivate()
+
+
+/obj/item/stealthboy/proc/disrupt()
+	if(prob(field_unstability))
+		do_sparks(2, FALSE, target)
+		new/obj/effect/temp_visual/dir_setting/ninja/disrupt(get_turf(target), target.dir)
+
 /obj/item/stealthboy/proc/Activate()
 	active = TRUE
 	new /obj/effect/temp_visual/dir_setting/ninja/cloak(get_turf(target), target.dir)
