@@ -1257,7 +1257,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			else
 				user.do_attack_animation(target, ATTACK_EFFECT_PUNCH)
 
-		var/damage = rand(user.dna.species.punchdamagelow, user.dna.species.punchdamagehigh)
+		var/damage = rand(user.dna.species.punchdamagelow, user.dna.species.punchdamagehigh) + (user.special_s * 2)
 
 		var/obj/item/bodypart/affecting = target.get_bodypart(ran_zone(user.zone_selected))
 
