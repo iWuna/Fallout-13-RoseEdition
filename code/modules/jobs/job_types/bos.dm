@@ -276,7 +276,6 @@ Knight-Captain
 	if(visualsOnly)
 		return
 	H.add_trait(TRAIT_CHEMWHIZ)
-	
 
 
 /datum/outfit/job/bos/f13knightcap

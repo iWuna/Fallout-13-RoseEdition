@@ -330,7 +330,6 @@ Engineer
 	H.add_quirk("Hard Yards")
 	H.add_quirk("Master Gunsmith")
 
-
 /datum/outfit/job/enclave/f13usengineer
 	name = "US Engineer"
 	jobtype = /datum/job/enclave/f13usengineer
