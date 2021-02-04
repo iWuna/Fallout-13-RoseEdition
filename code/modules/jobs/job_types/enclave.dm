@@ -326,6 +326,11 @@ Engineer
 	/datum/outfit/loadout/enclave_eng_3
 	)
 
+/datum/job/enclave/f13usengineer/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+	H.add_quirk("Master Gunsmith")
+
+
 /datum/outfit/job/enclave/f13usengineer
 	name = "US Engineer"
 	jobtype = /datum/job/enclave/f13usengineer
