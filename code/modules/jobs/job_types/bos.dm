@@ -302,6 +302,7 @@ Knight-Captain
 	H.add_quirk("Hard Yards")
 	H.add_quirk("Master Gunsmith")
 
+
 /datum/outfit/loadout/capstand
 	name = "Knight-Captain"
 	backpack_contents = list(
