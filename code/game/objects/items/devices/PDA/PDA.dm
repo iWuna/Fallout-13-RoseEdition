@@ -458,6 +458,13 @@ GLOBAL_LIST_INIT(pipboy_static, list(
 					playsound(src, 'sound/machines/pipboy/select.wav', 15, TRUE)
 			if ("Change_Name", "Register")
 				var/custom_name = input(U, name, "Enter your name")
+
+				// Защита от старой автоподписи пипбоя(меты) "Pip-Boy3000-имя (должность)"
+				if(findtext(custom_name, "(") || findtext(custom_name, ")"))
+					to_chat(U, "<span class='danger'>Wrong character.</span>")
+					playsound(src, 'sound/machines/terminal_error.ogg', 15, TRUE)
+					return 
+				
 				if(custom_name)
 					owner = custom_name
 					ownjob = ""
