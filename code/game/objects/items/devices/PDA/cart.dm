@@ -155,6 +155,11 @@
 	access = CART_STATUS_DISPLAY | CART_SECURITY
 	bot_access_flags = SEC_BOT
 
+/obj/item/cartridge/enclave
+	name = "\improper Big Brother cartridge"
+	icon_state = "cart-eye"
+	access = CART_STATUS_DISPLAY | CART_JANITOR | CART_SECURITY | CART_NEWSCASTER | CART_QUARTERMASTER | CART_DRONEPHONE | CART_MANIFEST
+	bot_access_flags = MULE_BOT | CLEAN_BOT
 
 /obj/item/cartridge/ce
 	name = "\improper Power-On DELUXE cartridge"
