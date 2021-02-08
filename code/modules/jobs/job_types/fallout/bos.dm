@@ -300,6 +300,7 @@ Knight-Captain
 
 /datum/job/bos/f13knightcap/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.add_quirk("Hard Yards")
+	H.add_quirk("Master Gunsmith")
 
 /datum/outfit/loadout/capstand
 	name = "Knight-Captain"

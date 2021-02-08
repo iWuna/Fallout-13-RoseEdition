@@ -55,6 +55,7 @@ GLOBAL_LIST_INIT(pipboy_static, list(
 	var/font_index = 0 //This int tells DM which font is currently selected and lets DM know when the last font has been selected so that it can cycle back to the first font when "toggle font" is pressed again.
 	var/font_mode = "font-family:monospace;" //The currently selected font.
 	var/background_color = "#808000" //The currently selected background color.
+	var/privacy = FALSE // show or hide name on examine, not related to messanger
 
 	#define FONT_MONO "font-family:monospace;"
 	#define FONT_SHARE "font-family:\"Share Tech Mono\", monospace;letter-spacing:0px;"
@@ -245,7 +246,7 @@ GLOBAL_LIST_INIT(pipboy_static, list(
 		dat += "<br><a href='byond://?src=[REF(src)];choice=Toggle_Font'>Toggle Font</a>"
 		dat += " | <a href='byond://?src=[REF(src)];choice=Change_Color'>Change Color</a>"
 		dat += " | <a href='byond://?src=[REF(src)];choice=Reset'>Reset</a>"
-		dat += " | <a href='byond://?src=[REF(src)];choice=Change_Name'>Change name</a>"
+		dat += " | <a href='byond://?src=[REF(src)];choice=Change_Name'>Change Name</a>"
 		dat += " | <a href='byond://?src=[REF(src)];choice=Toggle_Underline'>Toggle Underline</a>" //underline button
 
 		dat += "</div>"
@@ -261,8 +262,13 @@ GLOBAL_LIST_INIT(pipboy_static, list(
 				dat += "<h2>PERSONAL DATA ASSISTANT v.1.2</h2>"
 				dat += "Owner: [owner]<br>"
 				dat += text("ID: <a href='?src=[REF(src)];choice=Authenticate'>[id ? "[id.registered_name], [id.assignment]" : "----------"]")
-				dat += text("<br><a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update PDA Info" : ""]</A><br><br>")
+				dat += text("<br><a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update PDA Info" : ""]</A>")
+				if(privacy)
+					dat += text("<br><a href='byond://?src=[REF(src)];choice=Toggle_Privacy'>Show Name</a>")
+				else
+					dat += text("<br><a href='byond://?src=[REF(src)];choice=Toggle_Privacy'>Hide Name</a>")
 
+				dat += "<br><br>"
 				dat += "[station_time_timestamp()]<br>" //:[world.time / 100 % 6][world.time / 100 % 10]"
 				dat += "[time2text(world.realtime, "MMM DD")] 2277"
 
@@ -458,6 +464,13 @@ GLOBAL_LIST_INIT(pipboy_static, list(
 					playsound(src, 'sound/machines/pipboy/select.wav', 15, TRUE)
 			if ("Change_Name", "Register")
 				var/custom_name = input(U, name, "Enter your name")
+
+				// Защита от старой автоподписи пипбоя(меты) "Pip-Boy3000-имя (должность)"
+				if(findtext(custom_name, "(") || findtext(custom_name, ")"))
+					to_chat(U, "<span class='danger'>Wrong character.</span>")
+					playsound(src, 'sound/machines/terminal_error.ogg', 15, TRUE)
+					return 
+				
 				if(custom_name)
 					owner = custom_name
 					ownjob = ""
@@ -476,6 +489,14 @@ GLOBAL_LIST_INIT(pipboy_static, list(
 					addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/machines/terminal_success.ogg', 15, TRUE), 1.3 SECONDS)
 			if ("Toggle_Underline")
 				underline_flag = !underline_flag
+				if(!silent)
+					playsound(src, 'sound/machines/pipboy/select.wav', 15, TRUE)
+			if ("Toggle_Privacy")
+				privacy = !privacy
+				if(privacy)
+					reset_label()
+				else
+					update_label()
 				if(!silent)
 					playsound(src, 'sound/machines/pipboy/select.wav', 15, TRUE)
 			if("Return")//Return
