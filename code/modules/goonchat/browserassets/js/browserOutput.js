@@ -856,7 +856,7 @@ $(function() {
 		fontSize = fontSize - 1 + 'px';
 		$messages.css({'font-size': fontSize});
 		setCookie('fontsize', fontSize, 365);
-		internalOutput('<span class="internal boldnshit">Font size set to '+fontSize+'</span>', 'internal');
+		internalOutput('<span class="internal boldnshit">Теперь размер текста '+fontSize+'</span>', 'internal');
 	});
 
 	$('#increaseFont').click(function(e) {
@@ -864,7 +864,7 @@ $(function() {
 		fontSize = fontSize + 1 + 'px';
 		$messages.css({'font-size': fontSize});
 		setCookie('fontsize', fontSize, 365);
-		internalOutput('<span class="internal boldnshit">Font size set to '+fontSize+'</span>', 'internal');
+		internalOutput('<span class="internal boldnshit">Теперь размер текста '+fontSize+'</span>', 'internal');
 	});
 
 	$('#decreaseLineHeight').click(function(e) {
@@ -875,7 +875,7 @@ $(function() {
 		lineheightvar = lineheightvar.toFixed(1)
 		$("body").css({'line-height': lineheightvar});
 		setCookie('lineheight', lineheightvar, 365);
-		internalOutput('<span class="internal boldnshit">Line height set to '+lineheightvar+'</span>', 'internal');
+		internalOutput('<span class="internal boldnshit">Высота строк теперь '+lineheightvar+'</span>', 'internal');
 	});
 
 	$('#increaseLineHeight').click(function(e) {
@@ -886,7 +886,7 @@ $(function() {
 		lineheightvar = lineheightvar.toFixed(1)
 		$("body").css({'line-height': lineheightvar});
 		setCookie('lineheight', lineheightvar, 365);
-		internalOutput('<span class="internal boldnshit">Line height set to '+lineheightvar+'</span>', 'internal');
+		internalOutput('<span class="internal boldnshit">Высота строк теперь '+lineheightvar+'</span>', 'internal');
 	});
 
 	$('#togglePing').click(function(e) {
@@ -931,9 +931,9 @@ $(function() {
 		for (var i = 0; i < opts.highlightLimit; i++) {
 			termInputs += '<div><input type="text" name="highlightTermInput'+i+'" id="highlightTermInput'+i+'" class="highlightTermInput'+i+'" maxlength="255" value="'+(opts.highlightTerms[i] ? opts.highlightTerms[i] : '')+'" /></div>';
 		}
-		var popupContent = '<div class="head">String Highlighting</div>' +
+		var popupContent = '<div class="head">Подсветка Слов</div>' +
 			'<div class="highlightPopup" id="highlightPopup">' +
-				'<div>Choose up to '+opts.highlightLimit+' strings that will highlight the line when they appear in chat.</div>' +
+				'<div>Вы можете отметить до '+opts.highlightLimit+' слов, которые будут выделяться, когда они появляются в чате.</div>' +
 				'<form id="highlightTermForm">' +
 					termInputs +
 					'<div><input type="text" name="highlightColor" id="highlightColor" class="highlightColor" '+
