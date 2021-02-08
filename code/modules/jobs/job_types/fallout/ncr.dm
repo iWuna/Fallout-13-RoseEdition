@@ -463,8 +463,8 @@ Corporal
 		/obj/item/stack/sheet/metal/fifty=2,
 		/obj/item/stack/sheet/glass/fifty=1,
 		/obj/item/ammo_box/magazine/m556/rifle=2,
-		/obj/item/book/granter/trait/techno,
-		/obj/item/book/granter/trait/gunsmith
+		/obj/item/book/granter/trait/techno=1,
+		/obj/item/book/granter/trait/gunsmith=1
 		)
 
 /datum/outfit/loadout/specscout

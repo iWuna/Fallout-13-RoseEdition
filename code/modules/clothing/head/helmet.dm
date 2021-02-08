@@ -1123,7 +1123,7 @@
 	item_state = "tesla"
 	armor = list("melee" = 90, "bullet" = 50, "laser" = 95, "energy" = 95, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 	light_color = COLOR_DARK_CYAN
-	
+
 
 /obj/item/clothing/head/helmet/f13/power_armor/tesla/Initialize()
 	. = ..()
@@ -1136,6 +1136,12 @@
 	item_state = "t51bhelmet"
 	darkness_view = 135 // Advanced NV
 	armor = list("melee" = 70, "bullet" = 65, "laser" = 55, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/power_armor/t51b/duster
+	name = "T-51b duster power helmet"
+	desc = "It's a T-51b duster power helmet, typically used by the Brotherhood. Dark sight behind the lense."
+	icon_state = "t51bhelmet_duster"
+	item_state = "t51bhelmet_duster"
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/ultra
 	name = "Ultracite power helmet"

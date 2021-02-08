@@ -146,6 +146,12 @@
 	owner = "John Doe"
 	hidden = 1
 
+/obj/item/pda/enclave
+	default_cartridge = /obj/item/cartridge/enclave
+	icon_state = "pda-warden"
+	name = "Pip-Boy 3000 Mark IV"
+	hidden = 1
+
 /obj/item/pda/chaplain
 	name = "chaplain Pip-Boy 3000"
 	icon_state = "pda-chaplain"

@@ -300,6 +300,7 @@ Knight-Captain
 
 /datum/job/bos/f13knightcap/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.add_quirk("Hard Yards")
+	H.add_quirk("Master Gunsmith")
 
 /datum/outfit/loadout/capstand
 	name = "Knight-Captain"
@@ -498,7 +499,7 @@ Paladin
 		/obj/item/clothing/accessory/bos/paladin=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/storage/box/slugshot=1,
-		/obj/item/reagent_containers/hypospray/combat/nanites=1,
+		/obj/item/reagent_containers/hypospray/combat=1,
 		/obj/item/gun/medbeam=1
 		)
 
