@@ -52,8 +52,8 @@ Great Khan
 	department_head = list("Captain")
 	head_announce = list("Security")
 	faction = "Raider"
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 0
+	spawn_positions = 0
 	description = "Вы не обычный рейдер или дикарь с пустоши, вы - Великий Хан! Ваши предки свирепые и благородные воины и вожди, в честь которых были сложены легенды и песни вашим племенем. Их подвиги рассказывают о пропитанных кровью полях сражений, и их великих жертвах ради будущего всего племени. После изгнания из Вегаса, ханы разбрелись по пустошам, в поисках места, который они могли бы назвать домом. Данный пункт - отличный перевалочный пункт, с которого вы можете начать строить свою империю. В регионе присутствует НКР, но прошло уже более века с той поры, как Выходец из Убежища перебил наших предков. Стоит ли продолжать это бессмысленое сражение, или же стоит укрепить свою наркотическую империю?."
 	supervisors = "Главарь банды"
 	selection_color = "#ff915e"
@@ -144,8 +144,8 @@ Raider
 	head_announce = list("Security")
 	faction = "Raider"
 	social_faction = "Raiders"
-	total_positions = 15
-	spawn_positions = 15
+	total_positions = 12
+	spawn_positions = 12
 	description = "You are an undesirable figure of some kind- perhaps a corrupt official, or a cannibalistic bartender, or a devious conman, to name a few examples. You have more freedom than anyone else in the wastes, and are not bound by the same moral code as others, but though you may only be interested in self-gain, you still have a responsibility to make your time here interesting, fun, and engaging for others- this means that whatever path you pursue should be more nuanced and flavorful than simple highway robbery or slavery. (Adminhelp if you require help setting up your character for the round.)"
 	supervisors = "Your desire to make things interesting and fun"
 	selection_color = "#ff4747"
@@ -376,8 +376,8 @@ Raider
 	title = "Wastelander"
 	flag = F13WASTELANDER
 	faction = "Wastelander"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 20
+	spawn_positions = 20
 	description = "You travelled far to arrive at the ruined town of Pahrump, a bleak paradise far from the troubles of the Mojave Conflict - protected by Red Rock Canyon to the east, free of the many factions vying for control over Nevada. Here in Pahrump, your story and fate is your own."
 	supervisors = "no one"
 	selection_color = "#dddddd"
