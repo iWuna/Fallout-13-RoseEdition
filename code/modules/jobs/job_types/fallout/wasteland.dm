@@ -376,8 +376,8 @@ Raider
 	title = "Wastelander"
 	flag = F13WASTELANDER
 	faction = "Wastelander"
-	total_positions = 20
-	spawn_positions = 20
+	total_positions = 30
+	spawn_positions = 30
 	description = "You travelled far to arrive at the ruined town of Pahrump, a bleak paradise far from the troubles of the Mojave Conflict - protected by Red Rock Canyon to the east, free of the many factions vying for control over Nevada. Here in Pahrump, your story and fate is your own."
 	supervisors = "no one"
 	selection_color = "#dddddd"
