@@ -687,6 +687,11 @@
 	gun.zoom(L, FALSE)
 	..()
 
+/obj/item/gun/proc/rotate(old_dir, new_dir)
+	var/mob/holder = src.loc
+	if(istype(holder))
+		make_view(holder)
+
 /obj/item/gun/proc/zoom(mob/living/user, forced_zoom)
 	if(!user || !user.client)
 		return
@@ -700,26 +705,34 @@
 			zoomed = !zoomed
 
 	if(zoomed)
-		var/_x = 0
-		var/_y = 0
-		switch(user.dir)
-			if(NORTH)
-				_y = zoom_amt
-			if(EAST)
-				_x = zoom_amt
-			if(SOUTH)
-				_y = -zoom_amt
-			if(WEST)
-				_x = -zoom_amt
+		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
+	else
+		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 
-		user.client.change_view(zoom_out_amt)
-		user.client.pixel_x = world.icon_size*_x
-		user.client.pixel_y = world.icon_size*_y
+	if(zoomed)
+		make_view(user)
 	else
 		user.client.change_view(CONFIG_GET(string/default_view))
 		user.client.pixel_x = 0
 		user.client.pixel_y = 0
 	return zoomed
+
+/obj/item/gun/proc/make_view(mob/user)
+	var/_x = 0
+	var/_y = 0
+	switch(user.dir)
+		if(NORTH)
+			_y = zoom_amt
+		if(EAST)
+			_x = zoom_amt
+		if(SOUTH)
+			_y = -zoom_amt
+		if(WEST)
+			_x = -zoom_amt
+			
+	user.client.change_view(zoom_out_amt)
+	user.client.pixel_x = world.icon_size*_x
+	user.client.pixel_y = world.icon_size*_y
 
 //Proc, so that gun accessories/scopes/etc. can easily add zooming.
 /obj/item/gun/proc/build_zooming()
@@ -806,6 +819,28 @@
 	B.zoom(L, FALSE)
 	..()
 
+
+/obj/item/twohanded/binocs/proc/rotate(old_dir, new_dir)
+	var/mob/holder = src.loc
+	if(istype(holder))
+		make_view(holder)
+
+/obj/item/twohanded/binocs/proc/make_view(mob/user)
+	var/_x = 0
+	var/_y = 0
+	switch(user.dir)
+		if(NORTH)
+			_y = zoom_amt
+		if(EAST)
+			_x = zoom_amt
+		if(SOUTH)
+			_y = -zoom_amt
+		if(WEST)
+			_x = -zoom_amt
+	user.client.change_view(zoom_out_amt)
+	user.client.pixel_x = world.icon_size*_x
+	user.client.pixel_y = world.icon_size*_y
+
 /obj/item/twohanded/binocs/proc/zoom(mob/living/user, forced_zoom)
 	if(!user || !user.client)
 		return
@@ -819,21 +854,12 @@
 			zoomed = !zoomed /* WHAT!??? */
 
 	if(zoomed)
-		var/_x = 0
-		var/_y = 0
-		switch(user.dir)
-			if(NORTH)
-				_y = zoom_amt
-			if(EAST)
-				_x = zoom_amt
-			if(SOUTH)
-				_y = -zoom_amt
-			if(WEST)
-				_x = -zoom_amt
-
-		user.client.change_view(zoom_out_amt)
-		user.client.pixel_x = world.icon_size*_x
-		user.client.pixel_y = world.icon_size*_y
+		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
+	else
+		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
+		
+	if(zoomed)
+		make_view(user)
 	else
 		user.client.change_view(CONFIG_GET(string/default_view))
 		user.client.pixel_x = 0

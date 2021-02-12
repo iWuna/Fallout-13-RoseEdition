@@ -351,8 +351,8 @@ Follower Volunteer
 	name = "Followers Ranged Guard"
 	suit_store = /obj/item/gun/ballistic/automatic/m1carbine
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv,
-		/obj/item/ammo_box/magazine/m10mm_adv
+		/obj/item/ammo_box/magazine/m10mm_adv=1,
+		/obj/item/ammo_box/magazine/m10mm_adv=1
 	)
 
 /datum/outfit/loadout/guard_close
