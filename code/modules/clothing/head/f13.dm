@@ -503,3 +503,10 @@
 	desc = "A cross is depicted above the cap."
 	icon_state = "white_cap"
 	item_state = "white_cap"
+
+/obj/item/clothing/head/f13/zubenkomp_hat
+	name = "True Mafiosy Hat"
+	desc = "With smell of Shumilovsky Gorodok"
+	icon_state = "hat_zubenkomp"
+	item_state = "hat_zubenkomp"
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
