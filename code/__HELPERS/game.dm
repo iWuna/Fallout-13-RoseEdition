@@ -504,7 +504,7 @@
 		<span class='name'>[A.name]</span>.</span>"
 	deadchat_broadcast(message, follow_target = character, message_type=DEADCHAT_ARRIVALRATTLE)
 
-	if(character.special_s + character.special_p +  character.special_e +  character.special_c +  character.special_i +  character.special_a +  character.special_l > 40)
+	if(character.special.total() > 40)
 		message_admins("[key_name_admin(character.ckey)] имеет более 40 очков SPECIAL!!!")
 	if((!GLOB.announcement_systems.len) || (!character.mind))
 		return

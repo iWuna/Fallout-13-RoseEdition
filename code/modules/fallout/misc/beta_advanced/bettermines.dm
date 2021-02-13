@@ -52,7 +52,7 @@
 				var/mob/MM = AM
 				if(!(MM.movement_type & FLYING))
 					triggermine(AM)
-				if(!MM.special_a > 8)
+				if(!MM.special.trigger_mines)
 					triggermine(AM)
 			else
 				triggermine(AM)

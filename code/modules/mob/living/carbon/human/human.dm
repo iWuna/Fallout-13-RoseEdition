@@ -191,7 +191,7 @@
 		if(has_breathable_mask && istype(belt, /obj/item/tank))
 			dat += "&nbsp;<A href='?src=[REF(src)];internal=[SLOT_BELT]'>[internal ? "Disable Internals" : "Set Internals"]</A>"
 		dat += "</td></tr>"
-		if(user.special_p > 6)
+		if(user.special.can_see_pockets)
 			dat += "<tr><td>&nbsp;&#8627;<B>Pockets:</B></td><td><A href='?src=[REF(src)];pockets=left'>[(l_store && !(l_store.item_flags & ABSTRACT)) ? l_store : "<font color=grey>Left (Empty)</font>"]</A>"
 			dat += "&nbsp;<A href='?src=[REF(src)];pockets=right'>[(r_store && !(r_store.item_flags & ABSTRACT)) ? r_store : "<font color=grey>Right (Empty)</font>"]</A></td></tr>"
 		else
