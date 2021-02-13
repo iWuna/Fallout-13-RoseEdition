@@ -618,3 +618,10 @@
 	icon_state = "snow_coat"
 	body_parts_covered = FULL_BODY
 	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 30, "fire" = 20, "acid" = 10)
+
+/obj/item/clothing/suit/f13/zubenkomp_su
+	name = "True Mafiosy Suit"
+	desc = "Descripted by ZUBENKO MIHAIL PETROVICH"
+	icon_state = "su_zubenkomp"
+	item_state = "su_zubenkomp"
+	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 30, "fire" = 20, "acid" = 10)
