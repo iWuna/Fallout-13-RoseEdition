@@ -584,7 +584,7 @@
 /obj/item/clothing/suit/armor/f13/combat/stealth/proc/Activate()
 	active = TRUE
 	new /obj/effect/temp_visual/dir_setting/ninja/cloak(get_turf(target), target.dir)
-	target.alpha = 200 - target.special_a * 16
+	target.alpha = 200 - target.special.stealth_armor_mod
 	do_sparks(2, FALSE, target)
 	//charge -= 10 * charge_use
 	playsound(target, 'sound/effects/sparks4.ogg', 20, 1)

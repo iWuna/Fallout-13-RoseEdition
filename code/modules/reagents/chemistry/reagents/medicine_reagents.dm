@@ -1637,6 +1637,16 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	overdose_threshold = 30
 	addiction_threshold = 20
 
+/datum/reagent/medicine/mentat/on_mob_add(mob/living/L)
+	. = ..()
+	L.throw_alert("mentat", /obj/screen/alert/mentat)
+	L.special.adjust(intelligence=2, perception=2)
+
+/datum/reagent/medicine/mentat/on_mob_delete(mob/living/L)
+	. = ..()
+	L.clear_alert("mentat")
+	L.special.adjust(intelligence=-2, perception=-2)
+
 /datum/reagent/medicine/mentat/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-3*REM, 0)
 	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
