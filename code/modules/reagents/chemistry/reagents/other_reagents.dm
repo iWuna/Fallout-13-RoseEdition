@@ -867,21 +867,21 @@
 	color = "#0000CC"
 	taste_description = "fizzling blue"
 
-/datum/reagent/bluespace/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
-		do_teleport(M, get_turf(M), (reac_volume / 5), asoundin = 'sound/effects/phasein.ogg') //4 tiles per crystal
-	..()
+// /datum/reagent/bluespace/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
+// 	if(method == TOUCH || method == VAPOR)
+// 		do_teleport(M, get_turf(M), (reac_volume / 5), asoundin = 'sound/effects/phasein.ogg') //4 tiles per crystal
+// 	..()
 
 /datum/reagent/bluespace/on_mob_life(mob/living/carbon/M)
 	if(current_cycle > 10 && prob(15))
 		to_chat(M, "<span class='warning'>You feel unstable...</span>")
 		M.Jitter(2)
 		current_cycle = 1
-		addtimer(CALLBACK(M, /mob/living/proc/bluespace_shuffle), 30)
+		// addtimer(CALLBACK(M, /mob/living/proc/bluespace_shuffle), 30)
 	..()
 
-/mob/living/proc/bluespace_shuffle()
-	do_teleport(src, get_turf(src), 5, asoundin = 'sound/effects/phasein.ogg')
+// /mob/living/proc/bluespace_shuffle()
+// 	do_teleport(src, get_turf(src), 5, asoundin = 'sound/effects/phasein.ogg')
 
 /datum/reagent/aluminium
 	name = "Aluminium"
