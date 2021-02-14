@@ -208,7 +208,7 @@
 		to_chat(user, "<span class='userdanger'>You need both hands free to fire [src]!</span>")
 		return
 
-	if(user.special.can_use_guns)
+	if(user.special.special_s<2)
 		to_chat(user, "<span class='userdanger'>You can't pull the trigger, you too weak!</span>")
 		return
 
