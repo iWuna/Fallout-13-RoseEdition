@@ -66,7 +66,7 @@
 /obj/item/stealthboy/proc/Activate()
 	active = TRUE
 	new /obj/effect/temp_visual/dir_setting/ninja/cloak(get_turf(target), target.dir)
-	target.alpha = 60 - target.special_a * 5
+	target.alpha = 60 - target.special.stealthboy_mod
 	do_sparks(2, FALSE, target)
 	charge -= 10 * charge_use
 	playsound(target, 'sound/effects/sparks4.ogg', 20, 1)

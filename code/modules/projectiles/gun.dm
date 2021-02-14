@@ -208,11 +208,11 @@
 		to_chat(user, "<span class='userdanger'>You need both hands free to fire [src]!</span>")
 		return
 
-	if(user.special_s<2)
+	if(user.special.can_use_guns)
 		to_chat(user, "<span class='userdanger'>You can't pull the trigger, you too weak!</span>")
 		return
 
-	if(istype(src, /obj/item/gun/energy) && user.special_i <= 3)
+	if(istype(src, /obj/item/gun/energy) && !user.special.can_use_eguns)
 		user.dropItemToGround(src, TRUE)
 		to_chat(user, "<span class='userdanger'>YOU CAN'T UNDERSTAND HOW GUN CAN SHOOT WITH LASER'S AND TRYING TO SHOOT FROM GUN THIS FORM YOU JUST DROP IT ON THE FLOOR!</span>")
 		return
@@ -318,8 +318,6 @@
 		randomized_gun_spread =	rand(0,spread)
 	if(user.has_trait(TRAIT_POOR_AIM)) //nice shootin' tex
 		bonus_spread += 60
-	if(user.special_s<3)
-		bonus_spread += 20
 	var/randomized_bonus_spread = rand(0, bonus_spread)
 
 	if(burst_size > 1)
@@ -571,7 +569,7 @@
 	gun_light.update_brightness()
 	to_chat(user, "<span class='notice'>You toggle the gunlight [gun_light.on ? "on":"off"].</span>")
 
-	if(user.special_l < 3)
+	if(user.special.unlucky)
 		switch(rand(1,5))
 			if(3)
 				to_chat(user,"When you tried turn on flashlight, you hear only click. Nothing happen. Try again.")
