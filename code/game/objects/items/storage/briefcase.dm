@@ -50,8 +50,6 @@
 /obj/item/storage/briefcase/deffbundle
 	name = "emergency briefcase"
 	desc = "Briefcase for holding hardly injured patient recovery tools."
-	icon_state = "duffel-syndiemed"
-	item_state = "duffel-syndiemed"
 
 /obj/item/storage/briefcase/deffbundle/PopulateContents()
 	new /obj/item/stock_parts/cell/high(src)
