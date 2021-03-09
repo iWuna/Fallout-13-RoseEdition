@@ -119,7 +119,7 @@
 /datum/special/proc/from_prefs(datum/preferences/prefs)
 	update_strength(prefs.special_s)
 	update_perception(prefs.special_p)
-	update_endurance(prefs.special_e, initial=TRUE)
+	update_endurance(prefs.special_e/*, initial=TRUE*/)  //Возможно починит Выносливость.
 	update_charisma(prefs.special_c)
 	update_intelligence(prefs.special_i)
 	update_agility(prefs.special_a)
