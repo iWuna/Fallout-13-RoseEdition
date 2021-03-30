@@ -191,10 +191,6 @@
 			else
 				M.forceMove(src)
 
-//common name
-/atom/proc/update_multiz(prune_on_fail = FALSE)
-	return FALSE
-
 /atom/proc/assume_air(datum/gas_mixture/giver)
 	qdel(giver)
 	return null
@@ -628,6 +624,3 @@
 /atom/movable/proc/get_filter(name)
 	if(filter_data && filter_data[name])
 		return filters[filter_data.Find(name)]
-
-/atom/proc/intercept_zImpact(atom/movable/AM, levels = 1)
-	return FALSE

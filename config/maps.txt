@@ -23,7 +23,3 @@ endmap
 map sunnyvale
 	votable
 endmap
-map multiz_debug
-endmap
-map multiz_debug_wasteland
-endmap
