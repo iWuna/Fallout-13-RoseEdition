@@ -77,6 +77,7 @@ Administrator
 	satchel = 	/obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	l_pocket = 	/obj/item/healthanalyzer/advanced
+	neck = /obj/item/clothing/neck/cloak/cmo
 	backpack_contents = list(
 		/obj/item/reagent_containers/glass/beaker/bluespace=1,
 		/obj/item/storage/firstaid/ancient=1,
