@@ -248,9 +248,8 @@ Raider
 	suit = /obj/item/clothing/suit/armor/f13/raider/supafly
 	head = /obj/item/clothing/head/helmet/f13/raider
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/mini_uzi=1,
-		/obj/item/ammo_box/magazine/uzim9mm=3,
-		/obj/item/kitchen/knife/combat=1,
+		/obj/item/gun/ballistic/revolver/m29=1,
+		/obj/item/ammo_box/m44=2,
 		/obj/item/storage/pill_bottle/dice=1,
 		/obj/item/storage/fancy/cigarettes/cigpack_cannabis=1)
 
@@ -260,7 +259,7 @@ Raider
 	head = /obj/item/clothing/head/helmet/f13/raider/yankee
 	backpack_contents = list(
 		/obj/item/twohanded/baseball/spiked=1,
-		/obj/item/gun/ballistic/shotgun/remington/scoped=1,
+		/obj/item/gun/ballistic/shotgun/remington=1,
 		/obj/item/ammo_box/a308=2,
 		/obj/item/storage/fancy/cigarettes/cigpack_cannabis=1,
 		/obj/item/megaphone=1)
@@ -271,7 +270,7 @@ Raider
 	head = /obj/item/clothing/head/helmet/f13/raider/blastmaster
 	backpack_contents = list(
 		/obj/item/twohanded/fireaxe=1,
-		/obj/item/gun/ballistic/automatic/pistol/n99/pers/glock=1,
+		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/grenade/iedcasing=2,
 		/obj/item/ammo_box/magazine/m10mm_auto = 2)
 
@@ -280,8 +279,8 @@ Raider
 	suit = /obj/item/clothing/suit/armor/f13/raider/sadist
 	head = /obj/item/clothing/head/helmet/f13/raider/arclight
 	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/m29 = 1,
-		/obj/item/ammo_box/m44 = 2,
+		/obj/item/gun/ballistic/revolver/colt357 = 1,
+		/obj/item/ammo_box/a357 = 2,
 		/obj/item/clothing/mask/gas/explorer/folded=1,
 		/obj/item/storage/belt/tribe_quiver = 1,
 		/obj/item/twohanded/spear = 1)
@@ -291,7 +290,7 @@ Raider
 	suit = /obj/item/clothing/suit/armor/f13/raider/badlands
 	head = /obj/item/clothing/head/helmet/f13/fiend
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola/tactical=1,
+		/obj/item/restraints/legcuffs/bola=1,
 		/obj/item/gun/ballistic/automatic/pistol/m1911 = 1,
 		/obj/item/ammo_box/magazine/m45 = 2,
 		/obj/item/reagent_containers/hypospray/medipen/psycho=2,
@@ -314,7 +313,6 @@ Raider
 	suit = /obj/item/clothing/suit/armor/f13/exile/bosexile
 	uniform = /obj/item/clothing/under/syndicate
 	id = /obj/item/card/id/rusted/brokenholodog
-	belt = /obj/item/stealthboy/makeshift
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2)
@@ -335,7 +333,7 @@ Raider
 	id = /obj/item/card/id/rusted/rustedmedallion
 	backpack_contents = list(
 		/obj/item/claymore/machete/gladius=1,
-		/obj/item/restraints/legcuffs/bola=2,
+		/obj/item/restraints/legcuffs/bola=1,
 		/obj/item/storage/backpack/spearquiver=1)
 
 /datum/outfit/loadout/raider_sheriff
@@ -344,8 +342,6 @@ Raider
 	uniform = /obj/item/clothing/under/syndicate/tacticool
 	head = /obj/item/clothing/head/helmet/f13/brahmincowboyhat
 	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/m29=1,
-		/obj/item/ammo_box/m44=2,
 		/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy=1,
 		/obj/item/ammo_box/tube/a357=2)
 
@@ -363,12 +359,12 @@ Raider
 
 /datum/outfit/loadout/raider_vault
 	name = "Vault Outcast"
-	suit = /obj/item/clothing/suit/armor/f13/leatherarmor
+	suit = /obj/item/clothing/suit/armor/f13/kit
 	uniform = /obj/item/clothing/under/f13/exile/vault
 	id = /obj/item/card/id/rusted/fadedvaultid
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/ammo_box/magazine/m10mm_adv=3)
+		/obj/item/ammo_box/magazine/m10mm_adv=2)
 
 /obj/item/stealthboy/makeshift
 
@@ -493,7 +489,6 @@ Raider
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	head = list(/obj/item/clothing/head/fedora,
  	/obj/item/clothing/head/f13/gambler)
-	l_hand = /obj/item/gun/ballistic/automatic/pistol/ninemil
 	backpack_contents =  list(
 		/obj/item/ammo_box/magazine/m9mm=2)
 
