@@ -35,10 +35,6 @@
 	var/atom/middragatom
 	mouse_pointer_icon = 'icons/misc/cursors.dmi'
 
-/obj/MouseEntered()
-	..()
-	src.icon_state= "over"
-
 /client/MouseDown(object, location, control, params)
 	if (mouse_down_icon)
 		mouse_pointer_icon = mouse_down_icon

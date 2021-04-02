@@ -62,8 +62,7 @@
 					/obj/item/device/radio/prc = 4500,
 					/obj/item/crafting/weapon_parts/ballistic = 2500,
 					/obj/item/crafting/weapon_parts/energy = 4500,
-					/obj/item/crafting/weapon_parts/plasma = 6500,
-					/obj/item/weapon/dildo = 100000
+					/obj/item/crafting/weapon_parts/plasma = 6500
 					)
 
 /*  АНКЛАВ */
