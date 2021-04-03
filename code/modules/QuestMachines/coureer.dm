@@ -29,7 +29,7 @@
 	free_access = TRUE
 	quest_type = /datum/bounty_quest/faction/coureer
 	price_list = list(
-	/obj/item/parcel = 400,
+	/obj/item/parcel = 250,
 	/obj/item/crafting/duct_tape = 50
 					)
 
