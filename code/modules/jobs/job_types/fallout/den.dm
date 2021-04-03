@@ -773,7 +773,8 @@ Mayor
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/wasteland/f13coureer
 	department_head = list("Sheriff")
-
+	access = list(ACCESS_CLADMEN)
+	minimal_access = list(ACCESS_CLADMEN)
 	exp_requirements = 80
 	exp_type = EXP_TYPE_CREW
 
