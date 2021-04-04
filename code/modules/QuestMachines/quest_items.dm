@@ -18,6 +18,8 @@
 
 	var/datum/mind/for_who = null
 
+	var/mob/living/carbon/human/faction = null
+
 	var/fuckup_chance = 60
 	var/prepared = FALSE
 
@@ -135,6 +137,7 @@
 	for(var/mob/living/L in GLOB.alive_mob_list)
 		if((L in GLOB.player_list))
 			for_who = L.mind
+			faction = L.faction
 
 
 /obj/item/parcel/New()
@@ -161,12 +164,15 @@
 				if(icon_state == "smallbox")
 					icon_state = "smallbox1"
 					item_state = "smallbox"
-				desc = "Посылка явно содержащая в себе что-то ценное, предназначена для [for_who.name]."
+				desc = "Посылка явно содержащая в себе что-то ценное, предназначена для [for_who.name] из [user.faction[3]]."
 				qdel(I)
 				prepared = TRUE
 				fuckup_chance = rand(50,70)
 	else
 		if(istype(I, /obj/item/kitchen/knife) | istype(I, /obj/item/claymore/machete))
+			if (!isturf(src.loc) || !(locate(/obj/structure/table) in src.loc) && !(locate(/obj/structure/table/optable) in src.loc))
+				to_chat(user, "<span class='warning'>Вы должны делать это на столе.</span>")
+				return FALSE
 			if(user.mind == for_who)
 				if(do_after(user, 30, target = src))
 					var/obj/item/booty = pick(possible_item)

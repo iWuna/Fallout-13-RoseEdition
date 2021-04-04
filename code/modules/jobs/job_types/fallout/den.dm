@@ -775,7 +775,7 @@ Mayor
 	department_head = list("Sheriff")
 	access = list(ACCESS_CLADMEN)
 	minimal_access = list(ACCESS_CLADMEN)
-	exp_requirements = 80
+	exp_requirements = 1000
 	exp_type = EXP_TYPE_CREW
 
 /datum/outfit/job/wasteland/f13coureer

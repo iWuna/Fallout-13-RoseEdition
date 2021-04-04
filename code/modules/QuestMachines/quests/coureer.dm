@@ -1,4 +1,4 @@
-/datum/bounty_quest/faction/Courier/qst_0
+/datum/bounty_quest/faction/courier/qst_0
 	name = "Мальчик на побегушках"
 	desc = "Вот очередная посылка, вы знаете что делать."
 	employer = "Почтовое Отделение"
