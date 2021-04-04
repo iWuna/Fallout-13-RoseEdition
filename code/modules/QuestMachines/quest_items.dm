@@ -166,7 +166,7 @@
 				prepared = TRUE
 				fuckup_chance = rand(50,70)
 	else
-		if(istype(I, /obj/item/kitchen/knife))
+		if(istype(I, /obj/item/kitchen/knife) | istype(I, /obj/item/claymore/machete))
 			if(user.mind == for_who)
 				if(do_after(user, 30, target = src))
 					var/obj/item/booty = pick(possible_item)

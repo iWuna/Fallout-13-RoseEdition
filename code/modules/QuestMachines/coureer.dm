@@ -1,4 +1,4 @@
-/obj/machinery/bounty_machine/coureer
+/obj/machinery/bounty_machine/courier
 	/* Available item types and prices. [key] - item type< [value] - item price*/
 	var/list/price_list = list()
 
@@ -25,12 +25,12 @@
 */
 /*  КУРЬЕР */
 
-/obj/machinery/bounty_machine/coureer/post
+/obj/machinery/bounty_machine/courier/post
 	name = "Терминал Посылок"
 	desc = "Этот терминал использует курьер, что бы получать новые посылки."
 	icon_state = "terminal"
 	free_access = TRUE
-	quest_type = /datum/bounty_quest/faction/coureer
+	quest_type = /datum/bounty_quest/faction/courier
 	price_list = list(
 	/obj/item/parcel = 250,
 	/obj/item/crafting/duct_tape = 50
@@ -39,19 +39,19 @@
 /*
 ================ Mechanics ======================
 */
-/obj/machinery/bounty_machine/coureer/New()
+/obj/machinery/bounty_machine/courier/New()
 	..()
 	for(var/i = 1; i <= price_list.len; i++)
 		var/target_type = price_list[i]
 		var/atom/A = new target_type(src)
 		items_ref_list.Add(A)
 
-/obj/machinery/bounty_machine/coureer/Destroy()
+/obj/machinery/bounty_machine/courier/Destroy()
 	for(var/atom/Itm in items_ref_list)
 		qdel(Itm)
 
 /* Add caps */
-/obj/machinery/bounty_machine/coureer/proc/add_caps(var/obj/item/stack/f13Cash/bottle_cap/C)
+/obj/machinery/bounty_machine/courier/proc/add_caps(var/obj/item/stack/f13Cash/bottle_cap/C)
 	if(!C) return
 
 	var/mob/character = usr
@@ -63,7 +63,7 @@
 		qdel(C)
 
 /* Spawn all caps on world and clear caps storage */
-/obj/machinery/bounty_machine/coureer/proc/remove_all_caps()
+/obj/machinery/bounty_machine/courier/proc/remove_all_caps()
 	if(stored_caps <= 0)
 		return
 	var/obj/item/stack/f13Cash/bottle_cap/C = new/obj/item/stack/f13Cash/bottle_cap
@@ -79,7 +79,7 @@
 	src.ShowUI(usr)
 
 /* Buy item */
-/obj/machinery/bounty_machine/coureer/proc/buy(var/item_index, var/mob/user)
+/obj/machinery/bounty_machine/courier/proc/buy(var/item_index, var/mob/user)
 	if(item_index > price_list.len)
 		to_chat(usr, "<span class='warning'>Неверный предмет! *бип*</span>")
 		return
@@ -105,7 +105,7 @@
 		to_chat(usr, "<span class='warning'>Недостаточно средств.</span>")
 
 /*  INTERACTION */
-/obj/machinery/bounty_machine/coureer/attackby(var/obj/item/OtherItem, var/mob/living/carbon/human/user, parameters)
+/obj/machinery/bounty_machine/courier/attackby(var/obj/item/OtherItem, var/mob/living/carbon/human/user, parameters)
 
 	if(OtherItem.GetID())
 		if(allowed(user))
@@ -122,7 +122,7 @@
 
 /* GUI */
 /* Shop UI*/
-/obj/machinery/bounty_machine/coureer/proc/GetShopUI()
+/obj/machinery/bounty_machine/courier/proc/GetShopUI()
 	var/dat = {"<meta charset="UTF-8">"}
 	dat += "<h1>Посылки и поощерения</h1>"
 	dat += "<a href='?src=\ref[src];exit=1'>Выход</a><br><br>"
@@ -147,7 +147,7 @@
 	return dat
 
 /* Quest UI */
-/obj/machinery/bounty_machine/coureer/proc/GetQuestUI()
+/obj/machinery/bounty_machine/courier/proc/GetQuestUI()
 	var/dat = {"<meta charset="UTF-8">"}
 	var/datum/asset/assets = get_asset_datum(/datum/asset/simple/bounty_employers)
 	assets.send(usr)
@@ -182,7 +182,7 @@
 
 	return dat
 
-/obj/machinery/bounty_machine/coureer/ShowUI()
+/obj/machinery/bounty_machine/courier/ShowUI()
 	if(!locked)
 		var/dat
 		if(vend_mode)
@@ -198,7 +198,7 @@
 		to_chat(usr, "<span class='danger'>Доступ запрещен.</span>")
 
 /* Topic */
-/obj/machinery/bounty_machine/coureer/Topic(href, href_list)
+/obj/machinery/bounty_machine/courier/Topic(href, href_list)
 	..()
 	if(href_list["exit"])
 		vend_mode = 0

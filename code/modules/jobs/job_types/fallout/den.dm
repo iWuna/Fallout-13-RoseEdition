@@ -763,7 +763,7 @@ Mayor
 /*--------------------------------------------------------------*/
 
 /datum/job/wasteland/f13coureer
-	title = "Coureer"
+	title = "Courier"
 	flag = F13COUREER
 	faction = "Town"
 	total_positions = 1
@@ -779,7 +779,7 @@ Mayor
 	exp_type = EXP_TYPE_CREW
 
 /datum/outfit/job/wasteland/f13coureer
-	name = "Coureer"
+	name = "Courier"
 	jobtype = /datum/job/wasteland/f13coureer
 	ears = /obj/item/radio/headset/headset_den
 	uniform = /obj/item/clothing/under/f13/lumberjack
