@@ -161,8 +161,7 @@
 				if(icon_state == "smallbox")
 					icon_state = "smallbox1"
 					item_state = "smallbox"
-				if(user.mind == for_who)
-					desc = "Посылка явно содержащая в себе что-то ценное, предназначена для [for_who.name]."
+				desc = "Посылка явно содержащая в себе что-то ценное, предназначена для [for_who.name]."
 				qdel(I)
 				prepared = TRUE
 				fuckup_chance = rand(50,70)
