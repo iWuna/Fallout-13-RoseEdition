@@ -20,11 +20,11 @@
 /*
 ================ Content =====================
 */
-/*  КУРЬЕР */
+/*  РљРЈР Р¬Р•Р  */
 
 /obj/machinery/bounty_machine/coureer/post
-	name = "Терминал Посылок"
-	desc = "Этот терминал использует курьер, что бы получать новые посылки."
+	name = "РўРµСЂРјРёРЅР°Р» РџРѕСЃС‹Р»РѕРє"
+	desc = "Р­С‚РѕС‚ С‚РµСЂРјРёРЅР°Р» РёСЃРїРѕР»СЊР·СѓРµС‚ РєСѓСЂСЊРµСЂ, С‡С‚Рѕ Р±С‹ РїРѕР»СѓС‡Р°С‚СЊ РЅРѕРІС‹Рµ РїРѕСЃС‹Р»РєРё."
 	icon_state = "terminal"
 	free_access = TRUE
 	quest_type = /datum/bounty_quest/faction/coureer
@@ -78,7 +78,7 @@
 /* Buy item */
 /obj/machinery/bounty_machine/coureer/proc/buy(var/item_index, var/mob/user)
 	if(item_index > price_list.len)
-		to_chat(usr, "Неверный предмет! *бип*")
+		to_chat(usr, "РќРµРІРµСЂРЅС‹Р№ РїСЂРµРґРјРµС‚! *Р±РёРї*")
 		return
 
 	if(!connected_pod)
@@ -97,9 +97,9 @@
 
 		// Create item
 		new target_type(connected_pod.loc)
-		to_chat(usr, "Готово. *буп-бип*")
+		to_chat(usr, "Р“РѕС‚РѕРІРѕ. *Р±СѓРї-Р±РёРї*")
 	else
-		to_chat(usr, "Недостаточно средств.")
+		to_chat(usr, "РќРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ СЃСЂРµРґСЃС‚РІ.")
 
 /*  INTERACTION */
 /obj/machinery/bounty_machine/coureer/attackby(obj/item/OtherItem, /mob/living/carbon/human/user, parameters)
@@ -112,10 +112,10 @@
 /* Shop UI*/
 /obj/machinery/bounty_machine/coureer/proc/GetShopUI()
 	var/dat = {"<meta charset="UTF-8">"}
-	dat += "<h1>Посылки и поощерения</h1>"
-	dat += "<a href='?src=\ref[src];exit=1'>Выход</a><br><br>"
-	dat += "<font color = 'green'>Баланс: [stored_caps]</font>"
-	dat += "<a href='?src=\ref[src];removecaps=1'>Забрать</a><br>"
+	dat += "<h1>РџРѕСЃС‹Р»РєРё Рё РїРѕРѕС‰РµСЂРµРЅРёСЏ</h1>"
+	dat += "<a href='?src=\ref[src];exit=1'>Р’С‹С…РѕРґ</a><br><br>"
+	dat += "<font color = 'green'>Р‘Р°Р»Р°РЅСЃ: [stored_caps]</font>"
+	dat += "<a href='?src=\ref[src];removecaps=1'>Р—Р°Р±СЂР°С‚СЊ</a><br>"
 
 	dat += "<div class='statusDisplay'>"
 	for(var/i = 1; i <= price_list.len; i++)
@@ -125,11 +125,11 @@
 		if(stored_caps < price_list[itm_type])
 			dat += "<a href='?src=\ref[src];examine=[i]'>?</a>"
 			dat += "<font color = 'grey'><b> [itm_ref] - [price] </b></font>"
-			dat += "<a href='?src=\ref[src];buy=[i]'>Купить</a><br>"
+			dat += "<a href='?src=\ref[src];buy=[i]'>РљСѓРїРёС‚СЊ</a><br>"
 		else
 			dat += "<a href='?src=\ref[src];examine=[i]'>?</a>"
 			dat += "<font color = 'green'><b> [itm_ref] - [price] </b></font>"
-			dat += "<a href='?src=\ref[src];buy=[i]'>Купить</a><br>"
+			dat += "<a href='?src=\ref[src];buy=[i]'>РљСѓРїРёС‚СЊ</a><br>"
 	dat += ""
 	dat += "</div>"
 	return dat
@@ -143,12 +143,12 @@
 	dat += "<h1>Wasteland Parcel Post</h1>"
 
 	if(connected_pod)
-		dat += "<font color='green'>Квантовая площадка найдена</font><br>"
-		dat += "<a href='?src=\ref[src];findpod=1'>Сканировать</a>"
+		dat += "<font color='green'>РљРІР°РЅС‚РѕРІР°СЏ РїР»РѕС‰Р°РґРєР° РЅР°Р№РґРµРЅР°</font><br>"
+		dat += "<a href='?src=\ref[src];findpod=1'>РЎРєР°РЅРёСЂРѕРІР°С‚СЊ</a>"
 	else
-		dat += "<font color='red'>Квантовая площадка не обнаружена</font><br>"
-		dat += "<a href='?src=\ref[src];findpod=1'>Сканировать</a>"
-	dat += "<a href='?src=\ref[src];shop=1'>Посылки и поощерения</a><br>"
+		dat += "<font color='red'>РљРІР°РЅС‚РѕРІР°СЏ РїР»РѕС‰Р°РґРєР° РЅРµ РѕР±РЅР°СЂСѓР¶РµРЅР°</font><br>"
+		dat += "<a href='?src=\ref[src];findpod=1'>РЎРєР°РЅРёСЂРѕРІР°С‚СЊ</a>"
+	dat += "<a href='?src=\ref[src];shop=1'>РџРѕСЃС‹Р»РєРё Рё РїРѕРѕС‰РµСЂРµРЅРёСЏ</a><br>"
 	dat += "<style>.leftimg {float:left;margin: 7px 7px 7px 0;}</style>"
 
 	dat += "<h2>Contracts:</h2>"
@@ -157,14 +157,14 @@
 		//usr << browse_rsc(Q.GetIconWithPath(), Q.employer_icon)
 		dat += "<div class='statusDisplay'>"
 		dat += "<font color='green'><b>ID: </b> [Q.name]</font><br>"
-		dat += "<font color='green'><b>Заказчик: </b> [Q.employer]</font><br>"
-		dat += "<font color='green'><b>Сообщение:</b></font>"
+		dat += "<font color='green'><b>Р—Р°РєР°Р·С‡РёРє: </b> [Q.employer]</font><br>"
+		dat += "<font color='green'><b>РЎРѕРѕР±С‰РµРЅРёРµ:</b></font>"
 		dat += "<font color='green'>[Q.desc]</font><br><br>"
-		dat += "<font color='green'><b>Надо: </b></font>"
+		dat += "<font color='green'><b>РќР°РґРѕ: </b></font>"
 		dat += "<font color='green'><i>[Q.need_message]. </i></font><br>"
-		dat += "<font color='green'><b>Награда за доставку:</b></font>"
-		dat += "<font color='green'> [Q.caps_reward] крышек</font><br>"
-		dat += "<a href='?src=\ref[src];completequest=[item_index]'>Отправить</a><br>"
+		dat += "<font color='green'><b>РќР°РіСЂР°РґР° Р·Р° РґРѕСЃС‚Р°РІРєСѓ:</b></font>"
+		dat += "<font color='green'> [Q.caps_reward] РєСЂС‹С€РµРє</font><br>"
+		dat += "<a href='?src=\ref[src];completequest=[item_index]'>РћС‚РїСЂР°РІРёС‚СЊ</a><br>"
 		dat += "</div>"
 		item_index++
 
