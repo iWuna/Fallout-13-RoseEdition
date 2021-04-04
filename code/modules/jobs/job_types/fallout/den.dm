@@ -805,8 +805,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/reagent_containers/pill/radx=1,
-		/obj/item/storage/bag/money/small/wastelander=1,
-		/obj/item/parcel/prepared=1)
+		/obj/item/storage/bag/money/small/wastelander=1)
 	suit_store = pick(
 	/obj/item/gun/ballistic/revolver/detective,
 	/obj/item/gun/ballistic/shotgun/remington,

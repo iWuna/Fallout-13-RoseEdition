@@ -17,6 +17,9 @@
 	/* In vend mode user can buy items. If not - user can complete quests */
 	var/vend_mode = 0
 
+	var/locked = 1
+
+	req_access = list(ACCESS_CLADMEN)
 /*
 ================ Content =====================
 */
@@ -56,7 +59,7 @@
 		var/caps_count = C.amount
 		stored_caps += caps_count
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "[stored_caps] caps added.")
+		to_chat(usr, "<span class='notice'>[stored_caps] крышек добавлено.</span>")
 		qdel(C)
 
 /* Spawn all caps on world and clear caps storage */
@@ -78,11 +81,11 @@
 /* Buy item */
 /obj/machinery/bounty_machine/coureer/proc/buy(var/item_index, var/mob/user)
 	if(item_index > price_list.len)
-		to_chat(usr, "Неверный предмет! *бип*")
+		to_chat(usr, "<span class='warning'>Неверный предмет! *бип*</span>")
 		return
 
 	if(!connected_pod)
-		to_chat(usr, "No pod connected")
+		to_chat(usr, "<span class='warning'>No pod connected</span>")
 		return
 
 	var/target_type = price_list[item_index]
@@ -97,12 +100,21 @@
 
 		// Create item
 		new target_type(connected_pod.loc)
-		to_chat(usr, "Готово. *буп-бип*")
+		to_chat(usr, "<span class='notice'>Готово. *буп-бип*</span>")
 	else
-		to_chat(usr, "Недостаточно средств.")
+		to_chat(usr, "<span class='warning'>Недостаточно средств.</span>")
 
 /*  INTERACTION */
-/obj/machinery/bounty_machine/coureer/attackby(obj/item/OtherItem, /mob/living/carbon/human/user, parameters)
+/obj/machinery/bounty_machine/coureer/attackby(var/obj/item/OtherItem, var/mob/living/carbon/human/user, parameters)
+
+	if(OtherItem.GetID())
+		if(allowed(user))
+			locked = !locked
+			to_chat(user, "<span class='notice'>Вы [src.locked ? "заблокировали" : "разблокировали"] терминал.</span>")
+			to_chat(user, "<span class='danger'>Не забудьте заблокировать терминал, курьер.</span>")
+		else
+			to_chat(user, "<span class='danger'>Доступ запрещен..</span>")
+		return
 
 	// CAPS
 	if(istype(OtherItem, /obj/item/stack/f13Cash/bottle_cap))
@@ -171,16 +183,19 @@
 	return dat
 
 /obj/machinery/bounty_machine/coureer/ShowUI()
-	var/dat
-	if(vend_mode)
-		dat = GetShopUI()
-	else
-		dat = GetQuestUI()
+	if(!locked)
+		var/dat
+		if(vend_mode)
+			dat = GetShopUI()
+		else
+			dat = GetQuestUI()
 
-	var/datum/browser/popup = new(usr, "bounty", "Wasteland Parcel Contracts Database", 640, 400) // Set up the popup browser window
-	popup.set_content(dat)
-	popup.set_title_image(usr.browse_rsc_icon(src.icon, src.icon_state))
-	popup.open()
+		var/datum/browser/popup = new(usr, "bounty", "Wasteland Parcel Contracts Database", 640, 400) // Set up the popup browser window
+		popup.set_content(dat)
+		popup.set_title_image(usr.browse_rsc_icon(src.icon, src.icon_state))
+		popup.open()
+	else
+		to_chat(usr, "<span class='danger'>Доступ запрещен.</span>")
 
 /* Topic */
 /obj/machinery/bounty_machine/coureer/Topic(href, href_list)

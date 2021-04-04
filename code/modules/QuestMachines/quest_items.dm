@@ -1,6 +1,6 @@
 /obj/item/mark
 	name = "postal mark"
-	desc = "Важная бумажка для курьера, если вы не курьер, отдайте её ему."
+	desc = "Р’Р°Р¶РЅР°СЏ Р±СѓРјР°Р¶РєР° РґР»СЏ РєСѓСЂСЊРµСЂР°, РµСЃР»Рё РІС‹ РЅРµ РєСѓСЂСЊРµСЂ, РѕС‚РґР°Р№С‚Рµ РµС‘ РµРјСѓ."
 	icon = 'icons/obj/quest_items.dmi'
 	icon_state = "marka1"
 
@@ -10,7 +10,7 @@
 
 /obj/item/parcel
 	name = "parcel"
-	desc = "Посылка явно содержащая в себе что-то ценное, а может и не очень."
+	desc = "РџРѕСЃС‹Р»РєР° СЏРІРЅРѕ СЃРѕРґРµСЂР¶Р°С‰Р°СЏ РІ СЃРµР±Рµ С‡С‚Рѕ-С‚Рѕ С†РµРЅРЅРѕРµ, Р° РјРѕР¶РµС‚ Рё РЅРµ РѕС‡РµРЅСЊ."
 	icon = 'icons/obj/quest_items.dmi'
 	icon_state = "bigbox"
 	item_state = "bigbox"
@@ -162,7 +162,7 @@
 					icon_state = "smallbox1"
 					item_state = "smallbox"
 				if(user.mind == for_who)
-					desc = "Посылка явно содержащая в себе что-то ценное, предназначена для [for_who.name]."
+					desc = "РџРѕСЃС‹Р»РєР° СЏРІРЅРѕ СЃРѕРґРµСЂР¶Р°С‰Р°СЏ РІ СЃРµР±Рµ С‡С‚Рѕ-С‚Рѕ С†РµРЅРЅРѕРµ, РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅР° РґР»СЏ [for_who.name]."
 				qdel(I)
 				prepared = TRUE
 				fuckup_chance = rand(50,70)
@@ -173,16 +173,16 @@
 					var/obj/item/booty = pick(possible_item)
 					booty = new booty(loc)
 					new /obj/item/mark(loc)
-					to_chat(user, "<span class='notice'>Вы нашли [booty] внутри [src].</span>")
+					to_chat(user, "<span class='notice'>Р’С‹ РЅР°С€Р»Рё [booty] РІРЅСѓС‚СЂРё [src].</span>")
 					qdel(src)
 			else
 				if(do_after(user, 50, target = src))
 					if(prob(fuckup_chance))
-						to_chat(user, "<span class='notice'>Вы умудрились сломать содержимое посылки...</span>")
+						to_chat(user, "<span class='notice'>Р’С‹ СѓРјСѓРґСЂРёР»РёСЃСЊ СЃР»РѕРјР°С‚СЊ СЃРѕРґРµСЂР¶РёРјРѕРµ РїРѕСЃС‹Р»РєРё...</span>")
 						new /obj/effect/gibspawner/robot(src.loc)
 						qdel(src)
 					else
 						var/obj/item/booty = pick(possible_item_screwup)
 						booty = new booty(loc)
-						to_chat(user, "<span class='notice'>Вы нашли [booty] внутри [src].</span>")
+						to_chat(user, "<span class='notice'>Р’С‹ РЅР°С€Р»Рё [booty] РІРЅСѓС‚СЂРё [src].</span>")
 						qdel(src)
