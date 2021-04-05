@@ -1732,3 +1732,69 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 		H.vomit(10)
 	..()
 	. = 1
+
+/datum/reagent/medicine/buffout
+	name = "Buffout Powder"
+	id = "buffout"
+	description = "A powerful drug that heals and increases the perception and intelligence of the user."
+	color = "#C8A5DC"
+	reagent_state = SOLID
+	overdose_threshold = 30
+	addiction_threshold = 20
+
+/datum/reagent/medicine/buffout/on_mob_add(mob/living/L)
+	. = ..()
+	L.throw_alert("buffout", /obj/screen/alert/buffout)
+	L.special.adjust(strength=2, agility=2, endurance=3)
+
+/datum/reagent/medicine/buffout/on_mob_delete(mob/living/L)
+	. = ..()
+	L.clear_alert("buffout")
+	L.special.adjust(strength=-2, agility=-2, endurance=-3)
+
+/datum/reagent/medicine/buffout/on_mob_life(mob/living/carbon/M)
+	M.adjustBrainLoss(1*REM)
+	if(prob(5))
+		to_chat(M, "<span class='notice'>You feel way more powerful and athletic!</span>")
+	..()
+	. = 1
+
+/datum/reagent/medicine/buffout/overdose_process(mob/living/M)
+	if(prob(33))
+		M.Dizzy(2)
+		M.Jitter(2)
+		M.adjustBrainLoss(2*REM)
+	..()
+
+/datum/reagent/medicine/buffout/addiction_act_stage1(mob/living/M)
+	if(prob(33))
+		M.Jitter(2)
+	..()
+
+/datum/reagent/medicine/buffout/addiction_act_stage2(mob/living/M)
+	if(prob(33))
+		. = 1
+		M.Dizzy(3)
+		M.Jitter(3)
+	..()
+
+/datum/reagent/medicine/buffout/addiction_act_stage3(mob/living/M)
+	if(prob(33))
+		M.adjustToxLoss(1*REM, 0)
+		M.adjustBrainLoss(2*REM)
+		. = 1
+		M.Dizzy(4)
+		M.Jitter(4)
+		M.special.adjust(strength=-2, agility=-2, endurance=-3)
+	..()
+
+/datum/reagent/medicine/buffout/addiction_act_stage4(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(2*REM, 0)
+		M.adjustBrainLoss(4*REM)
+		. = 1
+		M.Dizzy(5)
+		M.Jitter(5)
+		M.special.adjust(strength=-4, agility=-4, endurance=-5)
+	..()
