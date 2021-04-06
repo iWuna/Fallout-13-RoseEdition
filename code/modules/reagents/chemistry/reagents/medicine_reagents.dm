@@ -1739,8 +1739,8 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	description = "A powerful drug that heals and increases the perception and intelligence of the user."
 	color = "#C8A5DC"
 	reagent_state = SOLID
-	overdose_threshold = 30
-	addiction_threshold = 20
+	overdose_threshold = 80
+	addiction_threshold = 30
 
 /datum/reagent/medicine/buffout/on_mob_add(mob/living/L)
 	. = ..()
@@ -1753,7 +1753,6 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	L.special.adjust(strength=-2, agility=-2, endurance=-3)
 
 /datum/reagent/medicine/buffout/on_mob_life(mob/living/carbon/M)
-	M.adjustBrainLoss(1*REM)
 	if(prob(5))
 		to_chat(M, "<span class='notice'>You feel way more powerful and athletic!</span>")
 	..()
@@ -1798,3 +1797,32 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 		M.Jitter(5)
 		M.special.adjust(strength=-4, agility=-4, endurance=-5)
 	..()
+
+//костыль для саквояжа//
+
+/datum/reagent/medicine/suckuaiage
+	name = "suckuaiage instruments"
+	id = "suckuaiage"
+	description = null
+	reagent_state = SOLID
+	color = "#FAFAFA"
+	overdose_threshold = 50
+	metabolization_rate = 2 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/suckuaiage/on_mob_add(mob/living/carbon/M)
+	var/power = 3 * M.special._intelligence
+	M.adjustToxLoss(-3 * power, 0)
+	M.adjustOxyLoss(-4 * power, 0)
+	M.adjustBruteLoss(-4 * power, 0)
+	M.adjustFireLoss(-4 * power, 0)
+	..()
+
+/datum/reagent/medicine/suckuaiage/on_mob_delete(mob/M)
+	..()
+
+/datum/reagent/medicine/suckuaiage/on_mob_life(mob/living/carbon/M)
+	var/high_message = pick("Your wounds feel much better.", "Your wounds heal very quickly.", "You feel like you're ready to fight again.")
+	if(prob(5))
+		to_chat(M, "<span class='notice'>[high_message]</span>")
+	..()
+	. = 1

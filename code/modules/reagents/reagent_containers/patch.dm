@@ -76,15 +76,23 @@
 	self_delay = 0
 
 /obj/item/reagent_containers/pill/patch/voodoo
-    name = "Voodoo"
-    desc = "A tribal concoction, made from the left-over byproducts of various critters. It imbues the user with greater agility and a sense of invincibility."
-    list_reagents = list("ephedrine" = 5, "coffee" = 30, "mine_salve" = 5)
-    icon_state = "Voodoo"
-    self_delay = 0
+	name = "Voodoo"
+	desc = "A tribal concoction, made from the left-over byproducts of various critters. It imbues the user with greater agility and a sense of invincibility."
+	list_reagents = list("ephedrine" = 5, "coffee" = 30, "mine_salve" = 5)
+	icon_state = "Voodoo"
+	self_delay = 0
 
 /obj/item/reagent_containers/pill/patch/coyotechew
-    name = "coyote tobacco chew"
-    desc = "Nicotiana attenuata, colloquially known as coyote tobacco. The plant is native to and grows wild in the southwestern United States and Mexico."
-    list_reagents = list("salbutamol" = 0.15, "nicotine" = 0.24, "antihol" = 5)
-    icon_state = "bandaid_chew"
-    self_delay = 30
+	name = "coyote tobacco chew"
+	desc = "Nicotiana attenuata, colloquially known as coyote tobacco. The plant is native to and grows wild in the southwestern United States and Mexico."
+	list_reagents = list("salbutamol" = 0.15, "nicotine" = 0.24, "antihol" = 5)
+	icon_state = "bandaid_chew"
+	self_delay = 30
+
+/obj/item/reagent_containers/pill/patch/suckuaiage
+	name = "Suckuaiage"
+	desc = "A field surgery kit that will help heal some wounds."
+	list_reagents = list("suckuaiage" = 10)
+	icon_state = "suckuaiage"
+	volume = 5
+	self_delay = 100
