@@ -977,7 +977,8 @@
 				/obj/item/gun/ballistic/automatic/bozar,
 				/obj/item/gun/energy/gammagun,
 				/obj/item/gun/ballistic/automatic/p90,
-				/obj/item/gun/energy/tesla_cannon
+				/obj/item/gun/energy/tesla_cannon,
+				/obj/item/gun/energy/laser/pistol/pewpew
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/unique //UNIQUE GUN
