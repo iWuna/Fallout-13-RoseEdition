@@ -282,7 +282,7 @@
 	required_reagents = list("phenol" = 1, "antitoxin" = 1, "acetone" = 1)
 	required_temp = 255
 
-/datum/chemical_reaction/mentat
+/datum/chemical_reaction/buffout
 	name = "Buffout"
 	id = "buffout"
 	results = list("buffout" = 2)

@@ -125,6 +125,7 @@ GLOBAL_VAR_INIT(trash_list,list(/obj/item/crafting/duct_tape = 5,
 								/obj/item/stack/f13Cash/random/bottle_cap/med = 5,//5
 								/obj/item/stack/f13Cash/random/ncr/med = 10,//5
 								/obj/item/stack/f13Cash/random/denarius/low = 10,//10
+								/obj/item/storage/pill_bottle/chem_tin/buffout = 5,
 								/obj/item/reagent_containers/food/snacks/f13/bubblegum/trash = 3, //10 with rest of the food
 								/obj/item/reagent_containers/food/snacks/f13/bubblegum/large/trash = 3,
 								/obj/item/reagent_containers/food/snacks/f13/cram/trash = 3,
