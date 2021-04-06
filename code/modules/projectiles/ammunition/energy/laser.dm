@@ -133,7 +133,7 @@
 	fire_sound = 'sound/weapons/laser3.ogg'
 
 /obj/item/ammo_casing/energy/laser/pistol/pewpew
-	projectile_type = /obj/item/projectile/beam/laser/pistol/pewpew
+	projectile_type = /obj/item/projectile/beam/laser/pewpew
 	e_cost = 800 //2 shots
 
 //musket

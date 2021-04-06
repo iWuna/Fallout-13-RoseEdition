@@ -510,6 +510,6 @@
 	scopestate = "AEP7_scope"
 	scope_x_offset = 7
 	scope_y_offset = 22
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/pewpew)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/pewpew)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
 	slot_flags = ITEM_SLOT_BELT
