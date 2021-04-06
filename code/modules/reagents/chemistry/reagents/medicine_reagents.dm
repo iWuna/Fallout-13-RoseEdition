@@ -1668,7 +1668,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 		M.set_blurriness(0)
 	else if(eyes.eye_damage > 0)
 		M.adjust_eye_damage(-1)
-	M.adjustBrainLoss(-2*REM)
+	M.adjustBrainLoss(-1*REM)
 	if (prob(5))
 		to_chat(M, "<span class='notice'>You feel way more intelligent!</span>")
 	..()
@@ -1730,6 +1730,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	if(ishuman(M) && prob(5))
 		var/mob/living/carbon/human/H = M
 		H.vomit(10)
+	M.adjustBrainLoss(-4*REM)
 	..()
 	. = 1
 
@@ -1801,15 +1802,15 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 //костыль для саквояжа//
 
 /datum/reagent/medicine/suckuaiage
-	name = "suckuaiage instruments"
-	id = "suckuaiage"
+	name = "Doctor's Suitcase instruments"
+	id = "medcase"
 	description = null
 	reagent_state = SOLID
 	color = "#FAFAFA"
 	overdose_threshold = 50
 	metabolization_rate = 2 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/suckuaiage/on_mob_add(mob/living/carbon/M)
+/datum/reagent/medicine/suckuaiage/on_mob_add(mob/living/M)
 	var/power = 3 * M.special._intelligence
 	M.adjustToxLoss(-3 * power, 0)
 	M.adjustOxyLoss(-4 * power, 0)
@@ -1817,7 +1818,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	M.adjustFireLoss(-4 * power, 0)
 	..()
 
-/datum/reagent/medicine/suckuaiage/on_mob_delete(mob/M)
+/datum/reagent/medicine/suckuaiage/on_mob_delete(mob/living/M)
 	..()
 
 /datum/reagent/medicine/suckuaiage/on_mob_life(mob/living/carbon/M)
