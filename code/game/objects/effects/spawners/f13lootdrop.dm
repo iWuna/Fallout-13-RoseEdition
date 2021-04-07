@@ -500,6 +500,7 @@
 				/obj/item/reagent_containers/pill/patch/steady,
 				/obj/item/reagent_containers/pill/patch/hydra,
 				/obj/item/reagent_containers/pill/patch/rebound,
+				/obj/item/storage/pill_bottle/chem_tin/buffout,
 				/obj/item/storage/pill_bottle/chem_tin/cateye,
 				/obj/item/reagent_containers/syringe/medx
 				)
