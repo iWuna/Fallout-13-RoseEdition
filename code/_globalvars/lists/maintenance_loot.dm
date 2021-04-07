@@ -129,6 +129,7 @@ GLOBAL_VAR_INIT(trash_list,list(/obj/item/crafting/duct_tape = 5,
 								/obj/item/reagent_containers/pill/patch/steady = 2,
 								/obj/item/reagent_containers/pill/patch/medcase = 3,
 								/obj/item/reagent_containers/pill/patch/rebound = 4,
+								/obj/item/reagent_containers/pill/morphine = 2,
 								/obj/item/reagent_containers/food/snacks/f13/bubblegum/trash = 3, //10 with rest of the food
 								/obj/item/reagent_containers/food/snacks/f13/bubblegum/large/trash = 3,
 								/obj/item/reagent_containers/food/snacks/f13/cram/trash = 3,
