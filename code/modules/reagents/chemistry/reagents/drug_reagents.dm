@@ -697,6 +697,12 @@
 
 // READY-STEADY
 
+/obj/effect/proc_holder/spell/targeted/view_range
+	name = "Concentrate vision"
+	desc = "The reward for using Steady."
+	action_icon = 'icons/obj/chemical.dmi'
+	action_icon_state = "steady"
+
 /datum/reagent/drug/steady
 	name = "Steady"
 	id = "steady"

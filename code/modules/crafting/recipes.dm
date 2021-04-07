@@ -4186,6 +4186,7 @@
 				/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 2)
 	tools = list(/obj/structure/campfire)
 	category = CAT_MEDICAL
+	subcategory = CAT_DRUGS
 
 /datum/crafting_recipe/steady
 	name = "Steady"
