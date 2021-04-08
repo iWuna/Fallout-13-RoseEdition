@@ -302,8 +302,8 @@
 	if(prob(15))
 		new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
 	if(prob(25))
-		/obj/item/reagent_containers/pill/patch/steady(src)
+		new /obj/item/reagent_containers/pill/patch/steady(src)
 	if(prob(30))
-		/obj/item/reagent_containers/pill/patch/hydra
+		new /obj/item/reagent_containers/pill/patch/hydra
 	if(prob(20))
 		new /obj/item/stack/f13Cash/random/bottle_cap/low(src)
