@@ -105,6 +105,23 @@
 		message = pick("Oink!","Squeeeeeeee!","Oink Oink!")
 	return message
 
+/obj/item/clothing/mask/ghoul
+	name = "ghoul mask"
+	desc = "This thing stinks, ew..."
+	icon_state = "pig"
+	item_state = "pig"
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/clothing/mask/ghoul/equipped(mob/living/carbon/user, slot)
+	..()
+	if(slot == SLOT_WEAR_MASK)
+		user.faction |= "ghoul"
+
+/obj/item/clothing/mask/ghoul/dropped(mob/living/carbon/user)
+	..()
+	user.faction -= "ghoul"
+
 /obj/item/clothing/mask/spig //needs to be different otherwise you could turn the speedmodification off and on
 	name = "Pig face"
 	desc = "It's a very stylish pig mask which seems to have a voice modulator built into it."
@@ -191,7 +208,7 @@
 	item_state = "rat"
 	flags_inv = HIDEFACE
 	flags_cover = MASKCOVERSMOUTH
-	
+
 /obj/item/clothing/mask/rat/stupid
 	name = "Ratt's Mask"
 	desc = "Looks like he finally got his own fucking mask."
