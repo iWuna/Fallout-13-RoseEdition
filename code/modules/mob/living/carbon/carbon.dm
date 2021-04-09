@@ -439,11 +439,19 @@
 		return 0
 	return ..()
 
-/mob/living/carbon/proc/vomit(lost_nutrition = 10, blood = FALSE, stun = TRUE, distance = 1, message = TRUE, toxic = FALSE)
+/mob/living/carbon/proc/vomit(lost_hydration = 15, lost_nutrition = 10, blood = FALSE, stun = TRUE, distance = 1, message = TRUE, toxic = FALSE)
 	if(has_trait(TRAIT_NOHUNGER))
 		return 1
 
 	if(nutrition < 100 && !blood)
+		if(message)
+			visible_message("<span class='warning'>[src] dry heaves!</span>", \
+							"<span class='userdanger'>You try to throw up, but there's nothing in your stomach!</span>")
+		if(stun)
+			Knockdown(200)
+		return 1
+
+	if(hydration < 20 && !blood)
 		if(message)
 			visible_message("<span class='warning'>[src] dry heaves!</span>", \
 							"<span class='userdanger'>You try to throw up, but there's nothing in your stomach!</span>")
@@ -467,6 +475,7 @@
 	var/turf/T = get_turf(src)
 	if(!blood)
 		nutrition -= lost_nutrition
+		hydration -= lost_hydration
 		adjustToxLoss(-3)
 	for(var/i=0 to distance)
 		if(blood)

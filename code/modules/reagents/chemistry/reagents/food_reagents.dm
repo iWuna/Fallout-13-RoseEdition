@@ -13,11 +13,13 @@
 	taste_description = "generic food"
 	taste_mult = 4
 	var/nutriment_factor = 1 * REAGENTS_METABOLISM
+	var/hydration_factor = 2 * REAGENTS_METABOLISM
 	var/quality = 0	//affects mood, typically higher for mixed drinks with more complex recipes
 
 /datum/reagent/consumable/on_mob_life(mob/living/carbon/M)
 	current_cycle++
 	M.nutrition += nutriment_factor
+	M.hydration += hydration_factor
 	holder.remove_reagent(src.id, metabolization_rate)
 
 

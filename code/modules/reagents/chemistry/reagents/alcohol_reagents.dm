@@ -317,7 +317,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "Now all that's missing is the weird colored shades! S: +2 C: +1 I: -2"
 	shot_glass_icon_state = "shotglassgold"
 
-/datum/reagent/consumable/ethanol/tequila/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/tequila/on_mob_add(mob/living/carbon/M)
 	M.special.adjust(strength=2, charisma=1, intelligence=-2)
 	..()
 

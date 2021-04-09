@@ -108,15 +108,48 @@
 /obj/item/clothing/mask/ghoul
 	name = "ghoul mask"
 	desc = "This thing stinks, ew..."
-	icon_state = "pig"
+	icon_state = "ghoul"
 	item_state = "pig"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/clothing/mask/ghoul/adjustmask(mob/living/user)
+	if(user && user.incapacitated())
+		return
+	mask_adjusted = !mask_adjusted
+	if(!mask_adjusted)
+		src.icon_state = initial(icon_state)
+		gas_transfer_coefficient = initial(gas_transfer_coefficient)
+		permeability_coefficient = initial(permeability_coefficient)
+		clothing_flags |= visor_flags
+		flags_inv |= visor_flags_inv
+		flags_cover |= visor_flags_cover
+		to_chat(user, "<span class='notice'>You push \the [src] back into place.</span>")
+		slot_flags = initial(slot_flags)
+		user.faction |= "ghoul"
+	else
+		icon_state += "_up"
+		to_chat(user, "<span class='notice'>You push \the [src] out of the way.</span>")
+		gas_transfer_coefficient = null
+		permeability_coefficient = null
+		clothing_flags &= ~visor_flags
+		flags_inv &= ~visor_flags_inv
+		flags_cover &= ~visor_flags_cover
+		if(adjusted_flags)
+			slot_flags = adjusted_flags
+		user.faction -= "ghoul"
+	if(user)
+		user.wear_mask_update(src, toggle_off = mask_adjusted)
+		user.update_action_buttons_icon() //when mask is adjusted out, we update all buttons icon so the user's potential internal tank correctly shows as off.
+
+/obj/item/clothing/mask/ghoul/attack_self(mob/user)
+	adjustmask(user)
+
 /obj/item/clothing/mask/ghoul/equipped(mob/living/carbon/user, slot)
 	..()
-	if(slot == SLOT_WEAR_MASK)
-		user.faction |= "ghoul"
+	if(!mask_adjusted)
+		if(slot == SLOT_WEAR_MASK)
+			user.faction |= "ghoul"
 
 /obj/item/clothing/mask/ghoul/dropped(mob/living/carbon/user)
 	..()
