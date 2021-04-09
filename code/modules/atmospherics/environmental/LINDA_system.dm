@@ -19,7 +19,7 @@
 
 /turf/open/CanAtmosPass(turf/T, vertical = FALSE)
 	var/dir = vertical? get_dir_multiz(src, T) : get_dir(src, T)
-	var/opp = dir_inverse_multiz(dir)
+	var/opp = REVERSE_DIR(dir)
 	var/R = FALSE
 	if(vertical && !(zAirOut(dir, T) && T.zAirIn(dir, src)))
 		R = TRUE
@@ -33,7 +33,7 @@
 			if(O.BlockSuperconductivity()) 	//the direction and open/closed are already checked on CanAtmosPass() so there are no arguments
 				atmos_supeconductivity |= dir
 				T.atmos_supeconductivity |= opp
-				return FALSE	
+				return FALSE
 
 	atmos_supeconductivity &= ~dir
 	T.atmos_supeconductivity &= ~opp
