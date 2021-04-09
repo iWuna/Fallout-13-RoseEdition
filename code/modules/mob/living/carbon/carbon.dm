@@ -12,6 +12,7 @@
 	//This must be done first, so the mob ghosts correctly before DNA etc is nulled
 	. =  ..()
 
+	QDEL_LIST(hand_bodyparts)
 	QDEL_LIST(internal_organs)
 	QDEL_LIST(stomach_contents)
 	QDEL_LIST(bodyparts)
@@ -53,7 +54,7 @@
 		var/obj/item/twohanded/TH = item_in_hand
 		if(istype(TH))
 			if(TH.wielded == 1)
-				to_chat(usr, "<span class='warning'>Your other hand is too busy holding [TH]</span>")
+				to_chat(usr, "<span class='warning'>Your other hand is too busy holding [TH].</span>")
 				return
 	var/oindex = active_hand_index
 	active_hand_index = held_index
@@ -91,7 +92,7 @@
 					return 1
 	return ..()
 
-/mob/living/carbon/throw_impact(atom/hit_atom, throwingdatum)
+/mob/living/carbon/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
 	var/hurt = TRUE
 	if(istype(throwingdatum, /datum/thrownthing))
@@ -701,7 +702,7 @@
 	if(hud_used.healths)
 		if(stat != DEAD)
 			. = 1
-			if(!shown_health_amount)
+			if(shown_health_amount == null)
 				shown_health_amount = health
 			if(shown_health_amount >= maxHealth)
 				hud_used.healths.icon_state = "health0"
