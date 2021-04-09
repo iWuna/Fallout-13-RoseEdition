@@ -25,7 +25,7 @@
 /obj/screen/plane_master/proc/backdrop(mob/mymob)
 /obj/screen/plane_master/openspace
 	name = "open space plane master"
-	plane = FLOOR_OPENSPACE_PLANE
+	plane = OPENSPACE_BACKDROP_PLANE
 	appearance_flags = PLANE_MASTER
 	blend_mode = BLEND_MULTIPLY
 	alpha = 255

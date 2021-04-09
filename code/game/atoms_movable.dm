@@ -62,7 +62,7 @@
 			if(A.layer > highest.layer)
 				highest = A
 	INVOKE_ASYNC(src, .proc/SpinAnimation, 5, 2)
-	throw_impact(highest)
+//	throw_impact(highest)
 	return TRUE
 
 //For physical constraints to travelling up/down.

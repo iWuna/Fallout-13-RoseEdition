@@ -1,10 +1,23 @@
+GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdrop, new)
+
+/atom/movable/openspace_backdrop
+	name			= "openspace_backdrop"
+
+	anchored		= TRUE
+
+	icon            = 'icons/turf/floors.dmi'
+	icon_state      = "grey"
+	plane           = OPENSPACE_BACKDROP_PLANE
+	mouse_opacity 	= MOUSE_OPACITY_TRANSPARENT
+	layer           = SPLASHSCREEN_LAYER
+
 /turf/open/openspace
 	name = "open space"
 	desc = "Watch your step!"
-	icon_state = "grey"
+	icon_state = "transparent"
 	baseturfs = /turf/open/openspace
 	CanAtmosPassVertical = ATMOS_PASS_YES
-	plane = FLOOR_OPENSPACE_PLANE
+	plane = OPENSPACE_PLANE
 	layer = OPENSPACE_LAYER
 	//mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	var/can_cover_up = TRUE
@@ -16,6 +29,11 @@
 
 /turf/open/openspace/Initialize()
 	. = ..()
+	plane = OPENSPACE_PLANE
+	layer = OPENSPACE_LAYER
+
+	vis_contents += GLOB.openspace_backdrop_one_for_all //Special grey square for projecting backdrop darkness filter on it.
+
 	return INITIALIZE_HINT_LATELOAD
 
 /turf/open/openspace/LateInitialize()

@@ -38,6 +38,8 @@
 	var/turf_light_range = 0 // Used for the nightcycle subsystem
 	var/turf_light_power = 0 // Used for the nightcycle subsystem
 
+	vis_flags = VIS_INHERIT_PLANE|VIS_INHERIT_ID	//when this be added to vis_contents of something it inherit something.plane and be associatet with something on clicking, important for visualisation of turf in openspace and interraction with openspace that show you turf.
+
 /turf/proc/snow_act()
 	return
 
