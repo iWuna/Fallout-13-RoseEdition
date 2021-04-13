@@ -1,4 +1,3 @@
-
 /datum/chemical_reaction/sterilizine
 	name = "Sterilizine"
 	id = "sterilizine"
@@ -120,6 +119,12 @@
 	results = list("mulligan" = 1)
 	required_reagents = list("slime_toxin" = 1, "stablemutationtoxin" = 1)
 
+/datum/chemical_reaction/water
+	name = "Water"
+	id = "water"
+	results = list("water" = 1)
+	required_reagents = list("hydrogen" = 2, "oxygen" = 1)
+	required_temp = 380
 
 ////////////////////////////////// VIROLOGY //////////////////////////////////////////
 
@@ -582,3 +587,4 @@
 	id = "pax"
 	results = list("pax" = 3)
 	required_reagents  = list("mindbreaker" = 1, "synaptizine" = 1, "water" = 1)
+
