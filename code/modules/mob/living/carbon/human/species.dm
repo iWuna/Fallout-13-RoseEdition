@@ -1016,7 +1016,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	if (H.hydration > 0 && H.stat != DEAD && !H.has_trait(TRAIT_NOHUNGER))
 		// THEY THIRST
-		var/thirst_rate = HUNGER_FACTOR
+		var/thirst_rate = HYDRATION_FACTOR
 		GET_COMPONENT_FROM(mood, /datum/component/mood, H)
 		if(mood && mood.sanity > SANITY_DISTURBED)
 			thirst_rate *= max(0.5, 1 - 0.002 * mood.sanity) //0.85 to 0.75
@@ -1027,7 +1027,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			H.satiety++
 			if(prob(round(-H.satiety/40)))
 				H.Jitter(5)
-			thirst_rate = 3 * HUNGER_FACTOR
+			thirst_rate = 3 * HYDRATION_FACTOR
 		thirst_rate *= H.physiology.hunger_mod
 		H.hydration = max(0, H.hydration - thirst_rate)
 
@@ -1078,7 +1078,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	switch(H.hydration)
 		if(HYDRATION_LEVEL_FULL to INFINITY)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hydration", /datum/mood_event/hydration/full)
-			H.throw_alert("hydration", /obj/screen/alert/fat)
+			H.throw_alert("hydration", /obj/screen/alert/hydrated)
 		if(HYDRATION_LEVEL_MED to HYDRATION_LEVEL_FULL)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hydration", /datum/mood_event/hydration/med)
 			H.clear_alert("hydration")
