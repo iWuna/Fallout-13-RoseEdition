@@ -49,14 +49,14 @@
 	name = "high-capacity water tank"
 	desc = "A highly pressurized water tank made to hold gargantuan amounts of water."
 	icon_state = "water_high" //I was gonna clean my room...
-	tank_volume = 100000
+	tank_volume = 1000
 
 /obj/structure/reagent_dispensers/foamtank
 	name = "firefoam tank"
 	desc = "A tank full of foaming things."
 	icon_state = "foam"
 	reagent_id = "firefighting_foam"
-	tank_volume = 500
+	tank_volume = 300
 
 /obj/structure/reagent_dispensers/fueltank
 	name = "fuel tank"
