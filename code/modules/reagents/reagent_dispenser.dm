@@ -142,8 +142,8 @@
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "water_cooler"
 	anchored = TRUE
-	tank_volume = 500
-	var/paper_cups = 25 //Paper cups left from the cooler
+	tank_volume = 100
+	var/paper_cups = 4 //Paper cups left from the cooler
 
 /obj/structure/reagent_dispensers/water_cooler/examine(mob/user)
 	..()
@@ -176,7 +176,6 @@
 	explosion(src.loc,0,3,5,7,10)
 	if(!QDELETED(src))
 		qdel(src)
-
 
 /obj/structure/reagent_dispensers/virusfood
 	name = "virus food dispenser"
