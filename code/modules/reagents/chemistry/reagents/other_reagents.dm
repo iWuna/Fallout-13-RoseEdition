@@ -118,10 +118,14 @@
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha)
 	taste_description = "water"
 	var/cooling_temperature = 2
+	var/hydration_factor = 2 * REAGENTS_METABOLISM
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of water"
 	glass_desc = "The father of all refreshments."
 	shot_glass_icon_state = "shotglassclear"
+
+/datum/reagent/water/on_mob_life(mob/living/carbon/M)
+	M.hydration += hydration_factor
 
 /*
  *	Water reaction to turf
