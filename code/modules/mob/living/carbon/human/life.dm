@@ -281,12 +281,6 @@
 				vomit(20, toxic = TRUE)
 				lastpuke = 0
 
-		if(getToxLoss() >= 45 && hydration > 10)
-			lastpuke += prob(50)
-			if(lastpuke >= 50) // about 25 second delay I guess
-				vomit(20, toxic = TRUE)
-				lastpuke = 0
-
 /mob/living/carbon/human/has_smoke_protection()
 	if(wear_mask)
 		if(wear_mask.clothing_flags & BLOCK_GAS_SMOKE_EFFECT)
