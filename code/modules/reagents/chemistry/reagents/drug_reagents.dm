@@ -773,7 +773,8 @@
 	description = "A chemical compound that, when inhaled, vastly increases the user's reflexes and slows their perception of time. Carries a risk of addiction and extreme nausea and toxin damage if overdosed."
 	reagent_state = LIQUID
 	color = "#FAFAFA"
-	overdose_threshold = 20
+	overdose_threshold = 50
+	addiction_threshold = 35
 	metabolization_rate = 3 * REAGENTS_METABOLISM
 
 /datum/reagent/drug/rebound/on_mob_add(mob/M)

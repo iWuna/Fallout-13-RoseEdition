@@ -151,14 +151,14 @@
 
 //HYDRATION - by Woona
 
-#define HYDRATION_LEVEL_FULL 500
-#define HYDRATION_LEVEL_MED 300
-#define HYDRATION_LEVEL_LOW_MED 100
-#define HYDRATION_LEVEL_LOW 50
-#define NUTRITION_LEVEL_VERY_LOV 20
+#define HYDRATION_LEVEL_FULL 800
+#define HYDRATION_LEVEL_MED 600
+#define HYDRATION_LEVEL_LOW_MED 400
+#define HYDRATION_LEVEL_LOW 100
+#define NUTRITION_LEVEL_VERY_LOV 50
 
-#define HYDRATION_LEVEL_START_MIN 100
-#define HYDRATION_LEVEL_START_MAX 150
+#define HYDRATION_LEVEL_START_MIN 600
+#define HYDRATION_LEVEL_START_MAX 700
 
 //Disgust levels for humans
 #define DISGUST_LEVEL_MAXEDOUT 150
@@ -256,7 +256,7 @@
 #define DOOR_CRUSH_DAMAGE	15	//the amount of damage that airlocks deal when they crush you
 
 #define	HUNGER_FACTOR		0.1	//factor at which mob nutrition decreases
-#define	HYDRATION_FACTOR		0.2
+#define	HYDRATION_FACTOR		0.1
 #define	REAGENTS_METABOLISM 0.4	//How many units of reagent are consumed per tick, by default.
 #define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4)	// By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
 

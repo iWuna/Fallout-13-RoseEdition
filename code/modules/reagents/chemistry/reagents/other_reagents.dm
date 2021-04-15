@@ -134,7 +134,7 @@
 	color = "#83A965"
 	taste_description = "water with... lead?"
 	var/cooling_temperature = 2
-	var/hydration_factor = 0.4 * REAGENTS_METABOLISM
+	var/hydration_factor = 1.5 * REAGENTS_METABOLISM
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of water"
 	glass_desc = "The father of all refreshments. But this one are radiated."

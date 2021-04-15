@@ -94,6 +94,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -1
 	neg_Intelligence = 1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/arnold_palmer
 	name = "Arnold Palmer"
 	id = "arnold_palmer"
@@ -111,6 +113,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Strength = -1
 	neg_Charisma = -1
 	neg_Intelligence = 1
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/arnold_palmer/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
@@ -174,6 +178,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Strength = -1
 	neg_Charisma = -1
 	neg_Intelligence = 1
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/brave_bull
 	name = "Brave Bull"
@@ -288,6 +294,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Intelligence = 1
 	neg_Agility = -1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/rum
 	name = "Rum"
 	id = "rum"
@@ -306,6 +314,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Strength = -1
 	neg_Intelligence = 1
 	neg_Agility = -1
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/tequila
 	name = "Tequila"
@@ -326,6 +336,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -1
 	neg_Intelligence = 2
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/vermouth
 	name = "Champagne"
 	id = "champagne"
@@ -344,6 +356,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -2
 	neg_Intelligence = 1
 	neg_Agility = -2
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/jack_rose
 	name = "Jack Rose"
@@ -400,6 +414,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -1
 	neg_Intelligence = 1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/lizardwine
 	name = "Lizard wine"
 	id = "lizardwine"
@@ -438,6 +454,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -1
 	neg_Intelligence = 1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/absinthe
 	name = "Absinthe"
 	id = "absinthe"
@@ -462,6 +480,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -1
 	neg_Intelligence = 1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/hooch
 	name = "Hooch"
 	id = "hooch"
@@ -480,6 +500,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -2
 	neg_Intelligence = 2
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/ale
 	name = "Ale"
 	id = "ale"
@@ -497,6 +519,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Strength = -1
 	neg_Charisma = -1
 	neg_Intelligence = 1
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/goldschlager
 	name = "Goldschlager"
@@ -517,6 +541,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Strength = -1
 	neg_Charisma = -1
 	neg_Intelligence = 1
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/patron
 	name = "Patron"
@@ -540,6 +566,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -1
 	neg_Intelligence = 1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/gintonic
 	name = "Gin and Tonic"
 	id = "gintonic"
@@ -559,6 +587,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -1
 	neg_Intelligence = 1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/rum_coke
 	name = "Rum and Nuka"
 	id = "rumcoke"
@@ -575,6 +605,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	pos_Intelligence = -1
 	neg_Strength = -1
 	neg_Intelligence = 1
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/cuba_libre
 	name = "Nuka Libre"
@@ -594,6 +626,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Strength = -1
 	neg_Charisma = -1
 	neg_Intelligence = 1
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/cuba_libre/on_mob_life(mob/living/carbon/M)
 	if(M.mind && M.mind.has_antag_datum(/datum/antagonist/rev)) //Cuba Libre, the traditional drink of revolutions! Heals revolutionaries.
@@ -623,6 +657,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -1
 	neg_Intelligence = 1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/martini
 	name = "Classic Martini"
 	id = "martini"
@@ -641,6 +677,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Strength = -2
 	neg_Endurance = -3
 	neg_Intelligence = 1
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/vodkamartini
 	name = "Vodka Martini"
@@ -661,6 +699,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Endurance = -3
 	neg_Intelligence = 1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/white_russian
 	name = "White Russian"
 	id = "whiterussian"
@@ -680,6 +720,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -1
 	neg_Intelligence = 1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/screwdrivercocktail
 	name = "Screwdriver"
 	id = "screwdrivercocktail"
@@ -698,6 +740,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Strength = 1
 	neg_Charisma = -2
 	neg_Intelligence = -1
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/screwdrivercocktail/on_mob_life(mob/living/carbon/M)
 	if(M.mind && (M.mind.assigned_role in list("Station Engineer", "Atmospheric Technician", "Chief Engineer"))) //Engineers lose radiation poisoning at a massive rate.
@@ -734,6 +778,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = 2
 	neg_Intelligence = 3
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/bloody_mary/on_mob_life(mob/living/carbon/C)
 	if(C.blood_volume < BLOOD_VOLUME_NORMAL)
 		C.blood_volume = min(BLOOD_VOLUME_NORMAL, C.blood_volume + 3) //Bloody Mary quickly restores blood loss.
@@ -758,6 +804,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Strength = -1
 	neg_Luck = -1
 	neg_Intelligence = 2
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/tequila_sunrise/on_mob_add(mob/living/M)
 	to_chat(M, "<span class='notice'>You feel gentle warmth spread through your body!</span>")
@@ -794,6 +842,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Endurance = -1
 	neg_Intelligence = 1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/longislandicedtea
 	name = "Long Island Iced Tea"
 	id = "longislandicedtea"
@@ -823,6 +873,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Strength = -4
 	neg_Charisma = -1
 	neg_Intelligence = 3
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/b52
 	name = "B-52"
@@ -892,6 +944,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -2
 	neg_Intelligence = 1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/whiskeysoda
 	name = "Whiskey Soda"
 	id = "whiskeysoda"
@@ -910,6 +964,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Strength = -1
 	neg_Charisma = -1
 	neg_Intelligence = 1
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/antifreeze
 	name = "Anti-freeze"
@@ -1066,6 +1122,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -1
 	neg_Intelligence = 2
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/iced_beer/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-20 * TEMPERATURE_DAMAGE_COEFFICIENT, T0C) //310.15 is the normal bodytemp.
 	return ..()
@@ -1148,6 +1206,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -3
 	neg_Intelligence = 1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/bananacream
 	name = "Banana Cream"
 	id = "bananacream"
@@ -1180,6 +1240,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -2
 	neg_Intelligence = 1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/hcider
 	name = "Hard Cider"
 	id = "hcider"
@@ -1199,6 +1261,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Strength = -1
 	neg_Charisma = -1
 	neg_Intelligence = 2
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/purplecider
 	name = "Purple Cider"
@@ -1394,6 +1458,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Intelligence = 1
 	neg_Luck = -1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/fetching_fizz/on_mob_life(mob/living/carbon/M)
 	for(var/obj/item/stack/ore/O in orange(3, M))
 		step_towards(O, get_turf(M))
@@ -1416,6 +1482,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Strength = 4
 	neg_Charisma = 2
 	neg_Intelligence = 4
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/eggnog
 	name = "Eggnog"
@@ -2198,6 +2266,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Charisma = -1
 	neg_Intelligence = 1
 
+	can_affect = TRUE
+
 /datum/reagent/consumable/ethanol/dwastelander/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-3*REM, 0)
 	..()
@@ -2276,6 +2346,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	neg_Strength = -1
 	neg_Charisma = -1
 	neg_Intelligence = 1
+
+	can_affect = TRUE
 
 /datum/reagent/consumable/ethanol/hardlemonade/on_mob_life(mob/living/carbon/M)
 	M.AdjustStun(-20, 0)
