@@ -16,7 +16,8 @@
 	item_state = "bigbox"
 	w_class = WEIGHT_CLASS_SMALL
 
-	var/datum/mind/for_who = null
+	var/datum/mind/for_who = null // РЕШЕНИЕ 1
+	//var/datum/mind/for_who = recipient.mind // РЕШЕНИЕ 2
 
 	var/mob/living/carbon/human/faction = null
 
@@ -131,9 +132,21 @@
 	..()
 	icon_state = pick("bigbox", "longbox", "smallbox")
 
-	for(var/mob/living/player in GLOB.player_list)
-		if(player.stat != DEAD && !isanimal(player) && ishuman(player))
-			for_who = player
+//РЕШЕНИЕ 1.
+
+	for(var/mob/living/player in GLOB.player_list.shuffle()))
+		if(player.stat != DEAD && !isanimal(player) && ishuman(player) && player.mind)
+			for_who = player.mind
+			break
+
+//РЕШЕНИЕ 2. Не Работает, но может являться  хорошей альтернтаивой говнокоду выше если найдете кодера.
+/*
+	var/mob/living/recipient = null
+	while(recipient == null) {
+	     recipient = pick(GLOB.player_list)
+	    if(player.stat == DEAD || isanimal(player) || ishuman(player))
+	        recipient = null
+*/
 
 	message_admins("посылка для [for_who] создана.")
 
@@ -162,7 +175,7 @@
 			if (!isturf(src.loc) || !(locate(/obj/structure/table) in src.loc) && !(locate(/obj/structure/table/optable) in src.loc))
 				to_chat(user, "<span class='warning'>Вы должны делать это на столе.</span>")
 				return FALSE
-			if(user == for_who)
+			if(user.mind == for_who)
 				if(do_after(user, 30, target = src))
 					var/obj/item/booty = pick(possible_item)
 					booty = new booty(loc)
