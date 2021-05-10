@@ -134,7 +134,7 @@
 
 //РЕШЕНИЕ 1.
 
-	for(var/mob/living/player in GLOB.player_list.shuffle()))
+	for(var/mob/living/player in shuffle(GLOB.player_list))
 		if(player.stat != DEAD && !isanimal(player) && ishuman(player) && player.mind)
 			for_who = player.mind
 			break
