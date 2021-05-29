@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/closed/wall/f13/vault,
+/turf/closed/wall/f13/tunnel,
 /area/shuttle/brotherhood_of_steel)
 "b" = (
 /obj/structure/ladder/unbreakable{
@@ -25,10 +25,6 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/brotherhood_of_steel)
 "f" = (
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
 /obj/structure/ladder/unbreakable{
 	height = 2;
 	id = "SW"
@@ -46,8 +42,9 @@
 /turf/template_noop,
 /area/template_noop)
 "i" = (
-/obj/item/flag/bos,
-/turf/open/floor/plasteel/dark,
+/turf/closed/wall/f13/tunnel{
+	density = 0
+	},
 /area/shuttle/brotherhood_of_steel)
 "j" = (
 /obj/docking_port/mobile/bos{
@@ -56,6 +53,12 @@
 	},
 /obj/machinery/door/airlock/hatch{
 	req_access_txt = "120"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/brotherhood_of_steel)
+"t" = (
+/obj/effect/turf_decal/arrows{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/brotherhood_of_steel)
@@ -87,7 +90,7 @@ a
 (4,1,1) = {"
 a
 c
-c
+a
 b
 f
 a
@@ -95,7 +98,7 @@ a
 (5,1,1) = {"
 a
 c
-c
+a
 c
 c
 a
@@ -103,7 +106,7 @@ a
 (6,1,1) = {"
 a
 c
-c
+a
 d
 g
 a
@@ -111,21 +114,21 @@ a
 (7,1,1) = {"
 a
 c
-c
+a
 c
 c
 a
 "}
 (8,1,1) = {"
-a
+h
+c
 i
-c
-c
+t
 e
 a
 "}
 (9,1,1) = {"
-a
+h
 a
 a
 a
