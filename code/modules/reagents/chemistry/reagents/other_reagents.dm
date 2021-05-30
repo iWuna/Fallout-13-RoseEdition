@@ -111,7 +111,7 @@
 	if(istype(data))
 		src.data |= data.Copy()
 
-/datum/reagent/water
+/datum/reagent/water //Обычная вода
 	name = "Water"
 	id = "water"
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen."
@@ -127,16 +127,16 @@
 /datum/reagent/water/on_mob_life(mob/living/carbon/M)
 	M.hydration += hydration_factor
 
-/datum/reagent/rad_water
+/datum/reagent/rad_water //Радиоактивная вода
 	name = "Water"
 	id = "rad_water"
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen."
 	color = "#83A965"
-	taste_description = "water with... lead?"
+	taste_description = "water?"
 	var/cooling_temperature = 2
-	var/hydration_factor = 1.5 * REAGENTS_METABOLISM
+	var/hydration_factor = 2 * REAGENTS_METABOLISM
 	glass_icon_state = "glass_clear"
-	glass_name = "glass of water"
+	glass_name = "glass of green water"
 	glass_desc = "The father of all refreshments. But this one are radiated."
 	shot_glass_icon_state = "shotglassclear"
 
@@ -144,22 +144,21 @@
 	M.hydration += hydration_factor
 	M.adjustToxLoss(0.5)
 
-/datum/reagent/chem_water
+/*/datum/reagent/chem_water //Вода из хим. диспенсера
 	name = "H2O"
 	id = "h2o"
-	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen."
-	color = "#83A965"
-	taste_description = "water with... what?"
+	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen. Fresh."
+	color = "#ffffff"
+	taste_description = "water"
 	var/cooling_temperature = 2
-	var/hydration_factor = 0.1 * REAGENTS_METABOLISM
+	var/hydration_factor = 2 * REAGENTS_METABOLISM
 	glass_icon_state = "glass_clear"
-	glass_name = "glass of water"
+	glass_name = "glass of fresh water"
 	glass_desc = "The father of all refreshments. But this one are chemical created and useless as drink."
 	shot_glass_icon_state = "shotglassclear"
 
 /datum/reagent/chem_water/on_mob_life(mob/living/carbon/M)
-	M.hydration += hydration_factor
-	M.adjustToxLoss(0.1)
+	M.hydration += hydration_factor*/
 
 /*
  *	Water reaction to turf

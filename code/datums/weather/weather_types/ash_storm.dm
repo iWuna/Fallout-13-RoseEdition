@@ -108,3 +108,20 @@
 	aesthetic = TRUE
 
 	probability = 8
+
+/datum/weather/ash_storm/sandstorm/proc/is_sandstorm_immune(atom/L)
+	while (L && !isturf(L))
+		if(ismecha(L))														//Если твоя кукла в мехе
+			return TRUE														//Значит тебе ничего не наносится
+		if(ishuman(L))														//Но если ты не в мехе
+			var/mob/living/carbon/human/H = L								//
+			var/thermal_protection = H.get_thermal_protection()				//И у тебя защита от огня
+			if(thermal_protection >= FIRE_IMMUNITY_SUIT_MAX_TEMP_PROTECT)	//Ну прям хорошая защита
+				return TRUE													//То тебе ничего не наносится
+		L = L.loc															//Иначе
+	return FALSE															//Пососи
+
+/datum/weather/ash_storm/sandstorm/weather_act(mob/living/L)
+	if(is_sandstorm_immune(L))
+		return
+	L.adjustStaminaLoss(0.01) //Прогулки под бурей каждый тик дают слабость
