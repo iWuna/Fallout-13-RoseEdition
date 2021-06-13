@@ -2,133 +2,103 @@
 "a" = (
 /turf/closed/wall/f13/tunnel,
 /area/shuttle/brotherhood_of_steel)
-"b" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "NW"
-	},
-/turf/open/floor/plasteel/dark,
-/area/shuttle/brotherhood_of_steel)
 "c" = (
 /turf/open/floor/plasteel/dark,
 /area/shuttle/brotherhood_of_steel)
 "d" = (
-/obj/structure/ladder/unbreakable{
-	anchored = 1;
-	height = 2;
-	id = "NE"
+/obj/machinery/door/airlock/hatch{
+	req_access_txt = "120"
 	},
-/turf/open/floor/plasteel/dark,
+/obj/docking_port/mobile/bos{
+	dwidth = 1;
+	name = "Broterhood_of_Steel"
+	},
+/turf/closed/wall/f13/tunnel,
 /area/shuttle/brotherhood_of_steel)
-"e" = (
+"h" = (
+/turf/template_noop,
+/area/template_noop)
+"j" = (
 /obj/machinery/computer/shuttle/bos,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/brotherhood_of_steel)
-"f" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "SW"
-	},
-/turf/open/floor/plasteel/dark,
-/area/shuttle/brotherhood_of_steel)
-"g" = (
+"p" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
 	id = "SE"
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/brotherhood_of_steel)
-"h" = (
-/turf/template_noop,
-/area/template_noop)
-"i" = (
-/turf/closed/wall/f13/tunnel{
-	density = 0
-	},
-/area/shuttle/brotherhood_of_steel)
-"j" = (
-/obj/docking_port/mobile/bos{
-	dwidth = 1;
-	name = "Broterhood_of_Steel"
-	},
-/obj/machinery/door/airlock/hatch{
-	req_access_txt = "120"
-	},
-/turf/open/floor/plasteel/dark,
-/area/shuttle/brotherhood_of_steel)
 "t" = (
-/obj/effect/turf_decal/arrows{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
+/turf/closed/wall/r_wall/f13/vault,
 /area/shuttle/brotherhood_of_steel)
 
 (1,1,1) = {"
 a
-j
 a
-h
-h
+d
+a
+a
 h
 "}
 (2,1,1) = {"
 a
+t
 c
+t
 a
-h
-h
 h
 "}
 (3,1,1) = {"
 a
+t
 c
-a
-a
+t
 a
 a
 "}
 (4,1,1) = {"
 a
+t
 c
-a
-b
-f
+t
+t
 a
 "}
 (5,1,1) = {"
 a
+t
 c
-a
 c
-c
+t
 a
 "}
 (6,1,1) = {"
 a
+t
 c
-a
-d
-g
+c
+t
 a
 "}
 (7,1,1) = {"
 a
-c
-a
-c
-c
+t
+j
+p
+t
 a
 "}
 (8,1,1) = {"
-h
-c
-i
+a
 t
-e
+t
+t
+t
 a
 "}
 (9,1,1) = {"
-h
+a
 a
 a
 a

@@ -230,7 +230,7 @@
 /turf/closed/indestructible/black //Чернота
 	name = ""
 	desc = ""
-	icon = 'icons/turf/floors.dmi'
+	icon = 'icons/turf/none.dmi'
 	icon_state = "black"
 
 /turf/closed/indestructible/black/opacity //Чернота прозрачная
@@ -240,7 +240,7 @@
 /turf/closed/indestructible/none //Пустота
 	name = ""
 	desc = ""
-	icon = 'icons/turf/floors.dmi'
+	icon = 'icons/turf/none.dmi'
 	icon_state = "none"
 
 

@@ -152,8 +152,8 @@ SUBSYSTEM_DEF(nightcycle)
 
 /datum/time_of_day/night
 	name = "NIGHTTIME"
-	color = "#171718"
-	sunPower = 0.0001
+	color = "#27283d"
+	sunPower = 0.1
 	duration = 9000
 
 #undef CYCLE_SUNRISE
