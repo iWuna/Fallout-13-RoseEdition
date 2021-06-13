@@ -243,12 +243,6 @@
 	min_qty = HIGH_MIN / CASH_NCR
 	max_qty = HIGH_MAX / CASH_NCR
 
-/obj/item/stack/f13Cash/random/ncr/high/loadout
-	name = "NCR Dollar"
-	singular_name = "NCR Dollar"
-	icon = 'icons/obj/economy.dmi'
-	icon_state = "ncr500"
-
 /obj/item/stack/f13Cash/random/ncr/ncrpay_basic
 	min_qty = LOW_MIN / CASH_NCR
 	max_qty = LOW_MAX / CASH_NCR
