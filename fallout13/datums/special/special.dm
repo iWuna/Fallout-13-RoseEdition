@@ -109,7 +109,7 @@
 
 	update_strength()
 	update_perception()
-	update_endurance(initial=TRUE)
+	update_endurance()
 	update_charisma()
 	update_intelligence()
 	update_agility()
