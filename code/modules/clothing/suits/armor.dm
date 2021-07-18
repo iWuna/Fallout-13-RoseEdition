@@ -1162,12 +1162,18 @@
 	if (slot == SLOT_WEAR_SUIT)
 		playsound(src, 'sound/f13effects/MedPA.ogg', 50, 1)
 
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/dropped(mob/user)
+	. = ..()
+	STOP_PROCESSING(SSobj, src)
+
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/Destroy()
 	STOP_PROCESSING(SSobj,src)
 	. = ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/medical/process()
 	var/mob/living/carbon/human/H = loc
+	if(H.wear_suit != src)
+		return
 	if(H.health < H.maxHealth)
 		new /obj/effect/temp_visual/heal(get_turf(H), "#80F5FF")
 		H.adjustBruteLoss(-3.5)
