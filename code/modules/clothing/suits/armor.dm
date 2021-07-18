@@ -1024,7 +1024,6 @@
 		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
 		return FALSE
 
-
 /obj/item/clothing/suit/armor/f13/power_armor/equipped(mob/user, slot)
 	. = ..()
 	var/mob/living/carbon/human/H = user
