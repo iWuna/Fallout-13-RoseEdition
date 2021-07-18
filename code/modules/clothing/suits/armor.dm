@@ -1009,7 +1009,6 @@
 /obj/item/clothing/suit/armor/f13/power_armor/Initialize()
 	. = ..()
 	AddComponent(/datum/component/spraycan_paintable)
-	START_PROCESSING(SSobj, src)
 
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1) //Проверка на навык ношения ПА
 	. = ..()
